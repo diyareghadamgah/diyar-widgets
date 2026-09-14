@@ -1,53 +1,85 @@
-name: Update News
+name: 📰 به‌روزرسانی اخبار دیار قدمگاه
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: "*/30 * * * *"
   workflow_dispatch:
-
-# جلوگیری از اجرای همزمان چند run
-concurrency:
-  group: update-news
-  cancel-in-progress: false
 
 permissions:
   contents: write
 
-# diyar-news یک زیرپوشه داخل مخزن diyar-widgets است.
-defaults:
-  run:
-    working-directory: diyar-news
+# جلوگیری از اجرای هم‌زمان چند Run روی هم (race condition):
+# اگر یک اجرا هنوز در حال کار باشد، اجرای بعدی صف می‌شود، نه هم‌زمان
+# اجرا می‌شود. این از overwrite شدن خروجی یک اجرای جدیدتر توسط
+# اجرای قدیمی‌تر (یا شکست push به‌خاطر تاریخچه‌ی ناسازگار) جلوگیری می‌کند.
+concurrency:
+  group: update-news
+  cancel-in-progress: false
 
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      # دریافت کد مخزن
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      # نصب Node.js
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: diyar-news/package-lock.json
+          node-version: 24
 
-      - name: Install dependencies
+      # نصب وابستگی‌ها
+      - name: 📦 Install dependencies
+        working-directory: diyar-news
         run: npm ci
 
-      - name: Run news script
+      # دریافت و پردازش اخبار
+      - name: 📰 Fetch news
+        working-directory: diyar-news
         run: node fetch-news.js
 
-      - name: Commit and push changes
+      # ساخت خلاصه اخبار
+      - name: ✨ Generate summaries
+        working-directory: diyar-news
+        run: node generate-summaries.js
+
+      # بررسی فایل‌های تولیدشده
+      # توجه: fetch-news.js دیگر index.html تولید نمی‌کند (طراحی فعلی
+      # عمداً این کار را نمی‌کند)، پس دیگر آن را چک نمی‌کنیم — وگرنه
+      # این مرحله با «فایل پیدا نشد» شکست می‌خورد.
+      - name: 🔎 Check generated files
+        working-directory: diyar-news
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add index.html news.html news.json news-ticker.html
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-            exit 0
+          echo "===== news.json ====="
+          ls -lh news.json
+
+          echo "===== news-summary.json ====="
+          ls -lh news-summary.json
+
+      # Commit و Push
+      - name: 💾 Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # index.html دیگر توسط fetch-news.js بازتولید نمی‌شود، پس دیگر
+          # add نمی‌شود (فایل ثابتی است که تغییری برای commit ندارد).
+          git add diyar-news/news.json
+          git add diyar-news/news-summary.json
+          git add diyar-news/news-ticker.html
+          git add diyar-news/news.html
+
+          if git diff --cached --quiet; then
+            echo "ℹ️ تغییر جدیدی برای Commit وجود ندارد."
+          else
+            git commit -m "📰 به‌روزرسانی خودکار اخبار"
+
+            # قبل از push، تغییرات احتمالی جدیدتر را rebase می‌کنیم تا
+            # اگر (به‌هر دلیلی) یک commit دیگر بین اجرای اسکریپت و این
+            # لحظه به main اضافه شده باشد، push رد نشود.
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
           fi
-          git commit -m "Auto-update news: $(date +'%Y-%m-%d %H:%M:%S')"
-          git push origin HEAD:main
