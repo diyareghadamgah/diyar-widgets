@@ -5,8 +5,7 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
-# جلوگیری از اجرای همزمان چند run (که می‌تواند باعث push شکست‌خورده یا
-# commit های تداخلی شود) — اجرای بعدی صبر می‌کند تا اجرای فعلی تمام شود.
+# جلوگیری از اجرای همزمان چند run
 concurrency:
   group: update-news
   cancel-in-progress: false
@@ -14,10 +13,7 @@ concurrency:
 permissions:
   contents: write
 
-# ⚠️ diyar-news یک زیرپوشه داخل مخزن diyar-widgets است، نه یک مخزن
-# مستقل. این فایل باید در ریشه‌ی diyar-widgets قرار بگیرد
-# (.github/workflows/update-news.yml) و همه‌ی دستورات باید داخل
-# زیرپوشه‌ی diyar-news اجرا شوند.
+# diyar-news یک زیرپوشه داخل مخزن diyar-widgets است.
 defaults:
   run:
     working-directory: diyar-news
@@ -54,9 +50,4 @@ jobs:
             exit 0
           fi
           git commit -m "Auto-update news: $(date +'%Y-%m-%d %H:%M:%S')"
-          # ابتدا تغییرات احتمالی جدید روی main را می‌گیریم تا در صورت push
-          # موازی از یک اجرای دیگر، push رد نشود.
-          # ⚠️ اگر branch اصلی مخزن شما «master» است نه «main»، هر دو خط
-          # زیر را به «master» تغییر دهید.
-          git pull --rebase origin main
           git push origin HEAD:main
