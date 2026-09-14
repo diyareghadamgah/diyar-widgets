@@ -20,16 +20,19 @@ Aggregator خودکار اخبار ایران و جهان از ۱۷ منبع م�
 - **صدای آمریکا فارسی** (VOA Persian)
 - **اطلاعات** (Ettela'at)
 
+> در حال حاضر ۱۳ منبع بالا **فعال** هستند. ۴ منبع بین‌المللی (بی‌بی‌سی فارسی، دویچه‌وله فارسی، رادیو فردا، صدای آمریکا فارسی) عمداً در `fetch-news.js` کامنت شده‌اند و با برداشتن `/* */` قابل فعال‌سازی‌اند.
+
 اخبار به‌صورت خودکار در ۷ دسته (سیاسی، اقتصادی، ورزشی، فرهنگی و هنری، اجتماعی، علمی و فناوری، بین‌الملل) دسته‌بندی می‌شوند.
 
 ## 📁 خروجی‌ها
 
 | فایل | توضیح |
 |------|--------|
-| `index.html` | صفحه اصلی با نمایش کامل اخبار (به‌طور خودکار تولید می‌شود) |
-| `news.html` | کپی از `index.html` برای سازگاری |
-| `news.json` | داده‌های ساختاریافته برای مصرف API/ویجت‌ها |
+| `news.json` | داده‌های ساختاریافته اخبار؛ توسط `fetch-news.js` تولید می‌شود |
+| `news-summary.json` | خلاصه‌ی هر خبر؛ توسط `generate-summaries.js` از روی `news.json` تولید می‌شود |
+| `index.html` / `news.html` | صفحات نمایش اخبار؛ فایل‌های ثابتی هستند و **به‌طور خودکار بازتولید نمی‌شوند** (تنها `news.json`/`news-summary.json` را در runtime می‌خوانند) |
 | `news-ticker.html` | نوار اخبار متحرک برای iframe (مثلاً Blogfa) |
+| `rubika-news.html` | ابزار انتخاب و ساخت متن نهایی برای انتشار در روبیکا (از `news.json` و `news-summary.json` می‌خواند) |
 | `news.js` + `news.css` | قالب جایگزین (کارت‌محور با تصویر/جستجو) — در حال حاضر توسط هیچ صفحه‌ای استفاده نمی‌شود؛ برای توسعه‌ی آینده نگه‌داشته شده و باگ‌های آن رفع شده است. |
 
 ## ⏰ بروزرسانی
@@ -48,7 +51,7 @@ Aggregator خودکار اخبار ایران و جهان از ۱۷ منبع م�
 فایل `news.json` از طریق CORS-friendly `raw.githubusercontent.com` قابل fetch از هر دامنه‌ای است:
 
 ```
-https://raw.githubusercontent.com/maghool51/diyar-widgets/main/diyar-news/news.json
+https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/diyar-news/news.json
 ```
 
 ساختار خروجی:
@@ -78,7 +81,7 @@ https://raw.githubusercontent.com/maghool51/diyar-widgets/main/diyar-news/news.j
 
 ## 🔒 امنیت
 
-- تمام خروجی‌های HTML (`index.html`, `news.html`, `news-ticker.html`) قبل از انتشار، عنوان/منبع/لینک خبر را escape می‌کنند.
+- تمام خروجی‌های HTML (`index.html`, `news.html`, `news-ticker.html`, `rubika-news.html`) قبل از انتشار، عنوان/منبع/لینک خبر را escape می‌کنند.
 - لینک‌ها با `new URL()` اعتبارسنجی می‌شوند و فقط پروتکل‌های `http`/`https` پذیرفته می‌شوند.
 - هیچ کلید API یا Secret در کد یا خروجی‌ها ذخیره نمی‌شود؛ تنها Secret مصرفی، `GITHUB_TOKEN` پیش‌فرض GitHub Actions است که در Runner تزریق می‌شود و در کد ظاهر نمی‌شود.
 
@@ -97,6 +100,13 @@ diyar-widgets/                      ← ریشه‌ی مخزن
 ```
 
 ⚠️ چون GitHub Actions فقط workflow های داخل `.github/workflows/` در **ریشه‌ی مخزن** را اجرا می‌کند، فایل workflow این پروژه باید در `diyar-widgets/.github/workflows/update-news.yml` قرار بگیرد. برای همین در آن فایل از `working-directory: diyar-news` استفاده شده تا دستورات (`npm ci`, `node fetch-news.js`) داخل پوشه‌ی درست اجرا شوند.
+
+## 🌐 GitHub Pages
+
+```
+https://diyareghadamgah.github.io/diyar-widgets/diyar-news/
+https://diyareghadamgah.github.io/diyar-widgets/diyar-news/rubika-news.html
+```
 
 ## 🛠 توسعه محلی
 
