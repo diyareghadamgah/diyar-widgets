@@ -3,20 +3,18 @@ name: Publish Visitor Stats
 # ==============================================================================
 # Reads the live aggregate from the Cloudflare Worker (worker/) and commits it
 # to visitor/stats.json — the exact file GitHub Pages serves and the Blogfa
-# template's embedded widget reads. Uses the workflow's own built-in
-# GITHUB_TOKEN (auto-scoped to this repo, short-lived) to push the commit,
-# so no long-lived Personal Access Token ever has to be handed to anything
-# outside GitHub.
+# template's embedded widget reads.
+#
+# `online` is intentionally NOT used to decide whether a commit is needed.
+# Live online status should be read directly from the Worker's /online endpoint.
 # ==============================================================================
 
 "on":
   schedule:
-    # Every 10 minutes. GitHub documents scheduled workflows as best-effort —
-    # actual runs can lag behind this, especially for low-activity public
-    # repos. Treat the resulting update frequency as "at least every ~10-30
-    # minutes in practice," not a real-time guarantee.
+    # Every 10 minutes. GitHub scheduled workflows are best-effort.
     - cron: '*/10 * * * *'
-  workflow_dispatch: {} # lets you trigger a manual run from the Actions tab
+
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -28,6 +26,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -38,71 +37,125 @@ jobs:
           WORKER_URL: ${{ secrets.DIYAR_WORKER_URL }}
         run: |
           set -euo pipefail
+
           curl -sf \
             -H "X-Publish-Secret: ${PUBLISH_SECRET}" \
             "${WORKER_URL}/aggregate" \
             -o /tmp/new-stats.json
+
           echo "Fetched aggregate from the Worker:"
           cat /tmp/new-stats.json
 
-      - name: Validate the fetched aggregate before comparing or writing anything
+      - name: Validate fetched aggregate
         run: |
           node -e "
             const fs = require('fs');
-            const stats = JSON.parse(fs.readFileSync('/tmp/new-stats.json', 'utf8'));
-            const requiredKeys = ['today','yesterday','week','month','total','online','updatedAt'];
+
+            const stats = JSON.parse(
+              fs.readFileSync('/tmp/new-stats.json', 'utf8')
+            );
+
+            const requiredKeys = [
+              'today',
+              'yesterday',
+              'week',
+              'month',
+              'total',
+              'online',
+              'updatedAt'
+            ];
+
             for (const key of requiredKeys) {
-              if (!(key in stats)) throw new Error('Missing required key: ' + key);
+              if (!(key in stats)) {
+                throw new Error('Missing required key: ' + key);
+              }
             }
-            console.log('Fetched aggregate is valid JSON with the expected shape.');
+
+            console.log(
+              'Fetched aggregate is valid JSON with the expected shape.'
+            );
           "
 
-      # Only the five primary statistics decide whether anything changed.
-      # `updatedAt` is NEVER part of this comparison — comparing it would
-      # mean every single run "changes" (the Worker always computes a
-      # fresh timestamp), which defeats the point of this step entirely.
-      # If none of the five primary values differ from what's already committed,
-      # visitor/stats.json is left completely untouched — including its
-      # existing updatedAt — so the commit step below correctly sees no
-      # diff and skips.
-      - name: Write visitor/stats.json only if a real stat actually changed
+      - name: Update visitor/stats.json only when real statistics changed
         run: |
           node -e "
             const fs = require('fs');
-            const STAT_KEYS = ['today', 'yesterday', 'week', 'month', 'total'];
 
-            const newStats = JSON.parse(fs.readFileSync('/tmp/new-stats.json', 'utf8'));
+            // These five values represent the persistent visitor statistics.
+            // `online` is deliberately excluded because it is live data and
+            // must not create a Git commit every time its value changes.
+            const STAT_KEYS = [
+              'today',
+              'yesterday',
+              'week',
+              'month',
+              'total'
+            ];
+
+            const newStats = JSON.parse(
+              fs.readFileSync('/tmp/new-stats.json', 'utf8')
+            );
 
             let oldStats = null;
+
             try {
-              oldStats = JSON.parse(fs.readFileSync('visitor/stats.json', 'utf8'));
+              oldStats = JSON.parse(
+                fs.readFileSync('visitor/stats.json', 'utf8')
+              );
             } catch (error) {
-              // File missing or not valid JSON yet (e.g. first-ever run) —
-              // there is nothing real to compare against, so this counts
-              // as a genuine change, not a fabricated one.
               oldStats = null;
             }
 
             const changed =
               !oldStats ||
-              STAT_KEYS.some((key) => Number(oldStats[key]) !== Number(newStats[key]));
+              STAT_KEYS.some(
+                (key) =>
+                  Number(oldStats[key]) !== Number(newStats[key])
+              );
 
             if (changed) {
-              console.log('At least one real stat changed — writing the new snapshot (with its fresh updatedAt).');
-              fs.writeFileSync('visitor/stats.json', JSON.stringify(newStats, null, 2) + '\n');
+              console.log(
+                'At least one persistent visitor statistic changed.'
+              );
+
+              console.log(
+                'Writing new stats.json with fresh updatedAt.'
+              );
+
+              fs.writeFileSync(
+                'visitor/stats.json',
+                JSON.stringify(newStats, null, 2) + '\\n'
+              );
             } else {
-              console.log('None of the 6 real stats changed — leaving visitor/stats.json untouched (updatedAt preserved).');
+              console.log(
+                'None of the 5 persistent visitor statistics changed.'
+              );
+
+              console.log(
+                'Leaving visitor/stats.json untouched.'
+              );
+
+              console.log(
+                'Existing updatedAt is preserved.'
+              );
+
+              console.log(
+                'Current online value is intentionally ignored for commits.'
+              );
             }
           "
 
-      - name: Commit and push if visitor/stats.json actually changed
+      - name: Commit and push if visitor/stats.json changed
         run: |
           set -euo pipefail
+
           git config user.name "diyar-stats-bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add visitor/stats.json
+
           if git diff --cached --quiet; then
-            echo "No change in visitor/stats.json — nothing to commit."
+            echo "No persistent visitor-stat change — nothing to commit."
           else
             git commit -m "chore: update visitor stats.json"
             git push
