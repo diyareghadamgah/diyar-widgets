@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-17T23:02:57.647Z",
-  "lastUpdatePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۲",
+  "lastUpdate": "2026-09-17T23:32:36.029Z",
+  "lastUpdatePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۳۲",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,65 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "سقوط یک فروند جنگنده اف-۱۶ در شمال میشیگان؛ گارد ملی آمریکا تأیید کرد",
+      "link": "https://www.mehrnews.com/news/6950331/%D8%B3%D9%82%D9%88%D8%B7-%DB%8C%DA%A9-%D9%81%D8%B1%D9%88%D9%86%D8%AF-%D8%AC%D9%86%DA%AF%D9%86%D8%AF%D9%87-%D8%A7%D9%81-%DB%B1%DB%B6-%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7%D9%84-%D9%85%DB%8C%D8%B4%DB%8C%DA%AF%D8%A7%D9%86-%DA%AF%D8%A7%D8%B1%D8%AF-%D9%85%D9%84%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AA%D8%A3%DB%8C%DB%8C%D8%AF",
+      "date": "2026-09-17T23:21:21.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۲۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "گارد ملی آمریکا سقوط یک فروند جنگنده «اف-۱۶» بر فراز مناطق شمالی ایالت میشیگان را تأیید کرد."
+    },
+    {
+      "title": "گازوئیل ارزان؛ یارانه ایرانی در جیب همسایه خارجی!/ کامیون‌ها بار می‌برند یا یارانه؟",
+      "link": "https://www.tabnak.ir/fa/news/1394819/%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A7%D8%B1%D8%B2%D8%A7%D9%86-%DB%8C%D8%A7%D8%B1%D8%A7%D9%86%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%AC%DB%8C%D8%A8-%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%DA%A9%D8%A7%D9%85%DB%8C%D9%88%D9%86-%D9%87%D8%A7-%D8%A8%D8%A7%D8%B1-%D9%85%DB%8C-%D8%A8%D8%B1%D9%86%D8%AF-%DB%8C%D8%A7-%DB%8C%D8%A7%D8%B1%D8%A7%D9%86%D9%87",
+      "date": "2026-09-17T23:08:42.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۸",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "فاصله قیمت سوخت بخصوص گازوئیل با کشور‌های همسایه وقتی از یک سیاست حمایتی، رانت بسازد باعث می‌شود بخشی از یارانه انرژی در قالب قاچاق سوخت یا کالا‌های صادراتی از کشور خارج شود."
+    },
+    {
+      "title": "رویدادها و اتفاقات، بحران نیستند؛ نحوه مواجهه می‌تواند بحران‌ساز باشد",
+      "link": "https://www.mehrnews.com/news/6950335/%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF%D9%87%D8%A7-%D9%88-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D8%A7%D8%AA-%D8%A8%D8%AD%D8%B1%D8%A7%D9%86-%D9%86%DB%8C%D8%B3%D8%AA%D9%86%D8%AF-%D9%86%D8%AD%D9%88%D9%87-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D9%87-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D8%AD%D8%B1%D8%A7%D9%86-%D8%B3%D8%A7%D8%B2",
+      "date": "2026-09-17T23:05:23.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۵",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "رئیس دانشکده علوم اجتماعی، ارتباطات و رسانه دانشگاه آزاد اسلامی تصریح کرد: رویدادها و اتفاقات، بحران نیستند بلکه نحوه مواجهه می‌تواند بحران‌ساز باشد."
+    },
+    {
+      "title": "وزیر خارجه روسیه: گفت‌وگو با آمریکا نتیجه ملموسی نداشته است",
+      "link": "https://www.irna.ir/news/86267040/%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88-%D8%A8%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%86%D8%AA%DB%8C%D8%AC%D9%87-%D9%85%D9%84%D9%85%D9%88%D8%B3%DB%8C-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%D9%87-%D8%A7%D8%B4%D8%AA",
+      "date": "2026-09-17T23:03:48.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۳",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- سرگئی لاوروف وزیر خارجه روسیه اظهار کرد که گفت‌وگو با آمریکا تاکنون هیچ‌گونه تاثیر ملموسی برای روسیه نداشته و انتظار هم نمی‌رود که در آینده نتیجه‌ای داشته باشد."
+    },
+    {
+      "title": "۲۰۱ شب خونخواهی امام شهید در همدان",
+      "link": "https://www.mehrnews.com/photo/6950337/%DB%B2%DB%B0%DB%B1-%D8%B4%D8%A8-%D8%AE%D9%88%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%B1-%D9%87%D9%85%D8%AF%D8%A7%D9%86",
+      "date": "2026-09-17T23:02:22.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "سه راهکار یک متخصص مغز و اعصاب برای ترک عادت‌های بد",
+      "link": "https://www.asriran.com/fa/news/1192230/%D8%B3%D9%87-%D8%B1%D8%A7%D9%87%DA%A9%D8%A7%D8%B1-%DB%8C%DA%A9-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5-%D9%85%D8%BA%D8%B2-%D9%88-%D8%A7%D8%B9%D8%B5%D8%A7%D8%A8-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B1%DA%A9-%D8%B9%D8%A7%D8%AF%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A8%D8%AF",
+      "date": "2026-09-17T23:00:01.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "عادت‌های نامطلوب نتیجه ضعف اراده نیستند و با شناسایی محرک‌ها، کوچک‌ کردن هدف و جایگزین‌ کردن پاداش می‌توان این چرخه‌های ناسالم را تغییر داد."
+    },
     {
       "title": "رتبه دوم تولید ناخالص، رتبه اول بیکاری را دارد",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3234439",
@@ -420,16 +479,6 @@
       "rssDescription": "قم- استاد حوزه علمیه با تجلیل از شخصیت علمی و اخلاقی آیت‌الله محفوظی، وی را عالمی ربانی و فقیهی پارسا دانست."
     },
     {
-      "title": "لاهیجانی ها هم‌نوا با مقاومت در دویست‌ و یکمین شب",
-      "link": "https://www.mehrnews.com/news/6950322/%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D9%87%D9%85-%D9%86%D9%88%D8%A7-%D8%A8%D8%A7-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%DB%8C%DA%A9%D9%85%DB%8C%D9%86-%D8%B4%D8%A8",
-      "date": "2026-09-17T21:34:39.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۳۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "لاهیجان- در این فیلم، دویست و یکمین راهپیمایی شبانه مردم لاهیجان را مشاهده می کنید که نوای مقاومت را سر می دهند."
-    },
-    {
       "title": "یک نفتکش با پرچم توگو مورد اصابت قرار گرفت/ هشدار سپاه درباره عبور غیرقانونی از تنگه هرمز",
       "link": "https://www.isna.ir/news/1405062718064/%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%A8%D8%A7-%D9%BE%D8%B1%DA%86%D9%85-%D8%AA%D9%88%DA%AF%D9%88-%D9%85%D9%88%D8%B1%D8%AF-%D8%A7%D8%B5%D8%A7%D8%A8%D8%AA-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D9%BE%D8%A7%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87",
       "date": "2026-09-17T21:33:43.000Z",
@@ -500,16 +549,6 @@
       "rssDescription": "تهران-ایرنا- فرمانده نیروی دریایی سپاه پاسداران انقلاب اسللامی در اطلاعیه ای اعلام کرد: نفتکش متخلف ترند با پرچم کشور توگو مورد اصابت قرار گرفت و پس از بروز حریق متوقف شد."
     },
     {
-      "title": "حمله هوایی رژیم اسرائیل به جنوب  لبنان",
-      "link": "https://www.mehrnews.com/news/6950316/%D8%AD%D9%85%D9%84%D9%87-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
-      "date": "2026-09-17T21:27:03.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۲۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "منابع خبری گزارش دادند که در ادامه نقض آتش‌بس در لبنان، دو شهرک در جنوب این کشور هدف حمله رژیم اسرائیل قرار گرفته است."
-    },
-    {
       "title": "فرمانده سپاه تهران: آمریکایی‌ها و رژیم صهیونیستی هستند که بیشتر تحت فشار قرار می‌گیرند/ امروز مردم دنیا تهران را به عنوان مرکز قدرت الهی می‌دانند",
       "link": "https://www.khabaronline.ir/news/2275914/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%D8%B3%D9%BE%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%87%D8%A7-%D9%88-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D9%87%D8%B3%D8%AA%D9%86%D8%AF-%DA%A9%D9%87-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1",
       "date": "2026-09-17T21:27:00.000Z",
@@ -538,16 +577,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "فرمانده نیروی دریایی سپاه در پیامی با بیان اینکه عبور غیر قانونی از تنگه هرمز جز نابودی شناور متخلف نتیجه‌ای نخواهد داشت، اعلام کرد: نفتکش متخلف ترند با پرچم کشور توگو مورد اصابت قرار گرفت و پس از بروز حریق متوقف شد."
-    },
-    {
-      "title": "سلام لنگرودی ها در شب دویست و یکم به جبهه مقاومت",
-      "link": "https://www.mehrnews.com/news/6950302/%D8%B3%D9%84%D8%A7%D9%85-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%DB%8C%DA%A9%D9%85-%D8%A8%D9%87-%D8%AC%D8%A8%D9%87%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA",
-      "date": "2026-09-17T21:21:56.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۲۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "لنگرود- لنگرودی‌ها در شب دویست‌ و یکم تجمعات شبانه، با حضور در صحنه و سردادن شعارهای حمایتی، بار دیگر بر پشتیبانی خود از جبهه مقاومت و ایستادگی در برابر دشمنان تأکید کردند."
     },
     {
       "title": "آغاز موج بازگشت مسافران از امروز/ اعلام ۵ استان پر تصادف در تابستان",
@@ -886,7 +915,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/CQHTj71yg-f91pWgWFprQ7h6aPB2x4s1beOY5jp7w-WiqsCqsX3uSgq0RUj3Kcv_C5IkyQI2Cl4bqgmi7CeyXTPryFVjV7TiqKue7Q9KzDddJJPJZRdWJT_5QMGr1SfHbwMUbPH1ecTjaBK62dgWzSJSeZARncqOapeltP_iY0ETPTtITBc4oBr1W0wh2V5o/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/tFxrS59ylh3HEfAbe6an4MJv32VBiSJuoxi45xEgHYAJIVE25Y3EXjOWNBVNz1F5jJzbJvJKo6TAQVj3Yr_8IpN49CCbs11BFtF_6NQe3UkdJCFWd7bjQVbn8CQyWB0hNLBlyustmIhEwe2OhrfEHum7JKfl4Hg_K0vwSc5sjA_7-k7VEoPn-WfX5HPdxDaL/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۲۷ شهریور ۱۴۰۵",
@@ -896,7 +925,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/J9rwuis4PLwJ4iuWGdX5ZPHZ1YTA1Dq0aRx--VCeyXJNxi3FK64pDp70d5tmlGrGt-Rallje3A5rCh2608e-9fE1hfEEWrv0bw5jh18qzZ2QLmJqHRIdlob6mkDu4iB7sAA-xW14dAIIVwD3jnCERalH-YpS9mTl5r6yx_sPV4c19D6quihX-KUCllolsmi7/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/4MKpFDpcQigyP_xXwUhB8iDXVOwucTT1TxhPFFYPhHslNY_WmLSNzIZG_-xU7mEmg4Tv_aiTE4c3ToMEmpyAMVqCvGIS7dlnC2XDExbEhgnNWpfu_7pug4uaeQ8zBTKhmFUB-Dq_4EyBJOuhcE7CFSyAAx_WmpiQV8fsxNBSBRiv2IEpexbfx2IbQUJUc2Ke/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۲۷ شهریور ۱۴۰۵",
@@ -906,7 +935,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/RFPuu7PZBFmBDJKz-4d_jSOZmmzYHgW9Mw3jVxVBJPvfUqTm6l-UTzuCaTK-ZP5OjJL244Cq8dtzYWeFr4xTAj6Qalv3eJoyPKQHoWQxzjofHjvHNZaZVMgJNUvjPXdtVo36KITJDIaI_Wu4eEOj83WzhuCWzAbwbQfz2g5XlUmF6ToiQ_lr0SMVhxZ186ER/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/OnuAlXCKLzd2Oi6Rt4Ry4BNOee1pxvhsxiIs1r-IkoMcOP87pg9RGdsVTi6hj6ah2AaPlaL1kbDQXm9fSxeFmgiUv530JUZGy-J_erbLtyDd5z9e00-Sk8bEgYeO6dMYIkV-UbsDl9WObqo1QzGYocUnhecDo1VbPlFR_NddnsuUPb6VS5chrOXr2bjx5izX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۲۷ شهریور + جدول",
@@ -916,7 +945,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/9An7Ml0MGncOYc1uqxfMZb4TasQAIPmMIaSlcASyWIIJBtvBDXL9kQ-zstbDDy0RRC-0QE4U7Vy7Ex0-YO22rHpT2OxC1YZrCYnEeuqfv4AdaTEEUzt9Qvarr6mAG8cbUA_MnoF8FDzV8ooK7jaU5mLcvTgGOHk44vzGehbnGjowLH5dtup5-FJ7uD2EH3W0/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/GvY5F_ZSgL67BVz-SM7A14z3wqmwEKNVIarYo519Z9SBBcfmpvfwjd1dp3kUoglhac9DswT1qkC0LD-mHN7bnYGD5XVZ_isCoJAJRQ-a6nRfexpPfoRdKXM-WlA3wSadKVwBIPIQXvte27Q_hHIe9leOA05fWQ2__lMbPB-ciTS33B1YYvUsxyaAIQW5Gcaw/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۲۷ شهریور ۱۴۰۵",
@@ -926,7 +955,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/1Uz2WKOHfCB4c7pNkI9NvXnnF_3yfHXtI_miYNGQuWE5WCA5AD9y6A_-75izmmw7gFKM4YXmPi4gqPOMQRAF809iI4R0tJ7BZI1iJTWWIV7yWP-qqb6IkPuen6GweSZ61NLbmQU4Lm5gZ5EblbLua5-tOw0GCjHBg95rPQ3lcW371fuBfc5G8KNQ0u6KGmKY/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/iUBTneNA4O8BelJcSwr9BV5joGSzWIUA7eIUDAeE9RkXXdeTTcMNJr316iPOi8PPQlr78ion_476ZFlbpPCAQJoAZAOI5UHBi7L7UZSs5awAu64jgMR0CzLsblvl4Jdb88L2ryrrKssQf4GzG3L8u0PHOxikcbZW2r0L32RYSANTD3YeAwhV2sMTaAUOcpwh/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "آخرین جزئیات قتل‌عام خانوادگی به خاطر ارثیه از زبان خود قاتل/ ویدئو",
@@ -979,6 +1008,16 @@
       "rssDescription": "برنامه تلویزیونی «صبحانه ایرانی» در ویدئویی آموزشی، راهکار‌های عملی برای پیشگیری از ابتلا به اگزما و مراقبت‌های پوستی را بررسی کرد."
     },
     {
+      "title": "وقوع حادثه امنیتی در تنگه هرمز",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3245973",
+      "date": "2026-09-17T20:25:07.000Z",
+      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۵",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "آژانس عملیات تجارت دریایی انگلیس (UKMTO) پنجشنبه شب اعلام کرد که گزارشی مبنی بر وقوع یک حادثه امنیتی در تنگه هرمز در فاصله ۱۶ مایل دریایی شمال شرقی «خصب» عمان دریافت کرده است."
+    },
+    {
       "title": "قالیباف: وتوی چین و روسیه سوءاستفاده سیاسی از شورای امنیت را رد کرد",
       "link": "https://www.tasnimnews.ir/fa/news/1405/06/26/3699425/%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81-%D9%88%D8%AA%D9%88%DB%8C-%DA%86%DB%8C%D9%86-%D9%88-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%B3%D9%88%D8%A1%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D8%B1%D8%A7-%D8%B1%D8%AF-%DA%A9%D8%B1%D8%AF",
       "date": "2026-09-17T20:23:57.000Z",
@@ -987,46 +1026,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "رئیس مجلس گفت:وتوی پیشنویس قطعنامهٔ غیرقانونی آمریکا توسط چین و روسیه،مانع سو استفاده سیاسی از شورای امنیت شد."
-    },
-    {
-      "title": "حمایت نماینده تندرو مجلس از خروج ایران از NPT / سر بریده ترامپ و نتانیاهو جبران نخ سوخته عبای قائد شهیدمان هم نمی‌شود",
-      "link": "https://www.khabaronline.ir/news/2275959/%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%D8%AA%D9%86%D8%AF%D8%B1%D9%88-%D9%85%D8%AC%D9%84%D8%B3-%D8%A7%D8%B2-%D8%AE%D8%B1%D9%88%D8%AC-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B2-NPT-%D8%B3%D8%B1-%D8%A8%D8%B1%DB%8C%D8%AF%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE",
-      "date": "2026-09-17T20:23:00.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۳",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "کامران غضنفری نوشت: ‏سر بریده ترامپ پدوفیل و نتانیاهوی کودک‌کش، حتی جبران نخ سوخته عبای قائد شهیدمان را نخواهد کرد."
-    },
-    {
-      "title": "تاکیدسرلشکرصفوی برناتوانی جنگ صهیونیستی یا آمریکایی درمقابل“بصیرتِ مردمی”و“اقتدارِ ولایی\"",
-      "link": "https://www.irna.ir/news/86266998/%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF%D8%B3%D8%B1%D9%84%D8%B4%DA%A9%D8%B1%D8%B5%D9%81%D9%88%DB%8C-%D8%A8%D8%B1%D9%86%D8%A7%D8%AA%D9%88%D8%A7%D9%86%DB%8C-%D8%AC%D9%86%DA%AF-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%DB%8C%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%A8%D8%B5%DB%8C%D8%B1%D8%AA",
-      "date": "2026-09-17T20:22:44.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۲",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران-ایرنا- سرلشکر رحیم صفوی در پیامی اعلام کرد: هیچ جنگِ تحمیلیِ نوین صهیونیستی یا آمریکایی، نمی‌تواند بر سپری که از “بصیرتِ مردمی” و “اقتدارِ ولایی” ساخته شده، برتری یابد."
-    },
-    {
-      "title": "پیش‌ بینی هواشناسی مشهد و خراسان رضوی/ وزش باد پدیده جوی غالب",
-      "link": "https://www.imna.ir/news/1005287/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D9%87%D9%88%D8%A7%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D9%85%D8%B4%D9%87%D8%AF-%D9%88-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D9%88%D8%B2%D8%B4-%D8%A8%D8%A7%D8%AF-%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%AC%D9%88%DB%8C-%D8%BA%D8%A7%D9%84%D8%A8",
-      "date": "2026-09-17T20:22:04.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۲",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "کارشناس هواشناسی استان خراسان‌ رضوی به تشریح شرایط آب‌وهوایی این استان در ۲۴ ساعت آینده پرداخت."
-    },
-    {
-      "title": "داور ملی کشتی درگذشت",
-      "link": "https://www.irna.ir/news/86266993/%D8%AF%D8%A7%D9%88%D8%B1-%D9%85%D9%84%DB%8C-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA",
-      "date": "2026-09-17T20:20:54.000Z",
-      "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۰",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "تهران- ایرنا - داور ملی کشتی ایران ساعتی پس از قضاوت مسابقات لیگ برتر کشتی آزاد جوانان بر اثر سانحه تصادف درگذشت."
     }
   ],
   "categorizedNews": {
@@ -1123,6 +1122,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "گازوئیل ارزان؛ یارانه ایرانی در جیب همسایه خارجی!/ کامیون‌ها بار می‌برند یا یارانه؟",
+        "link": "https://www.tabnak.ir/fa/news/1394819/%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A7%D8%B1%D8%B2%D8%A7%D9%86-%DB%8C%D8%A7%D8%B1%D8%A7%D9%86%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%AC%DB%8C%D8%A8-%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%DA%A9%D8%A7%D9%85%DB%8C%D9%88%D9%86-%D9%87%D8%A7-%D8%A8%D8%A7%D8%B1-%D9%85%DB%8C-%D8%A8%D8%B1%D9%86%D8%AF-%DB%8C%D8%A7-%DB%8C%D8%A7%D8%B1%D8%A7%D9%86%D9%87",
+        "date": "2026-09-17T23:08:42.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۸",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "فاصله قیمت سوخت بخصوص گازوئیل با کشور‌های همسایه وقتی از یک سیاست حمایتی، رانت بسازد باعث می‌شود بخشی از یارانه انرژی در قالب قاچاق سوخت یا کالا‌های صادراتی از کشور خارج شود."
+      },
       {
         "title": "رتبه دوم تولید ناخالص، رتبه اول بیکاری را دارد",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3234439",
@@ -1274,16 +1283,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "رضا مهربان، از داوران درجه ملی کشتی ایران ساعتی پس از قضاوت در سالن شهدای هفتم تیر تهران، در سانحه تصادف رانندگی‌ دار فانی را وداع گفت."
-      },
-      {
-        "title": "داور ملی کشتی درگذشت",
-        "link": "https://www.irna.ir/news/86266993/%D8%AF%D8%A7%D9%88%D8%B1-%D9%85%D9%84%DB%8C-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA",
-        "date": "2026-09-17T20:20:54.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۰",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "تهران- ایرنا - داور ملی کشتی ایران ساعتی پس از قضاوت مسابقات لیگ برتر کشتی آزاد جوانان بر اثر سانحه تصادف درگذشت."
       }
     ],
     "فرهنگی و هنری": [
@@ -1420,6 +1419,16 @@
     ],
     "اجتماعی": [
       {
+        "title": "رویدادها و اتفاقات، بحران نیستند؛ نحوه مواجهه می‌تواند بحران‌ساز باشد",
+        "link": "https://www.mehrnews.com/news/6950335/%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF%D9%87%D8%A7-%D9%88-%D8%A7%D8%AA%D9%81%D8%A7%D9%82%D8%A7%D8%AA-%D8%A8%D8%AD%D8%B1%D8%A7%D9%86-%D9%86%DB%8C%D8%B3%D8%AA%D9%86%D8%AF-%D9%86%D8%AD%D9%88%D9%87-%D9%85%D9%88%D8%A7%D8%AC%D9%87%D9%87-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D8%AD%D8%B1%D8%A7%D9%86-%D8%B3%D8%A7%D8%B2",
+        "date": "2026-09-17T23:05:23.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۵",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "رئیس دانشکده علوم اجتماعی، ارتباطات و رسانه دانشگاه آزاد اسلامی تصریح کرد: رویدادها و اتفاقات، بحران نیستند بلکه نحوه مواجهه می‌تواند بحران‌ساز باشد."
+      },
+      {
         "title": "کشف جسد بانوی مفقود شده در شهرستان لامرد",
         "link": "https://www.irna.ir/news/86266989/%DA%A9%D8%B4%D9%81-%D8%AC%D8%B3%D8%AF-%D8%A8%D8%A7%D9%86%D9%88%DB%8C-%D9%85%D9%81%D9%82%D9%88%D8%AF-%D8%B4%D8%AF%D9%87-%D8%AF%D8%B1-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%84%D8%A7%D9%85%D8%B1%D8%AF",
         "date": "2026-09-17T22:50:16.000Z",
@@ -1538,20 +1547,30 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "اجساد کشف شده مربوط به یک مادر، دو دختر و دو پسر خانواده می باشد. سال گذشته دو برادر خانواده که پس از سرقت طلاهای میلیاردی به پلیس مراجعه کرده بودند مورد ظن کارآگاهان قرار می گیرند. در ادامه تحقیقات، دو مرد به قتل پنج عضو خانواده اعتراف کردند و انگیزه خود را دست یافتن به ارثیه عنوان کردند."
-      },
-      {
-        "title": "پیش‌ بینی هواشناسی مشهد و خراسان رضوی/ وزش باد پدیده جوی غالب",
-        "link": "https://www.imna.ir/news/1005287/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D9%87%D9%88%D8%A7%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D9%85%D8%B4%D9%87%D8%AF-%D9%88-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D9%88%D8%B2%D8%B4-%D8%A8%D8%A7%D8%AF-%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%AC%D9%88%DB%8C-%D8%BA%D8%A7%D9%84%D8%A8",
-        "date": "2026-09-17T20:22:04.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۲",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "کارشناس هواشناسی استان خراسان‌ رضوی به تشریح شرایط آب‌وهوایی این استان در ۲۴ ساعت آینده پرداخت."
       }
     ],
     "علمی و فناوری": [],
     "بین‌الملل": [
+      {
+        "title": "سقوط یک فروند جنگنده اف-۱۶ در شمال میشیگان؛ گارد ملی آمریکا تأیید کرد",
+        "link": "https://www.mehrnews.com/news/6950331/%D8%B3%D9%82%D9%88%D8%B7-%DB%8C%DA%A9-%D9%81%D8%B1%D9%88%D9%86%D8%AF-%D8%AC%D9%86%DA%AF%D9%86%D8%AF%D9%87-%D8%A7%D9%81-%DB%B1%DB%B6-%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7%D9%84-%D9%85%DB%8C%D8%B4%DB%8C%DA%AF%D8%A7%D9%86-%DA%AF%D8%A7%D8%B1%D8%AF-%D9%85%D9%84%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AA%D8%A3%DB%8C%DB%8C%D8%AF",
+        "date": "2026-09-17T23:21:21.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۲۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "گارد ملی آمریکا سقوط یک فروند جنگنده «اف-۱۶» بر فراز مناطق شمالی ایالت میشیگان را تأیید کرد."
+      },
+      {
+        "title": "وزیر خارجه روسیه: گفت‌وگو با آمریکا نتیجه ملموسی نداشته است",
+        "link": "https://www.irna.ir/news/86267040/%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88-%D8%A8%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%86%D8%AA%DB%8C%D8%AC%D9%87-%D9%85%D9%84%D9%85%D9%88%D8%B3%DB%8C-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%D9%87-%D8%A7%D8%B4%D8%AA",
+        "date": "2026-09-17T23:03:48.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۳",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- سرگئی لاوروف وزیر خارجه روسیه اظهار کرد که گفت‌وگو با آمریکا تاکنون هیچ‌گونه تاثیر ملموسی برای روسیه نداشته و انتظار هم نمی‌رود که در آینده نتیجه‌ای داشته باشد."
+      },
       {
         "title": "صدای انفجار در اربیل و سلیمانیه عراق",
         "link": "https://www.tasnimnews.ir/fa/news/1405/06/27/3699448/%D8%B5%D8%AF%D8%A7%DB%8C-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%A8%DB%8C%D9%84-%D9%88-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C%D9%87-%D8%B9%D8%B1%D8%A7%D9%82",
@@ -1701,16 +1720,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "محافل اسرائیلی از اینکه عربستان سعودی در موضع بسیار ضعیف در برابر یمنی‌ها قرار گرفته به شدت نگران هستند."
-      },
-      {
-        "title": "حمله هوایی رژیم اسرائیل به جنوب  لبنان",
-        "link": "https://www.mehrnews.com/news/6950316/%D8%AD%D9%85%D9%84%D9%87-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
-        "date": "2026-09-17T21:27:03.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۲۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "منابع خبری گزارش دادند که در ادامه نقض آتش‌بس در لبنان، دو شهرک در جنوب این کشور هدف حمله رژیم اسرائیل قرار گرفته است."
       },
       {
         "title": "فرمانده سپاه تهران: آمریکایی‌ها و رژیم صهیونیستی هستند که بیشتر تحت فشار قرار می‌گیرند/ امروز مردم دنیا تهران را به عنوان مرکز قدرت الهی می‌دانند",
@@ -1873,6 +1882,16 @@
         "rssDescription": "دستیار و مشاور عالی فرمانده کل قوا با اشاره به تسلط انصار الله یمن بر باب‌المندب، عنوان کرد: این فتح مبارک را به ملت قهرمان یمن و فرماندهان انصارالله تبریک می‌گویم."
       },
       {
+        "title": "وقوع حادثه امنیتی در تنگه هرمز",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3245973",
+        "date": "2026-09-17T20:25:07.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۵",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "آژانس عملیات تجارت دریایی انگلیس (UKMTO) پنجشنبه شب اعلام کرد که گزارشی مبنی بر وقوع یک حادثه امنیتی در تنگه هرمز در فاصله ۱۶ مایل دریایی شمال شرقی «خصب» عمان دریافت کرده است."
+      },
+      {
         "title": "قالیباف: وتوی چین و روسیه سوءاستفاده سیاسی از شورای امنیت را رد کرد",
         "link": "https://www.tasnimnews.ir/fa/news/1405/06/26/3699425/%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81-%D9%88%D8%AA%D9%88%DB%8C-%DA%86%DB%8C%D9%86-%D9%88-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%B3%D9%88%D8%A1%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D8%B1%D8%A7-%D8%B1%D8%AF-%DA%A9%D8%B1%D8%AF",
         "date": "2026-09-17T20:23:57.000Z",
@@ -1881,29 +1900,28 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "رئیس مجلس گفت:وتوی پیشنویس قطعنامهٔ غیرقانونی آمریکا توسط چین و روسیه،مانع سو استفاده سیاسی از شورای امنیت شد."
-      },
-      {
-        "title": "حمایت نماینده تندرو مجلس از خروج ایران از NPT / سر بریده ترامپ و نتانیاهو جبران نخ سوخته عبای قائد شهیدمان هم نمی‌شود",
-        "link": "https://www.khabaronline.ir/news/2275959/%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%D8%AA%D9%86%D8%AF%D8%B1%D9%88-%D9%85%D8%AC%D9%84%D8%B3-%D8%A7%D8%B2-%D8%AE%D8%B1%D9%88%D8%AC-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B2-NPT-%D8%B3%D8%B1-%D8%A8%D8%B1%DB%8C%D8%AF%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE",
-        "date": "2026-09-17T20:23:00.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۳",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "کامران غضنفری نوشت: ‏سر بریده ترامپ پدوفیل و نتانیاهوی کودک‌کش، حتی جبران نخ سوخته عبای قائد شهیدمان را نخواهد کرد."
-      },
-      {
-        "title": "تاکیدسرلشکرصفوی برناتوانی جنگ صهیونیستی یا آمریکایی درمقابل“بصیرتِ مردمی”و“اقتدارِ ولایی\"",
-        "link": "https://www.irna.ir/news/86266998/%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF%D8%B3%D8%B1%D9%84%D8%B4%DA%A9%D8%B1%D8%B5%D9%81%D9%88%DB%8C-%D8%A8%D8%B1%D9%86%D8%A7%D8%AA%D9%88%D8%A7%D9%86%DB%8C-%D8%AC%D9%86%DA%AF-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%DB%8C%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%A8%D8%B5%DB%8C%D8%B1%D8%AA",
-        "date": "2026-09-17T20:22:44.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۰:۲۲",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران-ایرنا- سرلشکر رحیم صفوی در پیامی اعلام کرد: هیچ جنگِ تحمیلیِ نوین صهیونیستی یا آمریکایی، نمی‌تواند بر سپری که از “بصیرتِ مردمی” و “اقتدارِ ولایی” ساخته شده، برتری یابد."
       }
     ],
     "متفرقه": [
+      {
+        "title": "۲۰۱ شب خونخواهی امام شهید در همدان",
+        "link": "https://www.mehrnews.com/photo/6950337/%DB%B2%DB%B0%DB%B1-%D8%B4%D8%A8-%D8%AE%D9%88%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%B1-%D9%87%D9%85%D8%AF%D8%A7%D9%86",
+        "date": "2026-09-17T23:02:22.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
+        "title": "سه راهکار یک متخصص مغز و اعصاب برای ترک عادت‌های بد",
+        "link": "https://www.asriran.com/fa/news/1192230/%D8%B3%D9%87-%D8%B1%D8%A7%D9%87%DA%A9%D8%A7%D8%B1-%DB%8C%DA%A9-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5-%D9%85%D8%BA%D8%B2-%D9%88-%D8%A7%D8%B9%D8%B5%D8%A7%D8%A8-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B1%DA%A9-%D8%B9%D8%A7%D8%AF%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A8%D8%AF",
+        "date": "2026-09-17T23:00:01.000Z",
+        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۳:۰۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "عادت‌های نامطلوب نتیجه ضعف اراده نیستند و با شناسایی محرک‌ها، کوچک‌ کردن هدف و جایگزین‌ کردن پاداش می‌توان این چرخه‌های ناسالم را تغییر داد."
+      },
       {
         "title": "آیین افتتاح خانه پدری استاد شهریار در روستای خشکناب",
         "link": "https://www.mehrnews.com/photo/6950329/%D8%A2%DB%8C%DB%8C%D9%86-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%AE%D8%A7%D9%86%D9%87-%D9%BE%D8%AF%D8%B1%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF-%D8%B4%D9%87%D8%B1%DB%8C%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C-%D8%AE%D8%B4%DA%A9%D9%86%D8%A7%D8%A8",
@@ -1944,16 +1962,6 @@
         "rssDescription": "قم- استاد حوزه علمیه با تجلیل از شخصیت علمی و اخلاقی آیت‌الله محفوظی، وی را عالمی ربانی و فقیهی پارسا دانست."
       },
       {
-        "title": "لاهیجانی ها هم‌نوا با مقاومت در دویست‌ و یکمین شب",
-        "link": "https://www.mehrnews.com/news/6950322/%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D9%87%D9%85-%D9%86%D9%88%D8%A7-%D8%A8%D8%A7-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%DB%8C%DA%A9%D9%85%DB%8C%D9%86-%D8%B4%D8%A8",
-        "date": "2026-09-17T21:34:39.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۳۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "لاهیجان- در این فیلم، دویست و یکمین راهپیمایی شبانه مردم لاهیجان را مشاهده می کنید که نوای مقاومت را سر می دهند."
-      },
-      {
         "title": "نعیمه نظام دوست: مطالعه چیه بگو‌ فال",
         "link": "https://www.asriran.com/fa/news/1192388/%D9%86%D8%B9%DB%8C%D9%85%D9%87-%D9%86%D8%B8%D8%A7%D9%85-%D8%AF%D9%88%D8%B3%D8%AA-%D9%85%D8%B7%D8%A7%D9%84%D8%B9%D9%87-%DA%86%DB%8C%D9%87-%D8%A8%DA%AF%D9%88-%D9%81%D8%A7%D9%84",
         "date": "2026-09-17T21:32:33.000Z",
@@ -1962,16 +1970,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "خیلی خوبه من باهاش فال می گیرم."
-      },
-      {
-        "title": "سلام لنگرودی ها در شب دویست و یکم به جبهه مقاومت",
-        "link": "https://www.mehrnews.com/news/6950302/%D8%B3%D9%84%D8%A7%D9%85-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%DB%8C%DA%A9%D9%85-%D8%A8%D9%87-%D8%AC%D8%A8%D9%87%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA",
-        "date": "2026-09-17T21:21:56.000Z",
-        "datePersian": "۲۶ شهریور ۱۴۰۵، ۲۱:۲۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "لنگرود- لنگرودی‌ها در شب دویست‌ و یکم تجمعات شبانه، با حضور در صحنه و سردادن شعارهای حمایتی، بار دیگر بر پشتیبانی خود از جبهه مقاومت و ایستادگی در برابر دشمنان تأکید کردند."
       },
       {
         "title": "الیکا عبدالرزاقی: رو هوا زدمش",
@@ -2000,7 +1998,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/CQHTj71yg-f91pWgWFprQ7h6aPB2x4s1beOY5jp7w-WiqsCqsX3uSgq0RUj3Kcv_C5IkyQI2Cl4bqgmi7CeyXTPryFVjV7TiqKue7Q9KzDddJJPJZRdWJT_5QMGr1SfHbwMUbPH1ecTjaBK62dgWzSJSeZARncqOapeltP_iY0ETPTtITBc4oBr1W0wh2V5o/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/tFxrS59ylh3HEfAbe6an4MJv32VBiSJuoxi45xEgHYAJIVE25Y3EXjOWNBVNz1F5jJzbJvJKo6TAQVj3Yr_8IpN49CCbs11BFtF_6NQe3UkdJCFWd7bjQVbn8CQyWB0hNLBlyustmIhEwe2OhrfEHum7JKfl4Hg_K0vwSc5sjA_7-k7VEoPn-WfX5HPdxDaL/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۲۷ شهریور ۱۴۰۵",
@@ -2010,7 +2008,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/J9rwuis4PLwJ4iuWGdX5ZPHZ1YTA1Dq0aRx--VCeyXJNxi3FK64pDp70d5tmlGrGt-Rallje3A5rCh2608e-9fE1hfEEWrv0bw5jh18qzZ2QLmJqHRIdlob6mkDu4iB7sAA-xW14dAIIVwD3jnCERalH-YpS9mTl5r6yx_sPV4c19D6quihX-KUCllolsmi7/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/4MKpFDpcQigyP_xXwUhB8iDXVOwucTT1TxhPFFYPhHslNY_WmLSNzIZG_-xU7mEmg4Tv_aiTE4c3ToMEmpyAMVqCvGIS7dlnC2XDExbEhgnNWpfu_7pug4uaeQ8zBTKhmFUB-Dq_4EyBJOuhcE7CFSyAAx_WmpiQV8fsxNBSBRiv2IEpexbfx2IbQUJUc2Ke/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۲۷ شهریور ۱۴۰۵",
@@ -2020,7 +2018,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/RFPuu7PZBFmBDJKz-4d_jSOZmmzYHgW9Mw3jVxVBJPvfUqTm6l-UTzuCaTK-ZP5OjJL244Cq8dtzYWeFr4xTAj6Qalv3eJoyPKQHoWQxzjofHjvHNZaZVMgJNUvjPXdtVo36KITJDIaI_Wu4eEOj83WzhuCWzAbwbQfz2g5XlUmF6ToiQ_lr0SMVhxZ186ER/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/OnuAlXCKLzd2Oi6Rt4Ry4BNOee1pxvhsxiIs1r-IkoMcOP87pg9RGdsVTi6hj6ah2AaPlaL1kbDQXm9fSxeFmgiUv530JUZGy-J_erbLtyDd5z9e00-Sk8bEgYeO6dMYIkV-UbsDl9WObqo1QzGYocUnhecDo1VbPlFR_NddnsuUPb6VS5chrOXr2bjx5izX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۲۷ شهریور + جدول",
@@ -2030,7 +2028,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/9An7Ml0MGncOYc1uqxfMZb4TasQAIPmMIaSlcASyWIIJBtvBDXL9kQ-zstbDDy0RRC-0QE4U7Vy7Ex0-YO22rHpT2OxC1YZrCYnEeuqfv4AdaTEEUzt9Qvarr6mAG8cbUA_MnoF8FDzV8ooK7jaU5mLcvTgGOHk44vzGehbnGjowLH5dtup5-FJ7uD2EH3W0/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/GvY5F_ZSgL67BVz-SM7A14z3wqmwEKNVIarYo519Z9SBBcfmpvfwjd1dp3kUoglhac9DswT1qkC0LD-mHN7bnYGD5XVZ_isCoJAJRQ-a6nRfexpPfoRdKXM-WlA3wSadKVwBIPIQXvte27Q_hHIe9leOA05fWQ2__lMbPB-ciTS33B1YYvUsxyaAIQW5Gcaw/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۲۷ شهریور ۱۴۰۵",
@@ -2040,7 +2038,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/1Uz2WKOHfCB4c7pNkI9NvXnnF_3yfHXtI_miYNGQuWE5WCA5AD9y6A_-75izmmw7gFKM4YXmPi4gqPOMQRAF809iI4R0tJ7BZI1iJTWWIV7yWP-qqb6IkPuen6GweSZ61NLbmQU4Lm5gZ5EblbLua5-tOw0GCjHBg95rPQ3lcW371fuBfc5G8KNQ0u6KGmKY/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/iUBTneNA4O8BelJcSwr9BV5joGSzWIUA7eIUDAeE9RkXXdeTTcMNJr316iPOi8PPQlr78ion_476ZFlbpPCAQJoAZAOI5UHBi7L7UZSs5awAu64jgMR0CzLsblvl4Jdb88L2ryrrKssQf4GzG3L8u0PHOxikcbZW2r0L32RYSANTD3YeAwhV2sMTaAUOcpwh/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       }
     ]
   }
