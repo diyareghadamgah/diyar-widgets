@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-18T23:03:46.032Z",
-  "lastUpdatePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۰۳",
+  "lastUpdate": "2026-09-18T23:34:10.453Z",
+  "lastUpdatePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۳۴",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,56 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "خواص درمانی انار",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3246004",
+      "date": "2026-09-18T23:30:00.000Z",
+      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "انار میوه ای پاییزی است که علاوه بر ارزش غذایی که دارد، از دیدگاه علم داروسازی نیز مورد توجه است."
+    },
+    {
+      "title": "از زمینلرزه ۴.۲ در ریوش تا زلزله ۳.۷ در تخته فارس",
+      "link": "https://www.isna.ir/news/1405062718326/%D8%A7%D8%B2-%D8%B2%D9%85%DB%8C%D9%86%D9%84%D8%B1%D8%B2%D9%87-%DB%B4-%DB%B2-%D8%AF%D8%B1-%D8%B1%DB%8C%D9%88%D8%B4-%D8%AA%D8%A7-%D8%B2%D9%84%D8%B2%D9%84%D9%87-%DB%B3-%DB%B7-%D8%AF%D8%B1-%D8%AA%D8%AE%D8%AA%D9%87-%D9%81%D8%A7%D8%B1%D8%B3",
+      "date": "2026-09-18T23:10:00.000Z",
+      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۱۰",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "در هفته گذشته زمینلرزه‌های متعددی در نقاط مختلف کشور به ثبت رسید که در میان آنها زلزله‌ای به بزرگای ۴.۲ در ریوش استان خراسان رضوی و زمینلرزه‌هایی با بزرگای ۳.۷ در کنار تخته فارس و ۳.۵ در کلاته خیج سمنان رخ داد."
+    },
+    {
+      "title": "گالیکش در شب؛ حضور مردم همچنان ادامه دارد",
+      "link": "https://www.mehrnews.com/news/6950999/%DA%AF%D8%A7%D9%84%DB%8C%DA%A9%D8%B4-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF",
+      "date": "2026-09-18T23:03:28.000Z",
+      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۰۳",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "گالیکش- چراغ تجمعات شبانه در گالیکش همچنان روشن است و مردم این شهر بار دیگر با حضور در کنار یکدیگر، شبی متفاوت را رقم زدند."
+    },
+    {
+      "title": "نبض حضور در گرگان؛ مردم باز هم به میدان آمدند",
+      "link": "https://www.mehrnews.com/news/6950998/%D9%86%D8%A8%D8%B6-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%A7%D8%B2-%D9%87%D9%85-%D8%A8%D9%87-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%A2%D9%85%D8%AF%D9%86%D8%AF",
+      "date": "2026-09-18T23:02:31.000Z",
+      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۰۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "گرگان- همزمان با تداوم تجمعات شبانه، مردم گرگان بار دیگر با حضور در میدان، شبی دیگر از همدلی و حضور جمعی خود را رقم زدند."
+    },
+    {
+      "title": "حملات هوایی رژیم صهیونیستی به جنوب لبنان",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700004/%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
+      "date": "2026-09-18T22:57:22.000Z",
+      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۲:۵۷",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "رژیم آپارتاید صهیونیستی، اقدام به انجام حملات هوایی علیه مناطق مسکونی در جنوب لبنان کرد."
+    },
     {
       "title": "​​​​​​​توقف کلیه پروازها در فرودگاه لوکزامبورگ",
       "link": "https://www.irna.ir/news/86267532/%D8%AA%D9%88%D9%82%D9%81-%DA%A9%D9%84%DB%8C%D9%87-%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D9%87%D8%A7-%D8%AF%D8%B1-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%84%D9%88%DA%A9%D8%B2%D8%A7%D9%85%D8%A8%D9%88%D8%B1%DA%AF",
@@ -640,16 +690,6 @@
       "rssDescription": "نیویورک- ایرنا- دونالد ترامپ رئیس جمهوری جنگ افروز آمریکا که تا پیش از این بارها در توهم پیروزی در تجاوز بی دلیل علیه ایران به سر می‌برد، در تازه ترین لفاظی خود مدعی شد که در حال پیروزی هستیم و جنگ به زودی پایان خواهد یافت."
     },
     {
-      "title": "شب ناآرام سعودی‌ها، سیستم هشدار قطع نمی‌شود / خبرهای غیررسمی درباره حمله انصارالله به کاخ بن‌سلمان / شهرهای مختلف عربستان هدف حمله مقاومت یمن",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246195",
-      "date": "2026-09-18T20:46:00.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۶",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "گزارش‌هایی از شلیک موشک به سمت شهر العلا محل اقامتگاه شخصی بن‌سلمان از سوی منابع غیر رسمی مخابره شده است."
-    },
-    {
       "title": "ببینید|افشاگری سردبیر سابق من‌وتو؛ ترس از مخالفت با روایت‌های شبکه",
       "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3698376/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A7%D9%81%D8%B4%D8%A7%DA%AF%D8%B1%DB%8C-%D8%B3%D8%B1%D8%AF%D8%A8%DB%8C%D8%B1-%D8%B3%D8%A7%D8%A8%D9%82-%D9%85%D9%86-%D9%88%D8%AA%D9%88-%D8%AA%D8%B1%D8%B3-%D8%A7%D8%B2-%D9%85%D8%AE%D8%A7%D9%84%D9%81%D8%AA-%D8%A8%D8%A7-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%D8%A8%DA%A9%D9%87",
       "date": "2026-09-18T20:45:53.000Z",
@@ -710,26 +750,6 @@
       "rssDescription": "تبریز- مردم تبریز در دویست‌ودومین اجتماع شبانه خود با تأکید بر بیعت با رهبری، بر تداوم ایستادگی و پاسداشت رشادت‌های ملت ایران تأکید کردند."
     },
     {
-      "title": "تسریع در اجرای پروژه‌های عمرانی مناطق عشایری ارم دشتستان ضروری است",
-      "link": "https://www.mehrnews.com/news/6950972/%D8%AA%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AF%D8%B1-%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D8%B9%D8%B4%D8%A7%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B1%D9%85-%D8%AF%D8%B4%D8%AA%D8%B3%D8%AA%D8%A7%D9%86-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C",
-      "date": "2026-09-18T20:41:21.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "بوشهر - سرپرست اداره امور عشایر دشتستان بر لزوم تسریع در اجرای پروژه‌های عمرانی مناطق عشایری ارم دشتستان تأکید کرد."
-    },
-    {
-      "title": "موج دویست و دوم میدان‌داری مردم ایلام در خیابان",
-      "link": "https://www.mehrnews.com/news/6950977/%D9%85%D9%88%D8%AC-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%AF%D9%88%D9%85-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D9%84%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-      "date": "2026-09-18T20:40:37.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۰",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "ایلام - فیلمی از موج دویست و دوم میدان‌داری مردم ایلام در خیابان طی شامگاه جمعه را مشاهده کنید."
-    },
-    {
       "title": "ستاره بارسلونا راز سرعتش را فاش کرد",
       "link": "https://www.khabaronline.ir/news/2276182/%D8%B3%D8%AA%D8%A7%D8%B1%D9%87-%D8%A8%D8%A7%D8%B1%D8%B3%D9%84%D9%88%D9%86%D8%A7-%D8%B1%D8%A7%D8%B2-%D8%B3%D8%B1%D8%B9%D8%AA%D8%B4-%D8%B1%D8%A7-%D9%81%D8%A7%D8%B4-%DA%A9%D8%B1%D8%AF",
       "date": "2026-09-18T20:40:00.000Z",
@@ -787,7 +807,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Xu5r4EGRCcvhJZioAW4xsBc2D8s0ndG0iNf-H62NR_6NiRmktuo2hOGzgN_V7Z8fE0iKXVd69StQPWDW06j0a7p4T1WW1_oQs_UsBJh3epsVWMzZ055oPJDpVLjjal-QGlvBRM9APV7oE_evIClTyI7166nwXasGui0-GY6TIAeBo1xUiV0G81lh0ZPLjoZX/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/imNUxnGf6Z233CLBR9KBee9Zxwo6z_FSIAbvpOMeSu7uvTDj3GSK67W7AP2XMt2hbXBhQl-z7N4Nd3TS3BvnOeyaG9eeXvxG3wGNLJ5wiW3i1R-n07VJNSrAW0gkiNidzKUrPKbZRhJA9e4sbIDY3K_b0MrG-wfWF3kLP2HWML1a0GFxxiwKLLICtdnL6GZ2/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -797,7 +817,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/_FZg-lBQJO9h3rhVh2XiuSAMgenzlR_vKY_lbPD4DjdybPmfGaSOa7cNHaPPL2a5bbj2EXxkPdHuXXArFkaHqQRbfqsVlSPTrj9yD1K-W0pDvKbRlP7aRBHLrUdYnSOzXpQ2wfskPsqX_xkBNzS-QGbdsTSZN1R6hcF6oROQN6PDQPgtAE0hq5Lxu7XSDWBd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zlwpstYQMBDPWrY6PweHLF3n6JkwoxnoZQLTB2Bdx9KFz2KWlykHdiMtfTvImjmwWJni3U71e2sT3VDEnpAjYKRPCYYSf7kT2UBFNq9otim8C9pYCk6NPy_HO-WI-YBNWEN_7QQX_Fcy-TcbQZRiocwh_sKqhuG1a7k9w9DMKpFNnSBr4uKoyZd65cvplApd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -807,7 +827,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UX3xwqyJyA2f7Tn9P2AGCaZ7rI5WfbZR2d5VOd93NhdZrLKo3-zws5e5rvIwSymX-cR5wwe_v1gaOnR7ljQNMLutXsZH_8Jdv9ZEZcEX_x3UCgJJpHpExIlF6gTrLrk6A6Z3lM7-5iIEAZlLC4WDbRhxIyvJD2gJiALN7G1Mqvx2e_cHoo70IJ_GX9WEGgjL/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UGxoOckYYAs4rFsRD_I66Qg2sr1BdWVtyr6gGcVwXWc-i5kjS0XgUQcV2YA97wUmJcng0xuXUhU9cU9_Fj3R34T7kVqVWYvLZaPQTQuVJkjt4d0D8610LWltdZ8tD2si98g8573VZP9GpgiinOZDanwoQVNekV02ElttjDxFAO4bYCDB4R2URPlCLr4Vs2c0/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۲۸ شهریور + جدول",
@@ -817,7 +837,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/TS_mm57btqo3wK1U_a11lxpkFSr4YfFXy52y2-cgFMSZ-ws84TZgc27pECQdmX2eI6HzTrYeSwzjSbhG8dibXMUO6xYY59Z1qmlW9Tl9kGn-IwS6z5tXcWTYATD3EP90tOYIuSplUIs19fFb-8hzhF0orqZ5mbU-aNQij_chr7Q4d2bfXVmOwyrVVABmShLC/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VVeCmZaNnpx-8eHVqW6vmYeav9i7lQgXQMaStmAb6DuGOjWyJRF9tUqB0hFkPSQabsYaUvPBZPVbansMj12qJovTKid1c1XEt6GT2P5pAtx1soxu3JeCh1FNI2zEkQedv2XwKKrMdAiGazSxCi2cn3UHY5ji8zeMBwlMXsS5NsQCTamu6P08WjaPfBXZXgm3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۲۸ شهریور ۱۴۰۵",
@@ -827,7 +847,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/wG-0bnOxe4uHvWylbiW1l22PbxPoFI2Yl3kjwFKOovPAKxWFRqoKpq3NV3v49uJY_dYclvW6BLzZizg9lnw78ThDc6u7rTp6e2yQDiWaV1Im_K5mj6EGBIetpoQKfw0O6A1xk30t8UiWcTeEvRsrTuL9W0s5CeO7wcB671eaA3gsS4F3E_ycmqBSuvkb_GJC/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aOtcN0ux1mu_LhEv31r8piu1mYuZEfToMgagP0uJs79zSwOS3J_HV-ZLZImxm58zrHHBeVZJfqZC9uFFRNoxFqd-6NgtY0rRKZM-jsEa5Pu5zZoiHATfJhzlJm7hlGZA7EfsGpgPckuieSwrACcFSJdyaRGIRRWVtrjb9Nso0LI_cazo4dq72Y0IV2w0G03c/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نتاهیاهو در غزه نسل‌کشی کرد",
@@ -1008,26 +1028,6 @@
       "flag": "🇮🇷",
       "category": "اقتصادی",
       "rssDescription": "پیش‌فروش بلیت قطارهای مسافری مشهد برای یکم تا سی‌ مهر ۱۴۰۵ از صبح فردا، شنبه _بیست‌وهشتم شهریور_ آغاز می‌شود و متقاضیان سفر به مشهد می توانند به صورت اینترنتی و حضوری برای خرید بلیت اقدام کنند."
-    },
-    {
-      "title": "مکرون: از عراق نفت و گاز به اروپا وارد می‌کنیم/ پاسخ حملات روسیه را خواهیم داد",
-      "link": "https://www.asriran.com/fa/news/1192511/%D9%85%DA%A9%D8%B1%D9%88%D9%86-%D8%A7%D8%B2-%D8%B9%D8%B1%D8%A7%D9%82-%D9%86%D9%81%D8%AA-%D9%88-%DA%AF%D8%A7%D8%B2-%D8%A8%D9%87-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D9%88%D8%A7%D8%B1%D8%AF-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85-%D9%BE%D8%A7%D8%B3%D8%AE-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85-%D8%AF%D8%A7%D8%AF",
-      "date": "2026-09-18T20:04:51.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۴",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "مکرون در یک کنفرانس مطبوعاتی، همانطور که توسط خبرگزاری عراق (واع) گزارش شده است، اظهار داشت: «ما در حال تلاش برای ایجاد خط لوله‌ای برای انتقال گاز و نفت از عراق به بازار اروپا، با هماهنگی عراق و اردن هستیم.»"
-    },
-    {
-      "title": "رژیم سعودی طی هفته جاری ۳۰۰ بار به یمن حمله کرد",
-      "link": "https://www.imna.ir/news/1005474/%D8%B1%DA%98%DB%8C%D9%85-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D8%B7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%D8%AC%D8%A7%D8%B1%DB%8C-%DB%B3%DB%B0%DB%B0-%D8%A8%D8%A7%D8%B1-%D8%A8%D9%87-%DB%8C%D9%85%D9%86-%D8%AD%D9%85%D9%84%D9%87-%DA%A9%D8%B1%D8%AF",
-      "date": "2026-09-18T20:02:51.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۲",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "سخنگوی ارتش یمن از تعداد ۳۰۰ حمله هوایی رژیم سعودی به مناطق مسکونی این کشور طی این هفته خبر داد."
     }
   ],
   "categorizedNews": {
@@ -1291,6 +1291,26 @@
     ],
     "اجتماعی": [
       {
+        "title": "خواص درمانی انار",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3246004",
+        "date": "2026-09-18T23:30:00.000Z",
+        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "انار میوه ای پاییزی است که علاوه بر ارزش غذایی که دارد، از دیدگاه علم داروسازی نیز مورد توجه است."
+      },
+      {
+        "title": "از زمینلرزه ۴.۲ در ریوش تا زلزله ۳.۷ در تخته فارس",
+        "link": "https://www.isna.ir/news/1405062718326/%D8%A7%D8%B2-%D8%B2%D9%85%DB%8C%D9%86%D9%84%D8%B1%D8%B2%D9%87-%DB%B4-%DB%B2-%D8%AF%D8%B1-%D8%B1%DB%8C%D9%88%D8%B4-%D8%AA%D8%A7-%D8%B2%D9%84%D8%B2%D9%84%D9%87-%DB%B3-%DB%B7-%D8%AF%D8%B1-%D8%AA%D8%AE%D8%AA%D9%87-%D9%81%D8%A7%D8%B1%D8%B3",
+        "date": "2026-09-18T23:10:00.000Z",
+        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۱۰",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "در هفته گذشته زمینلرزه‌های متعددی در نقاط مختلف کشور به ثبت رسید که در میان آنها زلزله‌ای به بزرگای ۴.۲ در ریوش استان خراسان رضوی و زمینلرزه‌هایی با بزرگای ۳.۷ در کنار تخته فارس و ۳.۵ در کلاته خیج سمنان رخ داد."
+      },
+      {
         "title": "جزییاتی از افشای جنایت در پونک + عکس مقتولان",
         "link": "https://www.tabnak.ir/fa/news/1394929/%D8%AC%D8%B2%DB%8C%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D8%B2-%D8%A7%D9%81%D8%B4%D8%A7%DB%8C-%D8%AC%D9%86%D8%A7%DB%8C%D8%AA-%D8%AF%D8%B1-%D9%BE%D9%88%D9%86%DA%A9-%D8%B9%DA%A9%D8%B3-%D9%85%D9%82%D8%AA%D9%88%D9%84%D8%A7%D9%86",
         "date": "2026-09-18T22:30:02.000Z",
@@ -1394,6 +1414,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "حملات هوایی رژیم صهیونیستی به جنوب لبنان",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700004/%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
+        "date": "2026-09-18T22:57:22.000Z",
+        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۲:۵۷",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "رژیم آپارتاید صهیونیستی، اقدام به انجام حملات هوایی علیه مناطق مسکونی در جنوب لبنان کرد."
+      },
       {
         "title": "عضو ارشد انصارالله: کشتیرانی در باب المندب و دریای سرخ در جریان است",
         "link": "https://www.irna.ir/news/86267523/%D8%B9%D8%B6%D9%88-%D8%A7%D8%B1%D8%B4%D8%AF-%D8%A7%D9%86%D8%B5%D8%A7%D8%B1%D8%A7%D9%84%D9%84%D9%87-%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D9%85%D9%86%D8%AF%D8%A8-%D9%88-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C-%D8%B3%D8%B1%D8%AE-%D8%AF%D8%B1-%D8%AC%D8%B1%DB%8C%D8%A7%D9%86",
@@ -1695,16 +1725,6 @@
         "rssDescription": "نیویورک- ایرنا- دونالد ترامپ رئیس جمهوری جنگ افروز آمریکا که تا پیش از این بارها در توهم پیروزی در تجاوز بی دلیل علیه ایران به سر می‌برد، در تازه ترین لفاظی خود مدعی شد که در حال پیروزی هستیم و جنگ به زودی پایان خواهد یافت."
       },
       {
-        "title": "شب ناآرام سعودی‌ها، سیستم هشدار قطع نمی‌شود / خبرهای غیررسمی درباره حمله انصارالله به کاخ بن‌سلمان / شهرهای مختلف عربستان هدف حمله مقاومت یمن",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246195",
-        "date": "2026-09-18T20:46:00.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۶",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "گزارش‌هایی از شلیک موشک به سمت شهر العلا محل اقامتگاه شخصی بن‌سلمان از سوی منابع غیر رسمی مخابره شده است."
-      },
-      {
         "title": "البخیتی: ریاض پس از شکست میانجی‌گری‌ها به تهران متوسل شده است",
         "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3699986/%D8%A7%D9%84%D8%A8%D8%AE%DB%8C%D8%AA%DB%8C-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%B4%DA%A9%D8%B3%D8%AA-%D9%85%DB%8C%D8%A7%D9%86%D8%AC%DB%8C-%DA%AF%D8%B1%DB%8C-%D9%87%D8%A7-%D8%A8%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D9%85%D8%AA%D9%88%D8%B3%D9%84-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
         "date": "2026-09-18T20:45:08.000Z",
@@ -1823,29 +1843,29 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "واشنگتن پست نوشت که تعداد نظامیان تروریست کشته شده ارتش آمریکا در جنگ علیه ایران بیشتر از اعلام پنتاگون است."
-      },
-      {
-        "title": "مکرون: از عراق نفت و گاز به اروپا وارد می‌کنیم/ پاسخ حملات روسیه را خواهیم داد",
-        "link": "https://www.asriran.com/fa/news/1192511/%D9%85%DA%A9%D8%B1%D9%88%D9%86-%D8%A7%D8%B2-%D8%B9%D8%B1%D8%A7%D9%82-%D9%86%D9%81%D8%AA-%D9%88-%DA%AF%D8%A7%D8%B2-%D8%A8%D9%87-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D9%88%D8%A7%D8%B1%D8%AF-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85-%D9%BE%D8%A7%D8%B3%D8%AE-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85-%D8%AF%D8%A7%D8%AF",
-        "date": "2026-09-18T20:04:51.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۴",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "مکرون در یک کنفرانس مطبوعاتی، همانطور که توسط خبرگزاری عراق (واع) گزارش شده است، اظهار داشت: «ما در حال تلاش برای ایجاد خط لوله‌ای برای انتقال گاز و نفت از عراق به بازار اروپا، با هماهنگی عراق و اردن هستیم.»"
-      },
-      {
-        "title": "رژیم سعودی طی هفته جاری ۳۰۰ بار به یمن حمله کرد",
-        "link": "https://www.imna.ir/news/1005474/%D8%B1%DA%98%DB%8C%D9%85-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D8%B7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%D8%AC%D8%A7%D8%B1%DB%8C-%DB%B3%DB%B0%DB%B0-%D8%A8%D8%A7%D8%B1-%D8%A8%D9%87-%DB%8C%D9%85%D9%86-%D8%AD%D9%85%D9%84%D9%87-%DA%A9%D8%B1%D8%AF",
-        "date": "2026-09-18T20:02:51.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۲",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "سخنگوی ارتش یمن از تعداد ۳۰۰ حمله هوایی رژیم سعودی به مناطق مسکونی این کشور طی این هفته خبر داد."
       }
     ],
     "متفرقه": [
+      {
+        "title": "گالیکش در شب؛ حضور مردم همچنان ادامه دارد",
+        "link": "https://www.mehrnews.com/news/6950999/%DA%AF%D8%A7%D9%84%DB%8C%DA%A9%D8%B4-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF",
+        "date": "2026-09-18T23:03:28.000Z",
+        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۰۳",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "گالیکش- چراغ تجمعات شبانه در گالیکش همچنان روشن است و مردم این شهر بار دیگر با حضور در کنار یکدیگر، شبی متفاوت را رقم زدند."
+      },
+      {
+        "title": "نبض حضور در گرگان؛ مردم باز هم به میدان آمدند",
+        "link": "https://www.mehrnews.com/news/6950998/%D9%86%D8%A8%D8%B6-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%A7%D8%B2-%D9%87%D9%85-%D8%A8%D9%87-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%A2%D9%85%D8%AF%D9%86%D8%AF",
+        "date": "2026-09-18T23:02:31.000Z",
+        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۳:۰۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "گرگان- همزمان با تداوم تجمعات شبانه، مردم گرگان بار دیگر با حضور در میدان، شبی دیگر از همدلی و حضور جمعی خود را رقم زدند."
+      },
       {
         "title": "خوابیدن در محیط روشن چه اثری بر قلب دارد؟",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3246007",
@@ -1946,26 +1966,6 @@
         "rssDescription": "علی حمید، سردبیر سابق من‌وتو، از فضای حاکم بر شبکه و ناتوانی عوامل در مخالفت با برخی روایت‌ها پرده برداشت."
       },
       {
-        "title": "تسریع در اجرای پروژه‌های عمرانی مناطق عشایری ارم دشتستان ضروری است",
-        "link": "https://www.mehrnews.com/news/6950972/%D8%AA%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AF%D8%B1-%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D8%B9%D8%B4%D8%A7%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B1%D9%85-%D8%AF%D8%B4%D8%AA%D8%B3%D8%AA%D8%A7%D9%86-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C",
-        "date": "2026-09-18T20:41:21.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "بوشهر - سرپرست اداره امور عشایر دشتستان بر لزوم تسریع در اجرای پروژه‌های عمرانی مناطق عشایری ارم دشتستان تأکید کرد."
-      },
-      {
-        "title": "موج دویست و دوم میدان‌داری مردم ایلام در خیابان",
-        "link": "https://www.mehrnews.com/news/6950977/%D9%85%D9%88%D8%AC-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%AF%D9%88%D9%85-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D9%84%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-        "date": "2026-09-18T20:40:37.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۰",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "ایلام - فیلمی از موج دویست و دوم میدان‌داری مردم ایلام در خیابان طی شامگاه جمعه را مشاهده کنید."
-      },
-      {
         "title": "طالع بینی متولدین ۲۸ شهریور",
         "link": "https://www.ilna.ir/fa/tiny/news-1840776",
         "date": "2026-09-18T20:31:00.000Z",
@@ -1973,7 +1973,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Xu5r4EGRCcvhJZioAW4xsBc2D8s0ndG0iNf-H62NR_6NiRmktuo2hOGzgN_V7Z8fE0iKXVd69StQPWDW06j0a7p4T1WW1_oQs_UsBJh3epsVWMzZ055oPJDpVLjjal-QGlvBRM9APV7oE_evIClTyI7166nwXasGui0-GY6TIAeBo1xUiV0G81lh0ZPLjoZX/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/imNUxnGf6Z233CLBR9KBee9Zxwo6z_FSIAbvpOMeSu7uvTDj3GSK67W7AP2XMt2hbXBhQl-z7N4Nd3TS3BvnOeyaG9eeXvxG3wGNLJ5wiW3i1R-n07VJNSrAW0gkiNidzKUrPKbZRhJA9e4sbIDY3K_b0MrG-wfWF3kLP2HWML1a0GFxxiwKLLICtdnL6GZ2/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -1983,7 +1983,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/_FZg-lBQJO9h3rhVh2XiuSAMgenzlR_vKY_lbPD4DjdybPmfGaSOa7cNHaPPL2a5bbj2EXxkPdHuXXArFkaHqQRbfqsVlSPTrj9yD1K-W0pDvKbRlP7aRBHLrUdYnSOzXpQ2wfskPsqX_xkBNzS-QGbdsTSZN1R6hcF6oROQN6PDQPgtAE0hq5Lxu7XSDWBd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zlwpstYQMBDPWrY6PweHLF3n6JkwoxnoZQLTB2Bdx9KFz2KWlykHdiMtfTvImjmwWJni3U71e2sT3VDEnpAjYKRPCYYSf7kT2UBFNq9otim8C9pYCk6NPy_HO-WI-YBNWEN_7QQX_Fcy-TcbQZRiocwh_sKqhuG1a7k9w9DMKpFNnSBr4uKoyZd65cvplApd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -1993,7 +1993,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UX3xwqyJyA2f7Tn9P2AGCaZ7rI5WfbZR2d5VOd93NhdZrLKo3-zws5e5rvIwSymX-cR5wwe_v1gaOnR7ljQNMLutXsZH_8Jdv9ZEZcEX_x3UCgJJpHpExIlF6gTrLrk6A6Z3lM7-5iIEAZlLC4WDbRhxIyvJD2gJiALN7G1Mqvx2e_cHoo70IJ_GX9WEGgjL/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UGxoOckYYAs4rFsRD_I66Qg2sr1BdWVtyr6gGcVwXWc-i5kjS0XgUQcV2YA97wUmJcng0xuXUhU9cU9_Fj3R34T7kVqVWYvLZaPQTQuVJkjt4d0D8610LWltdZ8tD2si98g8573VZP9GpgiinOZDanwoQVNekV02ElttjDxFAO4bYCDB4R2URPlCLr4Vs2c0/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۲۸ شهریور + جدول",
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/TS_mm57btqo3wK1U_a11lxpkFSr4YfFXy52y2-cgFMSZ-ws84TZgc27pECQdmX2eI6HzTrYeSwzjSbhG8dibXMUO6xYY59Z1qmlW9Tl9kGn-IwS6z5tXcWTYATD3EP90tOYIuSplUIs19fFb-8hzhF0orqZ5mbU-aNQij_chr7Q4d2bfXVmOwyrVVABmShLC/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VVeCmZaNnpx-8eHVqW6vmYeav9i7lQgXQMaStmAb6DuGOjWyJRF9tUqB0hFkPSQabsYaUvPBZPVbansMj12qJovTKid1c1XEt6GT2P5pAtx1soxu3JeCh1FNI2zEkQedv2XwKKrMdAiGazSxCi2cn3UHY5ji8zeMBwlMXsS5NsQCTamu6P08WjaPfBXZXgm3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۲۸ شهریور ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/wG-0bnOxe4uHvWylbiW1l22PbxPoFI2Yl3kjwFKOovPAKxWFRqoKpq3NV3v49uJY_dYclvW6BLzZizg9lnw78ThDc6u7rTp6e2yQDiWaV1Im_K5mj6EGBIetpoQKfw0O6A1xk30t8UiWcTeEvRsrTuL9W0s5CeO7wcB671eaA3gsS4F3E_ycmqBSuvkb_GJC/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aOtcN0ux1mu_LhEv31r8piu1mYuZEfToMgagP0uJs79zSwOS3J_HV-ZLZImxm58zrHHBeVZJfqZC9uFFRNoxFqd-6NgtY0rRKZM-jsEa5Pu5zZoiHATfJhzlJm7hlGZA7EfsGpgPckuieSwrACcFSJdyaRGIRRWVtrjb9Nso0LI_cazo4dq72Y0IV2w0G03c/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "قدس طوس شماره ۱۱۰۲۹",
