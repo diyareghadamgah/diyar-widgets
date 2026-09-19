@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-19T22:03:27.138Z",
-  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۳",
+  "lastUpdate": "2026-09-19T22:33:57.437Z",
+  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۳۳",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,86 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "سرعت پیر شدنتان را از هوش مصنوعی بپرسید",
+      "link": "https://www.isna.ir/news/1405062818944/%D8%B3%D8%B1%D8%B9%D8%AA-%D9%BE%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A7%D8%B2-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%A8%D9%BE%D8%B1%D8%B3%DB%8C%D8%AF",
+      "date": "2026-09-19T22:30:00.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۳۰",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "سامانه‌ای جدید به دانشمندان کمک می‌کند مدل‌های زبانی بزرگ را برای پژوهش‌های مرتبط با طول عمر بهبود دهند و مفهوم «سن زیستی» را دقیق‌تر بررسی کنند."
+    },
+    {
+      "title": "بهترین ترکیب تاریخ با بازیکنان راست پا/ عکس",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3246468",
+      "date": "2026-09-19T22:25:08.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۵",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "انتخاب برترین‌های تاریخ فوتبال در پست‌های مختلف، همیشه یکی از جذاب‌ترین بحث‌های هواداران بوده است؛ اما این بار، معیار تنها یک چیز است: راست‌پا بودن ستاره‌ها."
+    },
+    {
+      "title": "هشدارهای امنیتی گسترده آمریکا به شهروندان خود در غرب آسیا",
+      "link": "https://www.irna.ir/news/86268445/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%88%D9%86%D8%AF%D8%A7%D9%86-%D8%AE%D9%88%D8%AF-%D8%AF%D8%B1-%D8%BA%D8%B1%D8%A8-%D8%A2%D8%B3%DB%8C%D8%A7",
+      "date": "2026-09-19T22:25:06.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۵",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران - ایرنا - سفارتخانه‌های آمریکا در چندین کشور در غرب آسیا با صدور هشدارهای امنیتی فوری، از شهروندان خود خواسته‌اند هوشیار باشند و در پی افزایش درگیری ها در منطقه، خود را برای احتمال لغو پروازها، بسته شدن حریم هوایی و اختلال در سفر آماده کنند."
+    },
+    {
+      "title": "تجارت زمینی اثر تحریم دریایی را خنثی می‌کند؟",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3246467",
+      "date": "2026-09-19T22:21:02.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۱",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "تداوم محاصره دریایی سبب شده تا ایران مسیر تجارت خود را به مرزهای زمینی تغییر دهد اما ظرفیت پایین و هزینه بالای حمل‌ونقل از این طریق جایگزینی کامل دریا را دشوار کرده است"
+    },
+    {
+      "title": "هشدار سفارت آمریکا در کشورهای منطقه به اتباع آمریکایی",
+      "link": "https://www.mehrnews.com/news/6952110/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D9%81%D8%A7%D8%B1%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A8%D9%87-%D8%A7%D8%AA%D8%A8%D8%A7%D8%B9-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C",
+      "date": "2026-09-19T22:17:08.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۱۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "سفارتخانه های آمریکا در کشورهای منطقه از جمله عراق برای اتباع آمریکایی هشدار صادر کرد."
+    },
+    {
+      "title": "علم الهدی: مقاومت مردم بزرگ‌ترین میدان جهاد در برابر دشمن است",
+      "link": "https://www.mehrnews.com/news/6952109/%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%87%D8%AF%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AA%D8%B1%DB%8C%D9%86-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AC%D9%87%D8%A7%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%AF%D8%B4%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
+      "date": "2026-09-19T22:07:42.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "مشهد- نماینده ولی فقیه در خراسان رضوی گفت: مقاومت و ایستادگی مردم در برابر دشمن، بزرگ‌ترین میدان جهاد و عاملی برای ناامیدی دشمن از به‌هم‌ریختن داخل کشور است."
+    },
+    {
+      "title": "آمریکا به اتباع خود در غرب آسیا هشدار داد",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/29/3700841/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%A7%D8%AA%D8%A8%D8%A7%D8%B9-%D8%AE%D9%88%D8%AF-%D8%AF%D8%B1-%D8%BA%D8%B1%D8%A8-%D8%A2%D8%B3%DB%8C%D8%A7-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF",
+      "date": "2026-09-19T22:06:40.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۶",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "سفارت‌خانه آمریکا در کشورهای مختلف غرب آسیا، همزمان اقدام به صدور اطلاعیه‌های هشدار کردند."
+    },
+    {
+      "title": "چرا آمریکا میلیون‌ها سوزن مسی را دور زمین پاشید؟",
+      "link": "https://www.asriran.com/fa/news/1192579/%DA%86%D8%B1%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D9%87%D8%A7-%D8%B3%D9%88%D8%B2%D9%86-%D9%85%D8%B3%DB%8C-%D8%B1%D8%A7-%D8%AF%D9%88%D8%B1-%D8%B2%D9%85%DB%8C%D9%86-%D9%BE%D8%A7%D8%B4%DB%8C%D8%AF",
+      "date": "2026-09-19T22:00:01.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "آمریکا در جنگ سرد با پروژه‌ای عجیب، میلیون‌ها رشته‌ی مسی را در مدار زمین پخش کرد؛ پروژه‌ای که بخشی از بقایای آن هنوز در فضا است."
+    },
     {
       "title": "پرچم مردم چناران در شب ۲۰۳ همچنان بااقتدار بالاست",
       "link": "https://www.mehrnews.com/news/6952106/%D9%BE%D8%B1%DA%86%D9%85-%D9%85%D8%B1%D8%AF%D9%85-%DA%86%D9%86%D8%A7%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B4%D8%A8-%DB%B2%DB%B0%DB%B3-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A8%D8%A7%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA",
@@ -221,16 +301,6 @@
       "rssDescription": "زنجان- معاون استاندار زنجان گفت: هدف از اجرای برنامه های قرآنی از جمله طرح «زندگی با آیه‌ها»، توسعه فرهنگ قرآنی و تبدیل مفاهیم و آموزه‌های متعالی آن به گفتمان عمومی و سبک زندگی در جامعه است."
     },
     {
-      "title": "دویست و سومین اجتماع شبانه مردم بیرجند",
-      "link": "https://www.mehrnews.com/news/6952086/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%DB%8C%D8%B1%D8%AC%D9%86%D8%AF",
-      "date": "2026-09-19T21:31:55.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "بیرجند- تصاویری از حضور مردم در دویست و سومین اجتماع شبانه در میدان شهید رئیسی بیرجند را ببینید."
-    },
-    {
       "title": "ترکیه ۲۰۱ مظنون در یک شبکه کلاهبرداری بین‌المللی مرتبط با رژیم اسرائیل را دستگیر کرد",
       "link": "https://www.irna.ir/news/86268442/%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%DB%B2%DB%B0%DB%B1-%D9%85%D8%B8%D9%86%D9%88%D9%86-%D8%AF%D8%B1-%DB%8C%DA%A9-%D8%B4%D8%A8%DA%A9%D9%87-%DA%A9%D9%84%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C-%D9%85%D8%B1%D8%AA%D8%A8%D8%B7-%D8%A8%D8%A7-%D8%B1%DA%98%DB%8C%D9%85",
       "date": "2026-09-19T21:30:53.000Z",
@@ -301,6 +371,16 @@
       "rssDescription": "عضو هیئت علمی گروه محیط زیست دانشگاه لرستان گفت: خشکسالی‌های مداوم و پی‌درپی و افزایش دما، توان باززایی طبیعی جنگل‌های بلوط در استان لرستان را به شدت کاهش داده و زادآوری طبیعی این جنگل‌ها در بسیاری از مناطق تقریباً به صفر رسیده است."
     },
     {
+      "title": "حمله مقام ارشد دولت ترامپ به رسانه‌های منتقد",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/29/3700836/%D8%AD%D9%85%D9%84%D9%87-%D9%85%D9%82%D8%A7%D9%85-%D8%A7%D8%B1%D8%B4%D8%AF-%D8%AF%D9%88%D9%84%D8%AA-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%AA%D9%82%D8%AF",
+      "date": "2026-09-19T21:24:53.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۲۴",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "در ادامه حملات دولت ترامپ به رسانه‌های منتقد؛ یک مقام ارشد کاخ سفید، نوشت: روزنامه‌نگاری در آمریکا مرده است."
+    },
+    {
       "title": "مخالفت چین با تشدید تحریم‌های آمریکا علیه روسیه و ایران",
       "link": "https://www.isna.ir/news/1405062919125/%D9%85%D8%AE%D8%A7%D9%84%D9%81%D8%AA-%DA%86%DB%8C%D9%86-%D8%A8%D8%A7-%D8%AA%D8%B4%D8%AF%DB%8C%D8%AF-%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%88-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
       "date": "2026-09-19T21:23:23.000Z",
@@ -309,16 +389,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "پکن با انتقاد از قانون جدید آمریکا برای تشدید تحریم‌های روسیه و تمدید اقدامات تجاری علیه ایران تأکید کرد که با تحریم‌های یکجانبه و تحریم‌های ثانویه مخالف است و حق اتخاذ تدابیر لازم برای حمایت از حاکمیت و منافع خود و شرکت‌های چینی را محفوظ می‌داند."
-    },
-    {
-      "title": "بیش از ۴۰ درصد آزادراه زنجان - تبریز نیازمند بهسازی است",
-      "link": "https://www.mehrnews.com/news/6952085/%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B4%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF-%D8%A8%D9%87%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-09-19T21:22:26.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۲۲",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "زنجان- وزیر راه و شهرسازی از آغاز عملیات بهسازی و نوسازی آزادراه زنجان - تبریز پس از ۱۵ سال خبر داد و گفت: بیش از ۴۰ درصد این مسیر نیازمند بهسازی عمیق و اساسی است."
     },
     {
       "title": "۴۰ گروه جهادی واکنش سریع ویژه شرایط جنگی در لرستان سازماندهی شده است",
@@ -561,16 +631,6 @@
       "rssDescription": "وزیر خارجه ترکیه گفت، شرایط جدیدی برای مصالحه بین ایران و آمریکا پیشنهاد شده و امیدوارم آنها این شرایط را بپذیرند."
     },
     {
-      "title": "استاندار لرستان: برنامه توسعه استان با وفاق و همدلی در حال اجراست",
-      "link": "https://www.isna.ir/news/1405062919117/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7-%D9%88%D9%81%D8%A7%D9%82-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%D8%A7%D8%AC%D8%B1%D8%A7%D8%B3%D8%AA",
-      "date": "2026-09-19T20:42:18.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۴۲",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "استاندار لرستان گفت: فضای عمومی حاکم بر استان، بر مبنای برنامه توسعه استان و رفع مشکلات مردم، شکل گرفته و برنامه راهبردی توسعه استان براساس وفاق و همدلی در حال اجراست."
-    },
-    {
       "title": "بهاره رهنما: خانم ها بیشتر به من فحش می دهند",
       "link": "https://www.asriran.com/fa/news/1192778/%D8%A8%D9%87%D8%A7%D8%B1%D9%87-%D8%B1%D9%87%D9%86%D9%85%D8%A7-%D8%AE%D8%A7%D9%86%D9%85-%D9%87%D8%A7-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1-%D8%A8%D9%87-%D9%85%D9%86-%D9%81%D8%AD%D8%B4-%D9%85%DB%8C-%D8%AF%D9%87%D9%86%D8%AF",
       "date": "2026-09-19T20:41:25.000Z",
@@ -698,7 +758,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/hgFNjVglL3rd7u1__VsyJEZY5gCh3oalNlU-18dBw82PXpHKe2slV5t5efow-5KTYT2tHiG6cL7TPgrTQxnLhyZk59m-DVgRpM_DKdNChIsCq_0rckwgH1eLayyP0_dgoIpWn4E7jjafgZPWnDqnQtkt7kIMjoKvPnF1ehmu6kHCkDzoiJqwK73fo5G-iPKN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PItAtYVX84erjlpX0KKDLnOJBjLkTn-Hup70Nbn6ePAKtBN8HgSStymbgJD2L5eryNxymAVRSQmOkCI5medgOyDkeRVAMHxyBvqUjaIN2qNXDU6HVmSiixB71nu2RTAhzHRT7KVXSgy8X-QQVORvOtqiYX9eHj_m45VUoxHHYNwFUcyfX2cMV2u0gjEy63ft/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -708,7 +768,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gemo0IWsLGbPUawXd10z16GT5H0PczteEXxLQbadS3U9J5qcqtjzyZ1cF28H1av4yhgM5GqU2eNRbO39dGenw9tdhkMB_pR4JkujwKqoPipL3LWzjCGR8D13EqWQuG3u2WMPspiSfkjNffGcrymR0J-1qUf1d25beKYjzTj3mp-2s4nR_qK36SB0oqG7JK3I/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/cdetfXtvqSZFqBv9Cv0zl5FYM8b4IkLK7RB5w-mDZqSycQwmTjZqNhDhWPQR3Voa469QRi-tRN9-rvtfLtjjwVIpf2OYLwzejG5quxOUzT1OkTqQpZDvWR_mKF-lbKluKGlhGiypG3HQb8_34KbcFqIMshmDnFmpy7rAE4n6m2oUBXkjvVH1awS1MK6Bi8cb/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -718,7 +778,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/xwNiod7M9GB7nwbYeIH6iEuAipFGI6VUNDR6SbWwx5HaxMvrg4lTFheO4g88lAOL0cy2iX4mQ4tvniCapZq0xVCz0qxhe7LOYeqcjt6dOul32wQMnn37UVgRsXdXv1I0K_XQuNL0VEyUnRbNBexqB0kf53FtQOQ27LwsA2OvS8NUKmN-p0HRXSHYc01Ij4in/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wRVmBjTMSkgg0PFeC03YZYEr2BFz9HVhhDekeoa48HWzRHrmqXn4xfz4YljsT4CjeGk7_8N6YaPy-0MSzc1doq7hrsiCxKZS5F6O__GsO6utGBLrV62cNho4dtNICEPMKIyE36p9IRtwDLHw-LokxuTwON6zU-oFHlsOfirBuieyaqF87H4iRF37-hF_AwnI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز یکشنبه ۲۹ شهریور + جدول",
@@ -728,7 +788,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/b9jvsTR67wF9LJWpymqlpjhdIh_gvNDtlWPfiFSaCClZojMleeYzjQiJO0GCw1y9pv-IPylP7WPRkVrkzogbEHDyxZsl-vxOP4oxhDrzkLFU9TZI8IgJBn2EjJ5JdQ-qH8EBXr1rBrdaIhnCpO6abfmDZuBziMYgMt0NtqJkspcl-J3H5Y-IUgSVdWbSxpLm/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ormGDuD5VvDXkVfZ2-TQ6fXcPdzRau5iX7eT3RKmkV5xpB3cTEA0SuO0cJm4Ir2Prs7C-d2-EgU67nyAiX-DTrLvxDQ9sYbMFIX6V1ssJObkhuzr4jTq7mEdoI9QEXkJlmz2b3zAzAD_b3tMCk60BIOowDwFkZz8emnQ_0fpFKnlxRq-Ga0SZMaLrHmKZZZ6/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -738,7 +798,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/Dd3oXuTDV4-JhpQPp3YlNAED4Jew8c4I1mA-Pg62620fiS_dmpUawIp5IiXe8AODObAH91lLJm-fOSlzJrIhbv5DIDpLzckLu9rk7yG4w5LzHA0DCEUKc-s-A_kuRv4E1I2XaaE0aR5MyxeJgjxv2OSEfkyMksRVbR31pGSM-43hl1PPogtlPliMyMEBk2Id/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/P2esKxzfMaANr3pQuzeRpzj-tJsjLxkYS1-5i0VJT6BGI9cpvhr02B-ualO-7PaMHPlgm8lIUoAehn0N5hVA1IFnkTdo6PxPcpjjzDvGW-gActqpe5hxXg9Jd9Fl8cEsyEfJi0uMClPLo-MBK_7w2wZPQ6Fjo9eEJmdgsVqQRxxBzMxwwJG7qlXnxzL0LS9a/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نیک آفرید سماواتی: شیفته چهره هدیه تهرانی هستم",
@@ -861,16 +921,6 @@
       "rssDescription": "فرمانده قرارگاه منطقه‌ای سیدالشهدای نیروی زمینی سپاه گفت: دشمنان به دلیل نگرانی از انتقام مجدد جمهوری اسلامی ایران، از ورود به جنگ گسترده خودداری می‌کنند و عملیات‌های آنها به اقدامات مقطعی و نقطه‌ای محدود شده است."
     },
     {
-      "title": "حمله موشکی انصارالله به ریاض عربستان",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246453",
-      "date": "2026-09-19T20:26:02.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۶",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "ائتلاف سعودی از حمله موشکی انصارالله یمن به ریاض خبر داد."
-    },
-    {
       "title": "زلنسکی: حملات دوربرد خود را علیه روسیه گسترش می‌دهیم",
       "link": "https://www.asriran.com/fa/news/1192773/%D8%B2%D9%84%D9%86%D8%B3%DA%A9%DB%8C-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%AF%D9%88%D8%B1%D8%A8%D8%B1%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%AF%D8%B3%D8%AA%D8%B1%D8%B4-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
       "date": "2026-09-19T20:25:23.000Z",
@@ -931,16 +981,6 @@
       "rssDescription": "موضوع فوراً به محیط زیست‌ شهرستان چرام اطلاع داده شد و تیمی از محیط زیست به همراه هلال احمر و جوامع محلی به کمک چوپان رفتند."
     },
     {
-      "title": "افسر اطلاعاتی سابق آمریکا: روایت واشنگتن از عملیات نجات خلبان آمریکایی از ایران، ساختگی بود",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246452",
-      "date": "2026-09-19T20:21:58.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "اسکات ریتر با بیان اینکه روایت اخیر وزارت جنگ آمریکا درباره عملیات نجات خلبان ساقط شده این کشور از ایران در جریان جنگ ۴۰ روزه ساختگی و تبلیغاتی بود، گفت: واشنگتن دربرابر ایران متحمل شکست شد."
-    },
-    {
       "title": "تأکید وزیر اقتصاد بر تسریع در واگذاری اموال مازاد دولت",
       "link": "https://www.irna.ir/news/86268430/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A8%D8%B1-%D8%AA%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AF%D8%B1-%D9%88%D8%A7%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A7%D9%85%D9%88%D8%A7%D9%84-%D9%85%D8%A7%D8%B2%D8%A7%D8%AF-%D8%AF%D9%88%D9%84%D8%AA",
       "date": "2026-09-19T20:21:49.000Z",
@@ -989,46 +1029,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "خلصه بازی اشتوتگارت ۰ - دورتموند ۱ بوندسلیگای آلمان - ۲۰۲۶/۲۷ - هفته ۴"
-    },
-    {
-      "title": "کمند امیر سلیمانی: کودک کار بودم",
-      "link": "https://www.asriran.com/fa/news/1192769/%DA%A9%D9%85%D9%86%D8%AF-%D8%A7%D9%85%DB%8C%D8%B1-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9-%DA%A9%D8%A7%D8%B1-%D8%A8%D9%88%D8%AF%D9%85",
-      "date": "2026-09-19T20:18:19.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۸",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "همه می گویند خوش به حالت بازیگری."
-    },
-    {
-      "title": "گزارش تصویری دیدار تیم ملی نونهالان و خوشه طلایی ملکان",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841275",
-      "date": "2026-09-19T20:17:43.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۷",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "تیم ملی نونهالان که تحت هدایت مصطفی قنبرپور در اردوی اماده سازی جهت حضور در مسابقات جام جهانی ۲۰۲۶( باکو آذربایجان) در شهر ملکان بسر می برد، امروز عصر با نتیجه پر گل ، ۷بر۱ تیم خوشه طلایی ملکان را شکست داد."
-    },
-    {
-      "title": "سخنگوی دولت یمن: پاسخ قوی‌تر و سخت‌تری به تجاوزات سعودی می‌دهیم",
-      "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700818/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%DB%8C%D9%85%D9%86-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%82%D9%88%DB%8C-%D8%AA%D8%B1-%D9%88-%D8%B3%D8%AE%D8%AA-%D8%AA%D8%B1%DB%8C-%D8%A8%D9%87-%D8%AA%D8%AC%D8%A7%D9%88%D8%B2%D8%A7%D8%AA-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
-      "date": "2026-09-19T20:16:29.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۶",
-      "source": "تسنیم",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "سخنگوی دولت یمن در صنعاء تاکید کرد که پاسخ قوی تر و سخت تری به تجاوزات سعودی می‌دهیم."
-    },
-    {
-      "title": "تداوم تعطیلی پنج شنبه‌ها در استان سمنان",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246450",
-      "date": "2026-09-19T20:15:21.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۵",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "معاون توسعه مدیریت و منابع استانداری سمنان از تداوم تعطیلی پنجشنبه‌ها خبر داد و گفت: ساعات حضور کارکنان دستگاه‌های اجرایی و بانک‌ها در نیمه دوم سال ۸ تا ۱۳ تعیین شده است."
     }
   ],
   "categorizedNews": {
@@ -1042,26 +1042,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "ارومیه - مردم ولایی ارومیه در دویست و سومین شب از اجتماع شبانه در حمایت از رهبری و انقلاب در خیابان تجمع کردند."
-      },
-      {
-        "title": "بیش از ۴۰ درصد آزادراه زنجان - تبریز نیازمند بهسازی است",
-        "link": "https://www.mehrnews.com/news/6952085/%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B4%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF-%D8%A8%D9%87%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-09-19T21:22:26.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۲۲",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "زنجان- وزیر راه و شهرسازی از آغاز عملیات بهسازی و نوسازی آزادراه زنجان - تبریز پس از ۱۵ سال خبر داد و گفت: بیش از ۴۰ درصد این مسیر نیازمند بهسازی عمیق و اساسی است."
-      },
-      {
-        "title": "استاندار لرستان: برنامه توسعه استان با وفاق و همدلی در حال اجراست",
-        "link": "https://www.isna.ir/news/1405062919117/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7-%D9%88%D9%81%D8%A7%D9%82-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%D8%A7%D8%AC%D8%B1%D8%A7%D8%B3%D8%AA",
-        "date": "2026-09-19T20:42:18.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۴۲",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "استاندار لرستان گفت: فضای عمومی حاکم بر استان، بر مبنای برنامه توسعه استان و رفع مشکلات مردم، شکل گرفته و برنامه راهبردی توسعه استان براساس وفاق و همدلی در حال اجراست."
       },
       {
         "title": "این تکاور سپاه به سلاح KLF ایرانی شخصی سازی شده مسلح است!",
@@ -1092,29 +1072,19 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "تهران - ایرنا - وزیر امور اقتصادی و دارایی جمهوری اسلامی ایران، اصلاح رویه‌ها، فرایندها، آیین‌نامه‌ها و قوانین با هدف تسریع واگذاری اموال مازاد دولت را از مهم‌ترین اولویت‌های هیأت عامل سازمان خصوصی‌سازی در سال جاری عنوان کرد."
-      },
-      {
-        "title": "سخنگوی دولت یمن: پاسخ قوی‌تر و سخت‌تری به تجاوزات سعودی می‌دهیم",
-        "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700818/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%DB%8C%D9%85%D9%86-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%82%D9%88%DB%8C-%D8%AA%D8%B1-%D9%88-%D8%B3%D8%AE%D8%AA-%D8%AA%D8%B1%DB%8C-%D8%A8%D9%87-%D8%AA%D8%AC%D8%A7%D9%88%D8%B2%D8%A7%D8%AA-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
-        "date": "2026-09-19T20:16:29.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۶",
-        "source": "تسنیم",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "سخنگوی دولت یمن در صنعاء تاکید کرد که پاسخ قوی تر و سخت تری به تجاوزات سعودی می‌دهیم."
-      },
-      {
-        "title": "تداوم تعطیلی پنج شنبه‌ها در استان سمنان",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246450",
-        "date": "2026-09-19T20:15:21.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۵",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "معاون توسعه مدیریت و منابع استانداری سمنان از تداوم تعطیلی پنجشنبه‌ها خبر داد و گفت: ساعات حضور کارکنان دستگاه‌های اجرایی و بانک‌ها در نیمه دوم سال ۸ تا ۱۳ تعیین شده است."
       }
     ],
     "اقتصادی": [
+      {
+        "title": "تجارت زمینی اثر تحریم دریایی را خنثی می‌کند؟",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3246467",
+        "date": "2026-09-19T22:21:02.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۱",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "تداوم محاصره دریایی سبب شده تا ایران مسیر تجارت خود را به مرزهای زمینی تغییر دهد اما ظرفیت پایین و هزینه بالای حمل‌ونقل از این طریق جایگزینی کامل دریا را دشوار کرده است"
+      },
       {
         "title": "بازدید سفرا و دیپلمات‌های خارجی از بازار تاریخی و مسجد جامع ارومیه",
         "link": "https://www.mehrnews.com/news/6952100/%D8%A8%D8%A7%D8%B2%D8%AF%DB%8C%D8%AF-%D8%B3%D9%81%D8%B1%D8%A7-%D9%88-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C-%D9%88-%D9%85%D8%B3%D8%AC%D8%AF-%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87",
@@ -1208,6 +1178,16 @@
     ],
     "ورزشی": [
       {
+        "title": "بهترین ترکیب تاریخ با بازیکنان راست پا/ عکس",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3246468",
+        "date": "2026-09-19T22:25:08.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۵",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "انتخاب برترین‌های تاریخ فوتبال در پست‌های مختلف، همیشه یکی از جذاب‌ترین بحث‌های هواداران بوده است؛ اما این بار، معیار تنها یک چیز است: راست‌پا بودن ستاره‌ها."
+      },
+      {
         "title": "کامبک بارسلونا با هت‌تریک رافینیا/سویا هم قربانی شاگردان فلیک شد",
         "link": "https://www.ilna.ir/fa/tiny/news-1841279",
         "date": "2026-09-19T21:14:40.000Z",
@@ -1276,16 +1256,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "گل دوم بارسلونا به سویا توسط رافینیا زده شد."
-      },
-      {
-        "title": "گزارش تصویری دیدار تیم ملی نونهالان و خوشه طلایی ملکان",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841275",
-        "date": "2026-09-19T20:17:43.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۷",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "تیم ملی نونهالان که تحت هدایت مصطفی قنبرپور در اردوی اماده سازی جهت حضور در مسابقات جام جهانی ۲۰۲۶( باکو آذربایجان) در شهر ملکان بسر می برد، امروز عصر با نتیجه پر گل ، ۷بر۱ تیم خوشه طلایی ملکان را شکست داد."
       }
     ],
     "فرهنگی و هنری": [
@@ -1460,19 +1430,19 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "رئیس کل دادگستری استان مازندران از بازداشت عوامل نزاع و درگیری خیابانی در شهرستان چالوس که تصاویر آن در فضای مجازی منتشر شده بود، خبر داد."
-      },
-      {
-        "title": "کمند امیر سلیمانی: کودک کار بودم",
-        "link": "https://www.asriran.com/fa/news/1192769/%DA%A9%D9%85%D9%86%D8%AF-%D8%A7%D9%85%DB%8C%D8%B1-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9-%DA%A9%D8%A7%D8%B1-%D8%A8%D9%88%D8%AF%D9%85",
-        "date": "2026-09-19T20:18:19.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۱۸",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "همه می گویند خوش به حالت بازیگری."
       }
     ],
     "علمی و فناوری": [
+      {
+        "title": "سرعت پیر شدنتان را از هوش مصنوعی بپرسید",
+        "link": "https://www.isna.ir/news/1405062818944/%D8%B3%D8%B1%D8%B9%D8%AA-%D9%BE%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A7%D8%B2-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%A8%D9%BE%D8%B1%D8%B3%DB%8C%D8%AF",
+        "date": "2026-09-19T22:30:00.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۳۰",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "سامانه‌ای جدید به دانشمندان کمک می‌کند مدل‌های زبانی بزرگ را برای پژوهش‌های مرتبط با طول عمر بهبود دهند و مفهوم «سن زیستی» را دقیق‌تر بررسی کنند."
+      },
       {
         "title": "مدیرکل پست لرستان: ۱۵۴ فروشگاه اینترنتی استان فعال هستند",
         "link": "https://www.isna.ir/news/1405062919121/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%D9%BE%D8%B3%D8%AA-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DB%B1%DB%B5%DB%B4-%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%81%D8%B9%D8%A7%D9%84-%D9%87%D8%B3%D8%AA%D9%86%D8%AF",
@@ -1485,6 +1455,46 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "هشدارهای امنیتی گسترده آمریکا به شهروندان خود در غرب آسیا",
+        "link": "https://www.irna.ir/news/86268445/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%88%D9%86%D8%AF%D8%A7%D9%86-%D8%AE%D9%88%D8%AF-%D8%AF%D8%B1-%D8%BA%D8%B1%D8%A8-%D8%A2%D8%B3%DB%8C%D8%A7",
+        "date": "2026-09-19T22:25:06.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۲۵",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران - ایرنا - سفارتخانه‌های آمریکا در چندین کشور در غرب آسیا با صدور هشدارهای امنیتی فوری، از شهروندان خود خواسته‌اند هوشیار باشند و در پی افزایش درگیری ها در منطقه، خود را برای احتمال لغو پروازها، بسته شدن حریم هوایی و اختلال در سفر آماده کنند."
+      },
+      {
+        "title": "هشدار سفارت آمریکا در کشورهای منطقه به اتباع آمریکایی",
+        "link": "https://www.mehrnews.com/news/6952110/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D9%81%D8%A7%D8%B1%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A8%D9%87-%D8%A7%D8%AA%D8%A8%D8%A7%D8%B9-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C",
+        "date": "2026-09-19T22:17:08.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۱۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "سفارتخانه های آمریکا در کشورهای منطقه از جمله عراق برای اتباع آمریکایی هشدار صادر کرد."
+      },
+      {
+        "title": "آمریکا به اتباع خود در غرب آسیا هشدار داد",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/29/3700841/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%A7%D8%AA%D8%A8%D8%A7%D8%B9-%D8%AE%D9%88%D8%AF-%D8%AF%D8%B1-%D8%BA%D8%B1%D8%A8-%D8%A2%D8%B3%DB%8C%D8%A7-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF",
+        "date": "2026-09-19T22:06:40.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۶",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "سفارت‌خانه آمریکا در کشورهای مختلف غرب آسیا، همزمان اقدام به صدور اطلاعیه‌های هشدار کردند."
+      },
+      {
+        "title": "چرا آمریکا میلیون‌ها سوزن مسی را دور زمین پاشید؟",
+        "link": "https://www.asriran.com/fa/news/1192579/%DA%86%D8%B1%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D9%87%D8%A7-%D8%B3%D9%88%D8%B2%D9%86-%D9%85%D8%B3%DB%8C-%D8%B1%D8%A7-%D8%AF%D9%88%D8%B1-%D8%B2%D9%85%DB%8C%D9%86-%D9%BE%D8%A7%D8%B4%DB%8C%D8%AF",
+        "date": "2026-09-19T22:00:01.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "آمریکا در جنگ سرد با پروژه‌ای عجیب، میلیون‌ها رشته‌ی مسی را در مدار زمین پخش کرد؛ پروژه‌ای که بخشی از بقایای آن هنوز در فضا است."
+      },
       {
         "title": "وقوع انفجارهای شدید در عربستان",
         "link": "https://www.isna.ir/news/1405062919130/%D9%88%D9%82%D9%88%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%B4%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86",
@@ -1574,6 +1584,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "یک تحلیل‌گر اسرائیلی نوشت: «موضع جمهوری اسلامی ایران برای پایان دادن به درگیری‌های جاری کاملاً روشن است و بر پایه بازگشت به تفاهم‌نامه‌ای استوار شده که پیش‌تر حمایت گسترده‌ای در ساختار حاکمیتی کشور کسب کرده بود، مشروط بر آنکه واشنگتن تعهدات پیشین خود را به رسمیت بشناسد و به اجرا درآورد.»"
+      },
+      {
+        "title": "حمله مقام ارشد دولت ترامپ به رسانه‌های منتقد",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/29/3700836/%D8%AD%D9%85%D9%84%D9%87-%D9%85%D9%82%D8%A7%D9%85-%D8%A7%D8%B1%D8%B4%D8%AF-%D8%AF%D9%88%D9%84%D8%AA-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%AA%D9%82%D8%AF",
+        "date": "2026-09-19T21:24:53.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۲۴",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "در ادامه حملات دولت ترامپ به رسانه‌های منتقد؛ یک مقام ارشد کاخ سفید، نوشت: روزنامه‌نگاری در آمریکا مرده است."
       },
       {
         "title": "مخالفت چین با تشدید تحریم‌های آمریکا علیه روسیه و ایران",
@@ -1756,16 +1776,6 @@
         "rssDescription": "رسانه عبری نوشت: اعتراضات اسرائیل علیه فروش جنگنده‌ای اف 35 به عربستان سعودی برای باج‌گیری از آمریکا است."
       },
       {
-        "title": "حمله موشکی انصارالله به ریاض عربستان",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246453",
-        "date": "2026-09-19T20:26:02.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۶",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "ائتلاف سعودی از حمله موشکی انصارالله یمن به ریاض خبر داد."
-      },
-      {
         "title": "زلنسکی: حملات دوربرد خود را علیه روسیه گسترش می‌دهیم",
         "link": "https://www.asriran.com/fa/news/1192773/%D8%B2%D9%84%D9%86%D8%B3%DA%A9%DB%8C-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%AF%D9%88%D8%B1%D8%A8%D8%B1%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%AF%D8%B3%D8%AA%D8%B1%D8%B4-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
         "date": "2026-09-19T20:25:23.000Z",
@@ -1784,16 +1794,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "معاون عتبات عالیات سازمان حج و زیارت درباره تفاوت قیمت بسته‌های سفر نیز توضیح داد: قیمت‌ها با توجه به نوع بسته، زمینی یا هوایی بودن سفر، مدت اقامت، سطح هتل و خدمات پیش‌بینی‌شده متفاوت است."
-      },
-      {
-        "title": "افسر اطلاعاتی سابق آمریکا: روایت واشنگتن از عملیات نجات خلبان آمریکایی از ایران، ساختگی بود",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246452",
-        "date": "2026-09-19T20:21:58.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "اسکات ریتر با بیان اینکه روایت اخیر وزارت جنگ آمریکا درباره عملیات نجات خلبان ساقط شده این کشور از ایران در جریان جنگ ۴۰ روزه ساختگی و تبلیغاتی بود، گفت: واشنگتن دربرابر ایران متحمل شکست شد."
       },
       {
         "title": "دبیرکل حزب‌الله: مقاومت تنها راه مقابله با صهیونیست‌هاست",
@@ -1817,6 +1817,16 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "علم الهدی: مقاومت مردم بزرگ‌ترین میدان جهاد در برابر دشمن است",
+        "link": "https://www.mehrnews.com/news/6952109/%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%87%D8%AF%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AA%D8%B1%DB%8C%D9%86-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AC%D9%87%D8%A7%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%AF%D8%B4%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
+        "date": "2026-09-19T22:07:42.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۲:۰۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "مشهد- نماینده ولی فقیه در خراسان رضوی گفت: مقاومت و ایستادگی مردم در برابر دشمن، بزرگ‌ترین میدان جهاد و عاملی برای ناامیدی دشمن از به‌هم‌ریختن داخل کشور است."
+      },
       {
         "title": "پرچم مردم چناران در شب ۲۰۳ همچنان بااقتدار بالاست",
         "link": "https://www.mehrnews.com/news/6952106/%D9%BE%D8%B1%DA%86%D9%85-%D9%85%D8%B1%D8%AF%D9%85-%DA%86%D9%86%D8%A7%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B4%D8%A8-%DB%B2%DB%B0%DB%B3-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A8%D8%A7%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA",
@@ -1868,16 +1878,6 @@
         "rssDescription": "ارومیه - دویست و سومین اجتماع شبانه مردم سلماس شنبه شب در حمایت از نیروهای مسلح و وطن برگزار شد."
       },
       {
-        "title": "دویست و سومین اجتماع شبانه مردم بیرجند",
-        "link": "https://www.mehrnews.com/news/6952086/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%DB%8C%D8%B1%D8%AC%D9%86%D8%AF",
-        "date": "2026-09-19T21:31:55.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "بیرجند- تصاویری از حضور مردم در دویست و سومین اجتماع شبانه در میدان شهید رئیسی بیرجند را ببینید."
-      },
-      {
         "title": "ببینید | راه‌اندازی دستگاه‌های آموزش احیای قلبی در مترو تهران",
         "link": "https://www.khabaronline.ir/news/2276881/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%D8%AD%DB%8C%D8%A7%DB%8C-%D9%82%D9%84%D8%A8%DB%8C-%D8%AF%D8%B1-%D9%85%D8%AA%D8%B1%D9%88-%D8%AA%D9%87%D8%B1%D8%A7%D9%86",
         "date": "2026-09-19T21:00:00.000Z",
@@ -1925,7 +1925,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/hgFNjVglL3rd7u1__VsyJEZY5gCh3oalNlU-18dBw82PXpHKe2slV5t5efow-5KTYT2tHiG6cL7TPgrTQxnLhyZk59m-DVgRpM_DKdNChIsCq_0rckwgH1eLayyP0_dgoIpWn4E7jjafgZPWnDqnQtkt7kIMjoKvPnF1ehmu6kHCkDzoiJqwK73fo5G-iPKN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PItAtYVX84erjlpX0KKDLnOJBjLkTn-Hup70Nbn6ePAKtBN8HgSStymbgJD2L5eryNxymAVRSQmOkCI5medgOyDkeRVAMHxyBvqUjaIN2qNXDU6HVmSiixB71nu2RTAhzHRT7KVXSgy8X-QQVORvOtqiYX9eHj_m45VUoxHHYNwFUcyfX2cMV2u0gjEy63ft/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1935,7 +1935,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gemo0IWsLGbPUawXd10z16GT5H0PczteEXxLQbadS3U9J5qcqtjzyZ1cF28H1av4yhgM5GqU2eNRbO39dGenw9tdhkMB_pR4JkujwKqoPipL3LWzjCGR8D13EqWQuG3u2WMPspiSfkjNffGcrymR0J-1qUf1d25beKYjzTj3mp-2s4nR_qK36SB0oqG7JK3I/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/cdetfXtvqSZFqBv9Cv0zl5FYM8b4IkLK7RB5w-mDZqSycQwmTjZqNhDhWPQR3Voa469QRi-tRN9-rvtfLtjjwVIpf2OYLwzejG5quxOUzT1OkTqQpZDvWR_mKF-lbKluKGlhGiypG3HQb8_34KbcFqIMshmDnFmpy7rAE4n6m2oUBXkjvVH1awS1MK6Bi8cb/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1945,7 +1945,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/xwNiod7M9GB7nwbYeIH6iEuAipFGI6VUNDR6SbWwx5HaxMvrg4lTFheO4g88lAOL0cy2iX4mQ4tvniCapZq0xVCz0qxhe7LOYeqcjt6dOul32wQMnn37UVgRsXdXv1I0K_XQuNL0VEyUnRbNBexqB0kf53FtQOQ27LwsA2OvS8NUKmN-p0HRXSHYc01Ij4in/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wRVmBjTMSkgg0PFeC03YZYEr2BFz9HVhhDekeoa48HWzRHrmqXn4xfz4YljsT4CjeGk7_8N6YaPy-0MSzc1doq7hrsiCxKZS5F6O__GsO6utGBLrV62cNho4dtNICEPMKIyE36p9IRtwDLHw-LokxuTwON6zU-oFHlsOfirBuieyaqF87H4iRF37-hF_AwnI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز یکشنبه ۲۹ شهریور + جدول",
@@ -1955,7 +1955,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/b9jvsTR67wF9LJWpymqlpjhdIh_gvNDtlWPfiFSaCClZojMleeYzjQiJO0GCw1y9pv-IPylP7WPRkVrkzogbEHDyxZsl-vxOP4oxhDrzkLFU9TZI8IgJBn2EjJ5JdQ-qH8EBXr1rBrdaIhnCpO6abfmDZuBziMYgMt0NtqJkspcl-J3H5Y-IUgSVdWbSxpLm/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ormGDuD5VvDXkVfZ2-TQ6fXcPdzRau5iX7eT3RKmkV5xpB3cTEA0SuO0cJm4Ir2Prs7C-d2-EgU67nyAiX-DTrLvxDQ9sYbMFIX6V1ssJObkhuzr4jTq7mEdoI9QEXkJlmz2b3zAzAD_b3tMCk60BIOowDwFkZz8emnQ_0fpFKnlxRq-Ga0SZMaLrHmKZZZ6/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1965,7 +1965,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/Dd3oXuTDV4-JhpQPp3YlNAED4Jew8c4I1mA-Pg62620fiS_dmpUawIp5IiXe8AODObAH91lLJm-fOSlzJrIhbv5DIDpLzckLu9rk7yG4w5LzHA0DCEUKc-s-A_kuRv4E1I2XaaE0aR5MyxeJgjxv2OSEfkyMksRVbR31pGSM-43hl1PPogtlPliMyMEBk2Id/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/P2esKxzfMaANr3pQuzeRpzj-tJsjLxkYS1-5i0VJT6BGI9cpvhr02B-ualO-7PaMHPlgm8lIUoAehn0N5hVA1IFnkTdo6PxPcpjjzDvGW-gActqpe5hxXg9Jd9Fl8cEsyEfJi0uMClPLo-MBK_7w2wZPQ6Fjo9eEJmdgsVqQRxxBzMxwwJG7qlXnxzL0LS9a/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "نیک آفرید سماواتی: شیفته چهره هدیه تهرانی هستم",
