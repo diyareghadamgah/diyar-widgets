@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-19T23:03:35.251Z",
-  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۳",
+  "lastUpdate": "2026-09-19T23:32:51.438Z",
+  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۳۲",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -31,6 +31,82 @@
   ],
   "news": [
     {
+      "title": "دویست و سومین شب تجمعات مردم زنجان در میدان",
+      "link": "https://www.mehrnews.com/news/6952119/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+      "date": "2026-09-19T23:28:31.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و سومین شب از شب‌های حمایت از وطن را مشاهده می‌کنید."
+    },
+    {
+      "title": "دویست و ششمین شب اجتماع مردمی در بندرعباس",
+      "link": "https://www.mehrnews.com/photo/6952068/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B4%D8%B4%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85%DB%8C-%D8%AF%D8%B1-%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3",
+      "date": "2026-09-19T23:25:00.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۵",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "آئین افتتاح پردیس سینمایی پدیده شاندیز",
+      "link": "https://www.mehrnews.com/photo/6952116/%D8%A2%D8%A6%DB%8C%D9%86-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%BE%D8%B1%D8%AF%DB%8C%D8%B3-%D8%B3%DB%8C%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%B4%D8%A7%D9%86%D8%AF%DB%8C%D8%B2",
+      "date": "2026-09-19T23:21:38.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری"
+    },
+    {
+      "title": "تقلب در آزمون امتحانات نهایی / ۳ نفر شناسایی و دستگیر شدند",
+      "link": "https://www.khabaronline.ir/news/2276816/%D8%AA%D9%82%D9%84%D8%A8-%D8%AF%D8%B1-%D8%A2%D8%B2%D9%85%D9%88%D9%86-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%DB%B3-%D9%86%D9%81%D8%B1-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D9%88-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AF",
+      "date": "2026-09-19T23:15:00.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۱۵",
+      "source": "خبرآنلاین",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "دادستان عمومی و انقلاب شهرستان کردکوی گفت: یک نفر از متهمان هنگام تقلب در آزمون نهایی از طریق ارتباط با وسیله الکترونیکی با خارج از حوزه امتحان، یک نفر دیگر هم به اتهام شرکت در آزمون به جای داوطلب اصلی دستگیر شدند."
+    },
+    {
+      "title": "یادواره شهدای رسانه استان خراسان جنوبی",
+      "link": "https://www.mehrnews.com/photo/6952115/%DB%8C%D8%A7%D8%AF%D9%88%D8%A7%D8%B1%D9%87-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%AC%D9%86%D9%88%D8%A8%DB%8C",
+      "date": "2026-09-19T23:11:21.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۱۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "مسابقات انتخابی تیم ملی تکواندو در کرج",
+      "link": "https://www.mehrnews.com/photo/6952114/%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D8%AA%DA%A9%D9%88%D8%A7%D9%86%D8%AF%D9%88-%D8%AF%D8%B1-%DA%A9%D8%B1%D8%AC",
+      "date": "2026-09-19T23:06:47.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۶",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "ورزشی"
+    },
+    {
+      "title": "۲۰۳ِ شب وفاداری؛ نمایش اقتدار و بصیرت در «دیار آفتاب»",
+      "link": "https://www.mehrnews.com/news/6952111/%DB%B2%DB%B0%DB%B3-%D8%B4%D8%A8-%D9%88%D9%81%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B5%DB%8C%D8%B1%D8%AA-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8",
+      "date": "2026-09-19T23:06:17.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۶",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "اراک- در این ویدئو دویست و سومین شب وفاداری و نمایش اقتدار و بصیرت در دیار آفتاب را ملاحظه می کنید."
+    },
+    {
+      "title": "حماسه‌ای به وسعت ۲۰۳ شب؛ میدان‌داری مردم خمین در امتداد مقاومت",
+      "link": "https://www.mehrnews.com/news/6952113/%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%A7%DB%8C-%D8%A8%D9%87-%D9%88%D8%B3%D8%B9%D8%AA-%DB%B2%DB%B0%DB%B3-%D8%B4%D8%A8-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%AE%D9%85%DB%8C%D9%86-%D8%AF%D8%B1-%D8%A7%D9%85%D8%AA%D8%AF%D8%A7%D8%AF-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA",
+      "date": "2026-09-19T23:05:00.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۵",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "خمین- در این ویدئو میدان داری مردم خمین در شب دویست و سوم و تجدیدمیثاق دوباره با ولایت فقیه را ملاحظه می کنید."
+    },
+    {
       "title": "تظاهرات تونسی‌ها در حمایت از فعالان بازداشت ‌شده «ناوگان صمود»",
       "link": "https://www.irna.ir/news/86268449/%D8%AA%D8%B8%D8%A7%D9%87%D8%B1%D8%A7%D8%AA-%D8%AA%D9%88%D9%86%D8%B3%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%81%D8%B9%D8%A7%D9%84%D8%A7%D9%86-%D8%A8%D8%A7%D8%B2%D8%AF%D8%A7%D8%B4%D8%AA-%D8%B4%D8%AF%D9%87-%D9%86%D8%A7%D9%88%DA%AF%D8%A7%D9%86-%D8%B5%D9%85%D9%88%D8%AF",
       "date": "2026-09-19T23:00:43.000Z",
@@ -39,6 +115,26 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "تهران - ایرنا - هزاران نفر از مردم تونس با برگزاری تظاهرات خواستار آزادی چهار فعال بازداشت‌شده در ارتباط با پرونده‌ای مربوط به تامین مالی و سازماندهی فعالیت‌های مرتبط با «ناوگان صمود» شدند."
+    },
+    {
+      "title": "«معصومه خانم» سوگلی احمدشاه با ژست خاص در مقابل دوربین",
+      "link": "https://www.asriran.com/fa/news/1192592/%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87-%D8%AE%D8%A7%D9%86%D9%85-%D8%B3%D9%88%DA%AF%D9%84%DB%8C-%D8%A7%D8%AD%D9%85%D8%AF%D8%B4%D8%A7%D9%87-%D8%A8%D8%A7-%DA%98%D8%B3%D8%AA-%D8%AE%D8%A7%D8%B5-%D8%AF%D8%B1-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86",
+      "date": "2026-09-19T23:00:02.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "در ادامه تصویری قدیمی از معصومه خانم، سوگلی احمدشاه را با ژستی خاص در مقابل دوربین مشاهده می کنید."
+    },
+    {
+      "title": "تهیه سوفله ماکارونی با گوشت چرخ‌کرده",
+      "link": "https://www.tabnak.ir/fa/news/1395025/%D8%AA%D9%87%DB%8C%D9%87-%D8%B3%D9%88%D9%81%D9%84%D9%87-%D9%85%D8%A7%DA%A9%D8%A7%D8%B1%D9%88%D9%86%DB%8C-%D8%A8%D8%A7-%DA%AF%D9%88%D8%B4%D8%AA-%DA%86%D8%B1%D8%AE-%DA%A9%D8%B1%D8%AF%D9%87",
+      "date": "2026-09-19T23:00:02.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "سوفله ماکارونی پیچیده نیست. فقط کافی است پاستا را بیش از حد نپزید، مایه گوشتی را کم‌آب آماده کنید، بشامل را با غلظت مناسب درست کنید و زمان پخت را کنترل کنید."
     },
     {
       "title": "تغییر در صدای فرد می‌تواند نشانه زوال مغز باشد",
@@ -241,16 +337,6 @@
       "rssDescription": "بیرجند- عضو هیئت علمی دانشگاه بیرجند گفت: ادبیات تجلی‌گاه فرهنگ جامعه و بخشی از هویت ماست و باید در استفاده از آن حساب‌شده عمل کنیم."
     },
     {
-      "title": "مشاهده خرس قهوه ای در ارتفاعات ارومیه",
-      "link": "https://www.mehrnews.com/news/6952097/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D9%87-%D8%AE%D8%B1%D8%B3-%D9%82%D9%87%D9%88%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87",
-      "date": "2026-09-19T21:47:44.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "ارومیه - رئیس اداره حفاظت محیط زیست شهرستان ارومیه از مشاهده یک قلاده خرس قهوه‌ای در ارتفاعات روستای انبی بخش سیلوانا خبر داد."
-    },
-    {
       "title": "هشدار امنیتی به شهروندان آمریکایی مقیم غرب آسیا",
       "link": "https://www.isna.ir/news/1405062919129/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%88%D9%86%D8%AF%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%85%D9%82%DB%8C%D9%85-%D8%BA%D8%B1%D8%A8-%D8%A2%D8%B3%DB%8C%D8%A7",
       "date": "2026-09-19T21:47:32.000Z",
@@ -259,36 +345,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "سفارت آمریکا در قدس اشغالی و نمایندگی‌های این کشور در منطقه، همزمان با افزایش تنش‌ها در غرب آسیا درباره احتمال محدودیت‌های امنیتی و اختلال در تردد هوایی هشدارهایی را به شهروندان آمریکایی صادر کردند."
-    },
-    {
-      "title": "میدان‌داری مشهدی ها در حماسه ۲۰۳ خیابان",
-      "link": "https://www.mehrnews.com/news/6952094/%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B4%D9%87%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%DB%B2%DB%B0%DB%B3-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-      "date": "2026-09-19T21:45:41.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۵",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "مشهد- مردم مشهد در شب ۲۰۳ حماسه خیابان با شعار «ما همگی دشمن صهیونیستیم تا لحظه نابودی اش می ایستیم» به میدان آمدند."
-    },
-    {
-      "title": "رحمانی: مرز بازرگان پایلوت تحول تجارت مرزی تکمیل شود",
-      "link": "https://www.mehrnews.com/news/6952092/%D8%B1%D8%AD%D9%85%D8%A7%D9%86%DB%8C-%D9%85%D8%B1%D8%B2-%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86-%D9%BE%D8%A7%DB%8C%D9%84%D9%88%D8%AA-%D8%AA%D8%AD%D9%88%D9%84-%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA-%D9%85%D8%B1%D8%B2%DB%8C-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B4%D9%88%D8%AF",
-      "date": "2026-09-19T21:44:32.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "ارومیه - استاندار آذربایجان غربی گفت: مرز بازرگان باید به‌عنوان پایلوت توسعه تجارت مرزی تکمیل شود."
-    },
-    {
-      "title": "۵۰ کیلومتر از آزادراه زنجان-تبریز در ۴ ماه گذشته روکش آسفالت شد",
-      "link": "https://www.mehrnews.com/news/6952095/%DB%B5%DB%B0-%DA%A9%DB%8C%D9%84%D9%88%D9%85%D8%AA%D8%B1-%D8%A7%D8%B2-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D8%AF%D8%B1-%DB%B4-%D9%85%D8%A7%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87-%D8%B1%D9%88%DA%A9%D8%B4-%D8%A2%D8%B3%D9%81%D8%A7%D9%84%D8%AA",
-      "date": "2026-09-19T21:43:13.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "زنجان- مدیرکل راهداری و حمل‌ونقل جاده‌ای استان زنجان گفت: با هدف ارتقای ایمنی کاربران جاده‌ای ۵۰ کیلومتر از نقاط دارای خرابی شدید طی ۴ ماه اخیر لکه گیری و روکش آسفالت شده است."
     },
     {
       "title": "احتمال بارش‌های سیل‌آسا در تهران/ شناسایی بیمارستانهای در معرض سیل در پایتخت",
@@ -311,16 +367,6 @@
       "rssDescription": "یک منبع یمنی خبر داد که میانگین عبور کشتی از تنگه باب المندب به حدود ۳۵ کشتی در روز می‌رسد."
     },
     {
-      "title": "مردم سلماس در دویست و سومین شب مقاومت ملی پرچمداری کردند",
-      "link": "https://www.mehrnews.com/news/6952089/%D9%85%D8%B1%D8%AF%D9%85-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D9%84%DB%8C-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%DA%A9%D8%B1%D8%AF%D9%86%D8%AF",
-      "date": "2026-09-19T21:36:32.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۶",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "ارومیه - دویست و سومین اجتماع شبانه مردم سلماس شنبه شب در حمایت از نیروهای مسلح و وطن برگزار شد."
-    },
-    {
       "title": "۴٨ مصدوم بر اثر واژگونی اتوبوس بم - مشهد",
       "link": "https://www.isna.ir/news/1405062919128/%DB%B4%D9%A8-%D9%85%D8%B5%D8%AF%D9%88%D9%85-%D8%A8%D8%B1-%D8%A7%D8%AB%D8%B1-%D9%88%D8%A7%DA%98%DA%AF%D9%88%D9%86%DB%8C-%D8%A7%D8%AA%D9%88%D8%A8%D9%88%D8%B3-%D8%A8%D9%85-%D9%85%D8%B4%D9%87%D8%AF",
       "date": "2026-09-19T21:36:16.000Z",
@@ -329,26 +375,6 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "مدیرعامل جمعیت هلال‌ احمر استان کرمان از مصدوم‌شدن ۴۸ نفر در حادثه واژگونی اتوبوس مسافران بم - مشهد خبر داد."
-    },
-    {
-      "title": "روایت مهر از میدان داری مردم ارومیه در دویست و سومین اجتماع شبانه",
-      "link": "https://www.mehrnews.com/news/6952087/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%85%D9%87%D8%B1-%D8%A7%D8%B2-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87",
-      "date": "2026-09-19T21:35:20.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۵",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "ارومیه - مردم ولایی ارومیه در دویست و سومین شب از اجتماع شبانه در حمایت از رهبری و انقلاب در خیابان تجمع کردند."
-    },
-    {
-      "title": "توسعه فرهنگ قرآنی باید به سبک زندگی در جامعه تبدیل شود",
-      "link": "https://www.mehrnews.com/news/6952088/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%B3%D8%A8%DA%A9-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D8%B4%D9%88%D8%AF",
-      "date": "2026-09-19T21:33:33.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "زنجان- معاون استاندار زنجان گفت: هدف از اجرای برنامه های قرآنی از جمله طرح «زندگی با آیه‌ها»، توسعه فرهنگ قرآنی و تبدیل مفاهیم و آموزه‌های متعالی آن به گفتمان عمومی و سبک زندگی در جامعه است."
     },
     {
       "title": "ترکیه ۲۰۱ مظنون در یک شبکه کلاهبرداری بین‌المللی مرتبط با رژیم اسرائیل را دستگیر کرد",
@@ -778,7 +804,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PItAtYVX84erjlpX0KKDLnOJBjLkTn-Hup70Nbn6ePAKtBN8HgSStymbgJD2L5eryNxymAVRSQmOkCI5medgOyDkeRVAMHxyBvqUjaIN2qNXDU6HVmSiixB71nu2RTAhzHRT7KVXSgy8X-QQVORvOtqiYX9eHj_m45VUoxHHYNwFUcyfX2cMV2u0gjEy63ft/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Oz3lGLn_KMh57dE92KDRwndrYippxF5nTIBBFhx5zU_4PvygrqnGbUQCKiTg_j_UmmtnAbmhescmHC5VkfYlMg5BmzisoTI2YIzWXnm-uF6RM5fPo34HsnFsC4H5WUomkxFC__cS24XBzI28A2xg1F3uGzs9f3KYeL223cs-e_5F2X2a2_MI3B7Yli10ap9t/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -788,7 +814,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/cdetfXtvqSZFqBv9Cv0zl5FYM8b4IkLK7RB5w-mDZqSycQwmTjZqNhDhWPQR3Voa469QRi-tRN9-rvtfLtjjwVIpf2OYLwzejG5quxOUzT1OkTqQpZDvWR_mKF-lbKluKGlhGiypG3HQb8_34KbcFqIMshmDnFmpy7rAE4n6m2oUBXkjvVH1awS1MK6Bi8cb/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/JvWa1ZaaCURx0jOCbWaQuIhLcoidlsmQZV78Ce7R9HItLdscGv1uFQYCFALn1BOQ5PmfcamxwiVI8DzGT6eYC-SlPjnLHDarMghjnByIWXr6dbriUHnnRdJSxy_rfxpy5qGmkHNUAFrSArnIjUROVlidYEMZw2VTBgPJ6FdHPdJ6cWfVqZmcwKJ9LwHz_suC/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -798,7 +824,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wRVmBjTMSkgg0PFeC03YZYEr2BFz9HVhhDekeoa48HWzRHrmqXn4xfz4YljsT4CjeGk7_8N6YaPy-0MSzc1doq7hrsiCxKZS5F6O__GsO6utGBLrV62cNho4dtNICEPMKIyE36p9IRtwDLHw-LokxuTwON6zU-oFHlsOfirBuieyaqF87H4iRF37-hF_AwnI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/ySq6pPzI7wW59_ZDVL-CWOsAYp0HLgjukQ26sVcZBQxdjlNyCAVR4nw2KVN4QDTW6SI4P2dDj135e38dPtFqusZuW6xT2HgJBNWRzfrMhrRcPIfJgMWulqkJIcFiiHsvPKLztaUUGljYPp38XShlMHBHcXDaZGlWeh_bZEqudU4i7IQcQZTNSq5vGqY8fND-/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز یکشنبه ۲۹ شهریور + جدول",
@@ -808,7 +834,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ormGDuD5VvDXkVfZ2-TQ6fXcPdzRau5iX7eT3RKmkV5xpB3cTEA0SuO0cJm4Ir2Prs7C-d2-EgU67nyAiX-DTrLvxDQ9sYbMFIX6V1ssJObkhuzr4jTq7mEdoI9QEXkJlmz2b3zAzAD_b3tMCk60BIOowDwFkZz8emnQ_0fpFKnlxRq-Ga0SZMaLrHmKZZZ6/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/mE1QHJiGJQXrXxUVXAbcBrVf7jyEePat06G61CBRwI4qVuVv-thLGxoUSc--Aa-RAhbrcaId0xPcpEeKqjeRTPwkND-qCp-bxf88yGYiRyXCcejv6EIgXj-oR-ww8Yuh3Gvk9CbOPL6HmzagdwztjGbFjy3RovtJuSrDjHO_jnKgjjq0feSJ3np1bS0DWZEi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -818,7 +844,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/P2esKxzfMaANr3pQuzeRpzj-tJsjLxkYS1-5i0VJT6BGI9cpvhr02B-ualO-7PaMHPlgm8lIUoAehn0N5hVA1IFnkTdo6PxPcpjjzDvGW-gActqpe5hxXg9Jd9Fl8cEsyEfJi0uMClPLo-MBK_7w2wZPQ6Fjo9eEJmdgsVqQRxxBzMxwwJG7qlXnxzL0LS9a/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/IarGV1eAGVxi-JczevdnH0En7Ams5qa4wj5-Q0Ero9YJO42e8zMipq4sC0OtbWitVCS87kGHz_r0_eqayf01HIBzuB9Yb4DoW7lvxam28-sXDaJchsYIG8yRh3JQrjm69gPX32obkAXiA44Ny2Lo_FSWUxwliUyg0kphJ7pNUeCN7MyFKZ0P_XGGCaaGpxUu/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نیک آفرید سماواتی: شیفته چهره هدیه تهرانی هستم",
@@ -999,50 +1025,10 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران - ایرنا - وزیر امور اقتصادی و دارایی جمهوری اسلامی ایران، اصلاح رویه‌ها، فرایندها، آیین‌نامه‌ها و قوانین با هدف تسریع واگذاری اموال مازاد دولت را از مهم‌ترین اولویت‌های هیأت عامل سازمان خصوصی‌سازی در سال جاری عنوان کرد."
-    },
-    {
-      "title": "ویدیو: گل دوم بارسلونا به سویا توسط رافینیا",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841276",
-      "date": "2026-09-19T20:21:29.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل دوم بارسلونا به سویا توسط رافینیا زده شد."
-    },
-    {
-      "title": "ببینید | دستگیری عوامل درگیری و قدرت‌نمایی خیابانی در چالوس",
-      "link": "https://www.khabaronline.ir/news/2276842/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B9%D9%88%D8%A7%D9%85%D9%84-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D9%88-%D9%82%D8%AF%D8%B1%D8%AA-%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%DA%86%D8%A7%D9%84%D9%88%D8%B3",
-      "date": "2026-09-19T20:21:00.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "رئیس کل دادگستری استان مازندران از بازداشت عوامل نزاع و درگیری خیابانی در شهرستان چالوس که تصاویر آن در فضای مجازی منتشر شده بود، خبر داد."
-    },
-    {
-      "title": "دبیرکل حزب‌الله: مقاومت تنها راه مقابله با صهیونیست‌هاست",
-      "link": "https://www.tabnak.ir/fa/news/1395095/%D8%AF%D8%A8%DB%8C%D8%B1%DA%A9%D9%84-%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AA%D9%86%D9%87%D8%A7-%D8%B1%D8%A7%D9%87-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87-%D8%A8%D8%A7-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%D8%B3%D8%AA",
-      "date": "2026-09-19T20:20:54.000Z",
-      "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۰",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "دبیرکل حزب‌الله لبنان تاکید کرد که مقاومت و ایستادگی با تمامی انواع و اقسامش همچنان تنها راه پایان دادن به اشغالگری و آزادسازی اراضی است و تمامی راه‌های دیگر صرفا تلف کردن وقت است."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
-      {
-        "title": "روایت مهر از میدان داری مردم ارومیه در دویست و سومین اجتماع شبانه",
-        "link": "https://www.mehrnews.com/news/6952087/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%85%D9%87%D8%B1-%D8%A7%D8%B2-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87",
-        "date": "2026-09-19T21:35:20.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۵",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "ارومیه - مردم ولایی ارومیه در دویست و سومین شب از اجتماع شبانه در حمایت از رهبری و انقلاب در خیابان تجمع کردند."
-      },
       {
         "title": "این تکاور سپاه به سلاح KLF ایرانی شخصی سازی شده مسلح است!",
         "link": "https://www.khabaronline.ir/news/2276905/%D8%A7%DB%8C%D9%86-%D8%AA%DA%A9%D8%A7%D9%88%D8%B1-%D8%B3%D9%BE%D8%A7%D9%87-%D8%A8%D9%87-%D8%B3%D9%84%D8%A7%D8%AD-KLF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%B4%D8%AE%D8%B5%DB%8C-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B4%D8%AF%D9%87-%D9%85%D8%B3%D9%84%D8%AD-%D8%A7%D8%B3%D8%AA",
@@ -1094,16 +1080,6 @@
         "flag": "🇮🇷",
         "category": "اقتصادی",
         "rssDescription": "ارومیه - سفیران و دیپلمات‌های خارجی در سفر به ارومیه، از بازار تاریخی و مسجد جامع این شهر به‌عنوان یکی از شاخص‌ترین ظرفیت‌های تاریخی و فرهنگی و مذهبی منطقه بازدید کردند."
-      },
-      {
-        "title": "رحمانی: مرز بازرگان پایلوت تحول تجارت مرزی تکمیل شود",
-        "link": "https://www.mehrnews.com/news/6952092/%D8%B1%D8%AD%D9%85%D8%A7%D9%86%DB%8C-%D9%85%D8%B1%D8%B2-%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86-%D9%BE%D8%A7%DB%8C%D9%84%D9%88%D8%AA-%D8%AA%D8%AD%D9%88%D9%84-%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA-%D9%85%D8%B1%D8%B2%DB%8C-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B4%D9%88%D8%AF",
-        "date": "2026-09-19T21:44:32.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "ارومیه - استاندار آذربایجان غربی گفت: مرز بازرگان باید به‌عنوان پایلوت توسعه تجارت مرزی تکمیل شود."
       },
       {
         "title": "بهترین ایرلاین های جهان در ۲۰۲۶",
@@ -1167,6 +1143,15 @@
       }
     ],
     "ورزشی": [
+      {
+        "title": "مسابقات انتخابی تیم ملی تکواندو در کرج",
+        "link": "https://www.mehrnews.com/photo/6952114/%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D8%AA%DA%A9%D9%88%D8%A7%D9%86%D8%AF%D9%88-%D8%AF%D8%B1-%DA%A9%D8%B1%D8%AC",
+        "date": "2026-09-19T23:06:47.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۶",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "ورزشی"
+      },
       {
         "title": "بهترین ترکیب تاریخ با بازیکنان راست پا/ عکس",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3246468",
@@ -1236,19 +1221,28 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "در روزهای اخیر شایعه‌ای در فضای مجازی منتشر شده که ادعا می‌کند جایزه «توپ طلای برتر» به سال ۲۰۲۹ موکول شده تا کریستیانو رونالدو نتواند در سال ۲۰۱۹ آن را ببرد."
-      },
-      {
-        "title": "ویدیو: گل دوم بارسلونا به سویا توسط رافینیا",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841276",
-        "date": "2026-09-19T20:21:29.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل دوم بارسلونا به سویا توسط رافینیا زده شد."
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "آئین افتتاح پردیس سینمایی پدیده شاندیز",
+        "link": "https://www.mehrnews.com/photo/6952116/%D8%A2%D8%A6%DB%8C%D9%86-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%BE%D8%B1%D8%AF%DB%8C%D8%B3-%D8%B3%DB%8C%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%B4%D8%A7%D9%86%D8%AF%DB%8C%D8%B2",
+        "date": "2026-09-19T23:21:38.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری"
+      },
+      {
+        "title": "۲۰۳ِ شب وفاداری؛ نمایش اقتدار و بصیرت در «دیار آفتاب»",
+        "link": "https://www.mehrnews.com/news/6952111/%DB%B2%DB%B0%DB%B3-%D8%B4%D8%A8-%D9%88%D9%81%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B5%DB%8C%D8%B1%D8%AA-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8",
+        "date": "2026-09-19T23:06:17.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۶",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "اراک- در این ویدئو دویست و سومین شب وفاداری و نمایش اقتدار و بصیرت در دیار آفتاب را ملاحظه می کنید."
+      },
       {
         "title": "ادبیات، شناسنامه فرهنگی جامعه است",
         "link": "https://www.mehrnews.com/news/6952096/%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA-%D8%B4%D9%86%D8%A7%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D8%A7%D8%B3%D8%AA",
@@ -1258,16 +1252,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "بیرجند- عضو هیئت علمی دانشگاه بیرجند گفت: ادبیات تجلی‌گاه فرهنگ جامعه و بخشی از هویت ماست و باید در استفاده از آن حساب‌شده عمل کنیم."
-      },
-      {
-        "title": "توسعه فرهنگ قرآنی باید به سبک زندگی در جامعه تبدیل شود",
-        "link": "https://www.mehrnews.com/news/6952088/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%B3%D8%A8%DA%A9-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D8%B4%D9%88%D8%AF",
-        "date": "2026-09-19T21:33:33.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "زنجان- معاون استاندار زنجان گفت: هدف از اجرای برنامه های قرآنی از جمله طرح «زندگی با آیه‌ها»، توسعه فرهنگ قرآنی و تبدیل مفاهیم و آموزه‌های متعالی آن به گفتمان عمومی و سبک زندگی در جامعه است."
       }
     ],
     "اجتماعی": [
@@ -1290,26 +1274,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "مدیرکل امور راهداری، ماشین آلات و مدیریت بحران سازمان راهداری راهداری از آمادگی این سازمان برای مقابله با پدیده ال‌نینو و اثرات آن بر جاده‌های کشور خبر داد و گفت: تاکنون حدود ۳۰۰۰ دستگاه پل و دهانه پل در محورهای مختلف لایروبی و پاکسازی شده است. همچنین از سطح محورهای نیز بازدیدهایی به عمل آمده تا ذخایر مورد نیاز پایگاه‌های راهداری تامین شود."
-      },
-      {
-        "title": "مشاهده خرس قهوه ای در ارتفاعات ارومیه",
-        "link": "https://www.mehrnews.com/news/6952097/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D9%87-%D8%AE%D8%B1%D8%B3-%D9%82%D9%87%D9%88%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87",
-        "date": "2026-09-19T21:47:44.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "ارومیه - رئیس اداره حفاظت محیط زیست شهرستان ارومیه از مشاهده یک قلاده خرس قهوه‌ای در ارتفاعات روستای انبی بخش سیلوانا خبر داد."
-      },
-      {
-        "title": "۵۰ کیلومتر از آزادراه زنجان-تبریز در ۴ ماه گذشته روکش آسفالت شد",
-        "link": "https://www.mehrnews.com/news/6952095/%DB%B5%DB%B0-%DA%A9%DB%8C%D9%84%D9%88%D9%85%D8%AA%D8%B1-%D8%A7%D8%B2-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D8%AF%D8%B1-%DB%B4-%D9%85%D8%A7%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87-%D8%B1%D9%88%DA%A9%D8%B4-%D8%A2%D8%B3%D9%81%D8%A7%D9%84%D8%AA",
-        "date": "2026-09-19T21:43:13.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "زنجان- مدیرکل راهداری و حمل‌ونقل جاده‌ای استان زنجان گفت: با هدف ارتقای ایمنی کاربران جاده‌ای ۵۰ کیلومتر از نقاط دارای خرابی شدید طی ۴ ماه اخیر لکه گیری و روکش آسفالت شده است."
       },
       {
         "title": "احتمال بارش‌های سیل‌آسا در تهران/ شناسایی بیمارستانهای در معرض سیل در پایتخت",
@@ -1430,16 +1394,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "موضوع فوراً به محیط زیست‌ شهرستان چرام اطلاع داده شد و تیمی از محیط زیست به همراه هلال احمر و جوامع محلی به کمک چوپان رفتند."
-      },
-      {
-        "title": "ببینید | دستگیری عوامل درگیری و قدرت‌نمایی خیابانی در چالوس",
-        "link": "https://www.khabaronline.ir/news/2276842/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B9%D9%88%D8%A7%D9%85%D9%84-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D9%88-%D9%82%D8%AF%D8%B1%D8%AA-%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%DA%86%D8%A7%D9%84%D9%88%D8%B3",
-        "date": "2026-09-19T20:21:00.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۱",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "رئیس کل دادگستری استان مازندران از بازداشت عوامل نزاع و درگیری خیابانی در شهرستان چالوس که تصاویر آن در فضای مجازی منتشر شده بود، خبر داد."
       }
     ],
     "علمی و فناوری": [
@@ -1544,16 +1498,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "سفارت آمریکا در قدس اشغالی و نمایندگی‌های این کشور در منطقه، همزمان با افزایش تنش‌ها در غرب آسیا درباره احتمال محدودیت‌های امنیتی و اختلال در تردد هوایی هشدارهایی را به شهروندان آمریکایی صادر کردند."
-      },
-      {
-        "title": "میدان‌داری مشهدی ها در حماسه ۲۰۳ خیابان",
-        "link": "https://www.mehrnews.com/news/6952094/%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B4%D9%87%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%DB%B2%DB%B0%DB%B3-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-        "date": "2026-09-19T21:45:41.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۴۵",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "مشهد- مردم مشهد در شب ۲۰۳ حماسه خیابان با شعار «ما همگی دشمن صهیونیستیم تا لحظه نابودی اش می ایستیم» به میدان آمدند."
       },
       {
         "title": "عبور ۳۵ کشتی در روز از تنگه باب المندب",
@@ -1794,19 +1738,77 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "معاون عتبات عالیات سازمان حج و زیارت درباره تفاوت قیمت بسته‌های سفر نیز توضیح داد: قیمت‌ها با توجه به نوع بسته، زمینی یا هوایی بودن سفر، مدت اقامت، سطح هتل و خدمات پیش‌بینی‌شده متفاوت است."
-      },
-      {
-        "title": "دبیرکل حزب‌الله: مقاومت تنها راه مقابله با صهیونیست‌هاست",
-        "link": "https://www.tabnak.ir/fa/news/1395095/%D8%AF%D8%A8%DB%8C%D8%B1%DA%A9%D9%84-%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AA%D9%86%D9%87%D8%A7-%D8%B1%D8%A7%D9%87-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87-%D8%A8%D8%A7-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%D8%B3%D8%AA",
-        "date": "2026-09-19T20:20:54.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۰:۲۰",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "دبیرکل حزب‌الله لبنان تاکید کرد که مقاومت و ایستادگی با تمامی انواع و اقسامش همچنان تنها راه پایان دادن به اشغالگری و آزادسازی اراضی است و تمامی راه‌های دیگر صرفا تلف کردن وقت است."
       }
     ],
     "متفرقه": [
+      {
+        "title": "دویست و سومین شب تجمعات مردم زنجان در میدان",
+        "link": "https://www.mehrnews.com/news/6952119/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+        "date": "2026-09-19T23:28:31.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و سومین شب از شب‌های حمایت از وطن را مشاهده می‌کنید."
+      },
+      {
+        "title": "دویست و ششمین شب اجتماع مردمی در بندرعباس",
+        "link": "https://www.mehrnews.com/photo/6952068/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B4%D8%B4%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85%DB%8C-%D8%AF%D8%B1-%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3",
+        "date": "2026-09-19T23:25:00.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۲۵",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
+        "title": "تقلب در آزمون امتحانات نهایی / ۳ نفر شناسایی و دستگیر شدند",
+        "link": "https://www.khabaronline.ir/news/2276816/%D8%AA%D9%82%D9%84%D8%A8-%D8%AF%D8%B1-%D8%A2%D8%B2%D9%85%D9%88%D9%86-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%DB%B3-%D9%86%D9%81%D8%B1-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D9%88-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AF",
+        "date": "2026-09-19T23:15:00.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۱۵",
+        "source": "خبرآنلاین",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "دادستان عمومی و انقلاب شهرستان کردکوی گفت: یک نفر از متهمان هنگام تقلب در آزمون نهایی از طریق ارتباط با وسیله الکترونیکی با خارج از حوزه امتحان، یک نفر دیگر هم به اتهام شرکت در آزمون به جای داوطلب اصلی دستگیر شدند."
+      },
+      {
+        "title": "یادواره شهدای رسانه استان خراسان جنوبی",
+        "link": "https://www.mehrnews.com/photo/6952115/%DB%8C%D8%A7%D8%AF%D9%88%D8%A7%D8%B1%D9%87-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%AC%D9%86%D9%88%D8%A8%DB%8C",
+        "date": "2026-09-19T23:11:21.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۱۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
+        "title": "حماسه‌ای به وسعت ۲۰۳ شب؛ میدان‌داری مردم خمین در امتداد مقاومت",
+        "link": "https://www.mehrnews.com/news/6952113/%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%A7%DB%8C-%D8%A8%D9%87-%D9%88%D8%B3%D8%B9%D8%AA-%DB%B2%DB%B0%DB%B3-%D8%B4%D8%A8-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%AE%D9%85%DB%8C%D9%86-%D8%AF%D8%B1-%D8%A7%D9%85%D8%AA%D8%AF%D8%A7%D8%AF-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA",
+        "date": "2026-09-19T23:05:00.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۵",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "خمین- در این ویدئو میدان داری مردم خمین در شب دویست و سوم و تجدیدمیثاق دوباره با ولایت فقیه را ملاحظه می کنید."
+      },
+      {
+        "title": "«معصومه خانم» سوگلی احمدشاه با ژست خاص در مقابل دوربین",
+        "link": "https://www.asriran.com/fa/news/1192592/%D9%85%D8%B9%D8%B5%D9%88%D9%85%D9%87-%D8%AE%D8%A7%D9%86%D9%85-%D8%B3%D9%88%DA%AF%D9%84%DB%8C-%D8%A7%D8%AD%D9%85%D8%AF%D8%B4%D8%A7%D9%87-%D8%A8%D8%A7-%DA%98%D8%B3%D8%AA-%D8%AE%D8%A7%D8%B5-%D8%AF%D8%B1-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86",
+        "date": "2026-09-19T23:00:02.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "در ادامه تصویری قدیمی از معصومه خانم، سوگلی احمدشاه را با ژستی خاص در مقابل دوربین مشاهده می کنید."
+      },
+      {
+        "title": "تهیه سوفله ماکارونی با گوشت چرخ‌کرده",
+        "link": "https://www.tabnak.ir/fa/news/1395025/%D8%AA%D9%87%DB%8C%D9%87-%D8%B3%D9%88%D9%81%D9%84%D9%87-%D9%85%D8%A7%DA%A9%D8%A7%D8%B1%D9%88%D9%86%DB%8C-%D8%A8%D8%A7-%DA%AF%D9%88%D8%B4%D8%AA-%DA%86%D8%B1%D8%AE-%DA%A9%D8%B1%D8%AF%D9%87",
+        "date": "2026-09-19T23:00:02.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۳:۰۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "سوفله ماکارونی پیچیده نیست. فقط کافی است پاستا را بیش از حد نپزید، مایه گوشتی را کم‌آب آماده کنید، بشامل را با غلظت مناسب درست کنید و زمان پخت را کنترل کنید."
+      },
       {
         "title": "تغییر در صدای فرد می‌تواند نشانه زوال مغز باشد",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3246218",
@@ -1878,16 +1880,6 @@
         "rssDescription": "رودسر- در این ویدئو تصاویری از دویست و سومین تجمع شبانه مردم رودسر در میدان شهرداری را مشاهده می کنید."
       },
       {
-        "title": "مردم سلماس در دویست و سومین شب مقاومت ملی پرچمداری کردند",
-        "link": "https://www.mehrnews.com/news/6952089/%D9%85%D8%B1%D8%AF%D9%85-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D9%84%DB%8C-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%DA%A9%D8%B1%D8%AF%D9%86%D8%AF",
-        "date": "2026-09-19T21:36:32.000Z",
-        "datePersian": "۲۸ شهریور ۱۴۰۵، ۲۱:۳۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "ارومیه - دویست و سومین اجتماع شبانه مردم سلماس شنبه شب در حمایت از نیروهای مسلح و وطن برگزار شد."
-      },
-      {
         "title": "ببینید | راه‌اندازی دستگاه‌های آموزش احیای قلبی در مترو تهران",
         "link": "https://www.khabaronline.ir/news/2276881/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%D8%AD%DB%8C%D8%A7%DB%8C-%D9%82%D9%84%D8%A8%DB%8C-%D8%AF%D8%B1-%D9%85%D8%AA%D8%B1%D9%88-%D8%AA%D9%87%D8%B1%D8%A7%D9%86",
         "date": "2026-09-19T21:00:00.000Z",
@@ -1925,7 +1917,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PItAtYVX84erjlpX0KKDLnOJBjLkTn-Hup70Nbn6ePAKtBN8HgSStymbgJD2L5eryNxymAVRSQmOkCI5medgOyDkeRVAMHxyBvqUjaIN2qNXDU6HVmSiixB71nu2RTAhzHRT7KVXSgy8X-QQVORvOtqiYX9eHj_m45VUoxHHYNwFUcyfX2cMV2u0gjEy63ft/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Oz3lGLn_KMh57dE92KDRwndrYippxF5nTIBBFhx5zU_4PvygrqnGbUQCKiTg_j_UmmtnAbmhescmHC5VkfYlMg5BmzisoTI2YIzWXnm-uF6RM5fPo34HsnFsC4H5WUomkxFC__cS24XBzI28A2xg1F3uGzs9f3KYeL223cs-e_5F2X2a2_MI3B7Yli10ap9t/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1935,7 +1927,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/cdetfXtvqSZFqBv9Cv0zl5FYM8b4IkLK7RB5w-mDZqSycQwmTjZqNhDhWPQR3Voa469QRi-tRN9-rvtfLtjjwVIpf2OYLwzejG5quxOUzT1OkTqQpZDvWR_mKF-lbKluKGlhGiypG3HQb8_34KbcFqIMshmDnFmpy7rAE4n6m2oUBXkjvVH1awS1MK6Bi8cb/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/JvWa1ZaaCURx0jOCbWaQuIhLcoidlsmQZV78Ce7R9HItLdscGv1uFQYCFALn1BOQ5PmfcamxwiVI8DzGT6eYC-SlPjnLHDarMghjnByIWXr6dbriUHnnRdJSxy_rfxpy5qGmkHNUAFrSArnIjUROVlidYEMZw2VTBgPJ6FdHPdJ6cWfVqZmcwKJ9LwHz_suC/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1945,7 +1937,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wRVmBjTMSkgg0PFeC03YZYEr2BFz9HVhhDekeoa48HWzRHrmqXn4xfz4YljsT4CjeGk7_8N6YaPy-0MSzc1doq7hrsiCxKZS5F6O__GsO6utGBLrV62cNho4dtNICEPMKIyE36p9IRtwDLHw-LokxuTwON6zU-oFHlsOfirBuieyaqF87H4iRF37-hF_AwnI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/ySq6pPzI7wW59_ZDVL-CWOsAYp0HLgjukQ26sVcZBQxdjlNyCAVR4nw2KVN4QDTW6SI4P2dDj135e38dPtFqusZuW6xT2HgJBNWRzfrMhrRcPIfJgMWulqkJIcFiiHsvPKLztaUUGljYPp38XShlMHBHcXDaZGlWeh_bZEqudU4i7IQcQZTNSq5vGqY8fND-/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز یکشنبه ۲۹ شهریور + جدول",
@@ -1955,7 +1947,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ormGDuD5VvDXkVfZ2-TQ6fXcPdzRau5iX7eT3RKmkV5xpB3cTEA0SuO0cJm4Ir2Prs7C-d2-EgU67nyAiX-DTrLvxDQ9sYbMFIX6V1ssJObkhuzr4jTq7mEdoI9QEXkJlmz2b3zAzAD_b3tMCk60BIOowDwFkZz8emnQ_0fpFKnlxRq-Ga0SZMaLrHmKZZZ6/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/mE1QHJiGJQXrXxUVXAbcBrVf7jyEePat06G61CBRwI4qVuVv-thLGxoUSc--Aa-RAhbrcaId0xPcpEeKqjeRTPwkND-qCp-bxf88yGYiRyXCcejv6EIgXj-oR-ww8Yuh3Gvk9CbOPL6HmzagdwztjGbFjy3RovtJuSrDjHO_jnKgjjq0feSJ3np1bS0DWZEi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز یکشنبه ۲۹ شهریور ۱۴۰۵",
@@ -1965,7 +1957,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/P2esKxzfMaANr3pQuzeRpzj-tJsjLxkYS1-5i0VJT6BGI9cpvhr02B-ualO-7PaMHPlgm8lIUoAehn0N5hVA1IFnkTdo6PxPcpjjzDvGW-gActqpe5hxXg9Jd9Fl8cEsyEfJi0uMClPLo-MBK_7w2wZPQ6Fjo9eEJmdgsVqQRxxBzMxwwJG7qlXnxzL0LS9a/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/IarGV1eAGVxi-JczevdnH0En7Ams5qa4wj5-Q0Ero9YJO42e8zMipq4sC0OtbWitVCS87kGHz_r0_eqayf01HIBzuB9Yb4DoW7lvxam28-sXDaJchsYIG8yRh3JQrjm69gPX32obkAXiA44Ny2Lo_FSWUxwliUyg0kphJ7pNUeCN7MyFKZ0P_XGGCaaGpxUu/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "نیک آفرید سماواتی: شیفته چهره هدیه تهرانی هستم",
