@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-19T00:04:43.006Z",
-  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۰:۰۴",
+  "lastUpdate": "2026-09-19T00:39:58.660Z",
+  "lastUpdatePersian": "۲۸ شهریور ۱۴۰۵، ۰:۳۹",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,66 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "تصاویر جدید از خسارت‌های واردشده به پایگاه نظامی آمریکا در کویت بر اثر حملات ایران",
+      "link": "https://www.isna.ir/news/1405062818436/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%AE%D8%B3%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF%D8%B4%D8%AF%D9%87-%D8%A8%D9%87-%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%DA%A9%D9%88%DB%8C%D8%AA",
+      "date": "2026-09-19T00:32:07.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۳۲",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "یک رسانه آمریکایی تصاویر جدیدی از یک پایگاه نظامی واشنگتن در کویت منتشر کرد که جزئیات بیشتری از میزان خسارت‌های واردشده به این پایگاه بر اثر حملات موشکی و پهپادی ایران را نشان می‌دهد."
+    },
+    {
+      "title": "فال حافظ شنبه 28 شهریور 1405",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3246033",
+      "date": "2026-09-19T00:30:00.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ شنبه 28 شهریور را بخوانید."
+    },
+    {
+      "title": "آژیر خطر برای نخستین‌بار در ریاض به صدا درآمد",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700009/%D8%A2%DA%98%DB%8C%D8%B1-%D8%AE%D8%B7%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%A8%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D8%A8%D9%87-%D8%B5%D8%AF%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF",
+      "date": "2026-09-19T00:18:35.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۱۸",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "سازمان دفاع مدنی عربستان سعودی از فعال‌سازی سامانه هشدار زودهنگام در ریاض، پایتخت این کشور خبر داد."
+    },
+    {
+      "title": "فعال شدن سامانه هشدار در ریاض + فیلم",
+      "link": "https://www.irna.ir/news/86267540/%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%81%DB%8C%D9%84%D9%85",
+      "date": "2026-09-19T00:18:22.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۱۸",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که سامانه‌های هشدار در ریاض و الخرج عربستان فعال شده‌اند."
+    },
+    {
+      "title": "سومین دور رای گیری برای انتخاب دبیرکل جدید سازمان ملل و پیشتازی گرینسپن",
+      "link": "https://www.irna.ir/news/86267539/%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1-%D8%B1%D8%A7%DB%8C-%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%AF%D8%A8%DB%8C%D8%B1%DA%A9%D9%84-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D9%88-%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2%DB%8C",
+      "date": "2026-09-19T00:04:26.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۰۴",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "نیویورک- ایرنا- سومین رای گیری غیررسمی شورای امنیت سازمان ملل متحد درباره هشت نامزد دبیرکلی سازمان ملل برای جانشینی «آنتونیو گوترش» دبیر کل کنونی این نهاد بین المللی، در حالی برگزار شد که «ربکا گرینسپن» معاون پیشین رئیس جمهوری کاستاریکا پیشتاز این رقابت بود."
+    },
+    {
+      "title": "پاتریوت با اپراتورهای آمریکایی و انگلیسی هم حریف موشک‌های یمن نشد",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700008/%D9%BE%D8%A7%D8%AA%D8%B1%DB%8C%D9%88%D8%AA-%D8%A8%D8%A7-%D8%A7%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%88-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3%DB%8C-%D9%87%D9%85-%D8%AD%D8%B1%DB%8C%D9%81-%D9%85%D9%88%D8%B4%DA%A9-%D9%87%D8%A7%DB%8C-%DB%8C%D9%85%D9%86-%D9%86%D8%B4%D8%AF",
+      "date": "2026-09-19T00:02:39.000Z",
+      "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۰۲",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "حزام الاسد، از اعضای ارشد انصارالله یمن اعلام کرد سامانه‌های پاتریوت در برابر حملات یمن ناکارآمد است."
+    },
     {
       "title": "سی‌ان‌بی‌سی: قیمت بی‌سابقه گازوئیل اقتصاد آمریکا را تحت فشار قرار می‌دهد",
       "link": "https://www.irna.ir/news/86267533/%D8%B3%DB%8C-%D8%A7%D9%86-%D8%A8%DB%8C-%D8%B3%DB%8C-%D9%82%DB%8C%D9%85%D8%AA-%D8%A8%DB%8C-%D8%B3%D8%A7%D8%A8%D9%82%D9%87-%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%AA%D8%AD%D8%AA-%D9%81%D8%B4%D8%A7%D8%B1",
@@ -620,16 +680,6 @@
       "rssDescription": "یک منبع آگاه آمریکایی‌ مدعی شد: واردات نفت ایران یا نفتی که احتمالا متعلق به ایران است توسط چین، به ۴۴۰ هزار بشکه در روز کاهش یافته است"
     },
     {
-      "title": "لهستان مدعی احتمال حمله روسیه به این کشور شد",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246197",
-      "date": "2026-09-18T21:04:46.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۱:۰۴",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "دونالد تاسک نخست‌وزیر لهستان در اظهاراتی مدعی احتمال حملات روسیه به کشورهای عضو سازمان پیمان آتلانتیک شمالی (ناتو) از جمله لهستان که از اوکراین حمایت می‌کنند، شد و ادعا کرد که مسکو ممکن است این حملات احتمالی موشکی و پهپادی را حملاتی تصادفی اعلام کند."
-    },
-    {
       "title": "تداوم ناکامی چلسی در لیگ برتر انگلیس/شکست تیم آلونسو در خانه برنتفورد",
       "link": "https://www.ilna.ir/fa/tiny/news-1840803",
       "date": "2026-09-18T21:04:12.000Z",
@@ -740,16 +790,6 @@
       "rssDescription": "لنگرود- در دویست‌ و دومین شب از قرار شبانه لنگرودی ها مردم بار دیگر با حضوری پرشور، ضمن پرچم گردانی و عهد با امام عصر (عج)، بر همراهی خود در دفاع از وطن تأکید کردند."
     },
     {
-      "title": "آشفته گویی‌های ترامپ؛ از تکرار توهم پیروزی تا ادعای پایان تجاوز علیه ایران",
-      "link": "https://www.irna.ir/news/86267516/%D8%A2%D8%B4%D9%81%D8%AA%D9%87-%DA%AF%D9%88%DB%8C%DB%8C-%D9%87%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A7%D8%B2-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1-%D8%AA%D9%88%D9%87%D9%85-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AA%D8%AC%D8%A7%D9%88%D8%B2",
-      "date": "2026-09-18T20:49:39.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۹",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "نیویورک- ایرنا- دونالد ترامپ رئیس جمهوری جنگ افروز آمریکا که تا پیش از این بارها در توهم پیروزی در تجاوز بی دلیل علیه ایران به سر می‌برد، در تازه ترین لفاظی خود مدعی شد که در حال پیروزی هستیم و جنگ به زودی پایان خواهد یافت."
-    },
-    {
       "title": "ببینید|افشاگری سردبیر سابق من‌وتو؛ ترس از مخالفت با روایت‌های شبکه",
       "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3698376/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A7%D9%81%D8%B4%D8%A7%DA%AF%D8%B1%DB%8C-%D8%B3%D8%B1%D8%AF%D8%A8%DB%8C%D8%B1-%D8%B3%D8%A7%D8%A8%D9%82-%D9%85%D9%86-%D9%88%D8%AA%D9%88-%D8%AA%D8%B1%D8%B3-%D8%A7%D8%B2-%D9%85%D8%AE%D8%A7%D9%84%D9%81%D8%AA-%D8%A8%D8%A7-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%D8%A8%DA%A9%D9%87",
       "date": "2026-09-18T20:45:53.000Z",
@@ -790,16 +830,6 @@
       "rssDescription": "گل دوم برنتفورد به چلسی توسط ایگور تیاگو زده شد."
     },
     {
-      "title": "حمله توپخانه‌ای عربستان به شمال یمن",
-      "link": "https://www.irna.ir/news/86267508/%D8%AD%D9%85%D9%84%D9%87-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D9%85%D8%A7%D9%84-%DB%8C%D9%85%D9%86",
-      "date": "2026-09-18T20:43:57.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۳",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که ارتش عربستان مناطقی از استان صعده در شمال یمن را با توپخانه هدف قرار داده است."
-    },
-    {
       "title": "ستاره بارسلونا راز سرعتش را فاش کرد",
       "link": "https://www.khabaronline.ir/news/2276182/%D8%B3%D8%AA%D8%A7%D8%B1%D9%87-%D8%A8%D8%A7%D8%B1%D8%B3%D9%84%D9%88%D9%86%D8%A7-%D8%B1%D8%A7%D8%B2-%D8%B3%D8%B1%D8%B9%D8%AA%D8%B4-%D8%B1%D8%A7-%D9%81%D8%A7%D8%B4-%DA%A9%D8%B1%D8%AF",
       "date": "2026-09-18T20:40:00.000Z",
@@ -827,7 +857,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/imNUxnGf6Z233CLBR9KBee9Zxwo6z_FSIAbvpOMeSu7uvTDj3GSK67W7AP2XMt2hbXBhQl-z7N4Nd3TS3BvnOeyaG9eeXvxG3wGNLJ5wiW3i1R-n07VJNSrAW0gkiNidzKUrPKbZRhJA9e4sbIDY3K_b0MrG-wfWF3kLP2HWML1a0GFxxiwKLLICtdnL6GZ2/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/J4ZZwLGFueqslm-v-ebuC6eW0hzkg3NUphTqMBHR-Qa1xRNg7f7XBR5DGETtw6SiIB9DTEJrXWitjz-lh9hE6r58bszYBeH0fqbvPHvURaotzibqpdq_STMGvWCjACwrY8dqRUUk6qkcblkvlCDvRL7oRJ3wK5SZzAV3Gk6rJhyxBEkX7amA92Z7zXoDDzCg/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -837,7 +867,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zlwpstYQMBDPWrY6PweHLF3n6JkwoxnoZQLTB2Bdx9KFz2KWlykHdiMtfTvImjmwWJni3U71e2sT3VDEnpAjYKRPCYYSf7kT2UBFNq9otim8C9pYCk6NPy_HO-WI-YBNWEN_7QQX_Fcy-TcbQZRiocwh_sKqhuG1a7k9w9DMKpFNnSBr4uKoyZd65cvplApd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/30D8RM52CCy3QHNl_a6uKdQceXYiiuDqVrYfvjYLDd-cBj7C2YHXxQhRxclJmOWJv6-Jh8FuZR4QsHWNtRXK--xgQikzB87UJftvZdqxeFmlK9sWApqui8RttyPYViHUTWLzPGY_14y34WAeLEOwpj-Y04AoAu9-cpnzvmiZSogqt99S-J7KtXvl1RWUzEi9/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -847,7 +877,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UGxoOckYYAs4rFsRD_I66Qg2sr1BdWVtyr6gGcVwXWc-i5kjS0XgUQcV2YA97wUmJcng0xuXUhU9cU9_Fj3R34T7kVqVWYvLZaPQTQuVJkjt4d0D8610LWltdZ8tD2si98g8573VZP9GpgiinOZDanwoQVNekV02ElttjDxFAO4bYCDB4R2URPlCLr4Vs2c0/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Ju38nBaZmCvaukof9hS5yFL2qLYsXFGMaK7DAfHJd0wfdlR4knEVuSKihQCYh9OBuPfKZSbVgXNEZLFV5ksLF4SicZLj4Jdb1Yh7c1v5JxazDS9BfePV8D6nNYueEhxrj4b7L5mS-1U4eTX7oIQxbEIy6Pf1R-V_Nn-XA5Teeim4Nv35KaLyQj1-4rftt_J5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۲۸ شهریور + جدول",
@@ -857,7 +887,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VVeCmZaNnpx-8eHVqW6vmYeav9i7lQgXQMaStmAb6DuGOjWyJRF9tUqB0hFkPSQabsYaUvPBZPVbansMj12qJovTKid1c1XEt6GT2P5pAtx1soxu3JeCh1FNI2zEkQedv2XwKKrMdAiGazSxCi2cn3UHY5ji8zeMBwlMXsS5NsQCTamu6P08WjaPfBXZXgm3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/uMKIxKXZcizp9qhlX1QF7jacdr4vqoCcQrdJf_I0Vgky_7bcIQMxVY9l10jPjES_Jen9TXj_dvygBCZu44ZGR4lPY6Cmpr7mC_pIQXM55Pf-IRbfdQDjRnoNh6RQnb9txAVy6uO1neelwFbbQWs-xCPd_IyCdw59ohNMEhyO3bzVHCVF7jASaZs3TusGjlcq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۲۸ شهریور ۱۴۰۵",
@@ -867,7 +897,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aOtcN0ux1mu_LhEv31r8piu1mYuZEfToMgagP0uJs79zSwOS3J_HV-ZLZImxm58zrHHBeVZJfqZC9uFFRNoxFqd-6NgtY0rRKZM-jsEa5Pu5zZoiHATfJhzlJm7hlGZA7EfsGpgPckuieSwrACcFSJdyaRGIRRWVtrjb9Nso0LI_cazo4dq72Y0IV2w0G03c/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/pZkRd054An_eZNEaSSy26C9dMYNdM2P-gOFOq68Ph-tdF74cYsjFJndW_vV2RItIJm-eVhXxWzmQxKBNLqA6n7FAgwCYi1W4WdbTrcfyY-8Eo7slnSP-3bXO18AwQ1zIYO4uRMYV7U5q8mNKOIbDBH8Z76KSiWGEroNLgTgqSp-mMNJS6tlVPgXr45vObu4-/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نتاهیاهو در غزه نسل‌کشی کرد",
@@ -998,40 +1028,20 @@
       "flag": "🇮🇷",
       "category": "ورزشی",
       "rssDescription": "دهوک با هدایت یحیی گل محمدی در ادامه نتایج ناامید کننده خود این بار در خارج از خانه به تساوی دست پیدا کرد. تیم منصوریان هم در ورزشگاه خانگی خود متوقف شد."
-    },
-    {
-      "title": "اتهام شماری از نظامیان ارتش اسرائیل به جاسوسی برای ایران",
-      "link": "https://www.tabnak.ir/fa/news/1394926/%D8%A7%D8%AA%D9%87%D8%A7%D9%85-%D8%B4%D9%85%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%D9%86%D8%B8%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-      "date": "2026-09-18T20:09:59.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۹",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "شماری از نظامیان ارتش رژیم صهیونیستی به جاسوسی برای ایران متهم شدند."
-    },
-    {
-      "title": "مردم پای کار ایران‌اند",
-      "link": "https://www.ilna.ir/fa/tiny/news-1840796",
-      "date": "2026-09-18T20:09:07.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۹",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "رئیس شورای اطلاع‌رسانی دولت پیامی در حساب کاربری خود در شبکه ایکس منتشر کرد."
-    },
-    {
-      "title": "ویدیو: گل هفتم بایرن مونیخ به یونیون برلین توسط اولیسه",
-      "link": "https://www.ilna.ir/fa/tiny/news-1840795",
-      "date": "2026-09-18T20:08:14.000Z",
-      "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۸",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل هفتم بایرن مونیخ به یونیون برلین توسط اولیسه زده شد."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "سومین دور رای گیری برای انتخاب دبیرکل جدید سازمان ملل و پیشتازی گرینسپن",
+        "link": "https://www.irna.ir/news/86267539/%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1-%D8%B1%D8%A7%DB%8C-%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%AF%D8%A8%DB%8C%D8%B1%DA%A9%D9%84-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D9%88-%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2%DB%8C",
+        "date": "2026-09-19T00:04:26.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۰۴",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "نیویورک- ایرنا- سومین رای گیری غیررسمی شورای امنیت سازمان ملل متحد درباره هشت نامزد دبیرکلی سازمان ملل برای جانشینی «آنتونیو گوترش» دبیر کل کنونی این نهاد بین المللی، در حالی برگزار شد که «ربکا گرینسپن» معاون پیشین رئیس جمهوری کاستاریکا پیشتاز این رقابت بود."
+      },
       {
         "title": "قالیباف رئیس مجلس بودن را دوست ندارد/ ماندن جبلی در صداوسیما کم‌ضررترین گزینه ممکن است/ پراسترس‌ترین کار، نقد کردن برادران لاریجانی بود!",
         "link": "https://www.tabnak.ir/fa/news/1394756/%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81-%D8%B1%D8%A6%DB%8C%D8%B3-%D9%85%D8%AC%D9%84%D8%B3-%D8%A8%D9%88%D8%AF%D9%86-%D8%B1%D8%A7-%D8%AF%D9%88%D8%B3%D8%AA-%D9%86%D8%AF%D8%A7%D8%B1%D8%AF-%D9%85%D8%A7%D9%86%D8%AF%D9%86-%D8%AC%D8%A8%D9%84%DB%8C-%D8%AF%D8%B1-%D8%B5%D8%AF%D8%A7%D9%88%D8%B3%DB%8C%D9%85%D8%A7-%DA%A9%D9%85-%D8%B6%D8%B1%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%DA%AF%D8%B2%DB%8C%D9%86%D9%87-%D9%85%D9%85%DA%A9%D9%86-%D8%A7%D8%B3%D8%AA-%D9%BE%D8%B1%D8%A7%D8%B3%D8%AA%D8%B1%D8%B3-%D8%AA%D8%B1%DB%8C%D9%86-%DA%A9%D8%A7%D8%B1-%D9%86%D9%82%D8%AF-%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%D8%B1%D8%A7%D8%AF%D8%B1%D8%A7%D9%86-%D9%84%D8%A7%D8%B1%DB%8C%D8%AC%D8%A7%D9%86%DB%8C-%D8%A8%D9%88%D8%AF",
@@ -1061,19 +1071,19 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "جانشین معاون سیاسی سپاه پاسداران انقلاب اسلامی گفت: اگر قرار باشد ایران ناامن باشد، هیچ نقطه امنی در منطقه وجود نخواهد داشت و اگر مردم ایران در ناامنی زندگی کنند، مردم منطقه نیز از ناامنی در امان نخواهند بود."
-      },
-      {
-        "title": "مردم پای کار ایران‌اند",
-        "link": "https://www.ilna.ir/fa/tiny/news-1840796",
-        "date": "2026-09-18T20:09:07.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۹",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "رئیس شورای اطلاع‌رسانی دولت پیامی در حساب کاربری خود در شبکه ایکس منتشر کرد."
       }
     ],
     "اقتصادی": [
+      {
+        "title": "آژیر خطر برای نخستین‌بار در ریاض به صدا درآمد",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700009/%D8%A2%DA%98%DB%8C%D8%B1-%D8%AE%D8%B7%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%A8%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D8%A8%D9%87-%D8%B5%D8%AF%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF",
+        "date": "2026-09-19T00:18:35.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۱۸",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "سازمان دفاع مدنی عربستان سعودی از فعال‌سازی سامانه هشدار زودهنگام در ریاض، پایتخت این کشور خبر داد."
+      },
       {
         "title": "سی‌ان‌بی‌سی: قیمت بی‌سابقه گازوئیل اقتصاد آمریکا را تحت فشار قرار می‌دهد",
         "link": "https://www.irna.ir/news/86267533/%D8%B3%DB%8C-%D8%A7%D9%86-%D8%A8%DB%8C-%D8%B3%DB%8C-%D9%82%DB%8C%D9%85%D8%AA-%D8%A8%DB%8C-%D8%B3%D8%A7%D8%A8%D9%82%D9%87-%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%AA%D8%AD%D8%AA-%D9%81%D8%B4%D8%A7%D8%B1",
@@ -1245,19 +1255,19 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "دهوک با هدایت یحیی گل محمدی در ادامه نتایج ناامید کننده خود این بار در خارج از خانه به تساوی دست پیدا کرد. تیم منصوریان هم در ورزشگاه خانگی خود متوقف شد."
-      },
-      {
-        "title": "ویدیو: گل هفتم بایرن مونیخ به یونیون برلین توسط اولیسه",
-        "link": "https://www.ilna.ir/fa/tiny/news-1840795",
-        "date": "2026-09-18T20:08:14.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۸",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل هفتم بایرن مونیخ به یونیون برلین توسط اولیسه زده شد."
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "فعال شدن سامانه هشدار در ریاض + فیلم",
+        "link": "https://www.irna.ir/news/86267540/%D9%81%D8%B9%D8%A7%D9%84-%D8%B4%D8%AF%D9%86-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%81%DB%8C%D9%84%D9%85",
+        "date": "2026-09-19T00:18:22.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۱۸",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که سامانه‌های هشدار در ریاض و الخرج عربستان فعال شده‌اند."
+      },
       {
         "title": "دعای مردم مشهد پس از اقامه نماز استغاثه",
         "link": "https://www.mehrnews.com/news/6950973/%D8%AF%D8%B9%D8%A7%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%B4%D9%87%D8%AF-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%A7%D9%82%D8%A7%D9%85%D9%87-%D9%86%D9%85%D8%A7%D8%B2-%D8%A7%D8%B3%D8%AA%D8%BA%D8%A7%D8%AB%D9%87",
@@ -1404,6 +1414,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "تصاویر جدید از خسارت‌های واردشده به پایگاه نظامی آمریکا در کویت بر اثر حملات ایران",
+        "link": "https://www.isna.ir/news/1405062818436/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%AE%D8%B3%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF%D8%B4%D8%AF%D9%87-%D8%A8%D9%87-%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%DA%A9%D9%88%DB%8C%D8%AA",
+        "date": "2026-09-19T00:32:07.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۳۲",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "یک رسانه آمریکایی تصاویر جدیدی از یک پایگاه نظامی واشنگتن در کویت منتشر کرد که جزئیات بیشتری از میزان خسارت‌های واردشده به این پایگاه بر اثر حملات موشکی و پهپادی ایران را نشان می‌دهد."
+      },
+      {
+        "title": "پاتریوت با اپراتورهای آمریکایی و انگلیسی هم حریف موشک‌های یمن نشد",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3700008/%D9%BE%D8%A7%D8%AA%D8%B1%DB%8C%D9%88%D8%AA-%D8%A8%D8%A7-%D8%A7%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%88-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3%DB%8C-%D9%87%D9%85-%D8%AD%D8%B1%DB%8C%D9%81-%D9%85%D9%88%D8%B4%DA%A9-%D9%87%D8%A7%DB%8C-%DB%8C%D9%85%D9%86-%D9%86%D8%B4%D8%AF",
+        "date": "2026-09-19T00:02:39.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۰۲",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "حزام الاسد، از اعضای ارشد انصارالله یمن اعلام کرد سامانه‌های پاتریوت در برابر حملات یمن ناکارآمد است."
+      },
       {
         "title": "تجاوز توپخانه‌ای رژیم صهیونیستی به جنوب لبنان",
         "link": "https://www.irna.ir/news/86267537/%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
@@ -1695,16 +1725,6 @@
         "rssDescription": "یک منبع آگاه آمریکایی‌ مدعی شد: واردات نفت ایران یا نفتی که احتمالا متعلق به ایران است توسط چین، به ۴۴۰ هزار بشکه در روز کاهش یافته است"
       },
       {
-        "title": "لهستان مدعی احتمال حمله روسیه به این کشور شد",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246197",
-        "date": "2026-09-18T21:04:46.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۱:۰۴",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "دونالد تاسک نخست‌وزیر لهستان در اظهاراتی مدعی احتمال حملات روسیه به کشورهای عضو سازمان پیمان آتلانتیک شمالی (ناتو) از جمله لهستان که از اوکراین حمایت می‌کنند، شد و ادعا کرد که مسکو ممکن است این حملات احتمالی موشکی و پهپادی را حملاتی تصادفی اعلام کند."
-      },
-      {
         "title": "برگزاری رزمایش چند ملیتی در آب‌های ساحلی جزیره کرت و دریای اژه",
         "link": "https://www.irna.ir/news/86267506/%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%B1%D8%B2%D9%85%D8%A7%DB%8C%D8%B4-%DA%86%D9%86%D8%AF-%D9%85%D9%84%DB%8C%D8%AA%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8-%D9%87%D8%A7%DB%8C-%D8%B3%D8%A7%D8%AD%D9%84%DB%8C-%D8%AC%D8%B2%DB%8C%D8%B1%D9%87-%DA%A9%D8%B1%D8%AA-%D9%88-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C-%D8%A7%DA%98%D9%87",
         "date": "2026-09-18T21:03:28.000Z",
@@ -1735,16 +1755,6 @@
         "rssDescription": "تصویری از ناصرالدین شاه قاجار و جمعی از درباریانش را در حال تماشا و بررسی یک «تخت فیل» در حیاط قصر را ببینید. این تخت، هدیه‌‎ای از هند بود. /فرادید"
       },
       {
-        "title": "آشفته گویی‌های ترامپ؛ از تکرار توهم پیروزی تا ادعای پایان تجاوز علیه ایران",
-        "link": "https://www.irna.ir/news/86267516/%D8%A2%D8%B4%D9%81%D8%AA%D9%87-%DA%AF%D9%88%DB%8C%DB%8C-%D9%87%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A7%D8%B2-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1-%D8%AA%D9%88%D9%87%D9%85-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%AA%D8%A7-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AA%D8%AC%D8%A7%D9%88%D8%B2",
-        "date": "2026-09-18T20:49:39.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۹",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "نیویورک- ایرنا- دونالد ترامپ رئیس جمهوری جنگ افروز آمریکا که تا پیش از این بارها در توهم پیروزی در تجاوز بی دلیل علیه ایران به سر می‌برد، در تازه ترین لفاظی خود مدعی شد که در حال پیروزی هستیم و جنگ به زودی پایان خواهد یافت."
-      },
-      {
         "title": "البخیتی: ریاض پس از شکست میانجی‌گری‌ها به تهران متوسل شده است",
         "link": "https://www.tasnimnews.ir/fa/news/1405/06/28/3699986/%D8%A7%D9%84%D8%A8%D8%AE%DB%8C%D8%AA%DB%8C-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%B4%DA%A9%D8%B3%D8%AA-%D9%85%DB%8C%D8%A7%D9%86%D8%AC%DB%8C-%DA%AF%D8%B1%DB%8C-%D9%87%D8%A7-%D8%A8%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D9%85%D8%AA%D9%88%D8%B3%D9%84-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
         "date": "2026-09-18T20:45:08.000Z",
@@ -1753,16 +1763,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "عضو ارشد انصارالله یمن گفت: تکاپوی سعودی برای پیدا کردن میانجی به بن‌بست رسیده و حالا به تهران متوسل شده‌اند."
-      },
-      {
-        "title": "حمله توپخانه‌ای عربستان به شمال یمن",
-        "link": "https://www.irna.ir/news/86267508/%D8%AD%D9%85%D9%84%D9%87-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D9%85%D8%A7%D9%84-%DB%8C%D9%85%D9%86",
-        "date": "2026-09-18T20:43:57.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۴۳",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که ارتش عربستان مناطقی از استان صعده در شمال یمن را با توپخانه هدف قرار داده است."
       },
       {
         "title": "هیچ ائتلاف منطقه‌ای جلوی ایران و متحدان منطقه ای آنرا نگرفته است/ مصر به عربستان در جنگ یمن کمک می‌کند؟",
@@ -1823,19 +1823,19 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "«بوریس جانسون» نخست‌وزیر پیشین انگلیس از نحوه برخورد با «عمران خان» نخست‌وزیر پیشین زندانی پاکستان انتقاد کرد و از دولت انگلیس خواست از نفوذ خود برای آزادی او استفاده کند."
-      },
-      {
-        "title": "اتهام شماری از نظامیان ارتش اسرائیل به جاسوسی برای ایران",
-        "link": "https://www.tabnak.ir/fa/news/1394926/%D8%A7%D8%AA%D9%87%D8%A7%D9%85-%D8%B4%D9%85%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%D9%86%D8%B8%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-        "date": "2026-09-18T20:09:59.000Z",
-        "datePersian": "۲۷ شهریور ۱۴۰۵، ۲۰:۰۹",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "شماری از نظامیان ارتش رژیم صهیونیستی به جاسوسی برای ایران متهم شدند."
       }
     ],
     "متفرقه": [
+      {
+        "title": "فال حافظ شنبه 28 شهریور 1405",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3246033",
+        "date": "2026-09-19T00:30:00.000Z",
+        "datePersian": "۲۸ شهریور ۱۴۰۵، ۰:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ شنبه 28 شهریور را بخوانید."
+      },
       {
         "title": "پروازهای فرودگاه لوکزامبورگ به‌دلیل رؤیت چند پهپاد متوقف شد",
         "link": "https://www.mehrnews.com/news/6951002/%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D9%87%D8%A7%DB%8C-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%84%D9%88%DA%A9%D8%B2%D8%A7%D9%85%D8%A8%D9%88%D8%B1%DA%AF-%D8%A8%D9%87-%D8%AF%D9%84%DB%8C%D9%84-%D8%B1%D8%A4%DB%8C%D8%AA-%DA%86%D9%86%D8%AF-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF-%D9%85%D8%AA%D9%88%D9%82%D9%81-%D8%B4%D8%AF",
@@ -1973,7 +1973,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/imNUxnGf6Z233CLBR9KBee9Zxwo6z_FSIAbvpOMeSu7uvTDj3GSK67W7AP2XMt2hbXBhQl-z7N4Nd3TS3BvnOeyaG9eeXvxG3wGNLJ5wiW3i1R-n07VJNSrAW0gkiNidzKUrPKbZRhJA9e4sbIDY3K_b0MrG-wfWF3kLP2HWML1a0GFxxiwKLLICtdnL6GZ2/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/J4ZZwLGFueqslm-v-ebuC6eW0hzkg3NUphTqMBHR-Qa1xRNg7f7XBR5DGETtw6SiIB9DTEJrXWitjz-lh9hE6r58bszYBeH0fqbvPHvURaotzibqpdq_STMGvWCjACwrY8dqRUUk6qkcblkvlCDvRL7oRJ3wK5SZzAV3Gk6rJhyxBEkX7amA92Z7zXoDDzCg/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -1983,7 +1983,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zlwpstYQMBDPWrY6PweHLF3n6JkwoxnoZQLTB2Bdx9KFz2KWlykHdiMtfTvImjmwWJni3U71e2sT3VDEnpAjYKRPCYYSf7kT2UBFNq9otim8C9pYCk6NPy_HO-WI-YBNWEN_7QQX_Fcy-TcbQZRiocwh_sKqhuG1a7k9w9DMKpFNnSBr4uKoyZd65cvplApd/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/30D8RM52CCy3QHNl_a6uKdQceXYiiuDqVrYfvjYLDd-cBj7C2YHXxQhRxclJmOWJv6-Jh8FuZR4QsHWNtRXK--xgQikzB87UJftvZdqxeFmlK9sWApqui8RttyPYViHUTWLzPGY_14y34WAeLEOwpj-Y04AoAu9-cpnzvmiZSogqt99S-J7KtXvl1RWUzEi9/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۲۸ شهریور ۱۴۰۵",
@@ -1993,7 +1993,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/UGxoOckYYAs4rFsRD_I66Qg2sr1BdWVtyr6gGcVwXWc-i5kjS0XgUQcV2YA97wUmJcng0xuXUhU9cU9_Fj3R34T7kVqVWYvLZaPQTQuVJkjt4d0D8610LWltdZ8tD2si98g8573VZP9GpgiinOZDanwoQVNekV02ElttjDxFAO4bYCDB4R2URPlCLr4Vs2c0/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Ju38nBaZmCvaukof9hS5yFL2qLYsXFGMaK7DAfHJd0wfdlR4knEVuSKihQCYh9OBuPfKZSbVgXNEZLFV5ksLF4SicZLj4Jdb1Yh7c1v5JxazDS9BfePV8D6nNYueEhxrj4b7L5mS-1U4eTX7oIQxbEIy6Pf1R-V_Nn-XA5Teeim4Nv35KaLyQj1-4rftt_J5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۲۸ شهریور + جدول",
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VVeCmZaNnpx-8eHVqW6vmYeav9i7lQgXQMaStmAb6DuGOjWyJRF9tUqB0hFkPSQabsYaUvPBZPVbansMj12qJovTKid1c1XEt6GT2P5pAtx1soxu3JeCh1FNI2zEkQedv2XwKKrMdAiGazSxCi2cn3UHY5ji8zeMBwlMXsS5NsQCTamu6P08WjaPfBXZXgm3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/uMKIxKXZcizp9qhlX1QF7jacdr4vqoCcQrdJf_I0Vgky_7bcIQMxVY9l10jPjES_Jen9TXj_dvygBCZu44ZGR4lPY6Cmpr7mC_pIQXM55Pf-IRbfdQDjRnoNh6RQnb9txAVy6uO1neelwFbbQWs-xCPd_IyCdw59ohNMEhyO3bzVHCVF7jASaZs3TusGjlcq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۲۸ شهریور ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aOtcN0ux1mu_LhEv31r8piu1mYuZEfToMgagP0uJs79zSwOS3J_HV-ZLZImxm58zrHHBeVZJfqZC9uFFRNoxFqd-6NgtY0rRKZM-jsEa5Pu5zZoiHATfJhzlJm7hlGZA7EfsGpgPckuieSwrACcFSJdyaRGIRRWVtrjb9Nso0LI_cazo4dq72Y0IV2w0G03c/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/pZkRd054An_eZNEaSSy26C9dMYNdM2P-gOFOq68Ph-tdF74cYsjFJndW_vV2RItIJm-eVhXxWzmQxKBNLqA6n7FAgwCYi1W4WdbTrcfyY-8Eo7slnSP-3bXO18AwQ1zIYO4uRMYV7U5q8mNKOIbDBH8Z76KSiWGEroNLgTgqSp-mMNJS6tlVPgXr45vObu4-/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "قدس طوس شماره ۱۱۰۲۹",
