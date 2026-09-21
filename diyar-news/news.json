@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-21T00:04:46.675Z",
-  "lastUpdatePersian": "۳۰ شهریور ۱۴۰۵، ۰:۰۴",
+  "lastUpdate": "2026-09-21T00:41:30.482Z",
+  "lastUpdatePersian": "۳۰ شهریور ۱۴۰۵، ۰:۴۱",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,86 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "چک هنوز روی کاغذ می‌چرخد/ سهم چک الکترونیک فقط ۶ درصد!",
+      "link": "https://www.isna.ir/news/1405062919669/%DA%86%DA%A9-%D9%87%D9%86%D9%88%D8%B2-%D8%B1%D9%88%DB%8C-%DA%A9%D8%A7%D8%BA%D8%B0-%D9%85%DB%8C-%DA%86%D8%B1%D8%AE%D8%AF-%D8%B3%D9%87%D9%85-%DA%86%DA%A9-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9-%D9%81%D9%82%D8%B7-%DB%B6-%D8%AF%D8%B1%D8%B5%D8%AF",
+      "date": "2026-09-21T00:38:00.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۸",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "اگرچه چک الکترونیک در سال‌های اخیر با سرعت قابل ‌توجهی در شبکه بانکی توسعه یافته، اما مقایسه تعداد چک‌های الکترونیک با چک‌های کاغذی نشان می‌دهد که هنوز بخش عمده مبادلات اعتباری کشور(۹۴ درصد) بر بستر کاغذ انجام می‌شود."
+    },
+    {
+      "title": "انفجارهای مهیب در جنوب حلب و آماده باش نیروهای امنیتی",
+      "link": "https://www.mehrnews.com/news/6953268/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%87%DB%8C%D8%A8-%D8%AF%D8%B1-%D8%AC%D9%86%D9%88%D8%A8-%D8%AD%D9%84%D8%A8-%D9%88-%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C",
+      "date": "2026-09-21T00:33:24.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۳",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "خبرگزاری رسمی سوریه (سانا) از وقوع انفجارهای شدید در یک انبار مهمات در حومه شهر «العیس» واقع در جنوب حلب خبر داد که متعاقب آن، صداهای انفجار پیاپی در منطقه شنیده شده است."
+    },
+    {
+      "title": "چالش بینایی؛ خوک کجای تصویر پنهان شده؟",
+      "link": "https://www.tabnak.ir/fa/news/1395223/%DA%86%D8%A7%D9%84%D8%B4-%D8%A8%DB%8C%D9%86%D8%A7%DB%8C%DB%8C-%D8%AE%D9%88%DA%A9-%DA%A9%D8%AC%D8%A7%DB%8C-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D9%BE%D9%86%D9%87%D8%A7%D9%86-%D8%B4%D8%AF%D9%87",
+      "date": "2026-09-21T00:30:03.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "یک معمای تصویری جذاب برای سنجش قدرت بینایی و تمرکز؛ آیا می‌توانید خوک پنهان شده در میان ده‌ها سگ رنگارنگ را در کمتر از ۵ ثانیه پیدا کنید؟"
+    },
+    {
+      "title": "فهرست بهترین ایرلاین‌های جهان در ۲۰۲۶ منتشر شد؛ رقابت نزدیک غول‌های هوانوردی",
+      "link": "https://www.asriran.com/fa/news/1192854/%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%DB%8C%D8%B1%D9%84%D8%A7%DB%8C%D9%86-%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-2026-%D9%85%D9%86%D8%AA%D8%B4%D8%B1-%D8%B4%D8%AF-%D8%B1%D9%82%D8%A7%D8%A8%D8%AA-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9-%D8%BA%D9%88%D9%84-%D9%87%D8%A7%DB%8C-%D9%87%D9%88%D8%A7%D9%86%D9%88%D8%B1%D8%AF%DB%8C",
+      "date": "2026-09-21T00:30:01.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "سنگاپور ایرلاینز با این موفقیت، جایگاه نخست را از قطر ایرویز پس گرفت؛ شرکتی که سال گذشته صدرنشین بود و طی ۱۵ سال گذشته ۹ بار این عنوان را کسب کرده است. چون فونگ، مدیرعامل سنگاپور ایرلاینز، این جایزه را حاصل «تعهد و حرفه‌ای‌گری کارکنان» این شرکت دانست."
+    },
+    {
+      "title": "فال حافظ دوشنبه 30 شهریور 1405",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3246562",
+      "date": "2026-09-21T00:30:00.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ دوشنبه 30 شهریور را بخوانید."
+    },
+    {
+      "title": "ملونی: استفاده از برقع و نقاب در ایتالیا ممنوع می شود",
+      "link": "https://www.irna.ir/news/86269515/%D9%85%D9%84%D9%88%D9%86%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%A8%D8%B1%D9%82%D8%B9-%D9%88-%D9%86%D9%82%D8%A7%D8%A8-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
+      "date": "2026-09-21T00:28:40.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۲۸",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- جورجیا ملونی نخست وزیر ایتالیا گفت که کابینه این کشور برای ممنوع کردن پوشش صورت و محدود کردن تعداد دانش‌آموزان خارجی در مدارس آماده می‌شود."
+    },
+    {
+      "title": "طرز تهیه تخمه بوداده خانگی",
+      "link": "https://www.tabnak.ir/fa/news/1395261/%D8%B7%D8%B1%D8%B2-%D8%AA%D9%87%DB%8C%D9%87-%D8%AA%D8%AE%D9%85%D9%87-%D8%A8%D9%88%D8%AF%D8%A7%D8%AF%D9%87-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C",
+      "date": "2026-09-21T00:00:02.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۰۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "اگر از طرفداران تخمه هستید می توانید خودتان به راحتی در منزل تخمه بوداده درست کنید."
+    },
+    {
+      "title": "دندانپزشک اتریشی در حال ترمیم دندان های «ناصرالدین شاه»؛ سال 1269(عکس)",
+      "link": "https://www.asriran.com/fa/news/1192850/%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%BE%D8%B2%D8%B4%DA%A9-%D8%A7%D8%AA%D8%B1%DB%8C%D8%B4%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%D8%AA%D8%B1%D9%85%DB%8C%D9%85-%D8%AF%D9%86%D8%AF%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%86%D8%A7%D8%B5%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86-%D8%B4%D8%A7%D9%87-%D8%B3%D8%A7%D9%84-1269-%D8%B9%DA%A9%D8%B3",
+      "date": "2026-09-21T00:00:01.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۰۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "در ادامه تصویری تاریخی از یک دندانپزشک اتریشی را در حال ترمیم دندان های ناصرالدین شاه و در سال 1269 مشاهده می کنید."
+    },
     {
       "title": "بزرگترین هنرستان کشاورزی کشور؛ محور کلیدی توسعه اقتصادی خراسان رضوی",
       "link": "https://www.isna.ir/news/1405063019891/%D8%A8%D8%B2%D8%B1%DA%AF%D8%AA%D8%B1%DB%8C%D9%86-%D9%87%D9%86%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D9%85%D8%AD%D9%88%D8%B1-%DA%A9%D9%84%DB%8C%D8%AF%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86",
@@ -291,8 +371,8 @@
       "rssDescription": "ارومیه - در تداوم اجتماعات شبانه، مردم انقلابی سلماس در دویست و چهارمین موج اقتدار ملی در خیابان ایستادگی کردند."
     },
     {
-      "title": "وقوع انفجارهای مهیب در حلب سوریه",
-      "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701827/%D9%88%D9%82%D9%88%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%87%DB%8C%D8%A8-%D8%AF%D8%B1-%D8%AD%D9%84%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
+      "title": "انفجار در انبار مهمات در حومه حلب سوریه",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701827/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%86%D8%A8%D8%A7%D8%B1-%D9%85%D9%87%D9%85%D8%A7%D8%AA-%D8%AF%D8%B1-%D8%AD%D9%88%D9%85%D9%87-%D8%AD%D9%84%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
       "date": "2026-09-20T22:31:06.000Z",
       "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۲:۳۱",
       "source": "تسنیم",
@@ -521,14 +601,14 @@
       "rssDescription": "رشت- معاون پژوهش، فناوری و نوآوری دانشگاه آزاد اسلامی کشور با اشاره به پیشرفت‌های علمی و فناوری ایران پس از انقلاب اسلامی گفت: امروز پیشرفت‌های علمی ایران نتیجه خودباوری و استقلال کشور است."
     },
     {
-      "title": "آغاز کشت کلزا در لرستان؛ ۶۰۰ هکتار از اراضی زیر کشت رفت",
-      "link": "https://www.mehrnews.com/news/6953241/%D8%A2%D8%BA%D8%A7%D8%B2-%DA%A9%D8%B4%D8%AA-%DA%A9%D9%84%D8%B2%D8%A7-%D8%AF%D8%B1-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DB%B6%DB%B0%DB%B0-%D9%87%DA%A9%D8%AA%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%A7%D8%B1%D8%A7%D8%B6%DB%8C-%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D8%AA-%D8%B1%D9%81%D8%AA",
-      "date": "2026-09-20T21:46:07.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۶",
-      "source": "مهر",
+      "title": "تسنیم بغداد| آزادی مشکوک یک صهیونیست محکوم به اعدام از زندان سلیمانیه",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701765/%D8%AA%D8%B3%D9%86%DB%8C%D9%85-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C-%D9%85%D8%B4%DA%A9%D9%88%DA%A9-%DB%8C%DA%A9-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA-%D9%85%D8%AD%DA%A9%D9%88%D9%85-%D8%A8%D9%87-%D8%A7%D8%B9%D8%AF%D8%A7%D9%85-%D8%A7%D8%B2-%D8%B2%D9%86%D8%AF%D8%A7%D9%86-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C%D9%87",
+      "date": "2026-09-20T21:45:45.000Z",
+      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۵",
+      "source": "تسنیم",
       "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "خرم‌آباد- مدیر زراعت سازمان جهاد کشاورزی لرستان از آغاز عملیات کشت کلزا در مناطق سردسیر استان خبر داد."
+      "category": "بین‌الملل",
+      "rssDescription": "آزادی یک صهیونیست محکوم به اعدام از زندان سلیمانیه توجه رسانه های عراقی را به خود جلب کرده است."
     },
     {
       "title": "آیت‌الله شبیری زنجانی درگذشت؛ پایان یک عمر مجاهدت علمی و فقاهت",
@@ -711,16 +791,6 @@
       "rssDescription": "دفتر آیت‌الله‌العظمی شبیری زنجانی با صدور اطلاعیه‌ای، درگذشت این مرجع تقلید را اعلام کرد."
     },
     {
-      "title": "پخش بی سر و صدای فیلمی با بازی رضا عطاران و نوید محمدزاده",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3246749",
-      "date": "2026-09-20T21:11:16.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۱۱",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "فیلم «دانه‌های انگور» جدیدترین ساخته ابراهیم ابراهیمیان از امروز ۲۹ شهریور ماه بی‌سرو صدا و در یک سالن سینمایی آغاز کرده است."
-    },
-    {
       "title": "رییس سازمان برنامه گیلان خواستار توسعه مشاغل خانگی شیلاتی شد",
       "link": "https://www.irna.ir/news/86269488/%D8%B1%DB%8C%DB%8C%D8%B3-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D9%85%D8%B4%D8%A7%D8%BA%D9%84-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C-%D8%B4%DB%8C%D9%84%D8%A7%D8%AA%DB%8C-%D8%B4%D8%AF",
       "date": "2026-09-20T21:08:25.000Z",
@@ -831,16 +901,6 @@
       "rssDescription": "جشنواره گلاب‌گیری، شامگاه یکشنبه (۲۹ شهریور ۱۴۰۵) در «پارک پرواز» آغاز به کار کرد. این رویداد فرهنگی که با هدف ایجاد نشاط اجتماعی و ترویج سنت‌های اصیل ایرانی برگزار می‌شود، امسال میزبان اقوام مختلف از سراسر ایران است که با حضور خود، رنگین‌کمانی از محصولات بومی و سوغات ناب شهرها و روستاهای کشور را در قلب تهران عرضه کرده‌اند."
     },
     {
-      "title": "شهردار سنندج: ۲۵ تا ۳۰ درصد معابر اصلی شهر در اولویت بهسازی قرار دارند",
-      "link": "https://www.isna.ir/news/1405063019889/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D8%B3%D9%86%D9%86%D8%AF%D8%AC-%DB%B2%DB%B5-%D8%AA%D8%A7-%DB%B3%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%D9%85%D8%B9%D8%A7%D8%A8%D8%B1-%D8%A7%D8%B5%D9%84%DB%8C-%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%88%D9%84%D9%88%DB%8C%D8%AA-%D8%A8%D9%87%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1",
-      "date": "2026-09-20T20:56:25.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۵۶",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "شهردار سنندج گفت: حدود ۲۵ تا ۳۰ درصد از معابر اصلی و شریانی این شهر، معادل ۷۵ تا ۹۰ کیلومتر، در اولویت انجام عملیات نگهداری، ترمیم و بهسازی قرار دارند."
-    },
-    {
       "title": "فرماندار: جشنواره اتودهای نمایشی بوکان ظرفیت برگزاری بین‌المللی دارد",
       "link": "https://www.irna.ir/news/86268861/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%A7%D8%AA%D9%88%D8%AF%D9%87%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DB%8C-%D8%A8%D9%88%DA%A9%D8%A7%D9%86-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C",
       "date": "2026-09-20T20:53:17.000Z",
@@ -948,7 +1008,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/i31yBqoAYA81nNE-ohqQ8ocsrH-sox9sYTS2GZ9VS778TcrXiD6iIwZ_fnwW9pm-TLv3g4xBHu3mMWoEq94dYgJCOJs1W_sif63pMDamceIN3Vb5De23TMj_ucCo92EdhfEUY3zS_paWqJX_o8U4xO3N9UHKBhJtPsY3kTNOqlHNH48UbJdoK8kQtquwEbr5/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qVPPuzzJAUJ9XWsJ783OZlMmTai9irvMWRzwRRy3cFHiu4ALsgtfE4cy7p3F1gPg69kcad_rT6T6pmdl0DO5zgxUMZvUyVfxBQMKFqvUz035c73PNtOFJ31HbxTcyOxJYrphRWo-Av-MhWU6QEzP3pUJu5Mp00CMe2tLD6GXoPuuvBgzbBUerqj_8AsKvMeR/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - دوشنبه ۳۰ شهریور ۱۴۰۵",
@@ -958,7 +1018,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/R6pdxEvkA0IdSMMxSlfd4PacadN3cMJmO74Ez4Ti6QmuOgooR10t9-lnJ9RginMWTCHUchz-V4GF2s1ocbSk1YK2jdeB9JDPAmWqCFdGafbl-Q3Ykf7GMIC6BrOGP12oiYjue_NjutBcJ0bFg6erlLnXNFOY5lKk0ooJlip6q9qnWl42MzlBt3LodZceVCWS/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/t3-0EVqdV1AUp0hxfH5xlh7mi-ZK_HwKCrIGQh7U_uSqoelWI04PdBNPs3vf7H_UuJ4khTEgNEmVFjRMRfbjdQgSfIb_hybU_gB_E_eC6y4gw0b_5tral3SfrA1-Ko5mQaMauoVcPdWiVHRPO1lasTcnXJ-vxRVwzrYaHxyD0FIIetgdCD2iUe84cukNUkQo/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - دوشنبه ۳۰ شهریور ۱۴۰۵",
@@ -968,67 +1028,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/aAGo722UITROk3yApB3-ZlTRtcsMW2tIrDMUrCCPTEJ6bCvzuNwHbm5pSaq6WCkd0qNOuurVIFlSG3FouHOyKf7I5kPv4A8eLENNIjzIPiWlnd9XGGNHqB6Ad9wRtlchVeqRFtZ8hL8HkqvMFJxTTKDJppj0AuyKvett4hG-fLOJ4pcY9LX7bHk4WxnbudlE/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-    },
-    {
-      "title": "ساعات سعد و نحس امروز دوشنبه ۳۰ شهریور + جدول",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841743",
-      "date": "2026-09-20T20:31:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Etgn40UTx6z2NwhfzCQegBNOfRu7C0yq29pUqt8nIYXx3EGluj6YSW17wUC-NQiSbe-FbL8MGgffVJtU9QVInc_4SblDUL0diLCXblbpnvvE9sNXwwSUUL9nIQXVzBXg9VM7nDsOrelQBEW2Qy5DzE5_pNNGoN5lZyU_UL2N1Z-CVNnfWhhlIg3lhsi_3LIK/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-    },
-    {
-      "title": "اوقات شرعی امروز دوشنبه ۳۰ شهریور ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841742",
-      "date": "2026-09-20T20:31:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/Pu8bF3Aqmw0OYjWGtJV4jVBVn9wztsA3hSQdxj6qVK0VJJxUlfEmfA1fzaZqo88IgWHGqPl4F0VuDH23HXpTBysS-mNbzLDl2J-N_iNL52xNwocoZVZigaqxoBds2KR-E_LpLZKFkoWwTEQQ6r6kAYqP60PixXWBTxoyf6OGAs_emT3iVJxyPO_L1lRUAWn5/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
-    },
-    {
-      "title": "ببینید | لیلاز، اقتصاددان: از مثبت‌بودن متن تفاهم‌نامه فهمیدم که این موضوع یک تله است",
-      "link": "https://www.khabaronline.ir/news/2277353/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D9%84%DB%8C%D9%84%D8%A7%D8%B2-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D8%AF%D8%A7%D9%86-%D8%A7%D8%B2-%D9%85%D8%AB%D8%A8%D8%AA-%D8%A8%D9%88%D8%AF%D9%86-%D9%85%D8%AA%D9%86-%D8%AA%D9%81%D8%A7%D9%87%D9%85-%D9%86%D8%A7%D9%85%D9%87-%D9%81%D9%87%D9%85%DB%8C%D8%AF%D9%85",
-      "date": "2026-09-20T20:30:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "سعید لیلاز، اقتصاددان، با اشاره به متن تفاهم‌نامه گفت از همان ابتدا به دلیل امتیازهای مطرح‌شده به این نتیجه رسیده که این توافق «یک تله» بوده و آمریکا قصد اجرای آن را نداشته است. او همچنین تأکید کرد با اصل مذاکره مشکلی ندارد و پرسش اصلی را پذیرش یک ایران مستقل از سوی ایالات متحده دانست. منبع: صدا و سیما"
-    },
-    {
-      "title": "کوتاهی مژه، تب زیبایی عجیب این روزهای مردها",
-      "link": "https://www.khabaronline.ir/news/2277325/%DA%A9%D9%88%D8%AA%D8%A7%D9%87%DB%8C-%D9%85%DA%98%D9%87-%D8%AA%D8%A8-%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C-%D8%B9%D8%AC%DB%8C%D8%A8-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%87%D8%A7%DB%8C-%D9%85%D8%B1%D8%AF%D9%87%D8%A7",
-      "date": "2026-09-20T20:30:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "اخیرا روند زیبایی غیرمعمولی مردانه در شبکه‌های اجتماعی در حال گسترش است که به‌گفته متخصصان سلامت چشم‌ها به خطر می‌افتد."
-    },
-    {
-      "title": "روزنامه قدس شماره ۱۱۰۳۱",
-      "link": "https://qudsonline.ir/news/1166661/%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D9%82%D8%AF%D8%B3-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B3%DB%B1",
-      "date": "2026-09-20T20:30:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-      "source": "قدس آنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "روزنامه قدس شماره ۱۱۰۳۱ - دوشنبه ۳۰ شهریور ۱۴۰۵"
-    },
-    {
-      "title": "قدس رواق شماره ۱۱۰۳۱",
-      "link": "https://qudsonline.ir/news/1166660/%D9%82%D8%AF%D8%B3-%D8%B1%D9%88%D8%A7%D9%82-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B3%DB%B1",
-      "date": "2026-09-20T20:30:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-      "source": "قدس آنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "روزنامه قدس ضمیمه رواق شماره ۱۱۰۳۱ - دوشنبه ۳۰ شهریور ۱۴۰۵"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/-681l4GIudbfICA34i3BN5w7jrs3s-WBkl0oR_paOgpv-YRqVd8VC_bcQNdF_ILp_fm4iD7_7u1T2kq9LA4Qyn9LsvbH7z_S29dXldPrnTkwL7tBcVhtMQ_OC409gaoDl9BR1yClvw3Ewpapr0IgSj98e6PFqYiRf0a-Q9_m49L9OjiF8AX1LjmPHkE9ISxv/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     }
   ],
   "categorizedNews": {
@@ -1194,16 +1194,6 @@
         "flag": "🇮🇷",
         "category": "اقتصادی",
         "rssDescription": "رشت- ایرنا- رئیس سازمان مدیریت و برنامه‌ریزی گیلان با تأکید بر ضرورت بهره‌گیری اقتصادی از ظرفیت ماهیان خاویاری استان گفت: توسعه مشارکت بخش خصوصی و مشاغل خانگی در این حوزه می‌تواند به افزایش ارزش افزوده و اشتغال در گیلان منجر شود."
-      },
-      {
-        "title": "ببینید | لیلاز، اقتصاددان: از مثبت‌بودن متن تفاهم‌نامه فهمیدم که این موضوع یک تله است",
-        "link": "https://www.khabaronline.ir/news/2277353/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D9%84%DB%8C%D9%84%D8%A7%D8%B2-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D8%AF%D8%A7%D9%86-%D8%A7%D8%B2-%D9%85%D8%AB%D8%A8%D8%AA-%D8%A8%D9%88%D8%AF%D9%86-%D9%85%D8%AA%D9%86-%D8%AA%D9%81%D8%A7%D9%87%D9%85-%D9%86%D8%A7%D9%85%D9%87-%D9%81%D9%87%D9%85%DB%8C%D8%AF%D9%85",
-        "date": "2026-09-20T20:30:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "سعید لیلاز، اقتصاددان، با اشاره به متن تفاهم‌نامه گفت از همان ابتدا به دلیل امتیازهای مطرح‌شده به این نتیجه رسیده که این توافق «یک تله» بوده و آمریکا قصد اجرای آن را نداشته است. او همچنین تأکید کرد با اصل مذاکره مشکلی ندارد و پرسش اصلی را پذیرش یک ایران مستقل از سوی ایالات متحده دانست. منبع: صدا و سیما"
       }
     ],
     "ورزشی": [
@@ -1340,16 +1330,6 @@
         "rssDescription": "سرپرست اداره فرهنگ و ارشاد اسلامی نیشابور گفت: دو اثر نمایشی «فرکانس آخر» و «رقص پرنده» پس از رقابت میان ۲۳۹ اثر ارسالی از ۳۱ استان کشور، به مرحله رقابتی چهارمین جشنواره ملی اتودهای نمایشی ایران راه یافتند."
       },
       {
-        "title": "پخش بی سر و صدای فیلمی با بازی رضا عطاران و نوید محمدزاده",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3246749",
-        "date": "2026-09-20T21:11:16.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۱۱",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "فیلم «دانه‌های انگور» جدیدترین ساخته ابراهیم ابراهیمیان از امروز ۲۹ شهریور ماه بی‌سرو صدا و در یک سالن سینمایی آغاز کرده است."
-      },
-      {
         "title": "جشنواره گلاب‌گیری، پیوند اقوام در تهران",
         "link": "https://www.irna.ir/photo/86269500/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%DA%AF%D9%84%D8%A7%D8%A8-%DA%AF%DB%8C%D8%B1%DB%8C-%D9%BE%DB%8C%D9%88%D9%86%D8%AF-%D8%A7%D9%82%D9%88%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AA%D9%87%D8%B1%D8%A7%D9%86",
         "date": "2026-09-20T20:57:55.000Z",
@@ -1410,16 +1390,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "به گزارش تابناک، آیت الله سید موسی شبیری زنجانی از مراجع تقلید که به دلیل خونریزی معده و کاهش هوشیاری سه روز بود که در بخش مراقبت های ویژه یکی از بیمارستان های تهران بستری بود، دقایقی پیش درگذشت."
-      },
-      {
-        "title": "کوتاهی مژه، تب زیبایی عجیب این روزهای مردها",
-        "link": "https://www.khabaronline.ir/news/2277325/%DA%A9%D9%88%D8%AA%D8%A7%D9%87%DB%8C-%D9%85%DA%98%D9%87-%D8%AA%D8%A8-%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C-%D8%B9%D8%AC%DB%8C%D8%A8-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%87%D8%A7%DB%8C-%D9%85%D8%B1%D8%AF%D9%87%D8%A7",
-        "date": "2026-09-20T20:30:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "اخیرا روند زیبایی غیرمعمولی مردانه در شبکه‌های اجتماعی در حال گسترش است که به‌گفته متخصصان سلامت چشم‌ها به خطر می‌افتد."
       }
     ],
     "علمی و فناوری": [
@@ -1455,6 +1425,36 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "انفجارهای مهیب در جنوب حلب و آماده باش نیروهای امنیتی",
+        "link": "https://www.mehrnews.com/news/6953268/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%87%DB%8C%D8%A8-%D8%AF%D8%B1-%D8%AC%D9%86%D9%88%D8%A8-%D8%AD%D9%84%D8%A8-%D9%88-%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C",
+        "date": "2026-09-21T00:33:24.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۳",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "خبرگزاری رسمی سوریه (سانا) از وقوع انفجارهای شدید در یک انبار مهمات در حومه شهر «العیس» واقع در جنوب حلب خبر داد که متعاقب آن، صداهای انفجار پیاپی در منطقه شنیده شده است."
+      },
+      {
+        "title": "فهرست بهترین ایرلاین‌های جهان در ۲۰۲۶ منتشر شد؛ رقابت نزدیک غول‌های هوانوردی",
+        "link": "https://www.asriran.com/fa/news/1192854/%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%DB%8C%D8%B1%D9%84%D8%A7%DB%8C%D9%86-%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-2026-%D9%85%D9%86%D8%AA%D8%B4%D8%B1-%D8%B4%D8%AF-%D8%B1%D9%82%D8%A7%D8%A8%D8%AA-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9-%D8%BA%D9%88%D9%84-%D9%87%D8%A7%DB%8C-%D9%87%D9%88%D8%A7%D9%86%D9%88%D8%B1%D8%AF%DB%8C",
+        "date": "2026-09-21T00:30:01.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "سنگاپور ایرلاینز با این موفقیت، جایگاه نخست را از قطر ایرویز پس گرفت؛ شرکتی که سال گذشته صدرنشین بود و طی ۱۵ سال گذشته ۹ بار این عنوان را کسب کرده است. چون فونگ، مدیرعامل سنگاپور ایرلاینز، این جایزه را حاصل «تعهد و حرفه‌ای‌گری کارکنان» این شرکت دانست."
+      },
+      {
+        "title": "ملونی: استفاده از برقع و نقاب در ایتالیا ممنوع می شود",
+        "link": "https://www.irna.ir/news/86269515/%D9%85%D9%84%D9%88%D9%86%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%A8%D8%B1%D9%82%D8%B9-%D9%88-%D9%86%D9%82%D8%A7%D8%A8-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
+        "date": "2026-09-21T00:28:40.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۲۸",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- جورجیا ملونی نخست وزیر ایتالیا گفت که کابینه این کشور برای ممنوع کردن پوشش صورت و محدود کردن تعداد دانش‌آموزان خارجی در مدارس آماده می‌شود."
+      },
       {
         "title": "حسن فضل‌الله: اسرائیل نمی‌تواند مقاومت را نابود کند",
         "link": "https://www.mehrnews.com/news/6953264/%D8%AD%D8%B3%D9%86-%D9%81%D8%B6%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D9%86%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%B1%D8%A7-%D9%86%D8%A7%D8%A8%D9%88%D8%AF-%DA%A9%D9%86%D8%AF",
@@ -1506,8 +1506,8 @@
         "rssDescription": "تهران- ایرنا- منابع محلی سوری از وقوع انفجار در یک انبار مهمات در حومه جنوبی حلب خبر دادند و گزارش‌ها حاکی از انفجارهای ثانویه در این انبار است."
       },
       {
-        "title": "وقوع انفجارهای مهیب در حلب سوریه",
-        "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701827/%D9%88%D9%82%D9%88%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%87%DB%8C%D8%A8-%D8%AF%D8%B1-%D8%AD%D9%84%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
+        "title": "انفجار در انبار مهمات در حومه حلب سوریه",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701827/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%86%D8%A8%D8%A7%D8%B1-%D9%85%D9%87%D9%85%D8%A7%D8%AA-%D8%AF%D8%B1-%D8%AD%D9%88%D9%85%D9%87-%D8%AD%D9%84%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
         "date": "2026-09-20T22:31:06.000Z",
         "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۲:۳۱",
         "source": "تسنیم",
@@ -1584,6 +1584,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "ابطحی نوشت: گفتگو و به دست آوردن‌ رفاه برای ملت تحت تحریم و حصار اقتصادی حقی است‌ که مردم ایران طلب می کنند و‌ دیپلماسی جای حل آن است."
+      },
+      {
+        "title": "تسنیم بغداد| آزادی مشکوک یک صهیونیست محکوم به اعدام از زندان سلیمانیه",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701765/%D8%AA%D8%B3%D9%86%DB%8C%D9%85-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C-%D9%85%D8%B4%DA%A9%D9%88%DA%A9-%DB%8C%DA%A9-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA-%D9%85%D8%AD%DA%A9%D9%88%D9%85-%D8%A8%D9%87-%D8%A7%D8%B9%D8%AF%D8%A7%D9%85-%D8%A7%D8%B2-%D8%B2%D9%86%D8%AF%D8%A7%D9%86-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C%D9%87",
+        "date": "2026-09-20T21:45:45.000Z",
+        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۵",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "آزادی یک صهیونیست محکوم به اعدام از زندان سلیمانیه توجه رسانه های عراقی را به خود جلب کرده است."
       },
       {
         "title": "تماس تلفنی ترامپ و زلنسکی/ آمریکا خواستار توقف حملات اوکراین به پالایشگاه‌های روسیه شد",
@@ -1687,6 +1697,56 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "چک هنوز روی کاغذ می‌چرخد/ سهم چک الکترونیک فقط ۶ درصد!",
+        "link": "https://www.isna.ir/news/1405062919669/%DA%86%DA%A9-%D9%87%D9%86%D9%88%D8%B2-%D8%B1%D9%88%DB%8C-%DA%A9%D8%A7%D8%BA%D8%B0-%D9%85%DB%8C-%DA%86%D8%B1%D8%AE%D8%AF-%D8%B3%D9%87%D9%85-%DA%86%DA%A9-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9-%D9%81%D9%82%D8%B7-%DB%B6-%D8%AF%D8%B1%D8%B5%D8%AF",
+        "date": "2026-09-21T00:38:00.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۸",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "اگرچه چک الکترونیک در سال‌های اخیر با سرعت قابل ‌توجهی در شبکه بانکی توسعه یافته، اما مقایسه تعداد چک‌های الکترونیک با چک‌های کاغذی نشان می‌دهد که هنوز بخش عمده مبادلات اعتباری کشور(۹۴ درصد) بر بستر کاغذ انجام می‌شود."
+      },
+      {
+        "title": "چالش بینایی؛ خوک کجای تصویر پنهان شده؟",
+        "link": "https://www.tabnak.ir/fa/news/1395223/%DA%86%D8%A7%D9%84%D8%B4-%D8%A8%DB%8C%D9%86%D8%A7%DB%8C%DB%8C-%D8%AE%D9%88%DA%A9-%DA%A9%D8%AC%D8%A7%DB%8C-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D9%BE%D9%86%D9%87%D8%A7%D9%86-%D8%B4%D8%AF%D9%87",
+        "date": "2026-09-21T00:30:03.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "یک معمای تصویری جذاب برای سنجش قدرت بینایی و تمرکز؛ آیا می‌توانید خوک پنهان شده در میان ده‌ها سگ رنگارنگ را در کمتر از ۵ ثانیه پیدا کنید؟"
+      },
+      {
+        "title": "فال حافظ دوشنبه 30 شهریور 1405",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3246562",
+        "date": "2026-09-21T00:30:00.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ دوشنبه 30 شهریور را بخوانید."
+      },
+      {
+        "title": "طرز تهیه تخمه بوداده خانگی",
+        "link": "https://www.tabnak.ir/fa/news/1395261/%D8%B7%D8%B1%D8%B2-%D8%AA%D9%87%DB%8C%D9%87-%D8%AA%D8%AE%D9%85%D9%87-%D8%A8%D9%88%D8%AF%D8%A7%D8%AF%D9%87-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C",
+        "date": "2026-09-21T00:00:02.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۰۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "اگر از طرفداران تخمه هستید می توانید خودتان به راحتی در منزل تخمه بوداده درست کنید."
+      },
+      {
+        "title": "دندانپزشک اتریشی در حال ترمیم دندان های «ناصرالدین شاه»؛ سال 1269(عکس)",
+        "link": "https://www.asriran.com/fa/news/1192850/%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%BE%D8%B2%D8%B4%DA%A9-%D8%A7%D8%AA%D8%B1%DB%8C%D8%B4%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84-%D8%AA%D8%B1%D9%85%DB%8C%D9%85-%D8%AF%D9%86%D8%AF%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%86%D8%A7%D8%B5%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86-%D8%B4%D8%A7%D9%87-%D8%B3%D8%A7%D9%84-1269-%D8%B9%DA%A9%D8%B3",
+        "date": "2026-09-21T00:00:01.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۰۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "در ادامه تصویری تاریخی از یک دندانپزشک اتریشی را در حال ترمیم دندان های ناصرالدین شاه و در سال 1269 مشاهده می کنید."
+      },
       {
         "title": "آزادراه حرم تا حرم گرفتار تصمیم‌های دفاع‌ناپذیر؛ مشهد همچنان در انتظار",
         "link": "https://www.mehrnews.com/news/6950792/%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%AD%D8%B1%D9%85-%D8%AA%D8%A7-%D8%AD%D8%B1%D9%85-%DA%AF%D8%B1%D9%81%D8%AA%D8%A7%D8%B1-%D8%AA%D8%B5%D9%85%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D8%AF%D9%81%D8%A7%D8%B9-%D9%86%D8%A7%D9%BE%D8%B0%DB%8C%D8%B1-%D9%85%D8%B4%D9%87%D8%AF-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86",
@@ -1838,16 +1898,6 @@
         "rssDescription": "لاهیجان- در این فیلم، دویست و چهارمین حماسه حضور شبانه مردم لاهیجان در خیابان ها را مشاهده می کنید."
       },
       {
-        "title": "آغاز کشت کلزا در لرستان؛ ۶۰۰ هکتار از اراضی زیر کشت رفت",
-        "link": "https://www.mehrnews.com/news/6953241/%D8%A2%D8%BA%D8%A7%D8%B2-%DA%A9%D8%B4%D8%AA-%DA%A9%D9%84%D8%B2%D8%A7-%D8%AF%D8%B1-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DB%B6%DB%B0%DB%B0-%D9%87%DA%A9%D8%AA%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%A7%D8%B1%D8%A7%D8%B6%DB%8C-%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D8%AA-%D8%B1%D9%81%D8%AA",
-        "date": "2026-09-20T21:46:07.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "خرم‌آباد- مدیر زراعت سازمان جهاد کشاورزی لرستان از آغاز عملیات کشت کلزا در مناطق سردسیر استان خبر داد."
-      },
-      {
         "title": "آیت‌الله شبیری زنجانی درگذشت؛ پایان یک عمر مجاهدت علمی و فقاهت",
         "link": "https://www.khabaronline.ir/live/2277394/%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D8%B4%D8%A8%DB%8C%D8%B1%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%DB%8C%DA%A9-%D8%B9%D9%85%D8%B1-%D9%85%D8%AC%D8%A7%D9%87%D8%AF%D8%AA-%D8%B9%D9%84%D9%85%DB%8C-%D9%88-%D9%81%D9%82%D8%A7%D9%87%D8%AA",
         "date": "2026-09-20T21:44:21.000Z",
@@ -1958,16 +2008,6 @@
         "rssDescription": "تصاویر کلاب ساحلی در هتل آراز نوشهر در استان مازندران که جنجالی شد و منجر به ورود دادستان عمومی و انقلاب شهرستان نوشهر به مسابقات ورزشی «آراز کاپ» را می‌بینید و می‌شنوید."
       },
       {
-        "title": "شهردار سنندج: ۲۵ تا ۳۰ درصد معابر اصلی شهر در اولویت بهسازی قرار دارند",
-        "link": "https://www.isna.ir/news/1405063019889/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D8%B3%D9%86%D9%86%D8%AF%D8%AC-%DB%B2%DB%B5-%D8%AA%D8%A7-%DB%B3%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%D9%85%D8%B9%D8%A7%D8%A8%D8%B1-%D8%A7%D8%B5%D9%84%DB%8C-%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%88%D9%84%D9%88%DB%8C%D8%AA-%D8%A8%D9%87%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1",
-        "date": "2026-09-20T20:56:25.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۵۶",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "شهردار سنندج گفت: حدود ۲۵ تا ۳۰ درصد از معابر اصلی و شریانی این شهر، معادل ۷۵ تا ۹۰ کیلومتر، در اولویت انجام عملیات نگهداری، ترمیم و بهسازی قرار دارند."
-      },
-      {
         "title": "گزارش تصویری از دومین دوره مسابقات دارت دختران",
         "link": "https://www.ilna.ir/fa/tiny/news-1840707",
         "date": "2026-09-20T20:43:31.000Z",
@@ -1985,7 +2025,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/i31yBqoAYA81nNE-ohqQ8ocsrH-sox9sYTS2GZ9VS778TcrXiD6iIwZ_fnwW9pm-TLv3g4xBHu3mMWoEq94dYgJCOJs1W_sif63pMDamceIN3Vb5De23TMj_ucCo92EdhfEUY3zS_paWqJX_o8U4xO3N9UHKBhJtPsY3kTNOqlHNH48UbJdoK8kQtquwEbr5/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qVPPuzzJAUJ9XWsJ783OZlMmTai9irvMWRzwRRy3cFHiu4ALsgtfE4cy7p3F1gPg69kcad_rT6T6pmdl0DO5zgxUMZvUyVfxBQMKFqvUz035c73PNtOFJ31HbxTcyOxJYrphRWo-Av-MhWU6QEzP3pUJu5Mp00CMe2tLD6GXoPuuvBgzbBUerqj_8AsKvMeR/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - دوشنبه ۳۰ شهریور ۱۴۰۵",
@@ -1995,7 +2035,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/R6pdxEvkA0IdSMMxSlfd4PacadN3cMJmO74Ez4Ti6QmuOgooR10t9-lnJ9RginMWTCHUchz-V4GF2s1ocbSk1YK2jdeB9JDPAmWqCFdGafbl-Q3Ykf7GMIC6BrOGP12oiYjue_NjutBcJ0bFg6erlLnXNFOY5lKk0ooJlip6q9qnWl42MzlBt3LodZceVCWS/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/t3-0EVqdV1AUp0hxfH5xlh7mi-ZK_HwKCrIGQh7U_uSqoelWI04PdBNPs3vf7H_UuJ4khTEgNEmVFjRMRfbjdQgSfIb_hybU_gB_E_eC6y4gw0b_5tral3SfrA1-Ko5mQaMauoVcPdWiVHRPO1lasTcnXJ-vxRVwzrYaHxyD0FIIetgdCD2iUe84cukNUkQo/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - دوشنبه ۳۰ شهریور ۱۴۰۵",
@@ -2005,47 +2045,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/aAGo722UITROk3yApB3-ZlTRtcsMW2tIrDMUrCCPTEJ6bCvzuNwHbm5pSaq6WCkd0qNOuurVIFlSG3FouHOyKf7I5kPv4A8eLENNIjzIPiWlnd9XGGNHqB6Ad9wRtlchVeqRFtZ8hL8HkqvMFJxTTKDJppj0AuyKvett4hG-fLOJ4pcY9LX7bHk4WxnbudlE/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-      },
-      {
-        "title": "ساعات سعد و نحس امروز دوشنبه ۳۰ شهریور + جدول",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841743",
-        "date": "2026-09-20T20:31:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Etgn40UTx6z2NwhfzCQegBNOfRu7C0yq29pUqt8nIYXx3EGluj6YSW17wUC-NQiSbe-FbL8MGgffVJtU9QVInc_4SblDUL0diLCXblbpnvvE9sNXwwSUUL9nIQXVzBXg9VM7nDsOrelQBEW2Qy5DzE5_pNNGoN5lZyU_UL2N1Z-CVNnfWhhlIg3lhsi_3LIK/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-      },
-      {
-        "title": "اوقات شرعی امروز دوشنبه ۳۰ شهریور ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841742",
-        "date": "2026-09-20T20:31:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/Pu8bF3Aqmw0OYjWGtJV4jVBVn9wztsA3hSQdxj6qVK0VJJxUlfEmfA1fzaZqo88IgWHGqPl4F0VuDH23HXpTBysS-mNbzLDl2J-N_iNL52xNwocoZVZigaqxoBds2KR-E_LpLZKFkoWwTEQQ6r6kAYqP60PixXWBTxoyf6OGAs_emT3iVJxyPO_L1lRUAWn5/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
-      },
-      {
-        "title": "روزنامه قدس شماره ۱۱۰۳۱",
-        "link": "https://qudsonline.ir/news/1166661/%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D9%82%D8%AF%D8%B3-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B3%DB%B1",
-        "date": "2026-09-20T20:30:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-        "source": "قدس آنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "روزنامه قدس شماره ۱۱۰۳۱ - دوشنبه ۳۰ شهریور ۱۴۰۵"
-      },
-      {
-        "title": "قدس رواق شماره ۱۱۰۳۱",
-        "link": "https://qudsonline.ir/news/1166660/%D9%82%D8%AF%D8%B3-%D8%B1%D9%88%D8%A7%D9%82-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B3%DB%B1",
-        "date": "2026-09-20T20:30:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۰",
-        "source": "قدس آنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "روزنامه قدس ضمیمه رواق شماره ۱۱۰۳۱ - دوشنبه ۳۰ شهریور ۱۴۰۵"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/-681l4GIudbfICA34i3BN5w7jrs3s-WBkl0oR_paOgpv-YRqVd8VC_bcQNdF_ILp_fm4iD7_7u1T2kq9LA4Qyn9LsvbH7z_S29dXldPrnTkwL7tBcVhtMQ_OC409gaoDl9BR1yClvw3Ewpapr0IgSj98e6PFqYiRf0a-Q9_m49L9OjiF8AX1LjmPHkE9ISxv/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       }
     ]
   }
