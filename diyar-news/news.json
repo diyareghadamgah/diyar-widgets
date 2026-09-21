@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-21T00:41:30.482Z",
-  "lastUpdatePersian": "۳۰ شهریور ۱۴۰۵، ۰:۴۱",
+  "lastUpdate": "2026-09-21T01:03:57.610Z",
+  "lastUpdatePersian": "۳۰ شهریور ۱۴۰۵، ۱:۰۳",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,56 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "بدشانسی تالوکار پُرامید ایران؛ کیانی چهارم شد!",
+      "link": "https://www.irna.ir/news/86269313/%D8%A8%D8%AF%D8%B4%D8%A7%D9%86%D8%B3%DB%8C-%D8%AA%D8%A7%D9%84%D9%88%DA%A9%D8%A7%D8%B1-%D9%BE%D8%B1%D8%A7%D9%85%DB%8C%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%B4%D8%AF",
+      "date": "2026-09-21T01:00:33.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۱:۰۰",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "ناگویا- ایرنا- تالوکار مطرح تیم ملی ووشو ایران با اختلاف امتیاز بسیار اندک، از رسیدن به مدال در بازی‌های آسیایی ناگویا بازماند."
+    },
+    {
+      "title": "نتایج کاروان ایران در روز دوم بازی‌های آسیایی ۲۰۲۶/پرچمدار کاروان چهارم شد",
+      "link": "https://www.isna.ir/news/1405063019902/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%DB%B2%DB%B0%DB%B2%DB%B6-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86",
+      "date": "2026-09-21T00:58:01.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۸",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "در روز دوم بازی‌های آسیایی ناگویا ۲۰۲۶ ورزشکاران ایران در ۱۱ رشته رقابت خواهند کرد."
+    },
+    {
+      "title": "بازیهای آسیایی ناگویا؛ زهرا کیانی چهارم شد",
+      "link": "https://www.khabaronline.ir/news/2277415/%D8%A8%D8%A7%D8%B2%DB%8C%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D8%B2%D9%87%D8%B1%D8%A7-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%B4%D8%AF",
+      "date": "2026-09-21T00:57:13.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۷",
+      "source": "خبرآنلاین",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "در دومین روز از رقابت‌های ووشو بازیهای آسیایی زهرا کیانی پرچمدار افتخار آفرین و ارزنده کشورمان در فرم‌ چانگ‌چوان به رقابت با ۱۵ حریف آسیایی دیگر خود پرداخت"
+    },
+    {
+      "title": "پرچمدار ایران از کسب مدال بازماند",
+      "link": "https://www.mehrnews.com/news/6953269/%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B2-%DA%A9%D8%B3%D8%A8-%D9%85%D8%AF%D8%A7%D9%84-%D8%A8%D8%A7%D8%B2%D9%85%D8%A7%D9%86%D8%AF",
+      "date": "2026-09-21T00:54:18.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "زهرا کیانی یکی از دو پرچمدار ایران در افتتاحیه بازی‌های آسیایی ۲۰۲۶ از کسب مدال در مسابقات ووشو این دوره بازی‌ها بازماند و به عنوان چهارمی بسنده کرد."
+    },
+    {
+      "title": "پیشگیری از خشونت جوانان با توانمندسازی و آموزش‌ مهارت‌های زندگی",
+      "link": "https://www.isna.ir/news/1405063019898/%D9%BE%DB%8C%D8%B4%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%AE%D8%B4%D9%88%D9%86%D8%AA-%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AA%D9%88%D8%A7%D9%86%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%87%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C",
+      "date": "2026-09-21T00:51:00.000Z",
+      "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۱",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "معاون امور جوانان اداره‌کل ورزش و جوانان خراسان رضوی گفت: توانمندسازی جوانان و ارائه آموزش‌های مرتبط با مهارت‌های زندگی، برقراری ارتباط مؤثر، تاب‌آوری، حل تعارض و حل مساله است تا زمینه پیشگیری از خشونت و به‌ویژه نزاع و درگیری فراهم شود."
+    },
     {
       "title": "چک هنوز روی کاغذ می‌چرخد/ سهم چک الکترونیک فقط ۶ درصد!",
       "link": "https://www.isna.ir/news/1405062919669/%DA%86%DA%A9-%D9%87%D9%86%D9%88%D8%B2-%D8%B1%D9%88%DB%8C-%DA%A9%D8%A7%D8%BA%D8%B0-%D9%85%DB%8C-%DA%86%D8%B1%D8%AE%D8%AF-%D8%B3%D9%87%D9%85-%DA%86%DA%A9-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9-%D9%81%D9%82%D8%B7-%DB%B6-%D8%AF%D8%B1%D8%B5%D8%AF",
@@ -591,16 +641,6 @@
       "rssDescription": "لاهیجان- در این فیلم، دویست و چهارمین حماسه حضور شبانه مردم لاهیجان در خیابان ها را مشاهده می کنید."
     },
     {
-      "title": "افشاری: پیشرفت‌های علمی ایران نتیجه خودباوری و استقلال کشور است",
-      "link": "https://www.mehrnews.com/news/6953243/%D8%A7%D9%81%D8%B4%D8%A7%D8%B1%DB%8C-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B9%D9%84%D9%85%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%86%D8%AA%DB%8C%D8%AC%D9%87-%D8%AE%D9%88%D8%AF%D8%A8%D8%A7%D9%88%D8%B1%DB%8C-%D9%88-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-09-20T21:48:44.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۸",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "رشت- معاون پژوهش، فناوری و نوآوری دانشگاه آزاد اسلامی کشور با اشاره به پیشرفت‌های علمی و فناوری ایران پس از انقلاب اسلامی گفت: امروز پیشرفت‌های علمی ایران نتیجه خودباوری و استقلال کشور است."
-    },
-    {
       "title": "تسنیم بغداد| آزادی مشکوک یک صهیونیست محکوم به اعدام از زندان سلیمانیه",
       "link": "https://www.tasnimnews.ir/fa/news/1405/06/30/3701765/%D8%AA%D8%B3%D9%86%DB%8C%D9%85-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C-%D9%85%D8%B4%DA%A9%D9%88%DA%A9-%DB%8C%DA%A9-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA-%D9%85%D8%AD%DA%A9%D9%88%D9%85-%D8%A8%D9%87-%D8%A7%D8%B9%D8%AF%D8%A7%D9%85-%D8%A7%D8%B2-%D8%B2%D9%86%D8%AF%D8%A7%D9%86-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C%D9%87",
       "date": "2026-09-20T21:45:45.000Z",
@@ -841,26 +881,6 @@
       "rssDescription": "تهران- ایرنا- نتایج اولیه انتخابات دومای دولتی روسیه نشان می‌دهد که حزب حاکم «روسیه واحد» با کسب ۵۷.۵ درصد آرا پیشتاز این رای‌گیری است."
     },
     {
-      "title": "واحد تجزیه مبادلات پست خراسان رضوی هوشمند می‌شود",
-      "link": "https://www.isna.ir/news/1405063019892/%D9%88%D8%A7%D8%AD%D8%AF-%D8%AA%D8%AC%D8%B2%DB%8C%D9%87-%D9%85%D8%A8%D8%A7%D8%AF%D9%84%D8%A7%D8%AA-%D9%BE%D8%B3%D8%AA-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
-      "date": "2026-09-20T21:02:46.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۰۲",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "علمی و فناوری",
-      "rssDescription": "مدیرکل پست خراسان رضوی با بیان اینکه در استان تاکنون در بخش‌های مختلف زنجیره خدمات پستی از فناوری‌های روز استفاده شده است، گفت: برنامه پست خراسان رضوی توسعه این فناوری‌ها در حوزه تجزیه مبادلات است و به‌زودی واحد تجزیه مبادلات پست استان به‌صورت کامل هوشمند خواهد شد که این موضوع موجب تسریع در ارائه خدمات و توزیع مرسولات خواهد شد."
-    },
-    {
-      "title": "نواخته شدن زنگ «جشن شکوفه‌ها» برای بیش از یک میلیون کلاس اولی",
-      "link": "https://www.isna.ir/news/1405062919674/%D9%86%D9%88%D8%A7%D8%AE%D8%AA%D9%87-%D8%B4%D8%AF%D9%86-%D8%B2%D9%86%DA%AF-%D8%AC%D8%B4%D9%86-%D8%B4%DA%A9%D9%88%D9%81%D9%87-%D9%87%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%DA%A9%D9%84%D8%A7%D8%B3-%D8%A7%D9%88%D9%84%DB%8C",
-      "date": "2026-09-20T21:00:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۰۰",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "زنگ «جشن شکوفه‌های» امروز ۳۰ شهریور با حضور حدود یک میلیون و ۱۵۴ هزار دانش‌آموز کلاس اولی در مدارس کشور نواخته می‌شود."
-    },
-    {
       "title": "ببینید | تصویری کمتر دیده‌شده از ستاره‌های فوتبال ایران در لباس احرام",
       "link": "https://www.khabaronline.ir/news/2277356/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1%DB%8C-%DA%A9%D9%85%D8%AA%D8%B1-%D8%AF%DB%8C%D8%AF%D9%87-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%D8%AA%D8%A7%D8%B1%D9%87-%D9%87%D8%A7%DB%8C-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%84%D8%A8%D8%A7%D8%B3",
       "date": "2026-09-20T21:00:00.000Z",
@@ -1009,26 +1029,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qVPPuzzJAUJ9XWsJ783OZlMmTai9irvMWRzwRRy3cFHiu4ALsgtfE4cy7p3F1gPg69kcad_rT6T6pmdl0DO5zgxUMZvUyVfxBQMKFqvUz035c73PNtOFJ31HbxTcyOxJYrphRWo-Av-MhWU6QEzP3pUJu5Mp00CMe2tLD6GXoPuuvBgzbBUerqj_8AsKvMeR/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال حافظ متولدین هر ماه - دوشنبه ۳۰ شهریور ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841746",
-      "date": "2026-09-20T20:31:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/t3-0EVqdV1AUp0hxfH5xlh7mi-ZK_HwKCrIGQh7U_uSqoelWI04PdBNPs3vf7H_UuJ4khTEgNEmVFjRMRfbjdQgSfIb_hybU_gB_E_eC6y4gw0b_5tral3SfrA1-Ko5mQaMauoVcPdWiVHRPO1lasTcnXJ-vxRVwzrYaHxyD0FIIetgdCD2iUe84cukNUkQo/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال روزانه ماه تولد - دوشنبه ۳۰ شهریور ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1841745",
-      "date": "2026-09-20T20:31:00.000Z",
-      "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/-681l4GIudbfICA34i3BN5w7jrs3s-WBkl0oR_paOgpv-YRqVd8VC_bcQNdF_ILp_fm4iD7_7u1T2kq9LA4Qyn9LsvbH7z_S29dXldPrnTkwL7tBcVhtMQ_OC409gaoDl9BR1yClvw3Ewpapr0IgSj98e6PFqYiRf0a-Q9_m49L9OjiF8AX1LjmPHkE9ISxv/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     }
   ],
   "categorizedNews": {
@@ -1198,6 +1198,36 @@
     ],
     "ورزشی": [
       {
+        "title": "بدشانسی تالوکار پُرامید ایران؛ کیانی چهارم شد!",
+        "link": "https://www.irna.ir/news/86269313/%D8%A8%D8%AF%D8%B4%D8%A7%D9%86%D8%B3%DB%8C-%D8%AA%D8%A7%D9%84%D9%88%DA%A9%D8%A7%D8%B1-%D9%BE%D8%B1%D8%A7%D9%85%DB%8C%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%B4%D8%AF",
+        "date": "2026-09-21T01:00:33.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۱:۰۰",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "ناگویا- ایرنا- تالوکار مطرح تیم ملی ووشو ایران با اختلاف امتیاز بسیار اندک، از رسیدن به مدال در بازی‌های آسیایی ناگویا بازماند."
+      },
+      {
+        "title": "نتایج کاروان ایران در روز دوم بازی‌های آسیایی ۲۰۲۶/پرچمدار کاروان چهارم شد",
+        "link": "https://www.isna.ir/news/1405063019902/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%DB%B2%DB%B0%DB%B2%DB%B6-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86",
+        "date": "2026-09-21T00:58:01.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۸",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "در روز دوم بازی‌های آسیایی ناگویا ۲۰۲۶ ورزشکاران ایران در ۱۱ رشته رقابت خواهند کرد."
+      },
+      {
+        "title": "پرچمدار ایران از کسب مدال بازماند",
+        "link": "https://www.mehrnews.com/news/6953269/%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B2-%DA%A9%D8%B3%D8%A8-%D9%85%D8%AF%D8%A7%D9%84-%D8%A8%D8%A7%D8%B2%D9%85%D8%A7%D9%86%D8%AF",
+        "date": "2026-09-21T00:54:18.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "زهرا کیانی یکی از دو پرچمدار ایران در افتتاحیه بازی‌های آسیایی ۲۰۲۶ از کسب مدال در مسابقات ووشو این دوره بازی‌ها بازماند و به عنوان چهارمی بسنده کرد."
+      },
+      {
         "title": "معرفی آقازاده های فوتبال؛ ستاره های آینده دار با والدین مشهور",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3246757",
         "date": "2026-09-20T22:35:16.000Z",
@@ -1216,16 +1246,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "پاری‌سن‌ژرمن با بردی دشوار به تعطیلات رفت/ ادامه تیره‌روزی‌های مارسی"
-      },
-      {
-        "title": "افشاری: پیشرفت‌های علمی ایران نتیجه خودباوری و استقلال کشور است",
-        "link": "https://www.mehrnews.com/news/6953243/%D8%A7%D9%81%D8%B4%D8%A7%D8%B1%DB%8C-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B9%D9%84%D9%85%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%86%D8%AA%DB%8C%D8%AC%D9%87-%D8%AE%D9%88%D8%AF%D8%A8%D8%A7%D9%88%D8%B1%DB%8C-%D9%88-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-09-20T21:48:44.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۴۸",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "رشت- معاون پژوهش، فناوری و نوآوری دانشگاه آزاد اسلامی کشور با اشاره به پیشرفت‌های علمی و فناوری ایران پس از انقلاب اسلامی گفت: امروز پیشرفت‌های علمی ایران نتیجه خودباوری و استقلال کشور است."
       },
       {
         "title": "قطعی شدن معافیت سربازی ۵ ستاره تیم ملی",
@@ -1372,16 +1392,6 @@
         "rssDescription": "مدیر روابط عمومی شرکت توسعه ارتباطات ترافیکی شهرداری مشهد با اشاره به بخش خدماتی پویش «لبخند مهر»، گفت: در راستای این پویش عمومی شهرداری مشهد، طرحی با عنوان «همیار مهر» را در شرکت توسعه ارتباطات ترافیکی دنبال می‌کنیم که یکی از بخش‌های مهم آن ارائه خدمات رایگان سرویس و تعمیرات جزئی دوچرخه‌های شخصی دانش‌آموزان است."
       },
       {
-        "title": "نواخته شدن زنگ «جشن شکوفه‌ها» برای بیش از یک میلیون کلاس اولی",
-        "link": "https://www.isna.ir/news/1405062919674/%D9%86%D9%88%D8%A7%D8%AE%D8%AA%D9%87-%D8%B4%D8%AF%D9%86-%D8%B2%D9%86%DA%AF-%D8%AC%D8%B4%D9%86-%D8%B4%DA%A9%D9%88%D9%81%D9%87-%D9%87%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%DA%A9%D9%84%D8%A7%D8%B3-%D8%A7%D9%88%D9%84%DB%8C",
-        "date": "2026-09-20T21:00:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۰۰",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "زنگ «جشن شکوفه‌های» امروز ۳۰ شهریور با حضور حدود یک میلیون و ۱۵۴ هزار دانش‌آموز کلاس اولی در مدارس کشور نواخته می‌شود."
-      },
-      {
         "title": "آخرین عکس آیت الله شبیری زنجانی در بیمارستان",
         "link": "https://www.tabnak.ir/fa/news/1395274/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D8%B9%DA%A9%D8%B3-%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D8%B4%D8%A8%DB%8C%D8%B1%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86",
         "date": "2026-09-20T20:31:51.000Z",
@@ -1412,16 +1422,6 @@
         "flag": "🇮🇷",
         "category": "علمی و فناوری",
         "rssDescription": "هواپیمای X-29 ناسا آن‌قدر ناپایدار بود که بدون سیستم کنترل پرواز کامپیوتری عملاً قابل هدایت نبود."
-      },
-      {
-        "title": "واحد تجزیه مبادلات پست خراسان رضوی هوشمند می‌شود",
-        "link": "https://www.isna.ir/news/1405063019892/%D9%88%D8%A7%D8%AD%D8%AF-%D8%AA%D8%AC%D8%B2%DB%8C%D9%87-%D9%85%D8%A8%D8%A7%D8%AF%D9%84%D8%A7%D8%AA-%D9%BE%D8%B3%D8%AA-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
-        "date": "2026-09-20T21:02:46.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۱:۰۲",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "علمی و فناوری",
-        "rssDescription": "مدیرکل پست خراسان رضوی با بیان اینکه در استان تاکنون در بخش‌های مختلف زنجیره خدمات پستی از فناوری‌های روز استفاده شده است، گفت: برنامه پست خراسان رضوی توسعه این فناوری‌ها در حوزه تجزیه مبادلات است و به‌زودی واحد تجزیه مبادلات پست استان به‌صورت کامل هوشمند خواهد شد که این موضوع موجب تسریع در ارائه خدمات و توزیع مرسولات خواهد شد."
       }
     ],
     "بین‌الملل": [
@@ -1697,6 +1697,26 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "بازیهای آسیایی ناگویا؛ زهرا کیانی چهارم شد",
+        "link": "https://www.khabaronline.ir/news/2277415/%D8%A8%D8%A7%D8%B2%DB%8C%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D8%B2%D9%87%D8%B1%D8%A7-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%B4%D8%AF",
+        "date": "2026-09-21T00:57:13.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۷",
+        "source": "خبرآنلاین",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "در دومین روز از رقابت‌های ووشو بازیهای آسیایی زهرا کیانی پرچمدار افتخار آفرین و ارزنده کشورمان در فرم‌ چانگ‌چوان به رقابت با ۱۵ حریف آسیایی دیگر خود پرداخت"
+      },
+      {
+        "title": "پیشگیری از خشونت جوانان با توانمندسازی و آموزش‌ مهارت‌های زندگی",
+        "link": "https://www.isna.ir/news/1405063019898/%D9%BE%DB%8C%D8%B4%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%AE%D8%B4%D9%88%D9%86%D8%AA-%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AA%D9%88%D8%A7%D9%86%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%87%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C",
+        "date": "2026-09-21T00:51:00.000Z",
+        "datePersian": "۳۰ شهریور ۱۴۰۵، ۰:۵۱",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "معاون امور جوانان اداره‌کل ورزش و جوانان خراسان رضوی گفت: توانمندسازی جوانان و ارائه آموزش‌های مرتبط با مهارت‌های زندگی، برقراری ارتباط مؤثر، تاب‌آوری، حل تعارض و حل مساله است تا زمینه پیشگیری از خشونت و به‌ویژه نزاع و درگیری فراهم شود."
+      },
       {
         "title": "چک هنوز روی کاغذ می‌چرخد/ سهم چک الکترونیک فقط ۶ درصد!",
         "link": "https://www.isna.ir/news/1405062919669/%DA%86%DA%A9-%D9%87%D9%86%D9%88%D8%B2-%D8%B1%D9%88%DB%8C-%DA%A9%D8%A7%D8%BA%D8%B0-%D9%85%DB%8C-%DA%86%D8%B1%D8%AE%D8%AF-%D8%B3%D9%87%D9%85-%DA%86%DA%A9-%D8%A7%D9%84%DA%A9%D8%AA%D8%B1%D9%88%D9%86%DB%8C%DA%A9-%D9%81%D9%82%D8%B7-%DB%B6-%D8%AF%D8%B1%D8%B5%D8%AF",
@@ -2026,26 +2046,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qVPPuzzJAUJ9XWsJ783OZlMmTai9irvMWRzwRRy3cFHiu4ALsgtfE4cy7p3F1gPg69kcad_rT6T6pmdl0DO5zgxUMZvUyVfxBQMKFqvUz035c73PNtOFJ31HbxTcyOxJYrphRWo-Av-MhWU6QEzP3pUJu5Mp00CMe2tLD6GXoPuuvBgzbBUerqj_8AsKvMeR/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال حافظ متولدین هر ماه - دوشنبه ۳۰ شهریور ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841746",
-        "date": "2026-09-20T20:31:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/t3-0EVqdV1AUp0hxfH5xlh7mi-ZK_HwKCrIGQh7U_uSqoelWI04PdBNPs3vf7H_UuJ4khTEgNEmVFjRMRfbjdQgSfIb_hybU_gB_E_eC6y4gw0b_5tral3SfrA1-Ko5mQaMauoVcPdWiVHRPO1lasTcnXJ-vxRVwzrYaHxyD0FIIetgdCD2iUe84cukNUkQo/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال روزانه ماه تولد - دوشنبه ۳۰ شهریور ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1841745",
-        "date": "2026-09-20T20:31:00.000Z",
-        "datePersian": "۲۹ شهریور ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/-681l4GIudbfICA34i3BN5w7jrs3s-WBkl0oR_paOgpv-YRqVd8VC_bcQNdF_ILp_fm4iD7_7u1T2kq9LA4Qyn9LsvbH7z_S29dXldPrnTkwL7tBcVhtMQ_OC409gaoDl9BR1yClvw3Ewpapr0IgSj98e6PFqYiRf0a-Q9_m49L9OjiF8AX1LjmPHkE9ISxv/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       }
     ]
   }
