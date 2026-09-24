@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-24T23:04:34.577Z",
-  "lastUpdatePersian": "۲ مهر ۱۴۰۵، ۲۳:۰۴",
+  "lastUpdate": "2026-09-24T23:35:21.719Z",
+  "lastUpdatePersian": "۲ مهر ۱۴۰۵، ۲۳:۳۵",
   "totalNews": 100,
   "failedSources": [
     "فارس",
@@ -30,6 +30,56 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "استرس چطور باعث پوسیدگی و شکستن دندان‌ها می‌شود؟",
+      "link": "https://www.asriran.com/fa/news/1193860/%D8%A7%D8%B3%D8%AA%D8%B1%D8%B3-%DA%86%D8%B7%D9%88%D8%B1-%D8%A8%D8%A7%D8%B9%D8%AB-%D9%BE%D9%88%D8%B3%DB%8C%D8%AF%DA%AF%DB%8C-%D9%88-%D8%B4%DA%A9%D8%B3%D8%AA%D9%86-%D8%AF%D9%86%D8%AF%D8%A7%D9%86-%D9%87%D8%A7-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
+      "date": "2026-09-24T23:30:01.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "دکتر مصطفی محاوری، دندانپزشک می‌گوید: فشار روانی در بعضی افراد باعث می‌شود دندان‌ها در درازمدت دچار سایش شوند. این سایش به‌تدریج ظاهر و سطح دندان‌ها را تغییر می‌دهد."
+    },
+    {
+      "title": "رسانه رژیم صهیونیستی: خروج هیات‌های دیپلماتیک در سخنرانی نتانیاهو نشانه انزوای اسرائیل است",
+      "link": "https://www.irna.ir/news/86273717/%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%AE%D8%B1%D9%88%D8%AC-%D9%87%DB%8C%D8%A7%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%AA%DB%8C%DA%A9-%D8%AF%D8%B1-%D8%B3%D8%AE%D9%86%D8%B1%D8%A7%D9%86%DB%8C-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88",
+      "date": "2026-09-24T23:21:20.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۲۱",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- روزنامه صهیونیستی یدیعوت آحارانوت در تحلیلی با انتقاد تند از سخنرانی بنیامین نتانیاهو در سازمان ملل، آن را مملو از حمله و اتهام اما فاقد چشم‌انداز صلح و پایان جنگ دانست و خروج هیأت‌های دیپلماتیک از سالن را نشانه انزوای فزاینده رژیم صهیونیستی توصیف کرد."
+    },
+    {
+      "title": "دویست و هشتمین شب حضور زنجانی‌ها در میدان",
+      "link": "https://www.mehrnews.com/news/6957766/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D8%B4%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+      "date": "2026-09-24T23:11:30.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۱۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و هشتمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می کنید."
+    },
+    {
+      "title": "تاکر کارلسون: به ترامپ درباره جنگ با ایران هشدار داده بودم",
+      "link": "https://www.irna.ir/news/86273804/%D8%AA%D8%A7%DA%A9%D8%B1-%DA%A9%D8%A7%D8%B1%D9%84%D8%B3%D9%88%D9%86-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AC%D9%86%DA%AF-%D8%A8%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF%D9%87-%D8%A8%D9%88%D8%AF%D9%85",
+      "date": "2026-09-24T23:08:20.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۰۸",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- تاکر کارلسون چهره سرشناس رسانه‌ای محافظه‌کار آمریکا در اظهاراتی تاکید کرد که به دونالد ترامپ رئیس جمهور آمریکا درباره جنگ تجاوزکارانه و بی‌دلیل او علیه ایران هشدار داده بود."
+    },
+    {
+      "title": "چهرۀ «عزیزخان، خواجه دربار قاجار» در دوران جوانی",
+      "link": "https://www.asriran.com/fa/news/1193857/%DA%86%D9%87%D8%B1%D9%87-%D8%B9%D8%B2%DB%8C%D8%B2%D8%AE%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D8%AC%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D8%AC%D9%88%D8%A7%D9%86%DB%8C",
+      "date": "2026-09-24T23:00:01.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۰۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "در اینجا تصویری از یکی از خواجه‌های معروف دوران قاجار به نام عزیزخان را در دوران جوانی‌اش ملاحظه می‌کنید."
+    },
     {
       "title": "حماس: ادعاهای نتانیاهو در سازمان ملل با واقعیت جنایات غزه در تضاد است",
       "link": "https://www.isna.ir/news/1405070301389/%D8%AD%D9%85%D8%A7%D8%B3-%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D8%A8%D8%A7-%D9%88%D8%A7%D9%82%D8%B9%DB%8C%D8%AA-%D8%AC%D9%86%D8%A7%DB%8C%D8%A7%D8%AA-%D8%BA%D8%B2%D9%87-%D8%AF%D8%B1",
@@ -98,7 +148,7 @@
       "source": "مهر",
       "flag": "🇮🇷",
       "category": "سیاسی",
-      "rssDescription": "قم- مجلس ترحیم و بزرگداشت آیت‌الله شبیری زنجانی به میزبانی مرجع عالی‌قدر جهان تشیع و با حضور علما، طلاب و اقشار مختلف مردم در قم برگزار شد."
+      "rssDescription": "قم- مجلس ترحیم و بزرگداشت آیت‌الله شبیری زنجانی به میزبانی مرجع عالی‌قدر جهان تشیع آیت‌الله سیستانی و با حضور علما، طلاب و اقشار مختلف مردم در قم برگزار شد."
     },
     {
       "title": "پست اسماعیل بقایی در رابطه با قاب عکس حاج قاسم در سالن سازمان ملل",
@@ -228,7 +278,7 @@
       "source": "مهر",
       "flag": "🇮🇷",
       "category": "بین‌الملل",
-      "rssDescription": "وزیر خارجه ایران در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد با وزیران خارجه برونئی دارالسلام و وزیر خارجه قبرس دیدار و گفتگو کرد."
+      "rssDescription": "وزیر امور خارجه ایران در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد با وزیران خارجه برونئی دارالسلام و وزیر خارجه قبرس دیدار و گفتگو کرد."
     },
     {
       "title": "شب‌ها زیاد فکر می‌کنید؟ متخصص درباره عادت «مرور دوباره» مغز و راه‌های مقابله با آن توضیح می‌دهد",
@@ -458,7 +508,7 @@
       "source": "مهر",
       "flag": "🇮🇷",
       "category": "سیاسی",
-      "rssDescription": "وزیر امور خارجه جمهوری اسلامی ایران و پائولو رانگل وزیر امور خارجه پرتغال در حاشیه هشتاد ویکمین نشست مجمع عمومی سازمان ملل متحد دیدار و گفتگو کردند."
+      "rssDescription": "وزیر امور خارجه جمهوری اسلامی ایران و پائولو رانگل، وزیر امور خارجه پرتغال در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد دیدار و گفتگو کردند."
     },
     {
       "title": "دیدار و گفت وگوی عراقچی و وزیر خارجه پرتغال",
@@ -478,7 +528,7 @@
       "source": "خبر فوری",
       "flag": "🇮🇷",
       "category": "بین‌الملل",
-      "rssDescription": "سفیر اسرائیل در سازمان ملل، پس از سخنرانی بنیامین نتانیاهو، دستگاه استارلینکی را به نماینده ایران پیشنهاد کرد، اما دیپلمات ایرانی بدون توجه به او از دریافت این دستگاه خودداری کرد."
+      "rssDescription": "دنی دانون نماینده رژیم صهیونیستی در سازمان ملل در پی سخنرانی بنیامین نتانیاهو در مجمع عمومی، با در دست گرفتن یک دستگاه استارلینک خود را به محل استقرار هیات جمهوری اسلامی ایران رساند که نمایش تبلیغاتی مضحک او با بی‌اعتنایی نماینده ایران روبه‌رو شد."
     },
     {
       "title": "مسابقات قهرمانی اسب های زائیچه ایران  قهرمانی کشور",
@@ -601,6 +651,16 @@
       "rssDescription": "جمعیت زیادی از معترضان در منهتن نیویورک در حمایت از مردم فلسطین و در اعتراض به حضور بنیامین نتانیاهو در این شهر تظاهرات کردند."
     },
     {
+      "title": "شهردار نیویورک پاسخ نتانیاهو را داد",
+      "link": "https://www.isna.ir/news/1405070301378/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%AF",
+      "date": "2026-09-24T21:21:58.000Z",
+      "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۲۱",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "شهردار نیویورک در پاسخ به حملات بنیامین نتانیاهو علیه وی تاکید کرد که او از سخنرانی خود در سازمان ملل برای تکرار دروغ‌های خود سوء استفاده کرد."
+    },
+    {
       "title": "آسیب مغزی بیش از ۱۰۰ نفر در ترن هوایی آمریکا",
       "link": "https://www.asriran.com/fa/news/1194004/%D8%A2%D8%B3%DB%8C%D8%A8-%D9%85%D8%BA%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-100-%D9%86%D9%81%D8%B1-%D8%AF%D8%B1-%D8%AA%D8%B1%D9%86-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
       "date": "2026-09-24T21:20:16.000Z",
@@ -619,16 +679,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "وزیر دفاع پاکستان با تاکید بر ضرورت ادامه تلاش‌های مذاکره برای پایان جنگ ایران، گفت که رایزنی‌ها در این زمینه همچنان ادامه دارد."
-    },
-    {
-      "title": "ادعاهای بی‌اساس ولیعهد کویت علیه ایران",
-      "link": "https://www.mehrnews.com/news/6957753/%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D8%A8%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3-%D9%88%D9%84%DB%8C%D8%B9%D9%87%D8%AF-%DA%A9%D9%88%DB%8C%D8%AA-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-      "date": "2026-09-24T21:16:13.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۱۶",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "ولیعهد کویت در سخنرانی خود بدون اشاره به استفاده نیروهای آمریکایی از خاک این کشور در حمله به ملت ایران، تهران را به اختلال در کشتیرانی متهم کرد."
     },
     {
       "title": "مکرون نیرو و سامانه‌های دفاعی به عربستان اعزام می‌کند",
@@ -701,26 +751,6 @@
       "rssDescription": "رقابت‌های فوتبال لیگ ملت‌های اروپا با پیروزی تساوی آلمان و هلند و برتری پرتغال و نروژ پیگیری شد."
     },
     {
-      "title": "تهران می‌خواهد پیش از انتخابات میان‌دوره‌ای کنگره با واشنگتن به توافق برسد/ موضع دولت ایران هرگز ترور ترامپ یا اعضای خانواده‌اش نبوده است/ در چارچوب قوانین بین المللی از اورانیوم غنی شده ۶۰ درصدی صرف نظر خواهیم کرد",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3247685",
-      "date": "2026-09-24T21:03:54.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۰۳",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "پزشکیان خواستار توافق با آمریکا پیش از انتخابات میان دوره ای شد."
-    },
-    {
-      "title": "شهردار نیویورک پاسخ نتانیاهو را داد",
-      "link": "https://www.irna.ir/news/86273784/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%AF",
-      "date": "2026-09-24T21:02:38.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۰۲",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران- ایرنا- زهران ممدانی شهردار شهر نیویورک در پیامی به حملات بنیامین نتانیاهو علیه وی واکنش نشان داد و تاکید کرد که نخست وزیر رژیم صهیونیستی از سخنرانی خود در سازمان ملل برای تکرار دروغ‌های خود سوء استفاده کرد."
-    },
-    {
       "title": "نعیمه نظام دوست: از ترس اتفاق بدی افتاد",
       "link": "https://www.asriran.com/fa/news/1194000/%D9%86%D8%B9%DB%8C%D9%85%D9%87-%D9%86%D8%B8%D8%A7%D9%85-%D8%AF%D9%88%D8%B3%D8%AA-%D8%A7%D8%B2-%D8%AA%D8%B1%D8%B3-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%A8%D8%AF%DB%8C-%D8%A7%D9%81%D8%AA%D8%A7%D8%AF",
       "date": "2026-09-24T21:00:56.000Z",
@@ -738,16 +768,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "امپراتوری طلایی چین در تنیس روی میز بازی های آسیایی به پایان رسید."
-    },
-    {
-      "title": "دیدار و گفت وگوی عراقچی و وزیر خارجه مصر",
-      "link": "https://www.irna.ir/news/86273788/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%88-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%88-%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D9%85%D8%B5%D8%B1",
-      "date": "2026-09-24T20:56:30.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۵۶",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران- ایرنا- وزیر امور خارجه جمهوی اسلامی ایران و وزیر خارجه مصر با یکدیگر دیدار و درباره مهمترین موضوعات دوجانبه و منطقه‌ای گفت‌ وگو کردند."
     },
     {
       "title": "دیدار و گفت‌و‌گو عراقچی با وزیر امورخارجه اوکراین در نیویورک",
@@ -897,7 +917,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/QS9ieuNnKlghZkEtvxpioK7gyjmvEruL9CEEsto7bGx0hRJ-jtERw1JB32BPDG7jUoXlzZdwmYkbLtEboZxt31dxTjc2Z2pxqAu_moZOXKWiw1-Ojeq1hpgoZbq9HZUfzYLeYJr_1JTgGfmFKhAFyF_S_y96d68FH2RhPZaaA24ShsQquECmVQRBjSyMQnUq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qxqnOpei9uDyhaMZaEqoVw6mi3rGc5mHzWKJe_WlS7LwLPXDMjsvcbTCFptR2p8nRox6ZZpAxarFBAKZ88yeEoTgjbdyUdnffS4D1DtYfyJs9QLsC6sAaFbTc3716cyBzSf3UAAeRxeycve0rOlQorNuReNb7ntZ1waUNW3v2Wln2cwuDCx5__ltBZwr477F/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۳ مهر ۱۴۰۵",
@@ -907,7 +927,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/iTVMZ8yhOdQ6OdeM58HOSPumdqi98IpqT3BCVkVWwbMQJuNv88iE1DpUY5lJN9TQS86c3ypHzHI4Ik1ZfpBOxvzPV3c8T2-hUnC1WrkCdCaOKHt1J60g7NhkKyVudkR3wN9pnUu8q-dVgpWgvMNgdmJio-emFI6fOBsnwApTxdM3K0E9fkya5cIkozfTU6_3/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Yfh_PpmuzLEa93hnT2VbnsQ9Wcb3f8DoogcH6Ki8dZDZ7znZ8YDAw4cOvyts4qMFmj-UiOFo0y8rT7r0XVTFc25blK4lJTJx8bkdcp99dmgPeBQAE_ZtYvoc3GPzYEHtNYpTKTkJJB_MxUclRMgX6TU8KVl2tLnSRSlN0t9Ecb7k48b-WgCYA0VKspoZLzEM/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۳ مهر ۱۴۰۵",
@@ -917,7 +937,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/VdajnqLB4RcvF6jBfQ5hKGrJCLYnfSTDbeFPyr1wtkEwts3M5solyVZMeh-jrM2a62h25thZ1DxE3VyOy31pM3eaD3M0LY74yLHTCD7WRJaoJ4z5b8g1t6duF16h98DDDOsWL1CyFn_9QQWTuvZOBBtHh3Jut6S-4Z3sj21L7KhOy9qINwJgL4m2RUrdJz4e/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Lxxh7q-x4wnZWUHHJRLcLwTSAcIxzkof7ebsKcYNjPLM-937UnBLI3yMJ8d5x5ZSG-4M_tdO1Qsn2rUjmcwDu-M_YMRjyWq85zMSE3dH7lYFu6ZZuOfqh6IPLy2K44pjRZpZdS0GQt64LGuIQnR_Noy5w1-2vWSrjFZSjpCIgE9GDzoVFJ8PCH2NgDiXe8cI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۳ مهر + جدول",
@@ -927,7 +947,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/4-En-1OFRCbcuAjIRk6J8F7LhKWImE7YGjc738ajXC4U6RLtYhxRqfIKRoveGsvlYmxzMf9HhdwrRqOlHZwcQciANEz8uwwXezfZVe11nwXUV4TehjAfVMFUoIWzh4uW_rOT5KK87-MnSZJ2V6o73b09j1wDm-qpjBisVBDu1NHRzGZYMjtw4tuCRO9__bUf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/9VtbNRigdilgU_vDOtEku9I0wpdFjnZXRUc1j9__03wBBBMrEU4ckPH_xNmUO2OspEumdOikSJC9o-dFS-MYwvuvsP-hYNtYtiTGNJtzgoZEkGNZDFS2OEm_7yndqtAUu6GKGG0UaawUR7My-t2bQD04A1C6zeS1VFB6dWiUHFW-l7BbxvP9VUtvWTCxcu8_/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۳ مهر ۱۴۰۵",
@@ -937,7 +957,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/5xThSdkdREr23Y7vv-btQ_4Vl0uH6NUT4_xZiEuqQleJus15OgrMTQr9386Wq3qJ9T6FFygp1vMIzRJZLgz7gy1_2YmHPF-rdx3cSNAZAKb5pZbvYnt01dQNowwzNRaZE8eAxEGBL4rG4jTnAl4U75r0nOAaD5M1TdT5832in9A5xk8OlZFY7HPtIPBlnM2g/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/cL3QPIOtaTvzEb1MIumif4TPqIGKq9zAuxj5ElOLEi30VBclNCPOtJnsLVqM_npvVvPrEW4jpOUE5vUL7NfWZfQ7SX2evOB--JOa9SOFVM13k-SWHcenbuTotpqBpTEU0Sxv1-c0bCu6T7I1AjyG4anhdMdT2440V_gtthVW7bbfuMCi2-jTSzY1-bLXS1W9/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "پیام جدید ایران به آمریکا؛ از تغییر قواعد مذاکره تا تهدید گسترش جنگ",
@@ -1008,26 +1028,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "تنها چند لحظه پیش از مراسم استقبال دونالد ترامپ، رئیس‌جمهور آمریکا از شی جین‌پینگ، رئیس‌جمهور چین، درگیری شدید و درگیری لفظی میان رسانه‌های آمریکایی و چینی در محوطه چمن کاخ سفید رخ داد. با تلاش خبرنگاران برای استقرار در مواضع خود پیش از ورود رئیس‌جمهور چین، فضای بسیار متشنجی در آن محل حاکم شد. ویدیوهای منتشرشده نشان‌دهنده داد و فریاد و جدال لفظی شدید میان خبرنگاران چینی و نیروهای سرویس مخفی آمریکا است. در این ویدئوها نیروهای سرویس مخفی سعی دارند رسانه‌ها را به پشت خط امنیتی مشخص‌شده هدایت کنند./دانشجو"
-    },
-    {
-      "title": "ویدیو: گل اول پرتغال به ولز توسط فلیکس",
-      "link": "https://www.ilna.ir/fa/tiny/news-1843660",
-      "date": "2026-09-24T20:13:18.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۱۳",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل اول پرتغال به ولز توسط فلیکس زده شد."
-    },
-    {
-      "title": "بازگشت میلیاردها دلار ارز به کشور / همتی از پرداخت رقم قابل‌توجه خبر داد",
-      "link": "https://www.khabaronline.ir/news/2279216/%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF%D9%87%D8%A7-%D8%AF%D9%84%D8%A7%D8%B1-%D8%A7%D8%B1%D8%B2-%D8%A8%D9%87-%DA%A9%D8%B4%D9%88%D8%B1-%D9%87%D9%85%D8%AA%DB%8C-%D8%A7%D8%B2-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%B1%D9%82%D9%85-%D9%82%D8%A7%D8%A8%D9%84-%D8%AA%D9%88%D8%AC%D9%87",
-      "date": "2026-09-24T20:12:00.000Z",
-      "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۱۲",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "پرونده بازگشت ارزهای تراستی وارد مرحله تازه‌ای شده است؛ بخشی از منابع برگشته و حالا نگاه‌ها به تعیین تکلیف باقی‌مانده این ارزهاست."
     }
   ],
   "categorizedNews": {
@@ -1040,7 +1040,7 @@
         "source": "مهر",
         "flag": "🇮🇷",
         "category": "سیاسی",
-        "rssDescription": "قم- مجلس ترحیم و بزرگداشت آیت‌الله شبیری زنجانی به میزبانی مرجع عالی‌قدر جهان تشیع و با حضور علما، طلاب و اقشار مختلف مردم در قم برگزار شد."
+        "rssDescription": "قم- مجلس ترحیم و بزرگداشت آیت‌الله شبیری زنجانی به میزبانی مرجع عالی‌قدر جهان تشیع آیت‌الله سیستانی و با حضور علما، طلاب و اقشار مختلف مردم در قم برگزار شد."
       },
       {
         "title": "فرودگاه نجف تمامی پروازها به ایران را تا اطلاع ثانوی لغو کرد",
@@ -1140,7 +1140,7 @@
         "source": "مهر",
         "flag": "🇮🇷",
         "category": "سیاسی",
-        "rssDescription": "وزیر امور خارجه جمهوری اسلامی ایران و پائولو رانگل وزیر امور خارجه پرتغال در حاشیه هشتاد ویکمین نشست مجمع عمومی سازمان ملل متحد دیدار و گفتگو کردند."
+        "rssDescription": "وزیر امور خارجه جمهوری اسلامی ایران و پائولو رانگل، وزیر امور خارجه پرتغال در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد دیدار و گفتگو کردند."
       },
       {
         "title": "دیدار و گفت وگوی عراقچی و وزیر خارجه پرتغال",
@@ -1213,16 +1213,6 @@
         "flag": "🇮🇷",
         "category": "اقتصادی",
         "rssDescription": "بحران صنعت خودروسازی آلمان با هزینه‌های بالا، رقابت چین و گذار دشوار به خودروهای برقی تشدید شده است."
-      },
-      {
-        "title": "بازگشت میلیاردها دلار ارز به کشور / همتی از پرداخت رقم قابل‌توجه خبر داد",
-        "link": "https://www.khabaronline.ir/news/2279216/%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF%D9%87%D8%A7-%D8%AF%D9%84%D8%A7%D8%B1-%D8%A7%D8%B1%D8%B2-%D8%A8%D9%87-%DA%A9%D8%B4%D9%88%D8%B1-%D9%87%D9%85%D8%AA%DB%8C-%D8%A7%D8%B2-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%B1%D9%82%D9%85-%D9%82%D8%A7%D8%A8%D9%84-%D8%AA%D9%88%D8%AC%D9%87",
-        "date": "2026-09-24T20:12:00.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۱۲",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "پرونده بازگشت ارزهای تراستی وارد مرحله تازه‌ای شده است؛ بخشی از منابع برگشته و حالا نگاه‌ها به تعیین تکلیف باقی‌مانده این ارزهاست."
       }
     ],
     "ورزشی": [
@@ -1305,16 +1295,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "حسن کرد، کاپیتان سابق تیم ملی والیبال ایران و رکورددار طولانی‌ترین دوره کاپیتانی این تیم، عصر امروز در ۸۵ سالگی درگذشت. او ۱۳ سال بازوبند تیم ملی را بر بازو داشت و در بازی‌های آسیایی ۱۹۶۶ همراه ایران به مدال برنز رسید."
-      },
-      {
-        "title": "ویدیو: گل اول پرتغال به ولز توسط فلیکس",
-        "link": "https://www.ilna.ir/fa/tiny/news-1843660",
-        "date": "2026-09-24T20:13:18.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۱۳",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل اول پرتغال به ولز توسط فلیکس زده شد."
       }
     ],
     "فرهنگی و هنری": [
@@ -1445,6 +1425,26 @@
     ],
     "بین‌الملل": [
       {
+        "title": "رسانه رژیم صهیونیستی: خروج هیات‌های دیپلماتیک در سخنرانی نتانیاهو نشانه انزوای اسرائیل است",
+        "link": "https://www.irna.ir/news/86273717/%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%AE%D8%B1%D9%88%D8%AC-%D9%87%DB%8C%D8%A7%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%AA%DB%8C%DA%A9-%D8%AF%D8%B1-%D8%B3%D8%AE%D9%86%D8%B1%D8%A7%D9%86%DB%8C-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88",
+        "date": "2026-09-24T23:21:20.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۲۱",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- روزنامه صهیونیستی یدیعوت آحارانوت در تحلیلی با انتقاد تند از سخنرانی بنیامین نتانیاهو در سازمان ملل، آن را مملو از حمله و اتهام اما فاقد چشم‌انداز صلح و پایان جنگ دانست و خروج هیأت‌های دیپلماتیک از سالن را نشانه انزوای فزاینده رژیم صهیونیستی توصیف کرد."
+      },
+      {
+        "title": "تاکر کارلسون: به ترامپ درباره جنگ با ایران هشدار داده بودم",
+        "link": "https://www.irna.ir/news/86273804/%D8%AA%D8%A7%DA%A9%D8%B1-%DA%A9%D8%A7%D8%B1%D9%84%D8%B3%D9%88%D9%86-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AC%D9%86%DA%AF-%D8%A8%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF%D9%87-%D8%A8%D9%88%D8%AF%D9%85",
+        "date": "2026-09-24T23:08:20.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۰۸",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- تاکر کارلسون چهره سرشناس رسانه‌ای محافظه‌کار آمریکا در اظهاراتی تاکید کرد که به دونالد ترامپ رئیس جمهور آمریکا درباره جنگ تجاوزکارانه و بی‌دلیل او علیه ایران هشدار داده بود."
+      },
+      {
         "title": "حماس: ادعاهای نتانیاهو در سازمان ملل با واقعیت جنایات غزه در تضاد است",
         "link": "https://www.isna.ir/news/1405070301389/%D8%AD%D9%85%D8%A7%D8%B3-%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D8%A8%D8%A7-%D9%88%D8%A7%D9%82%D8%B9%DB%8C%D8%AA-%D8%AC%D9%86%D8%A7%DB%8C%D8%A7%D8%AA-%D8%BA%D8%B2%D9%87-%D8%AF%D8%B1",
         "date": "2026-09-24T22:59:08.000Z",
@@ -1532,7 +1532,7 @@
         "source": "مهر",
         "flag": "🇮🇷",
         "category": "بین‌الملل",
-        "rssDescription": "وزیر خارجه ایران در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد با وزیران خارجه برونئی دارالسلام و وزیر خارجه قبرس دیدار و گفتگو کرد."
+        "rssDescription": "وزیر امور خارجه ایران در حاشیه هشتاد و یکمین نشست مجمع عمومی سازمان ملل متحد با وزیران خارجه برونئی دارالسلام و وزیر خارجه قبرس دیدار و گفتگو کرد."
       },
       {
         "title": "سنای آمریکا طرح محدود کردن اختیارات جنگی ترامپ در قبال ایران را رد کرد",
@@ -1592,7 +1592,7 @@
         "source": "خبر فوری",
         "flag": "🇮🇷",
         "category": "بین‌الملل",
-        "rssDescription": "سفیر اسرائیل در سازمان ملل، پس از سخنرانی بنیامین نتانیاهو، دستگاه استارلینکی را به نماینده ایران پیشنهاد کرد، اما دیپلمات ایرانی بدون توجه به او از دریافت این دستگاه خودداری کرد."
+        "rssDescription": "دنی دانون نماینده رژیم صهیونیستی در سازمان ملل در پی سخنرانی بنیامین نتانیاهو در مجمع عمومی، با در دست گرفتن یک دستگاه استارلینک خود را به محل استقرار هیات جمهوری اسلامی ایران رساند که نمایش تبلیغاتی مضحک او با بی‌اعتنایی نماینده ایران روبه‌رو شد."
       },
       {
         "title": "حمله یمن به ریاض و آرامکو",
@@ -1675,6 +1675,16 @@
         "rssDescription": "جمعیت زیادی از معترضان در منهتن نیویورک در حمایت از مردم فلسطین و در اعتراض به حضور بنیامین نتانیاهو در این شهر تظاهرات کردند."
       },
       {
+        "title": "شهردار نیویورک پاسخ نتانیاهو را داد",
+        "link": "https://www.isna.ir/news/1405070301378/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%AF",
+        "date": "2026-09-24T21:21:58.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۲۱",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "شهردار نیویورک در پاسخ به حملات بنیامین نتانیاهو علیه وی تاکید کرد که او از سخنرانی خود در سازمان ملل برای تکرار دروغ‌های خود سوء استفاده کرد."
+      },
+      {
         "title": "آسیب مغزی بیش از ۱۰۰ نفر در ترن هوایی آمریکا",
         "link": "https://www.asriran.com/fa/news/1194004/%D8%A2%D8%B3%DB%8C%D8%A8-%D9%85%D8%BA%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-100-%D9%86%D9%81%D8%B1-%D8%AF%D8%B1-%D8%AA%D8%B1%D9%86-%D9%87%D9%88%D8%A7%DB%8C%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
         "date": "2026-09-24T21:20:16.000Z",
@@ -1693,16 +1703,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "وزیر دفاع پاکستان با تاکید بر ضرورت ادامه تلاش‌های مذاکره برای پایان جنگ ایران، گفت که رایزنی‌ها در این زمینه همچنان ادامه دارد."
-      },
-      {
-        "title": "ادعاهای بی‌اساس ولیعهد کویت علیه ایران",
-        "link": "https://www.mehrnews.com/news/6957753/%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D8%A8%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3-%D9%88%D9%84%DB%8C%D8%B9%D9%87%D8%AF-%DA%A9%D9%88%DB%8C%D8%AA-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
-        "date": "2026-09-24T21:16:13.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۱۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "ولیعهد کویت در سخنرانی خود بدون اشاره به استفاده نیروهای آمریکایی از خاک این کشور در حمله به ملت ایران، تهران را به اختلال در کشتیرانی متهم کرد."
       },
       {
         "title": "مکرون نیرو و سامانه‌های دفاعی به عربستان اعزام می‌کند",
@@ -1735,26 +1735,6 @@
         "rssDescription": "تهران- ایرنا- «ماریو نوفل» تحلیلگر مسائل بین‌المللی در پیامی با اشاره به ترک کردن سالن مجمع عمومی سازمان ملل متحد از سوی هیات‌های نمایندگی بسیاری از کشورها در آغاز سخنرانی بنیامین نتانیاهو تاکید کرد که نخست‌وزیر رژیم صهیونیستی دیگر حرفی برای شنیده شدن ندارد."
       },
       {
-        "title": "تهران می‌خواهد پیش از انتخابات میان‌دوره‌ای کنگره با واشنگتن به توافق برسد/ موضع دولت ایران هرگز ترور ترامپ یا اعضای خانواده‌اش نبوده است/ در چارچوب قوانین بین المللی از اورانیوم غنی شده ۶۰ درصدی صرف نظر خواهیم کرد",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3247685",
-        "date": "2026-09-24T21:03:54.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۰۳",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "پزشکیان خواستار توافق با آمریکا پیش از انتخابات میان دوره ای شد."
-      },
-      {
-        "title": "شهردار نیویورک پاسخ نتانیاهو را داد",
-        "link": "https://www.irna.ir/news/86273784/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%AF",
-        "date": "2026-09-24T21:02:38.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۱:۰۲",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران- ایرنا- زهران ممدانی شهردار شهر نیویورک در پیامی به حملات بنیامین نتانیاهو علیه وی واکنش نشان داد و تاکید کرد که نخست وزیر رژیم صهیونیستی از سخنرانی خود در سازمان ملل برای تکرار دروغ‌های خود سوء استفاده کرد."
-      },
-      {
         "title": "پایان امپراتوری طلایی 32 ساله چین در بازی‌های آسیایی",
         "link": "https://www.khabaronline.ir/news/2279194/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C-%D8%B7%D9%84%D8%A7%DB%8C%DB%8C-32-%D8%B3%D8%A7%D9%84%D9%87-%DA%86%DB%8C%D9%86-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C",
         "date": "2026-09-24T21:00:00.000Z",
@@ -1763,16 +1743,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "امپراتوری طلایی چین در تنیس روی میز بازی های آسیایی به پایان رسید."
-      },
-      {
-        "title": "دیدار و گفت وگوی عراقچی و وزیر خارجه مصر",
-        "link": "https://www.irna.ir/news/86273788/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%88-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%88-%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D9%85%D8%B5%D8%B1",
-        "date": "2026-09-24T20:56:30.000Z",
-        "datePersian": "۲ مهر ۱۴۰۵، ۲۰:۵۶",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران- ایرنا- وزیر امور خارجه جمهوی اسلامی ایران و وزیر خارجه مصر با یکدیگر دیدار و درباره مهمترین موضوعات دوجانبه و منطقه‌ای گفت‌ وگو کردند."
       },
       {
         "title": "دیدار و گفت‌و‌گو عراقچی با وزیر امورخارجه اوکراین در نیویورک",
@@ -1897,6 +1867,36 @@
     ],
     "متفرقه": [
       {
+        "title": "استرس چطور باعث پوسیدگی و شکستن دندان‌ها می‌شود؟",
+        "link": "https://www.asriran.com/fa/news/1193860/%D8%A7%D8%B3%D8%AA%D8%B1%D8%B3-%DA%86%D8%B7%D9%88%D8%B1-%D8%A8%D8%A7%D8%B9%D8%AB-%D9%BE%D9%88%D8%B3%DB%8C%D8%AF%DA%AF%DB%8C-%D9%88-%D8%B4%DA%A9%D8%B3%D8%AA%D9%86-%D8%AF%D9%86%D8%AF%D8%A7%D9%86-%D9%87%D8%A7-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
+        "date": "2026-09-24T23:30:01.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "دکتر مصطفی محاوری، دندانپزشک می‌گوید: فشار روانی در بعضی افراد باعث می‌شود دندان‌ها در درازمدت دچار سایش شوند. این سایش به‌تدریج ظاهر و سطح دندان‌ها را تغییر می‌دهد."
+      },
+      {
+        "title": "دویست و هشتمین شب حضور زنجانی‌ها در میدان",
+        "link": "https://www.mehrnews.com/news/6957766/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D8%B4%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+        "date": "2026-09-24T23:11:30.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۱۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و هشتمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می کنید."
+      },
+      {
+        "title": "چهرۀ «عزیزخان، خواجه دربار قاجار» در دوران جوانی",
+        "link": "https://www.asriran.com/fa/news/1193857/%DA%86%D9%87%D8%B1%D9%87-%D8%B9%D8%B2%DB%8C%D8%B2%D8%AE%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D8%AC%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D8%AC%D9%88%D8%A7%D9%86%DB%8C",
+        "date": "2026-09-24T23:00:01.000Z",
+        "datePersian": "۲ مهر ۱۴۰۵، ۲۳:۰۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "در اینجا تصویری از یکی از خواجه‌های معروف دوران قاجار به نام عزیزخان را در دوران جوانی‌اش ملاحظه می‌کنید."
+      },
+      {
         "title": "مردم لرستان نقش ویژه ای در حفظ امنیت کشور داشته اند",
         "link": "https://www.isna.ir/news/1405070301386/%D9%85%D8%B1%D8%AF%D9%85-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%86%D9%82%D8%B4-%D9%88%DB%8C%DA%98%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%AD%D9%81%D8%B8-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%A7%D8%B4%D8%AA%D9%87-%D8%A7%D9%86%D8%AF",
         "date": "2026-09-24T22:39:27.000Z",
@@ -1993,7 +1993,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/QS9ieuNnKlghZkEtvxpioK7gyjmvEruL9CEEsto7bGx0hRJ-jtERw1JB32BPDG7jUoXlzZdwmYkbLtEboZxt31dxTjc2Z2pxqAu_moZOXKWiw1-Ojeq1hpgoZbq9HZUfzYLeYJr_1JTgGfmFKhAFyF_S_y96d68FH2RhPZaaA24ShsQquECmVQRBjSyMQnUq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/qxqnOpei9uDyhaMZaEqoVw6mi3rGc5mHzWKJe_WlS7LwLPXDMjsvcbTCFptR2p8nRox6ZZpAxarFBAKZ88yeEoTgjbdyUdnffS4D1DtYfyJs9QLsC6sAaFbTc3716cyBzSf3UAAeRxeycve0rOlQorNuReNb7ntZ1waUNW3v2Wln2cwuDCx5__ltBZwr477F/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۳ مهر ۱۴۰۵",
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/iTVMZ8yhOdQ6OdeM58HOSPumdqi98IpqT3BCVkVWwbMQJuNv88iE1DpUY5lJN9TQS86c3ypHzHI4Ik1ZfpBOxvzPV3c8T2-hUnC1WrkCdCaOKHt1J60g7NhkKyVudkR3wN9pnUu8q-dVgpWgvMNgdmJio-emFI6fOBsnwApTxdM3K0E9fkya5cIkozfTU6_3/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Yfh_PpmuzLEa93hnT2VbnsQ9Wcb3f8DoogcH6Ki8dZDZ7znZ8YDAw4cOvyts4qMFmj-UiOFo0y8rT7r0XVTFc25blK4lJTJx8bkdcp99dmgPeBQAE_ZtYvoc3GPzYEHtNYpTKTkJJB_MxUclRMgX6TU8KVl2tLnSRSlN0t9Ecb7k48b-WgCYA0VKspoZLzEM/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۳ مهر ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/VdajnqLB4RcvF6jBfQ5hKGrJCLYnfSTDbeFPyr1wtkEwts3M5solyVZMeh-jrM2a62h25thZ1DxE3VyOy31pM3eaD3M0LY74yLHTCD7WRJaoJ4z5b8g1t6duF16h98DDDOsWL1CyFn_9QQWTuvZOBBtHh3Jut6S-4Z3sj21L7KhOy9qINwJgL4m2RUrdJz4e/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Lxxh7q-x4wnZWUHHJRLcLwTSAcIxzkof7ebsKcYNjPLM-937UnBLI3yMJ8d5x5ZSG-4M_tdO1Qsn2rUjmcwDu-M_YMRjyWq85zMSE3dH7lYFu6ZZuOfqh6IPLy2K44pjRZpZdS0GQt64LGuIQnR_Noy5w1-2vWSrjFZSjpCIgE9GDzoVFJ8PCH2NgDiXe8cI/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۳ مهر + جدول",
@@ -2023,7 +2023,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/4-En-1OFRCbcuAjIRk6J8F7LhKWImE7YGjc738ajXC4U6RLtYhxRqfIKRoveGsvlYmxzMf9HhdwrRqOlHZwcQciANEz8uwwXezfZVe11nwXUV4TehjAfVMFUoIWzh4uW_rOT5KK87-MnSZJ2V6o73b09j1wDm-qpjBisVBDu1NHRzGZYMjtw4tuCRO9__bUf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/9VtbNRigdilgU_vDOtEku9I0wpdFjnZXRUc1j9__03wBBBMrEU4ckPH_xNmUO2OspEumdOikSJC9o-dFS-MYwvuvsP-hYNtYtiTGNJtzgoZEkGNZDFS2OEm_7yndqtAUu6GKGG0UaawUR7My-t2bQD04A1C6zeS1VFB6dWiUHFW-l7BbxvP9VUtvWTCxcu8_/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۳ مهر ۱۴۰۵",
@@ -2033,7 +2033,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/5xThSdkdREr23Y7vv-btQ_4Vl0uH6NUT4_xZiEuqQleJus15OgrMTQr9386Wq3qJ9T6FFygp1vMIzRJZLgz7gy1_2YmHPF-rdx3cSNAZAKb5pZbvYnt01dQNowwzNRaZE8eAxEGBL4rG4jTnAl4U75r0nOAaD5M1TdT5832in9A5xk8OlZFY7HPtIPBlnM2g/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/cL3QPIOtaTvzEb1MIumif4TPqIGKq9zAuxj5ElOLEi30VBclNCPOtJnsLVqM_npvVvPrEW4jpOUE5vUL7NfWZfQ7SX2evOB--JOa9SOFVM13k-SWHcenbuTotpqBpTEU0Sxv1-c0bCu6T7I1AjyG4anhdMdT2440V_gtthVW7bbfuMCi2-jTSzY1-bLXS1W9/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "عرب جاهلی از چه زمانی و به چه دلیل دختران خود را زنده‌به‌گور می‌کرد؟",
