@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-01T21:07:19.605Z",
-  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۱:۰۷",
+  "lastUpdate": "2026-10-01T21:23:29.439Z",
+  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۱:۲۳",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -31,6 +31,56 @@
   ],
   "news": [
     {
+      "title": "برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به یک مهلکه جدید با ایران است",
+      "link": "https://www.isna.ir/news/1405071006013/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%85%D9%87%D9%84%DA%A9%D9%87",
+      "date": "2026-10-01T21:18:19.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۸",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "یک منبع آگاه منطقه‌ای تاکید کرد: در ایران، با رصد کامل تحرکات دشمن آمریکایی و صهیونیستی و سناریوخوانی از احتمال حماقت جدید، این آمادگی وجود دارد که در صورت هر گونه شرارت دشمن، ضربات سخت و ویران کننده به‌گونه‌ای به رژیم صهیونیستی و آمریکا وارد خواهد شد که از پرچم دروغین و بازی جعلی خود پشیمان شوند."
+    },
+    {
+      "title": "نتایج اقدامات نظارتی باید در پیگیری مسائل استان به کار گرفته شود",
+      "link": "https://www.mehrnews.com/news/6964982/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D8%B3%D8%A7%D8%A6%D9%84-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%DA%A9%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%87",
+      "date": "2026-10-01T21:18:14.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "سنندج- رئیس مجمع نمایندگان کردستان با تأکید بر استمرار تعامل میان مجلس و سازمان بازرسی، خواستار پیگیری موانع سرمایه‌گذاری، تعیین تکلیف معادن غیرفعال و بررسی عملکرد دستگاه‌های اجرایی شد."
+    },
+    {
+      "title": "روایت محمد مهاجری از جلسه اصلاح طلبان با رئیس‌ جمهور",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249279",
+      "date": "2026-10-01T21:16:33.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۶",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "یک فعال سیاسی با اشاره به برگزاری جلسه توجیهی پویش حمایت از تفاهمنامه اسلام‌آباد گفت: در این جلسه بر جدی گرفتن دیپلماسی به‌عنوان راهی برای خروج از وضعیت فعلی و پایان دادن به حالت «نه جنگ و نه صلح» تأکید شد و اینکه وقتی توصیه به مذاکره و گفت‌وگو می‌کنیم، نبابد عزت ملت ایران و سر بلندی بودن آنها زیر سؤال رود."
+    },
+    {
+      "title": "پرتغال بدون رونالدو برد",
+      "link": "https://www.isna.ir/news/1405071006012/%D9%BE%D8%B1%D8%AA%D8%BA%D8%A7%D9%84-%D8%A8%D8%AF%D9%88%D9%86-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%D8%A8%D8%B1%D8%AF",
+      "date": "2026-10-01T21:13:45.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۳",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "در جریان هفته سوم لیگ ملت‌های اروپا، پرتغال در غیاب رونالدو، دانمارک را شکست داد."
+    },
+    {
+      "title": "حیدری: آثار اقدامات نظارتی باید در زندگی مردم کردستان ملموس باشد",
+      "link": "https://www.mehrnews.com/news/6964981/%D8%AD%DB%8C%D8%AF%D8%B1%DB%8C-%D8%A2%D8%AB%D8%A7%D8%B1-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%84%D9%85%D9%88%D8%B3-%D8%A8%D8%A7%D8%B4%D8%AF",
+      "date": "2026-10-01T21:12:37.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "سنندج- بازرس‌کل استان کردستان گفت: رویکرد بازرسی‌کل استان عبور از جزئی‌نگری و تمرکز بر مسائل کلان و راهبردی است و تلاش می‌کنیم اقدامات نظارتی به نتایج ملموس برای مردم منجر شود."
+    },
+    {
       "title": "چهل‌وپنجمین دوره مسابقات قرآنی نیروی زمینی سپاه",
       "link": "https://www.imna.ir/photo/1008985/%DA%86%D9%87%D9%84-%D9%88%D9%BE%D9%86%D8%AC%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D9%86%DB%8C%D8%B1%D9%88%DB%8C-%D8%B2%D9%85%DB%8C%D9%86%DB%8C-%D8%B3%D9%BE%D8%A7%D9%87",
       "date": "2026-10-01T21:06:31.000Z",
@@ -38,7 +88,7 @@
       "source": "ایمنا",
       "flag": "🇮🇷",
       "category": "سیاسی",
-      "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه، وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
+      "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه و وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
     },
     {
       "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکیدداشتند",
@@ -428,7 +478,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/oXjmIvZh-jdqnegHgOvCGwL_i6enRCpowHfMENCmjQZ5iG38JuXhVc150VaR3fCMWGMSus_QDf9XONvhrXKCi9mPQ9IiiBwLA3WdJvLxHoNGgoV7g18Ggf1jIzGAMDAMOIFbRocNWMIFPmGWjG2-rWT2yToctyo6zupGZgyUvrKMB7aqXXcU1on1Wo6vhdWW/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9Op8P7cl5WbfcPODfebWB_8JPuHHrPj7yEW8g10D_V3u-KbEAuCRGWj8YYbe82mn0n6FTIJ10-pJ_QETiqaF3usZwroWH_KgT7tmYZvEuWeuwwUbWfmVscgwzaaXhk3KOZMCR6hNDIgyB6KQLVFDfsT0ZoF2artRY2iJUEJF2AcSxw_YdD6sqpBtS0WMgTZ0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -438,7 +488,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/pd3xbpxSZ1nj6NVpenC_omsV08sETcxICtO-hgbc-7Yo6TXC-ArsS_nStIPPlvzn4CNnfAVNeT0YBl-xi6cZlDafxfOUsXRJUMToF1B4a1-kD4JiBPHVkcspH-xfnqJ--58e8jH_oZcouslkcj-ATzCSecUCiVXlsUG8jcOhE4DAPJiYs9q3wUMrqrGEpuo7/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gCd9bRLXY1hEU6lNG8ZTxGtGfbFJ3HYzEDX7MUa5kYLTMQ1TACx2dsgzxQXqRRJDysS2ztdAJjMwEskUkuS69_R4JI8id9zCuF0wrEyBJ76sp_oV41q7MHVvdBUSm2vGLcUGIFQGp_tdfH4q3RUgYRLKoxJgBsWYTQjbtRQqJnLP9l1U-4AzhL8OSwI80IOl/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -448,7 +498,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/D2JN5qDWAHwwqssfvMnB8EwUCeS2dARS5Ek8GuSPwCxt3gjgFhD8Xsztq-XG6XFMUm0ledb7RKLrlAT5VwwX5pqBk4AGbMrIq5HgmxvqKMANCTIkM-c8mfcnhtW1LkyUC3qeTn3uAnyJzEs0fNiRQK_EbQiaWVVD3eCZ_LsQZAo3rpYh0ZWpogQnqbpt-LpN/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Kxm5LPI3wfzO2jI7UjY3gcuDa22LiAZ1iM_TaF3oVib-8YxMKH03aOOwT4-IvX8mu4dF1GWaIZIEmqXmD-XniG9yA4yng84fhDQK7haPFTdy3szp-bmGxGvB9M79qavxn74hJDDQuXb6THZwU9-Q2wkIxbwuJSFR2c29jqyPNUIMucRpRVlU2jpxkgX_ZHhh/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -458,7 +508,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/IgqLmGDwuosN2UBqmWCrD0dkWahrl946WVqGnxy8ft4sPa55iXVzM0HBDY8sdqisBAj0tMByfQKS63JD56yNVJXhAc87eHW983HrtpAGWz5xMRAelLD8q9B5BZRBBy9ExOLIj2THww5eXUqGF178ilNzQAvhfEeTSRzS__PqOQhbANbvB-uRGjLJWvpcANYJ/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YotdfY8-PiuE42Ho0mVbjOLfhkXRby_4t3_b1reLTBVdiZmiLu6Xt5JbwUMVkC92ycMo5-2SThfNmIQeDM2Cla_BXC6ywBklCl2iYI8IHA79L-TxUWy_bfomG1d6uoRQGLeXfVPp5yP4sfwj2NUgwPEbxp2HX2RavrCOiT0OMRh_azyiQFbG0AyTjpqSl4Iy/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -468,7 +518,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/esjATFNXiNHDIzxIQ2Ohzd8CsHQADizs0LWVVIhSeva9P3UU-4yoMNwEEJGCElqyu7Oa0i9E7sUAwJYu6SbS2y-2R_Orx8FmxAxRMv_q89RQ-J3RVUMaHXspZQJm7R6hlfjMrtAR5kH_gWGka81r-dIgORwEtBykt2ivW0hHyDxZzNdxS6-oq7q29dSW7Vq4/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/uK9qe6IEqOIVQ1tKi_3pI-ZM9KgY6xAAlLSqBwVh0aZhyXdKCCxt-RY7J9Gh7f4o2ChKb1FecnGWpz-Vg86YmCapoAsc1w0nhVuOl61yRhh_ZdMii5k97hxaGtS83mtmT9M91BweCDXR3lgzqlxpjN4_YOdU2WuNm__jDmJbjVMCeyJ6Y3OydyylACKhuG9I/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "«نمایش اسرائیلی» یا حمله واقعی؟ عطوان ۱۱ تناقض در ماجرای هواپیمای اماراتی را فاش کرد",
@@ -851,26 +901,6 @@
       "rssDescription": "تالش- مردم تالش در شب دویست و پانزدهم با حضور در میدان، بر دفاع از وطن تاکید کردند."
     },
     {
-      "title": "دویست و پانزدهمین شب حماسه سازی لنگرودی ها در میدان",
-      "link": "https://www.mehrnews.com/news/6964961/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
-      "date": "2026-10-01T20:02:05.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۲",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "لنگرود- میدان انقلاب لنگرود امشب شاهد دویست و پانزدهمین حماسه حضور مردم این شهر بود."
-    },
-    {
-      "title": "مدیریت آبراه خلیج فارس از هدف‌گیری چند نفتکش متخلف درتنگه هرمز خبر داد",
-      "link": "https://www.mehrnews.com/news/6964965/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D8%A7%D8%B2-%D9%87%D8%AF%D9%81-%DA%AF%DB%8C%D8%B1%DB%8C-%DA%86%D9%86%D8%AF-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D9%85%D8%AA%D8%AE%D9%84%D9%81-%D8%AF%D8%B1%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2",
-      "date": "2026-10-01T20:01:36.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "نهاد مدیریت آبراه خلیج فارس اعلام کرد که در روزهای اخیر چندین نفتکش در تنگه هرمز مورد اصابت قرار گرفته‌اند که سه مورد آخر آنها تحت مالکیت یا اجاره امارات هستند."
-    },
-    {
       "title": "صدور بیانیه وزارت امور خارجه درباره محدودیت تردد هوای ایران و عراق",
       "link": "https://www.tasnimnews.ir/fa/news/1405/07/09/3711360/%D8%B5%D8%AF%D9%88%D8%B1-%D8%A8%DB%8C%D8%A7%D9%86%DB%8C%D9%87-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%85%D8%AD%D8%AF%D9%88%D8%AF%DB%8C%D8%AA-%D8%AA%D8%B1%D8%AF%D8%AF-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%88-%D8%B9%D8%B1%D8%A7%D9%82",
       "date": "2026-10-01T20:01:00.000Z",
@@ -999,40 +1029,20 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "همزمان با افزایش قوای دریایی آمریکا در منطقه، احتمال ازسرگیری حملات علیه ایران پس از انتخابات میان‌دوره‌ای کنگره از سوی ترامپ مطرح شده است."
-    },
-    {
-      "title": "تکذیب ادعای بلومبرگ درباره  ورود بارزسان آژانس",
-      "link": "https://www.tabnak.ir/fa/news/1396889/%D8%AA%DA%A9%D8%B0%DB%8C%D8%A8-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%88%D8%B1%D9%88%D8%AF-%D8%A8%D8%A7%D8%B1%D8%B2%D8%B3%D8%A7%D9%86-%D8%A2%DA%98%D8%A7%D9%86%D8%B3",
-      "date": "2026-10-01T19:52:15.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۲",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "یک منبع آگاه ادعای بلومبرگ درباره ورود بازرسان آژانس به تأسیسات هسته‌ای ایران را رد کرد و آن را «کذب» دانست."
-    },
-    {
-      "title": "مقام فلسطینی: حماس می‌تواند برای ریاست تشکیلات خودگردان نامزد شود",
-      "link": "https://www.irna.ir/news/86280518/%D9%85%D9%82%D8%A7%D9%85-%D9%81%D9%84%D8%B3%D8%B7%DB%8C%D9%86%DB%8C-%D8%AD%D9%85%D8%A7%D8%B3-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B1%DB%8C%D8%A7%D8%B3%D8%AA-%D8%AA%D8%B4%DA%A9%DB%8C%D9%84%D8%A7%D8%AA-%D8%AE%D9%88%D8%AF%DA%AF%D8%B1%D8%AF%D8%A7%D9%86-%D9%86%D8%A7%D9%85%D8%B2%D8%AF",
-      "date": "2026-10-01T19:51:42.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۱",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران - ایرنا - دبیر کمیته مرکزی جنبش فتح گفت که انتخابات ریاست تشکیلات خودگردان فلسطین سه ماهه اول سال ۲۰۰۷ برگزار خواهد شد و جنبش حماس می تواند برای این انتخابات نامزد شود."
-    },
-    {
-      "title": "اولین تصویر از خلبانی که پس از مجروح شدن، هواپیما را به سلامت هدایت کرد",
-      "link": "https://www.asriran.com/fa/news/1195645/%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A7%D8%B2-%D8%AE%D9%84%D8%A8%D8%A7%D9%86%DB%8C-%DA%A9%D9%87-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%85%D8%AC%D8%B1%D9%88%D8%AD-%D8%B4%D8%AF%D9%86-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B3%D9%84%D8%A7%D9%85%D8%AA-%D9%87%D8%AF%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D8%AF",
-      "date": "2026-10-01T19:51:13.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۱",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "اولین تصویر از «اسمیت ماچهار» خلبان ۳۸ ساله هندی که در پرواز فلای‌‌دبی با خلبان دیگر درگیر و با چاقو مصدوم شد ولی اجازه سقوط هواپیما را نداد."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "روایت محمد مهاجری از جلسه اصلاح طلبان با رئیس‌ جمهور",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249279",
+        "date": "2026-10-01T21:16:33.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۶",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "یک فعال سیاسی با اشاره به برگزاری جلسه توجیهی پویش حمایت از تفاهمنامه اسلام‌آباد گفت: در این جلسه بر جدی گرفتن دیپلماسی به‌عنوان راهی برای خروج از وضعیت فعلی و پایان دادن به حالت «نه جنگ و نه صلح» تأکید شد و اینکه وقتی توصیه به مذاکره و گفت‌وگو می‌کنیم، نبابد عزت ملت ایران و سر بلندی بودن آنها زیر سؤال رود."
+      },
       {
         "title": "چهل‌وپنجمین دوره مسابقات قرآنی نیروی زمینی سپاه",
         "link": "https://www.imna.ir/photo/1008985/%DA%86%D9%87%D9%84-%D9%88%D9%BE%D9%86%D8%AC%D9%85%DB%8C%D9%86-%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D9%86%DB%8C%D8%B1%D9%88%DB%8C-%D8%B2%D9%85%DB%8C%D9%86%DB%8C-%D8%B3%D9%BE%D8%A7%D9%87",
@@ -1041,7 +1051,7 @@
         "source": "ایمنا",
         "flag": "🇮🇷",
         "category": "سیاسی",
-        "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه، وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
+        "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه و وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
       },
       {
         "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکیدداشتند",
@@ -1196,6 +1206,16 @@
     ],
     "اقتصادی": [
       {
+        "title": "نتایج اقدامات نظارتی باید در پیگیری مسائل استان به کار گرفته شود",
+        "link": "https://www.mehrnews.com/news/6964982/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D8%B3%D8%A7%D8%A6%D9%84-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%DA%A9%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%87",
+        "date": "2026-10-01T21:18:14.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "سنندج- رئیس مجمع نمایندگان کردستان با تأکید بر استمرار تعامل میان مجلس و سازمان بازرسی، خواستار پیگیری موانع سرمایه‌گذاری، تعیین تکلیف معادن غیرفعال و بررسی عملکرد دستگاه‌های اجرایی شد."
+      },
+      {
         "title": "سردار نقدی: دشمن با تشدید فشار اقتصادی به دنبال ایجاد شکاف میان مردم است",
         "link": "https://www.isna.ir/news/1405071006011/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%DB%8C-%D8%AF%D8%B4%D9%85%D9%86-%D8%A8%D8%A7-%D8%AA%D8%B4%D8%AF%DB%8C%D8%AF-%D9%81%D8%B4%D8%A7%D8%B1-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%B4%DA%A9%D8%A7%D9%81-%D9%85%DB%8C%D8%A7%D9%86",
         "date": "2026-10-01T21:00:34.000Z",
@@ -1297,6 +1317,16 @@
       }
     ],
     "ورزشی": [
+      {
+        "title": "پرتغال بدون رونالدو برد",
+        "link": "https://www.isna.ir/news/1405071006012/%D9%BE%D8%B1%D8%AA%D8%BA%D8%A7%D9%84-%D8%A8%D8%AF%D9%88%D9%86-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%D8%A8%D8%B1%D8%AF",
+        "date": "2026-10-01T21:13:45.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۳",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "در جریان هفته سوم لیگ ملت‌های اروپا، پرتغال در غیاب رونالدو، دانمارک را شکست داد."
+      },
       {
         "title": "ویدیو: گل چهارم پرتغال به دانمارک توسط فلیکس",
         "link": "https://www.ilna.ir/fa/tiny/news-1846888",
@@ -1570,20 +1600,20 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "زنجان -ایرنا- رئیس سازمان آتش‌نشانی و خدمات ایمنی شهرداری زنجان گفت: ریزش ساختمان مسکونی دو طبقه درحال احداث در روستای پایین‌کوه شهر زنجان یک فوتی و یک مجروح برجا گذاشت."
-      },
-      {
-        "title": "اولین تصویر از خلبانی که پس از مجروح شدن، هواپیما را به سلامت هدایت کرد",
-        "link": "https://www.asriran.com/fa/news/1195645/%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A7%D8%B2-%D8%AE%D9%84%D8%A8%D8%A7%D9%86%DB%8C-%DA%A9%D9%87-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%85%D8%AC%D8%B1%D9%88%D8%AD-%D8%B4%D8%AF%D9%86-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B3%D9%84%D8%A7%D9%85%D8%AA-%D9%87%D8%AF%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D8%AF",
-        "date": "2026-10-01T19:51:13.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۱",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "اولین تصویر از «اسمیت ماچهار» خلبان ۳۸ ساله هندی که در پرواز فلای‌‌دبی با خلبان دیگر درگیر و با چاقو مصدوم شد ولی اجازه سقوط هواپیما را نداد."
       }
     ],
     "علمی و فناوری": [],
     "بین‌الملل": [
+      {
+        "title": "برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به یک مهلکه جدید با ایران است",
+        "link": "https://www.isna.ir/news/1405071006013/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%85%D9%87%D9%84%DA%A9%D9%87",
+        "date": "2026-10-01T21:18:19.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۸",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "یک منبع آگاه منطقه‌ای تاکید کرد: در ایران، با رصد کامل تحرکات دشمن آمریکایی و صهیونیستی و سناریوخوانی از احتمال حماقت جدید، این آمادگی وجود دارد که در صورت هر گونه شرارت دشمن، ضربات سخت و ویران کننده به‌گونه‌ای به رژیم صهیونیستی و آمریکا وارد خواهد شد که از پرچم دروغین و بازی جعلی خود پشیمان شوند."
+      },
       {
         "title": "وقوع یک حادثه دریایی دیگر در تنگه هرمز",
         "link": "https://www.mehrnews.com/news/6964976/%D9%88%D9%82%D9%88%D8%B9-%DB%8C%DA%A9-%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2",
@@ -1845,16 +1875,6 @@
         "rssDescription": "جنبش النجباء عراق خروج نیروهای آمریکایی و نیروهای هم‌پیمان آنها از این کشور را «پیروزی» خواند و تأکید کرد که این تحول در نتیجه «پایبندی به گزینه نظامی» محقق شده است."
       },
       {
-        "title": "مدیریت آبراه خلیج فارس از هدف‌گیری چند نفتکش متخلف درتنگه هرمز خبر داد",
-        "link": "https://www.mehrnews.com/news/6964965/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D8%A7%D8%B2-%D9%87%D8%AF%D9%81-%DA%AF%DB%8C%D8%B1%DB%8C-%DA%86%D9%86%D8%AF-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D9%85%D8%AA%D8%AE%D9%84%D9%81-%D8%AF%D8%B1%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2",
-        "date": "2026-10-01T20:01:36.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "نهاد مدیریت آبراه خلیج فارس اعلام کرد که در روزهای اخیر چندین نفتکش در تنگه هرمز مورد اصابت قرار گرفته‌اند که سه مورد آخر آنها تحت مالکیت یا اجاره امارات هستند."
-      },
-      {
         "title": "ادعای جنجالی درباره نقشه نتانیاهو علیه ایران",
         "link": "https://www.tabnak.ir/fa/news/1396891/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AC%D9%86%D8%AC%D8%A7%D9%84%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%86%D9%82%D8%B4%D9%87-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
         "date": "2026-10-01T19:59:36.000Z",
@@ -1913,19 +1933,19 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "همزمان با افزایش قوای دریایی آمریکا در منطقه، احتمال ازسرگیری حملات علیه ایران پس از انتخابات میان‌دوره‌ای کنگره از سوی ترامپ مطرح شده است."
-      },
-      {
-        "title": "مقام فلسطینی: حماس می‌تواند برای ریاست تشکیلات خودگردان نامزد شود",
-        "link": "https://www.irna.ir/news/86280518/%D9%85%D9%82%D8%A7%D9%85-%D9%81%D9%84%D8%B3%D8%B7%DB%8C%D9%86%DB%8C-%D8%AD%D9%85%D8%A7%D8%B3-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B1%DB%8C%D8%A7%D8%B3%D8%AA-%D8%AA%D8%B4%DA%A9%DB%8C%D9%84%D8%A7%D8%AA-%D8%AE%D9%88%D8%AF%DA%AF%D8%B1%D8%AF%D8%A7%D9%86-%D9%86%D8%A7%D9%85%D8%B2%D8%AF",
-        "date": "2026-10-01T19:51:42.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۱",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران - ایرنا - دبیر کمیته مرکزی جنبش فتح گفت که انتخابات ریاست تشکیلات خودگردان فلسطین سه ماهه اول سال ۲۰۰۷ برگزار خواهد شد و جنبش حماس می تواند برای این انتخابات نامزد شود."
       }
     ],
     "متفرقه": [
+      {
+        "title": "حیدری: آثار اقدامات نظارتی باید در زندگی مردم کردستان ملموس باشد",
+        "link": "https://www.mehrnews.com/news/6964981/%D8%AD%DB%8C%D8%AF%D8%B1%DB%8C-%D8%A2%D8%AB%D8%A7%D8%B1-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%84%D9%85%D9%88%D8%B3-%D8%A8%D8%A7%D8%B4%D8%AF",
+        "date": "2026-10-01T21:12:37.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "سنندج- بازرس‌کل استان کردستان گفت: رویکرد بازرسی‌کل استان عبور از جزئی‌نگری و تمرکز بر مسائل کلان و راهبردی است و تلاش می‌کنیم اقدامات نظارتی به نتایج ملموس برای مردم منجر شود."
+      },
       {
         "title": "مدیرکل اوقاف قزوین: ۱۴ برگزیده مسابقات قرآنی راهی مرحله کشوری شدند",
         "link": "https://www.irna.ir/news/86280543/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%D8%A7%D9%88%D9%82%D8%A7%D9%81-%D9%82%D8%B2%D9%88%DB%8C%D9%86-%DB%B1%DB%B4-%D8%A8%D8%B1%DA%AF%D8%B2%DB%8C%D8%AF%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D8%B1%D8%A7%D9%87%DB%8C-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%DA%A9%D8%B4%D9%88%D8%B1%DB%8C",
@@ -1944,7 +1964,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/oXjmIvZh-jdqnegHgOvCGwL_i6enRCpowHfMENCmjQZ5iG38JuXhVc150VaR3fCMWGMSus_QDf9XONvhrXKCi9mPQ9IiiBwLA3WdJvLxHoNGgoV7g18Ggf1jIzGAMDAMOIFbRocNWMIFPmGWjG2-rWT2yToctyo6zupGZgyUvrKMB7aqXXcU1on1Wo6vhdWW/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9Op8P7cl5WbfcPODfebWB_8JPuHHrPj7yEW8g10D_V3u-KbEAuCRGWj8YYbe82mn0n6FTIJ10-pJ_QETiqaF3usZwroWH_KgT7tmYZvEuWeuwwUbWfmVscgwzaaXhk3KOZMCR6hNDIgyB6KQLVFDfsT0ZoF2artRY2iJUEJF2AcSxw_YdD6sqpBtS0WMgTZ0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -1954,7 +1974,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/pd3xbpxSZ1nj6NVpenC_omsV08sETcxICtO-hgbc-7Yo6TXC-ArsS_nStIPPlvzn4CNnfAVNeT0YBl-xi6cZlDafxfOUsXRJUMToF1B4a1-kD4JiBPHVkcspH-xfnqJ--58e8jH_oZcouslkcj-ATzCSecUCiVXlsUG8jcOhE4DAPJiYs9q3wUMrqrGEpuo7/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gCd9bRLXY1hEU6lNG8ZTxGtGfbFJ3HYzEDX7MUa5kYLTMQ1TACx2dsgzxQXqRRJDysS2ztdAJjMwEskUkuS69_R4JI8id9zCuF0wrEyBJ76sp_oV41q7MHVvdBUSm2vGLcUGIFQGp_tdfH4q3RUgYRLKoxJgBsWYTQjbtRQqJnLP9l1U-4AzhL8OSwI80IOl/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -1964,7 +1984,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/D2JN5qDWAHwwqssfvMnB8EwUCeS2dARS5Ek8GuSPwCxt3gjgFhD8Xsztq-XG6XFMUm0ledb7RKLrlAT5VwwX5pqBk4AGbMrIq5HgmxvqKMANCTIkM-c8mfcnhtW1LkyUC3qeTn3uAnyJzEs0fNiRQK_EbQiaWVVD3eCZ_LsQZAo3rpYh0ZWpogQnqbpt-LpN/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Kxm5LPI3wfzO2jI7UjY3gcuDa22LiAZ1iM_TaF3oVib-8YxMKH03aOOwT4-IvX8mu4dF1GWaIZIEmqXmD-XniG9yA4yng84fhDQK7haPFTdy3szp-bmGxGvB9M79qavxn74hJDDQuXb6THZwU9-Q2wkIxbwuJSFR2c29jqyPNUIMucRpRVlU2jpxkgX_ZHhh/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -1974,7 +1994,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/IgqLmGDwuosN2UBqmWCrD0dkWahrl946WVqGnxy8ft4sPa55iXVzM0HBDY8sdqisBAj0tMByfQKS63JD56yNVJXhAc87eHW983HrtpAGWz5xMRAelLD8q9B5BZRBBy9ExOLIj2THww5eXUqGF178ilNzQAvhfEeTSRzS__PqOQhbANbvB-uRGjLJWvpcANYJ/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YotdfY8-PiuE42Ho0mVbjOLfhkXRby_4t3_b1reLTBVdiZmiLu6Xt5JbwUMVkC92ycMo5-2SThfNmIQeDM2Cla_BXC6ywBklCl2iYI8IHA79L-TxUWy_bfomG1d6uoRQGLeXfVPp5yP4sfwj2NUgwPEbxp2HX2RavrCOiT0OMRh_azyiQFbG0AyTjpqSl4Iy/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -1984,7 +2004,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/esjATFNXiNHDIzxIQ2Ohzd8CsHQADizs0LWVVIhSeva9P3UU-4yoMNwEEJGCElqyu7Oa0i9E7sUAwJYu6SbS2y-2R_Orx8FmxAxRMv_q89RQ-J3RVUMaHXspZQJm7R6hlfjMrtAR5kH_gWGka81r-dIgORwEtBykt2ivW0hHyDxZzNdxS6-oq7q29dSW7Vq4/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/uK9qe6IEqOIVQ1tKi_3pI-ZM9KgY6xAAlLSqBwVh0aZhyXdKCCxt-RY7J9Gh7f4o2ChKb1FecnGWpz-Vg86YmCapoAsc1w0nhVuOl61yRhh_ZdMii5k97hxaGtS83mtmT9M91BweCDXR3lgzqlxpjN4_YOdU2WuNm__jDmJbjVMCeyJ6Y3OydyylACKhuG9I/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "نتیجه عجیب در نیمه اول هلند و یونان",
@@ -2007,16 +2027,6 @@
         "rssDescription": "تالش- مردم تالش در شب دویست و پانزدهم با حضور در میدان، بر دفاع از وطن تاکید کردند."
       },
       {
-        "title": "دویست و پانزدهمین شب حماسه سازی لنگرودی ها در میدان",
-        "link": "https://www.mehrnews.com/news/6964961/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
-        "date": "2026-10-01T20:02:05.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۲",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "لنگرود- میدان انقلاب لنگرود امشب شاهد دویست و پانزدهمین حماسه حضور مردم این شهر بود."
-      },
-      {
         "title": "نماینده ولی فقیه در کردستان: بناهای تاریخی وارد چرخه گردشگری شوند",
         "link": "https://www.irna.ir/news/86280441/%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%D9%88%D9%84%DB%8C-%D9%81%D9%82%DB%8C%D9%87-%D8%AF%D8%B1-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%86%D8%A7%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF-%DA%86%D8%B1%D8%AE%D9%87-%DA%AF%D8%B1%D8%AF%D8%B4%DA%AF%D8%B1%DB%8C",
         "date": "2026-10-01T20:00:44.000Z",
@@ -2035,16 +2045,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "آیا گناه حتی پس از توبه و بخشش خداوند، برای همیشه اثری در جان انسان باقی می‌گذارد؟ مرحوم آیت‌الله فاطمی‌نیا این تصور را نادرست و مخالف آیات و روایات می‌دانست و با استناد به حدیث «التائب من الذنب کمن لا ذنب له» تأکید می‌کرد که توبه‌کننده می‌تواند به پاکی بازگردد؛ گویی اساساً مرتکب آن گناه نشده است."
-      },
-      {
-        "title": "تکذیب ادعای بلومبرگ درباره  ورود بارزسان آژانس",
-        "link": "https://www.tabnak.ir/fa/news/1396889/%D8%AA%DA%A9%D8%B0%DB%8C%D8%A8-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%88%D8%B1%D9%88%D8%AF-%D8%A8%D8%A7%D8%B1%D8%B2%D8%B3%D8%A7%D9%86-%D8%A2%DA%98%D8%A7%D9%86%D8%B3",
-        "date": "2026-10-01T19:52:15.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۱۹:۵۲",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "یک منبع آگاه ادعای بلومبرگ درباره ورود بازرسان آژانس به تأسیسات هسته‌ای ایران را رد کرد و آن را «کذب» دانست."
       }
     ]
   }
