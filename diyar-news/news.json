@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-01T23:08:36.159Z",
-  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۳:۰۸",
+  "lastUpdate": "2026-10-01T23:21:33.988Z",
+  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۳:۲۱",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,46 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "روسیه دیپلمات‌های مجارستانی را اخراج کرد",
+      "link": "https://www.isna.ir/news/1405071006022/%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%AC%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7-%D8%A7%D8%AE%D8%B1%D8%A7%D8%AC-%DA%A9%D8%B1%D8%AF",
+      "date": "2026-10-01T23:15:40.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۵",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "وزارت خارجه روسیه اعلام کرد در واکنش متقابل به اخراج ۱۰ عضو هیئت دیپلماتیک روسیه از سوی مجارستان در ماه سپتامبر، شماری از دیپلمات‌های مجارستانی را از خاک روسیه اخراج می‌کند."
+    },
+    {
+      "title": "مراسم گرامیداشت «نصر قریب»",
+      "link": "https://www.irna.ir/photo/86280566/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%DA%AF%D8%B1%D8%A7%D9%85%DB%8C%D8%AF%D8%A7%D8%B4%D8%AA-%D9%86%D8%B5%D8%B1-%D9%82%D8%B1%DB%8C%D8%A8",
+      "date": "2026-10-01T23:14:49.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "مراسم گرامیداشت «نصر قریب» به مناسبت دومین سالگرد فرماندهان شهید جبهه مقاومت، شهید سیدحسن نصرالله، شهید سید هاشم صفی الدین و شهید عباس نیلفروشان، شامگاه پنجشنبه (۹ مهر ۱۴۰۵) با حضور سردار اسماعیل قاآنی فرمانده نیروی قدس سپاه و جمعی از خانواده‌های شهدا در مرکز همایش‌های برج میلاد برگزار شد."
+    },
+    {
+      "title": "توهم تسلیم ایران/ترامپ باز هم مدعی پیروزی شد",
+      "link": "https://www.irna.ir/news/86280567/%D8%AA%D9%88%D9%87%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%A7%D8%B2-%D9%87%D9%85-%D9%85%D8%AF%D8%B9%DB%8C-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%B4%D8%AF",
+      "date": "2026-10-01T23:14:30.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "نیویورک - ایرنا - رئیس جمهوری آمریکا که همچنان در توهم تسلیم ایران به سر می برد، در اظهاراتی متناقض مدعی پیروزی و نیز مذاکره و توافق با ایران شد."
+    },
+    {
+      "title": "آماده‌باش نیروهای عملیاتی هلال‌احمر درپی ورود سامانه بارشی جدید",
+      "link": "https://www.mehrnews.com/news/6964998/%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D9%87%D9%84%D8%A7%D9%84-%D8%A7%D8%AD%D9%85%D8%B1-%D8%AF%D8%B1%D9%BE%DB%8C-%D9%88%D8%B1%D9%88%D8%AF-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D8%A8%D8%A7%D8%B1%D8%B4%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF",
+      "date": "2026-10-01T23:14:29.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "معاون عملیات سازمان امدادونجات جمعیت هلال‌احمر از آماده‌باش کامل نیروهای عملیاتی درپی ورود سامانه بارشی جدید به کشور خبر داد."
+    },
     {
       "title": "هزار و ۷۰۰ کیلوگرم مرغ غیربهداشتی در قم معدوم شد",
       "link": "https://www.mehrnews.com/news/6964997/%D9%87%D8%B2%D8%A7%D8%B1-%D9%88-%DB%B7%DB%B0%DB%B0-%DA%A9%DB%8C%D9%84%D9%88%DA%AF%D8%B1%D9%85-%D9%85%D8%B1%D8%BA-%D8%BA%DB%8C%D8%B1%D8%A8%D9%87%D8%AF%D8%A7%D8%B4%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%82%D9%85-%D9%85%D8%B9%D8%AF%D9%88%D9%85-%D8%B4%D8%AF",
@@ -470,16 +510,6 @@
       "rssDescription": "کلود شانون؛ تمام جهان دیجیتال امروز، از عکس‌های باکیفیت تا پیام‌های متنی، روی ایده‌های مردی بنا شد که از شهرت فرار می‌کرد."
     },
     {
-      "title": "سردار نقدی: دشمن پس از ناکامی نظامی به دنبال ایجاد شکاف در جامعه است",
-      "link": "https://www.mehrnews.com/news/6964960/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%DB%8C-%D8%AF%D8%B4%D9%85%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%86%D8%A7%DA%A9%D8%A7%D9%85%DB%8C-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%B4%DA%A9%D8%A7%D9%81-%D8%AF%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D9%87",
-      "date": "2026-10-01T21:27:23.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۲۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "زنجان- مشاور عالی فرمانده کل سپاه پاسداران انقلاب اسلامی گفت: دشمن پس از ناکامی در میدان نظامی، به دنبال ایجاد شکاف، اختلاف، دلسردی و تشدید فشارهای اقتصادی است."
-    },
-    {
       "title": "سردار قاآنی: جبهه مقاومت با عزت به مسیر خود ادامه می‌دهد/آمریکا از عراق اخراج شد",
       "link": "https://www.irna.ir/news/86280550/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%82%D8%A7%D8%A2%D9%86%DB%8C-%D8%AC%D8%A8%D9%87%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%A8%D8%A7-%D8%B9%D8%B2%D8%AA-%D8%A8%D9%87-%D9%85%D8%B3%DB%8C%D8%B1-%D8%AE%D9%88%D8%AF-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D9%85%DB%8C-%D8%AF%D9%87%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
       "date": "2026-10-01T21:27:15.000Z",
@@ -628,6 +658,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "رئیس پلیس راهور فراجا از اجرای طرح بازگشت مبلغ جریمه‌های رانندگی مشمول دیرکرد به مبلغ اولیه از ۱۰ تا ۱۶ مهرماه (به مدت یک هفته) خبر داد و گفت: این طرح با هدف تسهیل در تسویه جرایم معوق و تکریم شهروندان اجرا می‌شود."
+    },
+    {
+      "title": "ایران: عراق در برابر تحرکات آمریکا برای محدودیت پروازها، تصمیم مقتضی بگیرد",
+      "link": "https://www.qudsonline.ir/news/1168433/%D8%AF%D8%B1-%D8%A8%DB%8C%D8%A7%D9%86%DB%8C%D9%87-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%DA%A9%D8%B4%D9%88%D8%B1%D9%85%D8%A7%D9%86-%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF-%D8%B4%D8%AF-%D9%85%D8%AD%DA%A9%D9%88%D9%85%DB%8C%D8%AA-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA",
+      "date": "2026-10-01T20:55:07.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۵",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "وزارت امور خارجه با انتشار بیانیه ای، ضمن محکوم کردن اقدامات و تحرکات غیرقانونی و ضد بشری دولت آمریکا برای اخلال در مراودات تجاری و حمل و نقل هوایی ایران با سایر کشورها، تاکید کرد، عراق در برابر تحرکات آمریکا برای محدودیت پروازها، تصمیم مقتضی بگیرد."
     },
     {
       "title": "سردار نقدی: ملت ایران تا تحقق خون‌خواهی رهبر شهید از پای نخواهد نشست",
@@ -810,16 +850,6 @@
       "rssDescription": "رئیس دانشگاه علوم پزشکی کرمان گفت: خیرین سلامت در سالیان متمادی بازوان توانمند دانشگاه در مسیر توسعه بوده‌اند و بسیاری از پیشرفت‌های کنونی مرهون همت بلند این نیکوکاران است."
     },
     {
-      "title": "فیلمهای نوید محمدزاده و سهیل کریمی در جشنواره توکیو",
-      "link": "https://www.isna.ir/news/1405071006008/%D9%81%DB%8C%D9%84%D9%85%D9%87%D8%A7%DB%8C-%D9%86%D9%88%DB%8C%D8%AF-%D9%85%D8%AD%D9%85%D8%AF%D8%B2%D8%A7%D8%AF%D9%87-%D9%88-%D8%B3%D9%87%DB%8C%D9%84-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%AF%D8%B1-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%AA%D9%88%DA%A9%DB%8C%D9%88",
-      "date": "2026-10-01T20:34:23.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۴",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "سی و نهمین جشنواره فیلم توکیو میزبان نخستین ساخته نوید محمدزاده و فیلمی از سهیل کریمی خواهد بود."
-    },
-    {
       "title": "مجمع خیرین نباید دولتی شود",
       "link": "https://www.imna.ir/news/1008973/%D9%85%D8%AC%D9%85%D8%B9-%D8%AE%DB%8C%D8%B1%DB%8C%D9%86-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D9%88%D9%84%D8%AA%DB%8C-%D8%B4%D9%88%D8%AF",
       "date": "2026-10-01T20:34:09.000Z",
@@ -877,7 +907,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/1fSGJ7-cORJw7BcfQhWRM00hslJ3F5jESsZcpHOj3XoaSmxQ9uQ5NtZpEVp4Yk1wm0scPbaxky11k5f7JJTRRw2r8u9g16a8JSUAyx6_J7wINnubhI3OaZDrWn0fcAMpZO8T_2qU-HPgresS1gzIy9wpdTMZcDUbmzMusbgj_o2bSd82p6ktlmXrIzJbfsKi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Wyv6rW0VEu1EsnMr9HSO6vuBl6sLtI_afJ1LQg9E5DHaf38773HqgvmLKrJRm5xXHqdZ--Se4eleaV984XAslBhXT7YrSHQwlNMp818Ehlgb1_OPiJsSeOcH6YXx44gO_NnDj2Uq3cAo-t3NHAGfqaSpJoXJlBMW-DoKYDz0uaVR4aHdFTSWKM5d18B2hxzd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -887,7 +917,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/kvJFPpX-F9ug2mCKUaGKVZBvSp2i_3mCToSN0l5mxROkf1nAfjyvVCewAIFYc1-tjrdiS_lCEmAXWOSDC6-82to9JMGfgDaEi9vDgeWTZ-OvBZC-CFq4ZUKjfFep9a5j8sMbR58W0ZTJhzhjpu9X6TO_wGp4k3Ewo7cQZx7AWHugrD2AozUnhzYDew9OsTN6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/ZVNPx00JJI4na3EuPjza-Rp_rsTKGD4R0LJ0eQPSZfc753MK1KPuhqEIGx39RhYNEBJu-mmVCWbR-SaSVC5FjC1LVvKLelQyW16-4o-9vXG1-lL02rEjUO29exIqHxqGyEjF7zL_omzybesJ5mCNDzSNNkux3Digqs27MLLJDiv1sCyKP7s-1Y1ITh6O2mxn/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -897,7 +927,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/jHBxMcloM373R1QdZuCpOmHKjJaX6Oo4pm3aAxvQgiUp4gPR2vSJ2v_t5sbI1Ie0XpawNJoP2y8GbvP-b_-nKl8WPmi0LWr6ayJ93JHvUqKu86TF2RsZsb8t6caZ7FZ5yZmA1aFerxJ3l2zfR_Um3FzcyGxjmwph2QL8RK08uKLFJwnMNbpUxKTlG-4JQrJs/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/KmKokIraD_x9qjL_NJMd-ttlik5D2IRYGkK4gIfRxU8iYcMmhqIU8Iafsf8KxoNETw4IOAXv_D5uRlFlSUcDZhTsYqYApflmvC7PeA7PiI157IqeqJNCaxYhciTY6JzbNPjwYuGF2xqvAwUn963ZqYMZiuv5kucYCXsEA5bPV7r125fKNm0wWZ5fSqumgZK9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -907,7 +937,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/zy-9RdYCgvMuHT0I0jbATRBylmHVYtsjjrQQYuMFMOI0BlS3S4yPqLUbAu_9E1EArqbjZ9M31HApLKb2SEEy-1ok1-LZxuoYCpoox1xBPM7jci4jPQjv9sToSsyFcoVxkpDGSQ-f-jGU_rHoTxFW87j3-FlUqwIrixhrs6u62eKEYPokUOSBfJgl6zPCZHGq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/J9BA8Kgq8xZhaH8CZAANpJCZXi2cXysCCIOGuBVXW_-9_hb448ZvCbVCkAfdPIujsVIuc-sOFWHoumSCDsM5ttOM26zjAJYNyRSo65J8Aj3RL4WYJae8vKu11pUKdvACpIcwsTt_sLFapH5H2-Ei8Du-oDzlfxVQD4luDiFcrEO3jTkFE-_dDskRxGrsQDd4/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -917,7 +947,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/JlcVr0i9H02WCT3PExkieTHGYkOiYWm_2aQkRLzTltNZCiIVU6109jJIX7vEJF4ctCmzDSS9nIRXQIZae-WFQ4B4qxElNfE5Fomm9sIHIAbkWqAIRIMuGgy8RQtmE-VQt1rAbx3mAKe2I3v2ZHbo7Vz3HWN9EtJ39bhrqLr7W-RIXQtPW8NIrObOXucElffK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qVwtJm_8hiwhcc-L_bnXh9LHTlgLKVruOrJJabB8iw3aVQuRQy-xQPJLRcgn_UcIOfZm4padqx1oVU-RifJ4Rm1UB-UC4KGHUzUHBANSBKr4e9Ii8FoEyJabfp3UPrWbuIJzODB9aNJaWDn6iTJnWvDvoblzoxfT1-1fbxY5tLtbGI1bW40Ir4Vzf2jrd0-f/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "«نمایش اسرائیلی» یا حمله واقعی؟ عطوان ۱۱ تناقض در ماجرای هواپیمای اماراتی را فاش کرد",
@@ -998,40 +1028,20 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "بازی فکری کودکان فقط وسیله‌ای برای سرگرم کردن آن‌ها نیست؛ اگر درست انتخاب و استفاده شود، می‌تواند فرصتی برای تمرین حل مسئله، توجه، حافظه، تصمیم‌گیری، زبان، خلاقیت و تعامل اجتماعی باشد."
-    },
-    {
-      "title": "خبر خوش پلیس برای جریمه‌های رانندگی دیرکرده",
-      "link": "https://www.tabnak.ir/fa/news/1396893/%D8%AE%D8%A8%D8%B1-%D8%AE%D9%88%D8%B4-%D9%BE%D9%84%DB%8C%D8%B3-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%B1%DB%8C%D9%85%D9%87-%D9%87%D8%A7%DB%8C-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%DA%AF%DB%8C-%D8%AF%DB%8C%D8%B1%DA%A9%D8%B1%D8%AF%D9%87",
-      "date": "2026-10-01T20:18:46.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۸",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "رئیس پلیس راهور فراجا از بازگشت جریمه‌های رانندگی مشمول دیرکرد به مبلغ اولیه خبر داد. اقدامی که همزمان با هفته فراجا و با هدف تسهیل امور شهروندان و کاهش مراجعات حضوری اجرا می‌شود."
-    },
-    {
-      "title": "دستگاه های برتر کشور در اقامه نماز معرفی شدند",
-      "link": "https://www.imna.ir/news/1008957/%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%D8%AA%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%82%D8%A7%D9%85%D9%87-%D9%86%D9%85%D8%A7%D8%B2-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF",
-      "date": "2026-10-01T20:17:48.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۷",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "دستگاه های برتر کشور در اقامه نماز امروز در جریان برگزاری سی‌و سومین اجلاسیه سراسری نماز در مشهد معرفی و تقدیر شدند."
-    },
-    {
-      "title": "وزارت خارجه اقدامات ضدبشری آمریکا برای اخلال در حمل و نقل هوایی ایران را محکوم کرد",
-      "link": "https://www.imna.ir/news/1008975/%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D8%B6%D8%AF%D8%A8%D8%B4%D8%B1%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%AE%D9%84%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AD%D9%85%D9%84-%D9%88-%D9%86%D9%82%D9%84-%D9%87%D9%88%D8%A7%DB%8C%DB%8C",
-      "date": "2026-10-01T20:17:30.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۷",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "وزارت امور خارجه با انتشار بیانیه ای، اقدامات و تحرکات غیرقانونی و ضد بشری دولت آمریکا برای اخلال در مراودات تجاری و حمل و نقل هوایی ایران با سایر کشورها را محکوم کرد."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "مراسم گرامیداشت «نصر قریب»",
+        "link": "https://www.irna.ir/photo/86280566/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%DA%AF%D8%B1%D8%A7%D9%85%DB%8C%D8%AF%D8%A7%D8%B4%D8%AA-%D9%86%D8%B5%D8%B1-%D9%82%D8%B1%DB%8C%D8%A8",
+        "date": "2026-10-01T23:14:49.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "مراسم گرامیداشت «نصر قریب» به مناسبت دومین سالگرد فرماندهان شهید جبهه مقاومت، شهید سیدحسن نصرالله، شهید سید هاشم صفی الدین و شهید عباس نیلفروشان، شامگاه پنجشنبه (۹ مهر ۱۴۰۵) با حضور سردار اسماعیل قاآنی فرمانده نیروی قدس سپاه و جمعی از خانواده‌های شهدا در مرکز همایش‌های برج میلاد برگزار شد."
+      },
       {
         "title": "۲۱۵ امین تجمع شبانه مردم ارومیه در تجدید بیعت با آرمان های انقلاب",
         "link": "https://www.mehrnews.com/news/6964992/%DB%B2%DB%B1%DB%B5-%D8%A7%D9%85%DB%8C%D9%86-%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AA%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%DB%8C%D8%B9%D8%AA-%D8%A8%D8%A7-%D8%A2%D8%B1%D9%85%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8",
@@ -1051,16 +1061,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "زنجان - در این فیلم تصاویری ازدویست و پانزدهمین اجتماع پرشور مردم ولایتمدار زنجان در حمایت از رهبری و نظام مقدس جمهوری اسلامی ایران و دفاع از وطن را می بینید."
-      },
-      {
-        "title": "سردار نقدی: دشمن پس از ناکامی نظامی به دنبال ایجاد شکاف در جامعه است",
-        "link": "https://www.mehrnews.com/news/6964960/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%DB%8C-%D8%AF%D8%B4%D9%85%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%86%D8%A7%DA%A9%D8%A7%D9%85%DB%8C-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%B4%DA%A9%D8%A7%D9%81-%D8%AF%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D9%87",
-        "date": "2026-10-01T21:27:23.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۲۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "زنجان- مشاور عالی فرمانده کل سپاه پاسداران انقلاب اسلامی گفت: دشمن پس از ناکامی در میدان نظامی، به دنبال ایجاد شکاف، اختلاف، دلسردی و تشدید فشارهای اقتصادی است."
       },
       {
         "title": "روایت محمد مهاجری از جلسه اصلاح طلبان با رئیس‌ جمهور",
@@ -1171,26 +1171,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "معاون روابط عمومی نیروی زمینی سپاه پاسداران گفت: پس از برگزاری مراحل مقدماتی و قرارگاهی، ۱۵۰ نفر از چهره‌های قرآنی نیروی زمینی سپاه به مرحله سراسری مسابقات راه یافتند و در دانشگاه حضرت امیرالمؤمنین (ع) به رقابت پرداختند."
-      },
-      {
-        "title": "خبر خوش پلیس برای جریمه‌های رانندگی دیرکرده",
-        "link": "https://www.tabnak.ir/fa/news/1396893/%D8%AE%D8%A8%D8%B1-%D8%AE%D9%88%D8%B4-%D9%BE%D9%84%DB%8C%D8%B3-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AC%D8%B1%DB%8C%D9%85%D9%87-%D9%87%D8%A7%DB%8C-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%DA%AF%DB%8C-%D8%AF%DB%8C%D8%B1%DA%A9%D8%B1%D8%AF%D9%87",
-        "date": "2026-10-01T20:18:46.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۸",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "رئیس پلیس راهور فراجا از بازگشت جریمه‌های رانندگی مشمول دیرکرد به مبلغ اولیه خبر داد. اقدامی که همزمان با هفته فراجا و با هدف تسهیل امور شهروندان و کاهش مراجعات حضوری اجرا می‌شود."
-      },
-      {
-        "title": "وزارت خارجه اقدامات ضدبشری آمریکا برای اخلال در حمل و نقل هوایی ایران را محکوم کرد",
-        "link": "https://www.imna.ir/news/1008975/%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D8%B6%D8%AF%D8%A8%D8%B4%D8%B1%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%AE%D9%84%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AD%D9%85%D9%84-%D9%88-%D9%86%D9%82%D9%84-%D9%87%D9%88%D8%A7%DB%8C%DB%8C",
-        "date": "2026-10-01T20:17:30.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۷",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "وزارت امور خارجه با انتشار بیانیه ای، اقدامات و تحرکات غیرقانونی و ضد بشری دولت آمریکا برای اخلال در مراودات تجاری و حمل و نقل هوایی ایران با سایر کشورها را محکوم کرد."
       }
     ],
     "اقتصادی": [
@@ -1429,16 +1409,6 @@
         "rssDescription": "لید: تصویری قدیمی از پشت صحنه فیلم «روانی» در سال ۱۳۷۶، چهره‌هایی چون خسرو شکیبایی، نیکی کریمی، پرویز پرستویی و داریوش فرهنگ را در کنار یکدیگر نشان می‌دهد؛ تصویری که حال‌وهوای سینمای ایران در دهه ۷۰ را به یاد می‌آورد./فرادید"
       },
       {
-        "title": "فیلمهای نوید محمدزاده و سهیل کریمی در جشنواره توکیو",
-        "link": "https://www.isna.ir/news/1405071006008/%D9%81%DB%8C%D9%84%D9%85%D9%87%D8%A7%DB%8C-%D9%86%D9%88%DB%8C%D8%AF-%D9%85%D8%AD%D9%85%D8%AF%D8%B2%D8%A7%D8%AF%D9%87-%D9%88-%D8%B3%D9%87%DB%8C%D9%84-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%AF%D8%B1-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%AA%D9%88%DA%A9%DB%8C%D9%88",
-        "date": "2026-10-01T20:34:23.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۴",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "سی و نهمین جشنواره فیلم توکیو میزبان نخستین ساخته نوید محمدزاده و فیلمی از سهیل کریمی خواهد بود."
-      },
-      {
         "title": "۱۰ هزار مسجد آماده کنشگری اجتماعی شدند",
         "link": "https://www.imna.ir/news/1008960/%DB%B1%DB%B0-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%B3%D8%AC%D8%AF-%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%DA%A9%D9%86%D8%B4%DA%AF%D8%B1%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF",
         "date": "2026-10-01T20:24:21.000Z",
@@ -1447,19 +1417,19 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "رئیس شورای سیاستگذاری ائمه جمعه از راه‌اندازی سامانه مرکزی اطلاعات مساجد خبر داد و گفت: بیش از ۷۵ هزار مسجد در این سامانه ثبت شده است و حدود ۱۰ هزار مسجد از مجموع مساجد ثبت‌شده در سامانه مرکزی، برای کنشگری اجتماعی، امداد اجتماعی و اقدام در محیط پیرامونی آماده شده‌اند."
-      },
-      {
-        "title": "دستگاه های برتر کشور در اقامه نماز معرفی شدند",
-        "link": "https://www.imna.ir/news/1008957/%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%D8%AA%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%A7%D9%82%D8%A7%D9%85%D9%87-%D9%86%D9%85%D8%A7%D8%B2-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF",
-        "date": "2026-10-01T20:17:48.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۱۷",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "دستگاه های برتر کشور در اقامه نماز امروز در جریان برگزاری سی‌و سومین اجلاسیه سراسری نماز در مشهد معرفی و تقدیر شدند."
       }
     ],
     "اجتماعی": [
+      {
+        "title": "آماده‌باش نیروهای عملیاتی هلال‌احمر درپی ورود سامانه بارشی جدید",
+        "link": "https://www.mehrnews.com/news/6964998/%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D9%87%D9%84%D8%A7%D9%84-%D8%A7%D8%AD%D9%85%D8%B1-%D8%AF%D8%B1%D9%BE%DB%8C-%D9%88%D8%B1%D9%88%D8%AF-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D8%A8%D8%A7%D8%B1%D8%B4%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF",
+        "date": "2026-10-01T23:14:29.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "معاون عملیات سازمان امدادونجات جمعیت هلال‌احمر از آماده‌باش کامل نیروهای عملیاتی درپی ورود سامانه بارشی جدید به کشور خبر داد."
+      },
       {
         "title": "هزار و ۷۰۰ کیلوگرم مرغ غیربهداشتی در قم معدوم شد",
         "link": "https://www.mehrnews.com/news/6964997/%D9%87%D8%B2%D8%A7%D8%B1-%D9%88-%DB%B7%DB%B0%DB%B0-%DA%A9%DB%8C%D9%84%D9%88%DA%AF%D8%B1%D9%85-%D9%85%D8%B1%D8%BA-%D8%BA%DB%8C%D8%B1%D8%A8%D9%87%D8%AF%D8%A7%D8%B4%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%82%D9%85-%D9%85%D8%B9%D8%AF%D9%88%D9%85-%D8%B4%D8%AF",
@@ -1624,6 +1594,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "روسیه دیپلمات‌های مجارستانی را اخراج کرد",
+        "link": "https://www.isna.ir/news/1405071006022/%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%AC%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7-%D8%A7%D8%AE%D8%B1%D8%A7%D8%AC-%DA%A9%D8%B1%D8%AF",
+        "date": "2026-10-01T23:15:40.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۵",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "وزارت خارجه روسیه اعلام کرد در واکنش متقابل به اخراج ۱۰ عضو هیئت دیپلماتیک روسیه از سوی مجارستان در ماه سپتامبر، شماری از دیپلمات‌های مجارستانی را از خاک روسیه اخراج می‌کند."
+      },
+      {
+        "title": "توهم تسلیم ایران/ترامپ باز هم مدعی پیروزی شد",
+        "link": "https://www.irna.ir/news/86280567/%D8%AA%D9%88%D9%87%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%A7%D8%B2-%D9%87%D9%85-%D9%85%D8%AF%D8%B9%DB%8C-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%B4%D8%AF",
+        "date": "2026-10-01T23:14:30.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۳:۱۴",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "نیویورک - ایرنا - رئیس جمهوری آمریکا که همچنان در توهم تسلیم ایران به سر می برد، در اظهاراتی متناقض مدعی پیروزی و نیز مذاکره و توافق با ایران شد."
+      },
       {
         "title": "آیین «نصر قریب» در دومین سالگرد شهادت رهبران جبهه مقاومت برگزار شد",
         "link": "https://www.mehrnews.com/news/6964984/%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%B3%D8%A7%D9%84%DA%AF%D8%B1%D8%AF-%D8%A8%D8%B2%D8%B1%DA%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1-%D8%B4%D8%AF",
@@ -1803,6 +1793,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "اواخر شامگاه پنج شنبه سه استان صنعاء، صعده و تعز در یمن شاهد حملات شدید موشکی و هوایی ارتش سعودی بود."
+      },
+      {
+        "title": "ایران: عراق در برابر تحرکات آمریکا برای محدودیت پروازها، تصمیم مقتضی بگیرد",
+        "link": "https://www.qudsonline.ir/news/1168433/%D8%AF%D8%B1-%D8%A8%DB%8C%D8%A7%D9%86%DB%8C%D9%87-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%DA%A9%D8%B4%D9%88%D8%B1%D9%85%D8%A7%D9%86-%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF-%D8%B4%D8%AF-%D9%85%D8%AD%DA%A9%D9%88%D9%85%DB%8C%D8%AA-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA",
+        "date": "2026-10-01T20:55:07.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۵",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "وزارت امور خارجه با انتشار بیانیه ای، ضمن محکوم کردن اقدامات و تحرکات غیرقانونی و ضد بشری دولت آمریکا برای اخلال در مراودات تجاری و حمل و نقل هوایی ایران با سایر کشورها، تاکید کرد، عراق در برابر تحرکات آمریکا برای محدودیت پروازها، تصمیم مقتضی بگیرد."
       },
       {
         "title": "سردار قاآنی: نسل جدید حزب‌الله صهیونیست‌ها را مورد هجوم قرار می‌دهد",
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/1fSGJ7-cORJw7BcfQhWRM00hslJ3F5jESsZcpHOj3XoaSmxQ9uQ5NtZpEVp4Yk1wm0scPbaxky11k5f7JJTRRw2r8u9g16a8JSUAyx6_J7wINnubhI3OaZDrWn0fcAMpZO8T_2qU-HPgresS1gzIy9wpdTMZcDUbmzMusbgj_o2bSd82p6ktlmXrIzJbfsKi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Wyv6rW0VEu1EsnMr9HSO6vuBl6sLtI_afJ1LQg9E5DHaf38773HqgvmLKrJRm5xXHqdZ--Se4eleaV984XAslBhXT7YrSHQwlNMp818Ehlgb1_OPiJsSeOcH6YXx44gO_NnDj2Uq3cAo-t3NHAGfqaSpJoXJlBMW-DoKYDz0uaVR4aHdFTSWKM5d18B2hxzd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/kvJFPpX-F9ug2mCKUaGKVZBvSp2i_3mCToSN0l5mxROkf1nAfjyvVCewAIFYc1-tjrdiS_lCEmAXWOSDC6-82to9JMGfgDaEi9vDgeWTZ-OvBZC-CFq4ZUKjfFep9a5j8sMbR58W0ZTJhzhjpu9X6TO_wGp4k3Ewo7cQZx7AWHugrD2AozUnhzYDew9OsTN6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/ZVNPx00JJI4na3EuPjza-Rp_rsTKGD4R0LJ0eQPSZfc753MK1KPuhqEIGx39RhYNEBJu-mmVCWbR-SaSVC5FjC1LVvKLelQyW16-4o-9vXG1-lL02rEjUO29exIqHxqGyEjF7zL_omzybesJ5mCNDzSNNkux3Digqs27MLLJDiv1sCyKP7s-1Y1ITh6O2mxn/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2023,7 +2023,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/jHBxMcloM373R1QdZuCpOmHKjJaX6Oo4pm3aAxvQgiUp4gPR2vSJ2v_t5sbI1Ie0XpawNJoP2y8GbvP-b_-nKl8WPmi0LWr6ayJ93JHvUqKu86TF2RsZsb8t6caZ7FZ5yZmA1aFerxJ3l2zfR_Um3FzcyGxjmwph2QL8RK08uKLFJwnMNbpUxKTlG-4JQrJs/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/KmKokIraD_x9qjL_NJMd-ttlik5D2IRYGkK4gIfRxU8iYcMmhqIU8Iafsf8KxoNETw4IOAXv_D5uRlFlSUcDZhTsYqYApflmvC7PeA7PiI157IqeqJNCaxYhciTY6JzbNPjwYuGF2xqvAwUn963ZqYMZiuv5kucYCXsEA5bPV7r125fKNm0wWZ5fSqumgZK9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -2033,7 +2033,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/zy-9RdYCgvMuHT0I0jbATRBylmHVYtsjjrQQYuMFMOI0BlS3S4yPqLUbAu_9E1EArqbjZ9M31HApLKb2SEEy-1ok1-LZxuoYCpoox1xBPM7jci4jPQjv9sToSsyFcoVxkpDGSQ-f-jGU_rHoTxFW87j3-FlUqwIrixhrs6u62eKEYPokUOSBfJgl6zPCZHGq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/J9BA8Kgq8xZhaH8CZAANpJCZXi2cXysCCIOGuBVXW_-9_hb448ZvCbVCkAfdPIujsVIuc-sOFWHoumSCDsM5ttOM26zjAJYNyRSo65J8Aj3RL4WYJae8vKu11pUKdvACpIcwsTt_sLFapH5H2-Ei8Du-oDzlfxVQD4luDiFcrEO3jTkFE-_dDskRxGrsQDd4/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -2043,7 +2043,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/JlcVr0i9H02WCT3PExkieTHGYkOiYWm_2aQkRLzTltNZCiIVU6109jJIX7vEJF4ctCmzDSS9nIRXQIZae-WFQ4B4qxElNfE5Fomm9sIHIAbkWqAIRIMuGgy8RQtmE-VQt1rAbx3mAKe2I3v2ZHbo7Vz3HWN9EtJ39bhrqLr7W-RIXQtPW8NIrObOXucElffK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qVwtJm_8hiwhcc-L_bnXh9LHTlgLKVruOrJJabB8iw3aVQuRQy-xQPJLRcgn_UcIOfZm4padqx1oVU-RifJ4Rm1UB-UC4KGHUzUHBANSBKr4e9Ii8FoEyJabfp3UPrWbuIJzODB9aNJaWDn6iTJnWvDvoblzoxfT1-1fbxY5tLtbGI1bW40Ir4Vzf2jrd0-f/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       }
     ]
   }
