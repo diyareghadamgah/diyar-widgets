@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تولید کارت تقویم روزانه</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --green:#063d35;--green2:#0d594d;--gold:#d4a437;--cream:#f7f1d9;
+  --bg:#edf2ef;--text:#10201c
+}
+body{margin:0;font-family:Vazirmatn,Tahoma,sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:1450px;margin:auto;padding:18px;display:grid;grid-template-columns:390px 1fr;gap:18px;direction:ltr}
+.sidebar,.preview{direction:rtl}
+.sidebar{background:#f8faf9;border-radius:18px;padding:14px;box-shadow:0 5px 25px #0002;max-height:calc(100vh - 36px);overflow:auto;position:sticky;top:18px}
+.title{background:var(--green);color:white;border:4px solid var(--gold);border-radius:14px;padding:14px;text-align:center;font-size:23px;font-weight:900;margin-bottom:12px}
+.section{margin:10px 0;background:white;border-radius:13px;box-shadow:0 2px 10px #0001;overflow:hidden}
+.section h3{margin:0;background:linear-gradient(90deg,var(--green),var(--green2));color:white;padding:10px 14px;font-size:17px}
+.body{padding:12px}
+label{display:block;font-weight:600;font-size:13px;margin-bottom:9px}
+input[type=date],input[type=number],input[type=text],input[type=file],button,textarea{
+  width:100%;font:inherit;border:1px solid #c7d0cd;border-radius:9px;padding:9px;background:white
+}
+input[type=file]{padding:7px}
+input[type=checkbox]{width:auto;padding:0;margin:0;accent-color:var(--green);cursor:pointer}
+textarea{resize:vertical;min-height:52px;line-height:1.6}
+input[type=range]{width:100%;height:26px;padding:0;accent-color:var(--green)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:5px}
+.color-row{display:grid;grid-template-columns:1fr 55px;gap:8px;align-items:center;margin-bottom:9px}
+.color-row span{font-size:13px;font-weight:600}
+input[type=color]{width:55px;height:38px;padding:3px;cursor:pointer}
+.file-preview{margin-top:7px;border:1px solid #d9dfdc;border-radius:10px;overflow:hidden;background:#f1f4f2}
+.file-preview img{display:block;width:100%;max-height:180px;object-fit:cover}
+button{cursor:pointer;background:var(--green);color:white;border:0;font-weight:800;margin-top:5px;transition:opacity .15s;font-size:13px}
+button:disabled{opacity:.55;cursor:wait}
+button.alt{background:white;color:var(--green);border:2px solid var(--green)}
+button.gold{background:var(--gold);color:#3a2b00}
+button.gold-out{background:white;color:#8a6a10;border:2px solid var(--gold)}
+.subsec{margin-top:10px;padding-top:10px;border-top:1px dashed #c7d0cd}
+.subsec-title{font-weight:700;font-size:13px;margin-bottom:6px;color:var(--green)}
+.mini-label{font-weight:500;margin-bottom:4px}
+.mini-label span{color:#555;font-size:12px}
+.check-row{display:flex;align-items:center;gap:8px;margin-top:8px;font-weight:600;font-size:13px;cursor:pointer}
+.link-open{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--green);text-decoration:none;
+  background:#f1f7f5;border:1px solid #d6e5e1;border-radius:8px;padding:4px 8px;margin:-4px 0 9px;cursor:pointer;word-break:break-all}
+.link-open:hover{background:#e4efec}
+.preview{min-width:0}
+.preview-head{background:white;border-radius:15px;padding:10px 14px;margin-bottom:10px;box-shadow:0 2px 10px #0001;display:flex;justify-content:space-between;align-items:center}
+.preview-head strong{font-size:18px}
+.badge{background:var(--green);color:white;border-radius:20px;padding:5px 12px;font-size:12px}
+.badge.hint{background:#d4a437;color:#3a2b00}
+.canvas-wrap{background:#dfe7e4;border-radius:18px;padding:8px;box-shadow:inset 0 0 0 1px #fff}
+canvas{width:100%;height:auto;display:block;border-radius:13px;box-shadow:0 5px 25px #0003;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.help{font-size:12px;color:#60716c;line-height:1.8}
+@media(max-width:950px){
+ .app{grid-template-columns:1fr}
+ .sidebar{position:static;max-height:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="title">تولید کارت تقویم روزانه</div>
+
+    <section class="section">
+      <h3>⚙ تنظیمات کارت تقویم</h3>
+      <div class="body">
+        <label>تاریخ (میلادی)
+          <input type="date" id="date">
+        </label>
+        <label>انتخاب لوگو
+          <input type="file" id="logo" accept="image/*">
+        </label>
+        <div class="file-preview" id="logoPreview" hidden><img alt="پیش‌نمایش لوگو"></div>
+        <label style="margin-top:10px">انتخاب تصویر کنار تقویم
+          <input type="file" id="photo" accept="image/*">
+        </label>
+        <div class="file-preview" id="photoPreview" hidden><img alt="پیش‌نمایش تصویر"></div>
+
+        <div class="subsec">
+          <div class="subsec-title">🖼 تنظیم عکس</div>
+          <label class="mini-label">زوم — <span id="zoomVal">۱.۰۰</span>×
+            <input type="range" id="photoZoom" min="1" max="3" step="0.05" value="1">
+          </label>
+          <label class="mini-label">جابه‌جایی افقی
+            <input type="range" id="photoX" min="-300" max="300" step="1" value="0">
+          </label>
+          <label class="mini-label">جابه‌جایی عمودی
+            <input type="range" id="photoY" min="-300" max="300" step="1" value="0">
+          </label>
+          <button id="resetPhoto" class="alt" type="button" style="font-size:13px;padding:6px">بازنشانی زوم و موقعیت</button>
+        </div>
+
+        <label style="margin-top:10px">یادداشت زیر عکس
+          <textarea id="note" rows="2" placeholder="متن یادداشت (اختیاری)..."></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>🎨 رنگ‌ها</h3>
+      <div class="body">
+        <div class="color-row"><span>رنگ کادر اصلی</span><input type="color" id="frame" value="#d4a437"></div>
+        <div class="color-row"><span>رنگ کادرهای داخلی</span><input type="color" id="inner" value="#f7f1d9"></div>
+        <div class="color-row"><span>رنگ زمینه کادرها</span><input type="color" id="panel" value="#063d35"></div>
+        <div class="color-row"><span>رنگ متن طلایی</span><input type="color" id="goldText" value="#f0c34f"></div>
+        <div class="color-row"><span>رنگ متن تیره</span><input type="color" id="darkText" value="#10201c"></div>
+        <div class="color-row"><span>رنگ زمینه تصویر</span><input type="color" id="canvasBg" value="#edf2ef"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>📅 تنظیمات تاریخ</h3>
+      <div class="body">
+        <label>اصلاح تاریخ قمری (روز)
+          <input type="number" id="off" value="0" min="-2" max="2">
+        </label>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>✏ متن‌های کارت</h3>
+      <div class="body">
+        <label>نام کانال/گروه
+          <input type="text" id="channel" value="دیار قدمگاه باسلام">
+        </label>
+        <label>لینک کانال/گروه (آدرس کامل)
+          <input type="text" id="channelUrl" value="https://rubika.ir/joing/DDGHEGHI0FHOABUYCBLDJBEDEBMGYQVE" dir="ltr" style="text-align:left">
+        </label>
+        <a class="link-open" id="channelLink" href="https://rubika.ir/joing/DDGHEGHI0FHOABUYCBLDJBEDEBMGYQVE" target="_blank" rel="noopener">🔗 بازکردن لینک</a>
+
+        <label class="check-row" for="showQR">
+          <input type="checkbox" id="showQR" checked>
+          <span>نمایش QR کد لینک روی کارت</span>
+        </label>
+
+        <label style="margin-top:10px">شماره تماس
+          <input type="text" id="phone" value="+989120840199" dir="ltr" style="text-align:left">
+        </label>
+        <a class="link-open" id="phoneLink" href="tel:+989120840199">📞 تماس مستقیم</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>⬇ خروجی</h3>
+      <div class="body">
+        <label>تعداد روز برای ZIP
+          <input type="number" id="n" value="7" min="1" max="366">
+        </label>
+        <button id="download">دانلود PNG</button>
+        <div class="row2">
+          <button id="downloadHTML" class="gold" type="button">📄 HTML کلیک‌پذیر</button>
+          <button id="downloadSVG" class="gold-out" type="button">🎨 SVG کلیک‌پذیر</button>
+        </div>
+        <button id="zip" class="alt">دانلود ZIP از این روز به بعد</button>
+        <p class="help">
+          <b>PNG</b> برای اشتراک در شبکه‌های اجتماعی (لینک کلیک‌پذیر نیست، QR را اسکن کنید).<br>
+          <b>HTML</b> مطمئن‌ترین فرمت — روی همهٔ مرورگرها و اندروید باز می‌شود، لینک‌ها کار می‌کنند.<br>
+          <b>SVG</b> تصویر برداری — در مرورگر رایانه و موبایل، لینک‌ها کلیک‌پذیرند.
+        </p>
+      </div>
+    </section>
+  </aside>
+
+  <main class="preview">
+    <div class="preview-head">
+      <strong>پیش‌نمایش کارت تقویم</strong>
+      <span class="badge hint">کلیک روی شماره/کانال = بازکردن لینک</span>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="c" width="1050" height="1180"></canvas>
+    </div>
+  </main>
+</div>
+
+<script>
+'use strict';
+
+const WD=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
+const DHIKR=[
+ ['یَا ذَا الجَلالِ وَالإِکرام','ای صاحب شکوه و بزرگواری'],
+ ['یَا قَاضِيَ الحَاجَات','ای برآورندهٔ حاجت‌ها'],
+ ['یَا أَرحَمَ الرَّاحِمِین','ای مهربان‌ترین مهربانان'],
+ ['یَا حَیُّ یَا قَیُّوم','ای زنده و پایدار'],
+ ['لَا إِلٰهَ إِلَّا اللهُ الْمَلِكُ الْحَقُّ الْمُبِينُ','نیست خدایی جز الله، فرمانروای حق و آشکار'],
+ ['اللَّهُمَّ صَلِّ عَلَی مُحَمَّدٍ وَآلِ مُحَمَّدٍ وَعَجِّلْ فَرَجَهُم','خدایا بر محمد و آل محمد درود فرست و در فرجشان تعجیل کن'],
+ ['یَا رَبَّ الْعَالَمِین','ای پروردگار جهانیان']
+];
+const FA_M=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+const AR_M=['محرم','صفر','ربیع‌الاول','ربیع‌الثانی','جمادی‌الاول','جمادی‌الثانی','رجب','شعبان','رمضان','شوال','ذی‌القعده','ذی‌الحجه'];
+const EN_M=['ژانویه','فوریه','مارس','آوریل','مه','ژوئن','ژوئیه','اوت','سپتامبر','اکتبر','نوامبر','دسامبر'];
+const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+const cv = document.getElementById('c');
+const ctx = cv.getContext('2d');
+
+const dateEl  = document.getElementById('date');
+const offEl   = document.getElementById('off');
+const chEl    = document.getElementById('channel');
+const chUrlEl = document.getElementById('channelUrl');
+const phEl    = document.getElementById('phone');
+const nEl     = document.getElementById('n');
+const noteEl  = document.getElementById('note');
+const zoomEl  = document.getElementById('photoZoom');
+const photoXEl = document.getElementById('photoX');
+const photoYEl = document.getElementById('photoY');
+const zoomValEl = document.getElementById('zoomVal');
+const resetPhotoBtn = document.getElementById('resetPhoto');
+const chLink = document.getElementById('channelLink');
+const phLink = document.getElementById('phoneLink');
+const showQREl = document.getElementById('showQR');
+
+phEl.style.direction = 'ltr';    phEl.style.textAlign = 'left';
+chUrlEl.style.direction = 'ltr'; chUrlEl.style.textAlign = 'left';
+
+let logo = null, photo = null;
+let photoZoom = 1, photoX = 0, photoY = 0;
+
+const S = {
+  frame:'#d4a437', inner:'#f7f1d9', panel:'#063d35',
+  goldText:'#f0c34f', darkText:'#10201c', canvasBg:'#edf2ef'
+};
+
+const ROW_Y = [285, 405, 525];
+const RIBBON = { cx: 512, w: 168 };
+const RIBBON_RIGHT = RIBBON.cx + RIBBON.w / 2;
+const RIBBON_Y = 55, RIBBON_H = 585;
+
+const PHOTO_BOX = { x:55, y:55, w:375, h:650 };
+const IMG_AREA  = { x:73, y:73, w:339, h:520 };
+const NOTE_AREA = { x:88, y:610, w:309, h:60 };
+
+const CLICK_PHONE          = { x: 70,  y: 1005, w: 410, h: 130 };
+const CLICK_CHANNEL_FOOTER = { x: 490, y: 1005, w: 470, h: 130 };
+const CLICK_CHANNEL_PILL   = { x: 600, y: 610,  w: 365, h: 48  };
+
+/* ---------- تاریخ ---------- */
+function parts(date, cal){
+  const p = new Intl.DateTimeFormat('en-US-u-ca-' + cal + '-nu-latn',
+    { day:'numeric', month:'numeric', year:'numeric', timeZone:'UTC' }).formatToParts(date);
+  const g = t => +p.find(x => x.type === t).value.replace(/\D/g,'');
+  return { d:g('day'), m:g('month'), y:g('year') };
+}
+function info(y, m, d, off){
+  const dt = new Date(Date.UTC(y, m-1, d, 12));
+  const hj = new Date(dt.getTime() + off * 864e5);
+  return { wd: dt.getUTCDay(), s: parts(dt,'persian'), h: parts(hj,'islamic-umalqura'), g:{ d, m, y } };
+}
+function cur(){
+  const v = dateEl.value;
+  if (!v) return null;
+  const [y, m, d] = v.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return info(y, m, d, +offEl.value || 0);
+}
+
+/* ---------- کمکی‌های canvas ---------- */
+function rr(x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y,     x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x,     y + h, r);
+  ctx.arcTo(x,     y + h, x,     y,     r);
+  ctx.arcTo(x,     y,     x + w, y,     r);
+  ctx.closePath();
+}
+function grad(a, b, y0, y1){
+  const g = ctx.createLinearGradient(0, y0, 0, y1);
+  g.addColorStop(0,   a);
+  g.addColorStop(0.5, b);
+  g.addColorStop(1,   a);
+  return g;
+}
+function fit(t, w, size, weight){
+  weight = weight || 900;
+  // خروجی HTML/SVG ممکن است فونت آنلاین را در اندروید نداشته باشد؛
+  // بنابراین با فونت‌های fallback اندازه‌گیری می‌کنیم و حاشیه امن می‌دهیم.
+  const safeW = w * 0.86;
+  while (size > 12){
+    ctx.font = weight + ' ' + size + 'px Tahoma, Arial, sans-serif';
+    if (ctx.measureText(String(t || '')).width <= safeW) break;
+    size -= 1;
+  }
+  return size;
+}
+function panel(x, y, w, h, r){
+  r = r || 32;
+  ctx.save();
+  ctx.shadowColor = '#0004';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetY = 6;
+  ctx.fillStyle = S.panel;
+  rr(x, y, w, h, r); ctx.fill();
+  ctx.restore();
+
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 6;
+  rr(x, y, w, h, r); ctx.stroke();
+
+  ctx.strokeStyle = S.inner; ctx.lineWidth = 2;
+  rr(x + 10, y + 10, w - 20, h - 20, Math.max(4, r - 7)); ctx.stroke();
+}
+function wrapText(text, maxW, font){
+  ctx.font = font;
+  const out = [];
+  const paras = String(text).split(/\r?\n/);
+  for (const para of paras){
+    if (!para.trim()){ out.push(''); continue; }
+    const words = para.split(/\s+/);
+    let line = '';
+    for (const w of words){
+      const test = line ? line + ' ' + w : w;
+      if (ctx.measureText(test).width <= maxW) line = test;
+      else { if (line) out.push(line); line = w; }
+    }
+    if (line) out.push(line);
+  }
+  return out;
+}
+
+/* ---------- QR (ماتریس مشترک canvas و SVG) ---------- */
+function getQRMatrix(url){
+  if (typeof qrcode !== 'function') return null;
+  try {
+    const qr = qrcode(0, 'M');
+    qr.addData(url, 'Byte');
+    qr.make();
+    const count = qr.getModuleCount();
+    const matrix = [];
+    for (let r = 0; r < count; r++){
+      const row = [];
+      for (let c = 0; c < count; c++) row.push(qr.isDark(r, c));
+      matrix.push(row);
+    }
+    return { count, matrix };
+  } catch (err){
+    console.error('QR:', err);
+    return null;
+  }
+}
+function drawQRCanvas(data, boxX, boxY, boxSize){
+  if (!data) return;
+  ctx.fillStyle = '#fff';
+  rr(boxX, boxY, boxSize, boxSize, 10); ctx.fill();
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 2;
+  rr(boxX, boxY, boxSize, boxSize, 10); ctx.stroke();
+
+  const quiet = Math.max(6, boxSize * 0.08);
+  const dataSize = boxSize - quiet * 2;
+  const cell = dataSize / data.count;
+
+  ctx.fillStyle = S.darkText;
+  for (let r = 0; r < data.count; r++){
+    for (let c = 0; c < data.count; c++){
+      if (data.matrix[r][c]){
+        const px = boxX + quiet + c * cell;
+        const py = boxY + quiet + r * cell;
+        ctx.fillRect(Math.round(px), Math.round(py), Math.ceil(cell), Math.ceil(cell));
+      }
+    }
+  }
+}
+
+/* ---------- رسم روی canvas ---------- */
+function background(){
+  ctx.fillStyle = S.canvasBg;
+  ctx.fillRect(0, 0, cv.width, cv.height);
+
+  ctx.save();
+  ctx.globalAlpha = 0.10;
+  ctx.strokeStyle = '#6d8b86';
+  ctx.lineWidth = 2;
+  for (let x = 25; x < cv.width; x += 88){
+    for (let y = 20; y < cv.height; y += 92){
+      ctx.beginPath(); ctx.arc(x, y, 14, 0, Math.PI * 2); ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x - 9, y); ctx.lineTo(x + 9, y);
+      ctx.moveTo(x, y - 9); ctx.lineTo(x, y + 9);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+function unifiedFrame(){ panel(35, 35, 960, 1125, 42); }
+
+function photoPanel(){
+  const { x, y, w, h } = PHOTO_BOX;
+
+  ctx.save();
+  ctx.strokeStyle = '#555'; ctx.lineWidth = 3;
+  [x + 78, x + w - 78].forEach(px => {
+    ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, 30); ctx.stroke();
+    ctx.fillStyle = '#777';
+    ctx.beginPath(); ctx.arc(px, 37, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#333';
+    ctx.fillRect(px - 10, 40, 20, 17);
+  });
+  ctx.restore();
+
+  panel(x, y, w, h, 34);
+
+  const { x:ix, y:iy, w:iw, h:ih } = IMG_AREA;
+  ctx.save();
+  rr(ix, iy, iw, ih, 18); ctx.clip();
+  ctx.fillStyle = '#fff4d6';
+  ctx.fillRect(ix, iy, iw, ih);
+
+  if (photo && photo.complete && photo.naturalWidth){
+    const base = Math.min(iw / photo.naturalWidth, ih / photo.naturalHeight);
+    const sc = base * photoZoom;
+    const ww = photo.naturalWidth  * sc;
+    const hh = photo.naturalHeight * sc;
+    ctx.drawImage(photo, ix + (iw - ww) / 2 + photoX, iy + (ih - hh) / 2 + photoY, ww, hh);
+  } else {
+    ctx.fillStyle = S.darkText;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = '700 23px Vazirmatn';
+    ctx.fillText('تصویر کنار تقویم', ix + iw / 2, iy + ih / 2);
+  }
+  ctx.restore();
+
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 1.5;
+  rr(ix, iy, iw, ih, 18); ctx.stroke();
+
+  drawNoteArea(NOTE_AREA.x, NOTE_AREA.y, NOTE_AREA.w, NOTE_AREA.h);
+}
+
+function drawNoteArea(x, y, w, h){
+  ctx.fillStyle = '#fff8dd';
+  rr(x, y, w, h, h / 2); ctx.fill();
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 1.4;
+  rr(x, y, w, h, h / 2); ctx.stroke();
+
+  ctx.save();
+  ctx.globalAlpha = 0.35;
+  ctx.strokeStyle = '#e8d9a8'; ctx.lineWidth = 1;
+  rr(x + 4, y + 4, w - 8, h - 8, (h - 8) / 2); ctx.stroke();
+  ctx.restore();
+
+  const text = (noteEl.value || '').trim();
+  if (!text){
+    ctx.fillStyle = '#b3a374';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = '500 13px Vazirmatn';
+    ctx.fillText('یادداشت…', x + w / 2, y + h / 2);
+    return;
+  }
+
+  const padX = 14, fs = 14, lh = 18;
+  const font = '600 ' + fs + 'px Vazirmatn';
+  const lines = wrapText(text, w - padX * 2, font);
+
+  ctx.fillStyle = S.darkText;
+  ctx.font = font;
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+
+  const shown = lines.slice(0, 2);
+  const totalH = shown.length * lh;
+  const startY = y + h / 2 - totalH / 2 + lh / 2;
+  shown.forEach((line, i) => ctx.fillText(line, x + w - padX, startY + i * lh));
+}
+
+function logoRibbon(i){
+  const { cx, w } = RIBBON;
+  const x = cx - w / 2, y = RIBBON_Y, h = RIBBON_H;
+
+  ctx.fillStyle = grad('#a56a08', '#f0c34f', y, y + h);
+  ctx.beginPath();
+  ctx.moveTo(x + 16, y);
+  ctx.quadraticCurveTo(cx, y - 20, x + w - 16, y);
+  ctx.lineTo(x + w - 22, y + h - 58);
+  ctx.lineTo(cx,         y + h);
+  ctx.lineTo(x + 22,     y + h - 58);
+  ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 3; ctx.stroke();
+
+  ctx.save();
+  ctx.globalAlpha = 0.15; ctx.fillStyle = '#000';
+  ctx.beginPath();
+  ctx.moveTo(x + 16, y); ctx.lineTo(x + 40, y);
+  ctx.lineTo(x + 44, y + h - 60); ctx.lineTo(x + 22, y + h - 58);
+  ctx.closePath(); ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(x + w - 16, y); ctx.lineTo(x + w - 40, y);
+  ctx.lineTo(x + w - 44, y + h - 60); ctx.lineTo(x + w - 22, y + h - 58);
+  ctx.closePath(); ctx.fill();
+  ctx.restore();
+
+  const ccy = y + 88, ccr = 60;
+  ctx.fillStyle = S.darkText;
+  ctx.beginPath(); ctx.arc(cx, ccy, ccr, 0, Math.PI * 2); ctx.fill();
+
+  if (logo){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, ccy, ccr - 6, 0, Math.PI * 2); ctx.clip();
+    const sc = Math.max(((ccr - 6) * 2) / logo.width, ((ccr - 6) * 2) / logo.height);
+    ctx.drawImage(logo, cx - logo.width * sc / 2, ccy - logo.height * sc / 2, logo.width * sc, logo.height * sc);
+    ctx.restore();
+  } else {
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = '900 24px Arial';
+    ctx.fillText('YOUR', cx, ccy - 14);
+    ctx.fillText('LOGO', cx, ccy + 16);
+  }
+
+  ctx.fillStyle = S.darkText;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = '900 54px Vazirmatn'; ctx.fillText(fa(i.s.y), cx, ROW_Y[0]);
+  ctx.font = '900 50px Vazirmatn'; ctx.fillText(fa(i.h.y), cx, ROW_Y[1]);
+  ctx.font = '900 42px Arial';     ctx.fillText(String(i.g.y), cx, ROW_Y[2]);
+}
+
+function dateRow(y, day, month){
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(620, y - 42); ctx.lineTo(970, y - 42); ctx.stroke();
+
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = S.goldText;
+  ctx.textAlign = 'right';
+  ctx.font = '900 46px Vazirmatn';
+  ctx.fillText(day, 958, y);
+
+  ctx.textAlign = 'center';
+  const mz = fit(month, 220, 34);
+  ctx.font = '900 ' + mz + 'px Vazirmatn';
+  ctx.fillText(month, 795, y);
+}
+
+function mainCard(i){
+  panel(445, 55, 535, 650, 40);
+  logoRibbon(i);
+
+  const wdX = RIBBON_RIGHT + 19, wdW = 355, wdY = 118, wdH = 88;
+  const wdCx = wdX + wdW / 2, wdCy = wdY + wdH / 2;
+
+  ctx.fillStyle = grad('#a56a08', '#f0c34f', wdY, wdY + wdH);
+  rr(wdX, wdY, wdW, wdH, wdH / 2); ctx.fill();
+
+  ctx.fillStyle = S.darkText;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = '900 54px Vazirmatn';
+  ctx.fillText(WD[i.wd], wdCx, wdCy);
+
+  dateRow(ROW_Y[0], fa(i.s.d), FA_M[i.s.m - 1]);
+  dateRow(ROW_Y[1], fa(i.h.d), AR_M[i.h.m - 1]);
+  dateRow(ROW_Y[2], fa(i.g.d), EN_M[i.g.m - 1]);
+
+  ctx.fillStyle = grad('#a56a08', '#f0c34f', 610, 658);
+  rr(615, 610, 355, 48, 24); ctx.fill();
+
+  ctx.fillStyle = S.darkText;
+  ctx.textAlign = 'center';
+  const ch = chEl.value || '';
+  const cz = fit(ch, 320, 16, 700);
+  ctx.font = '700 ' + cz + 'px Arial';
+  ctx.fillText(ch, 792, 634);
+}
+
+function dhikr(i){
+  panel(55, 728, 925, 244, 34);
+
+  ctx.fillStyle = grad('#a56a08', '#f0c34f', 708, 764);
+  rr(320, 708, 445, 56, 28); ctx.fill();
+
+  ctx.fillStyle = S.darkText;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = '900 29px Vazirmatn';
+  ctx.fillText('ذکر روز ' + WD[i.wd], 542, 736);
+
+  ctx.fillStyle = grad('#a56a08', '#f0c34f', 783, 861);
+  rr(155, 783, 725, 78, 39); ctx.fill();
+
+  const [ar, tr] = DHIKR[i.wd];
+
+  ctx.fillStyle = S.darkText;
+  const az = fit(ar, 495, 31);
+  ctx.font = '900 ' + az + 'px Vazirmatn';
+  ctx.fillText(ar, 542, 822);
+
+  ctx.fillStyle = S.goldText;
+  const tz = fit(tr, 500, 24, 700);
+  ctx.font = '700 ' + tz + 'px Vazirmatn';
+  ctx.fillText(tr, 542, 930);
+}
+
+function footer(){
+  panel(55, 1000, 925, 140, 28);
+
+  ctx.save();
+  ctx.fillStyle = S.goldText;
+  ctx.textAlign = 'left'; ctx.direction = 'ltr';
+  ctx.font = '700 22px Arial';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(phEl.value || '', 105, 1070);
+  ctx.restore();
+
+  ctx.strokeStyle = S.frame; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(490, 1020); ctx.lineTo(490, 1120); ctx.stroke();
+
+  const url = (chUrlEl.value || '').trim();
+  const hasQR = showQREl.checked && !!url;
+  const chName = (chEl.value || '').replace('@', '');
+
+  if (hasQR){
+    drawQRCanvas(getQRMatrix(url), 530, 1010, 120);
+    const cz = fit(chName, 280, 20, 700);
+    ctx.fillStyle = S.goldText;
+    ctx.textAlign = 'left';
+    ctx.font = '700 ' + cz + 'px Vazirmatn';
+    ctx.fillText(chName, 685, 1070);
+  } else {
+    ctx.fillStyle = grad('#a56a08', '#f0c34f', 1040, 1100);
+    ctx.beginPath(); ctx.arc(625, 1070, 30, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = S.darkText;
+    ctx.font = '900 24px Arial';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('➤', 625, 1070);
+    const cz = fit(chName, 270, 20, 700);
+    ctx.fillStyle = S.goldText;
+    ctx.textAlign = 'left';
+    ctx.font = '700 ' + cz + 'px Vazirmatn';
+    ctx.fillText(chName, 670, 1070);
+  }
+}
+
+/* ---------- موتور رسم ---------- */
+const fontsReady = (async () => {
+  try {
+    await document.fonts.load('900 40px Vazirmatn');
+    await document.fonts.load('700 40px Vazirmatn');
+    await document.fonts.load('500 40px Vazirmatn');
+    await document.fonts.ready;
+  } catch(_){}
+})();
+
+async function draw(i){
+  await fontsReady;
+  background();
+  unifiedFrame();
+  photoPanel();
+  mainCard(i);
+  dhikr(i);
+  footer();
+}
+function render(){ const i = cur(); if (i) draw(i); }
+
+/* ==================================================================
+   ساخت SVG بومی (بدون تصویر رستر — همه چیز المان واقعی)
+   ================================================================== */
+const xesc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'
+}[c]));
+
+/* تصویر Image را به dataURL فشرده تبدیل می‌کند */
+function imageToDataURL(img, maxSide){
+  if (!img || !img.naturalWidth) return null;
+  const c = document.createElement('canvas');
+  const sc = Math.min(1, (maxSide || 1200) / Math.max(img.naturalWidth, img.naturalHeight));
+  c.width  = Math.max(1, Math.round(img.naturalWidth  * sc));
+  c.height = Math.max(1, Math.round(img.naturalHeight * sc));
+  const cc = c.getContext('2d');
+  cc.drawImage(img, 0, 0, c.width, c.height);
+  // PNG برای شفافیت لوگو، JPEG برای عکس
+  try { return c.toDataURL('image/png'); }
+  catch(_) { return c.toDataURL('image/jpeg', 0.9); }
+}
+
+function buildSVG(i){
+  const W = cv.width, H = cv.height;
+  const out = [];
+  const push = s => out.push(s);
+
+  /* ----- هدر ----- */
+  push('<?xml version="1.0" encoding="UTF-8"?>');
+  push(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`);
+
+  /* ----- استایل و فونت ----- */
+  push('<defs>');
+  push('<style><![CDATA[' +
+       'text{font-family:"Tahoma","Arial",sans-serif;}' +
+       '.rtl{direction:rtl;unicode-bidi:plaintext;}' +
+       '.ltr{direction:ltr;unicode-bidi:plaintext;}' +
+       ']]></style>');
+
+  /* گرادیان طلایی */
+  push('<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">' +
+       '<stop offset="0" stop-color="#a56a08"/>' +
+       '<stop offset="0.5" stop-color="#f0c34f"/>' +
+       '<stop offset="1" stop-color="#a56a08"/>' +
+       '</linearGradient>');
+
+  /* الگوی نقطه‌ها */
+  push('<pattern id="dots" x="0" y="0" width="88" height="92" patternUnits="userSpaceOnUse">' +
+       '<g opacity="0.1" fill="none" stroke="#6d8b86" stroke-width="2">' +
+       '<circle cx="14" cy="14" r="14"/>' +
+       '<line x1="5" y1="14" x2="23" y2="14"/>' +
+       '<line x1="14" y1="5" x2="14" y2="23"/>' +
+       '</g></pattern>');
+
+  /* کلیپ‌پث‌ها */
+  push(`<clipPath id="clipImg"><rect x="${IMG_AREA.x}" y="${IMG_AREA.y}" width="${IMG_AREA.w}" height="${IMG_AREA.h}" rx="18"/></clipPath>`);
+  push(`<clipPath id="clipLogo"><circle cx="${RIBBON.cx}" cy="${RIBBON_Y + 88}" r="54"/></clipPath>`);
+
+  /* فیلتر سایه */
+  push('<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">' +
+       '<feGaussianBlur in="SourceAlpha" stdDeviation="6"/>' +
+       '<feOffset dx="0" dy="6"/>' +
+       '<feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>' +
+       '<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>' +
+       '</filter>');
+
+  push('</defs>');
+
+  /* ----- پس‌زمینه ----- */
+  push(`<rect width="${W}" height="${H}" fill="${S.canvasBg}"/>`);
+  push(`<rect width="${W}" height="${H}" fill="url(#dots)"/>`);
+
+  /* ----- قاب یکپارچه ----- */
+  push(`<rect x="35" y="35" width="960" height="1125" rx="42" fill="${S.panel}" filter="url(#shadow)"/>`);
+  push(`<rect x="35" y="35" width="960" height="1125" rx="42" fill="none" stroke="${S.frame}" stroke-width="6"/>`);
+  push(`<rect x="45" y="45" width="940" height="1105" rx="35" fill="none" stroke="${S.inner}" stroke-width="2"/>`);
+
+  /* ----- نخ و گیره‌های عکس ----- */
+  [PHOTO_BOX.x + 78, PHOTO_BOX.x + PHOTO_BOX.w - 78].forEach(px => {
+    push(`<line x1="${px}" y1="0" x2="${px}" y2="30" stroke="#555" stroke-width="3"/>`);
+    push(`<circle cx="${px}" cy="37" r="8" fill="#777"/>`);
+    push(`<rect x="${px - 10}" y="40" width="20" height="17" fill="#333"/>`);
+  });
+
+  /* ----- قاب عکس ----- */
+  push(`<rect x="${PHOTO_BOX.x}" y="${PHOTO_BOX.y}" width="${PHOTO_BOX.w}" height="${PHOTO_BOX.h}" rx="34" fill="${S.panel}" filter="url(#shadow)"/>`);
+  push(`<rect x="${PHOTO_BOX.x}" y="${PHOTO_BOX.y}" width="${PHOTO_BOX.w}" height="${PHOTO_BOX.h}" rx="34" fill="none" stroke="${S.frame}" stroke-width="6"/>`);
+  push(`<rect x="${PHOTO_BOX.x + 10}" y="${PHOTO_BOX.y + 10}" width="${PHOTO_BOX.w - 20}" height="${PHOTO_BOX.h - 20}" rx="27" fill="none" stroke="${S.inner}" stroke-width="2"/>`);
+
+  /* عکس کاربر با محاسبهٔ همان زوم و پن canvas */
+  push(`<g clip-path="url(#clipImg)">`);
+  push(`<rect x="${IMG_AREA.x}" y="${IMG_AREA.y}" width="${IMG_AREA.w}" height="${IMG_AREA.h}" fill="#fff4d6"/>`);
+  if (photo && photo.naturalWidth){
+    const dataUrl = imageToDataURL(photo, 1400);
+    if (dataUrl){
+      const base = Math.min(IMG_AREA.w / photo.naturalWidth, IMG_AREA.h / photo.naturalHeight);
+      const sc = base * photoZoom;
+      const ww = photo.naturalWidth  * sc;
+      const hh = photo.naturalHeight * sc;
+      const px = IMG_AREA.x + (IMG_AREA.w - ww) / 2 + photoX;
+      const py = IMG_AREA.y + (IMG_AREA.h - hh) / 2 + photoY;
+      push(`<image href="${dataUrl}" xlink:href="${dataUrl}" x="${px.toFixed(2)}" y="${py.toFixed(2)}" width="${ww.toFixed(2)}" height="${hh.toFixed(2)}" preserveAspectRatio="none"/>`);
+    }
+  } else {
+    push(`<text x="${IMG_AREA.x + IMG_AREA.w / 2}" y="${IMG_AREA.y + IMG_AREA.h / 2}" font-size="23" font-weight="700" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">تصویر کنار تقویم</text>`);
+  }
+  push('</g>');
+  push(`<rect x="${IMG_AREA.x}" y="${IMG_AREA.y}" width="${IMG_AREA.w}" height="${IMG_AREA.h}" rx="18" fill="none" stroke="${S.frame}" stroke-width="1.5"/>`);
+
+  /* ----- یادداشت زیر عکس ----- */
+  const nx = NOTE_AREA.x, ny = NOTE_AREA.y, nw = NOTE_AREA.w, nh = NOTE_AREA.h;
+  push(`<rect x="${nx}" y="${ny}" width="${nw}" height="${nh}" rx="${nh / 2}" fill="#fff8dd"/>`);
+  push(`<rect x="${nx}" y="${ny}" width="${nw}" height="${nh}" rx="${nh / 2}" fill="none" stroke="${S.frame}" stroke-width="1.4"/>`);
+  push(`<rect x="${nx + 4}" y="${ny + 4}" width="${nw - 8}" height="${nh - 8}" rx="${(nh - 8) / 2}" fill="none" stroke="#e8d9a8" stroke-width="1" opacity="0.35"/>`);
+
+  const noteText = (noteEl.value || '').trim();
+  if (!noteText){
+    push(`<text x="${nx + nw / 2}" y="${ny + nh / 2}" font-size="13" font-weight="500" fill="#b3a374" text-anchor="middle" dominant-baseline="middle">یادداشت…</text>`);
+  } else {
+    const padX = 14, fs = 14, lh = 18;
+    const lines = wrapText(noteText, nw - padX * 2, '600 ' + fs + 'px Vazirmatn').slice(0, 2);
+    const totalH = lines.length * lh;
+    const startY = ny + nh / 2 - totalH / 2 + lh / 2;
+    lines.forEach((line, idx) => {
+      const safeFs = fit(line, nw - padX * 2, 10, 600);
+      push(`<text x="${nx + nw / 2}" y="${startY + idx * lh}" font-size="${safeFs}" font-weight="600" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle" class="rtl">${xesc(line)}</text>`);
+    });
+  }
+
+  /* ----- کارت اصلی ----- */
+  push(`<rect x="445" y="55" width="535" height="650" rx="40" fill="${S.panel}" filter="url(#shadow)"/>`);
+  push(`<rect x="445" y="55" width="535" height="650" rx="40" fill="none" stroke="${S.frame}" stroke-width="6"/>`);
+  push(`<rect x="455" y="65" width="515" height="630" rx="33" fill="none" stroke="${S.inner}" stroke-width="2"/>`);
+
+  /* ----- نوار (کروات) ----- */
+  const rx = RIBBON.cx - RIBBON.w / 2, ry = RIBBON_Y, rw = RIBBON.w, rh = RIBBON_H;
+  const ribbonPath = `M${rx + 16},${ry} Q${RIBBON.cx},${ry - 20} ${rx + rw - 16},${ry} ` +
+                     `L${rx + rw - 22},${ry + rh - 58} L${RIBBON.cx},${ry + rh} L${rx + 22},${ry + rh - 58} Z`;
+  push(`<path d="${ribbonPath}" fill="url(#gold)" stroke="${S.frame}" stroke-width="3"/>`);
+
+  /* سایه‌های لبه */
+  push(`<path d="M${rx + 16},${ry} L${rx + 40},${ry} L${rx + 44},${ry + rh - 60} L${rx + 22},${ry + rh - 58} Z" fill="#000" opacity="0.15"/>`);
+  push(`<path d="M${rx + rw - 16},${ry} L${rx + rw - 40},${ry} L${rx + rw - 44},${ry + rh - 60} L${rx + rw - 22},${ry + rh - 58} Z" fill="#000" opacity="0.15"/>`);
+
+  /* دایرهٔ لوگو */
+  const logoCx = RIBBON.cx, logoCy = RIBBON_Y + 88, logoR = 60;
+  push(`<circle cx="${logoCx}" cy="${logoCy}" r="${logoR}" fill="${S.darkText}"/>`);
+  if (logo && logo.naturalWidth){
+    const logoUrl = imageToDataURL(logo, 400);
+    if (logoUrl){
+      push(`<g clip-path="url(#clipLogo)">`);
+      const sc = Math.max((logoR - 6) * 2 / logo.naturalWidth, (logoR - 6) * 2 / logo.naturalHeight);
+      const ww = logo.naturalWidth * sc, hh = logo.naturalHeight * sc;
+      push(`<image href="${logoUrl}" xlink:href="${logoUrl}" x="${logoCx - ww / 2}" y="${logoCy - hh / 2}" width="${ww}" height="${hh}" preserveAspectRatio="none"/>`);
+      push('</g>');
+    }
+  } else {
+    push(`<text x="${logoCx}" y="${logoCy - 14}" font-size="24" font-weight="900" font-family="Arial" fill="#fff" text-anchor="middle" dominant-baseline="middle">YOUR</text>`);
+    push(`<text x="${logoCx}" y="${logoCy + 16}" font-size="24" font-weight="900" font-family="Arial" fill="#fff" text-anchor="middle" dominant-baseline="middle">LOGO</text>`);
+  }
+
+  /* سال‌ها روی نوار */
+  push(`<text x="${RIBBON.cx}" y="${ROW_Y[0]}" font-size="54" font-weight="900" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(fa(i.s.y))}</text>`);
+  push(`<text x="${RIBBON.cx}" y="${ROW_Y[1]}" font-size="50" font-weight="900" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(fa(i.h.y))}</text>`);
+  push(`<text x="${RIBBON.cx}" y="${ROW_Y[2]}" font-size="42" font-weight="900" font-family="Arial" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(String(i.g.y))}</text>`);
+
+  /* ----- پیل روز هفته ----- */
+  const wdX = RIBBON_RIGHT + 19, wdW = 355, wdY = 118, wdH = 88;
+  push(`<rect x="${wdX}" y="${wdY}" width="${wdW}" height="${wdH}" rx="${wdH / 2}" fill="url(#gold)"/>`);
+  const wdSize = fit(WD[i.wd], wdW - 54, 54, 900);
+  push(`<text class="rtl" x="${wdX + wdW / 2}" y="${wdY + wdH / 2}" font-size="${wdSize}" font-weight="900" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(WD[i.wd])}</text>`);
+
+  /* ----- سه ردیف تاریخ ----- */
+  function svgDateRow(y, day, month){
+    push(`<line x1="620" y1="${y - 42}" x2="970" y2="${y - 42}" stroke="${S.frame}" stroke-width="2"/>`);
+    const daySize = fit(String(day), 76, 46, 900);
+    push(`<text class="ltr" x="946" y="${y}" font-size="${daySize}" font-weight="900" fill="${S.goldText}" text-anchor="end" dominant-baseline="middle">${xesc(day)}</text>`);
+    const mz = fit(month, 220, 34);
+    push(`<text x="795" y="${y}" font-size="${mz}" font-weight="900" fill="${S.goldText}" text-anchor="middle" dominant-baseline="middle">${xesc(month)}</text>`);
+  }
+  svgDateRow(ROW_Y[0], fa(i.s.d), FA_M[i.s.m - 1]);
+  svgDateRow(ROW_Y[1], fa(i.h.d), AR_M[i.h.m - 1]);
+  svgDateRow(ROW_Y[2], fa(i.g.d), EN_M[i.g.m - 1]);
+
+  /* ----- پیل کانال (کلیک‌پذیر) ----- */
+  const channelUrl = normalizeUrl(chUrlEl.value);
+  if (channelUrl){
+    push(`<a href="${xesc(channelUrl)}" xlink:href="${xesc(channelUrl)}" target="_blank">`);
+  }
+  push(`<rect x="615" y="610" width="355" height="48" rx="24" fill="url(#gold)" style="cursor:pointer"/>`);
+  const ch = chEl.value || '';
+  const cz = fit(ch, 320, 16, 700);
+  push(`<text class="rtl" x="792" y="634" font-size="${cz}" font-weight="700" font-family="Tahoma,Arial,sans-serif" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(ch)}</text>`);
+  if (channelUrl) push('</a>');
+
+  /* ----- پنل ذکر ----- */
+  push(`<rect x="55" y="728" width="925" height="244" rx="34" fill="${S.panel}" filter="url(#shadow)"/>`);
+  push(`<rect x="55" y="728" width="925" height="244" rx="34" fill="none" stroke="${S.frame}" stroke-width="6"/>`);
+  push(`<rect x="65" y="738" width="905" height="224" rx="27" fill="none" stroke="${S.inner}" stroke-width="2"/>`);
+
+  push(`<rect x="320" y="708" width="445" height="56" rx="28" fill="url(#gold)"/>`);
+  const dhTitle = 'ذکر روز ' + WD[i.wd];
+  const dhTitleSize = fit(dhTitle, 395, 29, 900);
+  push(`<text class="rtl" x="542" y="736" font-size="${dhTitleSize}" font-weight="900" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(dhTitle)}</text>`);
+
+  push(`<rect x="155" y="783" width="725" height="78" rx="39" fill="url(#gold)"/>`);
+  const [arTxt, trTxt] = DHIKR[i.wd];
+  const az = fit(arTxt, 495, 31);
+  push(`<text x="542" y="822" font-size="${az}" font-weight="900" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">${xesc(arTxt)}</text>`);
+  const tz = fit(trTxt, 500, 24, 700);
+  push(`<text x="542" y="930" font-size="${tz}" font-weight="700" fill="${S.goldText}" text-anchor="middle" dominant-baseline="middle">${xesc(trTxt)}</text>`);
+
+  /* ----- فوتر ----- */
+  push(`<rect x="55" y="1000" width="925" height="140" rx="28" fill="${S.panel}" filter="url(#shadow)"/>`);
+  push(`<rect x="55" y="1000" width="925" height="140" rx="28" fill="none" stroke="${S.frame}" stroke-width="6"/>`);
+  push(`<rect x="65" y="1010" width="905" height="120" rx="22" fill="none" stroke="${S.inner}" stroke-width="2"/>`);
+
+  /* شماره تماس — کلیک‌پذیر */
+  const phoneClean = (phEl.value || '').replace(/[^\d+]/g, '');
+  if (phoneClean) push(`<a href="tel:${phoneClean}" xlink:href="tel:${phoneClean}">`);
+  const phoneText = phEl.value || '';
+  const phoneSize = fit(phoneText, 370, 22, 700);
+  push(`<text class="ltr" x="82" y="1070" font-size="${phoneSize}" font-weight="700" font-family="Tahoma,Arial,sans-serif" fill="${S.goldText}" text-anchor="start" dominant-baseline="middle">${xesc(phoneText)}</text>`);
+  if (phoneClean) push('</a>');
+
+  /* جداکننده */
+  push(`<line x1="490" y1="1020" x2="490" y2="1120" stroke="${S.frame}" stroke-width="2"/>`);
+
+  /* QR یا آیکن کانال */
+  const url = (chUrlEl.value || '').trim();
+  const hasQR = showQREl.checked && !!url;
+  const chName = chEl.value || '';
+
+  if (url) push(`<a href="${xesc(channelUrl || url)}" xlink:href="${xesc(channelUrl || url)}" target="_blank">`);
+
+  if (hasQR){
+    const qrData = getQRMatrix(url);
+    if (qrData){
+      const boxX = 530, boxY = 1010, boxSize = 120;
+      push(`<rect x="${boxX}" y="${boxY}" width="${boxSize}" height="${boxSize}" rx="10" fill="#fff" stroke="${S.frame}" stroke-width="2"/>`);
+      const quiet = Math.max(6, boxSize * 0.08);
+      const dataSize = boxSize - quiet * 2;
+      const cell = dataSize / qrData.count;
+      push(`<g fill="${S.darkText}">`);
+      for (let r = 0; r < qrData.count; r++){
+        for (let c = 0; c < qrData.count; c++){
+          if (qrData.matrix[r][c]){
+            const px = (boxX + quiet + c * cell).toFixed(2);
+            const py = (boxY + quiet + r * cell).toFixed(2);
+            const sz = Math.ceil(cell);
+            push(`<rect x="${px}" y="${py}" width="${sz}" height="${sz}"/>`);
+          }
+        }
+      }
+      push('</g>');
+    }
+    const czn = fit(chName, 250, 16, 700);
+    push(`<text class="rtl" x="810" y="1070" font-size="${czn}" font-weight="700" fill="${S.goldText}" text-anchor="middle" dominant-baseline="middle">${xesc(chName)}</text>`);
+  } else {
+    push(`<circle cx="625" cy="1070" r="30" fill="url(#gold)"/>`);
+    push(`<text x="625" y="1070" font-size="24" font-weight="900" font-family="Arial" fill="${S.darkText}" text-anchor="middle" dominant-baseline="middle">➤</text>`);
+    const czn = fit(chName, 250, 16, 700);
+    push(`<text class="rtl" x="805" y="1070" font-size="${czn}" font-weight="700" fill="${S.goldText}" text-anchor="middle" dominant-baseline="middle">${xesc(chName)}</text>`);
+  }
+  if (url) push('</a>');
+
+  push('</svg>');
+  return out.join('');
+}
+
+/* HTML با SVG درون‌خط (مطمئن‌ترین فرمت) */
+function buildHTML(i){
+  const svg = buildSVG(i).replace(/^<\?xml[^?]*\?>\s*/, '');
+  return `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کارت تقویم - ${xesc(dateEl.value)}</title>
+<style>
+  html,body{margin:0;padding:0;background:#edf2ef;font-family:Vazirmatn,Tahoma,sans-serif}
+  .wrap{display:flex;justify-content:center;padding:16px}
+  svg{max-width:100%;height:auto;border-radius:13px;box-shadow:0 6px 30px rgba(0,0,0,.18);background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+${svg}
+</div>
+</body>
+</html>`;
+}
+
+/* ---------- نرمال‌سازی URL ---------- */
+function normalizeUrl(u){
+  u = (u || '').trim();
+  if (!u) return '';
+  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  return u;
+}
+
+/* ---------- کلیک روی canvas ---------- */
+function toCanvas(e){
+  const r = cv.getBoundingClientRect();
+  return {
+    x: (e.clientX - r.left) * cv.width  / r.width,
+    y: (e.clientY - r.top ) * cv.height / r.height
+  };
+}
+const inRect = (r, x, y) => x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h;
+const inPhoneRegion    = (x, y) => inRect(CLICK_PHONE, x, y);
+const inChannelRegion  = (x, y) => inRect(CLICK_CHANNEL_FOOTER, x, y) || inRect(CLICK_CHANNEL_PILL, x, y);
+const inPhotoArea      = (x, y) => x >= IMG_AREA.x && x <= IMG_AREA.x + IMG_AREA.w &&
+                                  y >= IMG_AREA.y && y <= IMG_AREA.y + IMG_AREA.h;
+const phoneHref = v => 'tel:' + (v || '').replace(/[^\d+]/g, '');
+
+function openPhone(){
+  const p = (phEl.value || '').replace(/[^\d+]/g, '');
+  if (p) window.open('tel:' + p, '_blank');
+}
+function openChannel(){
+  const u = normalizeUrl(chUrlEl.value);
+  if (u) window.open(u, '_blank');
+}
+
+let pointerDown = null, moved = false;
+cv.addEventListener('pointerdown', e => {
+  const { x, y } = toCanvas(e);
+  const isPhoto = inPhotoArea(x, y) && !!photo;
+  pointerDown = { cx: e.clientX, cy: e.clientY, isPhoto, px: photoX, py: photoY };
+  moved = false;
+  if (isPhoto) cv.style.cursor = 'grabbing';
+});
+window.addEventListener('pointermove', e => {
+  if (!pointerDown){
+    if (e.pointerType === 'mouse'){
+      const { x, y } = toCanvas(e);
+      if (inPhoneRegion(x, y) || inChannelRegion(x, y)) cv.style.cursor = 'pointer';
+      else if (inPhotoArea(x, y) && photo) cv.style.cursor = 'grab';
+      else cv.style.cursor = 'default';
+    }
+    return;
+  }
+  const dx = e.clientX - pointerDown.cx;
+  const dy = e.clientY - pointerDown.cy;
+  if (Math.abs(dx) + Math.abs(dy) > 3) moved = true;
+  if (pointerDown.isPhoto && moved){
+    const r = cv.getBoundingClientRect();
+    const sx = cv.width / r.width, sy = cv.height / r.height;
+    photoX = Math.max(-300, Math.min(300, pointerDown.px + dx * sx));
+    photoY = Math.max(-300, Math.min(300, pointerDown.py + dy * sy));
+    updatePhotoUI(); render();
+  }
+});
+function endPointer(){ pointerDown = null; cv.style.cursor = 'default'; }
+window.addEventListener('pointerup', endPointer);
+window.addEventListener('pointercancel', endPointer);
+cv.addEventListener('click', e => {
+  if (moved){ moved = false; return; }
+  const { x, y } = toCanvas(e);
+  if (inPhoneRegion(x, y))        openPhone();
+  else if (inChannelRegion(x, y)) openChannel();
+});
+
+/* ---------- عکس ---------- */
+function updatePhotoUI(){
+  zoomEl.value     = photoZoom;
+  photoXEl.value   = photoX;
+  photoYEl.value   = photoY;
+  const z = photoZoom.toFixed(2).replace(/\.?0+$/, '') || '1';
+  zoomValEl.textContent = fa(z);
+}
+zoomEl.oninput    = () => { photoZoom = +zoomEl.value;    updatePhotoUI(); render(); };
+photoXEl.oninput  = () => { photoX    = +photoXEl.value;  updatePhotoUI(); render(); };
+photoYEl.oninput  = () => { photoY    = +photoYEl.value;  updatePhotoUI(); render(); };
+resetPhotoBtn.onclick = () => { photoZoom = 1; photoX = 0; photoY = 0; updatePhotoUI(); render(); };
+
+/* ---------- رویدادها ---------- */
+dateEl.onchange = render;
+offEl.onchange  = render;
+chEl.oninput    = render;
+showQREl.onchange = render;
+chUrlEl.oninput = () => {
+  const url = (chUrlEl.value || '').trim();
+  chLink.href = url || '#';
+  chLink.style.display = url ? 'inline-flex' : 'none';
+  render();
+};
+phEl.oninput = () => { phLink.href = phoneHref(phEl.value); render(); };
+noteEl.oninput = render;
+
+['frame','inner','panel','goldText','darkText','canvasBg'].forEach(id => {
+  document.getElementById(id).oninput = e => { S[id] = e.target.value; render(); };
+});
+
+/* ---------- فایل‌ها ---------- */
+const blobUrls = { logo: null, photo: null };
+function fileInput(inputId, which, previewId){
+  document.getElementById(inputId).onchange = e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    if (blobUrls[which]) URL.revokeObjectURL(blobUrls[which]);
+    const url = URL.createObjectURL(f);
+    blobUrls[which] = url;
+    const im = new Image();
+    im.onload = () => {
+      if (which === 'logo') logo = im;
+      else { photo = im; photoZoom = 1; photoX = 0; photoY = 0; updatePhotoUI(); }
+      const box = document.getElementById(previewId);
+      box.hidden = false;
+      box.querySelector('img').src = url;
+      requestAnimationFrame(render);
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); blobUrls[which] = null; alert('بارگذاری تصویر انجام نشد.'); };
+    im.src = url;
+  };
+}
+fileInput('logo',  'logo',  'logoPreview');
+fileInput('photo', 'photo', 'photoPreview');
+
+/* ---------- ذخیره ---------- */
+function save(blob, name){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+}
+const blobOf = (type, q) => new Promise(res => cv.toBlob(res, type || 'image/png', q));
+
+/* PNG */
+document.getElementById('download').onclick = async () => {
+  const i = cur();
+  if (!i){ alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
+  await draw(i);
+  save(await blobOf('image/png'), 'calendar-' + dateEl.value + '.png');
+};
+
+/* HTML کلیک‌پذیر */
+document.getElementById('downloadHTML').onclick = async () => {
+  const i = cur();
+  if (!i){ alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
+  await fontsReady;
+  await draw(i);
+  const html = buildHTML(i);
+  save(new Blob([html], { type: 'text/html;charset=utf-8' }), 'calendar-' + dateEl.value + '.html');
+};
+
+/* SVG کلیک‌پذیر */
+document.getElementById('downloadSVG').onclick = async () => {
+  const i = cur();
+  if (!i){ alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
+  await fontsReady;
+  await draw(i);
+  const svg = buildSVG(i);
+  save(new Blob([svg], { type: 'image/svg+xml;charset=utf-8' }), 'calendar-' + dateEl.value + '.svg');
+};
+
+/* ZIP */
+document.getElementById('zip').onclick = async (e) => {
+  const btn = e.currentTarget;
+  const original = btn.textContent;
+  const i0 = cur();
+  if (!i0){ alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
+  const n = Math.max(1, Math.min(366, +nEl.value || 1));
+  const [y, m, d] = dateEl.value.split('-').map(Number);
+  const off = +offEl.value || 0;
+  const zip = new JSZip();
+
+  btn.disabled = true;
+  try {
+    for (let k = 0; k < n; k++){
+      btn.textContent = 'در حال ساخت ' + fa(k + 1) + '/' + fa(n) + ' …';
+      const dt = new Date(Date.UTC(y, m - 1, d + k, 12));
+      await draw(info(dt.getUTCFullYear(), dt.getUTCMonth() + 1, dt.getUTCDate(), off));
+      zip.file(dt.toISOString().slice(0, 10) + '.png', await blobOf('image/png'));
+      await new Promise(r => setTimeout(r, 0));
+    }
+    btn.textContent = 'در حال فشرده‌سازی …';
+    const out = await zip.generateAsync({ type: 'blob' });
+    save(out, 'calendar-cards.zip');
+  } catch(err){
+    console.error(err);
+    alert('خطا در ساخت ZIP.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = original;
+    render();
+  }
+};
+
+/* ---------- شروع ---------- */
+(function init(){
+  const t = new Date();
+  dateEl.value = t.getFullYear() + '-' +
+    String(t.getMonth() + 1).padStart(2, '0') + '-' +
+    String(t.getDate()).padStart(2, '0');
+  phLink.href = phoneHref(phEl.value);
+  updatePhotoUI();
+  render();
+})();
+</script>
+</body>
+  </html>
