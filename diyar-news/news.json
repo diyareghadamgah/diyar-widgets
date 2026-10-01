@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-01T22:05:10.441Z",
-  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۲:۰۵",
+  "lastUpdate": "2026-10-01T22:20:49.664Z",
+  "lastUpdatePersian": "۹ مهر ۱۴۰۵، ۲۲:۲۰",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,56 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "اثر شگفت‌انگیز توت‌سیاه بر باکتری‌های روده",
+      "link": "https://www.isna.ir/news/1405070905868/%D8%A7%D8%AB%D8%B1-%D8%B4%DA%AF%D9%81%D8%AA-%D8%A7%D9%86%DA%AF%DB%8C%D8%B2-%D8%AA%D9%88%D8%AA-%D8%B3%DB%8C%D8%A7%D9%87-%D8%A8%D8%B1-%D8%A8%D8%A7%DA%A9%D8%AA%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C-%D8%B1%D9%88%D8%AF%D9%87",
+      "date": "2026-10-01T22:15:00.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۵",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "براساس پژوهشی جدید، توت سفید و سیاه ممکن است با تغییر باکتری‌های روده، متابولیسم را تحت تاثیر قرار دهند."
+    },
+    {
+      "title": "حمله مزدوران عربستان به مناطق مختلف یمن",
+      "link": "https://www.mehrnews.com/news/6964988/%D8%AD%D9%85%D9%84%D9%87-%D9%85%D8%B2%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DB%8C%D9%85%D9%86",
+      "date": "2026-10-01T22:12:52.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "مزدوران یمنی وابسته به عربستان از انجام ۲۷ حمله هوایی به مناطق استقرار نیروهای انصارالله یمن خبر دادند."
+    },
+    {
+      "title": "موزه نهضت مقاومت جنوب با اعتبار ۵۰۰ میلیارد ریال بازطراحی شد",
+      "link": "https://www.mehrnews.com/news/6964989/%D9%85%D9%88%D8%B2%D9%87-%D9%86%D9%87%D8%B6%D8%AA-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AC%D9%86%D9%88%D8%A8-%D8%A8%D8%A7-%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1-%DB%B5%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF-%D8%B1%DB%8C%D8%A7%D9%84-%D8%A8%D8%A7%D8%B2%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D8%B4%D8%AF",
+      "date": "2026-10-01T22:10:28.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "بوشهر - مدیرکل میراث فرهنگی، گردشگری و صنایع دستی استان بوشهر گفت: موزه شهید رئیسعلی دلواری با اعتبار ۵۰۰ میلیارد ریال بازطراحی و افتتاح شد."
+    },
+    {
+      "title": "منبع آگاه منطقه‌ای: برنامه نتانیاهو کشاندن ترامپ به مهلکه جدید با ایران است",
+      "link": "https://www.qudsonline.ir/news/1168436/%D9%85%D9%86%D8%A8%D8%B9-%D8%A2%DA%AF%D8%A7%D9%87-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A7%DB%8C-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%D9%85%D9%87%D9%84%DA%A9%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF",
+      "date": "2026-10-01T22:09:43.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۰۹",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "یک منبع آگاه منطقه‌ای به شبکه خبری پرس‌ تی‌وی گفت: برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به مهلکه جدید با ایران است."
+    },
+    {
+      "title": "واکنش مدیر آکادمی استقلال به درگیری در بازی با شاهین",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249285",
+      "date": "2026-10-01T22:03:12.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۰۳",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "مدیر آکادمی استقلال گفت: هرکس به اعتبار آبی‌ها لطمه بزند، برخورد می‌کنیم و این اتفاق درباره عوامل بازی نوجوانان استقلال و شاهین انجام می‌شود."
+    },
     {
       "title": "مهارت های مهم تا سال 2030/ اینفوگرافیک",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3249284",
@@ -69,6 +119,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "زنجان - در این فیلم تصاویری ازدویست و پانزدهمین اجتماع پرشور مردم ولایتمدار زنجان در حمایت از رهبری و نظام مقدس جمهوری اسلامی ایران و دفاع از وطن را می بینید."
+    },
+    {
+      "title": "وزیر راه از پیگیری برای حل مشکلات پروازی ایران و عراق خبر داد",
+      "link": "https://www.mehrnews.com/news/6964986/%D9%88%D8%B2%DB%8C%D8%B1-%D8%B1%D8%A7%D9%87-%D8%A7%D8%B2-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AD%D9%84-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%88-%D8%B9%D8%B1%D8%A7%D9%82-%D8%AE%D8%A8%D8%B1-%D8%AF%D8%A7%D8%AF",
+      "date": "2026-10-01T21:54:30.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۵۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "وزیر راه و شهرسازی در جریان دیدار سفیر عراق در تهران، از پیگیری برای حل مشکلات پروازی میان تهران-بغداد خبر داد."
     },
     {
       "title": "صداوسیما خواستار محاکمه محسن نامجو و بیژن مرتضوی شد؛ بازگشت بدون هزینه آن‌ها توجیه عقلانی دارد؟!",
@@ -178,6 +238,16 @@
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
       "rssDescription": "ویدئوهایی از دستگیری فردی در مسجدالحرام که گفته می‌شود عامل انتحاری است، دست به دست می‌شود."
+    },
+    {
+      "title": "تحریم‌های جدید آمریکا علیه ایران",
+      "link": "https://www.khabaronline.ir/news/2282384/%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
+      "date": "2026-10-01T21:31:30.000Z",
+      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۳۱",
+      "source": "خبرآنلاین",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "وزارت خزانه‌داری آمریکا روز پنج‌شنبه از اعمال تحریم‌های جدید علیه ایران خبر داد."
     },
     {
       "title": "موسیقی‌درمانی برای همه مبتلایان به آلزایمر مفید است؟",
@@ -350,7 +420,7 @@
       "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه و وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
     },
     {
-      "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکیدداشتند",
+      "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکید داشتند",
       "link": "https://www.qudsonline.ir/news/1168435/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%82%D8%A7%D8%A2%D9%86%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A8%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF%D8%AF%D8%A7%D8%B4%D8%AA%D9%86%D8%AF",
       "date": "2026-10-01T21:03:40.000Z",
       "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۰۳",
@@ -450,16 +520,6 @@
       "rssDescription": "رئیس پلیس راهور فراجا از اجرای طرح بازگشت مبلغ جریمه‌های رانندگی مشمول دیرکرد به مبلغ اولیه از ۱۰ تا ۱۶ مهرماه (به مدت یک هفته) خبر داد و گفت: این طرح با هدف تسهیل در تسویه جرایم معوق و تکریم شهروندان اجرا می‌شود."
     },
     {
-      "title": "واژگونی سمند در جاده جلفا-مرند ۴ مصدوم برجا گذاشت",
-      "link": "https://www.mehrnews.com/news/6964977/%D9%88%D8%A7%DA%98%DA%AF%D9%88%D9%86%DB%8C-%D8%B3%D9%85%D9%86%D8%AF-%D8%AF%D8%B1-%D8%AC%D8%A7%D8%AF%D9%87-%D8%AC%D9%84%D9%81%D8%A7-%D9%85%D8%B1%D9%86%D8%AF-%DB%B4-%D9%85%D8%B5%D8%AF%D9%88%D9%85-%D8%A8%D8%B1%D8%AC%D8%A7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA",
-      "date": "2026-10-01T20:53:53.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "تبریز- سخنگوی اورژانس آذربایجان‌شرقی از مصدومیت چهار نفر در پی واژگونی یک دستگاه سواری سمند در جاده جلفا-مرند خبر داد."
-    },
-    {
       "title": "سردار نقدی: ملت ایران تا تحقق خون‌خواهی رهبر شهید از پای نخواهد نشست",
       "link": "https://www.irna.ir/news/86280538/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%DB%8C-%D9%85%D9%84%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%A7-%D8%AA%D8%AD%D9%82%D9%82-%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D8%B2-%D9%BE%D8%A7%DB%8C-%D9%86%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
       "date": "2026-10-01T20:53:26.000Z",
@@ -468,16 +528,6 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "زنجان - ایرنا- مشاور عالی فرمانده کل سپاه پاسداران انقلاب اسلامی گفت: ملت ایران تا تحقق خون‌خواهی رهبر شهید و سایر شهدا از پای نخواهد نشست و با استمرار حضور و همبستگی خود، محاسبات دشمن را ناکام خواهد گذاشت."
-    },
-    {
-      "title": "وقوع یک حادثه دریایی دیگر در تنگه هرمز",
-      "link": "https://www.mehrnews.com/news/6964976/%D9%88%D9%82%D9%88%D8%B9-%DB%8C%DA%A9-%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2",
-      "date": "2026-10-01T20:52:03.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۲",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "سازمان عملیات تجارت دریایی انگلیس از وقوع یک حادثه دریایی در تنگه هرمز خبر داد."
     },
     {
       "title": "سردار قاآنی: نسل جدید حزب‌الله صهیونیست‌ها را مورد هجوم قرار می‌دهد",
@@ -747,7 +797,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9Op8P7cl5WbfcPODfebWB_8JPuHHrPj7yEW8g10D_V3u-KbEAuCRGWj8YYbe82mn0n6FTIJ10-pJ_QETiqaF3usZwroWH_KgT7tmYZvEuWeuwwUbWfmVscgwzaaXhk3KOZMCR6hNDIgyB6KQLVFDfsT0ZoF2artRY2iJUEJF2AcSxw_YdD6sqpBtS0WMgTZ0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/1fSGJ7-cORJw7BcfQhWRM00hslJ3F5jESsZcpHOj3XoaSmxQ9uQ5NtZpEVp4Yk1wm0scPbaxky11k5f7JJTRRw2r8u9g16a8JSUAyx6_J7wINnubhI3OaZDrWn0fcAMpZO8T_2qU-HPgresS1gzIy9wpdTMZcDUbmzMusbgj_o2bSd82p6ktlmXrIzJbfsKi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -757,7 +807,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gCd9bRLXY1hEU6lNG8ZTxGtGfbFJ3HYzEDX7MUa5kYLTMQ1TACx2dsgzxQXqRRJDysS2ztdAJjMwEskUkuS69_R4JI8id9zCuF0wrEyBJ76sp_oV41q7MHVvdBUSm2vGLcUGIFQGp_tdfH4q3RUgYRLKoxJgBsWYTQjbtRQqJnLP9l1U-4AzhL8OSwI80IOl/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/kvJFPpX-F9ug2mCKUaGKVZBvSp2i_3mCToSN0l5mxROkf1nAfjyvVCewAIFYc1-tjrdiS_lCEmAXWOSDC6-82to9JMGfgDaEi9vDgeWTZ-OvBZC-CFq4ZUKjfFep9a5j8sMbR58W0ZTJhzhjpu9X6TO_wGp4k3Ewo7cQZx7AWHugrD2AozUnhzYDew9OsTN6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -767,7 +817,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Kxm5LPI3wfzO2jI7UjY3gcuDa22LiAZ1iM_TaF3oVib-8YxMKH03aOOwT4-IvX8mu4dF1GWaIZIEmqXmD-XniG9yA4yng84fhDQK7haPFTdy3szp-bmGxGvB9M79qavxn74hJDDQuXb6THZwU9-Q2wkIxbwuJSFR2c29jqyPNUIMucRpRVlU2jpxkgX_ZHhh/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/jHBxMcloM373R1QdZuCpOmHKjJaX6Oo4pm3aAxvQgiUp4gPR2vSJ2v_t5sbI1Ie0XpawNJoP2y8GbvP-b_-nKl8WPmi0LWr6ayJ93JHvUqKu86TF2RsZsb8t6caZ7FZ5yZmA1aFerxJ3l2zfR_Um3FzcyGxjmwph2QL8RK08uKLFJwnMNbpUxKTlG-4JQrJs/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -777,7 +827,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YotdfY8-PiuE42Ho0mVbjOLfhkXRby_4t3_b1reLTBVdiZmiLu6Xt5JbwUMVkC92ycMo5-2SThfNmIQeDM2Cla_BXC6ywBklCl2iYI8IHA79L-TxUWy_bfomG1d6uoRQGLeXfVPp5yP4sfwj2NUgwPEbxp2HX2RavrCOiT0OMRh_azyiQFbG0AyTjpqSl4Iy/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/zy-9RdYCgvMuHT0I0jbATRBylmHVYtsjjrQQYuMFMOI0BlS3S4yPqLUbAu_9E1EArqbjZ9M31HApLKb2SEEy-1ok1-LZxuoYCpoox1xBPM7jci4jPQjv9sToSsyFcoVxkpDGSQ-f-jGU_rHoTxFW87j3-FlUqwIrixhrs6u62eKEYPokUOSBfJgl6zPCZHGq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -787,7 +837,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/uK9qe6IEqOIVQ1tKi_3pI-ZM9KgY6xAAlLSqBwVh0aZhyXdKCCxt-RY7J9Gh7f4o2ChKb1FecnGWpz-Vg86YmCapoAsc1w0nhVuOl61yRhh_ZdMii5k97hxaGtS83mtmT9M91BweCDXR3lgzqlxpjN4_YOdU2WuNm__jDmJbjVMCeyJ6Y3OydyylACKhuG9I/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/JlcVr0i9H02WCT3PExkieTHGYkOiYWm_2aQkRLzTltNZCiIVU6109jJIX7vEJF4ctCmzDSS9nIRXQIZae-WFQ4B4qxElNfE5Fomm9sIHIAbkWqAIRIMuGgy8RQtmE-VQt1rAbx3mAKe2I3v2ZHbo7Vz3HWN9EtJ39bhrqLr7W-RIXQtPW8NIrObOXucElffK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "«نمایش اسرائیلی» یا حمله واقعی؟ عطوان ۱۱ تناقض در ماجرای هواپیمای اماراتی را فاش کرد",
@@ -978,56 +1028,6 @@
       "flag": "🇮🇷",
       "category": "اقتصادی",
       "rssDescription": "کتابخانه وزن دینا در عصر چهارشنبه هشتم مهرماه ۱۴۰۵، میزبان آیین رونمایی از کتاب «آنها که نمی‌شناختیم» نوشته زهره مسکنی بود. این کتاب ۱۲ داستان کوتاه را برای مخاطب بزرگسال در ۱۳۲ صفحه در بر می‌گیرد که با قیمت ۴۰۰ هزار تومان توسط نشر پلات به چاپ رسیده و امکان خرید اینترنتی آن در سایت ایران‌کتاب نیز فراهم شده است."
-    },
-    {
-      "title": "بیانیه وزارت امور خارجه درباره محدودیت‌های اعمال شده بر تردد هوایی بین ایران و عراق",
-      "link": "https://www.ilna.ir/fa/tiny/news-1846883",
-      "date": "2026-10-01T20:09:16.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "وزارت امور خارجه درباره محدودیت‌های اعمال شده بر تردد هوایی بین ایران و عراق بیانیه‌ای منتشر کرد."
-    },
-    {
-      "title": "نتانیاهو به دنبال کشاندن ترامپ به یک مهلکه جدید با ایران است",
-      "link": "https://www.tasnimnews.ir/fa/news/1405/07/09/3711437/%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%85%D9%87%D9%84%DA%A9%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-01T20:09:00.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-      "source": "تسنیم",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "یک منبع آگاه منطقه‌ای: برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به یک مهلکه جدید با ایران است."
-    },
-    {
-      "title": "سه نفتکش اماراتی در هرمز هدف قرار گرفتند",
-      "link": "https://www.tabnak.ir/fa/news/1396892/%D8%B3%D9%87-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%87%D8%B1%D9%85%D8%B2-%D9%87%D8%AF%D9%81-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-      "date": "2026-10-01T20:09:00.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "سه نفتکش مورد اصابت قرار گرفته در تنگه هرمز تحت مالکیت یا اجاره امارات هستند."
-    },
-    {
-      "title": "نظرسنجی فاکس نیوز: ۶۳ درصد آمریکایی ها معتقدند ترامپ وضعیت اقتصاد آمریکا را بدتر کرده است",
-      "link": "https://www.irna.ir/news/86280536/%D9%86%D8%B8%D8%B1%D8%B3%D9%86%D8%AC%DB%8C-%D9%81%D8%A7%DA%A9%D8%B3-%D9%86%DB%8C%D9%88%D8%B2-%DB%B6%DB%B3-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%87%D8%A7-%D9%85%D8%B9%D8%AA%D9%82%D8%AF%D9%86%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF",
-      "date": "2026-10-01T20:08:55.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۸",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران - ایرنا - جدیدترین نظرسنجی شبکه خبری فاکس نیوز نشان می دهد که ۶۳ درصد مردم این کشور معتقدند دونالد ترامپ وضعیت اقتصاد آمریکا را بدتر کرده است."
-    },
-    {
-      "title": "تکذیب ادعای بلومبرگ درباره جزئیات مذاکرات ایران-آمریکا",
-      "link": "https://www.imna.ir/news/1008972/%D8%AA%DA%A9%D8%B0%DB%8C%D8%A8-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
-      "date": "2026-10-01T20:08:39.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۸",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "یک منبع آگاه ادعای بلومبرگ درباره پیشنهاد هسته‌ای ایران به طرف آمریکایی را «مطلقاً نادرست» خواند."
     }
   ],
   "categorizedNews": {
@@ -1073,7 +1073,7 @@
         "rssDescription": "مرحله نهایی چهل‌وپنجمین دوره مسابقات قرآن کریم و اذان کارکنان رسمی، نیروهای وظیفه و وابستگان نیروی زمینی سپاه پاسداران انقلاب اسلامی شامگاه پنجشنبه نهم مهر به میزبانی دانشگاه علوم و فنون زمینی حضرت امیرالمؤمنین (ع) در اصفهان برگزار شد."
       },
       {
-        "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکیدداشتند",
+        "title": "سردار قاآنی: رهبر شهید انقلاب بر ضرورت اتحاد ملت‌های اسلامی تأکید داشتند",
         "link": "https://www.qudsonline.ir/news/1168435/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%82%D8%A7%D8%A2%D9%86%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A8%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF%D8%AF%D8%A7%D8%B4%D8%AA%D9%86%D8%AF",
         "date": "2026-10-01T21:03:40.000Z",
         "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۰۳",
@@ -1181,16 +1181,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "وزارت امور خارجه با انتشار بیانیه ای، اقدامات و تحرکات غیرقانونی و ضد بشری دولت آمریکا برای اخلال در مراودات تجاری و حمل و نقل هوایی ایران با سایر کشورها را محکوم کرد."
-      },
-      {
-        "title": "بیانیه وزارت امور خارجه درباره محدودیت‌های اعمال شده بر تردد هوایی بین ایران و عراق",
-        "link": "https://www.ilna.ir/fa/tiny/news-1846883",
-        "date": "2026-10-01T20:09:16.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "وزارت امور خارجه درباره محدودیت‌های اعمال شده بر تردد هوایی بین ایران و عراق بیانیه‌ای منتشر کرد."
       }
     ],
     "اقتصادی": [
@@ -1297,6 +1287,16 @@
     ],
     "ورزشی": [
       {
+        "title": "واکنش مدیر آکادمی استقلال به درگیری در بازی با شاهین",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249285",
+        "date": "2026-10-01T22:03:12.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۰۳",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "مدیر آکادمی استقلال گفت: هرکس به اعتبار آبی‌ها لطمه بزند، برخورد می‌کنیم و این اتفاق درباره عوامل بازی نوجوانان استقلال و شاهین انجام می‌شود."
+      },
+      {
         "title": "جای خالی رونالدو برای پرتغال حس نشد/ برد اول آلمان با کلوپ و توقف هلند",
         "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3711452/%D8%AC%D8%A7%DB%8C-%D8%AE%D8%A7%D9%84%DB%8C-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D8%AA%D8%BA%D8%A7%D9%84-%D8%AD%D8%B3-%D9%86%D8%B4%D8%AF-%D8%A8%D8%B1%D8%AF-%D8%A7%D9%88%D9%84-%D8%A2%D9%84%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%DA%A9%D9%84%D9%88%D9%BE-%D9%88-%D8%AA%D9%88%D9%82%D9%81-%D9%87%D9%84%D9%86%D8%AF",
         "date": "2026-10-01T21:41:23.000Z",
@@ -1388,6 +1388,16 @@
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "موزه نهضت مقاومت جنوب با اعتبار ۵۰۰ میلیارد ریال بازطراحی شد",
+        "link": "https://www.mehrnews.com/news/6964989/%D9%85%D9%88%D8%B2%D9%87-%D9%86%D9%87%D8%B6%D8%AA-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%AC%D9%86%D9%88%D8%A8-%D8%A8%D8%A7-%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1-%DB%B5%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF-%D8%B1%DB%8C%D8%A7%D9%84-%D8%A8%D8%A7%D8%B2%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D8%B4%D8%AF",
+        "date": "2026-10-01T22:10:28.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "بوشهر - مدیرکل میراث فرهنگی، گردشگری و صنایع دستی استان بوشهر گفت: موزه شهید رئیسعلی دلواری با اعتبار ۵۰۰ میلیارد ریال بازطراحی و افتتاح شد."
+      },
       {
         "title": "ادعای منابع سعودی از ورود یک عامل انتحاری به مسجد الحرام",
         "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3711458/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D9%85%D9%86%D8%A7%D8%A8%D8%B9-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D8%A7%D8%B2-%D9%88%D8%B1%D9%88%D8%AF-%DB%8C%DA%A9-%D8%B9%D8%A7%D9%85%D9%84-%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%DB%8C-%D8%A8%D9%87-%D9%85%D8%B3%D8%AC%D8%AF-%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D9%85",
@@ -1561,16 +1571,6 @@
         "rssDescription": "سنندج- دادستان نظامی استان کردستان از بازداشت یک مامور انتظامی در پی انتشار فیلم رفتار غیرقانونی با دو دانش‌آموز خبر داد و گفت: این مامور پس از طی مراحل قانونی به زندان معرفی شده است."
       },
       {
-        "title": "واژگونی سمند در جاده جلفا-مرند ۴ مصدوم برجا گذاشت",
-        "link": "https://www.mehrnews.com/news/6964977/%D9%88%D8%A7%DA%98%DA%AF%D9%88%D9%86%DB%8C-%D8%B3%D9%85%D9%86%D8%AF-%D8%AF%D8%B1-%D8%AC%D8%A7%D8%AF%D9%87-%D8%AC%D9%84%D9%81%D8%A7-%D9%85%D8%B1%D9%86%D8%AF-%DB%B4-%D9%85%D8%B5%D8%AF%D9%88%D9%85-%D8%A8%D8%B1%D8%AC%D8%A7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA",
-        "date": "2026-10-01T20:53:53.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "تبریز- سخنگوی اورژانس آذربایجان‌شرقی از مصدومیت چهار نفر در پی واژگونی یک دستگاه سواری سمند در جاده جلفا-مرند خبر داد."
-      },
-      {
         "title": "سردار نقدی: ملت ایران تا تحقق خون‌خواهی رهبر شهید از پای نخواهد نشست",
         "link": "https://www.irna.ir/news/86280538/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%DB%8C-%D9%85%D9%84%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%A7-%D8%AA%D8%AD%D9%82%D9%82-%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D8%B2-%D9%BE%D8%A7%DB%8C-%D9%86%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
         "date": "2026-10-01T20:53:26.000Z",
@@ -1613,6 +1613,16 @@
     ],
     "علمی و فناوری": [
       {
+        "title": "اثر شگفت‌انگیز توت‌سیاه بر باکتری‌های روده",
+        "link": "https://www.isna.ir/news/1405070905868/%D8%A7%D8%AB%D8%B1-%D8%B4%DA%AF%D9%81%D8%AA-%D8%A7%D9%86%DA%AF%DB%8C%D8%B2-%D8%AA%D9%88%D8%AA-%D8%B3%DB%8C%D8%A7%D9%87-%D8%A8%D8%B1-%D8%A8%D8%A7%DA%A9%D8%AA%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C-%D8%B1%D9%88%D8%AF%D9%87",
+        "date": "2026-10-01T22:15:00.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۵",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "براساس پژوهشی جدید، توت سفید و سیاه ممکن است با تغییر باکتری‌های روده، متابولیسم را تحت تاثیر قرار دهند."
+      },
+      {
         "title": "مهارت های مهم تا سال 2030/ اینفوگرافیک",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3249284",
         "date": "2026-10-01T22:01:10.000Z",
@@ -1625,6 +1635,26 @@
     ],
     "بین‌الملل": [
       {
+        "title": "حمله مزدوران عربستان به مناطق مختلف یمن",
+        "link": "https://www.mehrnews.com/news/6964988/%D8%AD%D9%85%D9%84%D9%87-%D9%85%D8%B2%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D9%85%D8%AE%D8%AA%D9%84%D9%81-%DB%8C%D9%85%D9%86",
+        "date": "2026-10-01T22:12:52.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۱۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "مزدوران یمنی وابسته به عربستان از انجام ۲۷ حمله هوایی به مناطق استقرار نیروهای انصارالله یمن خبر دادند."
+      },
+      {
+        "title": "منبع آگاه منطقه‌ای: برنامه نتانیاهو کشاندن ترامپ به مهلکه جدید با ایران است",
+        "link": "https://www.qudsonline.ir/news/1168436/%D9%85%D9%86%D8%A8%D8%B9-%D8%A2%DA%AF%D8%A7%D9%87-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A7%DB%8C-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%D9%85%D9%87%D9%84%DA%A9%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF",
+        "date": "2026-10-01T22:09:43.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۲:۰۹",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "یک منبع آگاه منطقه‌ای به شبکه خبری پرس‌ تی‌وی گفت: برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به مهلکه جدید با ایران است."
+      },
+      {
         "title": "جنگ جهانی دوم برای کشورهای درگیر چقدر خرج برداشت؟(+عکس)",
         "link": "https://www.asriran.com/fa/news/1195509/%D8%AC%D9%86%DA%AF-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%AF%D9%88%D9%85-%D8%A8%D8%B1%D8%A7%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1-%DA%86%D9%82%D8%AF%D8%B1-%D8%AE%D8%B1%D8%AC-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA-%D8%B9%DA%A9%D8%B3",
         "date": "2026-10-01T22:00:02.000Z",
@@ -1633,6 +1663,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "در این‌جا مقایسه‌ای کنار هم از هزینه‌های نظامی ایالات متحده، بریتانیا، آلمان، ژاپن و اتحاد جماهیر شوروی را می‌بینید؛ ارقامی که با توجه به تورم امروز تعدیل شده‌اند."
+      },
+      {
+        "title": "وزیر راه از پیگیری برای حل مشکلات پروازی ایران و عراق خبر داد",
+        "link": "https://www.mehrnews.com/news/6964986/%D9%88%D8%B2%DB%8C%D8%B1-%D8%B1%D8%A7%D9%87-%D8%A7%D8%B2-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AD%D9%84-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%88-%D8%B9%D8%B1%D8%A7%D9%82-%D8%AE%D8%A8%D8%B1-%D8%AF%D8%A7%D8%AF",
+        "date": "2026-10-01T21:54:30.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۵۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "وزیر راه و شهرسازی در جریان دیدار سفیر عراق در تهران، از پیگیری برای حل مشکلات پروازی میان تهران-بغداد خبر داد."
       },
       {
         "title": "ترامپ در پی افزایش قیمت گازوئیل در آمریکا دست به دامن اروپایی‌ها شد",
@@ -1685,6 +1725,16 @@
         "rssDescription": "فرمانده نیروی قدس سپاه تصریح کرد: آمریکای جنایتکار با ذلت این روزها دم خود را روی کولش گذاشته و از عراق اخراج شده است و مردم عراق امروز به برکت مقاومت آن ملت و قهرمانان جبهه مقاومت، اخراج آمریکا را جشن گرفته‌اند."
       },
       {
+        "title": "تحریم‌های جدید آمریکا علیه ایران",
+        "link": "https://www.khabaronline.ir/news/2282384/%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
+        "date": "2026-10-01T21:31:30.000Z",
+        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۳۱",
+        "source": "خبرآنلاین",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "وزارت خزانه‌داری آمریکا روز پنج‌شنبه از اعمال تحریم‌های جدید علیه ایران خبر داد."
+      },
+      {
         "title": "سردار قاآنی: جبهه مقاومت با عزت به مسیر خود ادامه می‌دهد/آمریکا از عراق اخراج شد",
         "link": "https://www.irna.ir/news/86280550/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%82%D8%A7%D8%A2%D9%86%DB%8C-%D8%AC%D8%A8%D9%87%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%A8%D8%A7-%D8%B9%D8%B2%D8%AA-%D8%A8%D9%87-%D9%85%D8%B3%DB%8C%D8%B1-%D8%AE%D9%88%D8%AF-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D9%85%DB%8C-%D8%AF%D9%87%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
         "date": "2026-10-01T21:27:15.000Z",
@@ -1713,16 +1763,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "اواخر شامگاه پنج شنبه سه استان صنعاء، صعده و تعز در یمن شاهد حملات شدید موشکی و هوایی ارتش سعودی بود."
-      },
-      {
-        "title": "وقوع یک حادثه دریایی دیگر در تنگه هرمز",
-        "link": "https://www.mehrnews.com/news/6964976/%D9%88%D9%82%D9%88%D8%B9-%DB%8C%DA%A9-%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2",
-        "date": "2026-10-01T20:52:03.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۵۲",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "سازمان عملیات تجارت دریایی انگلیس از وقوع یک حادثه دریایی در تنگه هرمز خبر داد."
       },
       {
         "title": "سردار قاآنی: نسل جدید حزب‌الله صهیونیست‌ها را مورد هجوم قرار می‌دهد",
@@ -1873,46 +1913,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "کاظمی قمی گفت پس از اخراج نظامی آمریکا، استقلال اقتصادی عراق و وضعیت حشدالشعبی محور تحولات این کشور است."
-      },
-      {
-        "title": "نتانیاهو به دنبال کشاندن ترامپ به یک مهلکه جدید با ایران است",
-        "link": "https://www.tasnimnews.ir/fa/news/1405/07/09/3711437/%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%DA%A9%D8%B4%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%85%D9%87%D9%84%DA%A9%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-01T20:09:00.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-        "source": "تسنیم",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "یک منبع آگاه منطقه‌ای: برنامه نتانیاهو برای پیروزی در انتخابات، کشاندن ترامپ به یک مهلکه جدید با ایران است."
-      },
-      {
-        "title": "سه نفتکش اماراتی در هرمز هدف قرار گرفتند",
-        "link": "https://www.tabnak.ir/fa/news/1396892/%D8%B3%D9%87-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%87%D8%B1%D9%85%D8%B2-%D9%87%D8%AF%D9%81-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-        "date": "2026-10-01T20:09:00.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۹",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "سه نفتکش مورد اصابت قرار گرفته در تنگه هرمز تحت مالکیت یا اجاره امارات هستند."
-      },
-      {
-        "title": "نظرسنجی فاکس نیوز: ۶۳ درصد آمریکایی ها معتقدند ترامپ وضعیت اقتصاد آمریکا را بدتر کرده است",
-        "link": "https://www.irna.ir/news/86280536/%D9%86%D8%B8%D8%B1%D8%B3%D9%86%D8%AC%DB%8C-%D9%81%D8%A7%DA%A9%D8%B3-%D9%86%DB%8C%D9%88%D8%B2-%DB%B6%DB%B3-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%87%D8%A7-%D9%85%D8%B9%D8%AA%D9%82%D8%AF%D9%86%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF",
-        "date": "2026-10-01T20:08:55.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۸",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران - ایرنا - جدیدترین نظرسنجی شبکه خبری فاکس نیوز نشان می دهد که ۶۳ درصد مردم این کشور معتقدند دونالد ترامپ وضعیت اقتصاد آمریکا را بدتر کرده است."
-      },
-      {
-        "title": "تکذیب ادعای بلومبرگ درباره جزئیات مذاکرات ایران-آمریکا",
-        "link": "https://www.imna.ir/news/1008972/%D8%AA%DA%A9%D8%B0%DB%8C%D8%A8-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
-        "date": "2026-10-01T20:08:39.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۰۸",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "یک منبع آگاه ادعای بلومبرگ درباره پیشنهاد هسته‌ای ایران به طرف آمریکایی را «مطلقاً نادرست» خواند."
       }
     ],
     "متفرقه": [
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9Op8P7cl5WbfcPODfebWB_8JPuHHrPj7yEW8g10D_V3u-KbEAuCRGWj8YYbe82mn0n6FTIJ10-pJ_QETiqaF3usZwroWH_KgT7tmYZvEuWeuwwUbWfmVscgwzaaXhk3KOZMCR6hNDIgyB6KQLVFDfsT0ZoF2artRY2iJUEJF2AcSxw_YdD6sqpBtS0WMgTZ0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/1fSGJ7-cORJw7BcfQhWRM00hslJ3F5jESsZcpHOj3XoaSmxQ9uQ5NtZpEVp4Yk1wm0scPbaxky11k5f7JJTRRw2r8u9g16a8JSUAyx6_J7wINnubhI3OaZDrWn0fcAMpZO8T_2qU-HPgresS1gzIy9wpdTMZcDUbmzMusbgj_o2bSd82p6ktlmXrIzJbfsKi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/gCd9bRLXY1hEU6lNG8ZTxGtGfbFJ3HYzEDX7MUa5kYLTMQ1TACx2dsgzxQXqRRJDysS2ztdAJjMwEskUkuS69_R4JI8id9zCuF0wrEyBJ76sp_oV41q7MHVvdBUSm2vGLcUGIFQGp_tdfH4q3RUgYRLKoxJgBsWYTQjbtRQqJnLP9l1U-4AzhL8OSwI80IOl/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/kvJFPpX-F9ug2mCKUaGKVZBvSp2i_3mCToSN0l5mxROkf1nAfjyvVCewAIFYc1-tjrdiS_lCEmAXWOSDC6-82to9JMGfgDaEi9vDgeWTZ-OvBZC-CFq4ZUKjfFep9a5j8sMbR58W0ZTJhzhjpu9X6TO_wGp4k3Ewo7cQZx7AWHugrD2AozUnhzYDew9OsTN6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2023,7 +2023,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/Kxm5LPI3wfzO2jI7UjY3gcuDa22LiAZ1iM_TaF3oVib-8YxMKH03aOOwT4-IvX8mu4dF1GWaIZIEmqXmD-XniG9yA4yng84fhDQK7haPFTdy3szp-bmGxGvB9M79qavxn74hJDDQuXb6THZwU9-Q2wkIxbwuJSFR2c29jqyPNUIMucRpRVlU2jpxkgX_ZHhh/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/jHBxMcloM373R1QdZuCpOmHKjJaX6Oo4pm3aAxvQgiUp4gPR2vSJ2v_t5sbI1Ie0XpawNJoP2y8GbvP-b_-nKl8WPmi0LWr6ayJ93JHvUqKu86TF2RsZsb8t6caZ7FZ5yZmA1aFerxJ3l2zfR_Um3FzcyGxjmwph2QL8RK08uKLFJwnMNbpUxKTlG-4JQrJs/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -2033,7 +2033,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YotdfY8-PiuE42Ho0mVbjOLfhkXRby_4t3_b1reLTBVdiZmiLu6Xt5JbwUMVkC92ycMo5-2SThfNmIQeDM2Cla_BXC6ywBklCl2iYI8IHA79L-TxUWy_bfomG1d6uoRQGLeXfVPp5yP4sfwj2NUgwPEbxp2HX2RavrCOiT0OMRh_azyiQFbG0AyTjpqSl4Iy/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/zy-9RdYCgvMuHT0I0jbATRBylmHVYtsjjrQQYuMFMOI0BlS3S4yPqLUbAu_9E1EArqbjZ9M31HApLKb2SEEy-1ok1-LZxuoYCpoox1xBPM7jci4jPQjv9sToSsyFcoVxkpDGSQ-f-jGU_rHoTxFW87j3-FlUqwIrixhrs6u62eKEYPokUOSBfJgl6zPCZHGq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
@@ -2043,7 +2043,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/uK9qe6IEqOIVQ1tKi_3pI-ZM9KgY6xAAlLSqBwVh0aZhyXdKCCxt-RY7J9Gh7f4o2ChKb1FecnGWpz-Vg86YmCapoAsc1w0nhVuOl61yRhh_ZdMii5k97hxaGtS83mtmT9M91BweCDXR3lgzqlxpjN4_YOdU2WuNm__jDmJbjVMCeyJ6Y3OydyylACKhuG9I/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/JlcVr0i9H02WCT3PExkieTHGYkOiYWm_2aQkRLzTltNZCiIVU6109jJIX7vEJF4ctCmzDSS9nIRXQIZae-WFQ4B4qxElNfE5Fomm9sIHIAbkWqAIRIMuGgy8RQtmE-VQt1rAbx3mAKe2I3v2ZHbo7Vz3HWN9EtJ39bhrqLr7W-RIXQtPW8NIrObOXucElffK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       }
     ]
   }
