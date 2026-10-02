@@ -58,3 +58,16 @@ canvas{width:100%;height:auto;display:block;border-radius:13px;box-shadow:0 5px 
 .template-swatch.ribbon{background:linear-gradient(135deg,#d8b25b,#fff0a8 48%,#b77a19)}
 @media(min-width:951px){.photo-controls-grid{grid-template-columns:1fr 1fr 1fr;gap:7px}.photo-settings-top .file-preview{max-width:150px}}
 @media(max-width:950px){.app{grid-template-columns:1fr}.sidebar{position:static;max-height:none}}
+
+/* ===== منوهای کشویی ===== */
+.acc-head{cursor:pointer;user-select:none;-webkit-user-select:none}
+.acc-head:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.section>h3.acc-head{display:flex;justify-content:space-between;align-items:center}
+.section>h3.acc-head::after,.subsec>.subsec-title.acc-head::after{content:'▾';font-size:15px;transition:transform .2s}
+.section.collapsed>h3.acc-head::after,.subsec.sub-collapsed>.subsec-title.acc-head::after{transform:rotate(90deg)}
+.section.collapsed>.body{display:none}
+.subsec>.subsec-title.acc-head{display:flex;justify-content:space-between;align-items:center;padding:2px 0}
+.subsec.sub-collapsed>:not(.subsec-title){display:none}
+.subsec.sub-collapsed>.subsec-title{margin-bottom:0}
+.acc-tools{margin:0 0 8px}
+.acc-tools button{margin-top:0;padding:6px;font-size:12px}
