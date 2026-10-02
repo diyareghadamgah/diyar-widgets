@@ -38,7 +38,13 @@ jobs:
           WORKER_URL: ${{ secrets.DIYAR_WORKER_URL }}
         run: |
           set -euo pipefail
-          curl -sf \
+          if [ -z "${PUBLISH_SECRET}" ] || [ -z "${WORKER_URL}" ]; then
+            echo "::error::Repository secrets DIYAR_PUBLISH_SECRET and/or DIYAR_WORKER_URL are missing. Add them in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          # Remove a trailing slash so the final URL never contains '//aggregate'.
+          WORKER_URL="${WORKER_URL%/}"
+          curl -sf --max-time 30 --retry 2 --retry-delay 5 \
             -H "X-Publish-Secret: ${PUBLISH_SECRET}" \
             "${WORKER_URL}/aggregate" \
             -o /tmp/new-stats.json
@@ -91,7 +97,7 @@ jobs:
               console.log('At least one real stat changed — writing the new snapshot (with its fresh updatedAt).');
               fs.writeFileSync('visitor/stats.json', JSON.stringify(newStats, null, 2) + '\n');
             } else {
-              console.log('None of the 6 real stats changed — leaving visitor/stats.json untouched (updatedAt preserved).');
+              console.log('None of the 5 real stats changed — leaving visitor/stats.json untouched (updatedAt preserved).');
             }
           "
 
@@ -105,5 +111,18 @@ jobs:
             echo "No change in visitor/stats.json — nothing to commit."
           else
             git commit -m "chore: update visitor stats.json"
-            git push
+            # update-news.yml also pushes to this branch on the same
+            # 10-minute schedule, so a plain `git push` can be rejected
+            # when both finish within the same minute. Rebase onto the
+            # latest remote state and retry a few times.
+            for attempt in 1 2 3; do
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              if git push; then
+                exit 0
+              fi
+              echo "Push attempt ${attempt} failed, retrying..."
+              sleep $((attempt * 5))
+            done
+            echo "::error::Could not push visitor/stats.json after 3 attempts."
+            exit 1
           fi
