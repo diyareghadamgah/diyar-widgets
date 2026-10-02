@@ -108,7 +108,7 @@
    * embed-time concern — sending a tracking beacon is something only
    * `embed.js` does, so it owns this constant.
    */
-  const TRACK_ENDPOINT = 'https://REPLACE-WITH-YOUR-WORKER.workers.dev/hit';
+  const TRACK_ENDPOINT = 'https://diyar-visitor-tracker.diyareghadamgah.workers.dev/hit';
 
   /**
    * Resolves the tracking endpoint actually used for this page. A page can
