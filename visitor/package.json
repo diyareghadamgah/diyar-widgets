@@ -14,13 +14,13 @@
     "dark-mode",
     "diyar-widgets"
   ],
-  "homepage": "https://github.com/maghool51/diyar-widgets/tree/main/visitor#readme",
+  "homepage": "https://github.com/diyareghadamgah/diyar-widgets/tree/main/visitor#readme",
   "bugs": {
-    "url": "https://github.com/maghool51/diyar-widgets/issues"
+    "url": "https://github.com/diyareghadamgah/diyar-widgets/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maghool51/diyar-widgets.git",
+    "url": "git+https://github.com/diyareghadamgah/diyar-widgets.git",
     "directory": "visitor"
   },
   "license": "MIT",

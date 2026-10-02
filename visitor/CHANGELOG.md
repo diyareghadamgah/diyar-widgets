@@ -194,7 +194,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete project scaffolding: `README.md`, `CHANGELOG.md`, MIT `LICENSE`,
   `package.json`, `.gitignore`, and a standalone SVG icon set.
 
-[1.3.0]: https://github.com/maghool51/diyar-widgets/releases/tag/visitor-v1.3.0
-[1.2.0]: https://github.com/maghool51/diyar-widgets/releases/tag/visitor-v1.2.0
-[1.1.0]: https://github.com/maghool51/diyar-widgets/releases/tag/visitor-v1.1.0
-[1.0.0]: https://github.com/maghool51/diyar-widgets/releases/tag/visitor-v1.0.0
+[1.3.0]: https://github.com/diyareghadamgah/diyar-widgets/releases/tag/visitor-v1.3.0
+[1.2.0]: https://github.com/diyareghadamgah/diyar-widgets/releases/tag/visitor-v1.2.0
+[1.1.0]: https://github.com/diyareghadamgah/diyar-widgets/releases/tag/visitor-v1.1.0
+[1.0.0]: https://github.com/diyareghadamgah/diyar-widgets/releases/tag/visitor-v1.0.0

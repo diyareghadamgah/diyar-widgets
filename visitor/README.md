@@ -4,7 +4,7 @@
 visitor statistics — with first-class RTL Persian support, animated theming,
 and zero framework overhead.**
 
-Part of the [`diyar-widgets`](https://github.com/maghool51/diyar-widgets)
+Part of the [`diyar-widgets`](https://github.com/diyareghadamgah/diyar-widgets)
 collection. This package lives at `diyar-widgets/visitor`.
 
 ![Diyar Visitor Widget preview](./preview.png)
@@ -62,7 +62,7 @@ The simplest way to add the widget to any page you don't control the
 `<head>` of — including Blogfa templates:
 
 ```html
-<script src="https://maghool51.github.io/diyar-widgets/visitor/embed.js"></script>
+<script src="https://diyareghadamgah.github.io/diyar-widgets/visitor/embed.js"></script>
 ```
 
 Drop that one tag anywhere in your page's body and a widget instance
@@ -98,7 +98,7 @@ directly:
 ### Option 3 — Clone the monorepo
 
 ```bash
-git clone https://github.com/maghool51/diyar-widgets.git
+git clone https://github.com/diyareghadamgah/diyar-widgets.git
 cd diyar-widgets/visitor
 npm run serve
 ```
@@ -432,7 +432,7 @@ Contributions are welcome! To propose a change:
 3. Match the existing code style: strict mode, JSDoc on every exported
    function, and CSS custom properties for anything themeable.
 4. Run `npm run format` before committing.
-5. Open a pull request against `maghool51/diyar-widgets` describing
+5. Open a pull request against `diyareghadamgah/diyar-widgets` describing
    the motivation and behavior of your change.
 6. Update `CHANGELOG.md` under an `[Unreleased]` heading.
 

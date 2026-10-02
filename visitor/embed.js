@@ -5,7 +5,7 @@
  * Lets any page — a plain static HTML page, a GitHub Pages site, or a
  * Blogfa template — render the widget with exactly one script tag:
  *
- *   <script src="https://maghool51.github.io/diyar-widgets/visitor/embed.js"></script>
+ *   <script src="https://diyareghadamgah.github.io/diyar-widgets/visitor/embed.js"></script>
  *
  * This file is intentionally the ONLY thing a third-party page needs to
  * reference. It locates its own directory, injects the widget's
@@ -41,7 +41,7 @@
  * `visitor.js`) is resolved against. Because this is computed from the
  * *actual* URL the browser used to fetch this file, it works correctly
  * both at the repository root and on a GitHub Pages project subpath
- * (e.g. `https://maghool51.github.io/diyar-widgets/visitor/`).
+ * (e.g. `https://diyareghadamgah.github.io/diyar-widgets/visitor/`).
  *
  * DEPENDENCY LOADING ORDER
  * --------------------------------------------------------------------------
@@ -108,7 +108,27 @@
    * embed-time concern — sending a tracking beacon is something only
    * `embed.js` does, so it owns this constant.
    */
-  const TRACK_ENDPOINT = 'https://diyar-visitor-tracker.diyar-visitor.workers.dev/hit';
+  const TRACK_ENDPOINT = 'https://REPLACE-WITH-YOUR-WORKER.workers.dev/hit';
+
+  /**
+   * Resolves the tracking endpoint actually used for this page. A page can
+   * override the constant above WITHOUT editing this file by adding a
+   * `data-worker` attribute to the embed tag, with the base URL of its own
+   * Cloudflare Worker (no trailing `/hit` needed):
+   *
+   *   <script src=".../visitor/embed.js"
+   *           data-worker="https://diyar-visitor-tracker.YOUR-NAME.workers.dev"></script>
+   *
+   * @param {HTMLScriptElement|null} scriptEl
+   * @returns {string}
+   */
+  function resolveTrackEndpoint(scriptEl) {
+    const attr = scriptEl && scriptEl.getAttribute('data-worker');
+    if (attr && /^https?:\/\//i.test(attr.trim())) {
+      return attr.trim().replace(/\/+$/, '').replace(/\/hit$/, '') + '/hit';
+    }
+    return TRACK_ENDPOINT;
+  }
 
   /**
    * Modules loaded, in this exact order, before a widget can be mounted.
@@ -124,7 +144,7 @@
    * define *before* the embed `<script>` tag:
    *
    *   <script>window.__DIYAR_VISITOR_DEBUG = true;</script>
-   *   <script src="https://maghool51.github.io/diyar-widgets/visitor/embed.js"></script>
+   *   <script src="https://diyareghadamgah.github.io/diyar-widgets/visitor/embed.js"></script>
    *
    * @param {'warn'|'error'} level
    * @param {...*} args
@@ -496,9 +516,9 @@
    *
    * @returns {void}
    */
-  function sendVisitBeacon() {
+  function sendVisitBeacon(endpoint) {
     try {
-      if (!TRACK_ENDPOINT || TRACK_ENDPOINT.indexOf('REPLACE-WITH-YOUR-WORKER') !== -1) {
+      if (!endpoint || endpoint.indexOf('REPLACE-WITH-YOUR-WORKER') !== -1) {
         // No real Worker configured yet — nothing to send to.
         return;
       }
@@ -506,12 +526,12 @@
       if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
         // An empty-but-valid payload is enough; the Worker reads visitor
         // identity from request headers (IP, User-Agent), not the body.
-        navigator.sendBeacon(TRACK_ENDPOINT, new Blob([], { type: 'text/plain' }));
+        navigator.sendBeacon(endpoint, new Blob([], { type: 'text/plain' }));
         return;
       }
 
       if (typeof fetch === 'function') {
-        fetch(TRACK_ENDPOINT, { method: 'POST', keepalive: true, mode: 'cors' }).catch(() => {});
+        fetch(endpoint, { method: 'POST', keepalive: true, mode: 'cors' }).catch(() => {});
       }
     } catch (error) {
       embedLog('warn', 'Visit beacon failed (widget rendering is unaffected):', error);
@@ -523,9 +543,8 @@
    * `<script src="embed.js">` tag present on the page).
    */
   function init() {
-    sendVisitBeacon();
-
     const scriptEl = getOwnScriptElement();
+    sendVisitBeacon(resolveTrackEndpoint(scriptEl));
 
     if (!scriptEl) {
       embedLog('error', 'Could not locate the embed <script> element; aborting.');
