@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-02T23:43:25.676Z",
-  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۳:۴۳",
+  "lastUpdate": "2026-10-02T23:55:41.443Z",
+  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۳:۵۵",
   "totalNews": 100,
   "failedSources": [
     "فارس",
@@ -30,6 +30,16 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "حمله به یک نفتکش در نزدیکی سواحل عمان",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712016/%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%B9%D9%85%D8%A7%D9%86",
+      "date": "2026-10-02T23:39:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۳:۳۹",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "سازمان تجارت دریایی بریتانیا از وقوع یک حادثه امنیتی برای یک نفت‌کش در 4 مایلی شرق سواحل عمان خبر داد."
+    },
     {
       "title": "گزارشها از حمله به یک نفتکش در نزدیکی سواحل عمان",
       "link": "https://www.isna.ir/news/1405071106404/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4%D9%87%D8%A7-%D8%A7%D8%B2-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%B9%D9%85%D8%A7%D9%86",
@@ -99,6 +109,26 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "تهران- ایرنا- ارتش کره جنوبی بامداد شنبه اعلام کرد که کره شمالی یک پرتابه ناشناس به «دریای شرقی» (دریای ژاپن) در شرق شبه‌جزیره کره شلیک کرد."
+    },
+    {
+      "title": "نیویورک‌تایمز: ترامپ بودجه ملی را خرج تبلیغات شخصی کرد",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712013/%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D8%AA%D8%A7%DB%8C%D9%85%D8%B2-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D9%85%D9%84%DB%8C-%D8%B1%D8%A7-%D8%AE%D8%B1%D8%AC-%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA-%D8%B4%D8%AE%D8%B5%DB%8C-%DA%A9%D8%B1%D8%AF",
+      "date": "2026-10-02T22:47:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۷",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "نیویورک‌تایمز گزارش داد ترامپ بودجه دولتی را صرف تبلیغات شخصی خود از جمله موضوع جنگ علیه ایران کرده است."
+    },
+    {
+      "title": "مقام ارشد نظامی: مقاومت معادلات نظامی آمریکا در عراق را به چالش کشید",
+      "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712012/%D9%85%D9%82%D8%A7%D9%85-%D8%A7%D8%B1%D8%B4%D8%AF-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B9%D8%A7%D8%AF%D9%84%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82-%D8%B1%D8%A7-%D8%A8%D9%87-%DA%86%D8%A7%D9%84%D8%B4-%DA%A9%D8%B4%DB%8C%D8%AF",
+      "date": "2026-10-02T22:46:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۶",
+      "source": "تسنیم",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "دبیرکل کتائب سیدالشهدا تصریح کرد که مقاومت با تکیه بر توان عملیاتی خود، تمامی معادلات آمریکا را به چالش کشید."
     },
     {
       "title": "مهدی طائب: آمریکا همان فرعون است",
@@ -695,7 +725,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SonJ3yg9P-is35X_a4a_cl2sh4q9SMmUEwkenqWkysuhdliDy9VsCPyJOUdbbM6fvuziohfzADdgR0kXmGCv0QIfLJXgSzQ4zSLvwPm_O8r7L6H0AnpK-hT_R4Mg6WcamJjKPs86dOXupKh4mMsG2C5qWomU3Ct1PO-s0ZVcDYSzn7i9RphUzBTnq-5C94s1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/S4GF5Vh-a1ukt5lXVgIrCzH4e_cGIL3wyrnqLz_q8ANxN-najGm6-VWCu2JKEW4FhqzurTDDoH9XqJNi0lmcR2n1ASRhvmcQU2F67-ImLVWBkDMuT-A6xOgWrrfd14BZoOZDvojmZaJ5Oi5R0A_zRCbe2yo-3jXX_2vy--a18WpD5DyK3tM0I6MNW_FyPTAq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -705,7 +735,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7S7Bql0D2NBjTixduouTqauNTyQymuK5XEzSJ2iWhjCWQrYCAfyLsY6HEcqv1yFHnrWyL4ULimsELauPYrr8V4y2pb6Qza-kObGpaE4LtKc33xdIo36aSV-HTUBLmMa5MFMwL0okDRaRN-7s7_klFK-uUkvQrULY_a-RBZyqun80xfHmxNGjiWSJ-Kic04ME/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Lbo915Euwut-rai9zBIqUhtZ-YzG_8Di7IDFKxO7T9oVDilwIXt0dEOdmNzCMSlc2X9KIvVsgpicJsh-Md9pIZWsx4UweCUtaJihkds7BhMzOIhXfY6JDGSaO9kOHzrCf4Y2Sdt3XQVlphPlJoXRJW86CFoKFlDgcXlnwmvh4FN4LwS5r_CfHwS-fVP9cJnE/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -715,7 +745,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/kWa9X7dpmuw_ZQXzahDJN1pjJPCwhFM-KWGvt5zVIuW7AQRkD5JZIyC5mT75DhNX1AaY3dRk5thlMKoPK3Kh6h6KY9-PLgwSEhZafKCgPezcG7BlnQNMyoMkYrQTvY9Z9Nkg0Ex8MyqW92X9i48VrCuXtIsQ0MS8Zc-lXEI94-KRfyCGkKg0LIWbjP8gRGlf/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/qb4VgXe6eBlgj2bQjNR1Y3uXl-wRfr25mtZlfy5l5qIC5Cdh4mMmEJ3-pbVY7da3FFoKYzSXOMmsiQaIoc4dvXRrqoXGvH1VK1FBNGkGSyVEr21tWnGSnruhNiEwm_987TGGEz8okjrHC60kKeZepTMmaY3PdsQzXAfi6Wl73LBtRKX4XJFzPff7kgE2vKFX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -725,7 +755,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PcFu8-kpmxyaNnzj1Vcm7ZCS00b7u63M2uPc9-fsHbh7p4IF8C66saF4Hj624UxKf6cR97EoHQt49nnu0ZYlFAncGFWi0wp6XpMciTZwRPRNLGFNpeAIN64XrkCufWZkm7zm02EhoZ13fsE3eqOOP5iiIiiaEgN5EkoDRyeHc7sqUYcI8EJyBYQi3uhacDgf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/-1dGfFmHLW_dF_WhEbZyzKLLvT5606UkVzkdDRtnKXbCK5AlpNsYh6JijQck3e9hOQKY0xJaVN8uFeXjlQB0EQJZYiThPg3Zv-2M5gamV6ZfYQfnYk3SiREBox3d5KInTbGx3-TTp_p6p4yXRdrnmaV5vj24BvYTDijjBKAUqR2fpvtxkReEjb9m5ol7TOYi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -735,7 +765,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/-7d0LOEACylBbCPL-xzIPf7GItdJqIEUw3-FegPD5xDgRcvG8fHz_U4gkariIONH1m_cD6RfosoaeG6EVEvurGdxSz3Ve7pQTP2VlbilWaXIHdxMAJkYweeC3i0TixWF0Ir6haojIy0HUtrXWjJlIZI-fm_oHGBrxqXzp2vh0vsKLFhWrQZselKiAnRrD9cE/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/XnhKmZajQkZol0xaPVTpvSYcL6DWgj4YH6JI6hjI73I2sNVVIhRhUNOtX-2Usniql8oqBBUk-SCl_tV3SMCp2srq_T-VqDuKVMIVAjcL7cHwTwsgoywDkdN_raRocEtD36j_CkCzW2MDlQRdBMApqdKHWEc4MChk5xH8FpgbaVeD4IseyT6eZX30xsbqEXpD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "تصاویری از آتش‌سوزی‌ گسترده‌ای در مناطق مختلف شهر ریاض، پایتخت عربستان + فیلم",
@@ -996,36 +1026,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "تکرار و شباهت ویدئوهای اخیر در مورد استعفا، نشان از یک جریان هدفمند برای روایت‌سازی رسانه‌ای دارد که در آن ادعاهای شخصی، بدون راستی‌آزمایی به عنوان واقعیت‌های اجتماعی عرضه می‌شوند."
-    },
-    {
-      "title": "تیراندازی در ایوان دو کشته جا گذاشت",
-      "link": "https://www.asriran.com/fa/news/1195812/%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D8%AF%D9%88-%DA%A9%D8%B4%D8%AA%D9%87-%D8%AC%D8%A7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA",
-      "date": "2026-10-02T19:50:49.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "با حضور ماموران انتظامی در محل و انجام بررسی‌های نخستین مشخص شد فردی با مراجعه به درِ منزل‌ مسکونی، با استفاده از سلاح گرم به سمت ساکنان خانه تیراندازی کرده که در این حادثه زن و مرد ساکن خانه جان خود را از دست دادند."
-    },
-    {
-      "title": "خبر خوش برای بازنشستگان؛ معوقات واریز می‌شود",
-      "link": "https://www.tabnak.ir/fa/news/1396979/%D8%AE%D8%A8%D8%B1-%D8%AE%D9%88%D8%B4-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%D8%A7%D9%86-%D9%85%D8%B9%D9%88%D9%82%D8%A7%D8%AA-%D9%88%D8%A7%D8%B1%DB%8C%D8%B2-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
-      "date": "2026-10-02T19:50:36.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی زمان پرداخت معوقات اردیبهشت‌ماه بازنشستگان تامین اجتماعی را اعلام کرد."
-    },
-    {
-      "title": "خداحافظی مبهم آقای گل؛ «تمام شد، اما شاید برگردم»",
-      "link": "https://www.ilna.ir/fa/tiny/news-1847158",
-      "date": "2026-10-02T19:47:15.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۴۷",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "آرتم زیوبا، بهترین گلزن تاریخ فوتبال روسیه، در گفت‌وگویی کوتاه از پایان دوران حرفه‌ای خود خبر داد، اما چند ثانیه بعد احتمال بازگشت به میدان را مطرح کرد تا آینده‌اش همچنان در هاله‌ای از ابهام باقی بماند."
     }
   ],
   "categorizedNews": {
@@ -1089,16 +1089,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "تهران-ایرنا- حسن روحانی رئیس جمهور پیشین جمهوری اسلامی در پی فوت خواهرعباس عراقچی وزیر امور خارجه پیام تسلیت داد."
-      },
-      {
-        "title": "خبر خوش برای بازنشستگان؛ معوقات واریز می‌شود",
-        "link": "https://www.tabnak.ir/fa/news/1396979/%D8%AE%D8%A8%D8%B1-%D8%AE%D9%88%D8%B4-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%D8%A7%D9%86-%D9%85%D8%B9%D9%88%D9%82%D8%A7%D8%AA-%D9%88%D8%A7%D8%B1%DB%8C%D8%B2-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
-        "date": "2026-10-02T19:50:36.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی زمان پرداخت معوقات اردیبهشت‌ماه بازنشستگان تامین اجتماعی را اعلام کرد."
       }
     ],
     "اقتصادی": [
@@ -1303,16 +1293,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "ورزشکاران ایران در چهاردهمین روز از بازی‌های آسیایی آیچی ناگویا، در ۷ رشته ورزشی به مصاف رقیبان خود خواهند رفت."
-      },
-      {
-        "title": "خداحافظی مبهم آقای گل؛ «تمام شد، اما شاید برگردم»",
-        "link": "https://www.ilna.ir/fa/tiny/news-1847158",
-        "date": "2026-10-02T19:47:15.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۴۷",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "آرتم زیوبا، بهترین گلزن تاریخ فوتبال روسیه، در گفت‌وگویی کوتاه از پایان دوران حرفه‌ای خود خبر داد، اما چند ثانیه بعد احتمال بازگشت به میدان را مطرح کرد تا آینده‌اش همچنان در هاله‌ای از ابهام باقی بماند."
       }
     ],
     "فرهنگی و هنری": [
@@ -1467,16 +1447,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "فرمانده انتظامی شهرستان ایوان استان ایلام از وقوع تیراندازی به دنبال اختلاف شخصی‌ و کشته شدن دو نفر در این حادثه خبر داد."
-      },
-      {
-        "title": "تیراندازی در ایوان دو کشته جا گذاشت",
-        "link": "https://www.asriran.com/fa/news/1195812/%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D8%AF%D9%88-%DA%A9%D8%B4%D8%AA%D9%87-%D8%AC%D8%A7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA",
-        "date": "2026-10-02T19:50:49.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "با حضور ماموران انتظامی در محل و انجام بررسی‌های نخستین مشخص شد فردی با مراجعه به درِ منزل‌ مسکونی، با استفاده از سلاح گرم به سمت ساکنان خانه تیراندازی کرده که در این حادثه زن و مرد ساکن خانه جان خود را از دست دادند."
       }
     ],
     "علمی و فناوری": [
@@ -1492,6 +1462,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "حمله به یک نفتکش در نزدیکی سواحل عمان",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712016/%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%B9%D9%85%D8%A7%D9%86",
+        "date": "2026-10-02T23:39:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۳:۳۹",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "سازمان تجارت دریایی بریتانیا از وقوع یک حادثه امنیتی برای یک نفت‌کش در 4 مایلی شرق سواحل عمان خبر داد."
+      },
       {
         "title": "گزارشها از حمله به یک نفتکش در نزدیکی سواحل عمان",
         "link": "https://www.isna.ir/news/1405071106404/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4%D9%87%D8%A7-%D8%A7%D8%B2-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%B9%D9%85%D8%A7%D9%86",
@@ -1531,6 +1511,26 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "تهران- ایرنا- ارتش کره جنوبی بامداد شنبه اعلام کرد که کره شمالی یک پرتابه ناشناس به «دریای شرقی» (دریای ژاپن) در شرق شبه‌جزیره کره شلیک کرد."
+      },
+      {
+        "title": "نیویورک‌تایمز: ترامپ بودجه ملی را خرج تبلیغات شخصی کرد",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712013/%D9%86%DB%8C%D9%88%DB%8C%D9%88%D8%B1%DA%A9-%D8%AA%D8%A7%DB%8C%D9%85%D8%B2-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D9%85%D9%84%DB%8C-%D8%B1%D8%A7-%D8%AE%D8%B1%D8%AC-%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA-%D8%B4%D8%AE%D8%B5%DB%8C-%DA%A9%D8%B1%D8%AF",
+        "date": "2026-10-02T22:47:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۷",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "نیویورک‌تایمز گزارش داد ترامپ بودجه دولتی را صرف تبلیغات شخصی خود از جمله موضوع جنگ علیه ایران کرده است."
+      },
+      {
+        "title": "مقام ارشد نظامی: مقاومت معادلات نظامی آمریکا در عراق را به چالش کشید",
+        "link": "https://www.tasnimnews.ir/fa/news/1405/07/11/3712012/%D9%85%D9%82%D8%A7%D9%85-%D8%A7%D8%B1%D8%B4%D8%AF-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B9%D8%A7%D8%AF%D9%84%D8%A7%D8%AA-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82-%D8%B1%D8%A7-%D8%A8%D9%87-%DA%86%D8%A7%D9%84%D8%B4-%DA%A9%D8%B4%DB%8C%D8%AF",
+        "date": "2026-10-02T22:46:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۶",
+        "source": "تسنیم",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "دبیرکل کتائب سیدالشهدا تصریح کرد که مقاومت با تکیه بر توان عملیاتی خود، تمامی معادلات آمریکا را به چالش کشید."
       },
       {
         "title": "مهدی طائب: آمریکا همان فرعون است",
@@ -1969,7 +1969,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SonJ3yg9P-is35X_a4a_cl2sh4q9SMmUEwkenqWkysuhdliDy9VsCPyJOUdbbM6fvuziohfzADdgR0kXmGCv0QIfLJXgSzQ4zSLvwPm_O8r7L6H0AnpK-hT_R4Mg6WcamJjKPs86dOXupKh4mMsG2C5qWomU3Ct1PO-s0ZVcDYSzn7i9RphUzBTnq-5C94s1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/S4GF5Vh-a1ukt5lXVgIrCzH4e_cGIL3wyrnqLz_q8ANxN-najGm6-VWCu2JKEW4FhqzurTDDoH9XqJNi0lmcR2n1ASRhvmcQU2F67-ImLVWBkDMuT-A6xOgWrrfd14BZoOZDvojmZaJ5Oi5R0A_zRCbe2yo-3jXX_2vy--a18WpD5DyK3tM0I6MNW_FyPTAq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1979,7 +1979,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7S7Bql0D2NBjTixduouTqauNTyQymuK5XEzSJ2iWhjCWQrYCAfyLsY6HEcqv1yFHnrWyL4ULimsELauPYrr8V4y2pb6Qza-kObGpaE4LtKc33xdIo36aSV-HTUBLmMa5MFMwL0okDRaRN-7s7_klFK-uUkvQrULY_a-RBZyqun80xfHmxNGjiWSJ-Kic04ME/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Lbo915Euwut-rai9zBIqUhtZ-YzG_8Di7IDFKxO7T9oVDilwIXt0dEOdmNzCMSlc2X9KIvVsgpicJsh-Md9pIZWsx4UweCUtaJihkds7BhMzOIhXfY6JDGSaO9kOHzrCf4Y2Sdt3XQVlphPlJoXRJW86CFoKFlDgcXlnwmvh4FN4LwS5r_CfHwS-fVP9cJnE/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1989,7 +1989,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/kWa9X7dpmuw_ZQXzahDJN1pjJPCwhFM-KWGvt5zVIuW7AQRkD5JZIyC5mT75DhNX1AaY3dRk5thlMKoPK3Kh6h6KY9-PLgwSEhZafKCgPezcG7BlnQNMyoMkYrQTvY9Z9Nkg0Ex8MyqW92X9i48VrCuXtIsQ0MS8Zc-lXEI94-KRfyCGkKg0LIWbjP8gRGlf/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/qb4VgXe6eBlgj2bQjNR1Y3uXl-wRfr25mtZlfy5l5qIC5Cdh4mMmEJ3-pbVY7da3FFoKYzSXOMmsiQaIoc4dvXRrqoXGvH1VK1FBNGkGSyVEr21tWnGSnruhNiEwm_987TGGEz8okjrHC60kKeZepTMmaY3PdsQzXAfi6Wl73LBtRKX4XJFzPff7kgE2vKFX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -1999,7 +1999,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PcFu8-kpmxyaNnzj1Vcm7ZCS00b7u63M2uPc9-fsHbh7p4IF8C66saF4Hj624UxKf6cR97EoHQt49nnu0ZYlFAncGFWi0wp6XpMciTZwRPRNLGFNpeAIN64XrkCufWZkm7zm02EhoZ13fsE3eqOOP5iiIiiaEgN5EkoDRyeHc7sqUYcI8EJyBYQi3uhacDgf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/-1dGfFmHLW_dF_WhEbZyzKLLvT5606UkVzkdDRtnKXbCK5AlpNsYh6JijQck3e9hOQKY0xJaVN8uFeXjlQB0EQJZYiThPg3Zv-2M5gamV6ZfYQfnYk3SiREBox3d5KInTbGx3-TTp_p6p4yXRdrnmaV5vj24BvYTDijjBKAUqR2fpvtxkReEjb9m5ol7TOYi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -2009,7 +2009,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/-7d0LOEACylBbCPL-xzIPf7GItdJqIEUw3-FegPD5xDgRcvG8fHz_U4gkariIONH1m_cD6RfosoaeG6EVEvurGdxSz3Ve7pQTP2VlbilWaXIHdxMAJkYweeC3i0TixWF0Ir6haojIy0HUtrXWjJlIZI-fm_oHGBrxqXzp2vh0vsKLFhWrQZselKiAnRrD9cE/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/XnhKmZajQkZol0xaPVTpvSYcL6DWgj4YH6JI6hjI73I2sNVVIhRhUNOtX-2Usniql8oqBBUk-SCl_tV3SMCp2srq_T-VqDuKVMIVAjcL7cHwTwsgoywDkdN_raRocEtD36j_CkCzW2MDlQRdBMApqdKHWEc4MChk5xH8FpgbaVeD4IseyT6eZX30xsbqEXpD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "شایعه عجیب و کذب درباره آقا مجتبی از زبان مادر همسرشان",
