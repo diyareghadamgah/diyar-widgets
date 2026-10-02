@@ -1,5 +1,5 @@
 const NEWS_URL =
-"https://raw.githubusercontent.com/maghool51/diyar-widgets/main/diyar-news/news.json?t=" + Date.now();
+"https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/diyar-news/news.json?t=" + Date.now();
 
 
 let allNews = [];

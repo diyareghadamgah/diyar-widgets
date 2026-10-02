@@ -48,7 +48,7 @@ Aggregator خودکار اخبار ایران و جهان از ۱۷ منبع م�
 فایل `news.json` از طریق CORS-friendly `raw.githubusercontent.com` قابل fetch از هر دامنه‌ای است:
 
 ```
-https://raw.githubusercontent.com/maghool51/diyar-widgets/main/diyar-news/news.json
+https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/diyar-news/news.json
 ```
 
 ساختار خروجی:

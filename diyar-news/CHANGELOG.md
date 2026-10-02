@@ -49,7 +49,7 @@
 
 ### 🐛 رفع باگ بحرانی (ساختار مخزن)
 مشخص شد `diyar-news` یک زیرپوشه داخل مخزن `diyar-widgets` است، نه یک مخزن مستقل. این باعث دو مشکل واقعی می‌شد:
-- **آدرس نادرست داده:** `news.js` و `news-ticker.html` به `raw.githubusercontent.com/maghool51/diyar-news/...` اشاره می‌کردند که وجود ندارد؛ اصلاح شد به `raw.githubusercontent.com/maghool51/diyar-widgets/main/diyar-news/news.json`.
+- **آدرس نادرست داده:** `news.js` و `news-ticker.html` به `raw.githubusercontent.com/diyareghadamgah/diyar-news/...` اشاره می‌کردند که وجود ندارد؛ اصلاح شد به `raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/diyar-news/news.json`.
 - **Workflow اجرا نمی‌شد:** GitHub Actions فقط از `.github/workflows/` در **ریشه‌ی مخزن** اجرا می‌شود. فایل workflow باید در ریشه‌ی `diyar-widgets` قرار بگیرد؛ `working-directory: diyar-news` به آن اضافه شد تا دستورات در مسیر درست اجرا شوند، و `cache-dependency-path` برای `setup-node` هم اصلاح شد.
 - مستندات `README.md` برای توضیح این ساختار به‌روزرسانی شد.
 
