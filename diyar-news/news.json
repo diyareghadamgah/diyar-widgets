@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-02T00:12:22.349Z",
-  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۰:۱۲",
+  "lastUpdate": "2026-10-02T00:39:09.113Z",
+  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۹",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,66 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "ورود ۲۰۰۰ خودروی هیبریدی به ناوگان تاکسیرانی تهران تا یک ماه دیگر",
+      "link": "https://www.isna.ir/news/1405070805260/%D9%88%D8%B1%D9%88%D8%AF-%DB%B2%DB%B0%DB%B0%DB%B0-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%DB%8C-%D9%87%DB%8C%D8%A8%D8%B1%DB%8C%D8%AF%DB%8C-%D8%A8%D9%87-%D9%86%D8%A7%D9%88%DA%AF%D8%A7%D9%86-%D8%AA%D8%A7%DA%A9%D8%B3%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%AA%D8%A7-%DB%8C%DA%A9-%D9%85%D8%A7%D9%87",
+      "date": "2026-10-02T00:32:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۲",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "سازمان مدیریت و نظارت بر تاکسیرانی شهرداری تهران از انعقاد قرارداد خرید ۲۰۰۰ خودروی هیبریدی برای ناوگان تاکسیرانی خبر داد و گفت: این خودروها با یک باک بنزین امکان پیمایش حدود ۱۸۰۰ کیلومتر در سطح شهر را دارند و پیش‌بینی می‌شود تا حدود یک ماه آینده وارد چرخه ناوگان شوند."
+    },
+    {
+      "title": "دزدی ژنتیکی ۱۰۰هزار ساله؛ کشف ویروسی که بخشی از دی‌ان‌ای ما را به سرقت برده است",
+      "link": "https://www.asriran.com/fa/news/1195521/%D8%AF%D8%B2%D8%AF%DB%8C-%DA%98%D9%86%D8%AA%DB%8C%DA%A9%DB%8C-100%D9%87%D8%B2%D8%A7%D8%B1-%D8%B3%D8%A7%D9%84%D9%87-%DA%A9%D8%B4%D9%81-%D9%88%DB%8C%D8%B1%D9%88%D8%B3%DB%8C-%DA%A9%D9%87-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D8%AF%DB%8C-%D8%A7%D9%86-%D8%A7%DB%8C-%D9%85%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B3%D8%B1%D9%82%D8%AA-%D8%A8%D8%B1%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
+      "date": "2026-10-02T00:30:02.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "پژوهشگران دریافته‌اند که ویروس مولوسکوم حدود ۱۰۰هزار سال پیش ژنی را از انسان به سرقت برده و هنوز از آن برای آلوده‌سازی سلول‌ها استفاده می‌کند."
+    },
+    {
+      "title": "دو پیازه آلو شیرازی یک غذای ساده و سریع",
+      "link": "https://www.tabnak.ir/fa/news/1396885/%D8%AF%D9%88-%D9%BE%DB%8C%D8%A7%D8%B2%D9%87-%D8%A2%D9%84%D9%88-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2%DB%8C-%DB%8C%DA%A9-%D8%BA%D8%B0%D8%A7%DB%8C-%D8%B3%D8%A7%D8%AF%D9%87-%D9%88-%D8%B3%D8%B1%DB%8C%D8%B9",
+      "date": "2026-10-02T00:30:02.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "دو پیازه آلو شیرازی یک غذای ساده و سریع است که با سیب‌زمینی، پیاز و چند ادویه ساده تهیه می‌شود. در این دستور، سیب‌زمینی‌ها نیم‌پز و سپس همراه با پیاز داغ و ادویه تفت داده می‌شوند تا غذایی خوش‌طعم و مناسب سرو با نان آماده شود. اگر دوست داشته باشید، می‌توانید کمی رب گوجه‌ فرنگی هم به آن اضافه کنید."
+    },
+    {
+      "title": "فال حافظ جمعه ۱۰ مهرماه ۱۴۰۵",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249206",
+      "date": "2026-10-02T00:30:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ جمعه 10 مهر را بخوانید."
+    },
+    {
+      "title": "سی‌ان‌ان: کوشنر در شرکت‌های مرتبط با صنایع نظامی اسرائیل سرمایه‌گذاری کرده است",
+      "link": "https://www.isna.ir/news/1405071006023/%D8%B3%DB%8C-%D8%A7%D9%86-%D8%A7%D9%86-%DA%A9%D9%88%D8%B4%D9%86%D8%B1-%D8%AF%D8%B1-%D8%B4%D8%B1%DA%A9%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%B1%D8%AA%D8%A8%D8%B7-%D8%A8%D8%A7-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C",
+      "date": "2026-10-02T00:19:09.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۱۹",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "شبکه آمریکایی سی‌ان‌ان در گزارشی تحقیقی اعلام کرد جارد کوشنر، داماد و فرستاده ویژه دونالد ترامپ در حالی نقش مهمی در مذاکرات مربوط به توقف جنگ غزه ایفا می‌کرد که شرکت سرمایه‌گذاری متعلق به او، از طریق سهام خود در شرکت «فینیکس فایننشال»، در مجموعه‌ای از شرکت‌های مرتبط با صنایع نظامی اسرائیل سرمایه‌گذاری داشته است."
+    },
+    {
+      "title": "شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان",
+      "link": "https://www.irna.ir/news/86280576/%D8%B4%D9%86%DB%8C%D8%AF%D9%87-%D8%B4%D8%AF%D9%86-%D8%B5%D8%AF%D8%A7%DB%8C-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%B4%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86",
+      "date": "2026-10-02T00:15:32.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۱۵",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران - ایرنا - منابع خبری از شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان خبر دادند."
+    },
     {
       "title": "رئیس شورای عالی سیاسی یمن: عربستان بار دیگر دروغ های خود را تکرار کرد",
       "link": "https://www.irna.ir/news/86280573/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%B9%D8%A7%D9%84%DB%8C-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%DB%8C%D9%85%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1%D9%88%D8%BA-%D9%87%D8%A7%DB%8C-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1",
@@ -631,16 +691,6 @@
       "rssDescription": "یک منبع آگاه منطقه‌ای تاکید کرد: در ایران، با رصد کامل تحرکات دشمن آمریکایی و صهیونیستی و سناریوخوانی از احتمال حماقت جدید، این آمادگی وجود دارد که در صورت هر گونه شرارت دشمن، ضربات سخت و ویران کننده به‌گونه‌ای به رژیم صهیونیستی و آمریکا وارد خواهد شد که از پرچم دروغین و بازی جعلی خود پشیمان شوند."
     },
     {
-      "title": "روایت محمد مهاجری از جلسه اصلاح طلبان با رئیس‌ جمهور",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3249279",
-      "date": "2026-10-01T21:16:33.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۶",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "یک فعال سیاسی با اشاره به برگزاری جلسه توجیهی پویش حمایت از تفاهمنامه اسلام‌آباد گفت: در این جلسه بر جدی گرفتن دیپلماسی به‌عنوان راهی برای خروج از وضعیت فعلی و پایان دادن به حالت «نه جنگ و نه صلح» تأکید شد و اینکه وقتی توصیه به مذاکره و گفت‌وگو می‌کنیم، نبابد عزت ملت ایران و سر بلندی بودن آنها زیر سؤال رود."
-    },
-    {
       "title": "پرتغال بدون رونالدو برد",
       "link": "https://www.isna.ir/news/1405071006012/%D9%BE%D8%B1%D8%AA%D8%BA%D8%A7%D9%84-%D8%A8%D8%AF%D9%88%D9%86-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%D8%A8%D8%B1%D8%AF",
       "date": "2026-10-01T21:13:45.000Z",
@@ -841,26 +891,6 @@
       "rssDescription": "یک سوپرنفتکش در مسیرجنوبی تنگه هرمز هدف قرار گرفت."
     },
     {
-      "title": "رییس اتاق ایران: بخش خصوصی ظرفیت عبور دادن کشور از مشکلات اقتصادی را دارد",
-      "link": "https://www.isna.ir/news/1405071006010/%D8%B1%DB%8C%DB%8C%D8%B3-%D8%A7%D8%AA%D8%A7%D9%82-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%AE%D8%B4-%D8%AE%D8%B5%D9%88%D8%B5%DB%8C-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%B9%D8%A8%D9%88%D8%B1-%D8%AF%D8%A7%D8%AF%D9%86-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B2-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C",
-      "date": "2026-10-01T20:42:26.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۴۲",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "مراسم بزرگداشت روز صنعت و معدن آذربایجان‌شرقی با حضور قائم‌مقام وزیر صنعت، معدن و تجارت در امور بازرگانی، استاندار آذربایجان‌شرقی، رئیس اتاق بازرگانی، صنایع، معادن و کشاورزی ایران، معاون راهبری و سیاست‌گذاری اقتصادی وزیر امور اقتصادی و دارایی، نمایندگان مجلس شورای اسلامی، رییس اتاق بازرگانی تبریز و جمعی از فعالان اقتصادی در تبریز برگزار شد."
-    },
-    {
-      "title": "بازگشت ۲ هنرمند به ایران و ۳ درگذشت",
-      "link": "https://www.isna.ir/news/1405070906002/%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%DB%B2-%D9%87%D9%86%D8%B1%D9%85%D9%86%D8%AF-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%88-%DB%B3-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA",
-      "date": "2026-10-01T20:42:00.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۴۲",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "بازگشت دو هنرمند به وطن، ۳ درگذشت، معرفی نماینده ایران به اسکار، حواشی یک تئاتر، چرا گروه «لیان» کنسرتش را لغو کرد؟، امیدوارم «کارآگاه علوی» ادامه پیدا نکند، چگونه میدان‌دار جنگ روایت‌ها باشیم؟،هنوز باید با شخصیت‌های ۹۰ ساله رقابت کنیم!، محمود دولت‌آبادی در میان شانس‌های نوبل، آب چگونه به گنجینه تهران می‌رسد؟ ماجرای عمارت خیابان سعدی و... از جمله اخبار این هفته فرهنگی هنری ایسنا بودند."
-    },
-    {
       "title": "اهدای هدیه ویژه رهبر انقلاب به خانواده دو شهید حزب‌الله لبنان",
       "link": "https://www.imna.ir/news/1008983/%D8%A7%D9%87%D8%AF%D8%A7%DB%8C-%D9%87%D8%AF%DB%8C%D9%87-%D9%88%DB%8C%DA%98%D9%87-%D8%B1%D9%87%D8%A8%D8%B1-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A8%D9%87-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%AF%D9%88-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%84%D9%87-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
       "date": "2026-10-01T20:40:15.000Z",
@@ -889,16 +919,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "تهران - ایرنا - وزیر راه و شهرسازی در دیدار سفیر عراق در تهران با بیان پیوندهای عمیق تاریخی، فرهنگی و مذهبی ایران و عراق، توسعه ارتباطات حمل‌ونقلی ۲ کشور در بخش‌های ریلی، جاده‌ای، هوایی و دریایی را مورد تأکید قرار داد و از پیگیری برای حل مشکلات پروازی میان تهران - بغداد خبر داد."
-    },
-    {
-      "title": "سازمان عملیات تجارت دریایی انگلیس: یک نفتکش در تنگه هرمز مورد هدف قرار گرفت",
-      "link": "https://www.irna.ir/news/86280544/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D9%88%D8%B1%D8%AF",
-      "date": "2026-10-01T20:35:26.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۵",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران - ایرنا - سازمان عملیات تجارت دریایی انگلیس (UKMTO) در گزارشی در روز پنجشنبه اعلام کرد که یک نفتکش در تنگه هرمز مورد اصابت یک پرتابه ناشناس قرار گرفته و دچار آتش سوزی شده است."
     },
     {
       "title": "پایان نمادین بازی قونیه‌اسپور و فلسطین در دقیقه ۸۹:۵۹",
@@ -978,7 +998,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Wyv6rW0VEu1EsnMr9HSO6vuBl6sLtI_afJ1LQg9E5DHaf38773HqgvmLKrJRm5xXHqdZ--Se4eleaV984XAslBhXT7YrSHQwlNMp818Ehlgb1_OPiJsSeOcH6YXx44gO_NnDj2Uq3cAo-t3NHAGfqaSpJoXJlBMW-DoKYDz0uaVR4aHdFTSWKM5d18B2hxzd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9kGJ-pgJg1DN9E6E_HheWCchjFIegeQMftbWD8rfYrcYBzrU2y38enyQSXvhGChxkMAkN1U-rMycrnZs8FMOpDFklntAthXGZYoIGKJ0XR35WDUhcggNe164-kEFzlYV-o8JCgDggujXJTyLwG2JOc6f_4mdmCSWHkWJdfsurU39HAildv3c5rRjZpmM_KVd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -988,7 +1008,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/ZVNPx00JJI4na3EuPjza-Rp_rsTKGD4R0LJ0eQPSZfc753MK1KPuhqEIGx39RhYNEBJu-mmVCWbR-SaSVC5FjC1LVvKLelQyW16-4o-9vXG1-lL02rEjUO29exIqHxqGyEjF7zL_omzybesJ5mCNDzSNNkux3Digqs27MLLJDiv1sCyKP7s-1Y1ITh6O2mxn/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/XqTV1Cf0A2kAnFW55U1bl2I9yhMSQMLHrSZjUMFiE0a4JclxNCiqKKqrds34V__SflzKdXHrPg-hVwIIoZcp-o6cByH5uXwEI4YmQj6JY5OHYzESOHdd-oripVNCltRQSrU5eZDxrx7iAtvsJGD-MHZ2FVZLgt4B3iTHtNwe7tA3rq2ViGHFWzo57SttZdWe/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -998,7 +1018,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/KmKokIraD_x9qjL_NJMd-ttlik5D2IRYGkK4gIfRxU8iYcMmhqIU8Iafsf8KxoNETw4IOAXv_D5uRlFlSUcDZhTsYqYApflmvC7PeA7PiI157IqeqJNCaxYhciTY6JzbNPjwYuGF2xqvAwUn963ZqYMZiuv5kucYCXsEA5bPV7r125fKNm0wWZ5fSqumgZK9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/dmii6ePWCD9QgRoivwnLEtXNSr2OLjVXBtAIdHMrQfZKGxK0loTJdG3uPy_u9_K1k2ydJWHM2eEVTF4Ds4lPbLy6qfsiHRJJXmOKlelUDSArkfBP4SbpvzBk6TW-XH8jtlghWGOiq2M6B6SZzvJp4anS3cnRqjy0cVuB-WOJndQ6LXMF4bp4N_abBC4zBGL5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -1008,27 +1028,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/J9BA8Kgq8xZhaH8CZAANpJCZXi2cXysCCIOGuBVXW_-9_hb448ZvCbVCkAfdPIujsVIuc-sOFWHoumSCDsM5ttOM26zjAJYNyRSo65J8Aj3RL4WYJae8vKu11pUKdvACpIcwsTt_sLFapH5H2-Ei8Du-oDzlfxVQD4luDiFcrEO3jTkFE-_dDskRxGrsQDd4/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-    },
-    {
-      "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1846859",
-      "date": "2026-10-01T20:31:00.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qVwtJm_8hiwhcc-L_bnXh9LHTlgLKVruOrJJabB8iw3aVQuRQy-xQPJLRcgn_UcIOfZm4padqx1oVU-RifJ4Rm1UB-UC4KGHUzUHBANSBKr4e9Ii8FoEyJabfp3UPrWbuIJzODB9aNJaWDn6iTJnWvDvoblzoxfT1-1fbxY5tLtbGI1bW40Ir4Vzf2jrd0-f/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
-    },
-    {
-      "title": "«نمایش اسرائیلی» یا حمله واقعی؟ عطوان ۱۱ تناقض در ماجرای هواپیمای اماراتی را فاش کرد",
-      "link": "https://www.ilna.ir/fa/tiny/news-1846850",
-      "date": "2026-10-01T20:31:00.000Z",
-      "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "روایت اسرائیل از حادثه هواپیمای فلای‌دبی با پرسش‌های متعددی درباره هویت خلبانان، نحوه ورود مسافران به کابین و ادعای حمله تروریستی روبه‌رو شده است؛ عبدالباری عطوان با اشاره به این موارد معتقد است که کل ماجرا می‌تواند یک سناریوی طراحی‌شده باشد."
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/KgfQsD4S6U-vdYINysmJTeps8YW4OrPjc2fEgV00wjnwBUpbMhLrX8c9nhLsYtMqWqjDT9pj3QR9AxfKOWSVp426Bif-NXJ74zwmiJB1Xm_zXJ0Lw_ivcClaOg_3L0dSP-uMgwTaNcHFFgdUdbeXR6vQoezHz-fxkGwkfj4uurASk-9gIH3zfUfV4fT36cA_/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     }
   ],
   "categorizedNews": {
@@ -1052,16 +1052,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "ارومیه - مردم ارومیه در تداوم شب های مقاومت ملی در حمایت از رهبری و انقلاب، در خیابان تجمع کردند."
-      },
-      {
-        "title": "روایت محمد مهاجری از جلسه اصلاح طلبان با رئیس‌ جمهور",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3249279",
-        "date": "2026-10-01T21:16:33.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۱:۱۶",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "یک فعال سیاسی با اشاره به برگزاری جلسه توجیهی پویش حمایت از تفاهمنامه اسلام‌آباد گفت: در این جلسه بر جدی گرفتن دیپلماسی به‌عنوان راهی برای خروج از وضعیت فعلی و پایان دادن به حالت «نه جنگ و نه صلح» تأکید شد و اینکه وقتی توصیه به مذاکره و گفت‌وگو می‌کنیم، نبابد عزت ملت ایران و سر بلندی بودن آنها زیر سؤال رود."
       },
       {
         "title": "چهل‌وپنجمین دوره مسابقات قرآنی نیروی زمینی سپاه",
@@ -1146,6 +1136,16 @@
     ],
     "اقتصادی": [
       {
+        "title": "ورود ۲۰۰۰ خودروی هیبریدی به ناوگان تاکسیرانی تهران تا یک ماه دیگر",
+        "link": "https://www.isna.ir/news/1405070805260/%D9%88%D8%B1%D9%88%D8%AF-%DB%B2%DB%B0%DB%B0%DB%B0-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%DB%8C-%D9%87%DB%8C%D8%A8%D8%B1%DB%8C%D8%AF%DB%8C-%D8%A8%D9%87-%D9%86%D8%A7%D9%88%DA%AF%D8%A7%D9%86-%D8%AA%D8%A7%DA%A9%D8%B3%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%AA%D8%A7-%DB%8C%DA%A9-%D9%85%D8%A7%D9%87",
+        "date": "2026-10-02T00:32:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۲",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "سازمان مدیریت و نظارت بر تاکسیرانی شهرداری تهران از انعقاد قرارداد خرید ۲۰۰۰ خودروی هیبریدی برای ناوگان تاکسیرانی خبر داد و گفت: این خودروها با یک باک بنزین امکان پیمایش حدود ۱۸۰۰ کیلومتر در سطح شهر را دارند و پیش‌بینی می‌شود تا حدود یک ماه آینده وارد چرخه ناوگان شوند."
+      },
+      {
         "title": "قیمت گازوئیل تهدیدی تازه برای اقتصاد اروپا",
         "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3711481/%D9%82%DB%8C%D9%85%D8%AA-%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%AA%D9%87%D8%AF%DB%8C%D8%AF%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7",
         "date": "2026-10-01T23:13:00.000Z",
@@ -1214,16 +1214,6 @@
         "flag": "🇮🇷",
         "category": "اقتصادی",
         "rssDescription": "پزشکیان گفت: هر چه پول از افزایش قیمت بنزین درآمده است، قرار است به کالابرگ اضافه شود و از این ماه رقم کالابرگ بالا می‌رود و هرچقدر صرفه‌جویی شود به معیشت مردم افزوده می‌شود./ جماران"
-      },
-      {
-        "title": "رییس اتاق ایران: بخش خصوصی ظرفیت عبور دادن کشور از مشکلات اقتصادی را دارد",
-        "link": "https://www.isna.ir/news/1405071006010/%D8%B1%DB%8C%DB%8C%D8%B3-%D8%A7%D8%AA%D8%A7%D9%82-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%AE%D8%B4-%D8%AE%D8%B5%D9%88%D8%B5%DB%8C-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%B9%D8%A8%D9%88%D8%B1-%D8%AF%D8%A7%D8%AF%D9%86-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B2-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C",
-        "date": "2026-10-01T20:42:26.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۴۲",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "مراسم بزرگداشت روز صنعت و معدن آذربایجان‌شرقی با حضور قائم‌مقام وزیر صنعت، معدن و تجارت در امور بازرگانی، استاندار آذربایجان‌شرقی، رئیس اتاق بازرگانی، صنایع، معادن و کشاورزی ایران، معاون راهبری و سیاست‌گذاری اقتصادی وزیر امور اقتصادی و دارایی، نمایندگان مجلس شورای اسلامی، رییس اتاق بازرگانی تبریز و جمعی از فعالان اقتصادی در تبریز برگزار شد."
       }
     ],
     "ورزشی": [
@@ -1350,16 +1340,6 @@
         "rssDescription": "صداوسیما در بخش خبری شامگاه امشب، در گزارشی تصویری به موضوع بازگشت هنرمندان مقیم خارج به کشور پرداخت."
       },
       {
-        "title": "بازگشت ۲ هنرمند به ایران و ۳ درگذشت",
-        "link": "https://www.isna.ir/news/1405070906002/%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%DB%B2-%D9%87%D9%86%D8%B1%D9%85%D9%86%D8%AF-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%88-%DB%B3-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA",
-        "date": "2026-10-01T20:42:00.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۴۲",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "بازگشت دو هنرمند به وطن، ۳ درگذشت، معرفی نماینده ایران به اسکار، حواشی یک تئاتر، چرا گروه «لیان» کنسرتش را لغو کرد؟، امیدوارم «کارآگاه علوی» ادامه پیدا نکند، چگونه میدان‌دار جنگ روایت‌ها باشیم؟،هنوز باید با شخصیت‌های ۹۰ ساله رقابت کنیم!، محمود دولت‌آبادی در میان شانس‌های نوبل، آب چگونه به گنجینه تهران می‌رسد؟ ماجرای عمارت خیابان سعدی و... از جمله اخبار این هفته فرهنگی هنری ایسنا بودند."
-      },
-      {
         "title": "قابی دیده‌نشده از پشت صحنه «روانی»؛ خسرو شکیبایی، نیکی کریمی و پرویز پرستویی کنار هم + عکس",
         "link": "https://www.khabaronline.ir/news/2282333/%D9%82%D8%A7%D8%A8%DB%8C-%D8%AF%DB%8C%D8%AF%D9%87-%D9%86%D8%B4%D8%AF%D9%87-%D8%A7%D8%B2-%D9%BE%D8%B4%D8%AA-%D8%B5%D8%AD%D9%86%D9%87-%D8%B1%D9%88%D8%A7%D9%86%DB%8C-%D8%AE%D8%B3%D8%B1%D9%88-%D8%B4%DA%A9%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C-%D9%86%DB%8C%DA%A9%DB%8C-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C",
         "date": "2026-10-01T20:35:00.000Z",
@@ -1371,6 +1351,16 @@
       }
     ],
     "اجتماعی": [
+      {
+        "title": "دزدی ژنتیکی ۱۰۰هزار ساله؛ کشف ویروسی که بخشی از دی‌ان‌ای ما را به سرقت برده است",
+        "link": "https://www.asriran.com/fa/news/1195521/%D8%AF%D8%B2%D8%AF%DB%8C-%DA%98%D9%86%D8%AA%DB%8C%DA%A9%DB%8C-100%D9%87%D8%B2%D8%A7%D8%B1-%D8%B3%D8%A7%D9%84%D9%87-%DA%A9%D8%B4%D9%81-%D9%88%DB%8C%D8%B1%D9%88%D8%B3%DB%8C-%DA%A9%D9%87-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D8%AF%DB%8C-%D8%A7%D9%86-%D8%A7%DB%8C-%D9%85%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B3%D8%B1%D9%82%D8%AA-%D8%A8%D8%B1%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
+        "date": "2026-10-02T00:30:02.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "پژوهشگران دریافته‌اند که ویروس مولوسکوم حدود ۱۰۰هزار سال پیش ژنی را از انسان به سرقت برده و هنوز از آن برای آلوده‌سازی سلول‌ها استفاده می‌کند."
+      },
       {
         "title": "کودکتان دیر حرف می‌زند؟ این نشانه‌ها را جدی بگیرید",
         "link": "https://www.asriran.com/fa/news/1195520/%DA%A9%D9%88%D8%AF%DA%A9%D8%AA%D8%A7%D9%86-%D8%AF%DB%8C%D8%B1-%D8%AD%D8%B1%D9%81-%D9%85%DB%8C-%D8%B2%D9%86%D8%AF-%D8%A7%DB%8C%D9%86-%D9%86%D8%B4%D8%A7%D9%86%D9%87-%D9%87%D8%A7-%D8%B1%D8%A7-%D8%AC%D8%AF%DB%8C-%D8%A8%DA%AF%DB%8C%D8%B1%DB%8C%D8%AF",
@@ -1524,6 +1514,16 @@
     ],
     "علمی و فناوری": [
       {
+        "title": "دو پیازه آلو شیرازی یک غذای ساده و سریع",
+        "link": "https://www.tabnak.ir/fa/news/1396885/%D8%AF%D9%88-%D9%BE%DB%8C%D8%A7%D8%B2%D9%87-%D8%A2%D9%84%D9%88-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2%DB%8C-%DB%8C%DA%A9-%D8%BA%D8%B0%D8%A7%DB%8C-%D8%B3%D8%A7%D8%AF%D9%87-%D9%88-%D8%B3%D8%B1%DB%8C%D8%B9",
+        "date": "2026-10-02T00:30:02.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "دو پیازه آلو شیرازی یک غذای ساده و سریع است که با سیب‌زمینی، پیاز و چند ادویه ساده تهیه می‌شود. در این دستور، سیب‌زمینی‌ها نیم‌پز و سپس همراه با پیاز داغ و ادویه تفت داده می‌شوند تا غذایی خوش‌طعم و مناسب سرو با نان آماده شود. اگر دوست داشته باشید، می‌توانید کمی رب گوجه‌ فرنگی هم به آن اضافه کنید."
+      },
+      {
         "title": "رئیس بنیاد ملی نخبگان خراسان رضوی: حمایت از نخبگان باید به حل مسائل واقعی کشور منجر شود",
         "link": "https://www.isna.ir/news/1405071006016/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%A8%D9%86%DB%8C%D8%A7%D8%AF-%D9%85%D9%84%DB%8C-%D9%86%D8%AE%D8%A8%DA%AF%D8%A7%D9%86-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%D8%AE%D8%A8%DA%AF%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%AD%D9%84",
         "date": "2026-10-01T23:31:00.000Z",
@@ -1575,6 +1575,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "سی‌ان‌ان: کوشنر در شرکت‌های مرتبط با صنایع نظامی اسرائیل سرمایه‌گذاری کرده است",
+        "link": "https://www.isna.ir/news/1405071006023/%D8%B3%DB%8C-%D8%A7%D9%86-%D8%A7%D9%86-%DA%A9%D9%88%D8%B4%D9%86%D8%B1-%D8%AF%D8%B1-%D8%B4%D8%B1%DA%A9%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%B1%D8%AA%D8%A8%D8%B7-%D8%A8%D8%A7-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C",
+        "date": "2026-10-02T00:19:09.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۱۹",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "شبکه آمریکایی سی‌ان‌ان در گزارشی تحقیقی اعلام کرد جارد کوشنر، داماد و فرستاده ویژه دونالد ترامپ در حالی نقش مهمی در مذاکرات مربوط به توقف جنگ غزه ایفا می‌کرد که شرکت سرمایه‌گذاری متعلق به او، از طریق سهام خود در شرکت «فینیکس فایننشال»، در مجموعه‌ای از شرکت‌های مرتبط با صنایع نظامی اسرائیل سرمایه‌گذاری داشته است."
+      },
+      {
+        "title": "شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان",
+        "link": "https://www.irna.ir/news/86280576/%D8%B4%D9%86%DB%8C%D8%AF%D9%87-%D8%B4%D8%AF%D9%86-%D8%B5%D8%AF%D8%A7%DB%8C-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%B4%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86",
+        "date": "2026-10-02T00:15:32.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۱۵",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران - ایرنا - منابع خبری از شنیده شدن صدای انفجارهای شدید در ریاض پایتخت عربستان خبر دادند."
+      },
       {
         "title": "رئیس شورای عالی سیاسی یمن: عربستان بار دیگر دروغ های خود را تکرار کرد",
         "link": "https://www.irna.ir/news/86280573/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%B9%D8%A7%D9%84%DB%8C-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%DB%8C%D9%85%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AF%D8%B1%D9%88%D8%BA-%D9%87%D8%A7%DB%8C-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1",
@@ -1846,16 +1866,6 @@
         "rssDescription": "تهران - ایرنا - وزیر راه و شهرسازی در دیدار سفیر عراق در تهران با بیان پیوندهای عمیق تاریخی، فرهنگی و مذهبی ایران و عراق، توسعه ارتباطات حمل‌ونقلی ۲ کشور در بخش‌های ریلی، جاده‌ای، هوایی و دریایی را مورد تأکید قرار داد و از پیگیری برای حل مشکلات پروازی میان تهران - بغداد خبر داد."
       },
       {
-        "title": "سازمان عملیات تجارت دریایی انگلیس: یک نفتکش در تنگه هرمز مورد هدف قرار گرفت",
-        "link": "https://www.irna.ir/news/86280544/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%AA%D8%AC%D8%A7%D8%B1%D8%AA-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%DB%8C%DA%A9-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D9%88%D8%B1%D8%AF",
-        "date": "2026-10-01T20:35:26.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۵",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران - ایرنا - سازمان عملیات تجارت دریایی انگلیس (UKMTO) در گزارشی در روز پنجشنبه اعلام کرد که یک نفتکش در تنگه هرمز مورد اصابت یک پرتابه ناشناس قرار گرفته و دچار آتش سوزی شده است."
-      },
-      {
         "title": "پایان نمادین بازی قونیه‌اسپور و فلسطین در دقیقه ۸۹:۵۹",
         "link": "https://www.khabaronline.ir/news/2282343/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D9%86%D9%85%D8%A7%D8%AF%DB%8C%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%82%D9%88%D9%86%DB%8C%D9%87-%D8%B3%D9%BE%D9%88%D8%B1-%D9%88-%D9%81%D9%84%D8%B3%D8%B7%DB%8C%D9%86-%D8%AF%D8%B1-%D8%AF%D9%82%DB%8C%D9%82%D9%87-%DB%B8%DB%B9-%DB%B5%DB%B9",
         "date": "2026-10-01T20:35:00.000Z",
@@ -1884,19 +1894,19 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "دیدار بی سابقه حزب الله لبنان و دولت سوریه نشان دهنده تلاش دوجانبه برای دور ماندن از یک درگیری است."
-      },
-      {
-        "title": "«نمایش اسرائیلی» یا حمله واقعی؟ عطوان ۱۱ تناقض در ماجرای هواپیمای اماراتی را فاش کرد",
-        "link": "https://www.ilna.ir/fa/tiny/news-1846850",
-        "date": "2026-10-01T20:31:00.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "روایت اسرائیل از حادثه هواپیمای فلای‌دبی با پرسش‌های متعددی درباره هویت خلبانان، نحوه ورود مسافران به کابین و ادعای حمله تروریستی روبه‌رو شده است؛ عبدالباری عطوان با اشاره به این موارد معتقد است که کل ماجرا می‌تواند یک سناریوی طراحی‌شده باشد."
       }
     ],
     "متفرقه": [
+      {
+        "title": "فال حافظ جمعه ۱۰ مهرماه ۱۴۰۵",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249206",
+        "date": "2026-10-02T00:30:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۰:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ جمعه 10 مهر را بخوانید."
+      },
       {
         "title": "۲۱۵ شب در امتداد آرمان؛ جلوه‌های شور و شعور در دیار آفتاب",
         "link": "https://www.mehrnews.com/news/6964996/%DB%B2%DB%B1%DB%B5-%D8%B4%D8%A8-%D8%AF%D8%B1-%D8%A7%D9%85%D8%AA%D8%AF%D8%A7%D8%AF-%D8%A2%D8%B1%D9%85%D8%A7%D9%86-%D8%AC%D9%84%D9%88%D9%87-%D9%87%D8%A7%DB%8C-%D8%B4%D9%88%D8%B1-%D9%88-%D8%B4%D8%B9%D9%88%D8%B1-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8",
@@ -2005,7 +2015,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/Wyv6rW0VEu1EsnMr9HSO6vuBl6sLtI_afJ1LQg9E5DHaf38773HqgvmLKrJRm5xXHqdZ--Se4eleaV984XAslBhXT7YrSHQwlNMp818Ehlgb1_OPiJsSeOcH6YXx44gO_NnDj2Uq3cAo-t3NHAGfqaSpJoXJlBMW-DoKYDz0uaVR4aHdFTSWKM5d18B2hxzd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9kGJ-pgJg1DN9E6E_HheWCchjFIegeQMftbWD8rfYrcYBzrU2y38enyQSXvhGChxkMAkN1U-rMycrnZs8FMOpDFklntAthXGZYoIGKJ0XR35WDUhcggNe164-kEFzlYV-o8JCgDggujXJTyLwG2JOc6f_4mdmCSWHkWJdfsurU39HAildv3c5rRjZpmM_KVd/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2015,7 +2025,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/ZVNPx00JJI4na3EuPjza-Rp_rsTKGD4R0LJ0eQPSZfc753MK1KPuhqEIGx39RhYNEBJu-mmVCWbR-SaSVC5FjC1LVvKLelQyW16-4o-9vXG1-lL02rEjUO29exIqHxqGyEjF7zL_omzybesJ5mCNDzSNNkux3Digqs27MLLJDiv1sCyKP7s-1Y1ITh6O2mxn/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/XqTV1Cf0A2kAnFW55U1bl2I9yhMSQMLHrSZjUMFiE0a4JclxNCiqKKqrds34V__SflzKdXHrPg-hVwIIoZcp-o6cByH5uXwEI4YmQj6JY5OHYzESOHdd-oripVNCltRQSrU5eZDxrx7iAtvsJGD-MHZ2FVZLgt4B3iTHtNwe7tA3rq2ViGHFWzo57SttZdWe/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۰ مهر ۱۴۰۵",
@@ -2025,7 +2035,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/KmKokIraD_x9qjL_NJMd-ttlik5D2IRYGkK4gIfRxU8iYcMmhqIU8Iafsf8KxoNETw4IOAXv_D5uRlFlSUcDZhTsYqYApflmvC7PeA7PiI157IqeqJNCaxYhciTY6JzbNPjwYuGF2xqvAwUn963ZqYMZiuv5kucYCXsEA5bPV7r125fKNm0wWZ5fSqumgZK9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/dmii6ePWCD9QgRoivwnLEtXNSr2OLjVXBtAIdHMrQfZKGxK0loTJdG3uPy_u9_K1k2ydJWHM2eEVTF4Ds4lPbLy6qfsiHRJJXmOKlelUDSArkfBP4SbpvzBk6TW-XH8jtlghWGOiq2M6B6SZzvJp4anS3cnRqjy0cVuB-WOJndQ6LXMF4bp4N_abBC4zBGL5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۰ مهر + جدول",
@@ -2035,17 +2045,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/J9BA8Kgq8xZhaH8CZAANpJCZXi2cXysCCIOGuBVXW_-9_hb448ZvCbVCkAfdPIujsVIuc-sOFWHoumSCDsM5ttOM26zjAJYNyRSo65J8Aj3RL4WYJae8vKu11pUKdvACpIcwsTt_sLFapH5H2-Ei8Du-oDzlfxVQD4luDiFcrEO3jTkFE-_dDskRxGrsQDd4/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-      },
-      {
-        "title": "اوقات شرعی امروز جمعه ۱۰ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1846859",
-        "date": "2026-10-01T20:31:00.000Z",
-        "datePersian": "۹ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qVwtJm_8hiwhcc-L_bnXh9LHTlgLKVruOrJJabB8iw3aVQuRQy-xQPJLRcgn_UcIOfZm4padqx1oVU-RifJ4Rm1UB-UC4KGHUzUHBANSBKr4e9Ii8FoEyJabfp3UPrWbuIJzODB9aNJaWDn6iTJnWvDvoblzoxfT1-1fbxY5tLtbGI1bW40Ir4Vzf2jrd0-f/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/KgfQsD4S6U-vdYINysmJTeps8YW4OrPjc2fEgV00wjnwBUpbMhLrX8c9nhLsYtMqWqjDT9pj3QR9AxfKOWSVp426Bif-NXJ74zwmiJB1Xm_zXJ0Lw_ivcClaOg_3L0dSP-uMgwTaNcHFFgdUdbeXR6vQoezHz-fxkGwkfj4uurASk-9gIH3zfUfV4fT36cA_/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       }
     ]
   }
