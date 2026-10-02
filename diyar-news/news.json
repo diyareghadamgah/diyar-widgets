@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-02T22:39:42.632Z",
-  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۳۹",
+  "lastUpdate": "2026-10-02T22:51:46.546Z",
+  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۵۱",
   "totalNews": 100,
   "failedSources": [
     "فارس",
@@ -30,6 +30,46 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "کره شمالی یک پرتابه ناشناس شلیک کرد",
+      "link": "https://www.irna.ir/news/86281200/%DA%A9%D8%B1%D9%87-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%DB%8C%DA%A9-%D9%BE%D8%B1%D8%AA%D8%A7%D8%A8%D9%87-%D9%86%D8%A7%D8%B4%D9%86%D8%A7%D8%B3-%D8%B4%D9%84%DB%8C%DA%A9-%DA%A9%D8%B1%D8%AF",
+      "date": "2026-10-02T22:49:05.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۹",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- ارتش کره جنوبی بامداد شنبه اعلام کرد که کره شمالی یک پرتابه ناشناس به «دریای شرقی» (دریای ژاپن) در شرق شبه‌جزیره کره شلیک کرد."
+    },
+    {
+      "title": "مهدی طائب: آمریکا همان فرعون است",
+      "link": "https://www.khabaronline.ir/news/2282706/%D9%85%D9%87%D8%AF%DB%8C-%D8%B7%D8%A7%D8%A6%D8%A8-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%87%D9%85%D8%A7%D9%86-%D9%81%D8%B1%D8%B9%D9%88%D9%86-%D8%A7%D8%B3%D8%AA",
+      "date": "2026-10-02T22:42:00.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۲",
+      "source": "خبرآنلاین",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "مهدی طائب، رئیس شورای قرارگاه راهبردی عمار گفت: آمریکایی‌ها معجزات الهی مانند خود انقلاب اسلامی، طبس و جنگ تحمیلی را به چشم دیدند."
+    },
+    {
+      "title": "فرستاده ویژه پوتین: ناتو باید جنگ‌افروزی را متوقف کند",
+      "link": "https://www.isna.ir/news/1405071106401/%D9%81%D8%B1%D8%B3%D8%AA%D8%A7%D8%AF%D9%87-%D9%88%DB%8C%DA%98%D9%87-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D9%86%D8%A7%D8%AA%D9%88-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AC%D9%86%DA%AF-%D8%A7%D9%81%D8%B1%D9%88%D8%B2%DB%8C-%D8%B1%D8%A7-%D9%85%D8%AA%D9%88%D9%82%D9%81-%DA%A9%D9%86%D8%AF",
+      "date": "2026-10-02T22:40:03.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۰",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "فرستاده ویژه رئیس‌جمهور روسیه در امور همکاری‌های اقتصادی با کشورهای خارجی با اشاره به هو شدن دبیرکل ناتو در آلمان به دلیل دریافت جایزه صلح به نمایندگی از این ائتلاف، تأکید کرد که ناتو باید به جنگ‌افروزی پایان دهد."
+    },
+    {
+      "title": "اجتماع شبانه مردم ایرانشهر به ایستگاه ۲۱۶ رسید",
+      "link": "https://www.mehrnews.com/news/6965746/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%D8%B4%D9%87%D8%B1-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%DB%B2%DB%B1%DB%B6-%D8%B1%D8%B3%DB%8C%D8%AF",
+      "date": "2026-10-02T22:38:47.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۳۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "ایرانشهر- مردم ایرانشهر در دویست و شانزدهمین شب از شهادت رهبر شهید اجتماع باشکوهی برگزار کردند."
+    },
     {
       "title": "تبریک المشاط به عراق به خاطر خروج نظامیان آمریکایی",
       "link": "https://www.mehrnews.com/news/6965731/%D8%AA%D8%A8%D8%B1%DB%8C%DA%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B7-%D8%A8%D9%87-%D8%B9%D8%B1%D8%A7%D9%82-%D8%A8%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1-%D8%AE%D8%B1%D9%88%D8%AC-%D9%86%D8%B8%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C",
@@ -358,16 +398,6 @@
       "rssDescription": "کلاله- دویست‌وشانزدهمین اجتماع شبانه مردم کلاله با حضور مردم و تأکید بر تداوم این همراهی برگزار شد."
     },
     {
-      "title": "تداوم حماسه سازی زنجانی‌ها در دویست و شانزدهمین شب حضور در میدان",
-      "link": "https://www.mehrnews.com/news/6965732/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B4%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
-      "date": "2026-10-02T21:16:21.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۱۶",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و شانزدهمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
-    },
-    {
       "title": "آمریکا اسرائیل را به تحریم نظامیان و محدودیت استفاده از سلاح‌های آمریکایی تهدید کرد",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3249495",
       "date": "2026-10-02T21:07:10.000Z",
@@ -635,7 +665,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/m_pRglTN1YITeYrLqmREQngDVQhOlxXvMYJzmNSoXJTwuJRZZzswCquCLcuJ9AyuBiD-PGTbA6ij5VOQoMlkO4nbntzu_qthqfIBAX5Ud5e0QoQ4F_I4kD8zi8-leQOWOaerG81vqW4r-ENlUd85M_JK5ioF2XLc9uYD3egYIDgOXNIK5qdgStLDLFxxxOfi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SonJ3yg9P-is35X_a4a_cl2sh4q9SMmUEwkenqWkysuhdliDy9VsCPyJOUdbbM6fvuziohfzADdgR0kXmGCv0QIfLJXgSzQ4zSLvwPm_O8r7L6H0AnpK-hT_R4Mg6WcamJjKPs86dOXupKh4mMsG2C5qWomU3Ct1PO-s0ZVcDYSzn7i9RphUzBTnq-5C94s1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -645,7 +675,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zIbcWHe6T2h-6T1E2mzW5E-jUIK3MN7Pzb8VYFt3g5dX3VLzIV7cp9iM0MZZkvZbxoahDJCLB9R73FIFc_YohOapf8jWuUiPMq8Olx1B23cmI7wGeQSa8xc5zgrWInYVQ203Tw_IYGd6w_S0mANNgZWSGdp1sixr5km7xQC0zvn-oxaWkD6foeVAyTEu2Hxx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7S7Bql0D2NBjTixduouTqauNTyQymuK5XEzSJ2iWhjCWQrYCAfyLsY6HEcqv1yFHnrWyL4ULimsELauPYrr8V4y2pb6Qza-kObGpaE4LtKc33xdIo36aSV-HTUBLmMa5MFMwL0okDRaRN-7s7_klFK-uUkvQrULY_a-RBZyqun80xfHmxNGjiWSJ-Kic04ME/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -655,7 +685,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/4BufQNkWKtSH-vLs1GACKdETrQYC-oyFERzt_HxCezEixd8xSvwvo6mg8xYveigCOK4xJ2HFIv2co7uob_EbwjrEQ1ugcQqI0A5__OOEZZ7kl486eciU1FMliDUd7mmhbwAJbVeRLfptdKM59NbxDOdt_IVP01emyC0BCjr1RUHHUSVorKoYo-ykTtG_aNjd/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/kWa9X7dpmuw_ZQXzahDJN1pjJPCwhFM-KWGvt5zVIuW7AQRkD5JZIyC5mT75DhNX1AaY3dRk5thlMKoPK3Kh6h6KY9-PLgwSEhZafKCgPezcG7BlnQNMyoMkYrQTvY9Z9Nkg0Ex8MyqW92X9i48VrCuXtIsQ0MS8Zc-lXEI94-KRfyCGkKg0LIWbjP8gRGlf/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -665,7 +695,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/cl2h9GbxiPT9X6CxRrmV2cP84i2hzCO7mvo7xGNfCkDNg0zUyRpTHNIkRGiN-E0QUhL4CHgYmLM_tFgoa5ZA-TfDAsjbFQQ4NPv8pn8GfDsjSPmPEByqs-mzWl3mxBRPZHF_UfiPx_ylI3W8e_MZcKky1KbmaGHzBKL_dgZwB0S0xsS94p6PwIjMJ9nITB9W/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PcFu8-kpmxyaNnzj1Vcm7ZCS00b7u63M2uPc9-fsHbh7p4IF8C66saF4Hj624UxKf6cR97EoHQt49nnu0ZYlFAncGFWi0wp6XpMciTZwRPRNLGFNpeAIN64XrkCufWZkm7zm02EhoZ13fsE3eqOOP5iiIiiaEgN5EkoDRyeHc7sqUYcI8EJyBYQi3uhacDgf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -675,7 +705,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/X9bTHYjp9zFXAD95WwPiYQwAirryecFQm8PL_Uz275OQ_d-r1P4fQyC7OgvGR9bx67ZNJtNvwk7Ssdi2qciW6tLJjzTE5peNBVeQM7FufdjYLgkmBE_0QQLi-0XkM7YIfgjMM4JAEgY-w70FXfsdX81jdm-K1gln_evN96YxTFz2NI6_iSD2txrcDBviXWzb/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/-7d0LOEACylBbCPL-xzIPf7GItdJqIEUw3-FegPD5xDgRcvG8fHz_U4gkariIONH1m_cD6RfosoaeG6EVEvurGdxSz3Ve7pQTP2VlbilWaXIHdxMAJkYweeC3i0TixWF0Ir6haojIy0HUtrXWjJlIZI-fm_oHGBrxqXzp2vh0vsKLFhWrQZselKiAnRrD9cE/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "تصاویری از آتش‌سوزی‌ گسترده‌ای در مناطق مختلف شهر ریاض، پایتخت عربستان + فیلم",
@@ -798,16 +828,6 @@
       "rssDescription": "رئیس دولت تروریست آمریکا در اوج استیصال در برابر مقاومت و ایستادگی ایران، توهمات خود را تکرار کرد."
     },
     {
-      "title": "تأکید بخش خصوصی بر حفظ تولید و تسهیل فعالیت اقتصادی در اردبیل",
-      "link": "https://www.isna.ir/news/1405071006388/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D8%A8%D8%AE%D8%B4-%D8%AE%D8%B5%D9%88%D8%B5%DB%8C-%D8%A8%D8%B1-%D8%AD%D9%81%D8%B8-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%88-%D8%AA%D8%B3%D9%87%DB%8C%D9%84-%D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84",
-      "date": "2026-10-02T20:16:24.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۱۶",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "نایب‌رئیس اتاق ایران با اشاره به شرایط اقتصادی کشور، بر ضرورت حمایت از واحدهای تولیدی، تأمین به‌موقع مواد اولیه، تسهیل فرآیندهای ارزی و تجاری و فراهم کردن امکان برنامه‌ریزی برای فعالان اقتصادی تأکید کرد."
-    },
-    {
       "title": "کابوس یک نویسنده: مردی با کودکی زخمی به سوی بیمارستان می‌دود، کودک زخمی برادر من است/ خواب آشفته‌ای که جنگ ۴۰ روزه برگرداند",
       "link": "https://www.khabaronline.ir/news/2282709/%DA%A9%D8%A7%D8%A8%D9%88%D8%B3-%DB%8C%DA%A9-%D9%86%D9%88%DB%8C%D8%B3%D9%86%D8%AF%D9%87-%D9%85%D8%B1%D8%AF%DB%8C-%D8%A8%D8%A7-%DA%A9%D9%88%D8%AF%DA%A9%DB%8C-%D8%B2%D8%AE%D9%85%DB%8C-%D8%A8%D9%87-%D8%B3%D9%88%DB%8C-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%DB%8C-%D8%AF%D9%88%D8%AF",
       "date": "2026-10-02T20:15:41.000Z",
@@ -866,16 +886,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "مادر همسر آیت الله سیدمجتبی خامنه‌ای در این گفت‌و‌گو به برخی شایعات ناروایی که درباره دامادشان ساخته شده بود، پرداخته است."
-    },
-    {
-      "title": "گروه تئاتر «مثل آب برای شکلات» داغدار نوازنده جوان شد",
-      "link": "https://www.irna.ir/news/86281181/%DA%AF%D8%B1%D9%88%D9%87-%D8%AA%D8%A6%D8%A7%D8%AA%D8%B1-%D9%85%D8%AB%D9%84-%D8%A2%D8%A8-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%D8%A7%D8%BA%D8%AF%D8%A7%D8%B1-%D9%86%D9%88%D8%A7%D8%B2%D9%86%D8%AF%D9%87-%D8%AC%D9%88%D8%A7%D9%86-%D8%B4%D8%AF",
-      "date": "2026-10-02T20:10:55.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۱۰",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "تهران_ایرنا_ نوازنده جوان گروه تئاتر «مثل آب برای شکلات» به کارگردانی ابراهیم پشت‌کوهی در ۴۰ سالگی درگذشت."
     },
     {
       "title": "چه عواملی باعث ایجاد خار پاشنه می‌شود؟",
@@ -976,16 +986,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی زمان پرداخت معوقات اردیبهشت‌ماه بازنشستگان تامین اجتماعی را اعلام کرد."
-    },
-    {
-      "title": "اقامه اذان برای نوزاد یکی از زائران توسط پدر شهید زهرا محمدی گلپایگانی+ فیلم",
-      "link": "https://www.khabaronline.ir/news/2282696/%D8%A7%D9%82%D8%A7%D9%85%D9%87-%D8%A7%D8%B0%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%88%D8%B2%D8%A7%D8%AF-%DB%8C%DA%A9%DB%8C-%D8%A7%D8%B2-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%AA%D9%88%D8%B3%D8%B7-%D9%BE%D8%AF%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B2%D9%87%D8%B1%D8%A7-%D9%85%D8%AD%D9%85%D8%AF%DB%8C",
-      "date": "2026-10-02T19:50:00.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "پدر شهید زهرا محمدی گلپایگانی در رواق دارالذکر حضور یافت و برای نوزاد یکی از زائران اذان اقامه کرد./باشگاه خبرنگاران جوان"
     },
     {
       "title": "خداحافظی مبهم آقای گل؛ «تمام شد، اما شاید برگردم»",
@@ -1232,16 +1232,6 @@
         "rssDescription": "دفتر مقررات صادرات و واردات سازمان توسعه تجارت ایران با ابلاغ بخشنامه‌ای جدید به گمرک، فهرست اقلام قابل ورود توسط شرکت‌های تعاونی مرزنشین را به‌روزرسانی کرد."
       },
       {
-        "title": "تأکید بخش خصوصی بر حفظ تولید و تسهیل فعالیت اقتصادی در اردبیل",
-        "link": "https://www.isna.ir/news/1405071006388/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D8%A8%D8%AE%D8%B4-%D8%AE%D8%B5%D9%88%D8%B5%DB%8C-%D8%A8%D8%B1-%D8%AD%D9%81%D8%B8-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%88-%D8%AA%D8%B3%D9%87%DB%8C%D9%84-%D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84",
-        "date": "2026-10-02T20:16:24.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۱۶",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "نایب‌رئیس اتاق ایران با اشاره به شرایط اقتصادی کشور، بر ضرورت حمایت از واحدهای تولیدی، تأمین به‌موقع مواد اولیه، تسهیل فرآیندهای ارزی و تجاری و فراهم کردن امکان برنامه‌ریزی برای فعالان اقتصادی تأکید کرد."
-      },
-      {
         "title": "زمان پرداخت معوقات اردیبهشت‌ماه بازنشستگان تامین اجتماعی مشخص شد",
         "link": "https://www.asriran.com/fa/news/1195814/%D8%B2%D9%85%D8%A7%D9%86-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D9%85%D8%B9%D9%88%D9%82%D8%A7%D8%AA-%D8%A7%D8%B1%D8%AF%DB%8C%D8%A8%D9%87%D8%B4%D8%AA-%D9%85%D8%A7%D9%87-%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%D8%A7%D9%86-%D8%AA%D8%A7%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF",
         "date": "2026-10-02T20:04:23.000Z",
@@ -1385,16 +1375,6 @@
         "rssDescription": "سخنگوی فدراسیون فوتبال از لغو رقابت‌های جام حذفی در این فصل خبر داد و اعلام کرد با توجه به فشردگی تقویم مسابقات، امکان برگزاری این بازی‌ها وجود ندارد./روزنامه ایران"
       },
       {
-        "title": "گروه تئاتر «مثل آب برای شکلات» داغدار نوازنده جوان شد",
-        "link": "https://www.irna.ir/news/86281181/%DA%AF%D8%B1%D9%88%D9%87-%D8%AA%D8%A6%D8%A7%D8%AA%D8%B1-%D9%85%D8%AB%D9%84-%D8%A2%D8%A8-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AF%D8%A7%D8%BA%D8%AF%D8%A7%D8%B1-%D9%86%D9%88%D8%A7%D8%B2%D9%86%D8%AF%D9%87-%D8%AC%D9%88%D8%A7%D9%86-%D8%B4%D8%AF",
-        "date": "2026-10-02T20:10:55.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۱۰",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "تهران_ایرنا_ نوازنده جوان گروه تئاتر «مثل آب برای شکلات» به کارگردانی ابراهیم پشت‌کوهی در ۴۰ سالگی درگذشت."
-      },
-      {
         "title": "چه عواملی باعث ایجاد خار پاشنه می‌شود؟",
         "link": "https://www.asriran.com/fa/news/1195813/%DA%86%D9%87-%D8%B9%D9%88%D8%A7%D9%85%D9%84%DB%8C-%D8%A8%D8%A7%D8%B9%D8%AB-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AE%D8%A7%D8%B1-%D9%BE%D8%A7%D8%B4%D9%86%D9%87-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF",
         "date": "2026-10-02T20:05:12.000Z",
@@ -1423,16 +1403,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "مسئول شهر دوستدار کودک معاونت شهرسازی و معماری شهرداری اصفهان گفت: برگزاری جشنواره بین‌المللی فیلم‌های کودکان و نوجوانان با ایجاد فرصت‌های مشارکت و مهارت‌آموزی برای کودکان و نوجوانان و قرار دادن نیازهای این گروه سنی در کانون توجه جامعه، به تقویت برند اصفهان به‌عنوان «شهر دوستدار کودک» کمک می‌کند."
-      },
-      {
-        "title": "اقامه اذان برای نوزاد یکی از زائران توسط پدر شهید زهرا محمدی گلپایگانی+ فیلم",
-        "link": "https://www.khabaronline.ir/news/2282696/%D8%A7%D9%82%D8%A7%D9%85%D9%87-%D8%A7%D8%B0%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%88%D8%B2%D8%A7%D8%AF-%DB%8C%DA%A9%DB%8C-%D8%A7%D8%B2-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%AA%D9%88%D8%B3%D8%B7-%D9%BE%D8%AF%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B2%D9%87%D8%B1%D8%A7-%D9%85%D8%AD%D9%85%D8%AF%DB%8C",
-        "date": "2026-10-02T19:50:00.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۰",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "پدر شهید زهرا محمدی گلپایگانی در رواق دارالذکر حضور یافت و برای نوزاد یکی از زائران اذان اقامه کرد./باشگاه خبرنگاران جوان"
       }
     ],
     "اجتماعی": [
@@ -1550,6 +1520,36 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "کره شمالی یک پرتابه ناشناس شلیک کرد",
+        "link": "https://www.irna.ir/news/86281200/%DA%A9%D8%B1%D9%87-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%DB%8C%DA%A9-%D9%BE%D8%B1%D8%AA%D8%A7%D8%A8%D9%87-%D9%86%D8%A7%D8%B4%D9%86%D8%A7%D8%B3-%D8%B4%D9%84%DB%8C%DA%A9-%DA%A9%D8%B1%D8%AF",
+        "date": "2026-10-02T22:49:05.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۹",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- ارتش کره جنوبی بامداد شنبه اعلام کرد که کره شمالی یک پرتابه ناشناس به «دریای شرقی» (دریای ژاپن) در شرق شبه‌جزیره کره شلیک کرد."
+      },
+      {
+        "title": "مهدی طائب: آمریکا همان فرعون است",
+        "link": "https://www.khabaronline.ir/news/2282706/%D9%85%D9%87%D8%AF%DB%8C-%D8%B7%D8%A7%D8%A6%D8%A8-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%87%D9%85%D8%A7%D9%86-%D9%81%D8%B1%D8%B9%D9%88%D9%86-%D8%A7%D8%B3%D8%AA",
+        "date": "2026-10-02T22:42:00.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۲",
+        "source": "خبرآنلاین",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "مهدی طائب، رئیس شورای قرارگاه راهبردی عمار گفت: آمریکایی‌ها معجزات الهی مانند خود انقلاب اسلامی، طبس و جنگ تحمیلی را به چشم دیدند."
+      },
+      {
+        "title": "فرستاده ویژه پوتین: ناتو باید جنگ‌افروزی را متوقف کند",
+        "link": "https://www.isna.ir/news/1405071106401/%D9%81%D8%B1%D8%B3%D8%AA%D8%A7%D8%AF%D9%87-%D9%88%DB%8C%DA%98%D9%87-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D9%86%D8%A7%D8%AA%D9%88-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AC%D9%86%DA%AF-%D8%A7%D9%81%D8%B1%D9%88%D8%B2%DB%8C-%D8%B1%D8%A7-%D9%85%D8%AA%D9%88%D9%82%D9%81-%DA%A9%D9%86%D8%AF",
+        "date": "2026-10-02T22:40:03.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۴۰",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "فرستاده ویژه رئیس‌جمهور روسیه در امور همکاری‌های اقتصادی با کشورهای خارجی با اشاره به هو شدن دبیرکل ناتو در آلمان به دلیل دریافت جایزه صلح به نمایندگی از این ائتلاف، تأکید کرد که ناتو باید به جنگ‌افروزی پایان دهد."
+      },
       {
         "title": "تبریک المشاط به عراق به خاطر خروج نظامیان آمریکایی",
         "link": "https://www.mehrnews.com/news/6965731/%D8%AA%D8%A8%D8%B1%DB%8C%DA%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B7-%D8%A8%D9%87-%D8%B9%D8%B1%D8%A7%D9%82-%D8%A8%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1-%D8%AE%D8%B1%D9%88%D8%AC-%D9%86%D8%B8%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C",
@@ -1833,6 +1833,16 @@
     ],
     "متفرقه": [
       {
+        "title": "اجتماع شبانه مردم ایرانشهر به ایستگاه ۲۱۶ رسید",
+        "link": "https://www.mehrnews.com/news/6965746/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%D8%B4%D9%87%D8%B1-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%DB%B2%DB%B1%DB%B6-%D8%B1%D8%B3%DB%8C%D8%AF",
+        "date": "2026-10-02T22:38:47.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۲:۳۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "ایرانشهر- مردم ایرانشهر در دویست و شانزدهمین شب از شهادت رهبر شهید اجتماع باشکوهی برگزار کردند."
+      },
+      {
         "title": "چرا هرگز بینی خود را نمی‌بینید؟",
         "link": "https://www.tabnak.ir/fa/news/1396978/%DA%86%D8%B1%D8%A7-%D9%87%D8%B1%DA%AF%D8%B2-%D8%A8%DB%8C%D9%86%DB%8C-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D9%86%D9%85%DB%8C-%D8%A8%DB%8C%D9%86%DB%8C%D8%AF",
         "date": "2026-10-02T22:31:01.000Z",
@@ -1930,16 +1940,6 @@
         "rssDescription": "کلاله- دویست‌وشانزدهمین اجتماع شبانه مردم کلاله با حضور مردم و تأکید بر تداوم این همراهی برگزار شد."
       },
       {
-        "title": "تداوم حماسه سازی زنجانی‌ها در دویست و شانزدهمین شب حضور در میدان",
-        "link": "https://www.mehrnews.com/news/6965732/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B4%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
-        "date": "2026-10-02T21:16:21.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۱۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و شانزدهمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
-      },
-      {
         "title": "سفر نماینده رهبر معظم انقلاب به خوزستان برای پیگیری مشکلات استان است",
         "link": "https://www.irna.ir/news/86281172/%D8%B3%D9%81%D8%B1-%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%D8%B1%D9%87%D8%A8%D8%B1-%D9%85%D8%B9%D8%B8%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A8%D9%87-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86",
         "date": "2026-10-02T20:39:46.000Z",
@@ -1957,7 +1957,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/m_pRglTN1YITeYrLqmREQngDVQhOlxXvMYJzmNSoXJTwuJRZZzswCquCLcuJ9AyuBiD-PGTbA6ij5VOQoMlkO4nbntzu_qthqfIBAX5Ud5e0QoQ4F_I4kD8zi8-leQOWOaerG81vqW4r-ENlUd85M_JK5ioF2XLc9uYD3egYIDgOXNIK5qdgStLDLFxxxOfi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SonJ3yg9P-is35X_a4a_cl2sh4q9SMmUEwkenqWkysuhdliDy9VsCPyJOUdbbM6fvuziohfzADdgR0kXmGCv0QIfLJXgSzQ4zSLvwPm_O8r7L6H0AnpK-hT_R4Mg6WcamJjKPs86dOXupKh4mMsG2C5qWomU3Ct1PO-s0ZVcDYSzn7i9RphUzBTnq-5C94s1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1967,7 +1967,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zIbcWHe6T2h-6T1E2mzW5E-jUIK3MN7Pzb8VYFt3g5dX3VLzIV7cp9iM0MZZkvZbxoahDJCLB9R73FIFc_YohOapf8jWuUiPMq8Olx1B23cmI7wGeQSa8xc5zgrWInYVQ203Tw_IYGd6w_S0mANNgZWSGdp1sixr5km7xQC0zvn-oxaWkD6foeVAyTEu2Hxx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7S7Bql0D2NBjTixduouTqauNTyQymuK5XEzSJ2iWhjCWQrYCAfyLsY6HEcqv1yFHnrWyL4ULimsELauPYrr8V4y2pb6Qza-kObGpaE4LtKc33xdIo36aSV-HTUBLmMa5MFMwL0okDRaRN-7s7_klFK-uUkvQrULY_a-RBZyqun80xfHmxNGjiWSJ-Kic04ME/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1977,7 +1977,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/4BufQNkWKtSH-vLs1GACKdETrQYC-oyFERzt_HxCezEixd8xSvwvo6mg8xYveigCOK4xJ2HFIv2co7uob_EbwjrEQ1ugcQqI0A5__OOEZZ7kl486eciU1FMliDUd7mmhbwAJbVeRLfptdKM59NbxDOdt_IVP01emyC0BCjr1RUHHUSVorKoYo-ykTtG_aNjd/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/kWa9X7dpmuw_ZQXzahDJN1pjJPCwhFM-KWGvt5zVIuW7AQRkD5JZIyC5mT75DhNX1AaY3dRk5thlMKoPK3Kh6h6KY9-PLgwSEhZafKCgPezcG7BlnQNMyoMkYrQTvY9Z9Nkg0Ex8MyqW92X9i48VrCuXtIsQ0MS8Zc-lXEI94-KRfyCGkKg0LIWbjP8gRGlf/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -1987,7 +1987,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/cl2h9GbxiPT9X6CxRrmV2cP84i2hzCO7mvo7xGNfCkDNg0zUyRpTHNIkRGiN-E0QUhL4CHgYmLM_tFgoa5ZA-TfDAsjbFQQ4NPv8pn8GfDsjSPmPEByqs-mzWl3mxBRPZHF_UfiPx_ylI3W8e_MZcKky1KbmaGHzBKL_dgZwB0S0xsS94p6PwIjMJ9nITB9W/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PcFu8-kpmxyaNnzj1Vcm7ZCS00b7u63M2uPc9-fsHbh7p4IF8C66saF4Hj624UxKf6cR97EoHQt49nnu0ZYlFAncGFWi0wp6XpMciTZwRPRNLGFNpeAIN64XrkCufWZkm7zm02EhoZ13fsE3eqOOP5iiIiiaEgN5EkoDRyeHc7sqUYcI8EJyBYQi3uhacDgf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -1997,7 +1997,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/X9bTHYjp9zFXAD95WwPiYQwAirryecFQm8PL_Uz275OQ_d-r1P4fQyC7OgvGR9bx67ZNJtNvwk7Ssdi2qciW6tLJjzTE5peNBVeQM7FufdjYLgkmBE_0QQLi-0XkM7YIfgjMM4JAEgY-w70FXfsdX81jdm-K1gln_evN96YxTFz2NI6_iSD2txrcDBviXWzb/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/-7d0LOEACylBbCPL-xzIPf7GItdJqIEUw3-FegPD5xDgRcvG8fHz_U4gkariIONH1m_cD6RfosoaeG6EVEvurGdxSz3Ve7pQTP2VlbilWaXIHdxMAJkYweeC3i0TixWF0Ir6haojIy0HUtrXWjJlIZI-fm_oHGBrxqXzp2vh0vsKLFhWrQZselKiAnRrD9cE/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "شایعه عجیب و کذب درباره آقا مجتبی از زبان مادر همسرشان",
