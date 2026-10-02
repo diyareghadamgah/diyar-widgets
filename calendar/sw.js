@@ -1,8 +1,8 @@
 // نسخه را با هر تغییر مهم بالا ببرید تا کش قدیمی پاک شود
-const CACHE = 'diyar-calendar-v2';
+const CACHE = 'diyar-calendar-v3';
 const CORE = [
   './', './index.html', './manifest.json', './css/style.css',
-  './js/registry.js', './js/shared.js', './js/app.js',
+  './js/registry.js', './js/shared.js', './js/app.js', './js/accordion.js',
   './js/templates/royal.js', './js/templates/classic.js', './js/templates/light.js',
   './js/templates/blackgold.js', './js/templates/ribbon.js',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png'
