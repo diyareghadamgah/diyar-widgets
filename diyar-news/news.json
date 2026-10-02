@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-02T21:40:25.431Z",
-  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۴۰",
+  "lastUpdate": "2026-10-02T21:52:38.513Z",
+  "lastUpdatePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۵۲",
   "totalNews": 100,
   "failedSources": [
     "فارس",
@@ -31,6 +31,36 @@
   ],
   "news": [
     {
+      "title": "نماینده شاهین شهر: باید امارات را تصرف کنیم/ باید نتانیاهو را در امارات هدف قرار می دادیم/ زبان و دهان عراقچی باید کنترل شود، چون پالس ضعف می دهد، دنبال استیضاح او هستیم/ فشار اقتصادی مشکل جدی برای کشور به وجود نخواهد آورد/ اقتصاد آمریکا درحال فروپاشیست",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249498",
+      "date": "2026-10-02T21:44:07.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۴۴",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "نماینده شاهین شهر، میمه و برخوار و نائب رئیس اول کمیسیون اصل نودم قانون اساسی مجلس دوازدهم درباره سفر نتانیاهو به امارات گفت: «یکی از مطالبات مردم ایران این است که وقتی این قصاب غزه و قاتل صدها ایرانی وارد امارات شد، باید همان‌جا هدف قرار می‌گرفت. من پیش از این هم گفته‌ام که امارات شعبه‌ای از رژیم صهیونیستی است و بارها این موضوع را ثابت کرده و نباید در امان باشد.»"
+    },
+    {
+      "title": "قدرت خرید بازنشستگان حداقل پنج درصد افزایش می یابد",
+      "link": "https://www.mehrnews.com/news/6965742/%D9%82%D8%AF%D8%B1%D8%AA-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%D8%A7%D9%86-%D8%AD%D8%AF%D8%A7%D9%82%D9%84-%D9%BE%D9%86%D8%AC-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%85%DB%8C-%DB%8C%D8%A7%D8%A8%D8%AF",
+      "date": "2026-10-02T21:40:15.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۴۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی با تأکید بر ضرورت وفاق، حمایت و نظارت هم‌زمان در مسیر سیاست‌گذاری اقتصادی، گفت: حل مسائل اقتصادی نیازمند طراحی و پرهیز از تصمیم‌گیری‌های روزمره است."
+    },
+    {
+      "title": "تصادف مرگبار L90 و سمند در بزرگراه رستگاری/ ۲ نفر جان باختند",
+      "link": "https://www.isna.ir/news/1405071106398/%D8%AA%D8%B5%D8%A7%D8%AF%D9%81-%D9%85%D8%B1%DA%AF%D8%A8%D8%A7%D8%B1-L90-%D9%88-%D8%B3%D9%85%D9%86%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B1%D8%A7%D9%87-%D8%B1%D8%B3%D8%AA%DA%AF%D8%A7%D8%B1%DB%8C-%DB%B2-%D9%86%D9%81%D8%B1-%D8%AC%D8%A7%D9%86-%D8%A8%D8%A7%D8%AE%D8%AA%D9%86%D8%AF",
+      "date": "2026-10-02T21:38:11.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۳۸",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "سخنگوی سازمان آتش‌نشانی و خدمات ایمنی شهرداری تهران از تصادف یک دستگاه خودروی L90 و سمند در بزرگراه رستگاری خبر داد و گفت: در این حادثه دو نفر از سرنشینان L90 جان خود را از دست دادند و پنج نفر نیز مصدوم شدند."
+    },
+    {
       "title": "رئیس جمهور کوبا، آمریکا را به ریاکاری متهم کرد",
       "link": "https://www.irna.ir/news/86281196/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%AC%D9%85%D9%87%D9%88%D8%B1-%DA%A9%D9%88%D8%A8%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B1%DB%8C%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C-%D9%85%D8%AA%D9%87%D9%85-%DA%A9%D8%B1%D8%AF",
       "date": "2026-10-02T21:32:38.000Z",
@@ -48,6 +78,16 @@
       "source": "مهر",
       "flag": "🇮🇷",
       "category": "متفرقه"
+    },
+    {
+      "title": "جشن مهرگان 10 مهر است یا 16 مهرماه؟",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249497",
+      "date": "2026-10-02T21:30:32.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "پژوهشگر تاریخ و فرهنگ ایران باستان در پژوهشی پیرامون آیین‌های کهن ایرانی، ریشه‌های اختلاف تقویمی در برگزاری جشن مهرگان را واکاوی کرده است. او در این متن توضیح می‌دهد که چگونه تفاوت میان ساختار گاه‌شماری سنتی زرتشتی و تقویم رسمی خورشیدی، منجر به دوگانگی در تاریخ برگزاری این جشن باستانی میان دهم و شانزدهم مهر شده است."
     },
     {
       "title": "رزمایش «جان‌فدایان» در البرز",
@@ -156,6 +196,16 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "رئیس شورای اجرایی جنبش نجباء عراق اعلام کرد فرودگاه نجف با اراده مردم بازگشایی شده است."
+    },
+    {
+      "title": "پاکستان: نشست توافق مکه برای بررسی تعامل سیاسی با انصارالله یمن برگزار می‌شود",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3249496",
+      "date": "2026-10-02T21:18:53.000Z",
+      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۱۸",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "وزیر امور خارجه پاکستان اعلام کرد که کمیته دفاع سیاسی استراتژیک، که تحت توافق مکه برای دفاع مشترک بین پاکستان، عربستان و ترکیه تأسیس شده است، هفته آینده در ریاض تشکیل جلسه خواهد داد تا در مورد راه‌های تعامل سیاسی با گروه حوثی به جای توسل به اقدام نظامی بحث کند."
     },
     {
       "title": "۲۱۶ شب استقامت؛ گرگان هنوز روایتگر یک حضور جمعی است",
@@ -326,16 +376,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "مدیر پروژه ایران در گروه بین‌المللی بحران نوشت: تهران و واشنگتن شکست نخواهند خورد، اما هیچ‌کس نیز برنده نخواهد شد."
-    },
-    {
-      "title": "ادامه لفاظی‌های ترامپ علیه ایران؛ موضوع تهران به زودی پایان خواهد یافت",
-      "link": "https://www.mehrnews.com/news/6965724/%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D9%84%D9%81%D8%A7%D8%B8%DB%8C-%D9%87%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%85%D9%88%D8%B6%D9%88%D8%B9-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
-      "date": "2026-10-02T20:54:56.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۵۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "رئیس‌جمهور آمریکا با تکرار سخنان تکراری و متوهمانه‌اش مدعی شد: ایران در وضعیت خوبی قرار ندارد و مسئله ایران به‌زودی پایان خواهد یافت"
     },
     {
       "title": "کالابرگ وارد فاز جدید شد/ میدری: شیوه شناسایی مشمولان تغییر می‌کند",
@@ -515,7 +555,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/TAzzhaV2kwPc6usIQN5HtG17fnNvINwfsbjatsil_6lBfS5WW6bpAUhPE7qDVL48wBX6_PCOXqNjfeCMDJhxKnT_JCqRVpZRZQGmAfWNdhRnx5TdtLKDHbI6HgZYjpYkA4sg4uxclC-NTkbuqfH_pSn8rAwKVgd1d0L-vXRvg3P5_43qIjbIoJPOJTwiUkCa/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/m_pRglTN1YITeYrLqmREQngDVQhOlxXvMYJzmNSoXJTwuJRZZzswCquCLcuJ9AyuBiD-PGTbA6ij5VOQoMlkO4nbntzu_qthqfIBAX5Ud5e0QoQ4F_I4kD8zi8-leQOWOaerG81vqW4r-ENlUd85M_JK5ioF2XLc9uYD3egYIDgOXNIK5qdgStLDLFxxxOfi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -525,7 +565,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/INkJk9o6k4UCO3duYAvbgJWQIEVWWM3GKPEIKFVGP6Wde8JgNQcKuqImqS7guO4jUt_uoZqLpP_58jnvpFmU5LEg6JS_s2kmPefLsvDZKEnlbG8RXSXx2hdRPdi0JvgyYGozd9sVCrTjEJIuM2bRcHjxhc8lRY7XQztnua8pdOxjJlj1ACctIKH0-JyIyTwT/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zIbcWHe6T2h-6T1E2mzW5E-jUIK3MN7Pzb8VYFt3g5dX3VLzIV7cp9iM0MZZkvZbxoahDJCLB9R73FIFc_YohOapf8jWuUiPMq8Olx1B23cmI7wGeQSa8xc5zgrWInYVQ203Tw_IYGd6w_S0mANNgZWSGdp1sixr5km7xQC0zvn-oxaWkD6foeVAyTEu2Hxx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -535,7 +575,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/C4rPpTvYYvIPJUnLgfc05an8ycEQZHAKzOinvo32ogslfDNOE0x1E7L0WjcWR5eUlEesMQjq9Mv2-IVSXgZRWclMMLhC0Al0dZPUfQlhprNiIvwpOMfaUw9QTSI4CPPuuZMGeQpybnCdkDtYQm8_WxSQv72L11TWFsGkS7hu6_cdJW0CYy0EAiCEQYcKVXk9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/4BufQNkWKtSH-vLs1GACKdETrQYC-oyFERzt_HxCezEixd8xSvwvo6mg8xYveigCOK4xJ2HFIv2co7uob_EbwjrEQ1ugcQqI0A5__OOEZZ7kl486eciU1FMliDUd7mmhbwAJbVeRLfptdKM59NbxDOdt_IVP01emyC0BCjr1RUHHUSVorKoYo-ykTtG_aNjd/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -545,7 +585,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PrAMuRhTyxbuzjkmOKVPqca-IwGAT6AGqufSLPxV7oDWhqZQmIjHEtohhBKHpguF6GDVwyVoGt16LLHiksUWvi4oFStXLcVwYlh_Dl3ndrrZc62V6TRLLRfKC-V-qq5tWxHizaTXzqq7Z6U2wB2KTVftMEfTrFyvMAWhGPtxGRQ47wSNpSv5a6fcdStxa7yW/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/cl2h9GbxiPT9X6CxRrmV2cP84i2hzCO7mvo7xGNfCkDNg0zUyRpTHNIkRGiN-E0QUhL4CHgYmLM_tFgoa5ZA-TfDAsjbFQQ4NPv8pn8GfDsjSPmPEByqs-mzWl3mxBRPZHF_UfiPx_ylI3W8e_MZcKky1KbmaGHzBKL_dgZwB0S0xsS94p6PwIjMJ9nITB9W/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -555,7 +595,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/emaksi7nFpaqOy1HZVl8JRRWKsV8QlwKUAyCSx8EpKALf0VtvV2u_kJIV2YfHLkF_XkLMhiP1AqmYoozb855i7fEAp0PYbExuUjvZ6jFrWZkZf_pzFS93BeUAE-UjwqikQBh6A3hPafFMDkAZd0tci4IyAAgH8XRJMYW9_o0vB8d87zc_w9ehblLvMkfXCVd/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/X9bTHYjp9zFXAD95WwPiYQwAirryecFQm8PL_Uz275OQ_d-r1P4fQyC7OgvGR9bx67ZNJtNvwk7Ssdi2qciW6tLJjzTE5peNBVeQM7FufdjYLgkmBE_0QQLi-0XkM7YIfgjMM4JAEgY-w70FXfsdX81jdm-K1gln_evN96YxTFz2NI6_iSD2txrcDBviXWzb/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "تصاویری از آتش‌سوزی‌ گسترده‌ای در مناطق مختلف شهر ریاض، پایتخت عربستان + فیلم",
@@ -848,16 +888,6 @@
       "rssDescription": "گاهی یک بازگشت می‌تواند بیش از آنچه تصور می‌کنیم، مایه خشنودی خداوند باشد. پیامبر اکرم صلی‌الله‌علیه‌وآله در روایتی تأمل‌برانگیز، شادی خداوند از توبه بنده را به شادی انسانی تشبیه کرده‌اند که پس از سال‌ها انتظار صاحب فرزند می‌شود یا فردی که گمشده خود را پیدا می‌کند؛ روایتی که از جایگاه توبه و امید به بازگشت در پیشگاه الهی حکایت دارد."
     },
     {
-      "title": "کلنل پسیان؛ سربازی که حتی پس از مرگ آرام نگرفت",
-      "link": "https://www.isna.ir/news/1405071006384/%DA%A9%D9%84%D9%86%D9%84-%D9%BE%D8%B3%DB%8C%D8%A7%D9%86-%D8%B3%D8%B1%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%87-%D8%AD%D8%AA%DB%8C-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%85%D8%B1%DA%AF-%D8%A2%D8%B1%D8%A7%D9%85-%D9%86%DA%AF%D8%B1%D9%81%D8%AA",
-      "date": "2026-10-02T19:58:02.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۸",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "استاد دانشگاه فردوسی مشهد، با تشریح آخرین روزهای زندگی کلنل محمدتقی‌خان پسیان و تحولات سیاسی منتهی به کشته شدن او، به بررسی اتهام تمرد از حکومت مرکزی، ادعای تجزیه‌طلبی و پنج بار جابه‌جایی پیکر این شخصیت تاریخی پرداخت."
-    },
-    {
       "title": "جشنواره فیلم کودکان و نوجوانان برند «شهر دوستدار کودک» اصفهان را تقویت می‌کند",
       "link": "https://www.imna.ir/news/1009088/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%81%DB%8C%D9%84%D9%85-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D8%A8%D8%B1%D9%86%D8%AF-%D8%B4%D9%87%D8%B1-%D8%AF%D9%88%D8%B3%D8%AA%D8%AF%D8%A7%D8%B1-%DA%A9%D9%88%D8%AF%DA%A9-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86",
       "date": "2026-10-02T19:54:54.000Z",
@@ -995,36 +1025,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی: تا پایان مهر، کیف پول بازنشستگان حداقل در یک استان راه‌اندازی می‌شود تا مستمری آنها به‌جای چند روز، در یک روز پرداخت شود. تجربه اجرای این طرح در برخی شرکت‌ها نشان داده که قدرت خرید کارکنان حداقل ۵ درصد افزایش یافته است. امیدواریم با اجرای آن، قدرت خرید بازنشستگان نیز ۵ درصد افزایش یابد."
-    },
-    {
-      "title": "کشف محموله سلاح جنگی در جنوب کرمان؛ زن و مرد قاچاقچی دستگیر شدند",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3249485",
-      "date": "2026-10-02T19:25:24.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۵",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "فرمانده انتظامی کرمان از اجرای موفقیت‌آمیز عملیات تکاوران پلیس در جنوب این استان و کشف محموله سلاح جنگی خبر داد."
-    },
-    {
-      "title": "بارش‌ها تا کی ادامه دارد؟",
-      "link": "https://www.asriran.com/fa/news/1195802/%D8%A8%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7-%D8%AA%D8%A7-%DA%A9%DB%8C-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF",
-      "date": "2026-10-02T19:24:11.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۴",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "سازمان هواشناسی از تداوم سامانه بارشی در روز‌های آینده خبر داد و زمان خروج این سامانه از کشور را اعلام کرد."
-    },
-    {
-      "title": "پیگیری حقوقی حمله و توقیف کشتی توسکا در محاکم بین المللی",
-      "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3711995/%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AD%D9%82%D9%88%D9%82%DB%8C-%D8%AD%D9%85%D9%84%D9%87-%D9%88-%D8%AA%D9%88%D9%82%DB%8C%D9%81-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%AA%D9%88%D8%B3%DA%A9%D8%A7-%D8%AF%D8%B1-%D9%85%D8%AD%D8%A7%DA%A9%D9%85-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C",
-      "date": "2026-10-02T19:23:00.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۳",
-      "source": "تسنیم",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "مدیرعامل کشتیرانی جمهوری اسلامی گفت:حمله و توقیف کشتی توسکا در محاکم بین‌المللی مورد پیگیری حقوقی قرار می‌گیرد"
     }
   ],
   "categorizedNews": {
@@ -1131,6 +1131,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "قدرت خرید بازنشستگان حداقل پنج درصد افزایش می یابد",
+        "link": "https://www.mehrnews.com/news/6965742/%D9%82%D8%AF%D8%B1%D8%AA-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A8%D8%A7%D8%B2%D9%86%D8%B4%D8%B3%D8%AA%DA%AF%D8%A7%D9%86-%D8%AD%D8%AF%D8%A7%D9%82%D9%84-%D9%BE%D9%86%D8%AC-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%85%DB%8C-%DB%8C%D8%A7%D8%A8%D8%AF",
+        "date": "2026-10-02T21:40:15.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۴۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی با تأکید بر ضرورت وفاق، حمایت و نظارت هم‌زمان در مسیر سیاست‌گذاری اقتصادی، گفت: حل مسائل اقتصادی نیازمند طراحی و پرهیز از تصمیم‌گیری‌های روزمره است."
+      },
       {
         "title": "موسیر، طلای سبز دیمزارهای لرستان",
         "link": "https://www.isna.ir/news/1405071106393/%D9%85%D9%88%D8%B3%DB%8C%D8%B1-%D8%B7%D9%84%D8%A7%DB%8C-%D8%B3%D8%A8%D8%B2-%D8%AF%DB%8C%D9%85%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86",
@@ -1371,19 +1381,19 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "اندی رابرتسون امشب مقابل مقدونیه شمالی صدمین بازی خود با پیراهن اسکاتلند را تجربه می‌کند؛ نقطه عطفی بزرگ برای کاپیتان ۳۲ ساله‌ای که حالا پس از کنی دالگلیش، دومین بازیکن تاریخ کشورش با حداقل ۱۰۰ بازی ملی خواهد بود."
-      },
-      {
-        "title": "پیگیری حقوقی حمله و توقیف کشتی توسکا در محاکم بین المللی",
-        "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3711995/%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AD%D9%82%D9%88%D9%82%DB%8C-%D8%AD%D9%85%D9%84%D9%87-%D9%88-%D8%AA%D9%88%D9%82%DB%8C%D9%81-%DA%A9%D8%B4%D8%AA%DB%8C-%D8%AA%D9%88%D8%B3%DA%A9%D8%A7-%D8%AF%D8%B1-%D9%85%D8%AD%D8%A7%DA%A9%D9%85-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C",
-        "date": "2026-10-02T19:23:00.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۳",
-        "source": "تسنیم",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "مدیرعامل کشتیرانی جمهوری اسلامی گفت:حمله و توقیف کشتی توسکا در محاکم بین‌المللی مورد پیگیری حقوقی قرار می‌گیرد"
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "جشن مهرگان 10 مهر است یا 16 مهرماه؟",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249497",
+        "date": "2026-10-02T21:30:32.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "پژوهشگر تاریخ و فرهنگ ایران باستان در پژوهشی پیرامون آیین‌های کهن ایرانی، ریشه‌های اختلاف تقویمی در برگزاری جشن مهرگان را واکاوی کرده است. او در این متن توضیح می‌دهد که چگونه تفاوت میان ساختار گاه‌شماری سنتی زرتشتی و تقویم رسمی خورشیدی، منجر به دوگانگی در تاریخ برگزاری این جشن باستانی میان دهم و شانزدهم مهر شده است."
+      },
       {
         "title": "الحیدری: شهید سید حسن نصرالله ذوب در ولایت بود",
         "link": "https://www.mehrnews.com/news/6965728/%D8%A7%D9%84%D8%AD%DB%8C%D8%AF%D8%B1%DB%8C-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B3%DB%8C%D8%AF-%D8%AD%D8%B3%D9%86-%D9%86%D8%B5%D8%B1%D8%A7%D9%84%D9%84%D9%87-%D8%B0%D9%88%D8%A8-%D8%AF%D8%B1-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D8%A8%D9%88%D8%AF",
@@ -1467,6 +1477,16 @@
     ],
     "اجتماعی": [
       {
+        "title": "تصادف مرگبار L90 و سمند در بزرگراه رستگاری/ ۲ نفر جان باختند",
+        "link": "https://www.isna.ir/news/1405071106398/%D8%AA%D8%B5%D8%A7%D8%AF%D9%81-%D9%85%D8%B1%DA%AF%D8%A8%D8%A7%D8%B1-L90-%D9%88-%D8%B3%D9%85%D9%86%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B1%D8%A7%D9%87-%D8%B1%D8%B3%D8%AA%DA%AF%D8%A7%D8%B1%DB%8C-%DB%B2-%D9%86%D9%81%D8%B1-%D8%AC%D8%A7%D9%86-%D8%A8%D8%A7%D8%AE%D8%AA%D9%86%D8%AF",
+        "date": "2026-10-02T21:38:11.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۳۸",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "سخنگوی سازمان آتش‌نشانی و خدمات ایمنی شهرداری تهران از تصادف یک دستگاه خودروی L90 و سمند در بزرگراه رستگاری خبر داد و گفت: در این حادثه دو نفر از سرنشینان L90 جان خود را از دست دادند و پنج نفر نیز مصدوم شدند."
+      },
+      {
         "title": "زاکانی: ماهانه ۳.۵ تا ۴ میلیون تومان به ازای هر فرزند متولد ۱۴۰۵ پرداخت می‌کنیم",
         "link": "https://www.isna.ir/news/1405071106397/%D8%B2%D8%A7%DA%A9%D8%A7%D9%86%DB%8C-%D9%85%D8%A7%D9%87%D8%A7%D9%86%D9%87-%DB%B3-%DB%B5-%D8%AA%D8%A7-%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D9%88%D9%85%D8%A7%D9%86-%D8%A8%D9%87-%D8%A7%D8%B2%D8%A7%DB%8C-%D9%87%D8%B1-%D9%81%D8%B1%D8%B2%D9%86%D8%AF-%D9%85%D8%AA%D9%88%D9%84%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5",
         "date": "2026-10-02T21:28:13.000Z",
@@ -1537,16 +1557,6 @@
         "rssDescription": "نماینده ولی‌فقیه در استان و امام جمعه کرمان با بازخوانی تحلیلی تاریخ معاصر، دفاع مقدس را الگویی بی‌بدیل در نماد، نمود و رویش دانست و تأکید کرد: پشتیبانی محض از ولایت‌فقیه و حفظ انسجام ملی، تنها مسیر تثبیت اقتدار و پیروزی نهایی کشور است."
       },
       {
-        "title": "کلنل پسیان؛ سربازی که حتی پس از مرگ آرام نگرفت",
-        "link": "https://www.isna.ir/news/1405071006384/%DA%A9%D9%84%D9%86%D9%84-%D9%BE%D8%B3%DB%8C%D8%A7%D9%86-%D8%B3%D8%B1%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%87-%D8%AD%D8%AA%DB%8C-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%85%D8%B1%DA%AF-%D8%A2%D8%B1%D8%A7%D9%85-%D9%86%DA%AF%D8%B1%D9%81%D8%AA",
-        "date": "2026-10-02T19:58:02.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۸",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "استاد دانشگاه فردوسی مشهد، با تشریح آخرین روزهای زندگی کلنل محمدتقی‌خان پسیان و تحولات سیاسی منتهی به کشته شدن او، به بررسی اتهام تمرد از حکومت مرکزی، ادعای تجزیه‌طلبی و پنج بار جابه‌جایی پیکر این شخصیت تاریخی پرداخت."
-      },
-      {
         "title": "تیراندازی در ایوان دو کشته جا گذاشت",
         "link": "https://www.asriran.com/fa/news/1195812/%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D8%AF%D9%88-%DA%A9%D8%B4%D8%AA%D9%87-%D8%AC%D8%A7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA",
         "date": "2026-10-02T19:50:49.000Z",
@@ -1555,16 +1565,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "با حضور ماموران انتظامی در محل و انجام بررسی‌های نخستین مشخص شد فردی با مراجعه به درِ منزل‌ مسکونی، با استفاده از سلاح گرم به سمت ساکنان خانه تیراندازی کرده که در این حادثه زن و مرد ساکن خانه جان خود را از دست دادند."
-      },
-      {
-        "title": "بارش‌ها تا کی ادامه دارد؟",
-        "link": "https://www.asriran.com/fa/news/1195802/%D8%A8%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7-%D8%AA%D8%A7-%DA%A9%DB%8C-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF",
-        "date": "2026-10-02T19:24:11.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۴",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "سازمان هواشناسی از تداوم سامانه بارشی در روز‌های آینده خبر داد و زمان خروج این سامانه از کشور را اعلام کرد."
       }
     ],
     "علمی و فناوری": [
@@ -1580,6 +1580,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "نماینده شاهین شهر: باید امارات را تصرف کنیم/ باید نتانیاهو را در امارات هدف قرار می دادیم/ زبان و دهان عراقچی باید کنترل شود، چون پالس ضعف می دهد، دنبال استیضاح او هستیم/ فشار اقتصادی مشکل جدی برای کشور به وجود نخواهد آورد/ اقتصاد آمریکا درحال فروپاشیست",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249498",
+        "date": "2026-10-02T21:44:07.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۴۴",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "نماینده شاهین شهر، میمه و برخوار و نائب رئیس اول کمیسیون اصل نودم قانون اساسی مجلس دوازدهم درباره سفر نتانیاهو به امارات گفت: «یکی از مطالبات مردم ایران این است که وقتی این قصاب غزه و قاتل صدها ایرانی وارد امارات شد، باید همان‌جا هدف قرار می‌گرفت. من پیش از این هم گفته‌ام که امارات شعبه‌ای از رژیم صهیونیستی است و بارها این موضوع را ثابت کرده و نباید در امان باشد.»"
+      },
       {
         "title": "حکیم از تلاش نخست‌وزیر عراق برای ازسرگیری پروازهای ایران به نجف قدردانی کرد",
         "link": "https://www.irna.ir/news/86281195/%D8%AD%DA%A9%DB%8C%D9%85-%D8%A7%D8%B2-%D9%86%D8%AE%D8%B3%D8%AA-%D9%88%D8%B2%DB%8C%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B2%D8%B3%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87-%D9%86%D8%AC%D9%81-%D9%82%D8%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C",
@@ -1619,6 +1629,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "رئیس شورای اجرایی جنبش نجباء عراق اعلام کرد فرودگاه نجف با اراده مردم بازگشایی شده است."
+      },
+      {
+        "title": "پاکستان: نشست توافق مکه برای بررسی تعامل سیاسی با انصارالله یمن برگزار می‌شود",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3249496",
+        "date": "2026-10-02T21:18:53.000Z",
+        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۱:۱۸",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "وزیر امور خارجه پاکستان اعلام کرد که کمیته دفاع سیاسی استراتژیک، که تحت توافق مکه برای دفاع مشترک بین پاکستان، عربستان و ترکیه تأسیس شده است، هفته آینده در ریاض تشکیل جلسه خواهد داد تا در مورد راه‌های تعامل سیاسی با گروه حوثی به جای توسل به اقدام نظامی بحث کند."
       },
       {
         "title": "آمریکا اسرائیل را به تحریم نظامیان و محدودیت استفاده از سلاح‌های آمریکایی تهدید کرد",
@@ -1669,16 +1689,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "مدیر پروژه ایران در گروه بین‌المللی بحران نوشت: تهران و واشنگتن شکست نخواهند خورد، اما هیچ‌کس نیز برنده نخواهد شد."
-      },
-      {
-        "title": "ادامه لفاظی‌های ترامپ علیه ایران؛ موضوع تهران به زودی پایان خواهد یافت",
-        "link": "https://www.mehrnews.com/news/6965724/%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D9%84%D9%81%D8%A7%D8%B8%DB%8C-%D9%87%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%85%D9%88%D8%B6%D9%88%D8%B9-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
-        "date": "2026-10-02T20:54:56.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۵۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "رئیس‌جمهور آمریکا با تکرار سخنان تکراری و متوهمانه‌اش مدعی شد: ایران در وضعیت خوبی قرار ندارد و مسئله ایران به‌زودی پایان خواهد یافت"
       },
       {
         "title": "تسلیت وزیر امور خارجه عربستان به عراقچی",
@@ -1947,7 +1957,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/TAzzhaV2kwPc6usIQN5HtG17fnNvINwfsbjatsil_6lBfS5WW6bpAUhPE7qDVL48wBX6_PCOXqNjfeCMDJhxKnT_JCqRVpZRZQGmAfWNdhRnx5TdtLKDHbI6HgZYjpYkA4sg4uxclC-NTkbuqfH_pSn8rAwKVgd1d0L-vXRvg3P5_43qIjbIoJPOJTwiUkCa/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/m_pRglTN1YITeYrLqmREQngDVQhOlxXvMYJzmNSoXJTwuJRZZzswCquCLcuJ9AyuBiD-PGTbA6ij5VOQoMlkO4nbntzu_qthqfIBAX5Ud5e0QoQ4F_I4kD8zi8-leQOWOaerG81vqW4r-ENlUd85M_JK5ioF2XLc9uYD3egYIDgOXNIK5qdgStLDLFxxxOfi/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1957,7 +1967,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/INkJk9o6k4UCO3duYAvbgJWQIEVWWM3GKPEIKFVGP6Wde8JgNQcKuqImqS7guO4jUt_uoZqLpP_58jnvpFmU5LEg6JS_s2kmPefLsvDZKEnlbG8RXSXx2hdRPdi0JvgyYGozd9sVCrTjEJIuM2bRcHjxhc8lRY7XQztnua8pdOxjJlj1ACctIKH0-JyIyTwT/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zIbcWHe6T2h-6T1E2mzW5E-jUIK3MN7Pzb8VYFt3g5dX3VLzIV7cp9iM0MZZkvZbxoahDJCLB9R73FIFc_YohOapf8jWuUiPMq8Olx1B23cmI7wGeQSa8xc5zgrWInYVQ203Tw_IYGd6w_S0mANNgZWSGdp1sixr5km7xQC0zvn-oxaWkD6foeVAyTEu2Hxx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1967,7 +1977,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/C4rPpTvYYvIPJUnLgfc05an8ycEQZHAKzOinvo32ogslfDNOE0x1E7L0WjcWR5eUlEesMQjq9Mv2-IVSXgZRWclMMLhC0Al0dZPUfQlhprNiIvwpOMfaUw9QTSI4CPPuuZMGeQpybnCdkDtYQm8_WxSQv72L11TWFsGkS7hu6_cdJW0CYy0EAiCEQYcKVXk9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/4BufQNkWKtSH-vLs1GACKdETrQYC-oyFERzt_HxCezEixd8xSvwvo6mg8xYveigCOK4xJ2HFIv2co7uob_EbwjrEQ1ugcQqI0A5__OOEZZ7kl486eciU1FMliDUd7mmhbwAJbVeRLfptdKM59NbxDOdt_IVP01emyC0BCjr1RUHHUSVorKoYo-ykTtG_aNjd/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -1977,7 +1987,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/PrAMuRhTyxbuzjkmOKVPqca-IwGAT6AGqufSLPxV7oDWhqZQmIjHEtohhBKHpguF6GDVwyVoGt16LLHiksUWvi4oFStXLcVwYlh_Dl3ndrrZc62V6TRLLRfKC-V-qq5tWxHizaTXzqq7Z6U2wB2KTVftMEfTrFyvMAWhGPtxGRQ47wSNpSv5a6fcdStxa7yW/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/cl2h9GbxiPT9X6CxRrmV2cP84i2hzCO7mvo7xGNfCkDNg0zUyRpTHNIkRGiN-E0QUhL4CHgYmLM_tFgoa5ZA-TfDAsjbFQQ4NPv8pn8GfDsjSPmPEByqs-mzWl3mxBRPZHF_UfiPx_ylI3W8e_MZcKky1KbmaGHzBKL_dgZwB0S0xsS94p6PwIjMJ9nITB9W/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -1987,7 +1997,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/emaksi7nFpaqOy1HZVl8JRRWKsV8QlwKUAyCSx8EpKALf0VtvV2u_kJIV2YfHLkF_XkLMhiP1AqmYoozb855i7fEAp0PYbExuUjvZ6jFrWZkZf_pzFS93BeUAE-UjwqikQBh6A3hPafFMDkAZd0tci4IyAAgH8XRJMYW9_o0vB8d87zc_w9ehblLvMkfXCVd/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/X9bTHYjp9zFXAD95WwPiYQwAirryecFQm8PL_Uz275OQ_d-r1P4fQyC7OgvGR9bx67ZNJtNvwk7Ssdi2qciW6tLJjzTE5peNBVeQM7FufdjYLgkmBE_0QQLi-0XkM7YIfgjMM4JAEgY-w70FXfsdX81jdm-K1gln_evN96YxTFz2NI6_iSD2txrcDBviXWzb/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "شایعه عجیب و کذب درباره آقا مجتبی از زبان مادر همسرشان",
@@ -2028,16 +2038,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "توضیحات خلبان هواپیمایی زاگرس در خصوص نبود رادار و تاخیر پرواز را در ویدئوی زیر ببینید."
-      },
-      {
-        "title": "کشف محموله سلاح جنگی در جنوب کرمان؛ زن و مرد قاچاقچی دستگیر شدند",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3249485",
-        "date": "2026-10-02T19:25:24.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۲۵",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "فرمانده انتظامی کرمان از اجرای موفقیت‌آمیز عملیات تکاوران پلیس در جنوب این استان و کشف محموله سلاح جنگی خبر داد."
       }
     ]
   }
