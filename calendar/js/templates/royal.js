@@ -88,6 +88,7 @@ registerTemplate({
   id:'royal',
   label:'سلطنتی نورانی ✨',
   short:'سلطنتی',
+  photoArea:{x:60,y:85,w:380,h:525},
   swatch:'linear-gradient(135deg,#04271f,#0d594d 50%,#d4a437)',
   style:{panel:'#063d35',frame:'#d4a437',inner:'#f7f1d9',goldText:'#f0c34f',darkText:'#10201c',bg:'#04271f',panelR:34,outerR:34,photoR:28,softR:18,pillR:24,goldA:'#a56a08',goldB:'#f6dc85',shadow:.3},
   draw:drawRoyalTemplate

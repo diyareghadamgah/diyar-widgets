@@ -64,6 +64,7 @@ registerTemplate({
   id:'blackgold',
   label:'مشکی و طلایی',
   short:'مشکی و طلایی',
+  photoArea:{x:65,y:85,w:390,h:520},
   swatch:'linear-gradient(90deg,#151515 0 42%,#d4a437 42% 58%,#151515 58%)',
   style:{panel:'#171717',frame:'#d9a52f',inner:'#f1cf67',goldText:'#f4c64f',darkText:'#161616',bg:'#e9ece9',panelR:18,outerR:24,photoR:18,softR:12,pillR:10,goldA:'#8f5a08',goldB:'#f4c64f',shadow:0.30},
   draw:drawBlackGold

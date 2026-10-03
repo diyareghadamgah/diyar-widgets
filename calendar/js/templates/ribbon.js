@@ -219,6 +219,7 @@ registerTemplate({
   id:'ribbon',
   label:'روبان طلایی',
   short:'روبان طلایی',
+  photoArea:{x:79,y:134,w:412,h:412},
   swatch:'linear-gradient(135deg,#d8b25b,#fff0a8 48%,#b77a19)',
   style:{panel:'#e7c96f',frame:'#8b5d16',inner:'#fff1b5',goldText:'#1d1d1d',darkText:'#1b1b1b',bg:'#edf2ef',panelR:54,outerR:46,photoR:30,softR:22,pillR:18,goldA:'#b57a1a',goldB:'#ffe58a',shadow:0.20},
   draw:drawRibbonTemplate

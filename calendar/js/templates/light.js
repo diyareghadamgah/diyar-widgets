@@ -118,6 +118,7 @@ registerTemplate({
   id:'light',
   label:'مدرن روشن',
   short:'مدرن روشن',
+  photoArea:{x:51,y:56,w:378,h:448},
   swatch:'linear-gradient(90deg,#f7f1d9 0 42%,#0d594d 42% 58%,#f7f1d9 58%)',
   style:{panel:'#fbf8ef',frame:'#cbbd8c',inner:'#0d594d',goldText:'#0d594d',darkText:'#10201c',bg:'#edf2ef',panelR:34,outerR:38,photoR:28,softR:18,pillR:24,goldA:'#0d594d',goldB:'#063d35',shadow:0.18},
   draw:drawLightTemplate

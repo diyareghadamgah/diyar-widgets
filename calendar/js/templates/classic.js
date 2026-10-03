@@ -139,6 +139,7 @@ registerTemplate({
   id:'classic',
   label:'کلاسیک سبز و طلایی',
   short:'کلاسیک',
+  photoArea:{x:73,y:73,w:339,h:520},
   swatch:'linear-gradient(90deg,#063d35 0 42%,#d4a437 42% 58%,#063d35 58%)',
   style:{panel:'#063d35',frame:'#d4a437',inner:'#f7f1d9',goldText:'#f0c34f',darkText:'#10201c',bg:'#edf2ef',panelR:40,outerR:42,photoR:34,softR:18,pillR:28,goldA:'#a56a08',goldB:'#f0c34f',shadow:0.25},
   draw:function(i){background();unifiedFrame();photoPanel();mainCard(i);dhikr(i);footer();}
