@@ -60,7 +60,7 @@ function drawThemedCard(i,T){
   const nt=(noteEl.value||'').trim();
   drawTextCenter(nt||'یادداشت…',250,NY+25,310,16,600,nt?T.noteText:'#9c9c9c');
 
-  drawLogoBadge(W/2+40,40,34,{ringOuter:T.acc[0],ringInner:T.acc[1],bg:'#ffffff',placeholderColor:T.acc[0],placeholderFont:12});
+  drawLogoBadge(W/2+40,40,46,{ringOuter:T.acc[0],ringInner:T.acc[1],bg:'#ffffff',placeholderColor:T.acc[0],placeholderFont:12});
 
   // ---- روز هفته
   ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=14;ctx.shadowOffsetY=5;

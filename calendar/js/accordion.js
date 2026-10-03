@@ -2,7 +2,7 @@
    و وضعیت هر کدام در مرورگر ذخیره می‌ماند. */
 (function(){
 'use strict';
-const KEY='diyar-calendar-ui-v1';
+const KEY='diyar-calendar-ui-v2';
 let saved={};
 try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(_){}
 const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(_){}};
@@ -28,13 +28,12 @@ function setup(box,head,cls,id,defOpen){
 
 document.querySelectorAll('.sidebar .section').forEach((sec,k)=>{
   const h=sec.querySelector(':scope>h3');
-  if(h)setup(sec,h,'collapsed','sec'+k,k===0);
+  if(h)setup(sec,h,'collapsed','sec'+k,false);
 });
 document.querySelectorAll('.sidebar .subsec').forEach((sub,k)=>{
   const t=sub.querySelector(':scope>.subsec-title');
   if(!t)return;
-  const closedByDefault=!sub.classList.contains('photo-settings-top')&&!sub.classList.contains('template-box');
-  setup(sub,t,'sub-collapsed','sub'+k,!closedByDefault);
+  setup(sub,t,'sub-collapsed','sub'+k,false);
 });
 
 const tools=document.createElement('div');
