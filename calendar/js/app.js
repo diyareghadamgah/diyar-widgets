@@ -27,8 +27,17 @@ const resetDhikrDayBtn=document.getElementById('resetDhikrDay'),resetDhikrAllBtn
 const chLink=document.getElementById('channelLink'),phLink=document.getElementById('phoneLink'),showQREl=document.getElementById('showQR');
 const templateSelectEl=document.getElementById('templateSelect');
 const templateGridEl=document.getElementById('templateGrid');
-TEMPLATE_LIST.forEach(t=>{
-  const o=document.createElement('option');o.value=t.id;o.textContent=t.label;templateSelectEl.appendChild(o);
+const GROUP_ORDER=['عمومی','مناسبتی'];
+const sortedTemplates=[...TEMPLATE_LIST].sort((a,b)=>GROUP_ORDER.indexOf(a.group||'عمومی')-GROUP_ORDER.indexOf(b.group||'عمومی'));
+let lastGroup=null,optGroup=null;
+sortedTemplates.forEach(t=>{
+  const g=t.group||'عمومی';
+  if(g!==lastGroup){
+    lastGroup=g;
+    optGroup=document.createElement('optgroup');optGroup.label=g;templateSelectEl.appendChild(optGroup);
+    const h=document.createElement('div');h.className='tpl-group';h.textContent=g;templateGridEl.appendChild(h);
+  }
+  const o=document.createElement('option');o.value=t.id;o.textContent=t.label;optGroup.appendChild(o);
   const c=document.createElement('div');c.className='template-card';c.dataset.template=t.id;
   const sw=document.createElement('div');sw.className='template-swatch';sw.style.background=t.swatch;
   c.appendChild(sw);c.appendChild(document.createTextNode(t.short||t.label));templateGridEl.appendChild(c);
@@ -212,7 +221,7 @@ function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.l
 const inRect=(r,x,y)=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h;
 const inPhoneRegion=(x,y)=>inRect(CLICK_PHONE,x,y);
 const inChannelRegion=(x,y)=>inRect(CLICK_CHANNEL_FOOTER,x,y)||inRect(CLICK_CHANNEL_PILL,x,y);
-const inPhotoArea=(x,y)=>x>=IMG_AREA.x&&x<=IMG_AREA.x+IMG_AREA.w&&y>=IMG_AREA.y&&y<=IMG_AREA.y+IMG_AREA.h;
+const inPhotoArea=(x,y)=>inRect((TEMPLATES[templateMode]&&TEMPLATES[templateMode].photoArea)||IMG_AREA,x,y);
 const phoneHref=v=>'tel:'+(v||'').replace(/[^\d+]/g,'');
 
 function openPhone(){const p=(phEl.value||'').replace(/[^\d+]/g,'');if(p)window.open('tel:'+p,'_blank');}
