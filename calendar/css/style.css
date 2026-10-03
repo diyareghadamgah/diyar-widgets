@@ -71,3 +71,7 @@ canvas{width:100%;height:auto;display:block;border-radius:13px;box-shadow:0 5px 
 .subsec.sub-collapsed>.subsec-title{margin-bottom:0}
 .acc-tools{margin:0 0 8px}
 .acc-tools button{margin-top:0;padding:6px;font-size:12px}
+
+/* ===== لیست قالب‌ها (کشویی و اسکرولی) ===== */
+.template-grid{max-height:330px;overflow-y:auto;padding:2px 2px 4px}
+.tpl-group{grid-column:1/-1;font-size:12px;font-weight:800;color:var(--green);border-bottom:1px dashed #c7d0cd;padding:4px 2px 2px;margin-top:2px}
