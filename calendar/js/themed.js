@@ -115,7 +115,7 @@ function drawThemedCard(i,T){
   drawRoundIcon('phone',92,FC,24,T.acc[1],T.pillText);
   drawRoundIcon('plane',W-92,FC,24,T.acc[1],T.pillText);
   ctx.save();ctx.textBaseline='middle';ctx.fillStyle=T.footText;ctx.textAlign='left';ctx.direction='ltr';
-  ctx.font='700 '+fit(phEl.value||'',300,24,700)+'px Arial';ctx.fillText(phEl.value||'',130,FC);
+  ctx.font='700 '+fit(phEl.value||'',300,24,700,'Arial')+'px Arial';ctx.fillText(phEl.value||'',130,FC);
   ctx.restore();
   drawTextCenter(ch,W-245,FC,300,24,800,T.footText);
 }

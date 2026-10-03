@@ -61,8 +61,8 @@ const S={frame:'#d4a437',inner:'#f7f1d9',panel:'#063d35',goldText:'#f0c34f',dark
 
 const IMG_AREA={x:73,y:73,w:339,h:520};
 const CLICK_PHONE={x:70,y:1005,w:410,h:130};
-const CLICK_CHANNEL_FOOTER={x:490,y:1005,w:470,h:130};
-const CLICK_CHANNEL_PILL={x:600,y:610,w:365,h:48};
+const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
+const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
 
 function parts(date,cal){
   const p=new Intl.DateTimeFormat('en-US-u-ca-'+cal+'-nu-latn',{day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'}).formatToParts(date);
@@ -82,7 +82,7 @@ function cur(){
 
 function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
 function grad(a,b,y0,y1){const g=ctx.createLinearGradient(0,y0,0,y1);g.addColorStop(0,a);g.addColorStop(.5,b);g.addColorStop(1,a);return g;}
-function fit(t,w,size,weight){weight=weight||900;const safeW=w*.86;while(size>12){ctx.font=weight+' '+size+'px Tahoma, Arial, sans-serif';if(ctx.measureText(String(t||'')).width<=safeW)break;size-=1;}return size;}
+function fit(t,w,size,weight,font){weight=weight||900;font=font||'Vazirmatn';const safeW=w*.86;while(size>10){ctx.font=weight+' '+size+'px '+font+', Arial, sans-serif';if(ctx.measureText(String(t||'')).width<=safeW)break;size-=1;}return size;}
 function panel(x,y,w,h,r){
   const t=TS();r=r==null?t.panelR:Math.min(r,t.panelR);
   ctx.save();ctx.shadowColor='#0004';ctx.shadowBlur=templateMode==='blackgold'?22:18;ctx.shadowOffsetY=6;ctx.fillStyle=t.panel;rr(x,y,w,h,r);ctx.fill();ctx.restore();
@@ -220,7 +220,17 @@ function normalizeUrl(u){u=(u||'').trim();if(!u)return '';if(!/^https?:\/\//i.te
 function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.left)*cv.width/r.width,y:(e.clientY-r.top)*cv.height/r.height};}
 const inRect=(r,x,y)=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h;
 const inPhoneRegion=(x,y)=>inRect(CLICK_PHONE,x,y);
-const inChannelRegion=(x,y)=>inRect(CLICK_CHANNEL_FOOTER,x,y)||inRect(CLICK_CHANNEL_PILL,x,y);
+function channelRegions(){
+  const map={
+    royal:[{x:575,y:566,w:335,h:46},{x:570,y:1035,w:350,h:70}],
+    classic:[{x:630,y:1038,w:320,h:64},{x:585,y:600,w:420,h:60}],
+    light:[{x:640,y:1015,w:300,h:70},{x:485,y:566,w:510,h:46}],
+    blackgold:[{x:680,y:1018,w:230,h:54}],
+    ribbon:[{x:365,y:350,w:310,h:80},{x:665,y:1020,w:300,h:60}]
+  };
+  return map[templateMode]||[{x:485,y:566,w:510,h:46},{x:620,y:1005,w:350,h:80}];
+}
+const inChannelRegion=(x,y)=>channelRegions().some(r=>inRect(r,x,y));
 const inPhotoArea=(x,y)=>inRect((TEMPLATES[templateMode]&&TEMPLATES[templateMode].photoArea)||IMG_AREA,x,y);
 const phoneHref=v=>'tel:'+(v||'').replace(/[^\d+]/g,'');
 
@@ -329,8 +339,9 @@ resetDhikrDayBtn.onclick=()=>{const d=+dhikrDayEl.value;DHIKR[d]=[...DHIKR_DEFAU
 resetDhikrAllBtn.onclick=()=>{for(let d=0;d<7;d++){DHIKR[d]=[...DHIKR_DEFAULT[d]];dhikrSettings[d]={arabicSize:31,translationSize:24,titleSize:29};}syncDhikrEditor();render();};
 syncDhikrEditor();
 
-dateEl.onchange=render;
-offEl.onchange=render;
+function updateEventInfo(){const i=cur();const el=document.getElementById('eventInfo');if(!el)return;const ev=i?getEvents(i):[];el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):'برای این روز مناسبت ثبت‌شده‌ای در دادهٔ ۱۴۰۵ نیست.';}
+dateEl.onchange=()=>{render();updateEventInfo();};
+offEl.onchange=()=>{localStorage.setItem('calendar-lunar-offset',String(offEl.value));render();updateEventInfo();};
 chEl.oninput=render;
 showQREl.onchange=render;
 chUrlEl.oninput=()=>{const url=(chUrlEl.value||'').trim();chLink.href=url||'#';chLink.style.display=url?'inline-flex':'none';render();};
@@ -342,6 +353,7 @@ noteEl.oninput=render;
 });
 
 const blobUrls={logo:null,photo:null};
+(function restoreOffset(){const saved=localStorage.getItem('calendar-lunar-offset');if(saved!==null&&/^-?\d+$/.test(saved))offEl.value=Math.max(-2,Math.min(2,+saved));})();
 function fileInput(inputId,which,previewId){
   document.getElementById(inputId).onchange=e=>{
     const f=e.target.files&&e.target.files[0];if(!f)return;
@@ -392,7 +404,9 @@ document.getElementById('zip').onclick=async(e)=>{
   const i0=cur();if(!i0){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
   const n=Math.max(1,Math.min(366,+nEl.value||1));
   const [y,m,d]=dateEl.value.split('-').map(Number);
-  const off=+offEl.value||0;const zip=new JSZip();
+  const off=+offEl.value||0;
+  if(typeof JSZip==='undefined'){alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.');return;}
+  const zip=new JSZip();
   btn.disabled=true;
   try{
     for(let k=0;k<n;k++){
@@ -414,5 +428,6 @@ document.getElementById('zip').onclick=async(e)=>{
   dateEl.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
   phLink.href=phoneHref(phEl.value);
   updatePhotoUI();
+  updateEventInfo();
   render();
 })();
