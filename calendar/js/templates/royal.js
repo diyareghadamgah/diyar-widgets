@@ -37,7 +37,7 @@
     ctx.strokeStyle=gold(630,680);ctx.lineWidth=2;rr(75,630,350,50,25);ctx.stroke();
     const nt=(noteEl.value||'').trim();
     drawTextCenter(nt||'یادداشت…',250,655,310,16,600,nt?'#10201c':'#b3a374');
-    drawLogoBadge(W/2+40,40,34,{ringOuter:'#d4a437',ringInner:'#8a6a10',bg:'#fffdf5',placeholderColor:'#8a7f52',placeholderFont:12});
+    drawLogoBadge(W/2+40,40,46,{ringOuter:'#d4a437',ringInner:'#8a6a10',bg:'#fffdf5',placeholderColor:'#8a7f52',placeholderFont:12});
     ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=14;ctx.shadowOffsetY=5;
     ctx.fillStyle=gold(100,190);rr(485,100,510,90,45);ctx.fill();ctx.restore();
     drawTextCenter(WD[i.wd],740,146,420,56,900,'#10201c');

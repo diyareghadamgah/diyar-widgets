@@ -212,7 +212,7 @@
     }
 
     /* لوگو: گوشهٔ بالا-چپ قالب */
-    if(logo&&logo.naturalWidth)drawLogoBadge(82, 92, 40, {ringOuter:'#c9a44a', ringInner:'#8a6a10', bg:'#fffdf5', placeholderColor:'#8a7f52', placeholderFont:15});
+    if(logo&&logo.naturalWidth)drawLogoBadge(82, 92, 50, {ringOuter:'#c9a44a', ringInner:'#8a6a10', bg:'#fffdf5', placeholderColor:'#8a7f52', placeholderFont:15});
   }
 
 registerTemplate({

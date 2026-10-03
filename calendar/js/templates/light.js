@@ -111,7 +111,7 @@
     ctx.font='700 '+chz+'px Vazirmatn';ctx.fillText(ch,920,FY+FH/2);drawRoundIcon('plane',958,FY+FH/2,24,'#fff',green);
 
     drawSprig(1030,30,175,0.5,'#a8bfb1');
-    drawLogoBadge(970, 80, 40, {ringOuter:'#0d594d', ringInner:'#063d35', bg:'#ffffff', placeholderColor:'#0d594d', placeholderFont:14});
+    drawLogoBadge(970, 80, 50, {ringOuter:'#0d594d', ringInner:'#063d35', bg:'#ffffff', placeholderColor:'#0d594d', placeholderFont:14});
   }
 
 registerTemplate({
