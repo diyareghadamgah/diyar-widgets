@@ -1,8 +1,8 @@
 // نسخه را با هر تغییر مهم بالا ببرید تا کش قدیمی پاک شود
-const CACHE = 'diyar-calendar-v6';
+const CACHE = 'diyar-calendar-v8';
 const CORE = [
   './', './index.html', './manifest.json', './css/style.css',
-  './js/registry.js', './js/shared.js', './js/themed.js', './js/app.js', './js/accordion.js',
+  './js/registry.js', './js/events.js', './js/vendor/jszip.min.js', './js/shared.js', './js/themed.js', './js/app.js', './js/accordion.js',
   './js/templates/royal.js', './js/templates/nightsky.js', './js/templates/turquoise.js', './js/templates/rosegold.js',
   './js/templates/occasions/ramadan.js', './js/templates/occasions/muharram.js', './js/templates/occasions/eid.js', './js/templates/occasions/ghadir.js', './js/templates/occasions/shaban15.js', './js/templates/occasions/milad.js', './js/templates/occasions/shahadat.js', './js/templates/occasions/fatemiyeh.js', './js/templates/occasions/qadr.js', './js/templates/occasions/jome.js', './js/templates/occasions/nowruz.js', './js/templates/occasions/yalda.js', './js/templates/occasions/melli.js', './js/templates/occasions/mothersday.js', './js/templates/occasions/fathersday.js', './js/templates/classic.js', './js/templates/light.js',
   './js/templates/blackgold.js', './js/templates/ribbon.js',
