@@ -18,7 +18,7 @@ const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
 const cv = document.getElementById('c');
 const ctx = cv.getContext('2d');
 
-const dateEl=document.getElementById('date'),offEl=document.getElementById('off'),chEl=document.getElementById('channel'),chUrlEl=document.getElementById('channelUrl'),phEl=document.getElementById('phone'),nEl=document.getElementById('n'),noteEl=document.getElementById('note');
+const dateEl=document.getElementById('date'),jYearEl=document.getElementById('jYear'),jMonthEl=document.getElementById('jMonth'),jDayEl=document.getElementById('jDay'),offEl=document.getElementById('off'),chEl=document.getElementById('channel'),chUrlEl=document.getElementById('channelUrl'),phEl=document.getElementById('phone'),nEl=document.getElementById('n'),noteEl=document.getElementById('note');
 const zoomEl=document.getElementById('photoZoom'),photoXEl=document.getElementById('photoX'),photoYEl=document.getElementById('photoY'),zoomValEl=document.getElementById('zoomVal'),resetPhotoBtn=document.getElementById('resetPhoto');
 const dhikrDayEl=document.getElementById('dhikrDay'),dhikrArabicEl=document.getElementById('dhikrArabic'),dhikrTranslationEl=document.getElementById('dhikrTranslation');
 const dhikrArabicSizeEl=document.getElementById('dhikrArabicSize'),dhikrTranslationSizeEl=document.getElementById('dhikrTranslationSize'),dhikrTitleSizeEl=document.getElementById('dhikrTitleSize');
@@ -63,6 +63,38 @@ const IMG_AREA={x:73,y:73,w:339,h:520};
 const CLICK_PHONE={x:70,y:1005,w:410,h:130};
 const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
 const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
+
+function jalaliToGregorian(jy,jm,jd){
+  jy=Number(jy);jm=Number(jm);jd=Number(jd);let gy=jy+621;
+  const breaks=[-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2192,2262,2324,2394,2456,3178];
+  let jp=breaks[0],jump=0;for(let i=1;i<breaks.length;i++){jump=breaks[i]-jp;if(jy<breaks[i])break;jp=breaks[i];}
+  let n=jy-jp,leapJ=Math.floor(n/33)*8+Math.floor((n%33+3)/4);if(jump%33===4&&jump-n===4)leapJ++;
+  let leapG=Math.floor(gy/4)-Math.floor((Math.floor(gy/100)+1)*3/4)-150,march=20+leapJ-leapG;
+  let gday=jm<=6?(jm-1)*31+jd-1:(jm-7)*30+jd-1+186;
+  return new Date(Date.UTC(gy,march-1,1,12)+gday*864e5);
+}
+function gregorianToJalali(gdate){
+  const gy=gdate.getUTCFullYear(),gm=gdate.getUTCMonth()+1,gd=gdate.getUTCDate(),gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
+  let gy2=gy+1,days=355666+365*gy+Math.floor(gy2/4)-Math.floor(gy2/100)+Math.floor(gy2/400)+gd+gdm[gm-1];
+  if(gm>2&&((gy%4===0&&gy%100!==0)||gy%400===0))days++;
+  let jy=-1595+33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;
+  if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
+  const jm=days<186?1+Math.floor(days/31):7+Math.floor((days-186)/30),jd=1+(days<186?days%31:(days-186)%30);
+  return {y:jy,m:jm,d:jd};
+}
+const JMONTHS=FA_M;
+function fillJalaliSelectors(){
+  if(!jYearEl)return;for(let y=1300;y<=1500;y++){const o=document.createElement('option');o.value=y;o.textContent=fa(y);jYearEl.appendChild(o);}
+  JMONTHS.forEach((name,i)=>{const o=document.createElement('option');o.value=i+1;o.textContent=name;jMonthEl.appendChild(o);});
+}
+function jalaliMonthLength(y,m){if(m<=6)return 31;if(m<=11)return 30;const r=y%33;return [1,5,9,13,17,22,26,30].includes(r)?30:29;}
+function refreshJalaliDays(){
+  const y=+jYearEl.value||1405,m=+jMonthEl.value||1,old=+jDayEl.value||1,max=jalaliMonthLength(y,m);jDayEl.innerHTML='';
+  for(let d=1;d<=max;d++){const o=document.createElement('option');o.value=d;o.textContent=fa(d);jDayEl.appendChild(o);}jDayEl.value=Math.min(old,max);
+}
+function setGregorianISOFromJalali(){const d=jalaliToGregorian(+jYearEl.value,+jMonthEl.value,+jDayEl.value);dateEl.value=d.getUTCFullYear()+'-'+String(d.getUTCMonth()+1).padStart(2,'0')+'-'+String(d.getUTCDate()).padStart(2,'0');}
+function syncJalaliFromISO(){const v=dateEl.value;if(!v)return;const [y,m,d]=v.split('-').map(Number),j=gregorianToJalali(new Date(Date.UTC(y,m-1,d,12)));jYearEl.value=j.y;jMonthEl.value=j.m;refreshJalaliDays();jDayEl.value=j.d;}
+fillJalaliSelectors();
 
 function parts(date,cal){
   const p=new Intl.DateTimeFormat('en-US-u-ca-'+cal+'-nu-latn',{day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'}).formatToParts(date);
@@ -340,7 +372,9 @@ resetDhikrAllBtn.onclick=()=>{for(let d=0;d<7;d++){DHIKR[d]=[...DHIKR_DEFAULT[d]
 syncDhikrEditor();
 
 function updateEventInfo(){const i=cur();const el=document.getElementById('eventInfo');if(!el)return;const ev=i?getEvents(i):[];el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):'برای این روز مناسبت ثبت‌شده‌ای در دادهٔ ۱۴۰۵ نیست.';}
-dateEl.onchange=()=>{render();updateEventInfo();};
+function jalaliChanged(){refreshJalaliDays();setGregorianISOFromJalali();render();updateEventInfo();}
+jYearEl.onchange=jalaliChanged;jMonthEl.onchange=jalaliChanged;jDayEl.onchange=()=>{setGregorianISOFromJalali();render();updateEventInfo();};
+dateEl.onchange=()=>{syncJalaliFromISO();render();updateEventInfo();};
 offEl.onchange=()=>{localStorage.setItem('calendar-lunar-offset',String(offEl.value));render();updateEventInfo();};
 chEl.oninput=render;
 showQREl.onchange=render;
@@ -426,6 +460,7 @@ document.getElementById('zip').onclick=async(e)=>{
 (function init(){
   const t=new Date();
   dateEl.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  syncJalaliFromISO();
   phLink.href=phoneHref(phEl.value);
   updatePhotoUI();
   updateEventInfo();
