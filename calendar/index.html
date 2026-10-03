@@ -24,7 +24,15 @@
     <section class="section">
       <h3>⚙ تنظیمات کارت تقویم</h3>
       <div class="body">
-        <label>تاریخ (میلادی)<input type="date" id="date"></label>
+        <label>تاریخ شمسی
+          <div class="jalali-date-row" id="jalaliDateRow">
+            <select id="jYear" aria-label="سال شمسی"></select>
+            <select id="jMonth" aria-label="ماه شمسی"></select>
+            <select id="jDay" aria-label="روز شمسی"></select>
+          </div>
+          <input type="hidden" id="date">
+          <div class="help" style="margin-top:5px">سال، ماه و روز را به تقویم شمسی انتخاب کنید.</div>
+        </label>
         <label>انتخاب لوگو<input type="file" id="logo" accept="image/*"></label>
         <div class="file-preview" id="logoPreview" hidden><img alt="پیش‌نمایش لوگو"></div>
         <div class="subsec photo-settings-top">
