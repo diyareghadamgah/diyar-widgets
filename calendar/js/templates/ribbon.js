@@ -201,7 +201,7 @@
     ctx.fillStyle='#fff';ctx.beginPath();
     ctx.moveTo(640,FCY+1);ctx.lineTo(661,FCY-8);ctx.lineTo(654,FCY+10);ctx.lineTo(650,FCY+3);ctx.closePath();ctx.fill();
     ctx.fillStyle='#1b1405';ctx.textBaseline='middle';ctx.textAlign='left';
-    ctx.save();ctx.direction='ltr';ctx.font='800 '+fit(phEl.value||'',280,22,800)+'px Arial';ctx.fillText(phEl.value||'',142,FCY);ctx.restore();
+    ctx.save();ctx.direction='ltr';ctx.font='800 '+fit(phEl.value||'',280,22,800,'Arial')+'px Arial';ctx.fillText(phEl.value||'',142,FCY);ctx.restore();
     ctx.font='800 '+fit(ch,270,22,800)+'px Vazirmatn';ctx.fillText(ch,688,FCY);
     const url=(chUrlEl.value||'').trim();
     if(showQREl.checked&&url){

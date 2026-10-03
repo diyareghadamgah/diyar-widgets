@@ -52,7 +52,7 @@
     ctx.fillStyle=t.panel;rr(55,980,905,130,18);ctx.fill();
     ctx.strokeStyle=t.frame;ctx.lineWidth=4;rr(55,980,905,130,18);ctx.stroke();
     ctx.fillStyle=t.goldText;ctx.textAlign='left';
-    ctx.font='700 '+fit(phEl.value||'',300,22,700)+'px Arial';ctx.save();ctx.direction='ltr';ctx.fillText(phEl.value||'',135,1045);ctx.restore();drawRoundIcon('phone',98,1045,24,t.goldText,t.panel);
+    ctx.font='700 '+fit(phEl.value||'',300,22,700,'Arial')+'px Arial';ctx.save();ctx.direction='ltr';ctx.fillText(phEl.value||'',135,1045);ctx.restore();drawRoundIcon('phone',98,1045,24,t.goldText,t.panel);
     const url=(chUrlEl.value||'').trim(), hasQR=showQREl.checked&&!!url;
     if(hasQR)drawQRCanvas(getQRMatrix(url),450,990,105);
     drawRoundIcon('plane',640,1045,24,t.goldText,t.panel);drawTextCenter((chEl.value||'').replace('@',''),795,1045,230,20,700,t.goldText);

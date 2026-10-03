@@ -80,7 +80,7 @@
     const url=(chUrlEl.value||'').trim();
     if(showQREl.checked&&url)drawQRCanvas(getQRMatrix(url),W/2-55,FY+15,110);
     ctx.textBaseline='middle';ctx.fillStyle=GB;ctx.textAlign='left';
-    ctx.font='700 '+fit(phEl.value||'',300,24,700)+'px Arial';ctx.save();ctx.direction='ltr';ctx.fillText(phEl.value||'',85,FY+FH/2);ctx.restore();
+    ctx.font='700 '+fit(phEl.value||'',300,24,700,'Arial')+'px Arial';ctx.save();ctx.direction='ltr';ctx.fillText(phEl.value||'',85,FY+FH/2);ctx.restore();
     drawTextCenter(ch,W-250,FY+FH/2,320,24,800,GB);
   }
 
