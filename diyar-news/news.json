@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-03T00:29:52.897Z",
-  "lastUpdatePersian": "۱۱ مهر ۱۴۰۵، ۰:۲۹",
+  "lastUpdate": "2026-10-03T00:48:06.689Z",
+  "lastUpdatePersian": "۱۱ مهر ۱۴۰۵، ۰:۴۸",
   "totalNews": 100,
   "failedSources": [
     "فارس",
@@ -31,6 +31,26 @@
   ],
   "news": [
     {
+      "title": "بازی‌های آسیایی ناگویا؛ ناهید کیانی از سد حریف قزاقی گذشت",
+      "link": "https://www.irna.ir/news/86281208/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D9%86%D8%A7%D9%87%DB%8C%D8%AF-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%AF-%D8%AD%D8%B1%DB%8C%D9%81-%D9%82%D8%B2%D8%A7%D9%82%DB%8C-%DA%AF%D8%B0%D8%B4%D8%AA",
+      "date": "2026-10-03T00:43:34.000Z",
+      "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۴۳",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "ناگویا- ایرنا- در سومین و آخرین روز از رقابت‌های تکواندو بازیهای آسیایی آیچی ناگویا که در سالن ورزشی تویوهاشی در حال برگزاری است, ناهید کیانی از سد حریف قزاقستانی گذشت."
+    },
+    {
+      "title": "شاید ورم شکمتان فقط نفخ نباشد",
+      "link": "https://www.tabnak.ir/fa/news/1396980/%D8%B4%D8%A7%DB%8C%D8%AF-%D9%88%D8%B1%D9%85-%D8%B4%DA%A9%D9%85%D8%AA%D8%A7%D9%86-%D9%81%D9%82%D8%B7-%D9%86%D9%81%D8%AE-%D9%86%D8%A8%D8%A7%D8%B4%D8%AF",
+      "date": "2026-10-03T00:32:02.000Z",
+      "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۳۲",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "نفخ شکم معمولاً به صورت احساس پری، فشار یا کشیدگی در شکم احساس می‌شود. گاز روده، یبوست، بعضی غذاها، تغییر حرکات دستگاه گوارش و حتی بلعیدن هوا می‌توانند باعث نفخ شوند."
+    },
+    {
       "title": "سازمان ملل: ایست‌های بازرسی اسرائیل زندگی فلسطینیان کرانه باختری را محدود کرده است",
       "link": "https://www.isna.ir/news/1405071106407/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D8%A7%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D8%B1%D8%B3%DB%8C-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%81%D9%84%D8%B3%D8%B7%DB%8C%D9%86%DB%8C%D8%A7%D9%86-%DA%A9%D8%B1%D8%A7%D9%86%D9%87-%D8%A8%D8%A7%D8%AE%D8%AA%D8%B1%DB%8C",
       "date": "2026-10-03T00:26:04.000Z",
@@ -41,7 +61,7 @@
       "rssDescription": "گزارشگر ویژه سازمان ملل متحد در امور سرزمین‌های اشغالی فلسطین با محکوم کردن شبکه گسترده ایست‌های بازرسی و موانع جاده‌ای رژیم صهیونیستی در کرانه باختری، تأکید کرد که این اقدامات خودسرانه، زندگی روزمره فلسطینیان را به شدت محدود و این سرزمین را چند تکه کرده است."
     },
     {
-      "title": "نتایج ورزشکاران ایران در روز چهاردهم بازی های آسیایی/ برد ناهید کیانی در دور نخست",
+      "title": "نتایج ورزشکاران ایران در روز چهاردهم بازی های آسیایی/ برد ناهید کیانی و شکست نسیم محمدی",
       "link": "https://www.isna.ir/news/1405071106406/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D9%88%D8%B1%D8%B2%D8%B4%DA%A9%D8%A7%D8%B1%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A8%D8%B1%D8%AF-%D9%86%D8%A7%D9%87%DB%8C%D8%AF",
       "date": "2026-10-03T00:26:03.000Z",
       "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۲۶",
@@ -745,7 +765,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/S4GF5Vh-a1ukt5lXVgIrCzH4e_cGIL3wyrnqLz_q8ANxN-najGm6-VWCu2JKEW4FhqzurTDDoH9XqJNi0lmcR2n1ASRhvmcQU2F67-ImLVWBkDMuT-A6xOgWrrfd14BZoOZDvojmZaJ5Oi5R0A_zRCbe2yo-3jXX_2vy--a18WpD5DyK3tM0I6MNW_FyPTAq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5-NDmTfjsFPr_o1aIRQE_8e7umArqdx4C7HdvnCz6aCBvrE1t1IuWGPbePvKii1DwEDwKwymud9g0PhvbQfU2WkIFEqbMUvimiJeY8b_isQzyFi3JCv5wGLAB02rW2r7mfv1X_9JrVBqY9uJCo9or02-6ASHX_QKA69J1EA4hl4JvOsnhwyAydQzPpPIvc7K/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -755,7 +775,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Lbo915Euwut-rai9zBIqUhtZ-YzG_8Di7IDFKxO7T9oVDilwIXt0dEOdmNzCMSlc2X9KIvVsgpicJsh-Md9pIZWsx4UweCUtaJihkds7BhMzOIhXfY6JDGSaO9kOHzrCf4Y2Sdt3XQVlphPlJoXRJW86CFoKFlDgcXlnwmvh4FN4LwS5r_CfHwS-fVP9cJnE/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/xm6h1_qx5tdxGks4eNE0DLj1htbdbieDq5hWmhmhjbdBafNU_Dut7fKraq7JG5TnchilfIRUZMwiPkfG_9Fod48AcpD_vHGG2KLS89WVmBg8J-0tJikz6FXLHU3KnRwAZnmkEZbr2PEZvcXIpk-JmuxQzA1HpAXRxCjiDLto9Ml4g8_g6o_QfMPJs72fgzPJ/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -765,7 +785,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/qb4VgXe6eBlgj2bQjNR1Y3uXl-wRfr25mtZlfy5l5qIC5Cdh4mMmEJ3-pbVY7da3FFoKYzSXOMmsiQaIoc4dvXRrqoXGvH1VK1FBNGkGSyVEr21tWnGSnruhNiEwm_987TGGEz8okjrHC60kKeZepTMmaY3PdsQzXAfi6Wl73LBtRKX4XJFzPff7kgE2vKFX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/6-VBw7CrKcf4VfEw_dKs0sAw4JsU714qYOhDegV70MqVI_nL40AiN6UBcb3BpKMu8dxktFjFe_dFmiG1WlHu0DI_DQLUv1eR-iZftuzBRvvqWHIR5MJ4uJ1kj1FCAfhni53mR_UY8YAg9wTnbSuSuQcCxHuTtLmdYtgyQdBJNKvw5Li2HPsdEKYbhQYbfs-r/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -775,7 +795,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/-1dGfFmHLW_dF_WhEbZyzKLLvT5606UkVzkdDRtnKXbCK5AlpNsYh6JijQck3e9hOQKY0xJaVN8uFeXjlQB0EQJZYiThPg3Zv-2M5gamV6ZfYQfnYk3SiREBox3d5KInTbGx3-TTp_p6p4yXRdrnmaV5vj24BvYTDijjBKAUqR2fpvtxkReEjb9m5ol7TOYi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/97Xn1SkpMRQkVekXc36txdKK_BUtXlHtUfEmKyt7nzWk-zftBq8z67WKyPpvWuv8SoLnvwl-hsCzJozwmZvtylV1B9TA08wnbb1peIsGA0iuzF4GP1KHQr-Kd2GTl0xN-OsXbXxp4QvieosiA8QdzHkJgMVgoPUnt-3qE4kr2LSwL7ikv_BWBzrx25NJ_VzU/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -785,7 +805,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/XnhKmZajQkZol0xaPVTpvSYcL6DWgj4YH6JI6hjI73I2sNVVIhRhUNOtX-2Usniql8oqBBUk-SCl_tV3SMCp2srq_T-VqDuKVMIVAjcL7cHwTwsgoywDkdN_raRocEtD36j_CkCzW2MDlQRdBMApqdKHWEc4MChk5xH8FpgbaVeD4IseyT6eZX30xsbqEXpD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/xOejtB-cWgw1z0bUi56zV_R8x4JtogvaaJ1KLlXV2hDZH06yEglwUJkM8qM0sm5obEMMAXGTtqyEfCh4IQMfQekgCNrNi-JPobkJi7htXuxaHziQ0z2whUu5x5Ka7WDq1KMDQHQ6JyLMKQsTXk-6k0XRmEqfYcLk9OEc4YMx04oHs5OXEKZHUS01wvKktqQI/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "تصاویری از آتش‌سوزی‌ گسترده‌ای در مناطق مختلف شهر ریاض، پایتخت عربستان + فیلم",
@@ -856,16 +876,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران-ایرنا- حسن روحانی رئیس جمهور پیشین جمهوری اسلامی در پی فوت خواهرعباس عراقچی وزیر امور خارجه پیام تسلیت داد."
-    },
-    {
-      "title": "پلیس انگلیس دو تبعه ایرانی را به دلیل ادعاهای امنیتی متهم کرد",
-      "link": "https://www.irna.ir/news/86281180/%D9%BE%D9%84%DB%8C%D8%B3-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%D8%AF%D9%88-%D8%AA%D8%A8%D8%B9%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%AF%D9%84%DB%8C%D9%84-%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%D9%85%D8%AA%D9%87%D9%85-%DA%A9%D8%B1%D8%AF",
-      "date": "2026-10-02T20:24:10.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۲۴",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "وین – ایرنا – پلیس ضدتروریسم انگلیس دو تبعه ایرانی را به ادعای برنامه‌ریزی برای انجام اقدامات تروریستی علیه جامعه یهودیان در منچستر متهم کرد."
     },
     {
       "title": "ترامپ در ادعایی: ایران در وضعیت دشواری قرار دارد/ پرونده ایران به زودی بسته می‌شود و قیمت‌های نفت کاهش می‌یابد",
@@ -1016,16 +1026,6 @@
       "flag": "🇮🇷",
       "category": "اقتصادی",
       "rssDescription": "وزیر تعاون، کار و رفاه اجتماعی: اولویت دولت، افزایش حمایت از اقشار نیازمند است و در این زمینه جلسات متعددی با رئیس‌کل بانک مرکزی، رئیس سازمان برنامه و بودجه و وزیر اقتصاد برگزار شده است. تأمین منابع مالی مهم‌ترین مسئله افزایش کالابرگ است و سازمان برنامه و بودجه مسئولیت هماهنگی در این زمینه را بر عهده دارد. بانک مرکزی رقم ۵۰ درصد را مطرح کرده، اما زمان اجرای آن هنوز مشخص نیست."
-    },
-    {
-      "title": "هشتگ «استعفا دادم»؛ چه کسی پشت این روایت‌ها است؟ / پروژه‌ای تازه برای روایت‌سازی",
-      "link": "https://www.khabaronline.ir/news/2282670/%D9%87%D8%B4%D8%AA%DA%AF-%D8%A7%D8%B3%D8%AA%D8%B9%D9%81%D8%A7-%D8%AF%D8%A7%D8%AF%D9%85-%DA%86%D9%87-%DA%A9%D8%B3%DB%8C-%D9%BE%D8%B4%D8%AA-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%D8%B3%D8%AA-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87",
-      "date": "2026-10-02T19:53:00.000Z",
-      "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۳",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "تکرار و شباهت ویدئوهای اخیر در مورد استعفا، نشان از یک جریان هدفمند برای روایت‌سازی رسانه‌ای دارد که در آن ادعاهای شخصی، بدون راستی‌آزمایی به عنوان واقعیت‌های اجتماعی عرضه می‌شوند."
     }
   ],
   "categorizedNews": {
@@ -1082,6 +1082,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "شاید ورم شکمتان فقط نفخ نباشد",
+        "link": "https://www.tabnak.ir/fa/news/1396980/%D8%B4%D8%A7%DB%8C%D8%AF-%D9%88%D8%B1%D9%85-%D8%B4%DA%A9%D9%85%D8%AA%D8%A7%D9%86-%D9%81%D9%82%D8%B7-%D9%86%D9%81%D8%AE-%D9%86%D8%A8%D8%A7%D8%B4%D8%AF",
+        "date": "2026-10-03T00:32:02.000Z",
+        "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۳۲",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "نفخ شکم معمولاً به صورت احساس پری، فشار یا کشیدگی در شکم احساس می‌شود. گاز روده، یبوست، بعضی غذاها، تغییر حرکات دستگاه گوارش و حتی بلعیدن هوا می‌توانند باعث نفخ شوند."
+      },
       {
         "title": "پیکاپ و کمپر با معافیت کامل گمرکی؛ این امتیاز دقیقاً برای چه کسانی است؟",
         "link": "https://www.tabnak.ir/fa/news/1396985/%D9%BE%DB%8C%DA%A9%D8%A7%D9%BE-%D9%88-%DA%A9%D9%85%D9%BE%D8%B1-%D8%A8%D8%A7-%D9%85%D8%B9%D8%A7%D9%81%DB%8C%D8%AA-%DA%A9%D8%A7%D9%85%D9%84-%DA%AF%D9%85%D8%B1%DA%A9%DB%8C-%D8%A7%DB%8C%D9%86-%D8%A7%D9%85%D8%AA%DB%8C%D8%A7%D8%B2-%D8%AF%D9%82%DB%8C%D9%82%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%DA%86%D9%87-%DA%A9%D8%B3%D8%A7%D9%86%DB%8C-%D8%A7%D8%B3%D8%AA",
@@ -1205,7 +1215,17 @@
     ],
     "ورزشی": [
       {
-        "title": "نتایج ورزشکاران ایران در روز چهاردهم بازی های آسیایی/ برد ناهید کیانی در دور نخست",
+        "title": "بازی‌های آسیایی ناگویا؛ ناهید کیانی از سد حریف قزاقی گذشت",
+        "link": "https://www.irna.ir/news/86281208/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D9%86%D8%A7%D9%87%DB%8C%D8%AF-%DA%A9%DB%8C%D8%A7%D9%86%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%AF-%D8%AD%D8%B1%DB%8C%D9%81-%D9%82%D8%B2%D8%A7%D9%82%DB%8C-%DA%AF%D8%B0%D8%B4%D8%AA",
+        "date": "2026-10-03T00:43:34.000Z",
+        "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۴۳",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "ناگویا- ایرنا- در سومین و آخرین روز از رقابت‌های تکواندو بازیهای آسیایی آیچی ناگویا که در سالن ورزشی تویوهاشی در حال برگزاری است, ناهید کیانی از سد حریف قزاقستانی گذشت."
+      },
+      {
+        "title": "نتایج ورزشکاران ایران در روز چهاردهم بازی های آسیایی/ برد ناهید کیانی و شکست نسیم محمدی",
         "link": "https://www.isna.ir/news/1405071106406/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D9%88%D8%B1%D8%B2%D8%B4%DA%A9%D8%A7%D8%B1%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A8%D8%B1%D8%AF-%D9%86%D8%A7%D9%87%DB%8C%D8%AF",
         "date": "2026-10-03T00:26:03.000Z",
         "datePersian": "۱۱ مهر ۱۴۰۵، ۰:۲۶",
@@ -1803,16 +1823,6 @@
         "rssDescription": "نیویورک – ایرنا- ایالات متحده آمریکا که در میدان جنگ نظامی به دلیل مقاومت ایرانیان و نیروهای مسلح ناکام مانده در پی فشار بر کشورهای جهان و ائتلاف سازی برای همسو کردن آنان با سیاست‌های یکجانبه ضد ایرانی در سازمان ملل متحد است."
       },
       {
-        "title": "پلیس انگلیس دو تبعه ایرانی را به دلیل ادعاهای امنیتی متهم کرد",
-        "link": "https://www.irna.ir/news/86281180/%D9%BE%D9%84%DB%8C%D8%B3-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%D8%AF%D9%88-%D8%AA%D8%A8%D8%B9%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%AF%D9%84%DB%8C%D9%84-%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%D9%85%D8%AA%D9%87%D9%85-%DA%A9%D8%B1%D8%AF",
-        "date": "2026-10-02T20:24:10.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۲۰:۲۴",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "وین – ایرنا – پلیس ضدتروریسم انگلیس دو تبعه ایرانی را به ادعای برنامه‌ریزی برای انجام اقدامات تروریستی علیه جامعه یهودیان در منچستر متهم کرد."
-      },
-      {
         "title": "ادامه دست و پا زدن ترامپ برای خروج از باتلاق جنگ علیه ایران",
         "link": "https://www.tasnimnews.ir/fa/news/1405/07/10/3712002/%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%B3%D8%AA-%D9%88-%D9%BE%D8%A7-%D8%B2%D8%AF%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AE%D8%B1%D9%88%D8%AC-%D8%A7%D8%B2-%D8%A8%D8%A7%D8%AA%D9%84%D8%A7%D9%82-%D8%AC%D9%86%DA%AF-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
         "date": "2026-10-02T20:20:44.000Z",
@@ -1969,7 +1979,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/S4GF5Vh-a1ukt5lXVgIrCzH4e_cGIL3wyrnqLz_q8ANxN-najGm6-VWCu2JKEW4FhqzurTDDoH9XqJNi0lmcR2n1ASRhvmcQU2F67-ImLVWBkDMuT-A6xOgWrrfd14BZoOZDvojmZaJ5Oi5R0A_zRCbe2yo-3jXX_2vy--a18WpD5DyK3tM0I6MNW_FyPTAq/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5-NDmTfjsFPr_o1aIRQE_8e7umArqdx4C7HdvnCz6aCBvrE1t1IuWGPbePvKii1DwEDwKwymud9g0PhvbQfU2WkIFEqbMUvimiJeY8b_isQzyFi3JCv5wGLAB02rW2r7mfv1X_9JrVBqY9uJCo9or02-6ASHX_QKA69J1EA4hl4JvOsnhwyAydQzPpPIvc7K/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1979,7 +1989,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/Lbo915Euwut-rai9zBIqUhtZ-YzG_8Di7IDFKxO7T9oVDilwIXt0dEOdmNzCMSlc2X9KIvVsgpicJsh-Md9pIZWsx4UweCUtaJihkds7BhMzOIhXfY6JDGSaO9kOHzrCf4Y2Sdt3XQVlphPlJoXRJW86CFoKFlDgcXlnwmvh4FN4LwS5r_CfHwS-fVP9cJnE/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/xm6h1_qx5tdxGks4eNE0DLj1htbdbieDq5hWmhmhjbdBafNU_Dut7fKraq7JG5TnchilfIRUZMwiPkfG_9Fod48AcpD_vHGG2KLS89WVmBg8J-0tJikz6FXLHU3KnRwAZnmkEZbr2PEZvcXIpk-JmuxQzA1HpAXRxCjiDLto9Ml4g8_g6o_QfMPJs72fgzPJ/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۱ مهر ۱۴۰۵",
@@ -1989,7 +1999,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/qb4VgXe6eBlgj2bQjNR1Y3uXl-wRfr25mtZlfy5l5qIC5Cdh4mMmEJ3-pbVY7da3FFoKYzSXOMmsiQaIoc4dvXRrqoXGvH1VK1FBNGkGSyVEr21tWnGSnruhNiEwm_987TGGEz8okjrHC60kKeZepTMmaY3PdsQzXAfi6Wl73LBtRKX4XJFzPff7kgE2vKFX/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/6-VBw7CrKcf4VfEw_dKs0sAw4JsU714qYOhDegV70MqVI_nL40AiN6UBcb3BpKMu8dxktFjFe_dFmiG1WlHu0DI_DQLUv1eR-iZftuzBRvvqWHIR5MJ4uJ1kj1FCAfhni53mR_UY8YAg9wTnbSuSuQcCxHuTtLmdYtgyQdBJNKvw5Li2HPsdEKYbhQYbfs-r/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۱ مهر + جدول",
@@ -1999,7 +2009,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/-1dGfFmHLW_dF_WhEbZyzKLLvT5606UkVzkdDRtnKXbCK5AlpNsYh6JijQck3e9hOQKY0xJaVN8uFeXjlQB0EQJZYiThPg3Zv-2M5gamV6ZfYQfnYk3SiREBox3d5KInTbGx3-TTp_p6p4yXRdrnmaV5vj24BvYTDijjBKAUqR2fpvtxkReEjb9m5ol7TOYi/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/97Xn1SkpMRQkVekXc36txdKK_BUtXlHtUfEmKyt7nzWk-zftBq8z67WKyPpvWuv8SoLnvwl-hsCzJozwmZvtylV1B9TA08wnbb1peIsGA0iuzF4GP1KHQr-Kd2GTl0xN-OsXbXxp4QvieosiA8QdzHkJgMVgoPUnt-3qE4kr2LSwL7ikv_BWBzrx25NJ_VzU/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۱ مهر ۱۴۰۵",
@@ -2009,7 +2019,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/XnhKmZajQkZol0xaPVTpvSYcL6DWgj4YH6JI6hjI73I2sNVVIhRhUNOtX-2Usniql8oqBBUk-SCl_tV3SMCp2srq_T-VqDuKVMIVAjcL7cHwTwsgoywDkdN_raRocEtD36j_CkCzW2MDlQRdBMApqdKHWEc4MChk5xH8FpgbaVeD4IseyT6eZX30xsbqEXpD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/xOejtB-cWgw1z0bUi56zV_R8x4JtogvaaJ1KLlXV2hDZH06yEglwUJkM8qM0sm5obEMMAXGTtqyEfCh4IQMfQekgCNrNi-JPobkJi7htXuxaHziQ0z2whUu5x5Ka7WDq1KMDQHQ6JyLMKQsTXk-6k0XRmEqfYcLk9OEc4YMx04oHs5OXEKZHUS01wvKktqQI/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "شایعه عجیب و کذب درباره آقا مجتبی از زبان مادر همسرشان",
@@ -2030,16 +2040,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "گاهی یک بازگشت می‌تواند بیش از آنچه تصور می‌کنیم، مایه خشنودی خداوند باشد. پیامبر اکرم صلی‌الله‌علیه‌وآله در روایتی تأمل‌برانگیز، شادی خداوند از توبه بنده را به شادی انسانی تشبیه کرده‌اند که پس از سال‌ها انتظار صاحب فرزند می‌شود یا فردی که گمشده خود را پیدا می‌کند؛ روایتی که از جایگاه توبه و امید به بازگشت در پیشگاه الهی حکایت دارد."
-      },
-      {
-        "title": "هشتگ «استعفا دادم»؛ چه کسی پشت این روایت‌ها است؟ / پروژه‌ای تازه برای روایت‌سازی",
-        "link": "https://www.khabaronline.ir/news/2282670/%D9%87%D8%B4%D8%AA%DA%AF-%D8%A7%D8%B3%D8%AA%D8%B9%D9%81%D8%A7-%D8%AF%D8%A7%D8%AF%D9%85-%DA%86%D9%87-%DA%A9%D8%B3%DB%8C-%D9%BE%D8%B4%D8%AA-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%D8%B3%D8%AA-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87",
-        "date": "2026-10-02T19:53:00.000Z",
-        "datePersian": "۱۰ مهر ۱۴۰۵، ۱۹:۵۳",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "تکرار و شباهت ویدئوهای اخیر در مورد استعفا، نشان از یک جریان هدفمند برای روایت‌سازی رسانه‌ای دارد که در آن ادعاهای شخصی، بدون راستی‌آزمایی به عنوان واقعیت‌های اجتماعی عرضه می‌شوند."
       }
     ]
   }
