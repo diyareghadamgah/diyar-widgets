@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-04T22:43:30.013Z",
-  "lastUpdatePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۴۳",
+  "lastUpdate": "2026-10-04T22:55:44.462Z",
+  "lastUpdatePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۵۵",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -31,6 +31,36 @@
   ],
   "news": [
     {
+      "title": "فرمانده انتظامی آستانه‌اشرفیه: امنیت محصول همکاری مردم و پلیس است",
+      "link": "https://www.mehrnews.com/news/6967985/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D8%A7%D8%B4%D8%B1%D9%81%DB%8C%D9%87-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D8%AD%D8%B5%D9%88%D9%84-%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D9%BE%D9%84%DB%8C%D8%B3",
+      "date": "2026-10-04T22:50:58.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۵۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "آستانه‌اشرفیه- فرمانده انتظامی آستانه‌اشرفیه با اشاره به اهمیت مشارکت اجتماعی در تأمین امنیت گفت: امنیت محصول همکاری مردم و پلیس است."
+    },
+    {
+      "title": "«بولسونارو» در شمارش اولیه انتخابات برزیل پیشتاز شد",
+      "link": "https://www.mehrnews.com/news/6968038/%D8%A8%D9%88%D9%84%D8%B3%D9%88%D9%86%D8%A7%D8%B1%D9%88-%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7%D8%B1%D8%B4-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84-%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2-%D8%B4%D8%AF",
+      "date": "2026-10-04T22:44:08.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۴۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "با شمارش ۴۷.۲۶ درصد از آرای انتخابات ریاست‌جمهوری برزیل، فلاویو بولسونارو با کسب ۵۰.۲۰ درصد آرا در صدر قرار دارد."
+    },
+    {
+      "title": "فیلم| قیام ادامه‌دار بجنوردی‌ها پس از ۲۱۸ شب",
+      "link": "https://www.imna.ir/news/1009674/%D9%81%DB%8C%D9%84%D9%85-%D9%82%DB%8C%D8%A7%D9%85-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AC%D9%86%D9%88%D8%B1%D8%AF%DB%8C-%D9%87%D8%A7-%D9%BE%D8%B3-%D8%A7%D8%B2-%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8",
+      "date": "2026-10-04T22:42:36.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۴۲",
+      "source": "ایمنا",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "مردم بجنورد پس از گذشت ۲۱۸ شب، همچنان حضوری غرورانگیز را در شب‌های میدان‌داری، ثبت می‌کنند."
+    },
+    {
       "title": "۲۱۸ شب حماسه و اقتدار مردم ولایی سلماس در خیابان",
       "link": "https://www.mehrnews.com/news/6968037/%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D9%88-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
       "date": "2026-10-04T22:37:41.000Z",
@@ -49,6 +79,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "ارومیه - مردم ولایی ارومیه در دویست و هیجدهمین اجتماع شبانه مقاومت ملی حمایت خود زا از رهبری و انقلاب اعلام کردند."
+    },
+    {
+      "title": "بازداشت عاملان لگدمال کردن پرچم آمریکا در بغداد/ جنبش النجباء دستگیری آنها را محکوم کرد و خواستار آزادی شان شد",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250017",
+      "date": "2026-10-04T22:30:32.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "همزمان با راه‌اندازی کمپین «مردان آزاد عراقی»، جنبش النجباء دستگیری افراد به بهانه «بی‌احترامی به پرچم آمریکا» را محکوم کرد و آزادی فوری آنها را خواستار شد."
     },
     {
       "title": "آشنایی با قابلیت‌های ویژه‌ ساعت خلبانان جنگنده",
@@ -89,6 +129,16 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "شبکه ۱۳ تلویزیون رژیم صهیونیستی ادعا کرد که همام الهمامی، کمک‌خلبان عمانی شرکت فلای‌دبی که به تلاش برای سرنگونی یک پرواز متهم شده، در جریان بازجویی در امارات گفته است «به دلیل انجام پروازهای این شرکت به تل‌آویو، فلای‌دبی را برای استخدام انتخاب کرده و پیش از استخدام برای اجرای این عملیات برنامه‌ریزی کرده بود.»"
+    },
+    {
+      "title": "آمریکا برای حفظ تمرکز بر ایران، از حمله به یمن پرهیز می‌کند",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250016",
+      "date": "2026-10-04T22:21:57.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۲۱",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "پایگاه خبری آکسیوس به نقل از مقام‌های آمریکایی گزارش داد: «فرماندهی مرکزی آمریکا (سنتکام) درباره انجام حملات نظامی در یمن ملاحظات جدی دارد؛ چراکه بیم آن می‌رود گشودن جبهه‌ای جدید باعث پراکنده شدن تمرکز و توانمندی‌های آمریکا از رویارویی با ایران شود.»"
     },
     {
       "title": "ادعای وال‌استریت: بازگشت همه بمب‌افکن‌های بی-1 آمریکا از پایگاه فرفورد",
@@ -401,16 +451,6 @@
       "rssDescription": "رقابت‌های فوتبال لیگ ملت‌های اروپا با توقف آلمان مقابل یونان و برتری تیم‌های هلند و پرتغال پیگیری شد."
     },
     {
-      "title": "ایران در مسیر دیپلماسی جدیت دارد؛ همان‌گونه که در دفاع از خود جدی است",
-      "link": "https://www.mehrnews.com/news/6968022/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AA-%D8%AF%D8%A7%D8%B1%D8%AF-%D9%87%D9%85%D8%A7%D9%86-%DA%AF%D9%88%D9%86%D9%87-%DA%A9%D9%87-%D8%AF%D8%B1-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D8%AE%D9%88%D8%AF",
-      "date": "2026-10-04T21:16:59.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۱۶",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "وزیر امور خارجه کشورمان در جمع سفرا و رؤسای نمایندگی‌های دیپلماتیک گفت: برای همگان روشن شد که جمهوری اسلامی ایران در مسیر دیپلماسی جدیت دارد؛ همان‌گونه که در دفاع از خود جدی و مصمم است."
-    },
-    {
       "title": "اسپانیا زیر آب: وضعیت بیلبائو پس از بارش‌های شدید + فیلم",
       "link": "https://www.khabaronline.ir/news/2283710/%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7-%D8%B2%DB%8C%D8%B1-%D8%A2%D8%A8-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%DB%8C%D9%84%D8%A8%D8%A7%D8%A6%D9%88-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7%DB%8C-%D8%B4%D8%AF%DB%8C%D8%AF-%D9%81%DB%8C%D9%84%D9%85",
       "date": "2026-10-04T21:15:00.000Z",
@@ -518,16 +558,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "مأموران پلیس آمریکا در سال 2025 بیش از 1300 نفر را به قتل رساندند و فقط در 6روز آدم نکشتند."
-    },
-    {
-      "title": "۲۱۸ شب از خروش مردم ولایی اسفراین گذشت",
-      "link": "https://www.mehrnews.com/news/6968002/%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8-%D8%A7%D8%B2-%D8%AE%D8%B1%D9%88%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B3%D9%81%D8%B1%D8%A7%DB%8C%D9%86-%DA%AF%D8%B0%D8%B4%D8%AA",
-      "date": "2026-10-04T20:56:56.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۵۶",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "اسفراین- مردم ولایی اسفراین با حضور در دویست و هجدهمین قرار و اجتماع باشکوه شبانه، ضمن اعلام حمایت از رزمندگان اسلام، بر پایبندی و بیعت خود با رهبر معظم انقلاب اسلامی تأکید کردند."
     },
     {
       "title": "سفیر آمریکا در فلسطین اشغالی: با توصیف جنگ غزه به‌عنوان «نسل‌کشی» مخالفم!",
@@ -677,7 +707,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/bDrz5oaFOCJaK4tPIAW_gnO5ayaFsnMUc-KsAFqvpwYAD82qecj2-KXjExvx8weS9Uie_6FsMoP1MEUWBfVwWT7W3jAHF6TF3rAC1Nc7AuThIBtJ1hii4rTrZi_smugwGwaaPsQKzLk4bzugMdRXk2065cojV8lZtQcOdnPUtx98NIVNhPFRjxGCJhAn6Y1U/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9eAvG68EbisstZBwYuuOopDpPLIASZlq-TetjVcBUjut7GBcDIlhbRSeKv7hY716oF9pwhtlRJrQDTGKP3L3h6cZ6TBFE_wSlpRnRU-S9arIfOPiLgYqimzlq9uJKzX8T2dH9KRvmyU0SzB3es0N1tkJ0O8iUlkoUCynMXZqjH4kJPQvJF74ECvFF7N-nDQe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -687,7 +717,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/55UI9hYLQjl6I_uqJAskIXzGg2obkcKiVaWdOU3f59NWKH4KNEpJzNIBjbey55VyM6NNS1n7nsFP1Ok_Rv8t7ShiB50aA_YDpkoKaOnwSpf3CYbOiQwJOHIm0IOMVoooXzbmq5blQWjbCdmDqF1oNzYgRZs1zogUVsQMhalzp6YbEeV1w5s-bEHDOZITkhH9/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/avpm-rosMjS40sjuE6DgQzHjjAYXCApa_HeltCJbA6RB08vN23EhaMQdC53t0hp2coauMojPtae7RMG10DyFnJbbwX3rKwrrnrEJiz12RoK6D-LRCnaJOq3WdnjR7-Et6U3tElVJ64IUMkAL9LbVei8V554_DKtY6fGy7z9m9sTSSzcZadt0LV_Uvob3WwNm/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -697,7 +727,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/vv63_HelrkLDEKphoAggJ3RF8Yz4ckxssM1DrDM1FKIJtutbuE5idCCw69TsQEkySp3pxo9wHemwDhvv0dJp2KueKct1AhH0J41eybGMVvpV_calpAfspyuSOVKJknx4cpgGMYaYRzR8fBsA3V2GL0nZFoVoRp4wqJTpkDIrrZRF15iSW7qOYzjY_02RIu2r/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wfNDtftEQnmUEPvmv_JFYO4_Sws-WrZneIaEoAvga8N0TQkGGH8WIeyp1O1SL8WDZIcW8xwNAWh3wkfwQR3q882albeB5602nvpXdxKaioDeNmnT3xvF_zM5FAeLF8L4rjh4W46IHLgCTMhBNU-Yw6MJifvfJR8g6bJikgFToVy6kA4a9aFM1sakbKc9P9Ge/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز دوشنبه ۱۳ مهر + جدول",
@@ -707,7 +737,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/pDK5HpQgCl8soMh__JyraVkF2ZB-pTx6_3TQMSqXXIPEws5Ghf9szVrBpR1zei5KeC9N7sqqLHWRlmhaCVERmSIu3pF_v2lhaFLb09QZMzPKKoUCWP-XaKNAt3if49ulIdpaj6KsFa31z88syneRc2wclvjruYBNJ_mzXsMhlQNZsnEY_fmQGvmI1kExb0aq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Klc2CEIN2M4ddS6LhmzZABzYzJATqVTREb9Yfvdl9n-gGfOxcKmIglCQ8NRFfD5Nownv9YiebuM463MR7S7Z38YXm_JxcK7gwHj5oA3IC9OVxkQSrYO5BISZw75Uyf3XW4BItCQq9UaTMEweK7wkml3220J4ThfRC7vHVFPb8-8ibdsMLxVprtF0Tqd01OZA/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -717,7 +747,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/j-WAA-C2_p21rmrLB93RYjOcEWqsBYWwz9JD7aF7GkSJwHjKmpI2UervV07SiUZX1ZwjBkuA1en7BruGAs4VEw_rdpe3IPuVi68jZUCU3xc-rtOMulMHWNpB4716rGqi2LhF6cg_FpIdGZb0ousqofMmCyNHyWNKdNxCvWfrHjwEbh7e0IrWjVuJDiQu1rFK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/FrJheyUqRDdgp-lLWiqsD2KsXTZ2hUFFiggjMBI8hDI1GmXD3sEyprR_bCtPkh0uCgJpkpj9gpP9STRUP6tEojFOYCi2KYGkLoepXZYBPkoQBsm4AasZFmbZpxdLMQIW5Amx0O18BFpMSG5-MuW991BjKd_JbPhuHi9b5VBHhtXMcYSqzasJ7CAJ1hHs8XrN/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نرخ مصاحبه رتبه‌های برتر کنکور/ عکس",
@@ -960,16 +990,6 @@
       "rssDescription": "بر اساس گزارش رسانه آمریکایی، واشنگتن برای دومین بار در هفته‌های اخیر، درخواست عربستان سعودی برای پیوستن به عملیات گسترده علیه یمن و انجام حملات هوایی را رد کرد."
     },
     {
-      "title": "اگر آمریکایی‌ها حمله زمینی کنند واکنش ایران چه خواهد بود؟/ ویدئو",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3250000",
-      "date": "2026-10-04T20:12:30.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۲",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "سردار فدوی، رئیس گروه مشاوران فرمانده کل سپاه گفت: در صورت حمله زمینی، ما هر نقطه‌ای که مربوط به آمریکایی‌هاست، پایگاه‌های آمریکایی‌ها، هر شناوری که مربوط به آمریکایی‌هاست را هدف قرار خواهیم داد."
-    },
-    {
       "title": "واکنش‌ها به آغاز عملیات اسرائیل در «خط سوفا ۵۳» سوریه",
       "link": "https://www.tabnak.ir/fa/news/1397314/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%87%D8%A7-%D8%A8%D9%87-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%AE%D8%B7-%D8%B3%D9%88%D9%81%D8%A7-53-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
       "date": "2026-10-04T20:11:30.000Z",
@@ -978,16 +998,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "قطر و اردن ازسرگیری عملیات نظامیان رژیم صهیونیستی در «خط سوفا ۵۳» در استان قنیطره سوریه را محکوم و آن را نقض حاکمیت سوریه و قوانین بین‌المللی دانستند."
-    },
-    {
-      "title": "زلزله ترکیه را لرزاند",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3249999",
-      "date": "2026-10-04T20:10:06.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۰",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "زمین‌لرزه ۴.۴ ریشتری جنوب ترکیه را لرزاند."
     },
     {
       "title": "پزشکیان: دولت برای مدیریت شرایط ویژه آرایش جدید گرفته است",
@@ -1018,20 +1028,20 @@
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
       "rssDescription": "در این بسته خبری بر مهم‌ترین خبرهای رسیده سینما و تئاتر مروری داریم."
-    },
-    {
-      "title": "هیچ شناور آمریکایی و هم‌پیمانانش در خلیج‌فارس نیست",
-      "link": "https://www.tabnak.ir/fa/news/1397313/%D9%87%DB%8C%DA%86-%D8%B4%D9%86%D8%A7%D9%88%D8%B1-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%88-%D9%87%D9%85-%D9%BE%DB%8C%D9%85%D8%A7%D9%86%D8%A7%D9%86%D8%B4-%D8%AF%D8%B1-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D9%86%DB%8C%D8%B3%D8%AA",
-      "date": "2026-10-04T20:02:40.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۰۲",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "رئیس گروه مشاوران فرمانده کل سپاه گفت: تنگه هرمز در تمام این ماه‌های طولانی، به‌طور مسلم تحت کنترل ایران بوده است."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "«بولسونارو» در شمارش اولیه انتخابات برزیل پیشتاز شد",
+        "link": "https://www.mehrnews.com/news/6968038/%D8%A8%D9%88%D9%84%D8%B3%D9%88%D9%86%D8%A7%D8%B1%D9%88-%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7%D8%B1%D8%B4-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84-%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2-%D8%B4%D8%AF",
+        "date": "2026-10-04T22:44:08.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۴۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "با شمارش ۴۷.۲۶ درصد از آرای انتخابات ریاست‌جمهوری برزیل، فلاویو بولسونارو با کسب ۵۰.۲۰ درصد آرا در صدر قرار دارد."
+      },
       {
         "title": "اتحاد مردم ارومیه در دویست و هجدهمین اجتماع مقاومت ملی",
         "link": "https://www.mehrnews.com/news/6968036/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D8%AC%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D9%84%DB%8C",
@@ -1071,16 +1081,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "محلات- در این ویدئو دویست و هجدهمین شب اجتماع حماسی مردم محلات در حمایت از رهبر معظم انقلاب را ملاحظه می کنید."
-      },
-      {
-        "title": "ایران در مسیر دیپلماسی جدیت دارد؛ همان‌گونه که در دفاع از خود جدی است",
-        "link": "https://www.mehrnews.com/news/6968022/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AA-%D8%AF%D8%A7%D8%B1%D8%AF-%D9%87%D9%85%D8%A7%D9%86-%DA%AF%D9%88%D9%86%D9%87-%DA%A9%D9%87-%D8%AF%D8%B1-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D8%AE%D9%88%D8%AF",
-        "date": "2026-10-04T21:16:59.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۱۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "وزیر امور خارجه کشورمان در جمع سفرا و رؤسای نمایندگی‌های دیپلماتیک گفت: برای همگان روشن شد که جمهوری اسلامی ایران در مسیر دیپلماسی جدیت دارد؛ همان‌گونه که در دفاع از خود جدی و مصمم است."
       },
       {
         "title": "اعتراض وزارت خارجه به استمرار بی‌عملی نروژ در قبال فعالیت‌های غیرمجاز استارلینک در قلمروی ایران",
@@ -1309,6 +1309,16 @@
     ],
     "فرهنگی و هنری": [
       {
+        "title": "فیلم| قیام ادامه‌دار بجنوردی‌ها پس از ۲۱۸ شب",
+        "link": "https://www.imna.ir/news/1009674/%D9%81%DB%8C%D9%84%D9%85-%D9%82%DB%8C%D8%A7%D9%85-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1-%D8%A8%D8%AC%D9%86%D9%88%D8%B1%D8%AF%DB%8C-%D9%87%D8%A7-%D9%BE%D8%B3-%D8%A7%D8%B2-%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8",
+        "date": "2026-10-04T22:42:36.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۴۲",
+        "source": "ایمنا",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "مردم بجنورد پس از گذشت ۲۱۸ شب، همچنان حضوری غرورانگیز را در شب‌های میدان‌داری، ثبت می‌کنند."
+      },
+      {
         "title": "عکس رنگی شده از مسجد جامع مراغه در دوره قاجار",
         "link": "https://www.tabnak.ir/fa/news/1397217/%D8%B9%DA%A9%D8%B3-%D8%B1%D9%86%DA%AF%DB%8C-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B2-%D9%85%D8%B3%D8%AC%D8%AF-%D8%AC%D8%A7%D9%85%D8%B9-%D9%85%D8%B1%D8%A7%D8%BA%D9%87-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D9%87-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1",
         "date": "2026-10-04T22:30:02.000Z",
@@ -1450,6 +1460,16 @@
     ],
     "اجتماعی": [
       {
+        "title": "بازداشت عاملان لگدمال کردن پرچم آمریکا در بغداد/ جنبش النجباء دستگیری آنها را محکوم کرد و خواستار آزادی شان شد",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250017",
+        "date": "2026-10-04T22:30:32.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "همزمان با راه‌اندازی کمپین «مردان آزاد عراقی»، جنبش النجباء دستگیری افراد به بهانه «بی‌احترامی به پرچم آمریکا» را محکوم کرد و آزادی فوری آنها را خواستار شد."
+      },
+      {
         "title": "ادعاهای تازه درباره حادثه فلای‌دبی",
         "link": "https://www.isna.ir/news/1405071307993/%D8%A7%D8%AF%D8%B9%D8%A7%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D9%81%D9%84%D8%A7%DB%8C-%D8%AF%D8%A8%DB%8C",
         "date": "2026-10-04T22:24:44.000Z",
@@ -1542,6 +1562,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "رئیس گروه مشاوران فرمانده کل سپاه پاسداران انقلاب اسلامی گفت: تنگه هرمز در تمام این ماه‌های طولانی، به‌طور مسلم تحت کنترل ایران بوده است. توانمندی نظامی آمریکا دریامحور است؛ به این معنا که در نیروی دریایی خود، هم نیروی زمینی و هم نیروی هوایی دارد. بنابراین، تجلی توان نظامی آمریکا در نیروی دریایی این کشور است. منبع: خبرگزاری دانشجو"
+      },
+      {
+        "title": "آمریکا برای حفظ تمرکز بر ایران، از حمله به یمن پرهیز می‌کند",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250016",
+        "date": "2026-10-04T22:21:57.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۲۱",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "پایگاه خبری آکسیوس به نقل از مقام‌های آمریکایی گزارش داد: «فرماندهی مرکزی آمریکا (سنتکام) درباره انجام حملات نظامی در یمن ملاحظات جدی دارد؛ چراکه بیم آن می‌رود گشودن جبهه‌ای جدید باعث پراکنده شدن تمرکز و توانمندی‌های آمریکا از رویارویی با ایران شود.»"
       },
       {
         "title": "ادعای وال‌استریت: بازگشت همه بمب‌افکن‌های بی-1 آمریکا از پایگاه فرفورد",
@@ -1794,16 +1824,6 @@
         "rssDescription": "بر اساس گزارش رسانه آمریکایی، واشنگتن برای دومین بار در هفته‌های اخیر، درخواست عربستان سعودی برای پیوستن به عملیات گسترده علیه یمن و انجام حملات هوایی را رد کرد."
       },
       {
-        "title": "اگر آمریکایی‌ها حمله زمینی کنند واکنش ایران چه خواهد بود؟/ ویدئو",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250000",
-        "date": "2026-10-04T20:12:30.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۲",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "سردار فدوی، رئیس گروه مشاوران فرمانده کل سپاه گفت: در صورت حمله زمینی، ما هر نقطه‌ای که مربوط به آمریکایی‌هاست، پایگاه‌های آمریکایی‌ها، هر شناوری که مربوط به آمریکایی‌هاست را هدف قرار خواهیم داد."
-      },
-      {
         "title": "واکنش‌ها به آغاز عملیات اسرائیل در «خط سوفا ۵۳» سوریه",
         "link": "https://www.tabnak.ir/fa/news/1397314/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%87%D8%A7-%D8%A8%D9%87-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%AE%D8%B7-%D8%B3%D9%88%D9%81%D8%A7-53-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
         "date": "2026-10-04T20:11:30.000Z",
@@ -1812,29 +1832,19 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "قطر و اردن ازسرگیری عملیات نظامیان رژیم صهیونیستی در «خط سوفا ۵۳» در استان قنیطره سوریه را محکوم و آن را نقض حاکمیت سوریه و قوانین بین‌المللی دانستند."
-      },
-      {
-        "title": "زلزله ترکیه را لرزاند",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3249999",
-        "date": "2026-10-04T20:10:06.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۰",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "زمین‌لرزه ۴.۴ ریشتری جنوب ترکیه را لرزاند."
-      },
-      {
-        "title": "هیچ شناور آمریکایی و هم‌پیمانانش در خلیج‌فارس نیست",
-        "link": "https://www.tabnak.ir/fa/news/1397313/%D9%87%DB%8C%DA%86-%D8%B4%D9%86%D8%A7%D9%88%D8%B1-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%88-%D9%87%D9%85-%D9%BE%DB%8C%D9%85%D8%A7%D9%86%D8%A7%D9%86%D8%B4-%D8%AF%D8%B1-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D9%86%DB%8C%D8%B3%D8%AA",
-        "date": "2026-10-04T20:02:40.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۰۲",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "رئیس گروه مشاوران فرمانده کل سپاه گفت: تنگه هرمز در تمام این ماه‌های طولانی، به‌طور مسلم تحت کنترل ایران بوده است."
       }
     ],
     "متفرقه": [
+      {
+        "title": "فرمانده انتظامی آستانه‌اشرفیه: امنیت محصول همکاری مردم و پلیس است",
+        "link": "https://www.mehrnews.com/news/6967985/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D8%A7%D8%B4%D8%B1%D9%81%DB%8C%D9%87-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D8%AD%D8%B5%D9%88%D9%84-%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D9%BE%D9%84%DB%8C%D8%B3",
+        "date": "2026-10-04T22:50:58.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۲:۵۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "آستانه‌اشرفیه- فرمانده انتظامی آستانه‌اشرفیه با اشاره به اهمیت مشارکت اجتماعی در تأمین امنیت گفت: امنیت محصول همکاری مردم و پلیس است."
+      },
       {
         "title": "۲۱۸ شب حماسه و اقتدار مردم ولایی سلماس در خیابان",
         "link": "https://www.mehrnews.com/news/6968037/%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D9%88-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
@@ -1916,16 +1926,6 @@
         "rssDescription": "ایلام - گزارش میدانی خبرنگار مهر از تجمعات شبانه مردم ایلام طی شامگاه یکشنبه را مشاهده کنید."
       },
       {
-        "title": "۲۱۸ شب از خروش مردم ولایی اسفراین گذشت",
-        "link": "https://www.mehrnews.com/news/6968002/%DB%B2%DB%B1%DB%B8-%D8%B4%D8%A8-%D8%A7%D8%B2-%D8%AE%D8%B1%D9%88%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B3%D9%81%D8%B1%D8%A7%DB%8C%D9%86-%DA%AF%D8%B0%D8%B4%D8%AA",
-        "date": "2026-10-04T20:56:56.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۵۶",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "اسفراین- مردم ولایی اسفراین با حضور در دویست و هجدهمین قرار و اجتماع باشکوه شبانه، ضمن اعلام حمایت از رزمندگان اسلام، بر پایبندی و بیعت خود با رهبر معظم انقلاب اسلامی تأکید کردند."
-      },
-      {
         "title": "طالع بینی متولدین ۱۳ مهر",
         "link": "https://www.ilna.ir/fa/tiny/news-1848099",
         "date": "2026-10-04T20:31:00.000Z",
@@ -1933,7 +1933,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/bDrz5oaFOCJaK4tPIAW_gnO5ayaFsnMUc-KsAFqvpwYAD82qecj2-KXjExvx8weS9Uie_6FsMoP1MEUWBfVwWT7W3jAHF6TF3rAC1Nc7AuThIBtJ1hii4rTrZi_smugwGwaaPsQKzLk4bzugMdRXk2065cojV8lZtQcOdnPUtx98NIVNhPFRjxGCJhAn6Y1U/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9eAvG68EbisstZBwYuuOopDpPLIASZlq-TetjVcBUjut7GBcDIlhbRSeKv7hY716oF9pwhtlRJrQDTGKP3L3h6cZ6TBFE_wSlpRnRU-S9arIfOPiLgYqimzlq9uJKzX8T2dH9KRvmyU0SzB3es0N1tkJ0O8iUlkoUCynMXZqjH4kJPQvJF74ECvFF7N-nDQe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1943,7 +1943,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/55UI9hYLQjl6I_uqJAskIXzGg2obkcKiVaWdOU3f59NWKH4KNEpJzNIBjbey55VyM6NNS1n7nsFP1Ok_Rv8t7ShiB50aA_YDpkoKaOnwSpf3CYbOiQwJOHIm0IOMVoooXzbmq5blQWjbCdmDqF1oNzYgRZs1zogUVsQMhalzp6YbEeV1w5s-bEHDOZITkhH9/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/avpm-rosMjS40sjuE6DgQzHjjAYXCApa_HeltCJbA6RB08vN23EhaMQdC53t0hp2coauMojPtae7RMG10DyFnJbbwX3rKwrrnrEJiz12RoK6D-LRCnaJOq3WdnjR7-Et6U3tElVJ64IUMkAL9LbVei8V554_DKtY6fGy7z9m9sTSSzcZadt0LV_Uvob3WwNm/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1953,7 +1953,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/vv63_HelrkLDEKphoAggJ3RF8Yz4ckxssM1DrDM1FKIJtutbuE5idCCw69TsQEkySp3pxo9wHemwDhvv0dJp2KueKct1AhH0J41eybGMVvpV_calpAfspyuSOVKJknx4cpgGMYaYRzR8fBsA3V2GL0nZFoVoRp4wqJTpkDIrrZRF15iSW7qOYzjY_02RIu2r/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wfNDtftEQnmUEPvmv_JFYO4_Sws-WrZneIaEoAvga8N0TQkGGH8WIeyp1O1SL8WDZIcW8xwNAWh3wkfwQR3q882albeB5602nvpXdxKaioDeNmnT3xvF_zM5FAeLF8L4rjh4W46IHLgCTMhBNU-Yw6MJifvfJR8g6bJikgFToVy6kA4a9aFM1sakbKc9P9Ge/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز دوشنبه ۱۳ مهر + جدول",
@@ -1963,7 +1963,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/pDK5HpQgCl8soMh__JyraVkF2ZB-pTx6_3TQMSqXXIPEws5Ghf9szVrBpR1zei5KeC9N7sqqLHWRlmhaCVERmSIu3pF_v2lhaFLb09QZMzPKKoUCWP-XaKNAt3if49ulIdpaj6KsFa31z88syneRc2wclvjruYBNJ_mzXsMhlQNZsnEY_fmQGvmI1kExb0aq/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Klc2CEIN2M4ddS6LhmzZABzYzJATqVTREb9Yfvdl9n-gGfOxcKmIglCQ8NRFfD5Nownv9YiebuM463MR7S7Z38YXm_JxcK7gwHj5oA3IC9OVxkQSrYO5BISZw75Uyf3XW4BItCQq9UaTMEweK7wkml3220J4ThfRC7vHVFPb8-8ibdsMLxVprtF0Tqd01OZA/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1973,7 +1973,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/j-WAA-C2_p21rmrLB93RYjOcEWqsBYWwz9JD7aF7GkSJwHjKmpI2UervV07SiUZX1ZwjBkuA1en7BruGAs4VEw_rdpe3IPuVi68jZUCU3xc-rtOMulMHWNpB4716rGqi2LhF6cg_FpIdGZb0ousqofMmCyNHyWNKdNxCvWfrHjwEbh7e0IrWjVuJDiQu1rFK/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/FrJheyUqRDdgp-lLWiqsD2KsXTZ2hUFFiggjMBI8hDI1GmXD3sEyprR_bCtPkh0uCgJpkpj9gpP9STRUP6tEojFOYCi2KYGkLoepXZYBPkoQBsm4AasZFmbZpxdLMQIW5Amx0O18BFpMSG5-MuW991BjKd_JbPhuHi9b5VBHhtXMcYSqzasJ7CAJ1hHs8XrN/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "نرخ مصاحبه رتبه‌های برتر کنکور/ عکس",
