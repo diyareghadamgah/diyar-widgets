@@ -102,7 +102,18 @@ function refreshJalaliDays(){
   for(let d=1;d<=max;d++){const o=document.createElement('option');o.value=d;o.textContent=fa(d);jDayEl.appendChild(o);}jDayEl.value=Math.min(old,max);
 }
 function setGregorianISOFromJalali(){const d=jalaliToGregorian(+jYearEl.value,+jMonthEl.value,+jDayEl.value);dateEl.value=d.getUTCFullYear()+'-'+String(d.getUTCMonth()+1).padStart(2,'0')+'-'+String(d.getUTCDate()).padStart(2,'0');}
-function syncJalaliFromISO(){const v=dateEl.value;if(!v)return;const [y,m,d]=v.split('-').map(Number),j=gregorianToJalali(new Date(Date.UTC(y,m-1,d,12)));jYearEl.value=j.y;jMonthEl.value=j.m;refreshJalaliDays();jDayEl.value=j.d;}
+function syncJalaliFromISO(){
+  const v=dateEl.value;if(!v)return;
+  const [y,m,d]=v.split('-').map(Number);
+  // تبدیل میلادی به شمسی را با موتور تقویم رسمی Intl انجام بده؛
+  // تابع قبلی یک روز عقب می‌افتاد (مثلاً 2026-10-04 را 1405/07/11 می‌خواند).
+  const p=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
+    day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'
+  }).formatToParts(new Date(Date.UTC(y,m-1,d,12)));
+  const val=t=>Number(p.find(x=>x.type===t)?.value||0);
+  const j={y:val('year'),m:val('month'),d:val('day')};
+  jYearEl.value=j.y;jMonthEl.value=j.m;refreshJalaliDays();jDayEl.value=j.d;
+}
 fillJalaliSelectors();
 
 function parts(date,cal){
@@ -467,14 +478,18 @@ document.getElementById('zip').onclick=async(e)=>{
 };
 
 (function init(){
-  // تاریخ پیش‌فرض را بر اساس تاریخ محلی ایران تعیین کن، نه منطقهٔ زمانی دستگاه کاربر.
-  // این کار مانع یک‌روز عقب/جلو افتادن تاریخ شمسی در نیمه‌شب می‌شود.
-  const tehranParts=new Intl.DateTimeFormat('en-CA',{
-    timeZone:'Asia/Tehran', year:'numeric', month:'2-digit', day:'2-digit'
+  // تاریخ پیش‌فرض را مستقیماً از تقویم شمسیِ منطقه زمانی ایران بگیر.
+  // قبلاً ابتدا تاریخ میلادی ساخته می‌شد و سپس تبدیل می‌شد و همین مسیر باعث
+  // اختلاف یک‌روزه بین انتخابگر بالای فرم و تاریخ روی کارت می‌شد.
+  const tehranNow=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
+    timeZone:'Asia/Tehran', year:'numeric', month:'numeric', day:'numeric'
   }).formatToParts(new Date());
-  const tp=Object.fromEntries(tehranParts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
-  dateEl.value=tp.year+'-'+tp.month+'-'+tp.day;
-  syncJalaliFromISO();
+  const tp=Object.fromEntries(tehranNow.filter(x=>x.type!=='literal' && x.type!=='era').map(x=>[x.type,Number(x.value)]));
+  jYearEl.value=tp.year;
+  jMonthEl.value=tp.month;
+  refreshJalaliDays();
+  jDayEl.value=tp.day;
+  setGregorianISOFromJalali();
   phLink.href=phoneHref(phEl.value);
   updatePhotoUI();
   updateEventInfo();
