@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-04T23:32:40.669Z",
-  "lastUpdatePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۲",
+  "lastUpdate": "2026-10-04T23:48:14.949Z",
+  "lastUpdatePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۸",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -31,7 +31,37 @@
   ],
   "news": [
     {
-      "title": "پیشتازی بولسونارو در انتخابات برزیل",
+      "title": "اختتامیه مرحله استانی مسابقات سراسری قرآن کریم در یزد برگزار شد",
+      "link": "https://www.mehrnews.com/news/6968039/%D8%A7%D8%AE%D8%AA%D8%AA%D8%A7%D9%85%DB%8C%D9%87-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%B3%D8%B1%D8%A7%D8%B3%D8%B1%DB%8C-%D9%82%D8%B1%D8%A2%D9%86-%DA%A9%D8%B1%DB%8C%D9%85-%D8%AF%D8%B1-%DB%8C%D8%B2%D8%AF-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+      "date": "2026-10-04T23:43:21.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۳",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "یزد- آیین اختتامیه مرحله استانی چهل‌ونهمین دوره مسابقات سراسری قرآن کریم اوقاف با گرامیداشت شهید منا، حاج حسن دانش، در آستان مقدس امامزاده سیدجعفر محمد(ع) یزد برگزار شد."
+    },
+    {
+      "title": "اختتامیه مرحله استانی مسابقات قرآن اوقاف در یزد",
+      "link": "https://www.mehrnews.com/news/6968035/%D8%A7%D8%AE%D8%AA%D8%AA%D8%A7%D9%85%DB%8C%D9%87-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D8%B1%D8%A2%D9%86-%D8%A7%D9%88%D9%82%D8%A7%D9%81-%D8%AF%D8%B1-%DB%8C%D8%B2%D8%AF",
+      "date": "2026-10-04T23:42:17.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "یزد- آیین اختتامیه مرحله استانی چهل‌ونهمین دوره مسابقات سراسری قرآن کریم اوقاف با گرامیداشت یاد و خاطره شهید منا، حاج حسن دانش برگزار شد."
+    },
+    {
+      "title": "عقب نشینی عربستان از یک پروژه بلندپروازانه و جایزه سرگرمی",
+      "link": "https://www.isna.ir/news/1405071307994/%D8%B9%D9%82%D8%A8-%D9%86%D8%B4%DB%8C%D9%86%DB%8C-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A8%D9%84%D9%86%D8%AF%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D8%A7%D9%86%D9%87-%D9%88-%D8%AC%D8%A7%DB%8C%D8%B2%D9%87-%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C",
+      "date": "2026-10-04T23:42:06.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۲",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "عربستان قصد دارد مراسم جوایز JOY AWARDS ویژه سازندگان سرگرمی 2027 را در بحبوحه فشارهای مالی و ارزیابی دوباره اولویت‌های هزینه‌ای در بخش سرگرمی این کشور، همزمان با پیامدهای جنگ با ایران را لغو کند. همچنین دو منبع آگاه به رویترز اطلاع دادند که عربستان از برنامه‌های خود برای ساخت یکی از بلندپروازانه‌ترین ورزشگاه‌های جام جهانی فوتبال ۲۰۳۴ عقب‌نشینی کرده است."
+    },
+    {
+      "title": "پیشتازی فلاویو بولسونارو در انتخابات ریاست جمهوری برزیل",
       "link": "https://www.irna.ir/news/86283297/%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2%DB%8C-%D8%A8%D9%88%D9%84%D8%B3%D9%88%D9%86%D8%A7%D8%B1%D9%88-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84",
       "date": "2026-10-04T23:30:11.000Z",
       "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
@@ -39,6 +69,26 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران - ایرنا - شمارش بیش از نیمی از آرا دور نخست انتخابات ریاست‌جمهوری برزیل به پایان رسیده و نتایج اولیه حاکی از پیشتازی سناتور فلاویو بولسونارو است، هرچند فاصله وی با رقیبش کمتر شده است و در همین حال، مؤسسه نظرسنجی «داتافولیا» پیش‌بینی کرد که انتخابات به دور دوم خواهد کشید."
+    },
+    {
+      "title": "نتایج امتحانات مدارس دخترانه تهران در سال‌های پایانی دوره قاجار + سند",
+      "link": "https://www.asriran.com/fa/news/1196243/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%AF%D8%AE%D8%AA%D8%B1%D8%A7%D9%86%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%84-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%AF%D9%88%D8%B1%D9%87-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%B3%D9%86%D8%AF",
+      "date": "2026-10-04T23:30:02.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "تازه‌ترین سند منتشرشده از آرشیو ملی ایران مربوط به تیر ۱۳۰۱، تصویری دست‌اول از موانع، آمار و روند شکل‌گیری آموزش نوین دختران در واپسین سال‌های قاجار ارائه می‌دهد؛ دوره‌ای که تنها کمتر از ۳۰ دانش‌آموز دختر در سراسر دارالخلافه طهران به امتحانات مقطع متوسطه رسیده بودند."
+    },
+    {
+      "title": "فریده، ملکه مصر در روز عروسی‌‎اش با ملک فاروق",
+      "link": "https://www.tabnak.ir/fa/news/1397221/%D9%81%D8%B1%DB%8C%D8%AF%D9%87-%D9%85%D9%84%DA%A9%D9%87-%D9%85%D8%B5%D8%B1-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%D8%B9%D8%B1%D9%88%D8%B3%DB%8C-%D8%A7%D8%B4-%D8%A8%D8%A7-%D9%85%D9%84%DA%A9-%D9%81%D8%A7%D8%B1%D9%88%D9%82",
+      "date": "2026-10-04T23:30:02.000Z",
+      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تصویری کمتر دیده شده از ملکه فریده را در روز عروسی‌اش با ملک فاروق، پادشاه مصر و در سال ۱۳۱۶ می‌بینید."
     },
     {
       "title": "سفره دلتان را برای چت‌بات‌های هوش مصنوعی باز نکنید!",
@@ -491,26 +541,6 @@
       "rssDescription": "تعدادی از زنان در حمایت از حمید رسایی، نماینده تهران در مجلس تجمع کردند و خواستار آزادی او از زندان شدند."
     },
     {
-      "title": "گزارش میدانی خبرنگار مهر از تجمعات شبانه مردم ایلام",
-      "link": "https://www.mehrnews.com/news/6968023/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%D8%AE%D8%A8%D8%B1%D9%86%DA%AF%D8%A7%D8%B1-%D9%85%D9%87%D8%B1-%D8%A7%D8%B2-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D9%84%D8%A7%D9%85",
-      "date": "2026-10-04T21:23:51.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۲۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "ایلام - گزارش میدانی خبرنگار مهر از تجمعات شبانه مردم ایلام طی شامگاه یکشنبه را مشاهده کنید."
-    },
-    {
-      "title": "طوفان تمامی مدارس منطقه سیستان را تعطیل کرد",
-      "link": "https://www.mehrnews.com/news/6968026/%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%AA%D9%85%D8%A7%D9%85%DB%8C-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%B3%DB%8C%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%AA%D8%B9%D8%B7%DB%8C%D9%84-%DA%A9%D8%B1%D8%AF",
-      "date": "2026-10-04T21:23:48.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۲۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "زاهدان- ستاد مدیریت بحران استان سیستان و بلوچستان اعلام کرد: مدارس منطقه سیستان در پایه های ابتدایی و متوسطه اول در دو شیفت صبح و عصر برای روز دوشنبه ۱۳ مهر ماه تعطیل شد."
-    },
-    {
       "title": "برد پرتغال با گلزنی دوباره جانشین رونالدو/ آلمان در حسرت شکست یونان",
       "link": "https://www.ilna.ir/fa/tiny/news-1848136",
       "date": "2026-10-04T21:18:19.000Z",
@@ -777,7 +807,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9eAvG68EbisstZBwYuuOopDpPLIASZlq-TetjVcBUjut7GBcDIlhbRSeKv7hY716oF9pwhtlRJrQDTGKP3L3h6cZ6TBFE_wSlpRnRU-S9arIfOPiLgYqimzlq9uJKzX8T2dH9KRvmyU0SzB3es0N1tkJ0O8iUlkoUCynMXZqjH4kJPQvJF74ECvFF7N-nDQe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/2oydTkJr0g4jygfSNK_QIHFNBwEiBkY2CKQz8hLRluypPZu2aQVuH0K3kswAptnE2duGETotfIze5AIpeNxBrp1Z4ZsfAs2XGoJ2ypRMAhcVe2XEJ9c3OfKlQ9KOgzC82A9DIFu2kGL3-1OuIED7Nm13z9Dfzb-ZoBdE5mpvjUe-N5o66yFaAr1bvCTZTCT9/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -787,7 +817,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/avpm-rosMjS40sjuE6DgQzHjjAYXCApa_HeltCJbA6RB08vN23EhaMQdC53t0hp2coauMojPtae7RMG10DyFnJbbwX3rKwrrnrEJiz12RoK6D-LRCnaJOq3WdnjR7-Et6U3tElVJ64IUMkAL9LbVei8V554_DKtY6fGy7z9m9sTSSzcZadt0LV_Uvob3WwNm/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/mZFWKAPFejlY6XK72O84NN0jM3z9EITGt5Z04n3700N3Dn4qUEm5ucpeawJeHsZfzPzPWd-O03Iw7k2ANwefSh05EVNB4gkWR6GRJX1yaSah-0wsUNooDVvpcRmOSRqQT2jEpk_FUcxeGHM_PgfkPzHHSYieeDiiqLvXOqdyWXi_t1OAa61BBC-aD1hyvqFS/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -797,7 +827,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wfNDtftEQnmUEPvmv_JFYO4_Sws-WrZneIaEoAvga8N0TQkGGH8WIeyp1O1SL8WDZIcW8xwNAWh3wkfwQR3q882albeB5602nvpXdxKaioDeNmnT3xvF_zM5FAeLF8L4rjh4W46IHLgCTMhBNU-Yw6MJifvfJR8g6bJikgFToVy6kA4a9aFM1sakbKc9P9Ge/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/PM6Ai6jrUytysY9_TFZNUKkM7WDEyGIPqVyuF7pJMSf1EF0b7OmTp1FqkXldt1o7avoI-xnDERdxKEphgn7NjVXBgKG8uXePUWRFl-NTdtunA8agu9hfC93033sIPmexLbgfi-cecqBlIgrSll0Q5rLD_vsFhBDFyMkq_uzgpKaA-J_9TFjINV6-lk3QvO2R/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز دوشنبه ۱۳ مهر + جدول",
@@ -807,7 +837,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Klc2CEIN2M4ddS6LhmzZABzYzJATqVTREb9Yfvdl9n-gGfOxcKmIglCQ8NRFfD5Nownv9YiebuM463MR7S7Z38YXm_JxcK7gwHj5oA3IC9OVxkQSrYO5BISZw75Uyf3XW4BItCQq9UaTMEweK7wkml3220J4ThfRC7vHVFPb8-8ibdsMLxVprtF0Tqd01OZA/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/igmMROYDt5YJxxLt60Ylw3mr6RurORKbkSP_q99j75-jgpX95THSxXU0UcOnUx_7CnWeaiEyKnOmdd3bSua7Klnk1Lzbvmqh8_bi7IIy_YxDoWiW13YnOf9Dd41OHoFuQalJNW70ckFMzAs_S-1a54ipHMdEEOslzmDfgaHXhKJ-CjLYqJjIzxcR2pUiRaMk/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -817,7 +847,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/FrJheyUqRDdgp-lLWiqsD2KsXTZ2hUFFiggjMBI8hDI1GmXD3sEyprR_bCtPkh0uCgJpkpj9gpP9STRUP6tEojFOYCi2KYGkLoepXZYBPkoQBsm4AasZFmbZpxdLMQIW5Amx0O18BFpMSG5-MuW991BjKd_JbPhuHi9b5VBHhtXMcYSqzasJ7CAJ1hHs8XrN/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/i854mScSW6il2_eZFFFYv5y7Ht2PIQe_33EwfyEkN-9Z1uLXPw6UbaOqdXvswS8_hq8MzV2_NqqZ2Zk7zf7dRAYOcOQLar5zQ2ouQO4P3hw6VTw46BoW0Lh4vV2ADf8Ijba1ZXD5GDPj9AnSoljyxZHlPCP4hBcXJsadBLF54IzeYgW5X8spt_XoH-yMP5Mv/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "نرخ مصاحبه رتبه‌های برتر کنکور/ عکس",
@@ -998,42 +1028,12 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران - ایرنا - مدیرکل صلح و امنیت بین‌المللی وزارت امور خارجه اعتراض جمهوری اسلامی ایران را به استمرار بی‌عملی نروژ در قبال فعالیت‌های غیرمجاز استارلینک، به سفیر این کشور در تهران ابلاغ کرد."
-    },
-    {
-      "title": "احضار آل در ضیافت زعفران",
-      "link": "https://www.isna.ir/news/1405071207985/%D8%A7%D8%AD%D8%B6%D8%A7%D8%B1-%D8%A2%D9%84-%D8%AF%D8%B1-%D8%B6%DB%8C%D8%A7%D9%81%D8%AA-%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86",
-      "date": "2026-10-04T20:14:22.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۴",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "نمایش «شربت زعفران، آویشن، پونه و چند قطره روغن گل مغربی» در نشست نقد و بررسی با حضور کارگردان و منتقد تئاتر، از زوایای مختلفی از جمله رئالیسم اثر، توجه به جزئیات، بازتاب سنت‌های خانوادگی و حضور اسطوره «آل» مورد بررسی قرار گرفت."
-    },
-    {
-      "title": "گامی تازه برای هوشمندسازی پلیس؛ ارزیابی عملکرد مأموران با QR کد",
-      "link": "https://www.qudsonline.ir/news/1168825/%DA%AF%D8%A7%D9%85%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D9%84%DB%8C%D8%B3-%D8%A7%D8%B1%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF-%D9%85%D8%A3%D9%85%D9%88%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-QR",
-      "date": "2026-10-04T20:14:10.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۴",
-      "source": "قدس آنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "سردار احمدرضا رادان از آغاز آزمایشی استفاده از کدهای QR برای دریافت بازخورد مردم از خدمات انتظامی خبر داد."
-    },
-    {
-      "title": "ولایت‌پذیری رمز پایداری ملت/حجاب‌زدایی سیاست فرامرزی دشمن است",
-      "link": "https://www.isna.ir/news/1405071207984/%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D9%85%D8%B2-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D9%84%D8%AA-%D8%AD%D8%AC%D8%A7%D8%A8-%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D9%81%D8%B1%D8%A7%D9%85%D8%B1%D8%B2%DB%8C-%D8%AF%D8%B4%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-04T20:13:39.000Z",
-      "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۳",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "رئیس دفتر نهاد نمایندگی مقام معظم رهبری در دانشگاه‌های مازندران، در اجتماع شبانه مردم بابل با تأکید بر پیوند ولایت‌پذیری و میراث علمی و جهادی علما به‌عنوان رمز پایداری ملت، گفت: دشمن با امواج رسانه‌ای به دنبال تضعیف ایمان و ایجاد شکاف میان مردم و رهبری است و «حجاب‌زدایی» نیز یک سیاست فرامرزی است که مقابله با آن نیازمند برنامه، استدلال و تبعیت از خطوط قرمز رهبری است."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
       {
-        "title": "پیشتازی بولسونارو در انتخابات برزیل",
+        "title": "پیشتازی فلاویو بولسونارو در انتخابات ریاست جمهوری برزیل",
         "link": "https://www.irna.ir/news/86283297/%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2%DB%8C-%D8%A8%D9%88%D9%84%D8%B3%D9%88%D9%86%D8%A7%D8%B1%D9%88-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84",
         "date": "2026-10-04T23:30:11.000Z",
         "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
@@ -1141,16 +1141,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "تهران - ایرنا - مدیرکل صلح و امنیت بین‌المللی وزارت امور خارجه اعتراض جمهوری اسلامی ایران را به استمرار بی‌عملی نروژ در قبال فعالیت‌های غیرمجاز استارلینک، به سفیر این کشور در تهران ابلاغ کرد."
-      },
-      {
-        "title": "ولایت‌پذیری رمز پایداری ملت/حجاب‌زدایی سیاست فرامرزی دشمن است",
-        "link": "https://www.isna.ir/news/1405071207984/%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D9%85%D8%B2-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D9%84%D8%AA-%D8%AD%D8%AC%D8%A7%D8%A8-%D8%B2%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D9%81%D8%B1%D8%A7%D9%85%D8%B1%D8%B2%DB%8C-%D8%AF%D8%B4%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-04T20:13:39.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۳",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "رئیس دفتر نهاد نمایندگی مقام معظم رهبری در دانشگاه‌های مازندران، در اجتماع شبانه مردم بابل با تأکید بر پیوند ولایت‌پذیری و میراث علمی و جهادی علما به‌عنوان رمز پایداری ملت، گفت: دشمن با امواج رسانه‌ای به دنبال تضعیف ایمان و ایجاد شکاف میان مردم و رهبری است و «حجاب‌زدایی» نیز یک سیاست فرامرزی است که مقابله با آن نیازمند برنامه، استدلال و تبعیت از خطوط قرمز رهبری است."
       }
     ],
     "اقتصادی": [
@@ -1299,6 +1289,26 @@
     ],
     "فرهنگی و هنری": [
       {
+        "title": "اختتامیه مرحله استانی مسابقات سراسری قرآن کریم در یزد برگزار شد",
+        "link": "https://www.mehrnews.com/news/6968039/%D8%A7%D8%AE%D8%AA%D8%AA%D8%A7%D9%85%DB%8C%D9%87-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%B3%D8%B1%D8%A7%D8%B3%D8%B1%DB%8C-%D9%82%D8%B1%D8%A2%D9%86-%DA%A9%D8%B1%DB%8C%D9%85-%D8%AF%D8%B1-%DB%8C%D8%B2%D8%AF-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+        "date": "2026-10-04T23:43:21.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۳",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "یزد- آیین اختتامیه مرحله استانی چهل‌ونهمین دوره مسابقات سراسری قرآن کریم اوقاف با گرامیداشت شهید منا، حاج حسن دانش، در آستان مقدس امامزاده سیدجعفر محمد(ع) یزد برگزار شد."
+      },
+      {
+        "title": "اختتامیه مرحله استانی مسابقات قرآن اوقاف در یزد",
+        "link": "https://www.mehrnews.com/news/6968035/%D8%A7%D8%AE%D8%AA%D8%AA%D8%A7%D9%85%DB%8C%D9%87-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D8%B1%D8%A2%D9%86-%D8%A7%D9%88%D9%82%D8%A7%D9%81-%D8%AF%D8%B1-%DB%8C%D8%B2%D8%AF",
+        "date": "2026-10-04T23:42:17.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "یزد- آیین اختتامیه مرحله استانی چهل‌ونهمین دوره مسابقات سراسری قرآن کریم اوقاف با گرامیداشت یاد و خاطره شهید منا، حاج حسن دانش برگزار شد."
+      },
+      {
         "title": "کلاهبرداری با جعل نام و نشان‌های معتبر + فیلم",
         "link": "https://www.khabaronline.ir/news/2283551/%DA%A9%D9%84%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7-%D8%AC%D8%B9%D9%84-%D9%86%D8%A7%D9%85-%D9%88-%D9%86%D8%B4%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D8%AA%D8%A8%D8%B1-%D9%81%DB%8C%D9%84%D9%85",
         "date": "2026-10-04T23:00:00.000Z",
@@ -1436,19 +1446,19 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "علیرضا خمسه در نخستین روز نهمین المپیاد فیلم‌سازی نوجوانان ایران، از پرهیز از مکتب‌گرایی در آموزش سینما و اهمیت خلاقیت گفت."
-      },
-      {
-        "title": "احضار آل در ضیافت زعفران",
-        "link": "https://www.isna.ir/news/1405071207985/%D8%A7%D8%AD%D8%B6%D8%A7%D8%B1-%D8%A2%D9%84-%D8%AF%D8%B1-%D8%B6%DB%8C%D8%A7%D9%81%D8%AA-%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86",
-        "date": "2026-10-04T20:14:22.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۴",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "نمایش «شربت زعفران، آویشن، پونه و چند قطره روغن گل مغربی» در نشست نقد و بررسی با حضور کارگردان و منتقد تئاتر، از زوایای مختلفی از جمله رئالیسم اثر، توجه به جزئیات، بازتاب سنت‌های خانوادگی و حضور اسطوره «آل» مورد بررسی قرار گرفت."
       }
     ],
     "اجتماعی": [
+      {
+        "title": "نتایج امتحانات مدارس دخترانه تهران در سال‌های پایانی دوره قاجار + سند",
+        "link": "https://www.asriran.com/fa/news/1196243/%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%AF%D8%AE%D8%AA%D8%B1%D8%A7%D9%86%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%84-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%AF%D9%88%D8%B1%D9%87-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%B3%D9%86%D8%AF",
+        "date": "2026-10-04T23:30:02.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "تازه‌ترین سند منتشرشده از آرشیو ملی ایران مربوط به تیر ۱۳۰۱، تصویری دست‌اول از موانع، آمار و روند شکل‌گیری آموزش نوین دختران در واپسین سال‌های قاجار ارائه می‌دهد؛ دوره‌ای که تنها کمتر از ۳۰ دانش‌آموز دختر در سراسر دارالخلافه طهران به امتحانات مقطع متوسطه رسیده بودند."
+      },
       {
         "title": "قهوه با افسردگی ما چه می‌کند؟",
         "link": "https://www.asriran.com/fa/news/1196242/%D9%82%D9%87%D9%88%D9%87-%D8%A8%D8%A7-%D8%A7%D9%81%D8%B3%D8%B1%D8%AF%DA%AF%DB%8C-%D9%85%D8%A7-%DA%86%D9%87-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
@@ -1488,16 +1498,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "بررسی بیش از ۹ میلیون نتیجه آزمایش نشان می‌دهد در بیش از ۹۰ درصد شاخص‌های خونی، غذاخوردن پیش از خون‌گیری تاثیر مهمی بر نتیجه ندارد."
-      },
-      {
-        "title": "طوفان تمامی مدارس منطقه سیستان را تعطیل کرد",
-        "link": "https://www.mehrnews.com/news/6968026/%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%AA%D9%85%D8%A7%D9%85%DB%8C-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%B3%DB%8C%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%AA%D8%B9%D8%B7%DB%8C%D9%84-%DA%A9%D8%B1%D8%AF",
-        "date": "2026-10-04T21:23:48.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۲۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "زاهدان- ستاد مدیریت بحران استان سیستان و بلوچستان اعلام کرد: مدارس منطقه سیستان در پایه های ابتدایی و متوسطه اول در دو شیفت صبح و عصر برای روز دوشنبه ۱۳ مهر ماه تعطیل شد."
       },
       {
         "title": "تور رسانه‌ای هفته دامپزشکی در اردبیل",
@@ -1583,6 +1583,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "عقب نشینی عربستان از یک پروژه بلندپروازانه و جایزه سرگرمی",
+        "link": "https://www.isna.ir/news/1405071307994/%D8%B9%D9%82%D8%A8-%D9%86%D8%B4%DB%8C%D9%86%DB%8C-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A8%D9%84%D9%86%D8%AF%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%D8%A7%D9%86%D9%87-%D9%88-%D8%AC%D8%A7%DB%8C%D8%B2%D9%87-%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C",
+        "date": "2026-10-04T23:42:06.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۴۲",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "عربستان قصد دارد مراسم جوایز JOY AWARDS ویژه سازندگان سرگرمی 2027 را در بحبوحه فشارهای مالی و ارزیابی دوباره اولویت‌های هزینه‌ای در بخش سرگرمی این کشور، همزمان با پیامدهای جنگ با ایران را لغو کند. همچنین دو منبع آگاه به رویترز اطلاع دادند که عربستان از برنامه‌های خود برای ساخت یکی از بلندپروازانه‌ترین ورزشگاه‌های جام جهانی فوتبال ۲۰۳۴ عقب‌نشینی کرده است."
+      },
+      {
+        "title": "فریده، ملکه مصر در روز عروسی‌‎اش با ملک فاروق",
+        "link": "https://www.tabnak.ir/fa/news/1397221/%D9%81%D8%B1%DB%8C%D8%AF%D9%87-%D9%85%D9%84%DA%A9%D9%87-%D9%85%D8%B5%D8%B1-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B2-%D8%B9%D8%B1%D9%88%D8%B3%DB%8C-%D8%A7%D8%B4-%D8%A8%D8%A7-%D9%85%D9%84%DA%A9-%D9%81%D8%A7%D8%B1%D9%88%D9%82",
+        "date": "2026-10-04T23:30:02.000Z",
+        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۳:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تصویری کمتر دیده شده از ملکه فریده را در روز عروسی‌اش با ملک فاروق، پادشاه مصر و در سال ۱۳۱۶ می‌بینید."
+      },
       {
         "title": "سردار فدوی: برای نخستین بار هیچ شناور آمریکایی در خلیج فارس، تنگه هرمز و دریای عمان حضور ندارد + فیلم",
         "link": "https://www.khabaronline.ir/news/2283750/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%81%D8%AF%D9%88%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%A8%D8%A7%D8%B1-%D9%87%DB%8C%DA%86-%D8%B4%D9%86%D8%A7%D9%88%D8%B1-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3",
@@ -1926,16 +1946,6 @@
         "rssDescription": "اراک- نماینده ولی‌فقیه در استان مرکزی گفت: حضور آگاهانه و مسئولانه مردم در صحنه‌های مختلف، پشتوانه اقتدار و امنیت کشور و عامل تقویت انسجام ملی است."
       },
       {
-        "title": "گزارش میدانی خبرنگار مهر از تجمعات شبانه مردم ایلام",
-        "link": "https://www.mehrnews.com/news/6968023/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%D8%AE%D8%A8%D8%B1%D9%86%DA%AF%D8%A7%D8%B1-%D9%85%D9%87%D8%B1-%D8%A7%D8%B2-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%DB%8C%D9%84%D8%A7%D9%85",
-        "date": "2026-10-04T21:23:51.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۱:۲۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "ایلام - گزارش میدانی خبرنگار مهر از تجمعات شبانه مردم ایلام طی شامگاه یکشنبه را مشاهده کنید."
-      },
-      {
         "title": "طالع بینی متولدین ۱۳ مهر",
         "link": "https://www.ilna.ir/fa/tiny/news-1848099",
         "date": "2026-10-04T20:31:00.000Z",
@@ -1943,7 +1953,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9eAvG68EbisstZBwYuuOopDpPLIASZlq-TetjVcBUjut7GBcDIlhbRSeKv7hY716oF9pwhtlRJrQDTGKP3L3h6cZ6TBFE_wSlpRnRU-S9arIfOPiLgYqimzlq9uJKzX8T2dH9KRvmyU0SzB3es0N1tkJ0O8iUlkoUCynMXZqjH4kJPQvJF74ECvFF7N-nDQe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/2oydTkJr0g4jygfSNK_QIHFNBwEiBkY2CKQz8hLRluypPZu2aQVuH0K3kswAptnE2duGETotfIze5AIpeNxBrp1Z4ZsfAs2XGoJ2ypRMAhcVe2XEJ9c3OfKlQ9KOgzC82A9DIFu2kGL3-1OuIED7Nm13z9Dfzb-ZoBdE5mpvjUe-N5o66yFaAr1bvCTZTCT9/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1953,7 +1963,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/avpm-rosMjS40sjuE6DgQzHjjAYXCApa_HeltCJbA6RB08vN23EhaMQdC53t0hp2coauMojPtae7RMG10DyFnJbbwX3rKwrrnrEJiz12RoK6D-LRCnaJOq3WdnjR7-Et6U3tElVJ64IUMkAL9LbVei8V554_DKtY6fGy7z9m9sTSSzcZadt0LV_Uvob3WwNm/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/mZFWKAPFejlY6XK72O84NN0jM3z9EITGt5Z04n3700N3Dn4qUEm5ucpeawJeHsZfzPzPWd-O03Iw7k2ANwefSh05EVNB4gkWR6GRJX1yaSah-0wsUNooDVvpcRmOSRqQT2jEpk_FUcxeGHM_PgfkPzHHSYieeDiiqLvXOqdyWXi_t1OAa61BBC-aD1hyvqFS/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1963,7 +1973,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/wfNDtftEQnmUEPvmv_JFYO4_Sws-WrZneIaEoAvga8N0TQkGGH8WIeyp1O1SL8WDZIcW8xwNAWh3wkfwQR3q882albeB5602nvpXdxKaioDeNmnT3xvF_zM5FAeLF8L4rjh4W46IHLgCTMhBNU-Yw6MJifvfJR8g6bJikgFToVy6kA4a9aFM1sakbKc9P9Ge/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/PM6Ai6jrUytysY9_TFZNUKkM7WDEyGIPqVyuF7pJMSf1EF0b7OmTp1FqkXldt1o7avoI-xnDERdxKEphgn7NjVXBgKG8uXePUWRFl-NTdtunA8agu9hfC93033sIPmexLbgfi-cecqBlIgrSll0Q5rLD_vsFhBDFyMkq_uzgpKaA-J_9TFjINV6-lk3QvO2R/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز دوشنبه ۱۳ مهر + جدول",
@@ -1973,7 +1983,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Klc2CEIN2M4ddS6LhmzZABzYzJATqVTREb9Yfvdl9n-gGfOxcKmIglCQ8NRFfD5Nownv9YiebuM463MR7S7Z38YXm_JxcK7gwHj5oA3IC9OVxkQSrYO5BISZw75Uyf3XW4BItCQq9UaTMEweK7wkml3220J4ThfRC7vHVFPb8-8ibdsMLxVprtF0Tqd01OZA/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/igmMROYDt5YJxxLt60Ylw3mr6RurORKbkSP_q99j75-jgpX95THSxXU0UcOnUx_7CnWeaiEyKnOmdd3bSua7Klnk1Lzbvmqh8_bi7IIy_YxDoWiW13YnOf9Dd41OHoFuQalJNW70ckFMzAs_S-1a54ipHMdEEOslzmDfgaHXhKJ-CjLYqJjIzxcR2pUiRaMk/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز دوشنبه ۱۳ مهر ۱۴۰۵",
@@ -1983,7 +1993,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/FrJheyUqRDdgp-lLWiqsD2KsXTZ2hUFFiggjMBI8hDI1GmXD3sEyprR_bCtPkh0uCgJpkpj9gpP9STRUP6tEojFOYCi2KYGkLoepXZYBPkoQBsm4AasZFmbZpxdLMQIW5Amx0O18BFpMSG5-MuW991BjKd_JbPhuHi9b5VBHhtXMcYSqzasJ7CAJ1hHs8XrN/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/i854mScSW6il2_eZFFFYv5y7Ht2PIQe_33EwfyEkN-9Z1uLXPw6UbaOqdXvswS8_hq8MzV2_NqqZ2Zk7zf7dRAYOcOQLar5zQ2ouQO4P3hw6VTw46BoW0Lh4vV2ADf8Ijba1ZXD5GDPj9AnSoljyxZHlPCP4hBcXJsadBLF54IzeYgW5X8spt_XoH-yMP5Mv/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "نرخ مصاحبه رتبه‌های برتر کنکور/ عکس",
@@ -2034,16 +2044,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "روزنامه قدس ضمیمه طوس شماره ۱۱۰۴۳ دوشنبه ۱۳ مهر ۱۴۰۵"
-      },
-      {
-        "title": "گامی تازه برای هوشمندسازی پلیس؛ ارزیابی عملکرد مأموران با QR کد",
-        "link": "https://www.qudsonline.ir/news/1168825/%DA%AF%D8%A7%D9%85%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%BE%D9%84%DB%8C%D8%B3-%D8%A7%D8%B1%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF-%D9%85%D8%A3%D9%85%D9%88%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-QR",
-        "date": "2026-10-04T20:14:10.000Z",
-        "datePersian": "۱۲ مهر ۱۴۰۵، ۲۰:۱۴",
-        "source": "قدس آنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "سردار احمدرضا رادان از آغاز آزمایشی استفاده از کدهای QR برای دریافت بازخورد مردم از خدمات انتظامی خبر داد."
       }
     ]
   }
