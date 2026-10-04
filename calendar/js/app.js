@@ -65,13 +65,22 @@ const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
 const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
 
 function jalaliToGregorian(jy,jm,jd){
-  jy=Number(jy);jm=Number(jm);jd=Number(jd);let gy=jy+621;
+  jy=Number(jy);jm=Number(jm);jd=Number(jd);const gy=jy+621;
   const breaks=[-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2192,2262,2324,2394,2456,3178];
-  let jp=breaks[0],jump=0;for(let i=1;i<breaks.length;i++){jump=breaks[i]-jp;if(jy<breaks[i])break;jp=breaks[i];}
-  let n=jy-jp,leapJ=Math.floor(n/33)*8+Math.floor((n%33+3)/4);if(jump%33===4&&jump-n===4)leapJ++;
-  let leapG=Math.floor(gy/4)-Math.floor((Math.floor(gy/100)+1)*3/4)-150,march=20+leapJ-leapG;
-  let gday=jm<=6?(jm-1)*31+jd-1:(jm-7)*30+jd-1+186;
-  return new Date(Date.UTC(gy,march-1,1,12)+gday*864e5);
+  let leapJ=-14,jp=breaks[0],jump=0;
+  for(let i=1;i<breaks.length;i++){
+    const jm0=breaks[i]; jump=jm0-jp;
+    if(jy<jm0) break;
+    leapJ += Math.floor(jump/33)*8 + Math.floor((jump%33)/4);
+    jp=jm0;
+  }
+  const n=jy-jp;
+  leapJ += Math.floor(n/33)*8 + Math.floor((n%33+3)/4);
+  if(jump%33===4 && jump-n===4) leapJ++;
+  const leapG=Math.floor(gy/4)-Math.floor((Math.floor(gy/100)+1)*3/4)-150;
+  const march=20+leapJ-leapG;
+  const gday=jm<=6?(jm-1)*31+jd-1:(jm-7)*30+jd-1+186;
+  return new Date(Date.UTC(gy,2,march,12)+gday*864e5);
 }
 function gregorianToJalali(gdate){
   const gy=gdate.getUTCFullYear(),gm=gdate.getUTCMonth()+1,gd=gdate.getUTCDate(),gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
