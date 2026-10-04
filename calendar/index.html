@@ -56,6 +56,18 @@
 
         <label style="margin-top:10px">یادداشت زیر عکس<textarea id="note" rows="2" placeholder="متن یادداشت (اختیاری)..."></textarea></label>
 
+        <div class="subsec event-editor">
+          <div class="subsec-title">📌 ثبت / اصلاح مناسبت روز</div>
+          <div class="help" id="eventEditorHint" style="margin-bottom:7px">برای تاریخ انتخاب‌شده، مناسبت خودتان را در هر خط یک مورد بنویسید.</div>
+          <textarea id="customEventText" rows="3" placeholder="مثلاً: روز خانواده
+مراسم محلی امروز"></textarea>
+          <label class="check-row" for="replaceOfficialEvents"><input type="checkbox" id="replaceOfficialEvents"><span>جایگزینی مناسبت‌های رسمی با این موارد</span></label>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+            <button id="saveCustomEvent" type="button" style="font-size:12px;padding:7px">ثبت / اصلاح مناسبت</button>
+            <button id="clearCustomEvent" class="alt" type="button" style="font-size:12px;padding:7px">پاک کردن مناسبت کاربر</button>
+          </div>
+        </div>
+
         <div class="subsec">
           <div class="subsec-title">🕌 تنظیمات ذکر هفته</div>
           <label class="mini-label">انتخاب روز
