@@ -73,6 +73,8 @@
       ctx.fillText(r[2],RX+70,ICY);
     });
 
+    drawEventPanel(i,{x:490,y:590,w:515,h:50,radius:20,stroke:green,fill:cream,titleFill:green,titleColor:'#fff',textColor:'#10201c',fontSize:13});
+
     const ds=dhikrSettings[i.wd];
     const TITLE='ذکر روز '+WD[i.wd];
     const tpw=380,tpx=(cv.width-tpw)/2,tpy=650,tph=54;

@@ -37,7 +37,7 @@
     ctx.strokeStyle=gold(630,680);ctx.lineWidth=2;rr(75,630,350,50,25);ctx.stroke();
     const nt=(noteEl.value||'').trim();
     drawTextCenter(nt||'یادداشت…',250,655,310,16,600,nt?'#10201c':'#b3a374');
-    drawLogoBadge(W/2+40,40,46,{ringOuter:'#d4a437',ringInner:'#8a6a10',bg:'#fffdf5',placeholderColor:'#8a7f52',placeholderFont:12});
+    drawLogoBadge(W/2+40,42,38,{ringOuter:'#d4a437',ringInner:'#8a6a10',bg:'#fffdf5',placeholderColor:'#8a7f52',placeholderFont:12});
     ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=14;ctx.shadowOffsetY=5;
     ctx.fillStyle=gold(100,190);rr(485,100,510,90,45);ctx.fill();ctx.restore();
     drawTextCenter(WD[i.wd],740,146,420,56,900,'#10201c');
@@ -56,6 +56,7 @@
     const ch=(chEl.value||'').replace('@','');
     ctx.fillStyle=gold(566,612);rr(485,566,510,46,23);ctx.fill();
     drawTextCenter(ch,740,589,450,22,800,'#10201c');
+    drawEventPanel(i,{x:485,y:620,w:510,h:72,radius:20,stroke:GB,fill:glass,titleFill:gold(620,692),titleColor:'#10201c',textColor:'#fff8e1',fontSize:14});
     const ds=dhikrSettings[i.wd];
     ctx.fillStyle=glass;rr(45,730,W-90,250,30);ctx.fill();
     ctx.strokeStyle=gold(730,980);ctx.lineWidth=4;rr(45,730,W-90,250,30);ctx.stroke();

@@ -67,8 +67,7 @@ function drawOccasionPanel(i){
       ctx.font='700 16px Vazirmatn';ctx.fillText('و مناسبت‌های دیگر…',x+w/2,bottom);
     }
   }else{
-    ctx.fillStyle='#fffdf4';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.font='700 24px Vazirmatn';ctx.fillText('امروز مناسبت ثبت‌شده‌ای ندارد',x+w/2,y+210);
+    // در روز بدون مناسبت، بدنه کادر عمداً خالی می‌ماند.
   }
   ctx.restore();
 }

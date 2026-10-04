@@ -42,6 +42,7 @@
     drawInfoPill(500,205,430,105,fa(i.s.d),FA_M[i.s.m-1],fa(i.s.y),'▦',t);
     drawInfoPill(500,320,430,105,fa(i.h.d),AR_M[i.h.m-1],fa(i.h.y),'☾',t);
     drawInfoPill(500,435,430,105,fa(i.g.d),EN_M[i.g.m-1],String(i.g.y),'◎',t);
+    drawEventPanel(i,{x:55,y:555,w:905,h:115,radius:18,stroke:t.frame,fill:t.panel,titleFill:t.goldB,titleColor:t.darkText,textColor:t.goldText,fontSize:17});
     ctx.fillStyle=t.panel;rr(55,700,905,250,18);ctx.fill();
     ctx.strokeStyle=t.frame;ctx.lineWidth=4;rr(55,700,905,250,18);ctx.stroke();
     ctx.fillStyle=t.goldB;rr(310,680,395,58,29);ctx.fill();
@@ -57,7 +58,7 @@
     if(hasQR)drawQRCanvas(getQRMatrix(url),450,990,105);
     drawRoundIcon('plane',640,1045,24,t.goldText,t.panel);drawTextCenter((chEl.value||'').replace('@',''),795,1045,230,20,700,t.goldText);
 
-    drawLogoBadge(955, 52, 28, {ringOuter:'#d9a52f', ringInner:'#8f5a08', bg:'#1a1a1a', placeholderColor:'#d9a52f', placeholderFont:10});
+    drawLogoBadge(945, 45, 28, {ringOuter:'#d9a52f', ringInner:'#8f5a08', bg:'#1a1a1a', placeholderColor:'#d9a52f', placeholderFont:10});
   }
 
 registerTemplate({

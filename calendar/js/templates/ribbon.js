@@ -160,6 +160,9 @@
       ctx.fillText(r[2],RX+104,ICY);ctx.restore();
     });
 
+    /* ---------- مناسبت روز ---------- */
+    drawEventPanel(i,{x:545,y:650,w:460,h:70,radius:20,stroke:'#c9a44a',fill:'#fffdf5',titleFill:greenDark,titleColor:'#fff',textColor:'#1b2b20',fontSize:14});
+
     /* ---------- پیل ذکر روز ---------- */
     const ds=dhikrSettings[i.wd];
     const TITLE='ذکر روز '+WD[i.wd];
@@ -212,7 +215,7 @@
     }
 
     /* لوگو: گوشهٔ بالا-چپ قالب */
-    if(logo&&logo.naturalWidth)drawLogoBadge(82, 92, 50, {ringOuter:'#c9a44a', ringInner:'#8a6a10', bg:'#fffdf5', placeholderColor:'#8a7f52', placeholderFont:15});
+    if(logo&&logo.naturalWidth)drawLogoBadge(285, 65, 50, {ringOuter:'#c9a44a', ringInner:'#8a6a10', bg:'#fffdf5', placeholderColor:'#8a7f52', placeholderFont:15});
   }
 
 registerTemplate({

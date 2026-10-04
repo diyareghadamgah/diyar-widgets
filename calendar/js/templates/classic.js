@@ -90,6 +90,7 @@
     ctx.fillStyle=S.darkText;ctx.textAlign='center';
     const ch=chEl.value||'';const cz=fit(ch,320,16,700);
     ctx.font='700 '+cz+'px Arial';ctx.fillText(ch,792,634);
+    drawEventPanel(i,{x:615,y:668,w:355,h:48,radius:18,stroke:S.frame,fill:S.panel,titleFill:TS().goldB,titleColor:S.darkText,textColor:S.goldText,fontSize:12});
   }
 
   function dhikr(i){
