@@ -22,6 +22,7 @@ const dateEl=document.getElementById('date'),jYearEl=document.getElementById('jY
 const zoomEl=document.getElementById('photoZoom'),photoXEl=document.getElementById('photoX'),photoYEl=document.getElementById('photoY'),zoomValEl=document.getElementById('zoomVal'),resetPhotoBtn=document.getElementById('resetPhoto');
 const dhikrDayEl=document.getElementById('dhikrDay'),dhikrArabicEl=document.getElementById('dhikrArabic'),dhikrTranslationEl=document.getElementById('dhikrTranslation');
 const dhikrArabicSizeEl=document.getElementById('dhikrArabicSize'),dhikrTranslationSizeEl=document.getElementById('dhikrTranslationSize'),dhikrTitleSizeEl=document.getElementById('dhikrTitleSize');
+const customEventTextEl=document.getElementById('customEventText'),replaceOfficialEventsEl=document.getElementById('replaceOfficialEvents'),saveCustomEventBtn=document.getElementById('saveCustomEvent'),clearCustomEventBtn=document.getElementById('clearCustomEvent');
 const dhikrArabicSizeValEl=document.getElementById('dhikrArabicSizeVal'),dhikrTranslationSizeValEl=document.getElementById('dhikrTranslationSizeVal'),dhikrTitleSizeValEl=document.getElementById('dhikrTitleSizeVal');
 const resetDhikrDayBtn=document.getElementById('resetDhikrDay'),resetDhikrAllBtn=document.getElementById('resetDhikrAll');
 const chLink=document.getElementById('channelLink'),phLink=document.getElementById('phoneLink'),showQREl=document.getElementById('showQR');
@@ -391,10 +392,29 @@ resetDhikrDayBtn.onclick=()=>{const d=+dhikrDayEl.value;DHIKR[d]=[...DHIKR_DEFAU
 resetDhikrAllBtn.onclick=()=>{for(let d=0;d<7;d++){DHIKR[d]=[...DHIKR_DEFAULT[d]];dhikrSettings[d]={arabicSize:31,translationSize:24,titleSize:29};}syncDhikrEditor();render();};
 syncDhikrEditor();
 
-function updateEventInfo(){const i=cur();const el=document.getElementById('eventInfo');if(!el)return;const ev=i?getEvents(i):[];el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):'برای این روز مناسبت ثبت‌شده‌ای در دادهٔ ۱۴۰۵ نیست.';}
-function jalaliChanged(){refreshJalaliDays();setGregorianISOFromJalali();render();updateEventInfo();}
-jYearEl.onchange=jalaliChanged;jMonthEl.onchange=jalaliChanged;jDayEl.onchange=()=>{setGregorianISOFromJalali();render();updateEventInfo();};
-dateEl.onchange=()=>{syncJalaliFromISO();render();updateEventInfo();};
+function syncEventEditor(){
+  const i=cur();if(!i||!customEventTextEl)return;
+  customEventTextEl.value=typeof getEventEditorText==='function'?getEventEditorText(i):'';
+  replaceOfficialEventsEl.checked=typeof getEventEditorReplace==='function'?getEventEditorReplace(i):false;
+}
+function updateEventInfo(){
+  const i=cur();const el=document.getElementById('eventInfo');if(!el)return;
+  const ev=i?getEvents(i):[];
+  el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):'برای این روز مناسبت ثبت‌شده‌ای نیست.';
+}
+function jalaliChanged(){refreshJalaliDays();setGregorianISOFromJalali();syncEventEditor();render();updateEventInfo();}
+jYearEl.onchange=jalaliChanged;jMonthEl.onchange=jalaliChanged;jDayEl.onchange=()=>{setGregorianISOFromJalali();syncEventEditor();render();updateEventInfo();};
+dateEl.onchange=()=>{syncJalaliFromISO();syncEventEditor();render();updateEventInfo();};
+if(saveCustomEventBtn)saveCustomEventBtn.onclick=()=>{
+  const i=cur();if(!i)return;
+  const text=(customEventTextEl.value||'').trim();
+  const map=getUserEventMap();const key=eventDateKey(i.s);
+  if(text)map[key]={text,replaceOfficial:!!replaceOfficialEventsEl.checked};else delete map[key];
+  setUserEventMap(map);syncEventEditor();render();updateEventInfo();
+};
+if(clearCustomEventBtn)clearCustomEventBtn.onclick=()=>{
+  const i=cur();if(!i)return;const map=getUserEventMap();delete map[eventDateKey(i.s)];setUserEventMap(map);syncEventEditor();render();updateEventInfo();
+};
 offEl.onchange=()=>{localStorage.setItem('calendar-lunar-offset',String(offEl.value));render();updateEventInfo();};
 chEl.oninput=render;
 showQREl.onchange=render;
@@ -492,6 +512,7 @@ document.getElementById('zip').onclick=async(e)=>{
   setGregorianISOFromJalali();
   phLink.href=phoneHref(phEl.value);
   updatePhotoUI();
+  syncEventEditor();
   updateEventInfo();
   render();
 })();

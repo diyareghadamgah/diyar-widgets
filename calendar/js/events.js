@@ -237,7 +237,22 @@ const EVENTS_BY_DATE = Object.create(null);
 for(const event of EVENTS_1405)(EVENTS_BY_DATE[event.date] ||= []).push(event);
 
 function eventDateKey(s){return `${s.y}/${String(s.m).padStart(2,'0')}/${String(s.d).padStart(2,'0')}`;}
-function getEvents(i){return EVENTS_BY_DATE[eventDateKey(i.s)] || [];}
+function getOfficialEvents(i){return EVENTS_BY_DATE[eventDateKey(i.s)] || [];}
+function getUserEventMap(){try{return JSON.parse(localStorage.getItem('calendar-user-events-1405')||'{}')||{};}catch(e){return {};}}
+function setUserEventMap(map){localStorage.setItem('calendar-user-events-1405',JSON.stringify(map||{}));}
+function getUserEvent(i){const key=eventDateKey(i.s),map=getUserEventMap(),v=map[key];return v&&typeof v==='object'?v:null;}
+function getEvents(i){
+  const official=getOfficialEvents(i);
+  const user=getUserEvent(i);
+  if(user&&user.text){
+    const custom=user.text.split(/\r?\n/).map(s=>s.trim()).filter(Boolean).map(title=>({date:eventDateKey(i.s),title,type:'user',holiday:false,user:true}));
+    if(user.replaceOfficial)return custom;
+    return official.concat(custom);
+  }
+  return official;
+}
+function getEventEditorText(i){const u=getUserEvent(i);return u?.text||'';}
+function getEventEditorReplace(i){return !!getUserEvent(i)?.replaceOfficial;}
 function eventSummary(i){return getEvents(i).map(e=>e.title).join(' • ');}
 function drawEventsBadge(i){
   const events=getEvents(i); if(!events.length) return;
