@@ -99,7 +99,11 @@ function drawFooter(i){
   const y=1010;
   ctx.fillStyle='#385f12';rr(55,y,590,105,20);ctx.fill();
   ctx.fillStyle='#fff4cf';ctx.textAlign='right';ctx.textBaseline='middle';
-  ctx.font='800 22px Vazirmatn';ctx.fillText((chEl.value||'').replace('@',''),625,y+33);
+  // فضای سمت راست فوتر برای QR رزرو شده است؛ نام گروه نباید روی QR بیفتد.
+  const channelName=(chEl.value||'').replace('@','').trim();
+  const channelSize=fit(channelName,445,22,800);
+  ctx.font='800 '+channelSize+'px Vazirmatn';
+  ctx.fillText(channelName,535,y+33);
   ctx.direction='ltr';ctx.textAlign='left';ctx.font='700 20px Arial';ctx.fillText(phEl.value||'',75,y+73);ctx.direction='rtl';
   const url=(chUrlEl.value||'').trim();if(showQREl.checked&&url)drawQRCanvas(getQRMatrix(url),555,y+10,82);
   ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.font='700 16px Vazirmatn';ctx.fillText('امروز را زیبا بسازیم 🌿',350,y+111);
