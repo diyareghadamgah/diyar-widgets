@@ -467,8 +467,13 @@ document.getElementById('zip').onclick=async(e)=>{
 };
 
 (function init(){
-  const t=new Date();
-  dateEl.value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  // تاریخ پیش‌فرض را بر اساس تاریخ محلی ایران تعیین کن، نه منطقهٔ زمانی دستگاه کاربر.
+  // این کار مانع یک‌روز عقب/جلو افتادن تاریخ شمسی در نیمه‌شب می‌شود.
+  const tehranParts=new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Asia/Tehran', year:'numeric', month:'2-digit', day:'2-digit'
+  }).formatToParts(new Date());
+  const tp=Object.fromEntries(tehranParts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+  dateEl.value=tp.year+'-'+tp.month+'-'+tp.day;
   syncJalaliFromISO();
   phLink.href=phoneHref(phEl.value);
   updatePhotoUI();
