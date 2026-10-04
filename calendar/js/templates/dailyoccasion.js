@@ -41,33 +41,35 @@ function drawPhoto(){
 
 function drawOccasionPanel(i){
   const x=670,y=125,w=325,h=580;
+  const events=getEvents(i);
   ctx.save();
   ctx.fillStyle='#385f12';rr(x,y,w,h,22);ctx.fill();
   ctx.strokeStyle='#e8c75d';ctx.lineWidth=5;rr(x,y,w,h,22);ctx.stroke();
+  if(!events.length){ctx.restore();return;}
   ctx.fillStyle='#f4df8a';rr(x+30,y+22,w-60,70,22);ctx.fill();
   ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.font='900 39px Vazirmatn';ctx.fillText('مناسبت روز',x+w/2,y+57);
-  const events=getEvents(i);
-  let yy=y+135;
-  if(events.length){
-    const maxItems=Math.min(events.length,4), bottom=y+h-28;
-    events.slice(0,maxItems).forEach((e,idx)=>{
-      if(yy>bottom-42)return;
-      ctx.fillStyle=e.holiday?'#f3d36b':'#fffdf4';
-      ctx.beginPath();ctx.arc(x+38,yy+10,6,0,Math.PI*2);ctx.fill();
-      const prefix=e.holiday?'تعطیل رسمی: ':'';
-      const lines=fitLines(prefix+e.title,w-76,20,700,2);
-      ctx.fillStyle='#fffdf4';ctx.textAlign='right';ctx.textBaseline='top';
-      ctx.font='700 20px Vazirmatn';
-      lines.forEach((line,j)=>ctx.fillText(line,x+w-28,yy+j*28));
-      yy+=Math.max(44,lines.length*28+16);
-    });
-    if(events.length>maxItems){
-      ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';
-      ctx.font='700 16px Vazirmatn';ctx.fillText('و مناسبت‌های دیگر…',x+w/2,bottom);
-    }
-  }else{
-    // در روز بدون مناسبت، بدنه کادر عمداً خالی می‌ماند.
+  ctx.font='900 '+fit('مناسبت روز',w-90,39,900)+'px Vazirmatn';ctx.fillText('مناسبت روز',x+w/2,y+57);
+  const bodyTop=y+118, bottom=y+h-28, bodyW=w-76;
+  const items=events.slice(0,6);
+  let fs=20;
+  if(items.length>3)fs=17;if(items.length>4)fs=15;if(items.length>5)fs=13;
+  const prepared=items.map(e=>{
+    const prefix=e.holiday?'تعطیل رسمی: ':'';let f=fs;
+    let lines=wrapText(prefix+e.title,bodyW,'700 '+f+'px Vazirmatn');
+    while(lines.length>2&&f>11){f--;lines=wrapText(prefix+e.title,bodyW,'700 '+f+'px Vazirmatn');}
+    return {lines:lines.slice(0,2),f};
+  });
+  const total=prepared.reduce((n,p)=>n+Math.max(42,p.lines.length*Math.max(20,p.f+7)),0);
+  let yy=bodyTop+Math.max(0,(bottom-bodyTop-total)/2);
+  prepared.forEach(p=>{
+    ctx.fillStyle='#f3d36b';ctx.beginPath();ctx.arc(x+38,yy+10,6,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fffdf4';ctx.textAlign='right';ctx.textBaseline='top';ctx.font='700 '+p.f+'px Vazirmatn';
+    p.lines.forEach((line,j)=>ctx.fillText(line,x+w-28,yy+j*Math.max(20,p.f+7)));
+    yy+=Math.max(42,p.lines.length*Math.max(20,p.f+7)+12);
+  });
+  if(events.length>items.length){
+    ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.font='700 15px Vazirmatn';
+    ctx.fillText('و مناسبت‌های دیگر…',x+w/2,bottom);
   }
   ctx.restore();
 }
