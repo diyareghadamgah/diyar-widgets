@@ -179,3 +179,38 @@ function drawNoteArea(x,y,w,h){
     ctx.fillText(line,x+w/2,startY+i*lh);
   });
 }
+
+/* کادر یکسان مناسبت روز برای قالب‌های مختلف */
+function drawEventPanel(i, cfg){
+  cfg = cfg || {};
+  const x=cfg.x||485, y=cfg.y||620, w=cfg.w||510, h=cfg.h||70;
+  const radius=cfg.radius==null?18:cfg.radius;
+  const stroke=cfg.stroke||S.frame||'#3d6518';
+  const fill=cfg.fill||'rgba(255,255,255,.94)';
+  const titleFill=cfg.titleFill||stroke;
+  const titleColor=cfg.titleColor||'#fff';
+  const textColor=cfg.textColor||S.darkText||'#183318';
+  const events=typeof getEvents==='function'?getEvents(i):[];
+  ctx.save();
+  ctx.fillStyle=fill;rr(x,y,w,h,radius);ctx.fill();
+  ctx.strokeStyle=stroke;ctx.lineWidth=2.5;rr(x,y,w,h,radius);ctx.stroke();
+  const titleW=Math.min(150,w*.30), titleH=Math.min(34,h-12), titleX=x+w-titleW-10, titleY=y+6;
+  ctx.fillStyle=titleFill;rr(titleX,titleY,titleW,titleH,titleH/2);ctx.fill();
+  ctx.fillStyle=titleColor;ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.font='800 '+fit('مناسبت روز',titleW-16,15,800)+'px Vazirmatn';
+  ctx.fillText('مناسبت روز',titleX+titleW/2,titleY+titleH/2+1);
+  if(events.length){
+    const bodyX=x+12, bodyW=w-titleW-30, fs=cfg.fontSize||16;
+    const titles=events.slice(0,3).map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title);
+    let yy=y+h/2+2;
+    ctx.fillStyle=textColor;ctx.textAlign='right';ctx.textBaseline='middle';
+    titles.forEach((txt,idx)=>{
+      const lines=wrapText(txt,bodyW-12,'700 '+fs+'px Vazirmatn').slice(0,2);
+      const useFs=fit(lines.join(' • '),bodyW-8,fs,700);
+      ctx.font='700 '+useFs+'px Vazirmatn';
+      ctx.fillText(lines.join(' • '),x+w- titleW-18,yy);
+      yy += Math.max(18,useFs+3);
+    });
+  }
+  ctx.restore();
+}

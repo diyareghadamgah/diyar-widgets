@@ -60,7 +60,7 @@ function drawThemedCard(i,T){
   const nt=(noteEl.value||'').trim();
   drawTextCenter(nt||'یادداشت…',250,NY+25,310,16,600,nt?T.noteText:'#9c9c9c');
 
-  drawLogoBadge(W/2+40,40,46,{ringOuter:T.acc[0],ringInner:T.acc[1],bg:'#ffffff',placeholderColor:T.acc[0],placeholderFont:12});
+  drawLogoBadge(W/2+40,45,38,{ringOuter:T.acc[0],ringInner:T.acc[1],bg:'#ffffff',placeholderColor:T.acc[0],placeholderFont:12});
 
   // ---- روز هفته
   ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=14;ctx.shadowOffsetY=5;
@@ -85,6 +85,9 @@ function drawThemedCard(i,T){
   const ch=(chEl.value||'').replace('@','');
   ctx.fillStyle=acc(566,612);rr(485,566,510,46,23);ctx.fill();
   drawTextCenter(ch,740,589,450,22,800,T.pillText);
+
+  // ---- مناسبت روز؛ زیر تاریخ‌ها و با فاصله امن از ذکر
+  drawEventPanel(i,{x:485,y:620,w:510,h:70,radius:22,stroke:T.acc[0],fill:T.card,titleFill:T.acc[0],titleColor:T.pillText,textColor:T.text,fontSize:15});
 
   // ---- ذکر روز
   const ds=dhikrSettings[i.wd];
