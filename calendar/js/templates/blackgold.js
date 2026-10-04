@@ -57,7 +57,7 @@
     if(hasQR)drawQRCanvas(getQRMatrix(url),450,990,105);
     drawRoundIcon('plane',640,1045,24,t.goldText,t.panel);drawTextCenter((chEl.value||'').replace('@',''),795,1045,230,20,700,t.goldText);
 
-    drawLogoBadge(915, 62, 30, {ringOuter:'#d9a52f', ringInner:'#8f5a08', bg:'#1a1a1a', placeholderColor:'#d9a52f', placeholderFont:10});
+    drawLogoBadge(955, 52, 28, {ringOuter:'#d9a52f', ringInner:'#8f5a08', bg:'#1a1a1a', placeholderColor:'#d9a52f', placeholderFont:10});
   }
 
 registerTemplate({

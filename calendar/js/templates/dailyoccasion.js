@@ -13,8 +13,8 @@ function drawDateBox(x,y,w,h,label,value,kind){
   ctx.strokeStyle='#3d6518';ctx.lineWidth=3;rr(x,y,w,h,16);ctx.stroke();
   if(kind) drawIconByKind(kind,x+30,y+h/2,15,'#3d6518','#fffdf6');
   ctx.fillStyle='#17310f';ctx.textBaseline='middle';ctx.textAlign='right';
-  ctx.font='900 '+fit(label,w-58,21,900)+'px Vazirmatn';ctx.fillText(label,x+w-18,y+h*.38);
-  ctx.textAlign='left';ctx.font='900 '+fit(value,w-58,27,900,'Vazirmatn')+'px Vazirmatn';ctx.fillText(value,x+50,y+h*.68);
+  ctx.font='900 '+fit(label,72,19,900)+'px Vazirmatn';ctx.fillText(label,x+w-18,y+h*.38);
+  ctx.textAlign='left';ctx.font='900 '+fit(value,178,24,900,'Vazirmatn')+'px Vazirmatn';ctx.fillText(value,x+52,y+h*.68);
   ctx.restore();
 }
 
@@ -50,16 +50,22 @@ function drawOccasionPanel(i){
   const events=getEvents(i);
   let yy=y+135;
   if(events.length){
-    events.slice(0,5).forEach((e,idx)=>{
+    const maxItems=Math.min(events.length,4), bottom=y+h-28;
+    events.slice(0,maxItems).forEach((e,idx)=>{
+      if(yy>bottom-42)return;
       ctx.fillStyle=e.holiday?'#f3d36b':'#fffdf4';
-      ctx.beginPath();ctx.arc(x+38,yy-2,7,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(x+38,yy+10,6,0,Math.PI*2);ctx.fill();
       const prefix=e.holiday?'تعطیل رسمی: ':'';
-      const lines=fitLines(prefix+e.title,w-68,22,700,3);
+      const lines=fitLines(prefix+e.title,w-76,20,700,2);
       ctx.fillStyle='#fffdf4';ctx.textAlign='right';ctx.textBaseline='top';
-      ctx.font='700 22px Vazirmatn';
-      lines.forEach((line,j)=>ctx.fillText(line,x+w-28,yy+j*31));
-      yy+=Math.max(48,lines.length*31+20);
+      ctx.font='700 20px Vazirmatn';
+      lines.forEach((line,j)=>ctx.fillText(line,x+w-28,yy+j*28));
+      yy+=Math.max(44,lines.length*28+16);
     });
+    if(events.length>maxItems){
+      ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';
+      ctx.font='700 16px Vazirmatn';ctx.fillText('و مناسبت‌های دیگر…',x+w/2,bottom);
+    }
   }else{
     ctx.fillStyle='#fffdf4';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.font='700 24px Vazirmatn';ctx.fillText('امروز مناسبت ثبت‌شده‌ای ندارد',x+w/2,y+210);
@@ -70,8 +76,10 @@ function drawOccasionPanel(i){
 function drawTop(i){
   ctx.fillStyle='#111';ctx.textAlign='center';ctx.textBaseline='middle';
   ctx.font='900 35px Vazirmatn';ctx.fillText('بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',525,48);
-  drawLogoBadge(900,55,39,{ringOuter:'#31570f',ringInner:'#d4ae45',placeholderColor:'#31570f',placeholderFont:11});
-  ctx.fillStyle='#31570f';ctx.textAlign='right';ctx.font='800 23px Vazirmatn';ctx.fillText(chEl.value||'دیار قدمگاه',980,95);
+  drawLogoBadge(940,48,36,{ringOuter:'#31570f',ringInner:'#d4ae45',placeholderColor:'#31570f',placeholderFont:11});
+  ctx.fillStyle='#31570f';ctx.textAlign='right';ctx.font='800 23px Vazirmatn';const topName=(chEl.value||'دیار قدمگاه').replace('@','');
+  const topNameSize=fit(topName,150,20,800);
+  ctx.font='800 '+topNameSize+'px Vazirmatn';ctx.fillText(topName,980,105);
 }
 
 function drawDates(i){
@@ -106,7 +114,7 @@ function drawFooter(i){
   ctx.fillText(channelName,535,y+33);
   ctx.direction='ltr';ctx.textAlign='left';ctx.font='700 20px Arial';ctx.fillText(phEl.value||'',75,y+73);ctx.direction='rtl';
   const url=(chUrlEl.value||'').trim();if(showQREl.checked&&url)drawQRCanvas(getQRMatrix(url),555,y+10,82);
-  ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.font='700 16px Vazirmatn';ctx.fillText('امروز را زیبا بسازیم 🌿',350,y+111);
+  ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.font='700 16px Vazirmatn';ctx.fillText('امروز را زیبا بسازیم 🌿',350,y+92);
 }
 
 function drawDailyOccasion(i){
