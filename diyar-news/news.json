@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-06T01:25:23.466Z",
-  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۱:۲۵",
+  "lastUpdate": "2026-10-06T01:38:38.799Z",
+  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۸",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,96 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "اجتماع خونخواهی رهبر شهید در تنکابن",
+      "link": "https://www.mehrnews.com/news/6969169/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%AE%D9%88%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%AA%D9%86%DA%A9%D8%A7%D8%A8%D9%86",
+      "date": "2026-10-06T01:36:19.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۶",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "تنکابن - اجتماع باشکوه مردم ولایتمدار تنکابن برای خونخواهی رهبر شهید و حمایت از رزمندگان اسلام و بیعت با رهبر معظم انقلاب اسلامی به شب ۲۱۹ رسید."
+    },
+    {
+      "title": "ترامپ حکم تیرباران یک نظامی آمریکا را امضا کرد",
+      "link": "https://www.irna.ir/news/86284362/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AD%DA%A9%D9%85-%D8%AA%DB%8C%D8%B1%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%DB%8C%DA%A9-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%A7%D9%85%D8%B6%D8%A7-%DA%A9%D8%B1%D8%AF",
+      "date": "2026-10-06T01:34:17.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۴",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "نیویورک – ایرنا- شبکه ای بی سی نیوز اعلام کرد که دونالد ترامپ رئیس جمهوری آمریکا حکم اعدام یک نظامی آمریکایی را با روش تیرباران (جوخه آتش) امضا کرد."
+    },
+    {
+      "title": "وزیری که روی لبه تیغ ماند و رفت",
+      "link": "https://www.qudsonline.ir/news/1168997/%D9%88%D8%B2%DB%8C%D8%B1%DB%8C-%DA%A9%D9%87-%D8%B1%D9%88%DB%8C-%D9%84%D8%A8%D9%87-%D8%AA%DB%8C%D8%BA-%D9%85%D8%A7%D9%86%D8%AF-%D9%88-%D8%B1%D9%81%D8%AA",
+      "date": "2026-10-06T01:34:00.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۴",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "پیاده شدن نخستین وزیر کابینه از قطار دولت با وجود کشمکش، شائبه و حاشیه‌سازی‌ها درباره استیضاح وی، پرسش‌برانگیز بوده و درخصوص آن ابهاماتی وجود دارد."
+    },
+    {
+      "title": "ماهیچه مطالعه را تقویت کنید",
+      "link": "https://www.qudsonline.ir/news/1169012/%D9%85%D8%A7%D9%87%DB%8C%DA%86%D9%87-%D9%85%D8%B7%D8%A7%D9%84%D8%B9%D9%87-%D8%B1%D8%A7-%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%DA%A9%D9%86%DB%8C%D8%AF",
+      "date": "2026-10-06T01:33:00.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۳",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "نویسنده و پژوهشگر انگلیسی «آدام کلارک اِستس» درباره اینکه بشر کم‌کم فعالیت و عادت «مطالعه» را از زندگی‌اش کنار گذاشته، می‌گوید: «هوش مصنوعی دسترسی به اطلاعات را آن‌قدر آسان کرده که دیگر هیچ‌کس مطالعه نمی‌کند»."
+    },
+    {
+      "title": "بزرگ‌ترین صادرکنندگان کود شیمیایی جهان (+ اینفوگرافیک)",
+      "link": "https://www.asriran.com/fa/news/1196604/%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AA%D8%B1%DB%8C%D9%86-%D8%B5%D8%A7%D8%AF%D8%B1%DA%A9%D9%86%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%DA%A9%D9%88%D8%AF-%D8%B4%DB%8C%D9%85%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%DB%8C%D9%86%D9%81%D9%88%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9",
+      "date": "2026-10-06T01:30:02.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "تأمین غذای جهان به تجارت کود شیمیایی وابسته است؛ تجارتی که بخش قابل‌توجهی از آن در اختیار تعداد نسبتاً محدودی از کشورها قرار دارد."
+    },
+    {
+      "title": "عکس دیدنی: سپیدپوشی اشترانکوه در اولین برف پاییزی",
+      "link": "https://www.tabnak.ir/fa/news/1397472/%D8%B9%DA%A9%D8%B3-%D8%AF%DB%8C%D8%AF%D9%86%DB%8C-%D8%B3%D9%BE%DB%8C%D8%AF%D9%BE%D9%88%D8%B4%DB%8C-%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%86%DA%A9%D9%88%D9%87-%D8%AF%D8%B1-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%A8%D8%B1%D9%81-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C",
+      "date": "2026-10-06T01:30:02.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "تصویری زیبا از بارش اولین برف پاییزی روی اشترانکوه لرستان را مشاهده می‌کنید."
+    },
+    {
+      "title": "فرانسه و آلمان خواستار ایجادا راه های تجاری جدید برای حفاظت از صنایع اروپا شدند",
+      "link": "https://www.irna.ir/news/86284361/%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D9%88-%D8%A2%D9%84%D9%85%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%D8%A7-%D8%B1%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D8%A7%D8%B2",
+      "date": "2026-10-06T01:30:00.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- فرانسه و آلمان پیشنهاد کرده‌اند که اتحادیه اروپا بنیه اقتصادی خود را تقویت کنند و یک اقدام فوری و جدید برای مقابله با کشورهایی که به اقتصاد آن آسیب می‌رسانند، اتخاذ کند. به نظر می‌رسد که این پیشنهاد به احتمال زیاد چین را هدف قرار می‌دهد."
+    },
+    {
+      "title": "ربات‌ خودران با ۱۲ ساعت پایش به خط مقدم شناسایی آلودگی نفتی وارد می‌شود",
+      "link": "https://www.isna.ir/news/1405071308574/%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AE%D9%88%D8%AF%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%DB%B1%DB%B2-%D8%B3%D8%A7%D8%B9%D8%AA-%D9%BE%D8%A7%DB%8C%D8%B4-%D8%A8%D9%87-%D8%AE%D8%B7-%D9%85%D9%82%D8%AF%D9%85-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF",
+      "date": "2026-10-06T01:30:00.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "یک تیم فناور در بوشهر با طراحی ربات هوشمندی، راهکاری برای شناسایی و جمع‌آوری خودکار لکه‌های نفتی در سطح آب ارائه کرده است؛ سامانه‌ای که با بهره‌گیری از هوش مصنوعی و دوربین، لکه‌های نفتی را شناسایی کرده و بدون نیاز به اپراتور به سمت آنها حرکت می‌کند و با استفاده از ربات‌های زیرمجموعه، عملیات مکش و جمع‌آوری آلودگی را انجام می‌دهد."
+    },
+    {
+      "title": "آغاز بارش‌های پاییزی و توجه به اقدامات پیشگیرانه برای مدیریت سیلاب",
+      "link": "https://www.isna.ir/news/1405071308529/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C-%D9%88-%D8%AA%D9%88%D8%AC%D9%87-%D8%A8%D9%87-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%BE%DB%8C%D8%B4%DA%AF%DB%8C%D8%B1%D8%A7%D9%86%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA",
+      "date": "2026-10-06T01:30:00.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "با احتمال افزایش بارش‌ها در پاییز و پیش‌بینی بارندگی در بخش‌هایی از کشور توجه به اقدامات پیشگیرانه برای مدیریت روان‌آب‌ها و کاهش مخاطرات سیلاب اهمیت بیشتری یافته است؛ موضوعی که لایروبی و آزادسازی مسیرهای عبور آب، پایش رودخانه‌ها و مخازن و تقویت اطلاع‌رسانی و هشدار را دربرمی‌گیرد."
+    },
     {
       "title": "بسته ماندن تنگه هرمز می تواند غلات را ۸۰ درصد گران کند",
       "link": "https://www.isna.ir/news/1405071408777/%D8%A8%D8%B3%D8%AA%D9%87-%D9%85%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%BA%D9%84%D8%A7%D8%AA-%D8%B1%D8%A7-%DB%B8%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%DA%AF%D8%B1%D8%A7%D9%86-%DA%A9%D9%86%D8%AF",
@@ -471,16 +561,6 @@
       "rssDescription": "خمین- در این ویدئو شب ۲۱۹ قرار عاشقی و طنین فریادهای استکبارستیز مردم خمین را ملاحظه می کنید."
     },
     {
-      "title": "دیار آفتاب در میعادگاه ۲۱۹؛ پیوند ناگسستنی مردم با آرمان‌های انقلاب",
-      "link": "https://www.mehrnews.com/news/6969129/%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D9%85%DB%8C%D8%B9%D8%A7%D8%AF%DA%AF%D8%A7%D9%87-%DB%B2%DB%B1%DB%B9-%D9%BE%DB%8C%D9%88%D9%86%D8%AF-%D9%86%D8%A7%DA%AF%D8%B3%D8%B3%D8%AA%D9%86%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%A7-%D8%A2%D8%B1%D9%85%D8%A7%D9%86-%D9%87%D8%A7%DB%8C",
-      "date": "2026-10-05T22:48:00.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۲:۴۸",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "اراک- در این ویدئو پیوند ناگسستنی مردم دیار آفتاب با آرمان‌های انقلاب در میعادگاه ۲۱۹ را ملاحظه می کنید."
-    },
-    {
       "title": "ورود اوباما به نبرد سرنوشت‌ساز سنای آمریکا؛ حمایت از السید در رقابت حساس میشیگان",
       "link": "https://www.irna.ir/news/86284349/%D9%88%D8%B1%D9%88%D8%AF-%D8%A7%D9%88%D8%A8%D8%A7%D9%85%D8%A7-%D8%A8%D9%87-%D9%86%D8%A8%D8%B1%D8%AF-%D8%B3%D8%B1%D9%86%D9%88%D8%B4%D8%AA-%D8%B3%D8%A7%D8%B2-%D8%B3%D9%86%D8%A7%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D8%A7%D9%84%D8%B3%DB%8C%D8%AF-%D8%AF%D8%B1",
       "date": "2026-10-05T22:42:00.000Z",
@@ -861,16 +941,6 @@
       "rssDescription": "تهران-ایرنا-رئیس کمیته ملی پارالمپیک همراهی قهرمانان با مردم را رفتار پهلوان منشانه دانست و گفت: این همراهی روحیه حماسی را در افراد ایجاد می کند."
     },
     {
-      "title": "کامبک درخشان فرانسه با زیدان و پیروزی ایتالیا در لیگ ملت های اروپا",
-      "link": "https://www.isna.ir/news/1405071408766/%DA%A9%D8%A7%D9%85%D8%A8%DA%A9-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D8%A8%D8%A7-%D8%B2%DB%8C%D8%AF%D8%A7%D9%86-%D9%88-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D8%AF%D8%B1-%D9%84%DB%8C%DA%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C",
-      "date": "2026-10-05T20:53:04.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۵۳",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "در ادامه دیدارهای لیگ ملت های اروپا، فرانسه یک برد پرگل برابر بلژیک به دست آورد و ایتالیا هم در مقابل ترکیه به پیروزی رسید."
-    },
-    {
       "title": "پولادگر: مسیر رسیدن کاروان به ناگویا سخت است",
       "link": "https://www.irna.ir/news/86284326/%D9%BE%D9%88%D9%84%D8%A7%D8%AF%DA%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D8%B1%D8%B3%DB%8C%D8%AF%D9%86-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A8%D9%87-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D8%B3%D8%AE%D8%AA-%D8%A7%D8%B3%D8%AA",
       "date": "2026-10-05T20:52:57.000Z",
@@ -899,35 +969,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "حمله تروریستی داعش به مقر پلیس عراق در کرکوک یک شهید و ۴ زخمی برجا گذاشت."
-    },
-    {
-      "title": "رستمی: پرچمداری ایران افتخار بزرگی برای من است",
-      "link": "https://www.irna.ir/news/86284323/%D8%B1%D8%B3%D8%AA%D9%85%DB%8C-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-05T20:47:51.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۷",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "تهران- ایرنا- پرچم دار کاروان ایران در بازی های پاراآسیایی ناگویا رسالت جدید خود را بزرگتر از جدال برای قهرمانی دانست."
-    },
-    {
-      "title": "عربستان مناطقی از غرب یمن را هدف قرار داد",
-      "link": "https://www.irna.ir/news/86284337/%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%86%D8%A7%D8%B7%D9%82%DB%8C-%D8%A7%D8%B2-%D8%BA%D8%B1%D8%A8-%DB%8C%D9%85%D9%86-%D8%B1%D8%A7-%D9%87%D8%AF%D9%81-%D9%82%D8%B1%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF",
-      "date": "2026-10-05T20:47:32.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۷",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران-ایرنا- منابع یمنی دوشنبه شب گزارش دادند که عربستان سعودی مناطقی از استان الحدیده در غرب یمن را هدف حملات هوایی قرار داده است."
-    },
-    {
-      "title": "بدرقه کاروان اعزامی به بازی‌های پاراآسیایی ناگویا",
-      "link": "https://www.isna.ir/photo/1405071408765/%D8%A8%D8%AF%D8%B1%D9%82%D9%87-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A7%D8%B9%D8%B2%D8%A7%D9%85%DB%8C-%D8%A8%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%D8%B1%D8%A7%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7",
-      "date": "2026-10-05T20:46:54.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۶",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه"
     },
     {
       "title": "ورود پادشاهی سعودی به تله جنگ فرسایشی در یمن / انتخاب پرهزینه کارزار «همه یا هیچ» برای ریاض",
@@ -988,50 +1029,20 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "در تالارهای تخت جمشید، میان صدها پیکر سنگی بارعام‌دهندگان و هدیه‌آوران، زنی دیده نمی‌شود. نه نقش‌برجسته‌ای از ملکه‌ای هست و نه کتیبه‌ی سلطنتی‌ای که نام همسر یا مادر شاه را بر سنگ ثبت کرده باشد. اما در گوشه‌ای از همین مجموعه، هزاران لوح گلی عیلامی زیر خاک مانده بودند که صدای دیگری دارند."
-    },
-    {
-      "title": "طالع بینی متولدین ۱۴ مهر",
-      "link": "https://www.ilna.ir/fa/tiny/news-1848620",
-      "date": "2026-10-05T20:31:00.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5_h8xpmwkqJifGoGkCOimL2XFXFQzBlo1WfAb5pZNn3_ZixKXtBGk3JBQ-WlHzgWQbB4dYlCMc6ak23gkISede-TCvxvEPoiEC-F89aeI46rWsjsWJqjG9yQsC5u7bmhmxRDov41QinOwfw_RMO4CawRMWdS541PaSGHPCvOrevVrSodPGP3Qn48fdQOXF0n/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال حافظ متولدین هر ماه - سه شنبه ۱۴ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1848619",
-      "date": "2026-10-05T20:31:00.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zzYnNqZq73vvLZXclwRVYeaVgdKSLExYM7VgNmxJvAm6AR0HR42H7MRire3U5LrMWQdGxZhCQ3CMsnIG7TQMr3z0kyhcO1YFD1ytOSfdZFe2dF7mA1N8Qch_lgus8SUxR_aWdDDCCYwNma1mounaQ92TjIXnTfP45AAhGSEFR7viqAiCH8GoOKIoRdFBN9T3/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1848618",
-      "date": "2026-10-05T20:31:00.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/9kFYjZVvnpR0cBgRIxDOrZFUtme4_kw2gUttnXDDLNwY4xlyFnB4kW4eREYTDawlbv8kkDl9RPNXXbCnfN4iHMG3-2tpddmJzo-d3qteMgN-GmoX715Gwwxzdna-rNnXKsjIE6tAbF87EjSS2G5X6QygMYrNGCoIAjK95bEI2JksQKvgRfnwXG5FrccRS0cZ/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-    },
-    {
-      "title": "ساعات سعد و نحس امروز سه شنبه ۱۴ مهر + جدول",
-      "link": "https://www.ilna.ir/fa/tiny/news-1848617",
-      "date": "2026-10-05T20:31:00.000Z",
-      "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/LyLwfRmsR-zHcD4uDF8qWAkCoZx0BJmwuHATlCVkqUndF4_rvpcxLO_ScOtTF_KhIJ13oeHRPZqWY8UPLDYJFDVeFJeyG-QRMV2pwFf38WaA3D6lzJau46wTJ1yKI0Kh_KSVBupIMeWoEC8HxNdyUX0rUj9U5vf9jztFEb6SDAI55OR4FYCHzU4uSDVVMdGz/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "وزیری که روی لبه تیغ ماند و رفت",
+        "link": "https://www.qudsonline.ir/news/1168997/%D9%88%D8%B2%DB%8C%D8%B1%DB%8C-%DA%A9%D9%87-%D8%B1%D9%88%DB%8C-%D9%84%D8%A8%D9%87-%D8%AA%DB%8C%D8%BA-%D9%85%D8%A7%D9%86%D8%AF-%D9%88-%D8%B1%D9%81%D8%AA",
+        "date": "2026-10-06T01:34:00.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۴",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "پیاده شدن نخستین وزیر کابینه از قطار دولت با وجود کشمکش، شائبه و حاشیه‌سازی‌ها درباره استیضاح وی، پرسش‌برانگیز بوده و درخصوص آن ابهاماتی وجود دارد."
+      },
       {
         "title": "مقایسه طرح استیضاح عراقچی با برکناری وزیر خارجه احمدی نژاد/ چرا نمایندگان به دنبال خروج عراقچی از دولت هستند؟",
         "link": "https://www.khabaronline.ir/news/2284030/%D9%85%D9%82%D8%A7%DB%8C%D8%B3%D9%87-%D8%B7%D8%B1%D8%AD-%D8%A7%D8%B3%D8%AA%DB%8C%D8%B6%D8%A7%D8%AD-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A8%D8%A7-%D8%A8%D8%B1%DA%A9%D9%86%D8%A7%D8%B1%DB%8C-%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%A7%D8%AD%D9%85%D8%AF%DB%8C-%D9%86%DA%98%D8%A7%D8%AF-%DA%86%D8%B1%D8%A7",
@@ -1094,6 +1105,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "بزرگ‌ترین صادرکنندگان کود شیمیایی جهان (+ اینفوگرافیک)",
+        "link": "https://www.asriran.com/fa/news/1196604/%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AA%D8%B1%DB%8C%D9%86-%D8%B5%D8%A7%D8%AF%D8%B1%DA%A9%D9%86%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%DA%A9%D9%88%D8%AF-%D8%B4%DB%8C%D9%85%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%DB%8C%D9%86%D9%81%D9%88%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9",
+        "date": "2026-10-06T01:30:02.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "تأمین غذای جهان به تجارت کود شیمیایی وابسته است؛ تجارتی که بخش قابل‌توجهی از آن در اختیار تعداد نسبتاً محدودی از کشورها قرار دارد."
+      },
       {
         "title": "گام بزرگ سازمان بهینه‌سازی برای پرداخت صرفه‌جویی سوخت پروژه‌های سرمایه‌گذاری ریلی",
         "link": "https://www.irna.ir/news/86284358/%DA%AF%D8%A7%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D9%87%DB%8C%D9%86%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%B5%D8%B1%D9%81%D9%87-%D8%AC%D9%88%DB%8C%DB%8C-%D8%B3%D9%88%D8%AE%D8%AA-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D9%87%D8%A7%DB%8C",
@@ -1207,16 +1228,6 @@
         "rssDescription": "تهران-ایرنا-رئیس کمیته ملی پارالمپیک همراهی قهرمانان با مردم را رفتار پهلوان منشانه دانست و گفت: این همراهی روحیه حماسی را در افراد ایجاد می کند."
       },
       {
-        "title": "رستمی: پرچمداری ایران افتخار بزرگی برای من است",
-        "link": "https://www.irna.ir/news/86284323/%D8%B1%D8%B3%D8%AA%D9%85%DB%8C-%D9%BE%D8%B1%DA%86%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D9%86-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-05T20:47:51.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۷",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "تهران- ایرنا- پرچم دار کاروان ایران در بازی های پاراآسیایی ناگویا رسالت جدید خود را بزرگتر از جدال برای قهرمانی دانست."
-      },
-      {
         "title": "امباپه فکر می‌کند ما احمقیم!",
         "link": "https://www.khabaronline.ir/news/2284009/%D8%A7%D9%85%D8%A8%D8%A7%D9%BE%D9%87-%D9%81%DA%A9%D8%B1-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF-%D9%85%D8%A7-%D8%A7%D8%AD%D9%85%D9%82%DB%8C%D9%85",
         "date": "2026-10-05T20:35:00.000Z",
@@ -1250,6 +1261,16 @@
       }
     ],
     "اجتماعی": [
+      {
+        "title": "آغاز بارش‌های پاییزی و توجه به اقدامات پیشگیرانه برای مدیریت سیلاب",
+        "link": "https://www.isna.ir/news/1405071308529/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C-%D9%88-%D8%AA%D9%88%D8%AC%D9%87-%D8%A8%D9%87-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%BE%DB%8C%D8%B4%DA%AF%DB%8C%D8%B1%D8%A7%D9%86%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA",
+        "date": "2026-10-06T01:30:00.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "با احتمال افزایش بارش‌ها در پاییز و پیش‌بینی بارندگی در بخش‌هایی از کشور توجه به اقدامات پیشگیرانه برای مدیریت روان‌آب‌ها و کاهش مخاطرات سیلاب اهمیت بیشتری یافته است؛ موضوعی که لایروبی و آزادسازی مسیرهای عبور آب، پایش رودخانه‌ها و مخازن و تقویت اطلاع‌رسانی و هشدار را دربرمی‌گیرد."
+      },
       {
         "title": "درمان خانگی سرماخوردگی و آنفلوآنزا",
         "link": "https://www.tabnak.ir/fa/news/1397427/%D8%AF%D8%B1%D9%85%D8%A7%D9%86-%D8%AE%D8%A7%D9%86%DA%AF%DB%8C-%D8%B3%D8%B1%D9%85%D8%A7%D8%AE%D9%88%D8%B1%D8%AF%DA%AF%DB%8C-%D9%88-%D8%A2%D9%86%D9%81%D9%84%D9%88%D8%A2%D9%86%D8%B2%D8%A7",
@@ -1323,6 +1344,26 @@
     ],
     "علمی و فناوری": [
       {
+        "title": "ماهیچه مطالعه را تقویت کنید",
+        "link": "https://www.qudsonline.ir/news/1169012/%D9%85%D8%A7%D9%87%DB%8C%DA%86%D9%87-%D9%85%D8%B7%D8%A7%D9%84%D8%B9%D9%87-%D8%B1%D8%A7-%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%DA%A9%D9%86%DB%8C%D8%AF",
+        "date": "2026-10-06T01:33:00.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۳",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "نویسنده و پژوهشگر انگلیسی «آدام کلارک اِستس» درباره اینکه بشر کم‌کم فعالیت و عادت «مطالعه» را از زندگی‌اش کنار گذاشته، می‌گوید: «هوش مصنوعی دسترسی به اطلاعات را آن‌قدر آسان کرده که دیگر هیچ‌کس مطالعه نمی‌کند»."
+      },
+      {
+        "title": "ربات‌ خودران با ۱۲ ساعت پایش به خط مقدم شناسایی آلودگی نفتی وارد می‌شود",
+        "link": "https://www.isna.ir/news/1405071308574/%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AE%D9%88%D8%AF%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%DB%B1%DB%B2-%D8%B3%D8%A7%D8%B9%D8%AA-%D9%BE%D8%A7%DB%8C%D8%B4-%D8%A8%D9%87-%D8%AE%D8%B7-%D9%85%D9%82%D8%AF%D9%85-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF",
+        "date": "2026-10-06T01:30:00.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "یک تیم فناور در بوشهر با طراحی ربات هوشمندی، راهکاری برای شناسایی و جمع‌آوری خودکار لکه‌های نفتی در سطح آب ارائه کرده است؛ سامانه‌ای که با بهره‌گیری از هوش مصنوعی و دوربین، لکه‌های نفتی را شناسایی کرده و بدون نیاز به اپراتور به سمت آنها حرکت می‌کند و با استفاده از ربات‌های زیرمجموعه، عملیات مکش و جمع‌آوری آلودگی را انجام می‌دهد."
+      },
+      {
         "title": "تماشای مرگ اینترنت به مثابه یک شبکه واحد جهانی",
         "link": "https://www.isna.ir/news/1405071308668/%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DB%8C-%D9%85%D8%B1%DA%AF-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%A8%D9%87-%D9%85%D8%AB%D8%A7%D8%A8%D9%87-%DB%8C%DA%A9-%D8%B4%D8%A8%DA%A9%D9%87-%D9%88%D8%A7%D8%AD%D8%AF-%D8%AC%D9%87%D8%A7%D9%86%DB%8C",
         "date": "2026-10-06T00:45:00.000Z",
@@ -1374,6 +1415,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "ترامپ حکم تیرباران یک نظامی آمریکا را امضا کرد",
+        "link": "https://www.irna.ir/news/86284362/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AD%DA%A9%D9%85-%D8%AA%DB%8C%D8%B1%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%DB%8C%DA%A9-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%A7%D9%85%D8%B6%D8%A7-%DA%A9%D8%B1%D8%AF",
+        "date": "2026-10-06T01:34:17.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۴",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "نیویورک – ایرنا- شبکه ای بی سی نیوز اعلام کرد که دونالد ترامپ رئیس جمهوری آمریکا حکم اعدام یک نظامی آمریکایی را با روش تیرباران (جوخه آتش) امضا کرد."
+      },
+      {
+        "title": "فرانسه و آلمان خواستار ایجادا راه های تجاری جدید برای حفاظت از صنایع اروپا شدند",
+        "link": "https://www.irna.ir/news/86284361/%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D9%88-%D8%A2%D9%84%D9%85%D8%A7%D9%86-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%D8%A7-%D8%B1%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D8%A7%D8%B2",
+        "date": "2026-10-06T01:30:00.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- فرانسه و آلمان پیشنهاد کرده‌اند که اتحادیه اروپا بنیه اقتصادی خود را تقویت کنند و یک اقدام فوری و جدید برای مقابله با کشورهایی که به اقتصاد آن آسیب می‌رسانند، اتخاذ کند. به نظر می‌رسد که این پیشنهاد به احتمال زیاد چین را هدف قرار می‌دهد."
+      },
       {
         "title": "بسته ماندن تنگه هرمز می تواند غلات را ۸۰ درصد گران کند",
         "link": "https://www.isna.ir/news/1405071408777/%D8%A8%D8%B3%D8%AA%D9%87-%D9%85%D8%A7%D9%86%D8%AF%D9%86-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%BA%D9%84%D8%A7%D8%AA-%D8%B1%D8%A7-%DB%B8%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%DA%AF%D8%B1%D8%A7%D9%86-%DA%A9%D9%86%D8%AF",
@@ -1685,16 +1746,6 @@
         "rssDescription": "تهران- ایرنا- در هفته چهارم لیگ ملت‌های اروپا، فرانسه یک برد پرگل برابر بلژیک به دست آورد و ایتالیا هم مقابل ترکیه به پیروزی رسید."
       },
       {
-        "title": "کامبک درخشان فرانسه با زیدان و پیروزی ایتالیا در لیگ ملت های اروپا",
-        "link": "https://www.isna.ir/news/1405071408766/%DA%A9%D8%A7%D9%85%D8%A8%DA%A9-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D8%A8%D8%A7-%D8%B2%DB%8C%D8%AF%D8%A7%D9%86-%D9%88-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D8%AF%D8%B1-%D9%84%DB%8C%DA%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C",
-        "date": "2026-10-05T20:53:04.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۵۳",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "در ادامه دیدارهای لیگ ملت های اروپا، فرانسه یک برد پرگل برابر بلژیک به دست آورد و ایتالیا هم در مقابل ترکیه به پیروزی رسید."
-      },
-      {
         "title": "پولادگر: مسیر رسیدن کاروان به ناگویا سخت است",
         "link": "https://www.irna.ir/news/86284326/%D9%BE%D9%88%D9%84%D8%A7%D8%AF%DA%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D8%B1%D8%B3%DB%8C%D8%AF%D9%86-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A8%D9%87-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7-%D8%B3%D8%AE%D8%AA-%D8%A7%D8%B3%D8%AA",
         "date": "2026-10-05T20:52:57.000Z",
@@ -1713,16 +1764,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "حمله تروریستی داعش به مقر پلیس عراق در کرکوک یک شهید و ۴ زخمی برجا گذاشت."
-      },
-      {
-        "title": "عربستان مناطقی از غرب یمن را هدف قرار داد",
-        "link": "https://www.irna.ir/news/86284337/%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%86%D8%A7%D8%B7%D9%82%DB%8C-%D8%A7%D8%B2-%D8%BA%D8%B1%D8%A8-%DB%8C%D9%85%D9%86-%D8%B1%D8%A7-%D9%87%D8%AF%D9%81-%D9%82%D8%B1%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF",
-        "date": "2026-10-05T20:47:32.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۷",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران-ایرنا- منابع یمنی دوشنبه شب گزارش دادند که عربستان سعودی مناطقی از استان الحدیده در غرب یمن را هدف حملات هوایی قرار داده است."
       },
       {
         "title": "ورود پادشاهی سعودی به تله جنگ فرسایشی در یمن / انتخاب پرهزینه کارزار «همه یا هیچ» برای ریاض",
@@ -1756,6 +1797,26 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "اجتماع خونخواهی رهبر شهید در تنکابن",
+        "link": "https://www.mehrnews.com/news/6969169/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%AE%D9%88%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%AA%D9%86%DA%A9%D8%A7%D8%A8%D9%86",
+        "date": "2026-10-06T01:36:19.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۶",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "تنکابن - اجتماع باشکوه مردم ولایتمدار تنکابن برای خونخواهی رهبر شهید و حمایت از رزمندگان اسلام و بیعت با رهبر معظم انقلاب اسلامی به شب ۲۱۹ رسید."
+      },
+      {
+        "title": "عکس دیدنی: سپیدپوشی اشترانکوه در اولین برف پاییزی",
+        "link": "https://www.tabnak.ir/fa/news/1397472/%D8%B9%DA%A9%D8%B3-%D8%AF%DB%8C%D8%AF%D9%86%DB%8C-%D8%B3%D9%BE%DB%8C%D8%AF%D9%BE%D9%88%D8%B4%DB%8C-%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%86%DA%A9%D9%88%D9%87-%D8%AF%D8%B1-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%A8%D8%B1%D9%81-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C",
+        "date": "2026-10-06T01:30:02.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۱:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "تصویری زیبا از بارش اولین برف پاییزی روی اشترانکوه لرستان را مشاهده می‌کنید."
+      },
       {
         "title": "«سقراط» که بود و چرا اعدام شد؟",
         "link": "https://www.asriran.com/fa/news/1196597/%D8%B3%D9%82%D8%B1%D8%A7%D8%B7-%DA%A9%D9%87-%D8%A8%D9%88%D8%AF-%D9%88-%DA%86%D8%B1%D8%A7-%D8%A7%D8%B9%D8%AF%D8%A7%D9%85-%D8%B4%D8%AF",
@@ -1927,16 +1988,6 @@
         "rssDescription": "خمین- در این ویدئو شب ۲۱۹ قرار عاشقی و طنین فریادهای استکبارستیز مردم خمین را ملاحظه می کنید."
       },
       {
-        "title": "دیار آفتاب در میعادگاه ۲۱۹؛ پیوند ناگسستنی مردم با آرمان‌های انقلاب",
-        "link": "https://www.mehrnews.com/news/6969129/%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D9%85%DB%8C%D8%B9%D8%A7%D8%AF%DA%AF%D8%A7%D9%87-%DB%B2%DB%B1%DB%B9-%D9%BE%DB%8C%D9%88%D9%86%D8%AF-%D9%86%D8%A7%DA%AF%D8%B3%D8%B3%D8%AA%D9%86%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D8%A7-%D8%A2%D8%B1%D9%85%D8%A7%D9%86-%D9%87%D8%A7%DB%8C",
-        "date": "2026-10-05T22:48:00.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۲:۴۸",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "اراک- در این ویدئو پیوند ناگسستنی مردم دیار آفتاب با آرمان‌های انقلاب در میعادگاه ۲۱۹ را ملاحظه می کنید."
-      },
-      {
         "title": "«ابوالفتح‌میرزا» پسر سوم مظفرالدین‌شاه در ایام جوانی (عکس)",
         "link": "https://www.asriran.com/fa/news/1196484/%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D9%81%D8%AA%D8%AD-%D9%85%DB%8C%D8%B1%D8%B2%D8%A7-%D9%BE%D8%B3%D8%B1-%D8%B3%D9%88%D9%85-%D9%85%D8%B8%D9%81%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86-%D8%B4%D8%A7%D9%87-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%A7%D9%85-%D8%AC%D9%88%D8%A7%D9%86%DB%8C-%D8%B9%DA%A9%D8%B3",
         "date": "2026-10-05T22:30:02.000Z",
@@ -1987,15 +2038,6 @@
         "rssDescription": "برای تشخیص زعفران اصل از تقلبی، می‌توان از یک لیوان آب سرد استفاده کرد؛ روشی ساده و خانگی که به گفته این مطلب، تفاوت زعفران اصل و تقلبی را مشخص می‌کند."
       },
       {
-        "title": "بدرقه کاروان اعزامی به بازی‌های پاراآسیایی ناگویا",
-        "link": "https://www.isna.ir/photo/1405071408765/%D8%A8%D8%AF%D8%B1%D9%82%D9%87-%DA%A9%D8%A7%D8%B1%D9%88%D8%A7%D9%86-%D8%A7%D8%B9%D8%B2%D8%A7%D9%85%DB%8C-%D8%A8%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%D8%B1%D8%A7%D8%A2%D8%B3%DB%8C%D8%A7%DB%8C%DB%8C-%D9%86%D8%A7%DA%AF%D9%88%DB%8C%D8%A7",
-        "date": "2026-10-05T20:46:54.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۴۶",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه"
-      },
-      {
         "title": "بازخوانی تاریخ؛ در تخت جمشید حتی یک زن نیست؛ پس این‌همه نام زنانه از کجاست؟",
         "link": "https://www.tabnak.ir/fa/news/1397379/%D8%A8%D8%A7%D8%B2%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AF%D8%B1-%D8%AA%D8%AE%D8%AA-%D8%AC%D9%85%D8%B4%DB%8C%D8%AF-%D8%AD%D8%AA%DB%8C-%DB%8C%DA%A9-%D8%B2%D9%86-%D9%86%DB%8C%D8%B3%D8%AA-%D9%BE%D8%B3-%D8%A7%DB%8C%D9%86-%D9%87%D9%85%D9%87-%D9%86%D8%A7%D9%85-%D8%B2%D9%86%D8%A7%D9%86%D9%87-%D8%A7%D8%B2-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA",
         "date": "2026-10-05T20:31:02.000Z",
@@ -2004,46 +2046,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "در تالارهای تخت جمشید، میان صدها پیکر سنگی بارعام‌دهندگان و هدیه‌آوران، زنی دیده نمی‌شود. نه نقش‌برجسته‌ای از ملکه‌ای هست و نه کتیبه‌ی سلطنتی‌ای که نام همسر یا مادر شاه را بر سنگ ثبت کرده باشد. اما در گوشه‌ای از همین مجموعه، هزاران لوح گلی عیلامی زیر خاک مانده بودند که صدای دیگری دارند."
-      },
-      {
-        "title": "طالع بینی متولدین ۱۴ مهر",
-        "link": "https://www.ilna.ir/fa/tiny/news-1848620",
-        "date": "2026-10-05T20:31:00.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5_h8xpmwkqJifGoGkCOimL2XFXFQzBlo1WfAb5pZNn3_ZixKXtBGk3JBQ-WlHzgWQbB4dYlCMc6ak23gkISede-TCvxvEPoiEC-F89aeI46rWsjsWJqjG9yQsC5u7bmhmxRDov41QinOwfw_RMO4CawRMWdS541PaSGHPCvOrevVrSodPGP3Qn48fdQOXF0n/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال حافظ متولدین هر ماه - سه شنبه ۱۴ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1848619",
-        "date": "2026-10-05T20:31:00.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zzYnNqZq73vvLZXclwRVYeaVgdKSLExYM7VgNmxJvAm6AR0HR42H7MRire3U5LrMWQdGxZhCQ3CMsnIG7TQMr3z0kyhcO1YFD1ytOSfdZFe2dF7mA1N8Qch_lgus8SUxR_aWdDDCCYwNma1mounaQ92TjIXnTfP45AAhGSEFR7viqAiCH8GoOKIoRdFBN9T3/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال روزانه ماه تولد - دوشنبه ۱۳ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1848618",
-        "date": "2026-10-05T20:31:00.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/9kFYjZVvnpR0cBgRIxDOrZFUtme4_kw2gUttnXDDLNwY4xlyFnB4kW4eREYTDawlbv8kkDl9RPNXXbCnfN4iHMG3-2tpddmJzo-d3qteMgN-GmoX715Gwwxzdna-rNnXKsjIE6tAbF87EjSS2G5X6QygMYrNGCoIAjK95bEI2JksQKvgRfnwXG5FrccRS0cZ/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-      },
-      {
-        "title": "ساعات سعد و نحس امروز سه شنبه ۱۴ مهر + جدول",
-        "link": "https://www.ilna.ir/fa/tiny/news-1848617",
-        "date": "2026-10-05T20:31:00.000Z",
-        "datePersian": "۱۳ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/LyLwfRmsR-zHcD4uDF8qWAkCoZx0BJmwuHATlCVkqUndF4_rvpcxLO_ScOtTF_KhIJ13oeHRPZqWY8UPLDYJFDVeFJeyG-QRMV2pwFf38WaA3D6lzJau46wTJ1yKI0Kh_KSVBupIMeWoEC8HxNdyUX0rUj9U5vf9jztFEb6SDAI55OR4FYCHzU4uSDVVMdGz/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       }
     ]
   }
