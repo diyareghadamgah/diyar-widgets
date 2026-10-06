@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-06T23:39:11.609Z",
-  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۳:۳۹",
+  "lastUpdate": "2026-10-06T23:50:52.926Z",
+  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۳:۵۰",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,16 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "تداوم زیاده‌خواهی‌های واشنگتن؛ معاون ترامپ مدعی کاهش غنی سازی ایران برای خاتمه جنگ شد",
+      "link": "https://www.irna.ir/news/86285444/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%B2%DB%8C%D8%A7%D8%AF%D9%87-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B4%D9%86%DA%AF%D8%AA%D9%86-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%85%D8%AF%D8%B9%DB%8C-%DA%A9%D8%A7%D9%87%D8%B4-%D8%BA%D9%86%DB%8C-%D8%B3%D8%A7%D8%B2%DB%8C",
+      "date": "2026-10-06T23:39:45.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۳:۳۹",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "نیویورک- ایرنا- جی‌دی ونس معاون رئیس‌جمهوری آمریکا در تداوم زیاده‌خواهی‌های واشنگتن ادعا کرد که ایران برای برآورده کردن خواسته‌های آمریکا و پایان دادن به تجاوز بی دلیل هفت‌ماهه، باید توانایی غنی سازی هسته‌ای خود را به‌طور «معناداری» کاهش دهد."
+    },
     {
       "title": "پکن: با فروش تسلیحات آمریکایی به تایوان مخالفیم",
       "link": "https://www.isna.ir/news/1405071509579/%D9%BE%DA%A9%D9%86-%D8%A8%D8%A7-%D9%81%D8%B1%D9%88%D8%B4-%D8%AA%D8%B3%D9%84%DB%8C%D8%AD%D8%A7%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%A8%D9%87-%D8%AA%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81%DB%8C%D9%85",
@@ -880,13 +890,13 @@
     },
     {
       "title": "پکن: مخالف فروش تسلیحات آمریکایی به تایوان هستیم",
-      "link": "https://www.irna.ir/news/86285398/%D9%BE%DA%A9%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81-%D9%81%D8%B1%D9%88%D8%B4-%D8%AA%D8%B3%D9%84%DB%8C%D8%AD%D8%A7%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%A8%D9%87-%D8%AA%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%87%D8%B3%D8%AA%DB%8C%D9%85",
-      "date": "2026-10-06T20:43:23.000Z",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250506",
+      "date": "2026-10-06T20:43:11.000Z",
       "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۴۳",
-      "source": "ایرنا",
+      "source": "خبر فوری",
       "flag": "🇮🇷",
       "category": "بین‌الملل",
-      "rssDescription": "تهران- ایرنا- گوئو جیاکون سخنگوی وزارت خارجه چین در اظهاراتی با تاکید بر لزوم پایبندی آمریکا به اصل «چین واحد»، تاکید کرد که پکن قاطعانه با فروش تسلیحات آمریکایی به تایوان مخالف است."
+      "rssDescription": "گوئو جیاکون سخنگوی وزارت خارجه چین در اظهاراتی با تاکید بر لزوم پایبندی آمریکا به اصل «چین واحد»، تاکید کرد که پکن قاطعانه با فروش تسلیحات آمریکایی به تایوان مخالف است."
     },
     {
       "title": "ویدیو: گل دوم اسپانیا به کرواسی توسط میکل مرینو",
@@ -956,7 +966,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/MRSj_UfCE3zv4G_92N_j8El14cKkQ17g0fyIdtm3y4YyLMISyHxKsV4_ZQQOngSj1i6TbIpVoSwvE4n67Zmu3KoMc6MJUOGAYei-NcurZVIf3eQYO2cKC80-_w5cPa4MKz3AaHJ7-VQ2L6IHT_s-GqVRyD9e2EIiU8f9IZVjhi7piW2eW-6KJEHwYTIOdwwS/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/7x0yhjqW-etCxThIrmPIMXxY71tlAQRV69rlPx9y_R4EUf_ca6mZm-19ahGWwMNnPP1TDU8POaZGRdhEYVCMuadr6fIZ0lr_OaZ9gSm6YmH7K_oW43ZRBarRZGAYiwWaWz_nYhip76CeH9DcwSjvo3tgl1UTopjVXoMJUtYd395fneljXtrSI9JQE88eovqW/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -966,7 +976,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/wxcXXq8CpPcT8X_SbS-mnoOVHUvYGHW6V716_5FBQrKw7FFg7Waav9PXFkv52GAyxdr5yT-orktAneICxSDA3h2VLO6y5uWJn_-uZJh8K7zyQNDf7ySyfNals0bKAfGeWbph3HvrUhopK9KLu3QiL7YiNklSc5WGdN04rRnKRtxNZqWTFNR4RlInXfT6iu8i/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/506KBFrOAgb6jhJF1_QBokKQR-UlkA3EeuqOEEWkyRjxsrWQWkKI3YimI3DXPcdVHO_rSeEfFcOKT0SJIj-V1FVA-PBryuY4y3XxAwTIcDleiC3T3zG-WEhMc3MTTSAicVtL_CcAtxYvkgXSQlMz4NFPN82kipR4S7_MxOChceHbRMb3sUjYGqBDVrkmRvT6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -976,7 +986,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/7vPNkaD9L2vvSmM5lmYGxPxRzosA9QM_wIShboDc6zg3xc4MHEm8dJ8cHCDrQZ2TfRgh3-KnBngR8zM52PglJIuXriRfoSYu2EQj3tXFcDFXUlDQ5xHYdZRoFLvThMuNZUniqZJNHE5vFHXfJQWo5tKo_NXItLxAQ9ENsds0mav3bbf-tgvYJh7a97URxN2J/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/zAwF5q9bKDZVhppk_yFUwBvoZvXFm8SsAXcOadF52x7Q72OGbd0AeFTc4jc7mjV6PGTV1k1c2BFUnphX5G8AO3ebTOH56kyhO03pKWTqzwev19XZaKHg8Q6lU377OAdN7Jlqqsbh6iZM6BVbwThnxH2Ek9-o4Jx_SkaNSgxebs6p0oW7wY8rWRVCsWopbIAS/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -986,7 +996,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VnhBiDzHz4doiCKkTJcqLK2AffqP5h-9IiZkK7vg_27kmmfLMrP8eErggS5tDfvVfxvKYWWaAxOEjAalEQfXjwEzMD0c9Erntd77T6HZSDXXWqSUWI29TMiP2rHXENiliTgjsTp_-vtxOTGBaWi_TIRhkEQO3VXP_x0SQVBfzoHpmypeyhsShNBgVrghoSSg/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/hxLLE8JteI9ZswjQQ-YJRKQXSooerIPYBi9YlUSiugWiTuwKFkbAqdmIIfVwNLIj8lyNd7DVLIQWl8HsZ0xOjQTRCiBVgR4MJ6Cy7NqHtTwzrseU_1BjUrd79q7c4xSEcxHBKhNgUVWSpZVDDQ8OgUeZy9a5Rpxf7KXz8uUOrGkzTHGezC4BLnxdRusrkKuc/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -996,7 +1006,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/vHREz7CC-3naTaI5MEFaVWL5zOIvFuBSYXX6XSFgHZM9Di2gpRFEXhAoHabCPa6-F0_w15QISSrOJtk0upvcz2j0OxZgH_Cg6QmDUuM30Fz26xq1wdeTCXQkwArjxqaE4e_XpTIK3pJOw1z2JPuJNPQaFjHSccfLIixhGzDqZVqywrIiueDuRXjehZlrxrW_/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/K9lYaUtf0i0OgIHIbCcyYuoN_pnTWdmpoeRo2-ZKk-aey5iTnujI0ekt75LzorCCaVT8adoUZNp8AsSPu5_NhuQ6BCePSTW092uV4YGYZZbiEAmS59PDEqdNPrMlMtYMdYp6fgR0Pg9CFVJm-w1ndRfV-Xer6L2Gehp3GDcNYUqcJHLwMiDTRVar5XVZ0doZ/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "روزنامه قدس شماره ۱۱۰۴۵",
@@ -1017,16 +1027,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "روزنامه قدس ضمیمه طوس شماره ۱۱۰۴۵ چهارشنبه ۱۵ مهر ۱۴۰۵"
-    },
-    {
-      "title": "قدس رواق شماره ۱۱۰۴۵",
-      "link": "https://www.qudsonline.ir/news/1169162/%D9%82%D8%AF%D8%B3-%D8%B1%D9%88%D8%A7%D9%82-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B4%DB%B5",
-      "date": "2026-10-06T20:30:00.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۳۰",
-      "source": "قدس آنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "روزنامه قدس ضمیمه رواق شماره ۱۱۰۴۵ - چهارشنبه ۱۵ مهر ۱۴۰۵"
     }
   ],
   "categorizedNews": {
@@ -1544,6 +1544,16 @@
     ],
     "بین‌الملل": [
       {
+        "title": "تداوم زیاده‌خواهی‌های واشنگتن؛ معاون ترامپ مدعی کاهش غنی سازی ایران برای خاتمه جنگ شد",
+        "link": "https://www.irna.ir/news/86285444/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%B2%DB%8C%D8%A7%D8%AF%D9%87-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B4%D9%86%DA%AF%D8%AA%D9%86-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%85%D8%AF%D8%B9%DB%8C-%DA%A9%D8%A7%D9%87%D8%B4-%D8%BA%D9%86%DB%8C-%D8%B3%D8%A7%D8%B2%DB%8C",
+        "date": "2026-10-06T23:39:45.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۳:۳۹",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "نیویورک- ایرنا- جی‌دی ونس معاون رئیس‌جمهوری آمریکا در تداوم زیاده‌خواهی‌های واشنگتن ادعا کرد که ایران برای برآورده کردن خواسته‌های آمریکا و پایان دادن به تجاوز بی دلیل هفت‌ماهه، باید توانایی غنی سازی هسته‌ای خود را به‌طور «معناداری» کاهش دهد."
+      },
+      {
         "title": "پکن: با فروش تسلیحات آمریکایی به تایوان مخالفیم",
         "link": "https://www.isna.ir/news/1405071509579/%D9%BE%DA%A9%D9%86-%D8%A8%D8%A7-%D9%81%D8%B1%D9%88%D8%B4-%D8%AA%D8%B3%D9%84%DB%8C%D8%AD%D8%A7%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%A8%D9%87-%D8%AA%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81%DB%8C%D9%85",
         "date": "2026-10-06T23:34:01.000Z",
@@ -1775,13 +1785,13 @@
       },
       {
         "title": "پکن: مخالف فروش تسلیحات آمریکایی به تایوان هستیم",
-        "link": "https://www.irna.ir/news/86285398/%D9%BE%DA%A9%D9%86-%D9%85%D8%AE%D8%A7%D9%84%D9%81-%D9%81%D8%B1%D9%88%D8%B4-%D8%AA%D8%B3%D9%84%DB%8C%D8%AD%D8%A7%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%A8%D9%87-%D8%AA%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%87%D8%B3%D8%AA%DB%8C%D9%85",
-        "date": "2026-10-06T20:43:23.000Z",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250506",
+        "date": "2026-10-06T20:43:11.000Z",
         "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۴۳",
-        "source": "ایرنا",
+        "source": "خبر فوری",
         "flag": "🇮🇷",
         "category": "بین‌الملل",
-        "rssDescription": "تهران- ایرنا- گوئو جیاکون سخنگوی وزارت خارجه چین در اظهاراتی با تاکید بر لزوم پایبندی آمریکا به اصل «چین واحد»، تاکید کرد که پکن قاطعانه با فروش تسلیحات آمریکایی به تایوان مخالف است."
+        "rssDescription": "گوئو جیاکون سخنگوی وزارت خارجه چین در اظهاراتی با تاکید بر لزوم پایبندی آمریکا به اصل «چین واحد»، تاکید کرد که پکن قاطعانه با فروش تسلیحات آمریکایی به تایوان مخالف است."
       },
       {
         "title": "قطر و جاه‌طلبی جدید در بازار جهانی LNG / پشت پرده سفارش کشتی‌های غول‌پیکر!",
@@ -1971,7 +1981,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/MRSj_UfCE3zv4G_92N_j8El14cKkQ17g0fyIdtm3y4YyLMISyHxKsV4_ZQQOngSj1i6TbIpVoSwvE4n67Zmu3KoMc6MJUOGAYei-NcurZVIf3eQYO2cKC80-_w5cPa4MKz3AaHJ7-VQ2L6IHT_s-GqVRyD9e2EIiU8f9IZVjhi7piW2eW-6KJEHwYTIOdwwS/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/7x0yhjqW-etCxThIrmPIMXxY71tlAQRV69rlPx9y_R4EUf_ca6mZm-19ahGWwMNnPP1TDU8POaZGRdhEYVCMuadr6fIZ0lr_OaZ9gSm6YmH7K_oW43ZRBarRZGAYiwWaWz_nYhip76CeH9DcwSjvo3tgl1UTopjVXoMJUtYd395fneljXtrSI9JQE88eovqW/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1981,7 +1991,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/wxcXXq8CpPcT8X_SbS-mnoOVHUvYGHW6V716_5FBQrKw7FFg7Waav9PXFkv52GAyxdr5yT-orktAneICxSDA3h2VLO6y5uWJn_-uZJh8K7zyQNDf7ySyfNals0bKAfGeWbph3HvrUhopK9KLu3QiL7YiNklSc5WGdN04rRnKRtxNZqWTFNR4RlInXfT6iu8i/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/506KBFrOAgb6jhJF1_QBokKQR-UlkA3EeuqOEEWkyRjxsrWQWkKI3YimI3DXPcdVHO_rSeEfFcOKT0SJIj-V1FVA-PBryuY4y3XxAwTIcDleiC3T3zG-WEhMc3MTTSAicVtL_CcAtxYvkgXSQlMz4NFPN82kipR4S7_MxOChceHbRMb3sUjYGqBDVrkmRvT6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1991,7 +2001,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/7vPNkaD9L2vvSmM5lmYGxPxRzosA9QM_wIShboDc6zg3xc4MHEm8dJ8cHCDrQZ2TfRgh3-KnBngR8zM52PglJIuXriRfoSYu2EQj3tXFcDFXUlDQ5xHYdZRoFLvThMuNZUniqZJNHE5vFHXfJQWo5tKo_NXItLxAQ9ENsds0mav3bbf-tgvYJh7a97URxN2J/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/zAwF5q9bKDZVhppk_yFUwBvoZvXFm8SsAXcOadF52x7Q72OGbd0AeFTc4jc7mjV6PGTV1k1c2BFUnphX5G8AO3ebTOH56kyhO03pKWTqzwev19XZaKHg8Q6lU377OAdN7Jlqqsbh6iZM6BVbwThnxH2Ek9-o4Jx_SkaNSgxebs6p0oW7wY8rWRVCsWopbIAS/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -2001,7 +2011,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VnhBiDzHz4doiCKkTJcqLK2AffqP5h-9IiZkK7vg_27kmmfLMrP8eErggS5tDfvVfxvKYWWaAxOEjAalEQfXjwEzMD0c9Erntd77T6HZSDXXWqSUWI29TMiP2rHXENiliTgjsTp_-vtxOTGBaWi_TIRhkEQO3VXP_x0SQVBfzoHpmypeyhsShNBgVrghoSSg/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/hxLLE8JteI9ZswjQQ-YJRKQXSooerIPYBi9YlUSiugWiTuwKFkbAqdmIIfVwNLIj8lyNd7DVLIQWl8HsZ0xOjQTRCiBVgR4MJ6Cy7NqHtTwzrseU_1BjUrd79q7c4xSEcxHBKhNgUVWSpZVDDQ8OgUeZy9a5Rpxf7KXz8uUOrGkzTHGezC4BLnxdRusrkKuc/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -2011,7 +2021,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/vHREz7CC-3naTaI5MEFaVWL5zOIvFuBSYXX6XSFgHZM9Di2gpRFEXhAoHabCPa6-F0_w15QISSrOJtk0upvcz2j0OxZgH_Cg6QmDUuM30Fz26xq1wdeTCXQkwArjxqaE4e_XpTIK3pJOw1z2JPuJNPQaFjHSccfLIixhGzDqZVqywrIiueDuRXjehZlrxrW_/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/K9lYaUtf0i0OgIHIbCcyYuoN_pnTWdmpoeRo2-ZKk-aey5iTnujI0ekt75LzorCCaVT8adoUZNp8AsSPu5_NhuQ6BCePSTW092uV4YGYZZbiEAmS59PDEqdNPrMlMtYMdYp6fgR0Pg9CFVJm-w1ndRfV-Xer6L2Gehp3GDcNYUqcJHLwMiDTRVar5XVZ0doZ/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "روزنامه قدس شماره ۱۱۰۴۵",
@@ -2032,16 +2042,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "روزنامه قدس ضمیمه طوس شماره ۱۱۰۴۵ چهارشنبه ۱۵ مهر ۱۴۰۵"
-      },
-      {
-        "title": "قدس رواق شماره ۱۱۰۴۵",
-        "link": "https://www.qudsonline.ir/news/1169162/%D9%82%D8%AF%D8%B3-%D8%B1%D9%88%D8%A7%D9%82-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B4%DB%B5",
-        "date": "2026-10-06T20:30:00.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۳۰",
-        "source": "قدس آنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "روزنامه قدس ضمیمه رواق شماره ۱۱۰۴۵ - چهارشنبه ۱۵ مهر ۱۴۰۵"
       }
     ]
   }
