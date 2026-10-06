@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-06T22:39:48.900Z",
-  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۳۹",
+  "lastUpdate": "2026-10-06T22:51:18.415Z",
+  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۵۱",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -31,6 +31,74 @@
   ],
   "news": [
     {
+      "title": "وداع با شهید امیرحسین قاسمی در ساری",
+      "link": "https://www.mehrnews.com/photo/6970282/%D9%88%D8%AF%D8%A7%D8%B9-%D8%A8%D8%A7-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86-%D9%82%D8%A7%D8%B3%D9%85%DB%8C-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B1%DB%8C",
+      "date": "2026-10-06T22:48:58.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "۲۲۰ شب حضور خیابانی مردم نجف‌آباد یزد در سنگر خیابان",
+      "link": "https://www.mehrnews.com/news/6970267/%DB%B2%DB%B2%DB%B0-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%86%D8%AC%D9%81-%D8%A2%D8%A8%D8%A7%D8%AF-%DB%8C%D8%B2%D8%AF-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
+      "date": "2026-10-06T22:48:46.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "یزد- مردم نجف‌آباد یزد با حضور در دویست و بیستمین شب دفاع از انقلاب و حمایت از رزمندگان در جبهه‌ها جلوه‌ای از مشارکت و حضور مستمر مردمی را به نمایش گذاشتند."
+    },
+    {
+      "title": "پیش‌بینی احداث یک‌هزار واحد مسکونی برای اقشار کم‌برخوردار در زنجان",
+      "link": "https://www.mehrnews.com/news/6970285/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A7%D8%AD%D8%AF%D8%A7%D8%AB-%DB%8C%DA%A9-%D9%87%D8%B2%D8%A7%D8%B1-%D9%88%D8%A7%D8%AD%D8%AF-%D9%85%D8%B3%DA%A9%D9%88%D9%86%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%82%D8%B4%D8%A7%D8%B1-%DA%A9%D9%85-%D8%A8%D8%B1%D8%AE%D9%88%D8%B1%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1",
+      "date": "2026-10-06T22:47:43.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "زنجان-معاون هماهنگی امور عمرانی استاندار زنجان گفت: حدود یک‌هزار واحد مسکونی برای اقشار کم‌برخوردار و دهک‌های پایین جامعه احداث می شود."
+    },
+    {
+      "title": "معلمان هم به اعتراضات دانش‌آموزان در فرانسه پیوستند",
+      "link": "https://www.isna.ir/news/1405071509576/%D9%85%D8%B9%D9%84%D9%85%D8%A7%D9%86-%D9%87%D9%85-%D8%A8%D9%87-%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%D8%A7%D8%AA-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA%D9%86%D8%AF",
+      "date": "2026-10-06T22:47:10.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۷",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "اعتصاب معلمان فرانسه در حمایت از اعتراضات دانش‌آموزی، بحران را برای دولت این کشور هرچه بیشتر تشدید کرده است."
+    },
+    {
+      "title": "۵۰۰ مدرسه آذربایجان ‌غربی به نیروگاه خورشیدی مجهز شدند",
+      "link": "https://www.mehrnews.com/news/6970279/%DB%B5%DB%B0%DB%B0-%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%BA%D8%B1%D8%A8%DB%8C-%D8%A8%D9%87-%D9%86%DB%8C%D8%B1%D9%88%DA%AF%D8%A7%D9%87-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF%DB%8C-%D9%85%D8%AC%D9%87%D8%B2-%D8%B4%D8%AF%D9%86%D8%AF",
+      "date": "2026-10-06T22:45:02.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۵",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "ارومیه - مدیر عامل شرکت توزیع نیروی برق آذربایجان‌غربی از آغاز طرح تجهیز ۵۰۰ مدرسه استان به نیروگاه‌های خورشیدی در قالب طرح ملی شهدای میناب خبر داد."
+    },
+    {
+      "title": "دویست و بیستمین اجتماع شبانه مردم رشت",
+      "link": "https://www.mehrnews.com/photo/6970278/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%B1%D8%B4%D8%AA",
+      "date": "2026-10-06T22:41:39.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "وزارت خارجه یمن:دستاوردهای سعودی در نبرد تنها توهمات رسانه‌ای است",
+      "link": "https://www.mehrnews.com/news/6970272/%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%DB%8C%D9%85%D9%86-%D8%AF%D8%B3%D8%AA%D8%A7%D9%88%D8%B1%D8%AF%D9%87%D8%A7%DB%8C-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D8%AF%D8%B1-%D9%86%D8%A8%D8%B1%D8%AF-%D8%AA%D9%86%D9%87%D8%A7-%D8%AA%D9%88%D9%87%D9%85%D8%A7%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%DB%8C",
+      "date": "2026-10-06T22:40:58.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "وزارت امور خارجه یمن در بیانیه‌ای اعلام کرد که ادعاهای عربستان سعودی درباره دستاوردهای نظامی در خاک یمن، صرفاً«پیروزی‌های تخیلی» و روایاتی ساختگی است که با هدف فریب افکار عمومی دنبال می‌شود."
+    },
+    {
       "title": "پیامدهای طوفان‌الاقصی برای رژیم صهیونیستی در منطقه و جهان چه بود؟",
       "link": "https://www.isna.ir/news/1405071409225/%D9%BE%DB%8C%D8%A7%D9%85%D8%AF%D9%87%D8%A7%DB%8C-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D9%82%D8%B5%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D9%88-%D8%AC%D9%87%D8%A7%D9%86-%DA%86%D9%87",
       "date": "2026-10-06T22:35:00.000Z",
@@ -48,7 +116,7 @@
       "source": "مهر",
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
-      "rssDescription": "مشهد- همزمان با دویست و بیستمین شب از حضور پرشور مردم در این فیلم تصاویری از زنان و مردان انقلابی شهرستان گناباد را مشاهده می کنید."
+      "rssDescription": "مشهد- در این فیلم تصاویری از زنان و مردان انقلابی شهرستان گناباد همزمان با دویست و بیستمین شب از حضور پرشور مردم را مشاهده می کنید."
     },
     {
       "title": "برنامه «هم‌آوایی با خیابان» جشنواره  فیلم کودکان و نوجوانان اصفهان",
@@ -120,6 +188,16 @@
       "rssDescription": "آستانه اشرفیه- کارشناس مسائل مذهبی با اشاره به ویژگی‌ های ملت‌های مبعوث شده، گفت: ملت‌های مبعوث‌ شده در مسیر خداوند ذلت‌پذیر نیستند."
     },
     {
+      "title": "انیمیشن لگویی به‌مناسبت ۷ اکتبر، سالروز عملیات طوفان‌الاقصی/ ویدئو",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250518",
+      "date": "2026-10-06T22:28:42.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۲۸",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "هم‌زمان با سالروز عملیات طوفان‌الاقصی در ۷ اکتبر، انیمیشنی با استفاده از شخصیت‌ها و فضای لگویی منتشر شده که به بازنمایی این عملیات می‌پردازد."
+    },
+    {
       "title": "کنعانی: حضور در میدان باید تا تحقق هدف نهایی ادامه یابد",
       "link": "https://www.mehrnews.com/news/6970248/%DA%A9%D9%86%D8%B9%D8%A7%D9%86%DB%8C-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AA%D8%A7-%D8%AA%D8%AD%D9%82%D9%82-%D9%87%D8%AF%D9%81-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%DB%8C%D8%A7%D8%A8%D8%AF",
       "date": "2026-10-06T22:28:18.000Z",
@@ -160,6 +238,16 @@
       "rssDescription": "رشت- در این ویدئو تصاویری از قرار شبانه دویست و بیستم مردم رشت در میدان را مشاهده می کنید."
     },
     {
+      "title": "مهدی قایدی در النصر برزیلی شد/ عکس",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250517",
+      "date": "2026-10-06T22:19:40.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۱۹",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "تصویر جالبی از مهدی قایدی منتشر شده است."
+    },
+    {
       "title": "۳۰۰۰ بنای تاریخی تهران در فهرست بازبینی‌ شده شهرداری/ آغاز مرمت چهارسوق بزرگ از هفته آینده",
       "link": "https://www.isna.ir/news/1405071409465/%DB%B3%DB%B0%DB%B0%DB%B0-%D8%A8%D9%86%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D8%A8%D8%A7%D8%B2%D8%A8%DB%8C%D9%86%DB%8C-%D8%B4%D8%AF%D9%87-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A2%D8%BA%D8%A7%D8%B2-%D9%85%D8%B1%D9%85%D8%AA",
       "date": "2026-10-06T22:19:00.000Z",
@@ -190,16 +278,6 @@
       "rssDescription": "رئیس‌جمهور ایالات متحده در ادامه جریان یاوه‌گویی‌هایی پوچ همیشگی خود درباره ایران مدعی شد تنگه هرمز به آمریکا تعلق دارد."
     },
     {
-      "title": "رحمتی: حضور شبانه مردم به بخشی از سبک زندگی آنان تبدیل شده است",
-      "link": "https://www.mehrnews.com/news/6970265/%D8%B1%D8%AD%D9%85%D8%AA%DB%8C-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D9%87-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%A8%DA%A9-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%A2%D9%86%D8%A7%D9%86-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-06T22:09:21.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۹",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "رشت- مدیرعامل خبرگزاری مهر با اشاره به تداوم تجمعات شبانه مردم در میدان‌های کشور گفت: حضور مردم در این تجمعات به یک سبک زندگی و بخشی از زندگی روزمره و روایت زندگی آنان تبدیل شده است."
-    },
-    {
       "title": "وقوع آتش‌سوزی و توقف کامل فعالیت دومین پالایشگاه بزرگ ونزوئلا",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3250516",
       "date": "2026-10-06T22:08:00.000Z",
@@ -210,46 +288,6 @@
       "rssDescription": "خبرگزاری رویترز گزارش داد که پالایشگاه «کاردون»، دومین پالایشگاه بزرگ ونزوئلا با ظرفیت تولید روزانه ۳۱۰ هزار بشکه، در پی وقوع آتش‌سوزی و انفجار در خط لوله گاز متصل به واحد فرآوری گازوئیل، از مدار فعالیت خارج و تعطیل شد."
     },
     {
-      "title": "سه‌شنبه‌های نظارتی در گرمسار استمرار می‌یابد",
-      "link": "https://www.mehrnews.com/news/6970264/%D8%B3%D9%87-%D8%B4%D9%86%D8%A8%D9%87-%D9%87%D8%A7%DB%8C-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%85%D8%B3%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%85%DB%8C-%DB%8C%D8%A7%D8%A8%D8%AF",
-      "date": "2026-10-06T22:07:05.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "گرمسار- فرماندار گرمسار از تداوم گشت‌های مشترک نظارتی در این شهرستان خبر داد و گفت: کنترل قیمت و کیفیت کالا و صیانت از حقوق مصرف‌کنندگان با جدیت دنبال می‌شود."
-    },
-    {
-      "title": "شب های مقاومت مردم لاهیجان به ایستگاه دویست‌ و بیست رسید",
-      "link": "https://www.mehrnews.com/news/6970250/%D8%B4%D8%A8-%D9%87%D8%A7%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF",
-      "date": "2026-10-06T22:02:25.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۲",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "لاهیجان_ در این ویدئو تصاویری از دویست و بیستمین حماسه حضور شبانه مردم لاهیجان در خیابان ها را مشاهده می کنید."
-    },
-    {
-      "title": "رحمتی: روایت انقلاب اسلامی باید در امتداد تاریخ تمدنی ایران باشد",
-      "link": "https://www.mehrnews.com/news/6970258/%D8%B1%D8%AD%D9%85%D8%AA%DB%8C-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%A7%D9%85%D8%AA%D8%AF%D8%A7%D8%AF-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%85%D8%AF%D9%86%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B4%D8%AF",
-      "date": "2026-10-06T22:01:43.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "رشت- مدیرعامل خبرگزاری مهر با تأکید بر ضرورت بازخوانی تاریخ تمدنی ایران و تقویت روایتگری درباره انقلاب اسلامی گفت: روایت انقلاب نباید از گذشته تاریخی و تمدنی ایران جدا شود."
-    },
-    {
-      "title": "شکست عملیات سعودی‌ها در باب‌المندب",
-      "link": "https://www.mehrnews.com/news/6970259/%D8%B4%DA%A9%D8%B3%D8%AA-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D9%85%D9%86%D8%AF%D8%A8",
-      "date": "2026-10-06T22:01:11.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "سخنگوی نیروهای مسلح یمن از سرکوب عملیات گسترده مزدوران وابسته به عربستان سعودی در مسیر تصرف تنگه باب‌المندب خبر داد."
-    },
-    {
       "title": "کم و زیاد نخوابید تا زوال عقل نگیرید",
       "link": "https://www.isna.ir/news/1405071409165/%DA%A9%D9%85-%D9%88-%D8%B2%DB%8C%D8%A7%D8%AF-%D9%86%D8%AE%D9%88%D8%A7%D8%A8%DB%8C%D8%AF-%D8%AA%D8%A7-%D8%B2%D9%88%D8%A7%D9%84-%D8%B9%D9%82%D9%84-%D9%86%DA%AF%DB%8C%D8%B1%DB%8C%D8%AF",
       "date": "2026-10-06T22:01:00.000Z",
@@ -258,16 +296,6 @@
       "flag": "🇮🇷",
       "category": "علمی و فناوری",
       "rssDescription": "پژوهشگران در جدیدترین مطالعات خود دریافته‌اند که کم‌خوابی خطر ابتلا به زوال عقل را ۱۸ درصد و خواب بیش از حد این خطر را ۲۸ درصد افزایش می‌دهد. آنها می‌گویند میزان ایده‌آل خواب را یافته‌اند."
-    },
-    {
-      "title": "اصدق پور: ظرفیت‌ های جبهه فرهنگی نیازمند روایت رسانه‌ای است",
-      "link": "https://www.mehrnews.com/news/6970261/%D8%A7%D8%B5%D8%AF%D9%82-%D9%BE%D9%88%D8%B1-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AC%D8%A8%D9%87%D9%87-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-06T22:00:20.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۰",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "رشت- دبیر جبهه فرهنگی انقلاب اسلامی گیلان با تأکید بر ضرورت پیوند ظرفیت‌های جبهه فرهنگی با رسانه گفت: فعالیت‌های متنوع و ظرفیت‌های مردمی موجود در جبهه فرهنگی نیازمند روایت رسانه‌ای است."
     },
     {
       "title": "تانک‌ها از گیربکس دستی استفاده می‌کنند یا اتوماتیک؟",
@@ -817,7 +845,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/pGLYGRIZGdy5eoAjr3Gr6MouNvD3mz9ypwVOv2b5eDab8oTnBJDrRupr8ksQN1sp63y_uxCfQYLLdi7H0JaDa-jHi2tKL1IsfBxR0VWEz-x9cfD9cHOsfr91THRbfS8fKac0qSly045WBnWZtWBC6YihOGDRDTIOfDL6hg6YGrvhWaPEm6fEPU7wZwzGRPn4/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/MRSj_UfCE3zv4G_92N_j8El14cKkQ17g0fyIdtm3y4YyLMISyHxKsV4_ZQQOngSj1i6TbIpVoSwvE4n67Zmu3KoMc6MJUOGAYei-NcurZVIf3eQYO2cKC80-_w5cPa4MKz3AaHJ7-VQ2L6IHT_s-GqVRyD9e2EIiU8f9IZVjhi7piW2eW-6KJEHwYTIOdwwS/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -827,7 +855,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/QaWvG4_Esj_SgpzcbqXExjNVi7LjCBNx61fwBx5M9nMFyP8yUG-oX9260TxhMdrbgzRN7unAEvf4eNT4nlYkoK-zVI4uZu5jKWs_h8DNwaMWgHaYlOOzDMkE3NZCL2idPjfAXwEUMSIQ7kB-nXeOuuORe4HcnBGq5-S9EMrSYkwhMfOXPqPKqTZVQakg0WUx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/wxcXXq8CpPcT8X_SbS-mnoOVHUvYGHW6V716_5FBQrKw7FFg7Waav9PXFkv52GAyxdr5yT-orktAneICxSDA3h2VLO6y5uWJn_-uZJh8K7zyQNDf7ySyfNals0bKAfGeWbph3HvrUhopK9KLu3QiL7YiNklSc5WGdN04rRnKRtxNZqWTFNR4RlInXfT6iu8i/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -837,7 +865,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/tLOT744_huRfCR4NUDsM0kvs6Y-x5Nlm0hWbj_cCToyc9HNykqf2YFrfAAnCbzfyk_cbnYK57QAx2Ubb7h3fyj6R1RWGPI_CJO1nbrwTxhlQioJ9UJbBwTb6lhkQZO-l41AoWeNi7RCQv-ObsU4nkbhksK5nZzBSoNJL0jUMIuGmgCTsexfCLKVWEkfbVCNq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/7vPNkaD9L2vvSmM5lmYGxPxRzosA9QM_wIShboDc6zg3xc4MHEm8dJ8cHCDrQZ2TfRgh3-KnBngR8zM52PglJIuXriRfoSYu2EQj3tXFcDFXUlDQ5xHYdZRoFLvThMuNZUniqZJNHE5vFHXfJQWo5tKo_NXItLxAQ9ENsds0mav3bbf-tgvYJh7a97URxN2J/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -847,7 +875,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/n-nFisrIw5u0PylbKgA13R6BTJBMQP_tuckM19zoaxMLYFtBk6K9fJqnThvuafs-BflRBiGvLdTs0bcrO6OVAb3IeXuSt5yE_mjv-bgkbfpe7sg1hdWXa7gf45j1C5DZqDYdaOkakhNlCKFFZLsCgYCgCE5ukCcQ-ARlVXkX0iaYJMdWt5rGJR_7KFav2a7m/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VnhBiDzHz4doiCKkTJcqLK2AffqP5h-9IiZkK7vg_27kmmfLMrP8eErggS5tDfvVfxvKYWWaAxOEjAalEQfXjwEzMD0c9Erntd77T6HZSDXXWqSUWI29TMiP2rHXENiliTgjsTp_-vtxOTGBaWi_TIRhkEQO3VXP_x0SQVBfzoHpmypeyhsShNBgVrghoSSg/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -857,7 +885,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/TFGqoz2UCUftSjIs3r1DkmGa938hUEUZJRHsMjpFfZrjU8_3TbVWVZjjR6Am7J_-3wSjQeBzL1dZBL8FCI9OqBe6x_9wEr9sAiCHnuw4bvOJqdXI5nbjcxTudFhMjotXSMSVCozAgp2RCqE2ImmUZ8Hl5LCyhMXvUwByiwQ4VOGtQHSPCntbjz7cBDhx3jkA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/vHREz7CC-3naTaI5MEFaVWL5zOIvFuBSYXX6XSFgHZM9Di2gpRFEXhAoHabCPa6-F0_w15QISSrOJtk0upvcz2j0OxZgH_Cg6QmDUuM30Fz26xq1wdeTCXQkwArjxqaE4e_XpTIK3pJOw1z2JPuJNPQaFjHSccfLIixhGzDqZVqywrIiueDuRXjehZlrxrW_/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "روزنامه قدس شماره ۱۱۰۴۵",
@@ -998,40 +1026,30 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "مدیرعامل گروه رسانه‌ای مهر با تأکید بر اهمیت روایت حضور مردم در میدان‌های مختلف کشور، گفت: این حضور ابعاد اجتماعی و رسانه‌ای متعددی دارد و لازم است از زوایای مختلف مورد توجه و روایت قرار گیرد."
-    },
-    {
-      "title": "دستگیری زوج سارق کامپیوتر‌های ۲۰۶ در تهرانپارس",
-      "link": "https://www.asriran.com/fa/news/1196905/%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B2%D9%88%D8%AC-%D8%B3%D8%A7%D8%B1%D9%82-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1-%D9%87%D8%A7%DB%8C-206-%D8%AF%D8%B1-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%D9%BE%D8%A7%D8%B1%D8%B3",
-      "date": "2026-10-06T20:21:15.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۱",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "زوج سارقی که در چندثانیه کامپیوتر خودرو‌های ۲۰۶ را به سرقت می‌بردند و فیلم آنها نیز در فضای مجازی منتشر شده بود، توسط پایگاه چهارم آگاهی دستگیر شدند."
-    },
-    {
-      "title": "در مشهد کنسرت ممنوع است! چرا؟",
-      "link": "https://www.asriran.com/fa/news/1196904/%D8%AF%D8%B1-%D9%85%D8%B4%D9%87%D8%AF-%DA%A9%D9%86%D8%B3%D8%B1%D8%AA-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%A7%D8%B3%D8%AA-%DA%86%D8%B1%D8%A7",
-      "date": "2026-10-06T20:19:45.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۱۹",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "وقتی مجوز هست و وزیر ارشاد و دبیر شورای عالی فرهنگی هم پشت آن ایستاده‌اند، چه کسی در مشهد جلوی اجرای قانون را می‌گیرد و چرا هیچ‌کس نام او را نمی‌داند؟"
-    },
-    {
-      "title": "رایزنی سفیر جدید آلمان در ایران با سخنگوی وزارت امور خارجه",
-      "link": "https://www.ilna.ir/fa/tiny/news-1849121",
-      "date": "2026-10-06T20:19:32.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۱۹",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "«الکس دیتمان» سفیر جدید آلمان در جمهوری اسلامی ایران، امروز صبح با حضور در وزارت امور خارجه با اسماعیل بقائی سخنگوی وزارت امور خارجه دیدار کرد."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "پیش‌بینی احداث یک‌هزار واحد مسکونی برای اقشار کم‌برخوردار در زنجان",
+        "link": "https://www.mehrnews.com/news/6970285/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A7%D8%AD%D8%AF%D8%A7%D8%AB-%DB%8C%DA%A9-%D9%87%D8%B2%D8%A7%D8%B1-%D9%88%D8%A7%D8%AD%D8%AF-%D9%85%D8%B3%DA%A9%D9%88%D9%86%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%82%D8%B4%D8%A7%D8%B1-%DA%A9%D9%85-%D8%A8%D8%B1%D8%AE%D9%88%D8%B1%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1",
+        "date": "2026-10-06T22:47:43.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "زنجان-معاون هماهنگی امور عمرانی استاندار زنجان گفت: حدود یک‌هزار واحد مسکونی برای اقشار کم‌برخوردار و دهک‌های پایین جامعه احداث می شود."
+      },
+      {
+        "title": "وزارت خارجه یمن:دستاوردهای سعودی در نبرد تنها توهمات رسانه‌ای است",
+        "link": "https://www.mehrnews.com/news/6970272/%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%DB%8C%D9%85%D9%86-%D8%AF%D8%B3%D8%AA%D8%A7%D9%88%D8%B1%D8%AF%D9%87%D8%A7%DB%8C-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D8%AF%D8%B1-%D9%86%D8%A8%D8%B1%D8%AF-%D8%AA%D9%86%D9%87%D8%A7-%D8%AA%D9%88%D9%87%D9%85%D8%A7%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%DB%8C",
+        "date": "2026-10-06T22:40:58.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "وزارت امور خارجه یمن در بیانیه‌ای اعلام کرد که ادعاهای عربستان سعودی درباره دستاوردهای نظامی در خاک یمن، صرفاً«پیروزی‌های تخیلی» و روایاتی ساختگی است که با هدف فریب افکار عمومی دنبال می‌شود."
+      },
       {
         "title": "حسین شریعتمداری: مجلس هفت‌ماه در رأس امور نبود / انتخاب قالیباف به عنوان مسئول هیئت مذاکره‌کننده به معنای تعطیلی مجلس بوده است!",
         "link": "https://www.khabaronline.ir/news/2284782/%D8%AD%D8%B3%DB%8C%D9%86-%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%AC%D9%84%D8%B3-%D9%87%D9%81%D8%AA-%D9%85%D8%A7%D9%87-%D8%AF%D8%B1-%D8%B1%D8%A3%D8%B3-%D8%A7%D9%85%D9%88%D8%B1-%D9%86%D8%A8%D9%88%D8%AF-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81",
@@ -1091,29 +1109,9 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "استاندار کرمانشاه، حذف واسطه‌ها و دلالان را یکی از راهکارهای مهم برای جلوگیری از افزایش قیمت کالاهای اساسی دانست و اظهار کرد: باید در هر منطقه شهر کرمانشاه یک مکان برای عرضه مستقیم کالا ایجاد شود تا با حذف واسطه‌ها، کالاهای اساسی با قیمت مناسب به دست مردم برسد."
-      },
-      {
-        "title": "رایزنی سفیر جدید آلمان در ایران با سخنگوی وزارت امور خارجه",
-        "link": "https://www.ilna.ir/fa/tiny/news-1849121",
-        "date": "2026-10-06T20:19:32.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۱۹",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "«الکس دیتمان» سفیر جدید آلمان در جمهوری اسلامی ایران، امروز صبح با حضور در وزارت امور خارجه با اسماعیل بقائی سخنگوی وزارت امور خارجه دیدار کرد."
       }
     ],
     "اقتصادی": [
-      {
-        "title": "سه‌شنبه‌های نظارتی در گرمسار استمرار می‌یابد",
-        "link": "https://www.mehrnews.com/news/6970264/%D8%B3%D9%87-%D8%B4%D9%86%D8%A8%D9%87-%D9%87%D8%A7%DB%8C-%D9%86%D8%B8%D8%A7%D8%B1%D8%AA%DB%8C-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%85%D8%B3%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%85%DB%8C-%DB%8C%D8%A7%D8%A8%D8%AF",
-        "date": "2026-10-06T22:07:05.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "گرمسار- فرماندار گرمسار از تداوم گشت‌های مشترک نظارتی در این شهرستان خبر داد و گفت: کنترل قیمت و کیفیت کالا و صیانت از حقوق مصرف‌کنندگان با جدیت دنبال می‌شود."
-      },
       {
         "title": "آیفون ۱۸ پرو یا شیائومی ۱۸ پرو؛ کدام پرچمدار قوی‌تر است؟",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3250514",
@@ -1156,6 +1154,16 @@
       }
     ],
     "ورزشی": [
+      {
+        "title": "مهدی قایدی در النصر برزیلی شد/ عکس",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250517",
+        "date": "2026-10-06T22:19:40.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۱۹",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "تصویر جالبی از مهدی قایدی منتشر شده است."
+      },
       {
         "title": "اهدای دکترای افتخاری دانشگاه به لیونل مسی + عکس",
         "link": "https://www.tabnak.ir/fa/news/1397626/%D8%A7%D9%87%D8%AF%D8%A7%DB%8C-%D8%AF%DA%A9%D8%AA%D8%B1%D8%A7%DB%8C-%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1%DB%8C-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%A8%D9%87-%D9%84%DB%8C%D9%88%D9%86%D9%84-%D9%85%D8%B3%DB%8C-%D8%B9%DA%A9%D8%B3",
@@ -1239,6 +1247,16 @@
     ],
     "فرهنگی و هنری": [
       {
+        "title": "۲۲۰ شب حضور خیابانی مردم نجف‌آباد یزد در سنگر خیابان",
+        "link": "https://www.mehrnews.com/news/6970267/%DB%B2%DB%B2%DB%B0-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%86%D8%AC%D9%81-%D8%A2%D8%A8%D8%A7%D8%AF-%DB%8C%D8%B2%D8%AF-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
+        "date": "2026-10-06T22:48:46.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "یزد- مردم نجف‌آباد یزد با حضور در دویست و بیستمین شب دفاع از انقلاب و حمایت از رزمندگان در جبهه‌ها جلوه‌ای از مشارکت و حضور مستمر مردمی را به نمایش گذاشتند."
+      },
+      {
         "title": "تداوم حضور حماسی مردم غیور گناباد در اجتماعات شبانه",
         "link": "https://www.mehrnews.com/news/6970275/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AD%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%BA%DB%8C%D9%88%D8%B1-%DA%AF%D9%86%D8%A7%D8%A8%D8%A7%D8%AF-%D8%AF%D8%B1-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D8%A7%D8%AA-%D8%B4%D8%A8%D8%A7%D9%86%D9%87",
         "date": "2026-10-06T22:34:49.000Z",
@@ -1246,7 +1264,7 @@
         "source": "مهر",
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
-        "rssDescription": "مشهد- همزمان با دویست و بیستمین شب از حضور پرشور مردم در این فیلم تصاویری از زنان و مردان انقلابی شهرستان گناباد را مشاهده می کنید."
+        "rssDescription": "مشهد- در این فیلم تصاویری از زنان و مردان انقلابی شهرستان گناباد همزمان با دویست و بیستمین شب از حضور پرشور مردم را مشاهده می کنید."
       },
       {
         "title": "برنامه «هم‌آوایی با خیابان» جشنواره  فیلم کودکان و نوجوانان اصفهان",
@@ -1278,6 +1296,16 @@
         "rssDescription": "آستانه اشرفیه- کارشناس مسائل مذهبی با اشاره به ویژگی‌ های ملت‌های مبعوث شده، گفت: ملت‌های مبعوث‌ شده در مسیر خداوند ذلت‌پذیر نیستند."
       },
       {
+        "title": "انیمیشن لگویی به‌مناسبت ۷ اکتبر، سالروز عملیات طوفان‌الاقصی/ ویدئو",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250518",
+        "date": "2026-10-06T22:28:42.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۲۸",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "هم‌زمان با سالروز عملیات طوفان‌الاقصی در ۷ اکتبر، انیمیشنی با استفاده از شخصیت‌ها و فضای لگویی منتشر شده که به بازنمایی این عملیات می‌پردازد."
+      },
+      {
         "title": "تصاویری از نخستین روز سفر مدیرعامل خبرگزاری مهر به گیلان",
         "link": "https://www.mehrnews.com/news/6970271/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%B1%D9%88%D8%B2-%D8%B3%D9%81%D8%B1-%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%D8%AE%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D9%85%D9%87%D8%B1-%D8%A8%D9%87-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
         "date": "2026-10-06T22:27:31.000Z",
@@ -1286,16 +1314,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "رشت- نخستین روز سفر مدیرعامل گروه رسانه‌ای مهر به گیلان با دیدار با دبیر و اعضای جبهه فرهنگی انقلاب اسلامی، حضور در قرارگاه رسانه‌ای شهید نائینی و سخنرانی در تجمع شبانه مردم رشت همراه بود."
-      },
-      {
-        "title": "اصدق پور: ظرفیت‌ های جبهه فرهنگی نیازمند روایت رسانه‌ای است",
-        "link": "https://www.mehrnews.com/news/6970261/%D8%A7%D8%B5%D8%AF%D9%82-%D9%BE%D9%88%D8%B1-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AC%D8%A8%D9%87%D9%87-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-06T22:00:20.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۰",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "رشت- دبیر جبهه فرهنگی انقلاب اسلامی گیلان با تأکید بر ضرورت پیوند ظرفیت‌های جبهه فرهنگی با رسانه گفت: فعالیت‌های متنوع و ظرفیت‌های مردمی موجود در جبهه فرهنگی نیازمند روایت رسانه‌ای است."
       },
       {
         "title": "همتی: اقتصاد ایران با تهدید و فشارهای آمریکا نمی‌شکند + فیلم",
@@ -1406,19 +1424,29 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "زابل - ایرنا - مجیب حسنی معاون هماهنگی امور اقتصادی استانداری سیستان و بلوچستان از برنامه‌ریزی برای آغاز فعالیت مرز «گَمشاد» از توابع شهرستان هیرمند در منطقه سیستان خبر داد و گفت: بر اساس توافق انجام‌شده در نشست مشترک اقتصادی ایران و افغانستان، مقدمات فعالیت این مرز تا یک ماه آینده فراهم خواهد شد."
-      },
-      {
-        "title": "در مشهد کنسرت ممنوع است! چرا؟",
-        "link": "https://www.asriran.com/fa/news/1196904/%D8%AF%D8%B1-%D9%85%D8%B4%D9%87%D8%AF-%DA%A9%D9%86%D8%B3%D8%B1%D8%AA-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%A7%D8%B3%D8%AA-%DA%86%D8%B1%D8%A7",
-        "date": "2026-10-06T20:19:45.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۱۹",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "وقتی مجوز هست و وزیر ارشاد و دبیر شورای عالی فرهنگی هم پشت آن ایستاده‌اند، چه کسی در مشهد جلوی اجرای قانون را می‌گیرد و چرا هیچ‌کس نام او را نمی‌داند؟"
       }
     ],
     "اجتماعی": [
+      {
+        "title": "معلمان هم به اعتراضات دانش‌آموزان در فرانسه پیوستند",
+        "link": "https://www.isna.ir/news/1405071509576/%D9%85%D8%B9%D9%84%D9%85%D8%A7%D9%86-%D9%87%D9%85-%D8%A8%D9%87-%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D8%B6%D8%A7%D8%AA-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA%D9%86%D8%AF",
+        "date": "2026-10-06T22:47:10.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۷",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "اعتصاب معلمان فرانسه در حمایت از اعتراضات دانش‌آموزی، بحران را برای دولت این کشور هرچه بیشتر تشدید کرده است."
+      },
+      {
+        "title": "۵۰۰ مدرسه آذربایجان ‌غربی به نیروگاه خورشیدی مجهز شدند",
+        "link": "https://www.mehrnews.com/news/6970279/%DB%B5%DB%B0%DB%B0-%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%BA%D8%B1%D8%A8%DB%8C-%D8%A8%D9%87-%D9%86%DB%8C%D8%B1%D9%88%DA%AF%D8%A7%D9%87-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF%DB%8C-%D9%85%D8%AC%D9%87%D8%B2-%D8%B4%D8%AF%D9%86%D8%AF",
+        "date": "2026-10-06T22:45:02.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۵",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "ارومیه - مدیر عامل شرکت توزیع نیروی برق آذربایجان‌غربی از آغاز طرح تجهیز ۵۰۰ مدرسه استان به نیروگاه‌های خورشیدی در قالب طرح ملی شهدای میناب خبر داد."
+      },
       {
         "title": "راز خشکی اطراف دهان",
         "link": "https://www.tabnak.ir/fa/news/1397565/%D8%B1%D8%A7%D8%B2-%D8%AE%D8%B4%DA%A9%DB%8C-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D8%AF%D9%87%D8%A7%D9%86",
@@ -1508,16 +1536,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "تصاویر هوایی از منطقه «بانگ کلا» در تایلند، عمق بحران سیل ناشی از بارش‌های شدید را به نمایش گذاشته است؛ فاجعه‌ای که تاکنون بیش از سه میلیون نفر را در این کشور تحت تأثیر قرار داده است."
-      },
-      {
-        "title": "دستگیری زوج سارق کامپیوتر‌های ۲۰۶ در تهرانپارس",
-        "link": "https://www.asriran.com/fa/news/1196905/%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B2%D9%88%D8%AC-%D8%B3%D8%A7%D8%B1%D9%82-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1-%D9%87%D8%A7%DB%8C-206-%D8%AF%D8%B1-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%D9%BE%D8%A7%D8%B1%D8%B3",
-        "date": "2026-10-06T20:21:15.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۱",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "زوج سارقی که در چندثانیه کامپیوتر خودرو‌های ۲۰۶ را به سرقت می‌بردند و فیلم آنها نیز در فضای مجازی منتشر شده بود، توسط پایگاه چهارم آگاهی دستگیر شدند."
       }
     ],
     "علمی و فناوری": [
@@ -1592,16 +1610,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "رئیس‌جمهور ایالات متحده در ادامه جریان یاوه‌گویی‌هایی پوچ همیشگی خود درباره ایران مدعی شد تنگه هرمز به آمریکا تعلق دارد."
-      },
-      {
-        "title": "شکست عملیات سعودی‌ها در باب‌المندب",
-        "link": "https://www.mehrnews.com/news/6970259/%D8%B4%DA%A9%D8%B3%D8%AA-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D9%85%D9%86%D8%AF%D8%A8",
-        "date": "2026-10-06T22:01:11.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "سخنگوی نیروهای مسلح یمن از سرکوب عملیات گسترده مزدوران وابسته به عربستان سعودی در مسیر تصرف تنگه باب‌المندب خبر داد."
       },
       {
         "title": "فارن افرز با هشدار به آمریکا: پیروزی با ابزار نظامی یک افسانه است",
@@ -1816,6 +1824,24 @@
     ],
     "متفرقه": [
       {
+        "title": "وداع با شهید امیرحسین قاسمی در ساری",
+        "link": "https://www.mehrnews.com/photo/6970282/%D9%88%D8%AF%D8%A7%D8%B9-%D8%A8%D8%A7-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86-%D9%82%D8%A7%D8%B3%D9%85%DB%8C-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B1%DB%8C",
+        "date": "2026-10-06T22:48:58.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
+        "title": "دویست و بیستمین اجتماع شبانه مردم رشت",
+        "link": "https://www.mehrnews.com/photo/6970278/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%B1%D8%B4%D8%AA",
+        "date": "2026-10-06T22:41:39.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۴۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
         "title": "تداوم حضور مرزنشینان آستارایی در دویست و بیستمین اجتماع شبانه",
         "link": "https://www.mehrnews.com/news/6970273/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%B2%D9%86%D8%B4%DB%8C%D9%86%D8%A7%D9%86-%D8%A2%D8%B3%D8%AA%D8%A7%D8%B1%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87",
         "date": "2026-10-06T22:33:01.000Z",
@@ -1864,36 +1890,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "معاون بافت و بناهای تاریخی اداره کل معماری و ساختمان شهرداری تهران از آغاز مجموعه‌ای از اقدامات اجرایی و سیاستی برای حفاظت، مرمت و احیاء بناهای تاریخی پایتخت خبر داد و گفت: در ماه‌های گذشته، همزمان با مستندسازی بناهای آسیب‌دیده در جریان جنگ، پیگیری مرمت بناها، تدوین الگوهای ویژه برای سنگلج و فرحزاد و ساماندهی فرآیند صدور پروانه مرمت دنبال شده است."
-      },
-      {
-        "title": "رحمتی: حضور شبانه مردم به بخشی از سبک زندگی آنان تبدیل شده است",
-        "link": "https://www.mehrnews.com/news/6970265/%D8%B1%D8%AD%D9%85%D8%AA%DB%8C-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D9%87-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%A8%DA%A9-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%A2%D9%86%D8%A7%D9%86-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-06T22:09:21.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۹",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "رشت- مدیرعامل خبرگزاری مهر با اشاره به تداوم تجمعات شبانه مردم در میدان‌های کشور گفت: حضور مردم در این تجمعات به یک سبک زندگی و بخشی از زندگی روزمره و روایت زندگی آنان تبدیل شده است."
-      },
-      {
-        "title": "شب های مقاومت مردم لاهیجان به ایستگاه دویست‌ و بیست رسید",
-        "link": "https://www.mehrnews.com/news/6970250/%D8%B4%D8%A8-%D9%87%D8%A7%DB%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF",
-        "date": "2026-10-06T22:02:25.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۲",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "لاهیجان_ در این ویدئو تصاویری از دویست و بیستمین حماسه حضور شبانه مردم لاهیجان در خیابان ها را مشاهده می کنید."
-      },
-      {
-        "title": "رحمتی: روایت انقلاب اسلامی باید در امتداد تاریخ تمدنی ایران باشد",
-        "link": "https://www.mehrnews.com/news/6970258/%D8%B1%D8%AD%D9%85%D8%AA%DB%8C-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%A7%D9%85%D8%AA%D8%AF%D8%A7%D8%AF-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AA%D9%85%D8%AF%D9%86%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B4%D8%AF",
-        "date": "2026-10-06T22:01:43.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۲:۰۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "رشت- مدیرعامل خبرگزاری مهر با تأکید بر ضرورت بازخوانی تاریخ تمدنی ایران و تقویت روایتگری درباره انقلاب اسلامی گفت: روایت انقلاب نباید از گذشته تاریخی و تمدنی ایران جدا شود."
       },
       {
         "title": "برخورد ۲ هواپیما در فرودگاه لس‌آنجلس",
@@ -1953,7 +1949,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/pGLYGRIZGdy5eoAjr3Gr6MouNvD3mz9ypwVOv2b5eDab8oTnBJDrRupr8ksQN1sp63y_uxCfQYLLdi7H0JaDa-jHi2tKL1IsfBxR0VWEz-x9cfD9cHOsfr91THRbfS8fKac0qSly045WBnWZtWBC6YihOGDRDTIOfDL6hg6YGrvhWaPEm6fEPU7wZwzGRPn4/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/MRSj_UfCE3zv4G_92N_j8El14cKkQ17g0fyIdtm3y4YyLMISyHxKsV4_ZQQOngSj1i6TbIpVoSwvE4n67Zmu3KoMc6MJUOGAYei-NcurZVIf3eQYO2cKC80-_w5cPa4MKz3AaHJ7-VQ2L6IHT_s-GqVRyD9e2EIiU8f9IZVjhi7piW2eW-6KJEHwYTIOdwwS/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1963,7 +1959,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/QaWvG4_Esj_SgpzcbqXExjNVi7LjCBNx61fwBx5M9nMFyP8yUG-oX9260TxhMdrbgzRN7unAEvf4eNT4nlYkoK-zVI4uZu5jKWs_h8DNwaMWgHaYlOOzDMkE3NZCL2idPjfAXwEUMSIQ7kB-nXeOuuORe4HcnBGq5-S9EMrSYkwhMfOXPqPKqTZVQakg0WUx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/wxcXXq8CpPcT8X_SbS-mnoOVHUvYGHW6V716_5FBQrKw7FFg7Waav9PXFkv52GAyxdr5yT-orktAneICxSDA3h2VLO6y5uWJn_-uZJh8K7zyQNDf7ySyfNals0bKAfGeWbph3HvrUhopK9KLu3QiL7YiNklSc5WGdN04rRnKRtxNZqWTFNR4RlInXfT6iu8i/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1973,7 +1969,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/tLOT744_huRfCR4NUDsM0kvs6Y-x5Nlm0hWbj_cCToyc9HNykqf2YFrfAAnCbzfyk_cbnYK57QAx2Ubb7h3fyj6R1RWGPI_CJO1nbrwTxhlQioJ9UJbBwTb6lhkQZO-l41AoWeNi7RCQv-ObsU4nkbhksK5nZzBSoNJL0jUMIuGmgCTsexfCLKVWEkfbVCNq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/7vPNkaD9L2vvSmM5lmYGxPxRzosA9QM_wIShboDc6zg3xc4MHEm8dJ8cHCDrQZ2TfRgh3-KnBngR8zM52PglJIuXriRfoSYu2EQj3tXFcDFXUlDQ5xHYdZRoFLvThMuNZUniqZJNHE5vFHXfJQWo5tKo_NXItLxAQ9ENsds0mav3bbf-tgvYJh7a97URxN2J/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -1983,7 +1979,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/n-nFisrIw5u0PylbKgA13R6BTJBMQP_tuckM19zoaxMLYFtBk6K9fJqnThvuafs-BflRBiGvLdTs0bcrO6OVAb3IeXuSt5yE_mjv-bgkbfpe7sg1hdWXa7gf45j1C5DZqDYdaOkakhNlCKFFZLsCgYCgCE5ukCcQ-ARlVXkX0iaYJMdWt5rGJR_7KFav2a7m/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VnhBiDzHz4doiCKkTJcqLK2AffqP5h-9IiZkK7vg_27kmmfLMrP8eErggS5tDfvVfxvKYWWaAxOEjAalEQfXjwEzMD0c9Erntd77T6HZSDXXWqSUWI29TMiP2rHXENiliTgjsTp_-vtxOTGBaWi_TIRhkEQO3VXP_x0SQVBfzoHpmypeyhsShNBgVrghoSSg/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1993,7 +1989,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/TFGqoz2UCUftSjIs3r1DkmGa938hUEUZJRHsMjpFfZrjU8_3TbVWVZjjR6Am7J_-3wSjQeBzL1dZBL8FCI9OqBe6x_9wEr9sAiCHnuw4bvOJqdXI5nbjcxTudFhMjotXSMSVCozAgp2RCqE2ImmUZ8Hl5LCyhMXvUwByiwQ4VOGtQHSPCntbjz7cBDhx3jkA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/vHREz7CC-3naTaI5MEFaVWL5zOIvFuBSYXX6XSFgHZM9Di2gpRFEXhAoHabCPa6-F0_w15QISSrOJtk0upvcz2j0OxZgH_Cg6QmDUuM30Fz26xq1wdeTCXQkwArjxqaE4e_XpTIK3pJOw1z2JPuJNPQaFjHSccfLIixhGzDqZVqywrIiueDuRXjehZlrxrW_/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "روزنامه قدس شماره ۱۱۰۴۵",
