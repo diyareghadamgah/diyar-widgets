@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-06T21:44:46.655Z",
-  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۴",
+  "lastUpdate": "2026-10-06T21:55:33.548Z",
+  "lastUpdatePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۵۵",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,36 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "تجاوز توپخانه‌ای رژیم صهیونیستی به خاک سوریه",
+      "link": "https://www.irna.ir/news/86285442/%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AE%D8%A7%DA%A9-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
+      "date": "2026-10-06T21:48:30.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۸",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که توپخانه رژیم صهیونیستی به مناطقی از استان درعا سوریه حمله کرده است."
+    },
+    {
+      "title": "دویست و بیستمین شب تجمعات مردمی کرج",
+      "link": "https://www.mehrnews.com/news/6970241/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85%DB%8C-%DA%A9%D8%B1%D8%AC",
+      "date": "2026-10-06T21:46:11.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۶",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "کرج _ دویست و بیستمین شب تجمعات مردمی با حضور شهروندان همراه شد؛ حضوری که بار دیگر بر همبستگی مردم، دفاع از ایران و ایستادگی در برابر تهدیدها تأکید دارد."
+    },
+    {
+      "title": "همسایه با دشمن؛ واکنش مردم چیست؟",
+      "link": "https://www.mehrnews.com/news/6970245/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87-%D8%A8%D8%A7-%D8%AF%D8%B4%D9%85%D9%86-%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%DA%86%DB%8C%D8%B3%D8%AA",
+      "date": "2026-10-06T21:44:28.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "کرج _ به میان مردم رفتیم و از آنها پرسیدیم اگر همسایه‌شان با دشمن همراه شود و برای نابودی آنها اقدام کند، چه واکنشی نشان می‌دهند و چگونه از خود دفاع می‌کنند؟"
+    },
     {
       "title": "فریادهای عاشقی؛ قلب اراک در دویست و بیستمین میعادگاه ایمان تپید",
       "link": "https://www.mehrnews.com/news/6970251/%D9%81%D8%B1%DB%8C%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D8%B9%D8%A7%D8%B4%D9%82%DB%8C-%D9%82%D9%84%D8%A8-%D8%A7%D8%B1%D8%A7%DA%A9-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D9%85%DB%8C%D8%B9%D8%A7%D8%AF%DA%AF%D8%A7%D9%87-%D8%A7%DB%8C%D9%85%D8%A7%D9%86-%D8%AA%D9%BE%DB%8C%D8%AF",
@@ -89,6 +119,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تبریز- مردم تبریز در دویست‌وبیستمین اجتماع شبانه، بر تداوم همبستگی و حمایت از رهبری تأکید کردند."
+    },
+    {
+      "title": "دسترسی رایگان به هوش مصنوعی پیشرفته گوگل از جمعه قطع می‌شود",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250512",
+      "date": "2026-10-06T21:37:07.000Z",
+      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۳۷",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "علمی و فناوری",
+      "rssDescription": "محدودیت‌های تازه‌ی گوگل، دسترسی رایگان به مدل‌های پیشرفته‌ی جمنای را متوقف و ساختار اشتراک‌ها را دگرگون می‌کند."
     },
     {
       "title": "برخورد ۲ هواپیما در فرودگاه لس‌آنجلس",
@@ -171,13 +211,13 @@
       "rssDescription": "تصاویر منتشر شده، لحظه برخورد دو هواپیمای مسافربری متعلق به شرکت‌های «دلتا» و «ایر کانادا» را در باند فرودگاه لس‌آنجلس به تصویر می‌کشد."
     },
     {
-      "title": "تکذیب شایعه عفو «امیر تتلو»؛ ویدئوی منتشرشده قدیمی است",
+      "title": "تکذیب شایعه عفو «امیر تتلو»؛ ویدئوی منتشرشده ساخته هوش مصنوعی است/ ویدئو",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3250511",
       "date": "2026-10-06T21:26:44.000Z",
       "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۲۶",
       "source": "خبر فوری",
       "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
+      "category": "علمی و فناوری",
       "rssDescription": "در پی انتشار مجدد ویدئویی در ساعات گذشته با موضوع عفو امیرحسین مقصودلو (تتلو)، مشخص شد که این تصاویر قدیمی و مربوط به اظهارات سال گذشته خواهر این خواننده بوده و خبر جدیدی درباره عفو وی صحت ندارد."
     },
     {
@@ -581,16 +621,6 @@
       "rssDescription": "گل دوم اسپانیا به کرواسی توسط میکل مرینو زده شد."
     },
     {
-      "title": "دویست‌وبیستمین شب همصدایی سنندجی‌ها در حمایت از نیروهای مسلح",
-      "link": "https://www.mehrnews.com/news/6970230/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%87%D9%85%D8%B5%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B3%D9%86%D9%86%D8%AF%D8%AC%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%85%D8%B3%D9%84%D8%AD",
-      "date": "2026-10-06T20:37:44.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۳۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "سنندج- موج ۲۲۰ حضور مردم سنندج، بار دیگر خیابان را به صحنه همصدایی و تأکید بر تداوم ایستادگی مردم تبدیل کرده است."
-    },
-    {
       "title": "قطر و جاه‌طلبی جدید در بازار جهانی LNG / پشت پرده سفارش کشتی‌های غول‌پیکر!",
       "link": "https://www.tabnak.ir/fa/news/1397579/%D9%82%D8%B7%D8%B1-%D9%88-%D8%AC%D8%A7%D9%87-%D8%B7%D9%84%D8%A8%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-lng-%D9%BE%D8%B4%D8%AA-%D9%BE%D8%B1%D8%AF%D9%87-%D8%B3%D9%81%D8%A7%D8%B1%D8%B4-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%87%D8%A7%DB%8C-%D8%BA%D9%88%D9%84-%D9%BE%DB%8C%DA%A9%D8%B1",
       "date": "2026-10-06T20:37:02.000Z",
@@ -658,7 +688,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/oLlX81MAzg_vl4PBtmHkgQfJGcEBrz0taSQkhxaGqA6IWERG2g_ZOPONiZPyQaRiZ05O_JTW2-j86XHQYeY81W7WA8ZpMFo_NnkjFAN1s-f1upfQtN7PduCs1Lr4p7iubgoF2mrHRkCHuyia5DQj6R8siE596OID9YCLWn9rM5y0M6hHd17qNhwG8aP847wE/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/pGLYGRIZGdy5eoAjr3Gr6MouNvD3mz9ypwVOv2b5eDab8oTnBJDrRupr8ksQN1sp63y_uxCfQYLLdi7H0JaDa-jHi2tKL1IsfBxR0VWEz-x9cfD9cHOsfr91THRbfS8fKac0qSly045WBnWZtWBC6YihOGDRDTIOfDL6hg6YGrvhWaPEm6fEPU7wZwzGRPn4/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -668,7 +698,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/veYQRl_9x1yf_96SEKz8j0_fncH5doCeCV0Tl2SziNiK9kwm3q3c3G7Au1PhHf7MGszfzYA2f8TRocFxtQ4vwRl2nu8MYPrUAu1a16YVEEaew5lJ6jzCKObLNGEVtz3Eta0iA5zLPHSZZrcokq9L5_9WrLK1vi7Vy4nq1Z2j8QaFT5Zl4VJhjV2hzschIwZ_/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/QaWvG4_Esj_SgpzcbqXExjNVi7LjCBNx61fwBx5M9nMFyP8yUG-oX9260TxhMdrbgzRN7unAEvf4eNT4nlYkoK-zVI4uZu5jKWs_h8DNwaMWgHaYlOOzDMkE3NZCL2idPjfAXwEUMSIQ7kB-nXeOuuORe4HcnBGq5-S9EMrSYkwhMfOXPqPKqTZVQakg0WUx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -678,7 +708,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/f_Eho-2fosefC7eigkfncAW8aHvJ1-uKae-W_M0yTyqq9_oEl1qSd-0GsCkw-X0j1kpFlyUZLBphqVo9pr_Jb0rhSahsOxfWoBLWTCelDhZ5ekVM2v5jvZVR3JijoVLTmx7L8c6POh2GY-Q9aMS2y_hXA5KXq6myieppW75L3MLls_KrOyAtD0bV6HMtm-Em/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/tLOT744_huRfCR4NUDsM0kvs6Y-x5Nlm0hWbj_cCToyc9HNykqf2YFrfAAnCbzfyk_cbnYK57QAx2Ubb7h3fyj6R1RWGPI_CJO1nbrwTxhlQioJ9UJbBwTb6lhkQZO-l41AoWeNi7RCQv-ObsU4nkbhksK5nZzBSoNJL0jUMIuGmgCTsexfCLKVWEkfbVCNq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -688,7 +718,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/dbGRPpFtHrPCGSAMObdtJajfPofAtvzprRnkiIn2K6wHlqiC9r1bIJ6vCLIa4Uyek-efFoCjfBLWcJSE9ZatT5GJ1-NUbsQZuDHI-maJSqpNpHvcNxcoBFhDY0d8BVeznDIovJxjDbHpxegd3CW3F9avsWFXdZv0-WjtQQ-DHPrCcQ-D38dlOo1W5lP9rcwn/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/n-nFisrIw5u0PylbKgA13R6BTJBMQP_tuckM19zoaxMLYFtBk6K9fJqnThvuafs-BflRBiGvLdTs0bcrO6OVAb3IeXuSt5yE_mjv-bgkbfpe7sg1hdWXa7gf45j1C5DZqDYdaOkakhNlCKFFZLsCgYCgCE5ukCcQ-ARlVXkX0iaYJMdWt5rGJR_7KFav2a7m/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -698,7 +728,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/8l7AzDaeY0mclG1qRY5f7KZz1eRAggXCWJd0mY8c9b6oY3gB91K19AxJiSmqmsA-JLekO_FZdPAidmVl4oMnCJGy1MWsPZ6Sr81vKlYZxJuZy1uwsJp2KxL8uNpbFp8SxXZUQSVpjgDl7ShwcF2l88acpYjaOjJg4hiyO994iRhXYy5hwWu1lhaUJrKRYMrc/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/TFGqoz2UCUftSjIs3r1DkmGa938hUEUZJRHsMjpFfZrjU8_3TbVWVZjjR6Am7J_-3wSjQeBzL1dZBL8FCI9OqBe6x_9wEr9sAiCHnuw4bvOJqdXI5nbjcxTudFhMjotXSMSVCozAgp2RCqE2ImmUZ8Hl5LCyhMXvUwByiwQ4VOGtQHSPCntbjz7cBDhx3jkA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "کارشناس صداوسیما: جنگ داریم، چه جنگی!/ در آبان و آذر مرحله سوم جنگ کوتاه مدت و پرفشار خواهد بود/  بلایی سر نفت دنیا میاریم که اون‌سرش ناپیدا!",
@@ -759,16 +789,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "شهردار مشهد مقدس گفت: توسعه زیرساخت‌ها، افزایش سرانه فضای سبز و اجرای پروژه‌های پیشران و اثرگذار در مناطق کم‌برخوردار، از اولویت‌های مدیریت شهری در دوره ششم بوده و در همین راستا حدود ۳۳ هکتار از بوستان ۷۳ هکتاری کرامت در شرق مشهد به بهره‌برداری رسید."
-    },
-    {
-      "title": "رد گزارش رویترز درباره استقرار گسترده نیروهای نظامی پاکستان در عربستان",
-      "link": "https://www.mehrnews.com/news/6970234/%D8%B1%D8%AF-%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%B1%D9%88%DB%8C%D8%AA%D8%B1%D8%B2-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1",
-      "date": "2026-10-06T20:29:26.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۹",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "وزارت اطلاعات پاکستان با رد گزارش خبرگزاری رویترز مبنی بر انعقاد «توافق دفاعی مشترک مکه»، خبر استقرار ۳۰ تا ۴۰ هزار نیروی نظامی خود در خاک عربستان سعودی را کاملاً ساختگی و فاقد اعتبار دانست."
     },
     {
       "title": "هشدار نماینده ایران نسبت به پیامدهای حمله به ۱۱۱ مجتمع پتروشیمی و دارویی ایران",
@@ -879,16 +899,6 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "زوج سارقی که در چندثانیه کامپیوتر خودرو‌های ۲۰۶ را به سرقت می‌بردند و فیلم آنها نیز در فضای مجازی منتشر شده بود، توسط پایگاه چهارم آگاهی دستگیر شدند."
-    },
-    {
-      "title": "فیلم | جشنواره بازی‌های بومی محلی روستاییان مرزنشین قصرشیرین",
-      "link": "https://www.irna.ir/news/86285406/%D9%81%DB%8C%D9%84%D9%85-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D9%88%D9%85%DB%8C-%D9%85%D8%AD%D9%84%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C%DB%8C%D8%A7%D9%86-%D9%85%D8%B1%D8%B2%D9%86%D8%B4%DB%8C%D9%86-%D9%82%D8%B5%D8%B1%D8%B4%DB%8C%D8%B1%DB%8C%D9%86",
-      "date": "2026-10-06T20:20:53.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۰",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "قصرشیرین - ایرنا - همزمان با هفته فراجا، جشنواره ورزشی و مسابقات بومی و محلی مرزنشینان روز سه‌شنبه با حضور فرمانده مرزبانی استان کرمانشاه و جمعی از مسئولان، دانش‌آموزان، جوانان و اهالی روستاهای مرزی در روستای سیدایاز قصرشیرین برگزار شد. در این جشنواره، علاوه بر مسابقات طناب‌کشی، قلعه‌قلان و صندلی خالی، خانواده‌های شهدا، پیشکسوتان و برگزیدگان مسابقات نیز مورد تجلیل قرار گرفتند."
     },
     {
       "title": "در مشهد کنسرت ممنوع است! چرا؟",
@@ -1019,16 +1029,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "​وزیر ارتباطات و فناوری اطلاعات از صدور موافقت اصولی سه اپراتور هوش مصنوعی طی یک ماه آینده خبر داد و گفت: توسعه زیرساخت‌های پردازشی و ذخیره‌سازی با استفاده حداکثری از ظرفیت بخش خصوصی در دستور کار قرار دارد."
-    },
-    {
-      "title": "«ایران ادامه دارد»؛ روایت ایستادگی کودکان و نوجوانان منطقه ۱۰ در جشنواره فیلم کودک",
-      "link": "https://www.imna.ir/news/1010195/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D9%85%D9%86%D8%B7%D9%82%D9%87-%DB%B1%DB%B0",
-      "date": "2026-10-06T20:00:49.000Z",
-      "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۰۰",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "مدیر منطقه ۱۰ شهرداری اصفهان از اجرای برنامه تولیدی و ویژه «ایران ادامه دارد» در قالب برنامه‌های جنبی سی‌وهشتمین جشنواره بین‌المللی فیلم کودکان و نوجوانان در مواکب سطح این منطقه خبر داد و گفت:این برنامه با هدف استفاده از ظرفیت هنری کودکان و نوجوانان منطقه و خلق یک روایت متفاوت از امید تولید شده است."
     }
   ],
   "categorizedNews": {
@@ -1320,16 +1320,6 @@
         "rssDescription": "دونالد ترامپ در اظهاراتی درباره ایران مدعی شد این کشور دیگر هیچ منبعی ندارد و وزیر نفت آن نیز استعفا داده است. او همچنین گفت آمریکا مقادیر زیادی نفت را از تنگه هرمز عبور داده است. منبع: خبرگزاری دانشجو"
       },
       {
-        "title": "تکذیب شایعه عفو «امیر تتلو»؛ ویدئوی منتشرشده قدیمی است",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250511",
-        "date": "2026-10-06T21:26:44.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۲۶",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "در پی انتشار مجدد ویدئویی در ساعات گذشته با موضوع عفو امیرحسین مقصودلو (تتلو)، مشخص شد که این تصاویر قدیمی و مربوط به اظهارات سال گذشته خواهر این خواننده بوده و خبر جدیدی درباره عفو وی صحت ندارد."
-      },
-      {
         "title": "حادثه در فرودگاه لس‌آنجلس؛ برخورد دو هواپیما روی باند + فیلم",
         "link": "https://www.khabaronline.ir/news/2284763/%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D8%AF%D8%B1-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%84%D8%B3-%D8%A2%D9%86%D8%AC%D9%84%D8%B3-%D8%A8%D8%B1%D8%AE%D9%88%D8%B1%D8%AF-%D8%AF%D9%88-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7-%D8%B1%D9%88%DB%8C-%D8%A8%D8%A7%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85",
         "date": "2026-10-06T21:15:00.000Z",
@@ -1420,16 +1410,6 @@
         "rssDescription": "زابل - ایرنا - مجیب حسنی معاون هماهنگی امور اقتصادی استانداری سیستان و بلوچستان از برنامه‌ریزی برای آغاز فعالیت مرز «گَمشاد» از توابع شهرستان هیرمند در منطقه سیستان خبر داد و گفت: بر اساس توافق انجام‌شده در نشست مشترک اقتصادی ایران و افغانستان، مقدمات فعالیت این مرز تا یک ماه آینده فراهم خواهد شد."
       },
       {
-        "title": "فیلم | جشنواره بازی‌های بومی محلی روستاییان مرزنشین قصرشیرین",
-        "link": "https://www.irna.ir/news/86285406/%D9%81%DB%8C%D9%84%D9%85-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D9%88%D9%85%DB%8C-%D9%85%D8%AD%D9%84%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C%DB%8C%D8%A7%D9%86-%D9%85%D8%B1%D8%B2%D9%86%D8%B4%DB%8C%D9%86-%D9%82%D8%B5%D8%B1%D8%B4%DB%8C%D8%B1%DB%8C%D9%86",
-        "date": "2026-10-06T20:20:53.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۰",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "قصرشیرین - ایرنا - همزمان با هفته فراجا، جشنواره ورزشی و مسابقات بومی و محلی مرزنشینان روز سه‌شنبه با حضور فرمانده مرزبانی استان کرمانشاه و جمعی از مسئولان، دانش‌آموزان، جوانان و اهالی روستاهای مرزی در روستای سیدایاز قصرشیرین برگزار شد. در این جشنواره، علاوه بر مسابقات طناب‌کشی، قلعه‌قلان و صندلی خالی، خانواده‌های شهدا، پیشکسوتان و برگزیدگان مسابقات نیز مورد تجلیل قرار گرفتند."
-      },
-      {
         "title": "در مشهد کنسرت ممنوع است! چرا؟",
         "link": "https://www.asriran.com/fa/news/1196904/%D8%AF%D8%B1-%D9%85%D8%B4%D9%87%D8%AF-%DA%A9%D9%86%D8%B3%D8%B1%D8%AA-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%A7%D8%B3%D8%AA-%DA%86%D8%B1%D8%A7",
         "date": "2026-10-06T20:19:45.000Z",
@@ -1448,16 +1428,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "جایزه ویژه شهدای میناب سی‌وهشتمین جشنواره بین‌المللی فیلم‌های کودکان و نوجوانان در آیین اختتامیه بخش بین‌الملل و فیلم کوتاه به فیلم ماکان به کارگردانی محمدحسین عباسی و تهیه‌کنندگی حامد یامین‌پور رسید."
-      },
-      {
-        "title": "«ایران ادامه دارد»؛ روایت ایستادگی کودکان و نوجوانان منطقه ۱۰ در جشنواره فیلم کودک",
-        "link": "https://www.imna.ir/news/1010195/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D9%85%D9%86%D8%B7%D9%82%D9%87-%DB%B1%DB%B0",
-        "date": "2026-10-06T20:00:49.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۰۰",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "مدیر منطقه ۱۰ شهرداری اصفهان از اجرای برنامه تولیدی و ویژه «ایران ادامه دارد» در قالب برنامه‌های جنبی سی‌وهشتمین جشنواره بین‌المللی فیلم کودکان و نوجوانان در مواکب سطح این منطقه خبر داد و گفت:این برنامه با هدف استفاده از ظرفیت هنری کودکان و نوجوانان منطقه و خلق یک روایت متفاوت از امید تولید شده است."
       }
     ],
     "اجتماعی": [
@@ -1544,6 +1514,26 @@
     ],
     "علمی و فناوری": [
       {
+        "title": "دسترسی رایگان به هوش مصنوعی پیشرفته گوگل از جمعه قطع می‌شود",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250512",
+        "date": "2026-10-06T21:37:07.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۳۷",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "محدودیت‌های تازه‌ی گوگل، دسترسی رایگان به مدل‌های پیشرفته‌ی جمنای را متوقف و ساختار اشتراک‌ها را دگرگون می‌کند."
+      },
+      {
+        "title": "تکذیب شایعه عفو «امیر تتلو»؛ ویدئوی منتشرشده ساخته هوش مصنوعی است/ ویدئو",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250511",
+        "date": "2026-10-06T21:26:44.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۲۶",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "علمی و فناوری",
+        "rssDescription": "در پی انتشار مجدد ویدئویی در ساعات گذشته با موضوع عفو امیرحسین مقصودلو (تتلو)، مشخص شد که این تصاویر قدیمی و مربوط به اظهارات سال گذشته خواهر این خواننده بوده و خبر جدیدی درباره عفو وی صحت ندارد."
+      },
+      {
         "title": "اینترنت جهانی در مسیر فروپاشی",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3250508",
         "date": "2026-10-06T21:00:17.000Z",
@@ -1565,6 +1555,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "تجاوز توپخانه‌ای رژیم صهیونیستی به خاک سوریه",
+        "link": "https://www.irna.ir/news/86285442/%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AE%D8%A7%DA%A9-%D8%B3%D9%88%D8%B1%DB%8C%D9%87",
+        "date": "2026-10-06T21:48:30.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۸",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- منابع خبری گزارش دادند که توپخانه رژیم صهیونیستی به مناطقی از استان درعا سوریه حمله کرده است."
+      },
       {
         "title": "انصارالله: توقف جنگ بیش از همه به سود عربستان است",
         "link": "https://www.irna.ir/news/86285436/%D8%A7%D9%86%D8%B5%D8%A7%D8%B1%D8%A7%D9%84%D9%84%D9%87-%D8%AA%D9%88%D9%82%D9%81-%D8%AC%D9%86%DA%AF-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%D9%87%D9%85%D9%87-%D8%A8%D9%87-%D8%B3%D9%88%D8%AF-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
@@ -1766,16 +1766,6 @@
         "rssDescription": "تهران- ایرنا- وزارت خارجه یمن در بیانیه‌ای اعلام کرد: دستاوردهای عربستان در یمن فقط پیروزی‌های تخیلی است و رویکرد دروغ و دروغگویی که نظام سعودی در پیش گرفته، بسیاری از رسانه‌ها را به باتلاق دروغ و نفاق کشانده است."
       },
       {
-        "title": "رد گزارش رویترز درباره استقرار گسترده نیروهای نظامی پاکستان در عربستان",
-        "link": "https://www.mehrnews.com/news/6970234/%D8%B1%D8%AF-%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%B1%D9%88%DB%8C%D8%AA%D8%B1%D8%B2-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1",
-        "date": "2026-10-06T20:29:26.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۲۹",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "وزارت اطلاعات پاکستان با رد گزارش خبرگزاری رویترز مبنی بر انعقاد «توافق دفاعی مشترک مکه»، خبر استقرار ۳۰ تا ۴۰ هزار نیروی نظامی خود در خاک عربستان سعودی را کاملاً ساختگی و فاقد اعتبار دانست."
-      },
-      {
         "title": "ویدیو: گل سوم انگلیس به چک توسط هری کین",
         "link": "https://www.ilna.ir/fa/tiny/news-1849123",
         "date": "2026-10-06T20:22:09.000Z",
@@ -1817,6 +1807,26 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "دویست و بیستمین شب تجمعات مردمی کرج",
+        "link": "https://www.mehrnews.com/news/6970241/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85%DB%8C-%DA%A9%D8%B1%D8%AC",
+        "date": "2026-10-06T21:46:11.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۶",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "کرج _ دویست و بیستمین شب تجمعات مردمی با حضور شهروندان همراه شد؛ حضوری که بار دیگر بر همبستگی مردم، دفاع از ایران و ایستادگی در برابر تهدیدها تأکید دارد."
+      },
+      {
+        "title": "همسایه با دشمن؛ واکنش مردم چیست؟",
+        "link": "https://www.mehrnews.com/news/6970245/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%D9%87-%D8%A8%D8%A7-%D8%AF%D8%B4%D9%85%D9%86-%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%DA%86%DB%8C%D8%B3%D8%AA",
+        "date": "2026-10-06T21:44:28.000Z",
+        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۱:۴۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "کرج _ به میان مردم رفتیم و از آنها پرسیدیم اگر همسایه‌شان با دشمن همراه شود و برای نابودی آنها اقدام کند، چه واکنشی نشان می‌دهند و چگونه از خود دفاع می‌کنند؟"
+      },
       {
         "title": "فریادهای عاشقی؛ قلب اراک در دویست و بیستمین میعادگاه ایمان تپید",
         "link": "https://www.mehrnews.com/news/6970251/%D9%81%D8%B1%DB%8C%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D8%B9%D8%A7%D8%B4%D9%82%DB%8C-%D9%82%D9%84%D8%A8-%D8%A7%D8%B1%D8%A7%DA%A9-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D9%85%DB%8C%D8%B9%D8%A7%D8%AF%DA%AF%D8%A7%D9%87-%D8%A7%DB%8C%D9%85%D8%A7%D9%86-%D8%AA%D9%BE%DB%8C%D8%AF",
@@ -1888,16 +1898,6 @@
         "rssDescription": "مراسم «روایت روشنایی»، شامگاه سه‌شنبه (۱۴ مهر ۱۴۰۵) با حضور خبرنگاران عضو انجمن صنفی روزنامه‌نگاران آذربایجان‌شرقی در تالار ساوالان تبریز برگزار شد و طی آن از یک سال استواری، فعالیت و روایتگری رسانه‌ای روزنامه‌نگاران و عکاسان خبری فعال در ثبت رویدادهای جامعه در شرایط دشوار و بحرانی یاد شد."
       },
       {
-        "title": "دویست‌وبیستمین شب همصدایی سنندجی‌ها در حمایت از نیروهای مسلح",
-        "link": "https://www.mehrnews.com/news/6970230/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88%D8%A8%DB%8C%D8%B3%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%87%D9%85%D8%B5%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B3%D9%86%D9%86%D8%AF%D8%AC%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%85%D8%B3%D9%84%D8%AD",
-        "date": "2026-10-06T20:37:44.000Z",
-        "datePersian": "۱۴ مهر ۱۴۰۵، ۲۰:۳۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "سنندج- موج ۲۲۰ حضور مردم سنندج، بار دیگر خیابان را به صحنه همصدایی و تأکید بر تداوم ایستادگی مردم تبدیل کرده است."
-      },
-      {
         "title": "وقتی پرحرفی دیگر «عادی» نیست؛ پشت حرف‌های بی‌پایان چه می‌گذرد؟",
         "link": "https://www.isna.ir/news/1405071409398/%D9%88%D9%82%D8%AA%DB%8C-%D9%BE%D8%B1%D8%AD%D8%B1%D9%81%DB%8C-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%B9%D8%A7%D8%AF%DB%8C-%D9%86%DB%8C%D8%B3%D8%AA-%D9%BE%D8%B4%D8%AA-%D8%AD%D8%B1%D9%81-%D9%87%D8%A7%DB%8C-%D8%A8%DB%8C-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%DA%86%D9%87-%D9%85%DB%8C-%DA%AF%D8%B0%D8%B1%D8%AF",
         "date": "2026-10-06T20:35:00.000Z",
@@ -1925,7 +1925,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/oLlX81MAzg_vl4PBtmHkgQfJGcEBrz0taSQkhxaGqA6IWERG2g_ZOPONiZPyQaRiZ05O_JTW2-j86XHQYeY81W7WA8ZpMFo_NnkjFAN1s-f1upfQtN7PduCs1Lr4p7iubgoF2mrHRkCHuyia5DQj6R8siE596OID9YCLWn9rM5y0M6hHd17qNhwG8aP847wE/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/pGLYGRIZGdy5eoAjr3Gr6MouNvD3mz9ypwVOv2b5eDab8oTnBJDrRupr8ksQN1sp63y_uxCfQYLLdi7H0JaDa-jHi2tKL1IsfBxR0VWEz-x9cfD9cHOsfr91THRbfS8fKac0qSly045WBnWZtWBC6YihOGDRDTIOfDL6hg6YGrvhWaPEm6fEPU7wZwzGRPn4/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1935,7 +1935,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/veYQRl_9x1yf_96SEKz8j0_fncH5doCeCV0Tl2SziNiK9kwm3q3c3G7Au1PhHf7MGszfzYA2f8TRocFxtQ4vwRl2nu8MYPrUAu1a16YVEEaew5lJ6jzCKObLNGEVtz3Eta0iA5zLPHSZZrcokq9L5_9WrLK1vi7Vy4nq1Z2j8QaFT5Zl4VJhjV2hzschIwZ_/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/QaWvG4_Esj_SgpzcbqXExjNVi7LjCBNx61fwBx5M9nMFyP8yUG-oX9260TxhMdrbgzRN7unAEvf4eNT4nlYkoK-zVI4uZu5jKWs_h8DNwaMWgHaYlOOzDMkE3NZCL2idPjfAXwEUMSIQ7kB-nXeOuuORe4HcnBGq5-S9EMrSYkwhMfOXPqPKqTZVQakg0WUx/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1945,7 +1945,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/f_Eho-2fosefC7eigkfncAW8aHvJ1-uKae-W_M0yTyqq9_oEl1qSd-0GsCkw-X0j1kpFlyUZLBphqVo9pr_Jb0rhSahsOxfWoBLWTCelDhZ5ekVM2v5jvZVR3JijoVLTmx7L8c6POh2GY-Q9aMS2y_hXA5KXq6myieppW75L3MLls_KrOyAtD0bV6HMtm-Em/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/tLOT744_huRfCR4NUDsM0kvs6Y-x5Nlm0hWbj_cCToyc9HNykqf2YFrfAAnCbzfyk_cbnYK57QAx2Ubb7h3fyj6R1RWGPI_CJO1nbrwTxhlQioJ9UJbBwTb6lhkQZO-l41AoWeNi7RCQv-ObsU4nkbhksK5nZzBSoNJL0jUMIuGmgCTsexfCLKVWEkfbVCNq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز چهارشنبه ۱۵ مهر + جدول",
@@ -1955,7 +1955,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/dbGRPpFtHrPCGSAMObdtJajfPofAtvzprRnkiIn2K6wHlqiC9r1bIJ6vCLIa4Uyek-efFoCjfBLWcJSE9ZatT5GJ1-NUbsQZuDHI-maJSqpNpHvcNxcoBFhDY0d8BVeznDIovJxjDbHpxegd3CW3F9avsWFXdZv0-WjtQQ-DHPrCcQ-D38dlOo1W5lP9rcwn/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/n-nFisrIw5u0PylbKgA13R6BTJBMQP_tuckM19zoaxMLYFtBk6K9fJqnThvuafs-BflRBiGvLdTs0bcrO6OVAb3IeXuSt5yE_mjv-bgkbfpe7sg1hdWXa7gf45j1C5DZqDYdaOkakhNlCKFFZLsCgYCgCE5ukCcQ-ARlVXkX0iaYJMdWt5rGJR_7KFav2a7m/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز چهارشنبه ۱۵ مهر ۱۴۰۵",
@@ -1965,7 +1965,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/8l7AzDaeY0mclG1qRY5f7KZz1eRAggXCWJd0mY8c9b6oY3gB91K19AxJiSmqmsA-JLekO_FZdPAidmVl4oMnCJGy1MWsPZ6Sr81vKlYZxJuZy1uwsJp2KxL8uNpbFp8SxXZUQSVpjgDl7ShwcF2l88acpYjaOjJg4hiyO994iRhXYy5hwWu1lhaUJrKRYMrc/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/TFGqoz2UCUftSjIs3r1DkmGa938hUEUZJRHsMjpFfZrjU8_3TbVWVZjjR6Am7J_-3wSjQeBzL1dZBL8FCI9OqBe6x_9wEr9sAiCHnuw4bvOJqdXI5nbjcxTudFhMjotXSMSVCozAgp2RCqE2ImmUZ8Hl5LCyhMXvUwByiwQ4VOGtQHSPCntbjz7cBDhx3jkA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "روزنامه قدس شماره ۱۱۰۴۵",
