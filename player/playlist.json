@@ -1,8 +1,12 @@
 [
   {
-    "title": "آهنگ آزمایشی",
-    "artist": "Diyar Player",
+    "id": "diyar-demo-01",
+    "title": "آهنگ آزمایشی دیار پلیر",
+    "artist": "دیار قدمگاه",
+    "album": "Diyar Player",
     "cover": "covers/c.png",
-    "file": "music/1.mp3"
+    "file": "music/1.mp3",
+    "type": "audio/mpeg",
+    "category": "دیار"
   }
 ]

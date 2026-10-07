@@ -1,143 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>پلیر موزیک پیشرفته</title>
-
-    <!-- SEO & Meta -->
-    <meta name="description" content="پلیر موزیک پیشرفته با طراحی شیشه‌ای، پشتیبانی از PWA و پخش پس‌زمینه" />
-    <meta name="theme-color" content="#0f0f1a" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="پلیر موزیک" />
-    <meta property="og:description" content="پلیر موزیک پیشرفته با طراحی شیشه‌ای" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="icons/icon-512.png" />
-
-    <!-- Manifest -->
-    <link rel="manifest" href="manifest.json" />
-
-    <!-- Icons -->
-    <link rel="apple-touch-icon" href="icons/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#082a1f">
+<meta name="description" content="دیار پلیر؛ پخش‌کننده حرفه‌ای موسیقی و رسانه دیار قدمگاه">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="دیار پلیر">
+<meta property="og:description" content="پخش‌کننده حرفه‌ای دیار قدمگاه">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>دیار پلیر | دیار قدمگاه</title>
 </head>
 <body>
-    <!-- Main App -->
-    <div id="app" role="application" aria-label="پلیر موزیک">
+<div id="app">
+<header class="topbar">
+  <a class="brand" href="./" aria-label="دیار پلیر">
+    <img src="assets/images/diyar-logo-source.png" alt="لوگوی دیار قدمگاه">
+    <span><strong>دیار پلیر</strong><small>دیار قدمگاه</small></span>
+  </a>
+  <div class="top-actions">
+    <button class="icon-btn" id="themeBtn" aria-label="تغییر پوسته" title="تغییر پوسته">☾</button>
+    <button class="icon-btn" id="favoritesBtn" aria-label="علاقه‌مندی‌ها" title="علاقه‌مندی‌ها">♥<b id="favCount">0</b></button>
+    <button class="icon-btn" id="queueBtn" aria-label="صف پخش" title="صف پخش">☰</button>
+  </div>
+</header>
 
-        <!-- Navigation -->
-        <nav class="nav" role="navigation" aria-label="ناوبری اصلی">
-            <span class="nav-title">🎵 پلیر</span>
-            <div class="nav-actions">
-                <button class="nav-btn" id="favoritesBtn" aria-label="لیست علاقه‌مندی‌ها" title="علاقه‌مندی‌ها">
-                    ♥
-                    <span class="badge" id="favCount">0</span>
-                </button>
-                <button class="nav-btn" id="playlistToggle" aria-label="نمایش لیست پخش" title="لیست پخش">
-                    ☰
-                </button>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="main-content" id="mainContent">
-
-            <!-- Album Art -->
-            <section class="album-wrapper" aria-label="جلد آلبوم">
-                <div class="album-ring" id="albumRing">
-                    <div class="album-ring-inner">
-                        <img id="albumCover" src="covers/c.png" alt="جلد آلبوم" loading="lazy" />
-                    </div>
-                </div>
-                <!-- Equalizer overlay -->
-                <div class="eq-overlay" id="eqOverlay">
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                    <span class="eq-bar"></span>
-                </div>
-            </section>
-
-            <!-- Song Info -->
-            <section class="song-info" aria-label="اطلاعات آهنگ">
-                <h2 class="song-title" id="songTitle">عنوان آهنگ</h2>
-                <p class="song-artist" id="songArtist">نام خواننده</p>
-            </section>
-
-            <!-- Progress -->
-            <section class="progress-area" aria-label="نوار پیشرفت">
-                <div class="progress-bar" id="progressBar" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="موقعیت پخش">
-                    <div class="progress-fill" id="progressFill" style="width:0%"></div>
-                </div>
-                <div class="progress-times">
-                    <span id="currentTime">0:00</span>
-                    <span id="duration">0:00</span>
-                </div>
-            </section>
-
-            <!-- Controls -->
-            <section class="controls" aria-label="کنترل‌های پخش">
-                <button class="ctrl-btn" id="shuffleBtn" aria-label="تصادفی" title="تصادفی">🔀</button>
-                <button class="ctrl-btn" id="prevBtn" aria-label="قبلی" title="قبلی">⏮</button>
-                <button class="ctrl-btn play-btn" id="playBtn" aria-label="پخش / توقف" title="پخش">▶</button>
-                <button class="ctrl-btn" id="nextBtn" aria-label="بعدی" title="بعدی">⏭</button>
-                <button class="ctrl-btn" id="repeatBtn" aria-label="تکرار" title="تکرار">🔁</button>
-            </section>
-
-            <!-- Volume -->
-            <section class="volume-area" aria-label="کنترل صدا">
-                <button class="volume-icon" id="muteBtn" aria-label="بی‌صدا" title="بی‌صدا">🔊</button>
-                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.8" aria-label="بلندی صدا" />
-            </section>
-
-            <!-- Playlist Drawer (hidden by default) -->
-            <aside class="playlist-drawer" id="playlistDrawer" role="complementary" aria-label="لیست پخش">
-                <div class="playlist-header">
-                    <span>📋 لیست پخش</span>
-                    <button class="close-playlist" id="closePlaylist" aria-label="بستن لیست">✕</button>
-                </div>
-                <ul class="playlist-list" id="playlistList" role="list">
-                    <!-- dynamically generated -->
-                </ul>
-            </aside>
-
-            <!-- Recently Played (mini) -->
-            <aside class="recently-played" id="recentlyPlayed" aria-label="اخیراً پخش شده">
-                <span class="recent-title">🕒 اخیراً</span>
-                <ul class="recent-list" id="recentList" role="list"></ul>
-            </aside>
-        </main>
-
-        <!-- Mini Player (floating) -->
-        <div class="mini-player" id="miniPlayer" role="complementary" aria-label="پلیر کوچک">
-            <div class="mini-info">
-                <img id="miniCover" src="covers/c.png" alt="جلد" loading="lazy" />
-                <div>
-                    <span class="mini-title" id="miniTitle">عنوان</span>
-                    <span class="mini-artist" id="miniArtist">خواننده</span>
-                </div>
-            </div>
-            <div class="mini-controls">
-                <button id="miniPlayBtn" aria-label="پخش">▶</button>
-                <button id="miniNextBtn" aria-label="بعدی">⏭</button>
-                <button id="miniExpandBtn" aria-label="بزرگ‌نمایی">⤢</button>
-            </div>
-        </div>
+<main class="layout">
+<section class="hero-card">
+  <div class="hero-copy">
+    <span class="eyebrow">پخش‌کننده رسمی دیار</span>
+    <h1>صدای دیار، همیشه همراه شما</h1>
+    <p>موسیقی‌های دیار قدمگاه و فایل‌های شخصی خودت را در یک Player سریع و حرفه‌ای پخش کن.</p>
+    <div class="hero-actions">
+      <button class="primary" id="openFilesBtn">＋ افزودن فایل از گوشی</button>
+      <button class="secondary" id="scrollLibraryBtn">کتابخانه</button>
+      <input id="fileInput" type="file" accept="audio/*,video/*" multiple hidden>
     </div>
+  </div>
+  <img class="hero-logo" src="assets/images/diyar-logo-source.png" alt="دیار قدمگاه">
+</section>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+<section class="library-card" id="librarySection">
+  <div class="section-head">
+    <div><span class="eyebrow">کتابخانه</span><h2>آهنگ‌های دیار</h2></div>
+    <span class="count-pill" id="libraryCount">0 فایل</span>
+  </div>
+  <div class="search-row">
+    <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="جستجوی عنوان یا خواننده..." autocomplete="off"></label>
+    <select id="filterSelect" aria-label="فیلتر کتابخانه"><option value="all">همه</option><option value="favorites">علاقه‌مندی‌ها</option><option value="recent">اخیراً پخش‌شده</option><option value="local">فایل‌های من</option></select>
+  </div>
+  <div id="libraryList" class="track-grid" aria-live="polite"></div>
+  <div id="emptyState" class="empty hidden"><div>🎵</div><strong>کتابخانه خالی است</strong><p>فایل موسیقی اضافه کن یا playlist آنلاین دیار را به‌روزرسانی کن.</p></div>
+</section>
+
+<section class="player-card" id="playerCard" aria-label="پخش‌کننده">
+  <div class="now-playing">
+    <div class="cover-wrap" id="coverWrap"><img id="albumCover" src="covers/default-cover.png" alt="کاور آهنگ"></div>
+    <div class="now-meta"><span class="eyebrow">در حال پخش</span><h2 id="songTitle">آماده پخش</h2><p id="songArtist">دیار قدمگاه</p><div class="badges"><span id="sourceBadge">دیار</span><span id="formatBadge">—</span></div></div>
+    <button class="heart-btn" id="currentFavBtn" aria-label="افزودن به علاقه‌مندی">♡</button>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-track" id="progressBar" role="slider" tabindex="0" aria-label="موقعیت پخش" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressFill"></div></div>
+    <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+  </div>
+  <div class="main-controls">
+    <button id="shuffleBtn" class="control" title="تصادفی" aria-label="تصادفی">🔀</button>
+    <button id="prevBtn" class="control" title="قبلی" aria-label="قبلی">⏮</button>
+    <button id="playBtn" class="play-control" title="پخش" aria-label="پخش">▶</button>
+    <button id="nextBtn" class="control" title="بعدی" aria-label="بعدی">⏭</button>
+    <button id="repeatBtn" class="control" title="تکرار" aria-label="تکرار">🔁</button>
+  </div>
+  <div class="tools-row">
+    <div class="volume"><button id="muteBtn" class="small-btn" aria-label="بی‌صدا">🔊</button><input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="صدا"></div>
+    <div class="select-tools"><label>سرعت <select id="speedSelect"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><button id="sleepBtn" class="small-btn">⏱ خواب</button></div>
+  </div>
+  <div class="sleep-panel hidden" id="sleepPanel"><button data-min="0">خاموش</button><button data-min="15">۱۵ دقیقه</button><button data-min="30">۳۰ دقیقه</button><button data-min="60">۶۰ دقیقه</button><span id="sleepStatus"></span></div>
+  <audio id="audio" preload="metadata"></audio>
+</section>
+
+<section class="recent-card"><div class="section-head"><div><span class="eyebrow">تاریخچه</span><h2>اخیراً پخش‌شده</h2></div><button class="text-btn" id="clearRecentBtn">پاک‌کردن</button></div><div id="recentList" class="recent-grid"></div></section>
+</main>
+
+<aside id="queueDrawer" class="drawer" aria-hidden="true"><div class="drawer-head"><h2>صف پخش</h2><button id="closeQueueBtn" class="icon-btn">✕</button></div><div id="queueList" class="queue-list"></div></aside>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
