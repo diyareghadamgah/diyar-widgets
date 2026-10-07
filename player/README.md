@@ -1,20 +1,22 @@
-# دیار پلیر — Diyar Player v1.0
+# دیار پلیر v1.1
 
-نسخه حرفه‌ای اولیه بر پایه Player موجود دیار قدمگاه، با حفظ مسیر `/player/` و بدون وابستگی خارجی.
+نسخه حرفه‌ای Player دیار قدمگاه بر پایه نسخه اصلی پروژه.
 
-## امکانات
-- کتابخانه آنلاین از `playlist.json`
-- افزودن فایل صوتی/ویدئویی از دستگاه در همان نشست
-- علاقه‌مندی‌ها، تاریخچه، صف پخش
-- Shuffle / Repeat / Seek / Volume / Speed
-- Sleep Timer
-- Media Session برای کنترل سیستم/هدست در مرورگرهای پشتیبان
-- پوسته روشن و تاریک
-- PWA و Service Worker سازگار با مسیر GitHub Pages
-- Service Worker فایل‌های موسیقی را Cache نمی‌کند تا Range Request خراب نشود.
+## قابلیت‌های v1.1
+- کتابخانه آنلاین + فایل‌های شخصی
+- ذخیره فایل‌های شخصی در IndexedDB برای باقی‌ماندن بعد از Refresh
+- Play/Pause/Next/Previous/Shuffle/Repeat
+- Seek لمسی و موس
+- Favorites و Recently Played
+- صف پخش
+- سرعت پخش و Sleep Timer
+- Media Session
+- Visualizer داخلی با Web Audio API
+- نمایش آنلاین/آفلاین
+- نصب PWA در مرورگرهای پشتیبان
+- Dark/Light mode
+- Service Worker سازگار با GitHub Pages
+- پوشه tools نسخه پایه حفظ شده است.
 
-## انتشار
-محتویات این پوشه را در `diyar-widgets/player/` قرار دهید و Commit کنید. آدرس GitHub Pages پروژه با همان مسیر `/diyar-news/player/` قابل استفاده است.
-
-## افزودن موسیقی واقعی
-فایل‌های صوتی را در `music/` قرار دهید و اطلاعات آنها را در `playlist.json` ثبت کنید. مسیرها باید نسبی و با `/player/` سازگار باشند.
+## مسیر استقرار
+`/diyar-widgets/player/`

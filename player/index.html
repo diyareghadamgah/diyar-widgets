@@ -24,6 +24,8 @@
     <span><strong>دیار پلیر</strong><small>دیار قدمگاه</small></span>
   </a>
   <div class="top-actions">
+    <span class="network-status" id="networkStatus" aria-live="polite">● آنلاین</span>
+    <button class="icon-btn hidden" id="installBtn" aria-label="نصب دیار پلیر" title="نصب دیار پلیر">⬇</button>
     <button class="icon-btn" id="themeBtn" aria-label="تغییر پوسته" title="تغییر پوسته">☾</button>
     <button class="icon-btn" id="favoritesBtn" aria-label="علاقه‌مندی‌ها" title="علاقه‌مندی‌ها">♥<b id="favCount">0</b></button>
     <button class="icon-btn" id="queueBtn" aria-label="صف پخش" title="صف پخش">☰</button>
@@ -65,6 +67,7 @@
     <button class="heart-btn" id="currentFavBtn" aria-label="افزودن به علاقه‌مندی">♡</button>
   </div>
   <div class="progress-wrap">
+    <div class="visualizer-box" id="visualizerBox"><canvas id="visualizer" aria-hidden="true"></canvas></div>
     <div class="progress-track" id="progressBar" role="slider" tabindex="0" aria-label="موقعیت پخش" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressFill"></div></div>
     <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
   </div>
