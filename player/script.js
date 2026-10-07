@@ -7,6 +7,7 @@
 
     // ---------- DOM References ----------
     const audio = new Audio();
+    audio.preload = 'metadata';
     const albumCover = document.getElementById('albumCover');
     const songTitle = document.getElementById('songTitle');
     const songArtist = document.getElementById('songArtist');
@@ -135,8 +136,8 @@
                     playlist = [{
                         title: 'آهنگ نمونه',
                         artist: 'خواننده نمونه',
-                        cover: 'covers/default.jpg',
-                        file: 'music/sample.mp3'
+                        cover: 'covers/c.png',
+                        file: 'music/1.mp3'
                     }];
                 }
                 renderPlaylist();
@@ -160,8 +161,8 @@
                 playlist = [{
                     title: 'آهنگ نمونه',
                     artist: 'خواننده نمونه',
-                    cover: 'covers/default.jpg',
-                    file: 'music/sample.mp3'
+                    cover: 'covers/c.png',
+                    file: 'music/1.mp3'
                 }];
                 renderPlaylist();
                 renderRecentlyPlayed();
@@ -181,10 +182,10 @@
         audio.src = song.file;
         audio.load();
         // Update UI
-        albumCover.src = song.cover || 'covers/default.jpg';
+        albumCover.src = song.cover || 'covers/c.png';
         songTitle.textContent = song.title || 'بی‌عنوان';
         songArtist.textContent = song.artist || 'ناشناس';
-        miniCover.src = song.cover || 'covers/default.jpg';
+        miniCover.src = song.cover || 'covers/c.png';
         miniTitle.textContent = song.title || 'بی‌عنوان';
         miniArtist.textContent = song.artist || 'ناشناس';
         // Highlight active playlist item
@@ -225,7 +226,7 @@
             li.dataset.index = index;
 
             const img = document.createElement('img');
-            img.src = song.cover || 'covers/default.jpg';
+            img.src = song.cover || 'covers/c.png';
             img.alt = 'جلد';
             img.loading = 'lazy';
 
@@ -287,7 +288,7 @@
             const li = document.createElement('li');
             li.setAttribute('role', 'listitem');
             const img = document.createElement('img');
-            img.src = song.cover || 'covers/default.jpg';
+            img.src = song.cover || 'covers/c.png';
             img.alt = 'جلد';
             img.loading = 'lazy';
             const span = document.createElement('span');
@@ -365,28 +366,39 @@
     }
 
     function nextSong() {
-        if (playlist.length <= 1) return;
+        if (!playlist.length) return;
+
+        // A single track can still repeat in 'all' or 'one' mode.
+        if (playlist.length === 1) {
+            if (repeatMode === 'all' || repeatMode === 'one') {
+                audio.currentTime = 0;
+                audio.play().catch(() => {});
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            return;
+        }
+
         let newIndex = currentIndex + 1;
         if (isShuffled) {
-            // Pick random different from current
             let randomIdx;
             do {
                 randomIdx = Math.floor(Math.random() * playlist.length);
-            } while (randomIdx === currentIndex && playlist.length > 1);
+            } while (randomIdx === currentIndex);
             newIndex = randomIdx;
-        } else {
-            if (newIndex >= playlist.length) {
-                if (repeatMode === 'all') {
-                    newIndex = 0;
-                } else {
-                    // end of list, stop
-                    audio.pause();
-                    return;
-                }
+        } else if (newIndex >= playlist.length) {
+            if (repeatMode === 'all') {
+                newIndex = 0;
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                return;
             }
         }
+
         loadSong(newIndex);
-        if (!isPlaying) togglePlay();
+        audio.play().catch(() => {});
     }
 
     function updateProgress() {
@@ -463,65 +475,47 @@
         saveState();
     });
 
-    // Progress seek
-    progressBar.addEventListener('mousedown', (e) => {
+    // Progress seek — pointer events work consistently with mouse, touch and pen.
+    let lastPointerEvent = null;
+    progressBar.addEventListener('pointerdown', (e) => {
+        if (!audio.duration) return;
         isDragging = true;
+        lastPointerEvent = e;
+        progressBar.setPointerCapture?.(e.pointerId);
         seek(e);
     });
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) seek(e);
+    progressBar.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        lastPointerEvent = e;
+        seek(e);
     });
-    document.addEventListener('mouseup', () => {
-        if (isDragging) {
-            isDragging = false;
-            // Update time
-            if (audio.duration) {
-                const rect = progressBar.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                const time = x * audio.duration;
-                audio.currentTime = Math.min(time, audio.duration);
-                saveState();
-            }
-        }
+    progressBar.addEventListener('pointerup', (e) => {
+        if (!isDragging) return;
+        lastPointerEvent = e;
+        seek(e);
+        isDragging = false;
+        commitSeek();
+        progressBar.releasePointerCapture?.(e.pointerId);
     });
-    // Touch events
-    progressBar.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        seekTouch(e);
-    }, { passive: false });
-    progressBar.addEventListener('touchmove', (e) => {
-        if (isDragging) seekTouch(e);
-    }, { passive: false });
-    progressBar.addEventListener('touchend', (e) => {
-        if (isDragging) {
-            isDragging = false;
-            if (audio.duration) {
-                const rect = progressBar.getBoundingClientRect();
-                const touch = e.changedTouches[0];
-                const x = (touch.clientX - rect.left) / rect.width;
-                const time = x * audio.duration;
-                audio.currentTime = Math.min(time, audio.duration);
-                saveState();
-            }
-        }
-    }, { passive: false });
+    progressBar.addEventListener('pointercancel', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        commitSeek();
+    });
+
+    function commitSeek() {
+        if (!audio.duration || !lastPointerEvent) return;
+        const rect = progressBar.getBoundingClientRect();
+        let x = (lastPointerEvent.clientX - rect.left) / rect.width;
+        x = Math.max(0, Math.min(1, x));
+        audio.currentTime = x * audio.duration;
+        saveState();
+    }
 
     function seek(e) {
         if (!audio.duration) return;
         const rect = progressBar.getBoundingClientRect();
         let x = (e.clientX - rect.left) / rect.width;
-        x = Math.max(0, Math.min(1, x));
-        const time = x * audio.duration;
-        progressFill.style.width = `${x * 100}%`;
-        currentTimeEl.textContent = formatTime(time);
-    }
-
-    function seekTouch(e) {
-        e.preventDefault();
-        if (!audio.duration) return;
-        const rect = progressBar.getBoundingClientRect();
-        const touch = e.touches[0];
-        let x = (touch.clientX - rect.left) / rect.width;
         x = Math.max(0, Math.min(1, x));
         const time = x * audio.duration;
         progressFill.style.width = `${x * 100}%`;
@@ -570,7 +564,7 @@
         if (repeatMode === 'one') {
             audio.currentTime = 0;
             audio.play().catch(() => {});
-        } else if (repeatMode === 'all' || playlist.length > 1) {
+        } else if (playlist.length > 1 || repeatMode === 'all') {
             nextSong();
         } else {
             isPlaying = false;
@@ -679,7 +673,7 @@
             artist: song.artist || 'ناشناس',
             album: 'آلبوم',
             artwork: [
-                { src: song.cover || 'covers/default.jpg', sizes: '512x512', type: 'image/jpeg' }
+                { src: song.cover || 'covers/c.png', sizes: '512x512', type: 'image/png' }
             ]
         });
     }

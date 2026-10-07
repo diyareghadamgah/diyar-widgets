@@ -1,32 +1,8 @@
 [
-    {
-        "title": "آهنگ اول",
-        "artist": "خواننده اول",
-        "cover": "covers/song1.jpg",
-        "file": "music/song1.mp3"
-    },
-    {
-        "title": "آهنگ دوم",
-        "artist": "خواننده دوم",
-        "cover": "covers/song2.jpg",
-        "file": "music/song2.mp3"
-    },
-    {
-        "title": "آهنگ سوم",
-        "artist": "خواننده سوم",
-        "cover": "covers/song3.jpg",
-        "file": "music/song3.mp3"
-    },
-    {
-        "title": "آهنگ چهارم",
-        "artist": "خواننده چهارم",
-        "cover": "covers/song4.jpg",
-        "file": "music/song4.mp3"
-    },
-    {
-        "title": "آهنگ پنجم",
-        "artist": "خواننده پنجم",
-        "cover": "covers/song5.jpg",
-        "file": "music/song5.mp3"
-    }
+  {
+    "title": "آهنگ آزمایشی",
+    "artist": "Diyar Player",
+    "cover": "covers/c.png",
+    "file": "music/1.mp3"
+  }
 ]
