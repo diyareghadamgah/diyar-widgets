@@ -22,3 +22,11 @@
 - Visualizer با Web Audio API
 - Media Session و PWA
 - حالت روشن/تاریک و وضعیت آنلاین/آفلاین
+
+
+## v1.4 UI
+- Professional visual layer for Now Playing/player cards
+- Improved mobile spacing and touch targets
+- Focus-visible keyboard accessibility
+- Reduced-motion support
+- Existing playback logic and playlist structure preserved

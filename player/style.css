@@ -11,3 +11,91 @@
 .delete-item{opacity:.7}
 .delete-item:hover{opacity:1}
 @media(max-width:760px){.search-row{grid-template-columns:1fr 1fr}.search{grid-column:1/-1}}
+
+
+/* ===== Diyar Player v1.4 — Professional Now Playing UI ===== */
+:root{
+  --dp-radius:22px;
+  --dp-radius-sm:14px;
+  --dp-shadow:0 12px 36px rgba(0,0,0,.10);
+  --dp-border:rgba(127,127,127,.18);
+}
+
+.now-playing,
+.player-now-playing,
+#nowPlaying{
+  border:1px solid var(--dp-border);
+  border-radius:var(--dp-radius);
+  box-shadow:var(--dp-shadow);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  overflow:hidden;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.now-playing:hover,
+.player-now-playing:hover,
+#nowPlaying:hover{
+  transform:translateY(-1px);
+}
+
+.now-playing img,
+.player-now-playing img,
+#nowPlaying img{
+  border-radius:18px;
+  object-fit:cover;
+  aspect-ratio:1/1;
+}
+
+.progress,
+.progress-bar,
+input[type="range"]{
+  accent-color:currentColor;
+}
+
+button,
+[role="button"]{
+  transition:transform .14s ease,opacity .14s ease,box-shadow .14s ease;
+}
+
+button:active,
+[role="button"]:active{
+  transform:scale(.96);
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:3px solid rgba(80,140,255,.35);
+  outline-offset:2px;
+}
+
+@media (max-width:700px){
+  .now-playing,
+  .player-now-playing,
+  #nowPlaying{
+    border-radius:18px;
+  }
+
+  .now-playing img,
+  .player-now-playing img,
+  #nowPlaying img{
+    border-radius:15px;
+  }
+
+  button{
+    min-height:42px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
