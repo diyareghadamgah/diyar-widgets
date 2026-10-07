@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-07T23:32:49.526Z",
-  "lastUpdatePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۲",
+  "lastUpdate": "2026-10-07T23:48:22.958Z",
+  "lastUpdatePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۸",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,66 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "۲۲۱ شب گذشت؛ گنبدی‌ها هنوز در میدان‌اند",
+      "link": "https://www.mehrnews.com/news/6971471/%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%DA%AF%D8%B0%D8%B4%D8%AA-%DA%AF%D9%86%D8%A8%D8%AF%DB%8C-%D9%87%D8%A7-%D9%87%D9%86%D9%88%D8%B2-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%A7%D9%86%D8%AF",
+      "date": "2026-10-07T23:42:33.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "گنبد-مردم گنبدکاووس در موج ۲۲۱ تجمع‌های شبانه، با حضور پرشور خود بار دیگر بر پایبندی به آرمان‌های انقلاب و استمرار این حرکت تأکید کردند."
+    },
+    {
+      "title": "رامیان؛ ۲۲۱ شب همراهی و تجدید عهد مردم",
+      "link": "https://www.mehrnews.com/news/6971475/%D8%B1%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%D9%87%D9%85%D8%B1%D8%A7%D9%87%DB%8C-%D9%88-%D8%AA%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B9%D9%87%D8%AF-%D9%85%D8%B1%D8%AF%D9%85",
+      "date": "2026-10-07T23:41:45.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۱",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "رامیان-مردم رامیان در موج ۲۲۱ تجمع‌های شبانه، با حضور در کنار یکدیگر، جلوه‌ای از همدلی و استمرار همراهی با آرمان‌های انقلاب را به نمایش گذاشتند."
+    },
+    {
+      "title": "دعوت امام جمعه نگین‌شهر برای حضور در رزمایش «جان‌فدا» در موج ۲۲۱",
+      "link": "https://www.mehrnews.com/news/6971467/%D8%AF%D8%B9%D9%88%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%86%DA%AF%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%D8%B1%D8%B2%D9%85%D8%A7%DB%8C%D8%B4-%D8%AC%D8%A7%D9%86-%D9%81%D8%AF%D8%A7-%D8%AF%D8%B1-%D9%85%D9%88%D8%AC",
+      "date": "2026-10-07T23:40:37.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "آزادشهر- امام جمعه نگین شهر در تجمع شبانه موج ۲۲۱، مردم را برای حضور در رزمایش «جان‌فدا» و همراهی با این برنامه دعوت کرد."
+    },
+    {
+      "title": "روایت نشریه آمریکایی «نیوزویک» از «طوفان‌الاقصی» در سومین سالگرد آن/ حماس جنگ را بُرد",
+      "link": "https://www.qudsonline.ir/news/1169354/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%86%D8%B4%D8%B1%DB%8C%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%86%DB%8C%D9%88%D8%B2%D9%88%DB%8C%DA%A9-%D8%A7%D8%B2-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D9%82%D8%B5%DB%8C-%D8%AF%D8%B1-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B3%D8%A7%D9%84%DA%AF%D8%B1%D8%AF",
+      "date": "2026-10-07T23:34:00.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۴",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "«چگونه حماس با وجود از دست دادن همه چیز، در جنگ پیروز شد؟»"
+    },
+    {
+      "title": "ثروتمندترین کشورهای جهان طی ۲ دهه گذشته چگونه تغییر کرده‌اند؟ (+اینفوگرافیک)",
+      "link": "https://www.asriran.com/fa/news/1197050/%D8%AB%D8%B1%D9%88%D8%AA%D9%85%D9%86%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%B7%DB%8C-2-%D8%AF%D9%87%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%D9%86%D8%AF-%D8%A7%DB%8C%D9%86%D9%81%D9%88%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9",
+      "date": "2026-10-07T23:30:02.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "بررسی روند تولید ناخالص داخلی سرانه کشورها نشان می‌دهد که در فاصله سال‌های ۲۰۰۶ تا ۲۰۲۶، جایگاه اقتصادهای ثروتمند جهان به‌تدریج دستخوش تغییر شده است، در حالی که کشورهای کوچک اروپایی همچنان بخش بزرگی از صدر جدول را در اختیار دارند، سنگاپور با تکیه بر صنایع پیشرفته به رتبه دوم جهان رسیده است."
+    },
+    {
+      "title": "چرا بعضی زن و شوهر‌ها درست قبل از خواب منفجر می‌شوند؟",
+      "link": "https://www.tabnak.ir/fa/news/1397790/%DA%86%D8%B1%D8%A7-%D8%A8%D8%B9%D8%B6%DB%8C-%D8%B2%D9%86-%D9%88-%D8%B4%D9%88%D9%87%D8%B1-%D9%87%D8%A7-%D8%AF%D8%B1%D8%B3%D8%AA-%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D8%AE%D9%88%D8%A7%D8%A8-%D9%85%D9%86%D9%81%D8%AC%D8%B1-%D9%85%DB%8C-%D8%B4%D9%88%D9%86%D8%AF",
+      "date": "2026-10-07T23:30:01.000Z",
+      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "برای بعضی زن و شوهرها عجیب ترین زمان دعوا، همان دقایقی است که قرار است روز تمام شود؛ چراغ ها خاموش شده، هر دو به تخت رفته اند و ناگهان بحثی که می توانست فردا هم مطرح شود، به مشاجره ای جدی تبدیل می شود. آیا واقعا شب زمان خطرناک تری برای رابطه است؟"
+    },
     {
       "title": "صنعت چاپ سنگر دفاع فرهنگی کشور در جنگ تحمیلی اخیر بوده است",
       "link": "https://www.mehrnews.com/news/6971474/%D8%B5%D9%86%D8%B9%D8%AA-%DA%86%D8%A7%D9%BE-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AF%D9%81%D8%A7%D8%B9-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%AC%D9%86%DA%AF-%D8%AA%D8%AD%D9%85%DB%8C%D9%84%DB%8C-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D9%88%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
@@ -261,26 +321,6 @@
       "rssDescription": "یزد- دبیر ستاد تسهیل و رفع موانع تولید کشور با انتقاد از تصمیم‌گیری‌های بدون شناخت از فضای تولید، بر ضرورت استفاده از تجربه و نظر تولیدکنندگان در تصمیمات اقتصادی تأکید کرد."
     },
     {
-      "title": "اجتماع شبانه مردم انقلابی سلماس در خیابان",
-      "link": "https://www.mehrnews.com/news/6971455/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-      "date": "2026-10-07T22:14:33.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۱۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "ارومیه- در این فیلم تصاویری از دویست و بیست و یکمین اجتماع شبانه مردم سلماس در خیابان را می بینید."
-    },
-    {
-      "title": "۲۲۱ شب اتحاد و همدلی مردم انقلابی ارومیه در خیابان",
-      "link": "https://www.mehrnews.com/news/6971454/%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-      "date": "2026-10-07T22:13:51.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۱۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "ارومیه- مردم ولایی ارومیه در دویست و بیست ویکم اجتماع شبانه در حمایت از رهبری و انقلاب در خیابان تجمع کردند."
-    },
-    {
       "title": "گفت‌وگوی تلفنی ترامپ و نتانیاهو",
       "link": "https://www.khabaronline.ir/news/2285270/%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%AA%D9%84%D9%81%D9%86%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%88-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88",
       "date": "2026-10-07T22:12:35.000Z",
@@ -309,16 +349,6 @@
       "flag": "🇮🇷",
       "category": "علمی و فناوری",
       "rssDescription": "مهندسان سوئیسی، موتور انعطاف‌پذیری به ضخامت تنها چند میلی‌متر ساخته‌اند که از دو رشته درهم‌تنیده و پوشیده از الکترود تشکیل شده است و نیروی کافی را برای به حرکت درآوردن سیستم‌های رباتیک نرم تولید می‌کند."
-    },
-    {
-      "title": "ترکیه برای کمک به عربستان تجهیزات دفاعی ارسال می‌کند",
-      "link": "https://www.mehrnews.com/news/6971447/%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%DA%A9%D9%85%DA%A9-%D8%A8%D9%87-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%AA%D8%AC%D9%87%DB%8C%D8%B2%D8%A7%D8%AA-%D8%AF%D9%81%D8%A7%D8%B9%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
-      "date": "2026-10-07T22:04:13.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۰۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "چند مقام مسئول اعلام کردند ترکیه در چارچوب تعهدات دفاعی مشترک با عربستان و پاکستان، حمایت‌های فنی و دفاعی برای کمک به ریاض در مقابله با انصارالله یمن ارائه می‌کند."
     },
     {
       "title": "روزنامه قدس شماره ۱۱۰۴۶",
@@ -906,7 +936,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/fY3magJ7geEb-2pQPSCHiLfEEFjZecJbMMd3qFO-pouIdMeWwkev9HYqLtls5Fh8_TDSE1CyFksatvufA0xDVQZpD27Vqj4GjXnf1hzKe1EgdKY2_mkqW55v02EORmKbYA0siAbwUWeVlnvefN2sJwsoFWe4FCllBZnT-Y1mu7xLdzz0S-W7Hfa0hoIKfhGr/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9rpIUg-oEyuMfKfZHhL2ZQ1BO6LQkS-d6pVSMAfdGUzYIrNC6niEhU2GrMxKJtxp9naV8e6tYUXF3TQAop3-WBxRP2LnGNEtGBpPjzNzfECjzLv1CYxLh4Z-cH7zWfoZFo_Nh5BjwTKxB44XCrnv35m2HtBwSu6q0xHXE5ZVKvrwlJYrvjuPClqjn-IdlmX1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -916,7 +946,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/-ClYIQ06GLqDsLAh5CcEoWzTTQhf6eS8TZ1fiCfSEsxi8kPrM6tJQmt51vA863kw2MHnS2yXZHnxhPGvBvWEmGvys_LE6Kk9rdaahPKeWtH7AI-eSlF1n8xoYaEaApeufXttxVvoj4UKAs2TA5TAI1H8g05FjxSajsgKFYmtLrvEHM-VmWoNSXahaSFbjwLL/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7y_LuN9_8Mv4slr2ZDDI1InM2-ZrymSHgZNABFPheJGGMb09F8Y0ZIAfx7AuyabyFsk-Mi0LkUxzvOOVj-IfIpeJxCfKmZk69w5yZFv_An477KTPUDOHlCdIYiqpOppl-GJyHsv8Sw_K5T_Ux2o2Ll7sl2HiopbWNQRGGQPOzc7BNQj2cP43UQLMaFeE4AAW/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -926,7 +956,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/A9PgHsRF9bi7zTEXaMvmOazIa26S8qQl2-EgdNB_lIdYsdVK1cao1pZ4af8yk08dSfWuhYpuBYk1N55Cc1yyXURL8thQD5TcbIyxpQVLIJbBzwgOWALMs9bdRXalPBR-cpNu7h2PCTaMD_yP2Klqoeolxp3Cv3BZ4gFOcde72VKRRGpuxSHYcE9MPzgx-iu1/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/TVEQFCySYAoiUcIgTTNT2fqkg6tWdm5GiDe3CArrQBk9sVK_-9REbVaXvG5a7UBTFURGoUF7N1-UDJshHWH4JyMpM5a_JEgYH-E6lOArFWEtXZo3_TAuce_p5ctQaROqlhJuCYDSfkWbAxfY7Dfumd26pid-0wFsLut2Hw0TL6M2eAcvGhWF4H7EgKTZr_S2/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز پنجشنبه ۱۶ مهر + جدول",
@@ -936,7 +966,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/yvKXDvUhEYH9sWP9baP8TbyOC0LBmmNxXVq3mChPZhMuts19Th0VwpGCzQZuXsAB4NBOZyygAaJDZ0dG1OtvCUGP4VYGuy_iTWzPKe-0HQbJmMzMR76-zW7kvILtBC9A6WRAguoczFYu7AnOvz0yLi_xTmIa9v29AV6AEmT-6Jl0IdYFapwQzqHYJnTELesf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/rJi9RXWl30U7t2HEJTkixFYImuhSUQd4_KsUJx3DAieFbsjd4aGy8DMw-2UyzL711zlkiI1i-W5RvuKviOXbengTJUBFxVujCYohOQktJZzxVpSvdxIv5Gys31XHjGzQ6WgWoZyMUiKexicsxccAULVRe2FSpt0zzSLvJtzsi9DOPo5s5c89asS7sAGMUiP7/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -946,7 +976,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aRcH73pULVSinaQ1OYUWjZX3mlAIoPA7ZMFotsqmF7cMB9meTU2gSlHW6Spuk6i1sonCxAL2x5pfmfuwqCJ4FhmI_8OPSUj0tLDHGG_wpDZYLU8KsldocKVzRDWBRatwjbvoBUwMVPVRjAGnGMC7JqFKpnlL19NKWw5mRnLhymoBTnjBF4cIcPE31PfkULOJ/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/RfPInS0lw-4O7x-zMPZ-5dSa83f9-lRE-746mmPRMTjg1P6ZKWZXhLwUlxQv4L40QvXw6mItwGxoWGC7AtYgaSlZpVWlWOFV1jIveWh4RhtM5YJWus7ITYZ68kYRPT8nEIXaYvv1zODhVKp2eckzlcUahHIyqDXUVocN40Xn07b0npddtMoPL47EbVsVVtmc/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "تمرین یک زن برای هدف‌گیری با RPG در برنامه آموزشی در تهران + عکس",
@@ -997,36 +1027,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران-ایرنا- وزیر ورزش و جوانان در آغاز سفری دو روزه وارد ایروان شد و مورد استقبال سفیر ایران در ارمنستان و معاون وزیر آموزش، علوم، فرهنگ و ورزش این کشور قرار گرفت."
-    },
-    {
-      "title": "پوستر نخستین رویداد ملی عکس معماری «دالان» در کاشان رونمایی شد",
-      "link": "https://www.irna.ir/news/86286508/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF-%D9%85%D9%84%DB%8C-%D8%B9%DA%A9%D8%B3-%D9%85%D8%B9%D9%85%D8%A7%D8%B1%DB%8C-%D8%AF%D8%A7%D9%84%D8%A7%D9%86-%D8%AF%D8%B1-%DA%A9%D8%A7%D8%B4%D8%A7%D9%86-%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF",
-      "date": "2026-10-07T20:25:05.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۵",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "کاشان - ایرنا - پوستر نخستین رویداد ملی عکس معماری «دالان» چهارشنبه شب در آیینی با حضور شهردار کاشان، رئیس سازمان فرهنگی و ورزشی شهرداری و تعدادی از عکاسان و هنرمندان کاشان رونمایی شد."
-    },
-    {
-      "title": "رونمایی از مجسمه دونالد ترامپ با عنوان طاعون نارنجی در مقر پارلمان اروپا در استراسبورگ",
-      "link": "https://www.asriran.com/fa/news/1197192/%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%D9%85%D8%AC%D8%B3%D9%85%D9%87-%D8%AF%D9%88%D9%86%D8%A7%D9%84%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%A7-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B7%D8%A7%D8%B9%D9%88%D9%86-%D9%86%D8%A7%D8%B1%D9%86%D8%AC%DB%8C-%D8%AF%D8%B1-%D9%85%D9%82%D8%B1-%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%B3%D8%A8%D9%88%D8%B1%DA%AF",
-      "date": "2026-10-07T20:24:56.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۴",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "رونمایی از یک مجسمه طلایی و بحث‌برانگیز از دونالد ترامپ با عنوان «طاعون نارنجی» در مقر پارلمان اروپا در استراسبورگ، واکنش‌های گسترده‌ای را در این نهاد اروپایی برانگیخت. این اثر هنری که توسط «ینس گالتشیوت»، هنرمند دانمارکی طراحی شده، با نام‌های «طاعون نارنجی» و «پادشاه ظلم» شناخته می‌شود. این مجسمه در یکی از پرترددترین نقاط ارتباطی پارلمان اروپا نصب شده و طبق برنامه‌ریزی، تا روز پنجشنبه در معرض دید قرار خواهد داشت."
-    },
-    {
-      "title": "بلومبرگ: چین به دو قطعه حساس اف-۳۵ آمریکا دست پیدا کرده است",
-      "link": "https://www.asriran.com/fa/news/1197193/%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%DA%86%DB%8C%D9%86-%D8%A8%D9%87-%D8%AF%D9%88-%D9%82%D8%B7%D8%B9%D9%87-%D8%AD%D8%B3%D8%A7%D8%B3-%D8%A7%D9%81-35-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B3%D8%AA-%D9%BE%DB%8C%D8%AF%D8%A7-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-07T20:24:02.000Z",
-      "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۴",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "کارمند شرکت UPS ایمیل امنیتی حاوی هشدار درباره ممنوعیت عبور محموله از هنگ‌کنگ را مشاهده نکرد. قرار بود این محموله قطعات جنگنده از مسیر کره جنوبی و تایوان ارسال شود، اما برای تسریع در تحویل، به اشتباه از مسیر هنگ‌کنگ رفت"
     }
   ],
   "categorizedNews": {
@@ -1050,16 +1050,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "وزیر علوم زمان احتمالی اعلام نتایج نهایی کنکور را اعلام کرد."
-      },
-      {
-        "title": "۲۲۱ شب اتحاد و همدلی مردم انقلابی ارومیه در خیابان",
-        "link": "https://www.mehrnews.com/news/6971454/%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-        "date": "2026-10-07T22:13:51.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۱۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "ارومیه- مردم ولایی ارومیه در دویست و بیست ویکم اجتماع شبانه در حمایت از رهبری و انقلاب در خیابان تجمع کردند."
       },
       {
         "title": "نخبگان در پستو، سالخوردگان وزارتخانه در ماموریت! / سهم جوان‌ها از مدیریت کشور کجاست؟",
@@ -1152,6 +1142,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "ثروتمندترین کشورهای جهان طی ۲ دهه گذشته چگونه تغییر کرده‌اند؟ (+اینفوگرافیک)",
+        "link": "https://www.asriran.com/fa/news/1197050/%D8%AB%D8%B1%D9%88%D8%AA%D9%85%D9%86%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%B7%DB%8C-2-%D8%AF%D9%87%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%D9%86%D8%AF-%D8%A7%DB%8C%D9%86%D9%81%D9%88%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9",
+        "date": "2026-10-07T23:30:02.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "بررسی روند تولید ناخالص داخلی سرانه کشورها نشان می‌دهد که در فاصله سال‌های ۲۰۰۶ تا ۲۰۲۶، جایگاه اقتصادهای ثروتمند جهان به‌تدریج دستخوش تغییر شده است، در حالی که کشورهای کوچک اروپایی همچنان بخش بزرگی از صدر جدول را در اختیار دارند، سنگاپور با تکیه بر صنایع پیشرفته به رتبه دوم جهان رسیده است."
+      },
       {
         "title": "تولیت آستان قدس رضوی: عشایر در صیانت از امنیت و تمامیت ارضی کشور و اقتصاد، سرآمد هستند",
         "link": "https://www.qudsonline.ir/news/1169289/%D8%AA%D9%88%D9%84%DB%8C%D8%AA-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86-%D9%82%D8%AF%D8%B3-%D8%B1%D8%B6%D9%88%DB%8C-%D8%B9%D8%B4%D8%A7%DB%8C%D8%B1-%D8%AF%D8%B1-%D8%B5%DB%8C%D8%A7%D9%86%D8%AA-%D8%A7%D8%B2-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%88-%D8%AA%D9%85%D8%A7%D9%85%DB%8C%D8%AA-%D8%A7%D8%B1%D8%B6%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1",
@@ -1297,6 +1297,16 @@
     ],
     "فرهنگی و هنری": [
       {
+        "title": "رامیان؛ ۲۲۱ شب همراهی و تجدید عهد مردم",
+        "link": "https://www.mehrnews.com/news/6971475/%D8%B1%D8%A7%D9%85%DB%8C%D8%A7%D9%86-%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%D9%87%D9%85%D8%B1%D8%A7%D9%87%DB%8C-%D9%88-%D8%AA%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B9%D9%87%D8%AF-%D9%85%D8%B1%D8%AF%D9%85",
+        "date": "2026-10-07T23:41:45.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۱",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "رامیان-مردم رامیان در موج ۲۲۱ تجمع‌های شبانه، با حضور در کنار یکدیگر، جلوه‌ای از همدلی و استمرار همراهی با آرمان‌های انقلاب را به نمایش گذاشتند."
+      },
+      {
         "title": "صنعت چاپ سنگر دفاع فرهنگی کشور در جنگ تحمیلی اخیر بوده است",
         "link": "https://www.mehrnews.com/news/6971474/%D8%B5%D9%86%D8%B9%D8%AA-%DA%86%D8%A7%D9%BE-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AF%D9%81%D8%A7%D8%B9-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%AC%D9%86%DA%AF-%D8%AA%D8%AD%D9%85%DB%8C%D9%84%DB%8C-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D9%88%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
         "date": "2026-10-07T23:22:07.000Z",
@@ -1325,16 +1335,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "تصاویر تازه‌ای از بهاره رهنما، بازیگر سینما، تلویزیون و تئاتر منتشر شده که او را در حال تجربه هنر مجسمه‌سازی نشان می‌دهد؛ فعالیتی متفاوت که نگاه کاربران را به خود جلب کرده است."
-      },
-      {
-        "title": "اجتماع شبانه مردم انقلابی سلماس در خیابان",
-        "link": "https://www.mehrnews.com/news/6971455/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
-        "date": "2026-10-07T22:14:33.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۱۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "ارومیه- در این فیلم تصاویری از دویست و بیست و یکمین اجتماع شبانه مردم سلماس در خیابان را می بینید."
       },
       {
         "title": "گرامیداشت کودکان میناب در نخستین شب کنسرت شجریان",
@@ -1404,16 +1404,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "سی‌وهشتمین جشنواره بین‌المللی فیلم‌های کودکان و نوجوانان، یازدهم تا شانزدهم به میزبانی اصفهان برگزار می‌شود."
-      },
-      {
-        "title": "پوستر نخستین رویداد ملی عکس معماری «دالان» در کاشان رونمایی شد",
-        "link": "https://www.irna.ir/news/86286508/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF-%D9%85%D9%84%DB%8C-%D8%B9%DA%A9%D8%B3-%D9%85%D8%B9%D9%85%D8%A7%D8%B1%DB%8C-%D8%AF%D8%A7%D9%84%D8%A7%D9%86-%D8%AF%D8%B1-%DA%A9%D8%A7%D8%B4%D8%A7%D9%86-%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF",
-        "date": "2026-10-07T20:25:05.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۵",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "کاشان - ایرنا - پوستر نخستین رویداد ملی عکس معماری «دالان» چهارشنبه شب در آیینی با حضور شهردار کاشان، رئیس سازمان فرهنگی و ورزشی شهرداری و تعدادی از عکاسان و هنرمندان کاشان رونمایی شد."
       }
     ],
     "اجتماعی": [
@@ -1512,6 +1502,16 @@
     ],
     "بین‌الملل": [
       {
+        "title": "روایت نشریه آمریکایی «نیوزویک» از «طوفان‌الاقصی» در سومین سالگرد آن/ حماس جنگ را بُرد",
+        "link": "https://www.qudsonline.ir/news/1169354/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%D9%86%D8%B4%D8%B1%DB%8C%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D9%86%DB%8C%D9%88%D8%B2%D9%88%DB%8C%DA%A9-%D8%A7%D8%B2-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D9%82%D8%B5%DB%8C-%D8%AF%D8%B1-%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B3%D8%A7%D9%84%DA%AF%D8%B1%D8%AF",
+        "date": "2026-10-07T23:34:00.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۴",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "«چگونه حماس با وجود از دست دادن همه چیز، در جنگ پیروز شد؟»"
+      },
+      {
         "title": "واکنش ترامپ به سالگرد عملیات طوفان الاقصی",
         "link": "https://www.mehrnews.com/news/6971472/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D9%87-%D8%B3%D8%A7%D9%84%DA%AF%D8%B1%D8%AF-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%A7%D9%84%D8%A7%D9%82%D8%B5%DB%8C",
         "date": "2026-10-07T23:18:27.000Z",
@@ -1590,16 +1590,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "وزیر جنگ آمریکا در مراسم استقبال از نیروهای آمریکا در ناو هواپیمابر آبراهام لینکلن در سن‌دیگو با تکرار لفاظی های ضد ایرانی، خطاب به آنان، مدعی تغییر مسیر تاریخ شد."
-      },
-      {
-        "title": "ترکیه برای کمک به عربستان تجهیزات دفاعی ارسال می‌کند",
-        "link": "https://www.mehrnews.com/news/6971447/%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%DA%A9%D9%85%DA%A9-%D8%A8%D9%87-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%AA%D8%AC%D9%87%DB%8C%D8%B2%D8%A7%D8%AA-%D8%AF%D9%81%D8%A7%D8%B9%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
-        "date": "2026-10-07T22:04:13.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۲:۰۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "چند مقام مسئول اعلام کردند ترکیه در چارچوب تعهدات دفاعی مشترک با عربستان و پاکستان، حمایت‌های فنی و دفاعی برای کمک به ریاض در مقابله با انصارالله یمن ارائه می‌کند."
       },
       {
         "title": "حمله به خط لوله نفت در حومه حسکه سوریه",
@@ -1850,29 +1840,39 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "سازمان عملیات تجارت دریایی بریتانیا چهارشبه شب اعلام کرد یک نفتکش در فاصله ۵۱ مایل دریایی شهر الشمال قطر، هدف اصابت چندین پرتابه ناشناس قرار گرفته است."
-      },
-      {
-        "title": "رونمایی از مجسمه دونالد ترامپ با عنوان طاعون نارنجی در مقر پارلمان اروپا در استراسبورگ",
-        "link": "https://www.asriran.com/fa/news/1197192/%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%D9%85%D8%AC%D8%B3%D9%85%D9%87-%D8%AF%D9%88%D9%86%D8%A7%D9%84%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%A7-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B7%D8%A7%D8%B9%D9%88%D9%86-%D9%86%D8%A7%D8%B1%D9%86%D8%AC%DB%8C-%D8%AF%D8%B1-%D9%85%D9%82%D8%B1-%D9%BE%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%B3%D8%A8%D9%88%D8%B1%DA%AF",
-        "date": "2026-10-07T20:24:56.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۴",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "رونمایی از یک مجسمه طلایی و بحث‌برانگیز از دونالد ترامپ با عنوان «طاعون نارنجی» در مقر پارلمان اروپا در استراسبورگ، واکنش‌های گسترده‌ای را در این نهاد اروپایی برانگیخت. این اثر هنری که توسط «ینس گالتشیوت»، هنرمند دانمارکی طراحی شده، با نام‌های «طاعون نارنجی» و «پادشاه ظلم» شناخته می‌شود. این مجسمه در یکی از پرترددترین نقاط ارتباطی پارلمان اروپا نصب شده و طبق برنامه‌ریزی، تا روز پنجشنبه در معرض دید قرار خواهد داشت."
-      },
-      {
-        "title": "بلومبرگ: چین به دو قطعه حساس اف-۳۵ آمریکا دست پیدا کرده است",
-        "link": "https://www.asriran.com/fa/news/1197193/%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%DA%AF-%DA%86%DB%8C%D9%86-%D8%A8%D9%87-%D8%AF%D9%88-%D9%82%D8%B7%D8%B9%D9%87-%D8%AD%D8%B3%D8%A7%D8%B3-%D8%A7%D9%81-35-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B3%D8%AA-%D9%BE%DB%8C%D8%AF%D8%A7-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-07T20:24:02.000Z",
-        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۰:۲۴",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "کارمند شرکت UPS ایمیل امنیتی حاوی هشدار درباره ممنوعیت عبور محموله از هنگ‌کنگ را مشاهده نکرد. قرار بود این محموله قطعات جنگنده از مسیر کره جنوبی و تایوان ارسال شود، اما برای تسریع در تحویل، به اشتباه از مسیر هنگ‌کنگ رفت"
       }
     ],
     "متفرقه": [
+      {
+        "title": "۲۲۱ شب گذشت؛ گنبدی‌ها هنوز در میدان‌اند",
+        "link": "https://www.mehrnews.com/news/6971471/%DB%B2%DB%B2%DB%B1-%D8%B4%D8%A8-%DA%AF%D8%B0%D8%B4%D8%AA-%DA%AF%D9%86%D8%A8%D8%AF%DB%8C-%D9%87%D8%A7-%D9%87%D9%86%D9%88%D8%B2-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%A7%D9%86%D8%AF",
+        "date": "2026-10-07T23:42:33.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "گنبد-مردم گنبدکاووس در موج ۲۲۱ تجمع‌های شبانه، با حضور پرشور خود بار دیگر بر پایبندی به آرمان‌های انقلاب و استمرار این حرکت تأکید کردند."
+      },
+      {
+        "title": "دعوت امام جمعه نگین‌شهر برای حضور در رزمایش «جان‌فدا» در موج ۲۲۱",
+        "link": "https://www.mehrnews.com/news/6971467/%D8%AF%D8%B9%D9%88%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%86%DA%AF%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%B1-%D8%B1%D8%B2%D9%85%D8%A7%DB%8C%D8%B4-%D8%AC%D8%A7%D9%86-%D9%81%D8%AF%D8%A7-%D8%AF%D8%B1-%D9%85%D9%88%D8%AC",
+        "date": "2026-10-07T23:40:37.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۴۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "آزادشهر- امام جمعه نگین شهر در تجمع شبانه موج ۲۲۱، مردم را برای حضور در رزمایش «جان‌فدا» و همراهی با این برنامه دعوت کرد."
+      },
+      {
+        "title": "چرا بعضی زن و شوهر‌ها درست قبل از خواب منفجر می‌شوند؟",
+        "link": "https://www.tabnak.ir/fa/news/1397790/%DA%86%D8%B1%D8%A7-%D8%A8%D8%B9%D8%B6%DB%8C-%D8%B2%D9%86-%D9%88-%D8%B4%D9%88%D9%87%D8%B1-%D9%87%D8%A7-%D8%AF%D8%B1%D8%B3%D8%AA-%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D8%AE%D9%88%D8%A7%D8%A8-%D9%85%D9%86%D9%81%D8%AC%D8%B1-%D9%85%DB%8C-%D8%B4%D9%88%D9%86%D8%AF",
+        "date": "2026-10-07T23:30:01.000Z",
+        "datePersian": "۱۵ مهر ۱۴۰۵، ۲۳:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "برای بعضی زن و شوهرها عجیب ترین زمان دعوا، همان دقایقی است که قرار است روز تمام شود؛ چراغ ها خاموش شده، هر دو به تخت رفته اند و ناگهان بحثی که می توانست فردا هم مطرح شود، به مشاجره ای جدی تبدیل می شود. آیا واقعا شب زمان خطرناک تری برای رابطه است؟"
+      },
       {
         "title": "مهندسان اولین سازه تیتانیومی شناور جهان را ساختند",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3250711",
@@ -2001,7 +2001,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/fY3magJ7geEb-2pQPSCHiLfEEFjZecJbMMd3qFO-pouIdMeWwkev9HYqLtls5Fh8_TDSE1CyFksatvufA0xDVQZpD27Vqj4GjXnf1hzKe1EgdKY2_mkqW55v02EORmKbYA0siAbwUWeVlnvefN2sJwsoFWe4FCllBZnT-Y1mu7xLdzz0S-W7Hfa0hoIKfhGr/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9rpIUg-oEyuMfKfZHhL2ZQ1BO6LQkS-d6pVSMAfdGUzYIrNC6niEhU2GrMxKJtxp9naV8e6tYUXF3TQAop3-WBxRP2LnGNEtGBpPjzNzfECjzLv1CYxLh4Z-cH7zWfoZFo_Nh5BjwTKxB44XCrnv35m2HtBwSu6q0xHXE5ZVKvrwlJYrvjuPClqjn-IdlmX1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -2011,7 +2011,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/-ClYIQ06GLqDsLAh5CcEoWzTTQhf6eS8TZ1fiCfSEsxi8kPrM6tJQmt51vA863kw2MHnS2yXZHnxhPGvBvWEmGvys_LE6Kk9rdaahPKeWtH7AI-eSlF1n8xoYaEaApeufXttxVvoj4UKAs2TA5TAI1H8g05FjxSajsgKFYmtLrvEHM-VmWoNSXahaSFbjwLL/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/7y_LuN9_8Mv4slr2ZDDI1InM2-ZrymSHgZNABFPheJGGMb09F8Y0ZIAfx7AuyabyFsk-Mi0LkUxzvOOVj-IfIpeJxCfKmZk69w5yZFv_An477KTPUDOHlCdIYiqpOppl-GJyHsv8Sw_K5T_Ux2o2Ll7sl2HiopbWNQRGGQPOzc7BNQj2cP43UQLMaFeE4AAW/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -2021,7 +2021,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/A9PgHsRF9bi7zTEXaMvmOazIa26S8qQl2-EgdNB_lIdYsdVK1cao1pZ4af8yk08dSfWuhYpuBYk1N55Cc1yyXURL8thQD5TcbIyxpQVLIJbBzwgOWALMs9bdRXalPBR-cpNu7h2PCTaMD_yP2Klqoeolxp3Cv3BZ4gFOcde72VKRRGpuxSHYcE9MPzgx-iu1/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/TVEQFCySYAoiUcIgTTNT2fqkg6tWdm5GiDe3CArrQBk9sVK_-9REbVaXvG5a7UBTFURGoUF7N1-UDJshHWH4JyMpM5a_JEgYH-E6lOArFWEtXZo3_TAuce_p5ctQaROqlhJuCYDSfkWbAxfY7Dfumd26pid-0wFsLut2Hw0TL6M2eAcvGhWF4H7EgKTZr_S2/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز پنجشنبه ۱۶ مهر + جدول",
@@ -2031,7 +2031,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/yvKXDvUhEYH9sWP9baP8TbyOC0LBmmNxXVq3mChPZhMuts19Th0VwpGCzQZuXsAB4NBOZyygAaJDZ0dG1OtvCUGP4VYGuy_iTWzPKe-0HQbJmMzMR76-zW7kvILtBC9A6WRAguoczFYu7AnOvz0yLi_xTmIa9v29AV6AEmT-6Jl0IdYFapwQzqHYJnTELesf/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/rJi9RXWl30U7t2HEJTkixFYImuhSUQd4_KsUJx3DAieFbsjd4aGy8DMw-2UyzL711zlkiI1i-W5RvuKviOXbengTJUBFxVujCYohOQktJZzxVpSvdxIv5Gys31XHjGzQ6WgWoZyMUiKexicsxccAULVRe2FSpt0zzSLvJtzsi9DOPo5s5c89asS7sAGMUiP7/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز پنجشنبه ۱۶ مهر ۱۴۰۵",
@@ -2041,7 +2041,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/aRcH73pULVSinaQ1OYUWjZX3mlAIoPA7ZMFotsqmF7cMB9meTU2gSlHW6Spuk6i1sonCxAL2x5pfmfuwqCJ4FhmI_8OPSUj0tLDHGG_wpDZYLU8KsldocKVzRDWBRatwjbvoBUwMVPVRjAGnGMC7JqFKpnlL19NKWw5mRnLhymoBTnjBF4cIcPE31PfkULOJ/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/RfPInS0lw-4O7x-zMPZ-5dSa83f9-lRE-746mmPRMTjg1P6ZKWZXhLwUlxQv4L40QvXw6mItwGxoWGC7AtYgaSlZpVWlWOFV1jIveWh4RhtM5YJWus7ITYZ68kYRPT8nEIXaYvv1zODhVKp2eckzlcUahHIyqDXUVocN40Xn07b0npddtMoPL47EbVsVVtmc/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       }
     ]
   }
