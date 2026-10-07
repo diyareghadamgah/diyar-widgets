@@ -1,22 +1,18 @@
-# دیار پلیر v1.1
+# دیار پلیر v1.2
 
 نسخه حرفه‌ای Player دیار قدمگاه بر پایه نسخه اصلی پروژه.
 
-## قابلیت‌های v1.1
-- کتابخانه آنلاین + فایل‌های شخصی
-- ذخیره فایل‌های شخصی در IndexedDB برای باقی‌ماندن بعد از Refresh
-- Play/Pause/Next/Previous/Shuffle/Repeat
-- Seek لمسی و موس
-- Favorites و Recently Played
-- صف پخش
-- سرعت پخش و Sleep Timer
-- Media Session
-- Visualizer داخلی با Web Audio API
-- نمایش آنلاین/آفلاین
-- نصب PWA در مرورگرهای پشتیبان
-- Dark/Light mode
-- Service Worker سازگار با GitHub Pages
-- پوشه tools نسخه پایه حفظ شده است.
+## امکانات
+- کتابخانه آنلاین و فایل‌های شخصی
+- IndexedDB برای نگهداری فایل‌های شخصی
+- علاقه‌مندی، تاریخچه، صف پخش و جستجو
+- فیلتر دسته‌بندی و مرتب‌سازی
+- حذف فایل شخصی از کتابخانه
+- اشتراک‌گذاری/کپی لینک آهنگ آنلاین
+- Shuffle / Repeat / Seek / Speed / Sleep Timer
+- Visualizer با Web Audio API
+- Media Session و PWA
+- حالت روشن/تاریک و وضعیت آنلاین/آفلاین
 
-## مسیر استقرار
-`/diyar-widgets/player/`
+## ساختار
+پروژه برای استقرار در `diyar-widgets/player/` و GitHub Pages طراحی شده است.

@@ -55,6 +55,8 @@
   <div class="search-row">
     <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="جستجوی عنوان یا خواننده..." autocomplete="off"></label>
     <select id="filterSelect" aria-label="فیلتر کتابخانه"><option value="all">همه</option><option value="favorites">علاقه‌مندی‌ها</option><option value="recent">اخیراً پخش‌شده</option><option value="local">فایل‌های من</option></select>
+    <select id="categorySelect" aria-label="دسته‌بندی"><option value="all">همه دسته‌ها</option></select>
+    <select id="sortSelect" aria-label="مرتب‌سازی"><option value="default">ترتیب پیش‌فرض</option><option value="title">عنوان</option><option value="artist">خواننده</option><option value="recent">جدیدترین پخش</option></select>
   </div>
   <div id="libraryList" class="track-grid" aria-live="polite"></div>
   <div id="emptyState" class="empty hidden"><div>🎵</div><strong>کتابخانه خالی است</strong><p>فایل موسیقی اضافه کن یا playlist آنلاین دیار را به‌روزرسانی کن.</p></div>
@@ -64,7 +66,7 @@
   <div class="now-playing">
     <div class="cover-wrap" id="coverWrap"><img id="albumCover" src="covers/default-cover.png" alt="کاور آهنگ"></div>
     <div class="now-meta"><span class="eyebrow">در حال پخش</span><h2 id="songTitle">آماده پخش</h2><p id="songArtist">دیار قدمگاه</p><div class="badges"><span id="sourceBadge">دیار</span><span id="formatBadge">—</span></div></div>
-    <button class="heart-btn" id="currentFavBtn" aria-label="افزودن به علاقه‌مندی">♡</button>
+    <div class="now-actions"><button class="heart-btn" id="currentFavBtn" aria-label="افزودن به علاقه‌مندی">♡</button><button class="small-btn" id="shareBtn" aria-label="اشتراک‌گذاری آهنگ">↗</button></div>
   </div>
   <div class="progress-wrap">
     <div class="visualizer-box" id="visualizerBox"><canvas id="visualizer" aria-hidden="true"></canvas></div>

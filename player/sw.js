@@ -1,4 +1,4 @@
-const VERSION='diyar-player-v1.1.0';
+const VERSION='diyar-player-v1.2.0';
 const SHELL=[
   './','./index.html','./style.css','./script.js','./playlist.json','./manifest.json',
   './covers/default-cover.png','./covers/c.png','./assets/images/diyar-logo-source.png',

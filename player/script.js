@@ -3,7 +3,7 @@
   const $ = s => document.querySelector(s);
   const audio = $('#audio');
   const els = {
-    list: $('#libraryList'), empty: $('#emptyState'), search: $('#searchInput'), filter: $('#filterSelect'), count: $('#libraryCount'),
+    list: $('#libraryList'), empty: $('#emptyState'), search: $('#searchInput'), filter: $('#filterSelect'), category: $('#categorySelect'), sort: $('#sortSelect'), count: $('#libraryCount'),
     cover: $('#albumCover'), title: $('#songTitle'), artist: $('#songArtist'), source: $('#sourceBadge'), format: $('#formatBadge'),
     progress: $('#progressBar'), fill: $('#progressFill'), current: $('#currentTime'), duration: $('#duration'),
     play: $('#playBtn'), prev: $('#prevBtn'), next: $('#nextBtn'), shuffle: $('#shuffleBtn'), repeat: $('#repeatBtn'),
@@ -12,7 +12,7 @@
     sleepPanel: $('#sleepPanel'), sleepStatus: $('#sleepStatus'), speed: $('#speedSelect'), theme: $('#themeBtn'),
     install: $('#installBtn'), network: $('#networkStatus'), visualizer: $('#visualizer'), visualizerBox: $('#visualizerBox')
   };
-  const KEY='diyar_player_v1_1';
+  const KEY='diyar_player_v1_2';
   const DB='diyar_player_media_v1';
   const defaults={index:0,time:0,volume:.8,repeat:'none',shuffle:false,favorites:[],recent:[],theme:'dark',speed:1,wasPlaying:false};
   let state=loadState(), playlist=[], currentIndex=0, isDragging=false, sleepTimer=null, deferredInstall=null;
@@ -26,7 +26,7 @@
   function id(song){return song?.id||song?.file||`${song?.title||''}|${song?.artist||''}`}
   function fav(song){return !!song&&state.favorites.includes(id(song))}
   function current(){return playlist[currentIndex]}
-  function normalizeSong(s,source='دیار',local=false){return {...s,id:s.id||s.file||crypto.randomUUID(),source,local,cover:s.cover||'covers/default-cover.png',title:s.title||'بدون عنوان',artist:s.artist||'ناشناخته',type:s.type||'audio/mpeg'}}
+  function normalizeSong(s,source='دیار',local=false){return {...s,id:s.id||s.file||crypto.randomUUID(),source,local,cover:s.cover||'covers/default-cover.png',title:s.title||'بدون عنوان',artist:s.artist||'ناشناخته',album:s.album||'دیار قدمگاه',category:s.category||'عمومی',type:s.type||'audio/mpeg'}}
   function esc(v){return String(v).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
 
   function openDB(){
@@ -52,16 +52,18 @@
     currentIndex=Math.min(Math.max(0,Number(state.index)||0),playlist.length-1);
     render();loadSong(currentIndex,false);
   }
-  function filtered(){const q=els.search.value.trim().toLowerCase(),f=els.filter.value;return playlist.map((s,i)=>({s,i})).filter(({s})=>{const text=`${s.title} ${s.artist} ${s.album||''}`.toLowerCase();if(q&&!text.includes(q))return false;if(f==='favorites'&&!fav(s))return false;if(f==='recent'&&!state.recent.includes(id(s)))return false;if(f==='local'&&!s.local)return false;return true})}
+  function filtered(){const q=els.search.value.trim().toLowerCase(),f=els.filter.value,c=els.category.value,sort=els.sort.value;let items=playlist.map((s,i)=>({s,i})).filter(({s})=>{const text=`${s.title} ${s.artist} ${s.album||''} ${s.category||''}`.toLowerCase();if(q&&!text.includes(q))return false;if(f==='favorites'&&!fav(s))return false;if(f==='recent'&&!state.recent.includes(id(s)))return false;if(f==='local'&&!s.local)return false;if(c!=='all'&&(s.category||'عمومی')!==c)return false;return true});if(sort==='title')items.sort((a,b)=>a.s.title.localeCompare(b.s.title,'fa'));if(sort==='artist')items.sort((a,b)=>a.s.artist.localeCompare(b.s.artist,'fa'));if(sort==='recent')items.sort((a,b)=>state.recent.indexOf(id(a.s))-state.recent.indexOf(id(b.s)));return items}
+  function renderCategories(){const current=els.category.value;const cats=[...new Set(playlist.map(s=>s.category||'عمومی'))].sort((a,b)=>a.localeCompare(b,'fa'));els.category.innerHTML='<option value="all">همه دسته‌ها</option>'+cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');els.category.value=cats.includes(current)?current:'all'}
   function render(){
-    const items=filtered();els.count.textContent=`${playlist.length} فایل`;els.list.innerHTML='';els.empty.classList.toggle('hidden',items.length>0);
-    items.forEach(({s,i})=>{const el=document.createElement('article');el.className='track'+(i===currentIndex?' active':'');el.innerHTML=`<img src="${esc(cover(s))}" alt=""><div><div class="track-title"></div><div class="track-artist"></div></div><div class="track-actions"><button class="play-item" title="پخش">▶</button><button class="fav-item ${fav(s)?'active':''}" title="علاقه‌مندی">${fav(s)?'♥':'♡'}</button></div>`;el.querySelector('.track-title').textContent=s.title;el.querySelector('.track-artist').textContent=s.artist+(s.local?' · فایل من':'');el.querySelector('.play-item').onclick=e=>{e.stopPropagation();loadSong(i,true)};el.querySelector('.fav-item').onclick=e=>{e.stopPropagation();toggleFav(s)};el.onclick=()=>loadSong(i,true);els.list.appendChild(el)});
+    renderCategories();const items=filtered();els.count.textContent=`${playlist.length} فایل`;els.list.innerHTML='';els.empty.classList.toggle('hidden',items.length>0);
+    items.forEach(({s,i})=>{const el=document.createElement('article');el.className='track'+(i===currentIndex?' active':'');el.innerHTML=`<img src="${esc(cover(s))}" alt=""><div><div class="track-title"></div><div class="track-artist"></div></div><div class="track-actions"><button class="play-item" title="پخش">▶</button><button class="fav-item ${fav(s)?'active':''}" title="علاقه‌مندی">${fav(s)?'♥':'♡'}</button>${s.local?'<button class="delete-item" title="حذف فایل شخصی">🗑</button>':''}</div>`;el.querySelector('.track-title').textContent=s.title;el.querySelector('.track-artist').textContent=s.artist+(s.local?' · فایل من':'');el.querySelector('.play-item').onclick=e=>{e.stopPropagation();loadSong(i,true)};el.querySelector('.fav-item').onclick=e=>{e.stopPropagation();toggleFav(s)};const del=el.querySelector('.delete-item');if(del)del.onclick=async e=>{e.stopPropagation();if(!confirm('این فایل شخصی از کتابخانه حذف شود؟'))return;await deleteLocalFile(s.id);if(audio.src===s.file){audio.pause();audio.removeAttribute('src');audio.load()}playlist.splice(i,1);if(currentIndex>=playlist.length)currentIndex=Math.max(0,playlist.length-1);save();render();toast('فایل حذف شد')};el.onclick=()=>loadSong(i,true);els.list.appendChild(el)});
     renderRecent();renderQueue();updateFavCount();updateCurrentFav();
   }
   function renderRecent(){els.recent.innerHTML='';const map=new Map(playlist.map(s=>[id(s),s]));state.recent.slice(0,10).map(x=>map.get(x)).filter(Boolean).forEach(s=>{const e=document.createElement('article');e.className='recent-item';e.innerHTML=`<img src="${esc(cover(s))}" alt=""><strong></strong><small></small>`;e.querySelector('strong').textContent=s.title;e.querySelector('small').textContent=s.artist;e.onclick=()=>loadSong(playlist.indexOf(s),true);els.recent.appendChild(e)})}
   function renderQueue(){els.queue.innerHTML='';playlist.forEach((s,i)=>{const e=document.createElement('div');e.className='queue-item'+(i===currentIndex?' active':'');e.innerHTML=`<img src="${esc(cover(s))}" alt=""><div><strong></strong><small></small></div><button class="small-btn">▶</button>`;e.querySelector('strong').textContent=s.title;e.querySelector('small').textContent=s.artist;e.querySelector('button').onclick=()=>loadSong(i,true);els.queue.appendChild(e)})}
   function updateFavCount(){els.favCount.textContent=state.favorites.length}
   function updateCurrentFav(){const s=current();els.favBtn.classList.toggle('active',!!s&&fav(s));els.favBtn.textContent=!!s&&fav(s)?'♥':'♡'}
+  async function shareCurrent(){const s=current();if(!s)return;const url=s.local?location.href:new URL(s.file,location.href).href;const data={title:s.title,text:`${s.title} — ${s.artist}`,url};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(url);toast('لینک کپی شد')}}catch(e){if(e?.name!=='AbortError')toast('اشتراک‌گذاری انجام نشد')}}
   function toggleFav(s){const k=id(s),i=state.favorites.indexOf(k);i>=0?state.favorites.splice(i,1):state.favorites.unshift(k);save();render();toast(i>=0?'از علاقه‌مندی‌ها حذف شد':'به علاقه‌مندی‌ها اضافه شد')}
 
   function loadSong(i,autoplay){
@@ -101,7 +103,7 @@
 
   $('#openFilesBtn').onclick=()=>$('#fileInput').click();$('#fileInput').onchange=e=>{addFiles([...e.target.files]);e.target.value=''};$('#scrollLibraryBtn').onclick=()=>$('#librarySection').scrollIntoView({behavior:'smooth'});
   $('#queueBtn').onclick=()=>openDrawer(true);$('#closeQueueBtn').onclick=()=>openDrawer(false);document.addEventListener('click',e=>{if(els.drawer.classList.contains('open')&&!els.drawer.contains(e.target)&&!$('#queueBtn').contains(e.target))openDrawer(false)});
-  els.theme.onclick=toggleTheme;$('#favoritesBtn').onclick=()=>{els.filter.value='favorites';render();$('#librarySection').scrollIntoView({behavior:'smooth'})};els.search.oninput=render;els.filter.onchange=render;
+  els.theme.onclick=toggleTheme;$('#shareBtn').onclick=shareCurrent;els.category.onchange=render;els.sort.onchange=render;$('#favoritesBtn').onclick=()=>{els.filter.value='favorites';render();$('#librarySection').scrollIntoView({behavior:'smooth'})};els.search.oninput=render;els.filter.onchange=render;
   els.play.onclick=toggle;els.next.onclick=next;els.prev.onclick=prev;els.shuffle.onclick=()=>{state.shuffle=!state.shuffle;els.shuffle.classList.toggle('active',state.shuffle);save()};els.repeat.onclick=setRepeat;els.favBtn.onclick=()=>{if(current())toggleFav(current())};
   els.volume.oninput=()=>{audio.volume=Number(els.volume.value);if(audio.volume>0)state.volume=audio.volume;els.mute.textContent=audio.volume?'🔊':'🔇';save()};els.mute.onclick=()=>{if(audio.volume){state.volume=audio.volume;audio.volume=0;els.volume.value=0;els.mute.textContent='🔇'}else{audio.volume=state.volume||.8;els.volume.value=audio.volume;els.mute.textContent='🔊'}save()};
   els.speed.onchange=()=>{state.speed=Number(els.speed.value);audio.playbackRate=state.speed;save()};$('#sleepBtn').onclick=()=>els.sleepPanel.classList.toggle('hidden');els.sleepPanel.querySelectorAll('button').forEach(b=>b.onclick=()=>setSleep(Number(b.dataset.min)));$('#clearRecentBtn').onclick=()=>{state.recent=[];save();render();toast('تاریخچه پاک شد')};
