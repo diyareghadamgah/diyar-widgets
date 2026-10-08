@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-08T22:33:08.222Z",
-  "lastUpdatePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۳",
+  "lastUpdate": "2026-10-08T22:50:58.783Z",
+  "lastUpdatePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۵۰",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,66 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "عقب‌نشینی ترامپ از اظهارات جنجالی درباره حمله ایران به شهرهای آمریکا",
+      "link": "https://www.mehrnews.com/news/6972216/%D8%B9%D9%82%D8%A8-%D9%86%D8%B4%DB%8C%D9%86%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A7%D8%B2-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AC%D9%86%D8%AC%D8%A7%D9%84%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AD%D9%85%D9%84%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%87%D8%A7%DB%8C",
+      "date": "2026-10-08T22:48:12.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۴۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "رئیس‌جمهور آمریکا، پس از انتقادهای گسترده از اظهاراتش درباره احتمال هدف قرار گرفتن شهرهایی مانند لس‌آنجلس و سن‌دیگو در جریان جنگ با ایران، مدعی شد: سخنانش به‌درستی درک نشده است."
+    },
+    {
+      "title": "مقر گروه‌های تجزیه‌طلب در اربیل زیر آتش پهپادهای انتحاری ایران+ فیلم",
+      "link": "https://www.mehrnews.com/news/6972215/%D9%85%D9%82%D8%B1-%DA%AF%D8%B1%D9%88%D9%87-%D9%87%D8%A7%DB%8C-%D8%AA%D8%AC%D8%B2%DB%8C%D9%87-%D8%B7%D9%84%D8%A8-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%A8%DB%8C%D9%84-%D8%B2%DB%8C%D8%B1-%D8%A2%D8%AA%D8%B4-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
+      "date": "2026-10-08T22:42:57.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۴۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "منابع امنیتی در اقلیم کردستان عراق از اصابت دو پهپاد انتحاری به مقر گروه‌های تروریستی و تجزیه طلب در استان اربیل خبر دادند."
+    },
+    {
+      "title": "دویست و بیست و دومین شب حضور زنجانی‌ها در میدان دفاع از وطن",
+      "link": "https://www.mehrnews.com/news/6972212/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D9%88%D8%B7%D9%86",
+      "date": "2026-10-08T22:36:39.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۶",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و بیست و دومین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
+    },
+    {
+      "title": "چهره‌های جشنواره سی‌وهشتم کودکان و نوجوانان",
+      "link": "https://www.imna.ir/photo/1010690/%DA%86%D9%87%D8%B1%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%B3%DB%8C-%D9%88%D9%87%D8%B4%D8%AA%D9%85-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86",
+      "date": "2026-10-08T22:35:26.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۵",
+      "source": "ایمنا",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "سی‌وهشتمین جشنواره بین‌المللی فیلم‌های کودکان و نوجوانان، امروز _پنجشنبه شانزدهم مهر_ با تقدیر از برگزیدگان به کار خود پایان داد."
+    },
+    {
+      "title": "عکس یادگاری «شاهزادگان قاجار» در دوران ناصرالدین شاه",
+      "link": "https://www.asriran.com/fa/news/1197233/%D8%B9%DA%A9%D8%B3-%DB%8C%D8%A7%D8%AF%DA%AF%D8%A7%D8%B1%DB%8C-%D8%B4%D8%A7%D9%87%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D9%86%D8%A7%D8%B5%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86-%D8%B4%D8%A7%D9%87",
+      "date": "2026-10-08T22:30:02.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۰",
+      "source": "عصر ایران",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "در اینجا تصویر جمعی از شاهزادگان خاندان قاجار را در دوران حکومت ناصرالدین شاه ملاحظه می‌کنید."
+    },
+    {
+      "title": "ویروس‌هایی که سرطان می‌سازند",
+      "link": "https://www.tabnak.ir/fa/news/1397835/%D9%88%DB%8C%D8%B1%D9%88%D8%B3-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D8%B3%D8%B1%D8%B7%D8%A7%D9%86-%D9%85%DB%8C-%D8%B3%D8%A7%D8%B2%D9%86%D8%AF",
+      "date": "2026-10-08T22:30:02.000Z",
+      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "ویروس «اپشتین‌بار» (EBV) از خانواده هرپس و جزو شایع‌ترین ویروس‌های انسانی است که هرچند بخش بزرگی از جامعه در طول عمر خود به آن مبتلا می‌شوند، این عفونت معمولاً بدون بروز عارضه‌ای جدی بهبود می‌یابد."
+    },
     {
       "title": "تداوم حملات رژیم صهیونیستی به جنوب لبنان",
       "link": "https://www.mehrnews.com/news/6972148/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
@@ -298,7 +358,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/cqFrJiZsvVbBqP48MnDOHBZ_b-U4XFUx7Con-daeL5N4pQdcCn4C-XP5SbzCanVPyGS5iWcwcd5GwP83W_M2TZEBjsvfgmz-cwjPpSVDpQQLgPa4yOgzdohnuv3P2WmJsQtYGFEJRAd9AlMjed3k_ejTF3TI3i7nlpPh5g4G1cmaH4GiGZz7ovSPztiKAM9p/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/AUutTvclklXwvOYjneCziBDPvliUeadiXs-xIJBxDrZ31buuLgNoQqR0NSj71BOaciNpGNRTlyCG7PHESrYnyxDUl6Sh0V2TnkbHMcIIkHKY2BjrM_2OpHrCyljjkJoOi2x0LzpAnLBdq_1C1jCoFJCs4l8KvCEbPYDQTu9lxvmhHM8CVcRlJ6dCYjMiv8U5/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
     },
     {
       "title": "راکتوری که دو میلیارد سال پیش خودبه‌خود روشن شد",
@@ -309,16 +369,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "حدود دو میلیارد سال پیش، زمانی که هنوز انسان وجود نداشت، یک واکنش زنجیره‌ای هسته‌ای طبیعی و پایدار در زمین رخ داد."
-    },
-    {
-      "title": "طرح ساختمان تکیه ۶۰۰ ساله برغان در پارک اقوام ایرانی کرج افتتاح شد",
-      "link": "https://www.mehrnews.com/news/6972195/%D8%B7%D8%B1%D8%AD-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D8%AA%DA%A9%DB%8C%D9%87-%DB%B6%DB%B0%DB%B0-%D8%B3%D8%A7%D9%84%D9%87-%D8%A8%D8%B1%D8%BA%D8%A7%D9%86-%D8%AF%D8%B1-%D9%BE%D8%A7%D8%B1%DA%A9-%D8%A7%D9%82%D9%88%D8%A7%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%DA%A9%D8%B1%D8%AC-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD",
-      "date": "2026-10-08T21:27:40.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۲۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "کرج- طرح ساختمان تکیه ۶۰۰ ساله برغان به ابعاد نصف ساختمان اصلی به مناسبت روز کرج در پارک اقوام ایرانی کرج افتتاح شد."
     },
     {
       "title": "سرماخوردگی چه ارتباطی با سردی و گرمی دارد؟",
@@ -371,16 +421,6 @@
       "rssDescription": "دیدار تیم‌های تراکتور و استقلال در هفته هشتم لیگ برتر فوتبال باشگاه‌های ایران، شامگاه پنجشنبه شانزدهم مهر در ورزشگاه یادگار امام(ره) تبریز برگزار و با نتیجه مساوی یک بر یک به پایان رسید."
     },
     {
-      "title": "لبیک دوباره مردم فردیس به رهنمودهای رهبر انقلاب",
-      "link": "https://www.mehrnews.com/news/6972119/%D9%84%D8%A8%DB%8C%DA%A9-%D8%AF%D9%88%D8%A8%D8%A7%D8%B1%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D9%81%D8%B1%D8%AF%DB%8C%D8%B3-%D8%A8%D9%87-%D8%B1%D9%87%D9%86%D9%85%D9%88%D8%AF%D9%87%D8%A7%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8",
-      "date": "2026-10-08T21:20:40.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۲۰",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "فردیس _ مردم فردیس با حضور در خیابان‌ها و میادین شهر، دویست و بیست و دومین اجتماع مردمی دفاع از وطن را رقم زدند و بر استمرار وحدت و همبستگی ملی تأکید کردند."
-    },
-    {
       "title": "واکنش علی مطهری به اظهارات اسکات بسنت؛ در خواب و رویا به سر می‌برد/ حوادث دی ۱۴۰۴ زمینه‌ساز حملات نظامی آمریکا و اسرائیل به کشور بود",
       "link": "https://www.khabaronline.ir/news/2285313/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B9%D9%84%DB%8C-%D9%85%D8%B7%D9%87%D8%B1%DB%8C-%D8%A8%D9%87-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D8%B3%DA%A9%D8%A7%D8%AA-%D8%A8%D8%B3%D9%86%D8%AA-%D8%AF%D8%B1-%D8%AE%D9%88%D8%A7%D8%A8-%D9%88-%D8%B1%D9%88%DB%8C%D8%A7-%D8%A8%D9%87-%D8%B3%D8%B1-%D9%85%DB%8C-%D8%A8%D8%B1%D8%AF",
       "date": "2026-10-08T21:20:00.000Z",
@@ -429,16 +469,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "تهران- ایرنا- منابع خبری از حمله پهپادهای ناشناس به یک مقر متعلق به گروهک‌های تجزیه‌طلب ضدایرانی در شمال عراق خبر دادند."
-    },
-    {
-      "title": "آیت الله فلاحتی: وحدت ملت ایران رمز فتح و پیروزی است",
-      "link": "https://www.mehrnews.com/news/6972196/%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D9%81%D9%84%D8%A7%D8%AD%D8%AA%DB%8C-%D9%88%D8%AD%D8%AF%D8%AA-%D9%85%D9%84%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D9%85%D8%B2-%D9%81%D8%AA%D8%AD-%D9%88-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-08T21:08:44.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۰۸",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "رشت- نماینده ولی‌فقیه در گیلان ایمان و وحدت ملت ایران را رمز فتح و پیروزی دانست و گفت: خودباوری و فهم عمیق ملت سبب ایستادگی و مقاومت در راستای غلبه بر دشمن شده است."
     },
     {
       "title": "املاک متهمان تراستی توقیف شد",
@@ -708,7 +738,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/2YKprsGBPJ_c7jguLUtv5JXzN8LqfiuFsfBwtVjLAK8rnyRZi2_H33VgQ9dHlgMEA8pS0ZpZG2d_Bg6FxzQKw-q9-WDKIptkrI2X2mZ8Of1MGJM2a9aPfaoILzYOLyaMZ4RiRivPAVXuLd6LMqmfCCj0uXGeHXs1U6nuz4tAGRjzcdL2Qo8AOVVpUEv3YPe1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/D8ac0bQsQqDsx_rpmrswTbE7tzEdf8dfrZVWzmpkSxXGjAeVldab_nD-jS05gwb2WydXcLLVM-fchrxUqUtvHWyjdeCmlxhYsrxR9rhlZRhyPLzV8xLr7aq6gc4I_89YSHXZpRToZLXyD1V3IqU39aeWLsQHcGRjzOe_koGwFQ8mKM09Zjzkup1f0vyR79P5/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۷ مهر ۱۴۰۵",
@@ -718,7 +748,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/p1GPBWAOBdUZW0OFzvPXZLvTUnEiQm_BMf65IkpvkSPtCZBfeZszOjlnMp_R8nwDe7WhcRVeEeQPy0C0EgN62FwdLWQ0R_-_dxWUCHzFPPnTDzP2O1KPNEwJSr2W9o3R21ieo7zkoLdqWxVrdYTtzvzYzj_mg7upipLpqE7wOG95DFY0V1xa9F4tPtNlEXhy/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/OnwG2OIIrtYpzOe7LjhyvOGUB_Ae_Yug-InJVgH2qm2cqs4DJ-Mdk7LrOE6BJzOoLHBeANO72Rex0WP2PF2Ze-HKFTc6789J1BSOjggXHr1Gb_GUlL5yAKKqdEZ0TszvUbMC7l-5GcdQfePa7GTonlDTybm5Ez2SIWu_UA-4D4zr36I68t5qfU9BZiYmCDn6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۷ مهر ۱۴۰۵",
@@ -728,7 +758,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/lRkZzagtdew04pNgSSiSGSsBpWR0UyYFLums9rI8bEVvED2s7AhrPunq4EG2vBWwzlQzfi5PX0sXc2czpOBAcBGPgbnAqqyVuNtsM0VvnLmgQEGmckpj40u7xJrHaFJb8X7SN8Qic730l8MAydmcVkcD_JSHovnZZzi2aeP-j2BWaD3DY3fI43vl0B2o-vLO/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/auF9HkdBgLnc8V1F_Sdqdh82hkw-iH5764IQGVD94Q-SkpJsb6xf3v_kgmdxD03j97egPOcpyNEr0zmFxlTEM9BhJ7ZtLnfKhHIuxHxGhtgj3CTqIvOVRYXiRJ4_Ly2PUbZgPlpAn6xJpdHZ-X8kwhKkI4RGyV9jPz90x2cKdyuMj0SqBl5qm-VNoq6H0dUR/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۷ مهر + جدول",
@@ -738,7 +768,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YLwLaowK__zdFbsCNW2axd24UBQFMAkSj1b4HqWjtYc-FN3btiBpPD0fyySHNEwJFshAkg-LCHEXzVpMlBk9WHc0TOnpI8X0lgkYNtkhSgBfGTmdmsw5ZAtX6oCDv-KRg05INcc2Dd8JAkvKrpRgrrDaxZc8uXIkeEjFDoD-QqWnF_wIYh3Ub4HRhlevkjPj/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YyDAWIOiq4LnYcTMhvTcXR_y2hA0ctIz8hEIQuH2AVdXRtnJ3XLM4r1XS4pW9pBqdKWVqgKFonw-P71y-En6DDx_JKJ2-dEwdfTgnrYF8-q-2YuOs7Q1shIPVuCktQWcKrT69H7P5lGFhnvcvntwSHeefAdMvjfOHDOVtQ0uZrjWTJ9utiNteDtqsrNCIwGb/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۱۷ مهر ۱۴۰۵",
@@ -748,7 +778,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/60ZimBslTXgNACZS-AjFiQ9_W7c_dEkA520scvISd4ELhSDp2A4UiHOZZ4EAgFR4M3BBonqamTb8rxOwM-K0OQqaRUaoAmpO6WqxBRFY7TdviXSiW1mizCh1mOW2bnhXqxv9pAPTI_Iu8cCxTH6TpFlgzj13lcBxVwYSMqwbWBPJhqzpxeAPL-pXAkz_UXyD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/WPb27n5Fr5H6FpH2pjLDmTmpYuI2nLKZbF2_jfg_oWPniV-BIUC-AduqyGvs1SgV1WxV_SdUs35cIo60UlCRWEtbwfnnHcb60d8wvAUlZBvfoiNdekap9_d3kpzi8fDAzjIs7gDf7GpyEXoOvyr7OGaWu4aajr-28rBRCzo_uiqhejKGMHRpqS3n-4rWiLdA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "انتخابات کنگره و سایه بازگشت جنگ؛ چرا خلیج فارس به دنبال معماری امنیتی جدید است؟",
@@ -819,16 +849,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "رئیس جمهور در دیدار با ولادیمیر پوتین، ضمن تأکید بر تداوم گسترش روابط تهران و مسکو، تصریح کرد که ایران از میز مذاکره کنار نخواهد کشید و پیشنهادهای تبادل‌شده از طریق رابطین با طرف آمریکایی پس از نهایی شدن، جمع‌بندی می‌شود."
-    },
-    {
-      "title": "حمله شدید یمن به فرودگاه ریاض/ چند هواپیما نابود شده اند/ ویدئو",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3250956",
-      "date": "2026-10-08T20:21:23.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۲۱",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "طبق تصاویر منتشر شده، طی حمله یمن به فرودگاه بین‌المللی ریاض، دست‌کم ۳ هواپیما آسیب دیده‌اند. یک فروند، به طور کامل منهدم شده است."
     },
     {
       "title": "خلاصه بازی شباب الاهلی - یونایتد اف سی",
@@ -1009,26 +1029,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "رئیس جمهور در دیدار با ولادیمیر پوتین، ضمن تأکید بر تداوم گسترش روابط تهران و مسکو، تصریح کرد که ایران از میز مذاکره کنار نخواهد کشید و پیشنهادهای تبادل‌شده از طریق رابطین با طرف آمریکایی پس از نهایی شدن، جمع‌بندی می‌شود."
-    },
-    {
-      "title": "بهره‌برداری از سالن نمایش کانون پرورش فکری کودکان و نوجوانان قم",
-      "link": "https://www.isna.ir/news/1405071610934/%D8%A8%D9%87%D8%B1%D9%87-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%A7%D9%84%D9%86-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%DA%A9%D8%A7%D9%86%D9%88%D9%86-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D9%81%DA%A9%D8%B1%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86",
-      "date": "2026-10-08T19:58:39.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۱۹:۵۸",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "همزمان با هفته ملی کودک، سالن نمایش کانون پرورش فکری کودکان و نوجوانان استان قم با حضور مدیرکل امور بانوان و خانواده استانداری قم به بهره‌برداری رسید."
-    },
-    {
-      "title": "تسهیلات ۸۵۰ میلیون تومانی بانک مسکن برای واحدهای نهضت ملی با پیشرفت ۶۵ درصدی",
-      "link": "https://www.ilna.ir/fa/tiny/news-1849916",
-      "date": "2026-10-08T19:55:13.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۱۹:۵۵",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "اقتصادی",
-      "rssDescription": "مدیرعامل بانک مسکن از ابلاغ پرداخت تسهیلات متمم تا سقف 850 میلیون تومان به تمامی پروژه‌های نهضت ملی مسکن که به پیشرفت فیزیکی 65 درصد رسیده‌اند، خبر داد."
     }
   ],
   "categorizedNews": {
@@ -1042,16 +1042,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "عظیمیه _ مردم کرج در دویست و بیست و دومین شب تجمعات در لبیک به ندای رهبر انقلاب به خیابان آمدند تا از ایران خود دفاع کنند."
-      },
-      {
-        "title": "لبیک دوباره مردم فردیس به رهنمودهای رهبر انقلاب",
-        "link": "https://www.mehrnews.com/news/6972119/%D9%84%D8%A8%DB%8C%DA%A9-%D8%AF%D9%88%D8%A8%D8%A7%D8%B1%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D9%81%D8%B1%D8%AF%DB%8C%D8%B3-%D8%A8%D9%87-%D8%B1%D9%87%D9%86%D9%85%D9%88%D8%AF%D9%87%D8%A7%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8",
-        "date": "2026-10-08T21:20:40.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۲۰",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "فردیس _ مردم فردیس با حضور در خیابان‌ها و میادین شهر، دویست و بیست و دومین اجتماع مردمی دفاع از وطن را رقم زدند و بر استمرار وحدت و همبستگی ملی تأکید کردند."
       },
       {
         "title": "جانشین سپاه خراسان رضوی: نفوذ ایران در سایر کشورها دشمنان را مستاصل کرده است",
@@ -1254,16 +1244,6 @@
         "flag": "🇮🇷",
         "category": "اقتصادی",
         "rssDescription": "سخنگوی وزارت دفاع از آخرین مسائل دفاعی کشور گفت."
-      },
-      {
-        "title": "تسهیلات ۸۵۰ میلیون تومانی بانک مسکن برای واحدهای نهضت ملی با پیشرفت ۶۵ درصدی",
-        "link": "https://www.ilna.ir/fa/tiny/news-1849916",
-        "date": "2026-10-08T19:55:13.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۱۹:۵۵",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "اقتصادی",
-        "rssDescription": "مدیرعامل بانک مسکن از ابلاغ پرداخت تسهیلات متمم تا سقف 850 میلیون تومان به تمامی پروژه‌های نهضت ملی مسکن که به پیشرفت فیزیکی 65 درصد رسیده‌اند، خبر داد."
       }
     ],
     "ورزشی": [
@@ -1400,6 +1380,26 @@
     ],
     "فرهنگی و هنری": [
       {
+        "title": "مقر گروه‌های تجزیه‌طلب در اربیل زیر آتش پهپادهای انتحاری ایران+ فیلم",
+        "link": "https://www.mehrnews.com/news/6972215/%D9%85%D9%82%D8%B1-%DA%AF%D8%B1%D9%88%D9%87-%D9%87%D8%A7%DB%8C-%D8%AA%D8%AC%D8%B2%DB%8C%D9%87-%D8%B7%D9%84%D8%A8-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%A8%DB%8C%D9%84-%D8%B2%DB%8C%D8%B1-%D8%A2%D8%AA%D8%B4-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",
+        "date": "2026-10-08T22:42:57.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۴۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "منابع امنیتی در اقلیم کردستان عراق از اصابت دو پهپاد انتحاری به مقر گروه‌های تروریستی و تجزیه طلب در استان اربیل خبر دادند."
+      },
+      {
+        "title": "چهره‌های جشنواره سی‌وهشتم کودکان و نوجوانان",
+        "link": "https://www.imna.ir/photo/1010690/%DA%86%D9%87%D8%B1%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%B3%DB%8C-%D9%88%D9%87%D8%B4%D8%AA%D9%85-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86",
+        "date": "2026-10-08T22:35:26.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۵",
+        "source": "ایمنا",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "سی‌وهشتمین جشنواره بین‌المللی فیلم‌های کودکان و نوجوانان، امروز _پنجشنبه شانزدهم مهر_ با تقدیر از برگزیدگان به کار خود پایان داد."
+      },
+      {
         "title": "اصفهان در تسخیر پروانه‌های زرین؛ سینمای کودک برترین‌های خود را شناخت",
         "link": "https://www.mehrnews.com/news/6972206/%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AA%D8%B3%D8%AE%DB%8C%D8%B1-%D9%BE%D8%B1%D9%88%D8%A7%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%B2%D8%B1%DB%8C%D9%86-%D8%B3%DB%8C%D9%86%D9%85%D8%A7%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D9%87%D8%A7%DB%8C-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7",
         "date": "2026-10-08T21:43:48.000Z",
@@ -1437,7 +1437,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/cqFrJiZsvVbBqP48MnDOHBZ_b-U4XFUx7Con-daeL5N4pQdcCn4C-XP5SbzCanVPyGS5iWcwcd5GwP83W_M2TZEBjsvfgmz-cwjPpSVDpQQLgPa4yOgzdohnuv3P2WmJsQtYGFEJRAd9AlMjed3k_ejTF3TI3i7nlpPh5g4G1cmaH4GiGZz7ovSPztiKAM9p/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/AUutTvclklXwvOYjneCziBDPvliUeadiXs-xIJBxDrZ31buuLgNoQqR0NSj71BOaciNpGNRTlyCG7PHESrYnyxDUl6Sh0V2TnkbHMcIIkHKY2BjrM_2OpHrCyljjkJoOi2x0LzpAnLBdq_1C1jCoFJCs4l8KvCEbPYDQTu9lxvmhHM8CVcRlJ6dCYjMiv8U5/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
       },
       {
         "title": "یکی از متفاوت‌ترین احساسات پدر بودن تاریخ سینما در سه دقیقه (تماشا کنید)",
@@ -1498,19 +1498,19 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "کرج - ایرنا- دست‌های کوچک اما پرتوان کودکان و نوجوانان البرزی همزمان با بلندتر شدن زنگ هشدار فرونشست زمین و افت شدید سفره‌های زیرزمینی با رنگ و کاغذ و گل، روایتی تکان‌دهنده از نجات مایه حیات را در نگارخانه فرهنگ و ارشاد اسلامی استان رقم زدند؛ روایتی که این مکان را به میعادگاه بیداری و مسوولیت‌پذیری در قبال آب بدل کرده است."
-      },
-      {
-        "title": "بهره‌برداری از سالن نمایش کانون پرورش فکری کودکان و نوجوانان قم",
-        "link": "https://www.isna.ir/news/1405071610934/%D8%A8%D9%87%D8%B1%D9%87-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%A7%D9%84%D9%86-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%DA%A9%D8%A7%D9%86%D9%88%D9%86-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D9%81%DA%A9%D8%B1%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86-%D9%88-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86",
-        "date": "2026-10-08T19:58:39.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۱۹:۵۸",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "همزمان با هفته ملی کودک، سالن نمایش کانون پرورش فکری کودکان و نوجوانان استان قم با حضور مدیرکل امور بانوان و خانواده استانداری قم به بهره‌برداری رسید."
       }
     ],
     "اجتماعی": [
+      {
+        "title": "ویروس‌هایی که سرطان می‌سازند",
+        "link": "https://www.tabnak.ir/fa/news/1397835/%D9%88%DB%8C%D8%B1%D9%88%D8%B3-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D8%B3%D8%B1%D8%B7%D8%A7%D9%86-%D9%85%DB%8C-%D8%B3%D8%A7%D8%B2%D9%86%D8%AF",
+        "date": "2026-10-08T22:30:02.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "ویروس «اپشتین‌بار» (EBV) از خانواده هرپس و جزو شایع‌ترین ویروس‌های انسانی است که هرچند بخش بزرگی از جامعه در طول عمر خود به آن مبتلا می‌شوند، این عفونت معمولاً بدون بروز عارضه‌ای جدی بهبود می‌یابد."
+      },
       {
         "title": "میکروRNAها، پیام‌رسان‌هایی برای تشخیص زودهنگام بیماری قلبی",
         "link": "https://www.isna.ir/news/1405071610810/%D9%85%DB%8C%DA%A9%D8%B1%D9%88RNA%D9%87%D8%A7-%D9%BE%DB%8C%D8%A7%D9%85-%D8%B1%D8%B3%D8%A7%D9%86-%D9%87%D8%A7%DB%8C%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B4%D8%AE%DB%8C%D8%B5-%D8%B2%D9%88%D8%AF%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%DB%8C-%D9%82%D9%84%D8%A8%DB%8C",
@@ -1615,6 +1615,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "عقب‌نشینی ترامپ از اظهارات جنجالی درباره حمله ایران به شهرهای آمریکا",
+        "link": "https://www.mehrnews.com/news/6972216/%D8%B9%D9%82%D8%A8-%D9%86%D8%B4%DB%8C%D9%86%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A7%D8%B2-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AC%D9%86%D8%AC%D8%A7%D9%84%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AD%D9%85%D9%84%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D9%87%D8%B1%D9%87%D8%A7%DB%8C",
+        "date": "2026-10-08T22:48:12.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۴۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "رئیس‌جمهور آمریکا، پس از انتقادهای گسترده از اظهاراتش درباره احتمال هدف قرار گرفتن شهرهایی مانند لس‌آنجلس و سن‌دیگو در جریان جنگ با ایران، مدعی شد: سخنانش به‌درستی درک نشده است."
+      },
       {
         "title": "تداوم حملات رژیم صهیونیستی به جنوب لبنان",
         "link": "https://www.mehrnews.com/news/6972148/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
@@ -1786,16 +1796,6 @@
         "rssDescription": "رئیس جمهور در دیدار با ولادیمیر پوتین، ضمن تأکید بر تداوم گسترش روابط تهران و مسکو، تصریح کرد که ایران از میز مذاکره کنار نخواهد کشید و پیشنهادهای تبادل‌شده از طریق رابطین با طرف آمریکایی پس از نهایی شدن، جمع‌بندی می‌شود."
       },
       {
-        "title": "حمله شدید یمن به فرودگاه ریاض/ چند هواپیما نابود شده اند/ ویدئو",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250956",
-        "date": "2026-10-08T20:21:23.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۲۱",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "طبق تصاویر منتشر شده، طی حمله یمن به فرودگاه بین‌المللی ریاض، دست‌کم ۳ هواپیما آسیب دیده‌اند. یک فروند، به طور کامل منهدم شده است."
-      },
-      {
         "title": "لفاظی دردسر ساز ضد ایرانی؛ ترامپ مجبور به توجیه گزافه‌گویی‌هایش شد",
         "link": "https://www.khabaronline.ir/news/2285663/%D9%84%D9%81%D8%A7%D8%B8%DB%8C-%D8%AF%D8%B1%D8%AF%D8%B3%D8%B1-%D8%B3%D8%A7%D8%B2-%D8%B6%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%85%D8%AC%D8%A8%D9%88%D8%B1-%D8%A8%D9%87-%D8%AA%D9%88%D8%AC%DB%8C%D9%87-%DA%AF%D8%B2%D8%A7%D9%81%D9%87-%DA%AF%D9%88%DB%8C%DB%8C-%D9%87%D8%A7%DB%8C%D8%B4",
         "date": "2026-10-08T20:17:01.000Z",
@@ -1857,6 +1857,26 @@
       }
     ],
     "متفرقه": [
+      {
+        "title": "دویست و بیست و دومین شب حضور زنجانی‌ها در میدان دفاع از وطن",
+        "link": "https://www.mehrnews.com/news/6972212/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D9%88%D8%B7%D9%86",
+        "date": "2026-10-08T22:36:39.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۶",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و بیست و دومین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
+      },
+      {
+        "title": "عکس یادگاری «شاهزادگان قاجار» در دوران ناصرالدین شاه",
+        "link": "https://www.asriran.com/fa/news/1197233/%D8%B9%DA%A9%D8%B3-%DB%8C%D8%A7%D8%AF%DA%AF%D8%A7%D8%B1%DB%8C-%D8%B4%D8%A7%D9%87%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%82%D8%A7%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D9%86%D8%A7%D8%B5%D8%B1%D8%A7%D9%84%D8%AF%DB%8C%D9%86-%D8%B4%D8%A7%D9%87",
+        "date": "2026-10-08T22:30:02.000Z",
+        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۲:۳۰",
+        "source": "عصر ایران",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "در اینجا تصویر جمعی از شاهزادگان خاندان قاجار را در دوران حکومت ناصرالدین شاه ملاحظه می‌کنید."
+      },
       {
         "title": "۲۲۲ شب حضور مردم مبعوث‌شده یزد در سنگر خیابان",
         "link": "https://www.mehrnews.com/news/6972207/%DB%B2%DB%B2%DB%B2-%D8%B4%D8%A8-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%A8%D8%B9%D9%88%D8%AB-%D8%B4%D8%AF%D9%87-%DB%8C%D8%B2%D8%AF-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
@@ -1928,26 +1948,6 @@
         "rssDescription": "حدود دو میلیارد سال پیش، زمانی که هنوز انسان وجود نداشت، یک واکنش زنجیره‌ای هسته‌ای طبیعی و پایدار در زمین رخ داد."
       },
       {
-        "title": "طرح ساختمان تکیه ۶۰۰ ساله برغان در پارک اقوام ایرانی کرج افتتاح شد",
-        "link": "https://www.mehrnews.com/news/6972195/%D8%B7%D8%B1%D8%AD-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D8%AA%DA%A9%DB%8C%D9%87-%DB%B6%DB%B0%DB%B0-%D8%B3%D8%A7%D9%84%D9%87-%D8%A8%D8%B1%D8%BA%D8%A7%D9%86-%D8%AF%D8%B1-%D9%BE%D8%A7%D8%B1%DA%A9-%D8%A7%D9%82%D9%88%D8%A7%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%DA%A9%D8%B1%D8%AC-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD",
-        "date": "2026-10-08T21:27:40.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۲۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "کرج- طرح ساختمان تکیه ۶۰۰ ساله برغان به ابعاد نصف ساختمان اصلی به مناسبت روز کرج در پارک اقوام ایرانی کرج افتتاح شد."
-      },
-      {
-        "title": "آیت الله فلاحتی: وحدت ملت ایران رمز فتح و پیروزی است",
-        "link": "https://www.mehrnews.com/news/6972196/%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D9%81%D9%84%D8%A7%D8%AD%D8%AA%DB%8C-%D9%88%D8%AD%D8%AF%D8%AA-%D9%85%D9%84%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D9%85%D8%B2-%D9%81%D8%AA%D8%AD-%D9%88-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-08T21:08:44.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۱:۰۸",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "رشت- نماینده ولی‌فقیه در گیلان ایمان و وحدت ملت ایران را رمز فتح و پیروزی دانست و گفت: خودباوری و فهم عمیق ملت سبب ایستادگی و مقاومت در راستای غلبه بر دشمن شده است."
-      },
-      {
         "title": "قابی متفاوت از سحر دولتشاهی به مناسبت ۴۷ سالگی‌اش + عکس",
         "link": "https://www.khabaronline.ir/news/2285667/%D9%82%D8%A7%D8%A8%DB%8C-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%A7%D8%B2-%D8%B3%D8%AD%D8%B1-%D8%AF%D9%88%D9%84%D8%AA%D8%B4%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%AA-%DB%B4%DB%B7-%D8%B3%D8%A7%D9%84%DA%AF%DB%8C-%D8%A7%D8%B4-%D8%B9%DA%A9%D8%B3",
         "date": "2026-10-08T21:00:00.000Z",
@@ -1985,7 +1985,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/2YKprsGBPJ_c7jguLUtv5JXzN8LqfiuFsfBwtVjLAK8rnyRZi2_H33VgQ9dHlgMEA8pS0ZpZG2d_Bg6FxzQKw-q9-WDKIptkrI2X2mZ8Of1MGJM2a9aPfaoILzYOLyaMZ4RiRivPAVXuLd6LMqmfCCj0uXGeHXs1U6nuz4tAGRjzcdL2Qo8AOVVpUEv3YPe1/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/D8ac0bQsQqDsx_rpmrswTbE7tzEdf8dfrZVWzmpkSxXGjAeVldab_nD-jS05gwb2WydXcLLVM-fchrxUqUtvHWyjdeCmlxhYsrxR9rhlZRhyPLzV8xLr7aq6gc4I_89YSHXZpRToZLXyD1V3IqU39aeWLsQHcGRjzOe_koGwFQ8mKM09Zjzkup1f0vyR79P5/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۷ مهر ۱۴۰۵",
@@ -1995,7 +1995,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/p1GPBWAOBdUZW0OFzvPXZLvTUnEiQm_BMf65IkpvkSPtCZBfeZszOjlnMp_R8nwDe7WhcRVeEeQPy0C0EgN62FwdLWQ0R_-_dxWUCHzFPPnTDzP2O1KPNEwJSr2W9o3R21ieo7zkoLdqWxVrdYTtzvzYzj_mg7upipLpqE7wOG95DFY0V1xa9F4tPtNlEXhy/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/OnwG2OIIrtYpzOe7LjhyvOGUB_Ae_Yug-InJVgH2qm2cqs4DJ-Mdk7LrOE6BJzOoLHBeANO72Rex0WP2PF2Ze-HKFTc6789J1BSOjggXHr1Gb_GUlL5yAKKqdEZ0TszvUbMC7l-5GcdQfePa7GTonlDTybm5Ez2SIWu_UA-4D4zr36I68t5qfU9BZiYmCDn6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۷ مهر ۱۴۰۵",
@@ -2005,7 +2005,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/lRkZzagtdew04pNgSSiSGSsBpWR0UyYFLums9rI8bEVvED2s7AhrPunq4EG2vBWwzlQzfi5PX0sXc2czpOBAcBGPgbnAqqyVuNtsM0VvnLmgQEGmckpj40u7xJrHaFJb8X7SN8Qic730l8MAydmcVkcD_JSHovnZZzi2aeP-j2BWaD3DY3fI43vl0B2o-vLO/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/auF9HkdBgLnc8V1F_Sdqdh82hkw-iH5764IQGVD94Q-SkpJsb6xf3v_kgmdxD03j97egPOcpyNEr0zmFxlTEM9BhJ7ZtLnfKhHIuxHxGhtgj3CTqIvOVRYXiRJ4_Ly2PUbZgPlpAn6xJpdHZ-X8kwhKkI4RGyV9jPz90x2cKdyuMj0SqBl5qm-VNoq6H0dUR/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۷ مهر + جدول",
@@ -2015,7 +2015,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YLwLaowK__zdFbsCNW2axd24UBQFMAkSj1b4HqWjtYc-FN3btiBpPD0fyySHNEwJFshAkg-LCHEXzVpMlBk9WHc0TOnpI8X0lgkYNtkhSgBfGTmdmsw5ZAtX6oCDv-KRg05INcc2Dd8JAkvKrpRgrrDaxZc8uXIkeEjFDoD-QqWnF_wIYh3Ub4HRhlevkjPj/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/YyDAWIOiq4LnYcTMhvTcXR_y2hA0ctIz8hEIQuH2AVdXRtnJ3XLM4r1XS4pW9pBqdKWVqgKFonw-P71y-En6DDx_JKJ2-dEwdfTgnrYF8-q-2YuOs7Q1shIPVuCktQWcKrT69H7P5lGFhnvcvntwSHeefAdMvjfOHDOVtQ0uZrjWTJ9utiNteDtqsrNCIwGb/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۱۷ مهر ۱۴۰۵",
@@ -2025,7 +2025,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/60ZimBslTXgNACZS-AjFiQ9_W7c_dEkA520scvISd4ELhSDp2A4UiHOZZ4EAgFR4M3BBonqamTb8rxOwM-K0OQqaRUaoAmpO6WqxBRFY7TdviXSiW1mizCh1mOW2bnhXqxv9pAPTI_Iu8cCxTH6TpFlgzj13lcBxVwYSMqwbWBPJhqzpxeAPL-pXAkz_UXyD/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/WPb27n5Fr5H6FpH2pjLDmTmpYuI2nLKZbF2_jfg_oWPniV-BIUC-AduqyGvs1SgV1WxV_SdUs35cIo60UlCRWEtbwfnnHcb60d8wvAUlZBvfoiNdekap9_d3kpzi8fDAzjIs7gDf7GpyEXoOvyr7OGaWu4aajr-28rBRCzo_uiqhejKGMHRpqS3n-4rWiLdA/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "ویدیویی خیره‌کننده از سایه قله دماوند بر کوه‌های البرز",
