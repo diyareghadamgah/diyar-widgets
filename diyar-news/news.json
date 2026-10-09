@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-09T00:37:30.834Z",
-  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۰:۳۷",
+  "lastUpdate": "2026-10-09T01:01:35.766Z",
+  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۱:۰۱",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,36 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "فرانسه گزینه‌های حفاظت از پایانه نفتی «ینبع» در عربستان را بررسی می‌کند",
+      "link": "https://www.irna.ir/news/86287332/%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%DA%AF%D8%B2%DB%8C%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D8%A7%D8%B2-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%D9%87-%D9%86%D9%81%D8%AA%DB%8C-%DB%8C%D9%86%D8%A8%D8%B9-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C",
+      "date": "2026-10-09T01:00:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۱:۰۰",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- ژنرال فابین ماندون رئیس ستاد مشترک نیروهای مسلح فرانسه اعلام کرد که پاریس و ریاض در حال بررسی گزینه‌های مختلف برای کمک به حفاظت از پایانه نفتی ینبع در عربستان سعودی هستند."
+    },
+    {
+      "title": "فال انبیا جمعه ۱۷ مهر ۱۴۰۵",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250839",
+      "date": "2026-10-09T00:45:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۴۵",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "علاقه مندان این فال، این نکته مهم را یاد آوری کنیم که در همه امور خداوند را مد نظر قرار دهید و به او توکل کنید و چنانچه در فال تان نکته منفی مشاهده کردید، ناراحت و مایوس نشوید و آن را صرفا سرگرمی تلقی کنید. ما از همراهی شما خوشحال هستیم و به این همراهی دلگرمیم."
+    },
+    {
+      "title": "فال روزانه جمعه 17 مهر ۱۴۰۵",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250848",
+      "date": "2026-10-09T00:40:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۴۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "همراهان عزیز، محتوای منتشر شده در قالب فال روزانه صرفا جنبه سرگرمی دارد."
+    },
     {
       "title": "پشت پرده رفتارهای پرخطر نوجوانان",
       "link": "https://www.isna.ir/news/1405071610675/%D9%BE%D8%B4%D8%AA-%D9%BE%D8%B1%D8%AF%D9%87-%D8%B1%D9%81%D8%AA%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%BE%D8%B1%D8%AE%D8%B7%D8%B1-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86",
@@ -69,6 +99,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "تهران- ایرنا- «رو خانا» نماینده حزب دموکرات در ایالت کالیفرنیا از قانونگذاران آمریکایی خواست که به تعطیلات خود پایان داده و به توقف جنگ تجاوزکارانه علیه ایران رای بدهند."
+    },
+    {
+      "title": "فال حافظ جمعه ۱۷ مهرماه ۱۴۰۵",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3250852",
+      "date": "2026-10-09T00:30:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۳۰",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ جمعه 17 مهر را بخوانید."
     },
     {
       "title": "افت تاریخی ذخایر گاز اروپا پیش از زمستان",
@@ -547,7 +587,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/9uAAjX5A0eexMz7M_PJwauspd2f9c7p0Qr1LQ0wpYZAAMLqKE-1eJFp4EtcNJXbWKbWep0LBaiY2DlRuaFGpG9wsV3OU8A_4ooyHc211Mhs26ySY0MIHOijcZI0RTSu46Mq0lbE90BKDZ7zM2LKYhy59vLb6DI5gwb9TP_MHx0P5HK7PiVfevIu9oQRm5CbG/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/xrYs1C6Nlmm-QXk6Uww9ehupLodZLu5PwofOK4K64O12IQIDIRILOkBTCBWh2mgEfBWi4DHJpx5_pe5OBsT3ptMI9P9wd9Xi2EpEciDwZmvsVw4t24EFPdrnj5XzujXBg_s2GiOoteTj5qcJ_gzOOMhRYF5Jm7BJpsOyrYnzTXkarS_-LewAV3mp2MgYp0fA/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
     },
     {
       "title": "راکتوری که دو میلیارد سال پیش خودبه‌خود روشن شد",
@@ -700,26 +740,6 @@
       "rssDescription": "رئیس فدراسیون فوتبال پرتغال معتقد است می‌تواند ژرژ ژسوس و کریستیانو رونالدو را آشتی دهد!"
     },
     {
-      "title": "پارلمان اروپا از تصویب یک قطعنامه ضدایرانی خبر داد",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3250962",
-      "date": "2026-10-08T20:58:43.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۵۸",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "پارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد."
-    },
-    {
-      "title": "«با ضیا» تا اطلاع ثانوی تعطیل شد",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3250961",
-      "date": "2026-10-08T20:56:26.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۵۶",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "صفحه رسمی برنامه پادکست با ضیا بدون ارائه توضیحی اعلام کرده که «با ضیا» تا اطلاع ثانوی فعالیتی نخواهد داشت."
-    },
-    {
       "title": "نعیمه نظام‌دوست: کودکان فیلم «عموی بچه‌ها» را با عشق انتخاب کردند",
       "link": "https://www.isna.ir/news/1405071710944/%D9%86%D8%B9%DB%8C%D9%85%D9%87-%D9%86%D8%B8%D8%A7%D9%85-%D8%AF%D9%88%D8%B3%D8%AA-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%B9%D9%85%D9%88%DB%8C-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D9%81%DB%8C%D9%84%D9%85-%D8%B1%D8%A7",
       "date": "2026-10-08T20:51:34.000Z",
@@ -778,16 +798,6 @@
       "flag": "🇮🇷",
       "category": "ورزشی",
       "rssDescription": "ژوزه مورینیو در گفت‌وگویی مفصل با کوریره دلو اسپورت درباره برخی از مهم‌ترین موضوعات روز فوتبال صحبت کرده است‌."
-    },
-    {
-      "title": "مراحل ساخت برج میلادِ تهران به روایت هوش مصنوعی/ ویدئو",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3250960",
-      "date": "2026-10-08T20:43:44.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۴۳",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "علمی و فناوری",
-      "rssDescription": "ویدئویی ساخته‌شده با هوش مصنوعی، مراحل ساخت برج میلاد تهران را از آغاز عملیات تا تکمیل این سازه به تصویر می‌کشد."
     },
     {
       "title": "نفت ۱۰۰ دلاری؛ هرمز هنوز قیمت انرژی را تعیین می‌کند",
@@ -917,7 +927,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/4Orq0N79Jjvb-o1_ImDwcbxdjHN1n9Yn6p1k0rbiEzXVP2GMRJrjjJltV0X4iAT2RzAVXCWtvn7KzCCunsWk3Nj7akU-iKqwd6wAtGTQoh4ZxThtc9hEiQraCuoMYmkO_MycgVvb9db6KaEkjS0TQpMIo64iFZIe-xe_STlijvqWRHl2wfdKFtPjvz8Oabf-/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SvIm4Yt7kok10pPxTAD62f2KVIKMsBRnElKnrO5KfJ4pKTuT2XuqWBxHMQtg90f4jI81dVUDhyAqMn5o_75aharnCrq4OB0gqQBceafjS3J1l2ZMJhz3lIMxWeEE5XUWHgruQyC_tX-3D-OYS9XJaUidJhT0UApzufwomA4KvSM6oK9oU8z91QELrRzrbLGT/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - جمعه ۱۷ مهر ۱۴۰۵",
@@ -927,7 +937,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/mIHYmjV184w1Op6XSjxFbEJJwqAd95ZMNMQ381bjLmxmRxyeiGj9N2Z2MwN9NOeEcBxysGfsyVdY3ewD8s56e865Jmc0TsSx0ruxeNZ6-eAFUp6TUaucAOiPGOcvZdVDuk-BUnBaR7XFyFIyngeX4LaHEPJ5Ck4JtnF8q7MxPwBzA0s3NsopE0aCzZTpQ9k6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/odbZQGW-6HtSJwnx27eXKiXZhLsZXzl4sg8yO9q22_Ns6utztOaeVtx5AINcAM0CXYybQhbINKWQp1S7HNDKKvIslORlwFwUM5x7sf_6ooBmX8xRodmlUFPZhzImJotneE4UpHDy93FZ0UNMZ8RuVzxAuDXCGBPzM5sRYY316rguBGI04JTawz4wvpl5WUPP/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - جمعه ۱۷ مهر ۱۴۰۵",
@@ -937,7 +947,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/FSN-Pq8_sKAfKqKnjO6YNcViAvOFQ1VbJ0gIn_-sUO70DFpnFjexcoAnWyIQxyBj0g0QObzC2omGPdVImt5T4smhT9zsTP1EhLJkMptqavBjkLw5ihNU7dZmo9P9FDnAtiQfoQhWWVu45ZRqyE0lR9EYd-qN6nvRHz7-W9WXrICZSF8XfzdXZj7AkZODoW-9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/nO_zfCDPsYJgREHZegldATb0UP6trcBD3kgA-xIDZP-q21EhStKX3sANPHa8Wo7IiDivqD_OOOlSUPGUfFZuuIFIjMmXLp914EHQJ_NNCdF0QAdiHXCR6FCr2Pr-LbAn38FpeDOWYiSfrPWpA3kPdjtICSg7v6Y4EX1P4C7DYWoxijZc-iMOybLJB4CjeGnE/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز جمعه ۱۷ مهر + جدول",
@@ -947,7 +957,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/tnMpBuKoOOz_llCyxR10_AH6o8mjE3UnGO-lWFOODLZwmP7E6uhLFNuiIynhSsI4xTU49R9OOvv234g3cRwvu_x8IKJIE3twSQiB-r0bDq9qZmUwWWfy5FLhiOYTI3hM0pWfbzwdFSMNL58hsH43KSPKQnFApopxqhEeMyhtIywBZKFw44ytOisK7kV_KMPx/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Z6gTv69sLFHMQTxVE_7E-j_yVw5twdOk_cWGY0IQFo8_FosxrcYj-A0hhbBkYeU-N6Oaj-BRTyTc2QmrtoPbe0rOqLU1SS4r6t9NwpJrkI_ajXfdXH5KpMerotoNd7Mky7__ZExogSF4eqMYOize8-vcInblsxEWqX-f0BaPG58RDQxoaKmKlBSdAb2ywHD5/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز جمعه ۱۷ مهر ۱۴۰۵",
@@ -957,7 +967,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/krvPXZ0nLnsQwwwtekWTwQBfjNvopKOGeJTMymloAXf18gstlAsUY282ksR8oyRND1kRFd6B6QDSjWmG-vhpVjUfi1tO6geChPkEdq4KJASG0GucWScoJKTFr5VFu-RNnct7qpEcb1a9B7U-eaWsQ25IB6KIhaLWtZxRBWx9SU_QsNwjfdX3rMqflj8GP8K3/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/twxh06GW2IySvWBv8sLR2qMC0mfbGEE7DBHeutJMUvnV4IL167peAGypAmDebi-_RJB-TN_951E4iTCcU4W6gEZLZwZUGjUnRjsqsJ8moL4Q0299cAzln7bs-xFDoa90_F4EF4DMr4qNY3K7J9Xd46qWDN4sebw9G5wXvq--hiONhweTnts_d88DX9OEzRCy/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "انتخابات کنگره و سایه بازگشت جنگ؛ چرا خلیج فارس به دنبال معماری امنیتی جدید است؟",
@@ -1018,16 +1028,6 @@
       "flag": "🇮🇷",
       "category": "ورزشی",
       "rssDescription": "مدیرعامل تراکتور درباره کنار گذاشتن علیرضا بیرانوند از تیم پس از دیدار مقابل استقلال و حواشی ایجادشده پیرامون این دروازه‌بان توضیحاتی ارائه کرد."
-    },
-    {
-      "title": "پزشکیان در دیدار پوتین: از میز مذاکره کنار نخواهیم کشید",
-      "link": "https://www.tabnak.ir/fa/news/1397898/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%A7%D8%B2-%D9%85%DB%8C%D8%B2-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%DA%A9%D9%86%D8%A7%D8%B1-%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85-%DA%A9%D8%B4%DB%8C%D8%AF",
-      "date": "2026-10-08T20:23:49.000Z",
-      "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۲۳",
-      "source": "تابناک",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "رئیس جمهور در دیدار با ولادیمیر پوتین، ضمن تأکید بر تداوم گسترش روابط تهران و مسکو، تصریح کرد که ایران از میز مذاکره کنار نخواهد کشید و پیشنهادهای تبادل‌شده از طریق رابطین با طرف آمریکایی پس از نهایی شدن، جمع‌بندی می‌شود."
     }
   ],
   "categorizedNews": {
@@ -1386,7 +1386,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/9uAAjX5A0eexMz7M_PJwauspd2f9c7p0Qr1LQ0wpYZAAMLqKE-1eJFp4EtcNJXbWKbWep0LBaiY2DlRuaFGpG9wsV3OU8A_4ooyHc211Mhs26ySY0MIHOijcZI0RTSu46Mq0lbE90BKDZ7zM2LKYhy59vLb6DI5gwb9TP_MHx0P5HK7PiVfevIu9oQRm5CbG/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/vCOrt26IRCBK/xrYs1C6Nlmm-QXk6Uww9ehupLodZLu5PwofOK4K64O12IQIDIRILOkBTCBWh2mgEfBWi4DHJpx5_pe5OBsT3ptMI9P9wd9Xi2EpEciDwZmvsVw4t24EFPdrnj5XzujXBg_s2GiOoteTj5qcJ_gzOOMhRYF5Jm7BJpsOyrYnzTXkarS_-LewAV3mp2MgYp0fA/photo_2026-09-14_20-57-14.jpg\"> <div></div>"
       },
       {
         "title": "یکی از متفاوت‌ترین احساسات پدر بودن تاریخ سینما در سه دقیقه (تماشا کنید)",
@@ -1590,19 +1590,19 @@
         "flag": "🇮🇷",
         "category": "علمی و فناوری",
         "rssDescription": "رئیس سازمان فضایی از توقف فعلی پرتاب ماهواره‌ها به دلیل ملاحظات دفاعی خبر داد."
-      },
-      {
-        "title": "مراحل ساخت برج میلادِ تهران به روایت هوش مصنوعی/ ویدئو",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250960",
-        "date": "2026-10-08T20:43:44.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۴۳",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "علمی و فناوری",
-        "rssDescription": "ویدئویی ساخته‌شده با هوش مصنوعی، مراحل ساخت برج میلاد تهران را از آغاز عملیات تا تکمیل این سازه به تصویر می‌کشد."
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "فرانسه گزینه‌های حفاظت از پایانه نفتی «ینبع» در عربستان را بررسی می‌کند",
+        "link": "https://www.irna.ir/news/86287332/%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%DA%AF%D8%B2%DB%8C%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D8%A7%D8%B2-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%D9%87-%D9%86%D9%81%D8%AA%DB%8C-%DB%8C%D9%86%D8%A8%D8%B9-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C",
+        "date": "2026-10-09T01:00:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۱:۰۰",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- ژنرال فابین ماندون رئیس ستاد مشترک نیروهای مسلح فرانسه اعلام کرد که پاریس و ریاض در حال بررسی گزینه‌های مختلف برای کمک به حفاظت از پایانه نفتی ینبع در عربستان سعودی هستند."
+      },
       {
         "title": "افت تاریخی ذخایر گاز اروپا پیش از زمستان",
         "link": "https://www.tasnimnews.ir/fa/news/1405/07/17/3718140/%D8%A7%D9%81%D8%AA-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C-%D8%B0%D8%AE%D8%A7%DB%8C%D8%B1-%DA%AF%D8%A7%D8%B2-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7-%D9%BE%DB%8C%D8%B4-%D8%A7%D8%B2-%D8%B2%D9%85%D8%B3%D8%AA%D8%A7%D9%86",
@@ -1814,16 +1814,6 @@
         "rssDescription": "تهران- ایرنا- منابع خبری از حمله پهپادهای ناشناس به یک مقر متعلق به گروهک‌های تجزیه‌طلب ضدایرانی در شمال عراق خبر دادند."
       },
       {
-        "title": "پارلمان اروپا از تصویب یک قطعنامه ضدایرانی خبر داد",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250962",
-        "date": "2026-10-08T20:58:43.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۵۸",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "پارلمان اروپا روز پنج‌شنبه سه قطعنامه را به ادعای آنچه که «نقض حقوق بشر» در ایران، گرجستان و جمهوری آذربایجان خواند، تصویب کرد."
-      },
-      {
         "title": "اروپایی‌ها به مذاکرات اوکراین و آمریکا ملحق می‌شوند",
         "link": "https://www.irna.ir/news/86287306/%D8%A7%D8%B1%D9%88%D9%BE%D8%A7%DB%8C%DB%8C-%D9%87%D8%A7-%D8%A8%D9%87-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A7%D9%88%DA%A9%D8%B1%D8%A7%DB%8C%D9%86-%D9%88-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%D9%84%D8%AD%D9%82-%D9%85%DB%8C-%D8%B4%D9%88%D9%86%D8%AF",
         "date": "2026-10-08T20:31:33.000Z",
@@ -1832,19 +1822,39 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "تهران- ایرنا- ولودیمیر زلنسکی رئیس جمهور اوکراین پنجشنبه اعلام کرد که این کشور انتظار دارد، شرکای اروپایی کی‌یف نیز در روزهای آینده به مذاکرات با آمریکا بپیوندند."
-      },
-      {
-        "title": "پزشکیان در دیدار پوتین: از میز مذاکره کنار نخواهیم کشید",
-        "link": "https://www.tabnak.ir/fa/news/1397898/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%A7%D8%B2-%D9%85%DB%8C%D8%B2-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%DA%A9%D9%86%D8%A7%D8%B1-%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85-%DA%A9%D8%B4%DB%8C%D8%AF",
-        "date": "2026-10-08T20:23:49.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۲۳",
-        "source": "تابناک",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "رئیس جمهور در دیدار با ولادیمیر پوتین، ضمن تأکید بر تداوم گسترش روابط تهران و مسکو، تصریح کرد که ایران از میز مذاکره کنار نخواهد کشید و پیشنهادهای تبادل‌شده از طریق رابطین با طرف آمریکایی پس از نهایی شدن، جمع‌بندی می‌شود."
       }
     ],
     "متفرقه": [
+      {
+        "title": "فال انبیا جمعه ۱۷ مهر ۱۴۰۵",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250839",
+        "date": "2026-10-09T00:45:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۴۵",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "علاقه مندان این فال، این نکته مهم را یاد آوری کنیم که در همه امور خداوند را مد نظر قرار دهید و به او توکل کنید و چنانچه در فال تان نکته منفی مشاهده کردید، ناراحت و مایوس نشوید و آن را صرفا سرگرمی تلقی کنید. ما از همراهی شما خوشحال هستیم و به این همراهی دلگرمیم."
+      },
+      {
+        "title": "فال روزانه جمعه 17 مهر ۱۴۰۵",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250848",
+        "date": "2026-10-09T00:40:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۴۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "همراهان عزیز، محتوای منتشر شده در قالب فال روزانه صرفا جنبه سرگرمی دارد."
+      },
+      {
+        "title": "فال حافظ جمعه ۱۷ مهرماه ۱۴۰۵",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3250852",
+        "date": "2026-10-09T00:30:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۰:۳۰",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "به فال اعتقاد نداشته باش، ولی نیم نگاهی به آن داشته باش، اگر موافق این ضرب المثل هستید فال حافظ جمعه 17 مهر را بخوانید."
+      },
       {
         "title": "اجتماع مردم زابل در دویست و بیست و دومین شب دفاع از وطن",
         "link": "https://www.mehrnews.com/news/6972222/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D8%A7%D8%A8%D9%84-%D8%AF%D8%B1-%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D9%88%D8%B7%D9%86",
@@ -1966,16 +1976,6 @@
         "rssDescription": "سحر دولتشاهی به مناسبت تولد ۴۷ سالگی خود، تصاویر تازه‌ای در صفحه اینستاگرامش منتشر کرد./برترین ها"
       },
       {
-        "title": "«با ضیا» تا اطلاع ثانوی تعطیل شد",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3250961",
-        "date": "2026-10-08T20:56:26.000Z",
-        "datePersian": "۱۶ مهر ۱۴۰۵، ۲۰:۵۶",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "صفحه رسمی برنامه پادکست با ضیا بدون ارائه توضیحی اعلام کرده که «با ضیا» تا اطلاع ثانوی فعالیتی نخواهد داشت."
-      },
-      {
         "title": "امام جمعه رشت: عزت و اقتدار امروز ایران ثمره ایستادگی بر اصول و نفی سلطه استکبار است",
         "link": "https://www.isna.ir/news/1405071710943/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%B1%D8%B4%D8%AA-%D8%B9%D8%B2%D8%AA-%D9%88-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AB%D9%85%D8%B1%D9%87-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%D8%A8%D8%B1-%D8%A7%D8%B5%D9%88%D9%84",
         "date": "2026-10-08T20:40:25.000Z",
@@ -1993,7 +1993,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/4Orq0N79Jjvb-o1_ImDwcbxdjHN1n9Yn6p1k0rbiEzXVP2GMRJrjjJltV0X4iAT2RzAVXCWtvn7KzCCunsWk3Nj7akU-iKqwd6wAtGTQoh4ZxThtc9hEiQraCuoMYmkO_MycgVvb9db6KaEkjS0TQpMIo64iFZIe-xe_STlijvqWRHl2wfdKFtPjvz8Oabf-/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/SvIm4Yt7kok10pPxTAD62f2KVIKMsBRnElKnrO5KfJ4pKTuT2XuqWBxHMQtg90f4jI81dVUDhyAqMn5o_75aharnCrq4OB0gqQBceafjS3J1l2ZMJhz3lIMxWeEE5XUWHgruQyC_tX-3D-OYS9XJaUidJhT0UApzufwomA4KvSM6oK9oU8z91QELrRzrbLGT/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - جمعه ۱۷ مهر ۱۴۰۵",
@@ -2003,7 +2003,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/mIHYmjV184w1Op6XSjxFbEJJwqAd95ZMNMQ381bjLmxmRxyeiGj9N2Z2MwN9NOeEcBxysGfsyVdY3ewD8s56e865Jmc0TsSx0ruxeNZ6-eAFUp6TUaucAOiPGOcvZdVDuk-BUnBaR7XFyFIyngeX4LaHEPJ5Ck4JtnF8q7MxPwBzA0s3NsopE0aCzZTpQ9k6/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/odbZQGW-6HtSJwnx27eXKiXZhLsZXzl4sg8yO9q22_Ns6utztOaeVtx5AINcAM0CXYybQhbINKWQp1S7HNDKKvIslORlwFwUM5x7sf_6ooBmX8xRodmlUFPZhzImJotneE4UpHDy93FZ0UNMZ8RuVzxAuDXCGBPzM5sRYY316rguBGI04JTawz4wvpl5WUPP/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - جمعه ۱۷ مهر ۱۴۰۵",
@@ -2013,7 +2013,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/FSN-Pq8_sKAfKqKnjO6YNcViAvOFQ1VbJ0gIn_-sUO70DFpnFjexcoAnWyIQxyBj0g0QObzC2omGPdVImt5T4smhT9zsTP1EhLJkMptqavBjkLw5ihNU7dZmo9P9FDnAtiQfoQhWWVu45ZRqyE0lR9EYd-qN6nvRHz7-W9WXrICZSF8XfzdXZj7AkZODoW-9/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/nO_zfCDPsYJgREHZegldATb0UP6trcBD3kgA-xIDZP-q21EhStKX3sANPHa8Wo7IiDivqD_OOOlSUPGUfFZuuIFIjMmXLp914EHQJ_NNCdF0QAdiHXCR6FCr2Pr-LbAn38FpeDOWYiSfrPWpA3kPdjtICSg7v6Y4EX1P4C7DYWoxijZc-iMOybLJB4CjeGnE/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز جمعه ۱۷ مهر + جدول",
@@ -2023,7 +2023,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/tnMpBuKoOOz_llCyxR10_AH6o8mjE3UnGO-lWFOODLZwmP7E6uhLFNuiIynhSsI4xTU49R9OOvv234g3cRwvu_x8IKJIE3twSQiB-r0bDq9qZmUwWWfy5FLhiOYTI3hM0pWfbzwdFSMNL58hsH43KSPKQnFApopxqhEeMyhtIywBZKFw44ytOisK7kV_KMPx/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/Z6gTv69sLFHMQTxVE_7E-j_yVw5twdOk_cWGY0IQFo8_FosxrcYj-A0hhbBkYeU-N6Oaj-BRTyTc2QmrtoPbe0rOqLU1SS4r6t9NwpJrkI_ajXfdXH5KpMerotoNd7Mky7__ZExogSF4eqMYOize8-vcInblsxEWqX-f0BaPG58RDQxoaKmKlBSdAb2ywHD5/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز جمعه ۱۷ مهر ۱۴۰۵",
@@ -2033,7 +2033,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/krvPXZ0nLnsQwwwtekWTwQBfjNvopKOGeJTMymloAXf18gstlAsUY282ksR8oyRND1kRFd6B6QDSjWmG-vhpVjUfi1tO6geChPkEdq4KJASG0GucWScoJKTFr5VFu-RNnct7qpEcb1a9B7U-eaWsQ25IB6KIhaLWtZxRBWx9SU_QsNwjfdX3rMqflj8GP8K3/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/twxh06GW2IySvWBv8sLR2qMC0mfbGEE7DBHeutJMUvnV4IL167peAGypAmDebi-_RJB-TN_951E4iTCcU4W6gEZLZwZUGjUnRjsqsJ8moL4Q0299cAzln7bs-xFDoa90_F4EF4DMr4qNY3K7J9Xd46qWDN4sebw9G5wXvq--hiONhweTnts_d88DX9OEzRCy/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "ویدیویی خیره‌کننده از سایه قله دماوند بر کوه‌های البرز",
