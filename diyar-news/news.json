@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-09T22:32:28.127Z",
-  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۲",
+  "lastUpdate": "2026-10-09T22:50:38.769Z",
+  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۵۰",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,105 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "گوش دادن به موسیقی مورد علاقه، درد تزریق را کم می‌کند",
+      "link": "https://www.isna.ir/news/1405071711132/%DA%AF%D9%88%D8%B4-%D8%AF%D8%A7%D8%AF%D9%86-%D8%A8%D9%87-%D9%85%D9%88%D8%B3%DB%8C%D9%82%DB%8C-%D9%85%D9%88%D8%B1%D8%AF-%D8%B9%D9%84%D8%A7%D9%82%D9%87-%D8%AF%D8%B1%D8%AF-%D8%AA%D8%B2%D8%B1%DB%8C%D9%82-%D8%B1%D8%A7-%DA%A9%D9%85-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
+      "date": "2026-10-09T22:48:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۴۸",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "دانشمندان سوئیسی در پژوهش جدید خود دریافتند که گوش دادن به موسیقی مورد علاقه می‌تواند به کاهش درد ناشی از اقدامات پزشکی کوچک مانند تزریق کمک کند."
+    },
+    {
+      "title": "از عطاری تا اینستاگرام؛ بازار توصیه‌هایی که قرار است  همه‌چیز را درمان کنند/ یک نسخه برای ده‌ها درد!",
+      "link": "https://www.qudsonline.ir/news/1169571/%D8%A7%D8%B2-%D8%B9%D8%B7%D8%A7%D8%B1%DB%8C-%D8%AA%D8%A7-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%AA%D9%88%D8%B5%DB%8C%D9%87-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D9%82%D8%B1%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA-%D9%87%D9%85%D9%87-%DA%86%DB%8C%D8%B2",
+      "date": "2026-10-09T22:42:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۴۲",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "اقتصادی",
+      "rssDescription": "سازمان غذا و دارو از شناسایی بیش از هزار و ۲۰۰ دامنه فعال در عرضه غیرمجاز فراورده‌های سلامت‌محور خبر داده است؛ بازاری که در آن، دارو و فراورده‌های سلامت‌محور می‌توانند خارج از زنجیره رسمی تأمین و نظارت به دست مصرف‌کننده برسند."
+    },
+    {
+      "title": "خروش حماسی مردم انقلابی سلماس در لبیک به ندای رهبری",
+      "link": "https://www.mehrnews.com/news/6972882/%D8%AE%D8%B1%D9%88%D8%B4-%D8%AD%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D9%84%D8%A8%DB%8C%DA%A9-%D8%A8%D9%87-%D9%86%D8%AF%D8%A7%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1%DB%8C",
+      "date": "2026-10-09T22:39:48.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۹",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "ارومیه - مردم ولایی سلماس در تداوم حمایت از رهبری و انقلاب وخونخواهی رهبر شهید انقلاب در شب ۲۲۳ مقاومت ملی در خیابان تجمع کردند."
+    },
+    {
+      "title": "اتحاد و همدلی ارومیه‌ای‌ها در حمایت از وطن به شب ۲۲۳ رسید",
+      "link": "https://www.mehrnews.com/news/6972880/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%A7%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D8%B7%D9%86-%D8%A8%D9%87-%D8%B4%D8%A8-%DB%B2%DB%B2%DB%B3-%D8%B1%D8%B3%DB%8C%D8%AF",
+      "date": "2026-10-09T22:39:19.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۹",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "ارومیه - مردم ولایی ارومیه در ادامه اجتماع شبانه با حضور در میدان ولایت فقیه حمایت خود را از وطن، رهبری و انقلاب اعلام کردند."
+    },
+    {
+      "title": "دومین جشن مهرگان کردستان",
+      "link": "https://www.mehrnews.com/photo/6972884/%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%AC%D8%B4%D9%86-%D9%85%D9%87%D8%B1%DA%AF%D8%A7%D9%86-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86",
+      "date": "2026-10-09T22:37:13.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه"
+    },
+    {
+      "title": "ادعای دادستان امارات درباره طرح انتحاری کمک‌خلبان فلای‌دبی علیه فرودگاه بن‌گوریون",
+      "link": "https://www.isna.ir/news/1405071811323/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AF%D8%A7%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%B7%D8%B1%D8%AD-%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%DB%8C-%DA%A9%D9%85%DA%A9-%D8%AE%D9%84%D8%A8%D8%A7%D9%86-%D9%81%D9%84%D8%A7%DB%8C-%D8%AF%D8%A8%DB%8C-%D8%B9%D9%84%DB%8C%D9%87",
+      "date": "2026-10-09T22:35:04.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۵",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "دادستان کل امارات ادعا کرد کمک‌خلبان ۲۹ ساله عمانی پرواز شرکت فلای‌دبی در مسیر دبی به تل‌آویو قصد داشته هواپیما را در کنترل خود بگیرد و با کوبیدن آن به یکی از پایانه‌های فرودگاه بن‌گوریون، حمله‌ای انتحاری را انجام دهد."
+    },
+    {
+      "title": "روایت کرملین از گفتگوی پوتین و ترامپ درباره تأمین سوخت بازارهای جهانی",
+      "link": "https://www.mehrnews.com/news/6972881/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D9%85%D9%84%DB%8C%D9%86-%D8%A7%D8%B2-%DA%AF%D9%81%D8%AA%DA%AF%D9%88%DB%8C-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D9%88-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-%D8%B3%D9%88%D8%AE%D8%AA-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C",
+      "date": "2026-10-09T22:34:02.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۴",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "کاخ کرملین در پی گفتگوی تلفنی پوتین و ترامپ، از آمادگی روسیه برای عرضه نفت و فرآورده‌های نفتی به بازار آمریکا و جهان خبر داد."
+    },
+    {
+      "title": "اوشاکوف: پوتین در تماس تلفنی با ترامپ بر ضرورت دستیابی به توافق با ایران تاکید کرد",
+      "link": "https://www.irna.ir/news/86287904/%D8%A7%D9%88%D8%B4%D8%A7%DA%A9%D9%88%D9%81-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%AF%D8%B1-%D8%AA%D9%85%D8%A7%D8%B3-%D8%AA%D9%84%D9%81%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%AF%D8%B3%D8%AA%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A8%D9%87-%D8%AA%D9%88%D8%A7%D9%81%D9%82",
+      "date": "2026-10-09T22:32:58.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۲",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- «یوری اوشاکوف» دستیار رئیس جمهور روسیه در اظهاراتی با اشاره به تماس تلفنی ولادیمیر پوتین با همتای آمریکایی خود، اعلام کرد که رئیس جمهور روسیه در جریان این گفت وگو بر ضرورت دستیابی به توافق با ایران تاکید کرده است."
+    },
+    {
+      "title": "تصادف زنجیره ای ۶ خودرو با یک کشته و ۱۹ مصدوم",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3251192",
+      "date": "2026-10-09T22:32:16.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۲",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "تصادف زنجیره‌ای ۶ خودرو شامل ۲ تریلی و ۴ خودروی سواری در کیلومتر ۸۷ جاده دامغان ـ سمنان، یک کشته و ۱۹ مصدوم بر جا گذاشت. مصدومان این حادثه با همکاری نیروهای هلال‌احمر و اورژانس ۱۱۵ به بیمارستان منتقل شدند."
+    },
+    {
+      "title": "جیش‌الظلم مسئول ترور زاهدان شد",
+      "link": "https://www.tabnak.ir/fa/news/1398016/%D8%AC%DB%8C%D8%B4-%D8%A7%D9%84%D8%B8%D9%84%D9%85-%D9%85%D8%B3%D8%A6%D9%88%D9%84-%D8%AA%D8%B1%D9%88%D8%B1-%D8%B2%D8%A7%D9%87%D8%AF%D8%A7%D9%86-%D8%B4%D8%AF",
+      "date": "2026-10-09T22:30:01.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۰",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "گروه تروریستی جیش‌الظلم با انتشار بیانیه‌ای، مسئولیت حادثه تروریستی در محور چشمه زیارت زاهدان را بر عهده گرفت."
+    },
     {
       "title": "جشن از تولد قهرمان تا دنیای کودک",
       "link": "https://www.mehrnews.com/photo/6972864/%D8%AC%D8%B4%D9%86-%D8%A7%D8%B2-%D8%AA%D9%88%D9%84%D8%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86-%D8%AA%D8%A7-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%DA%A9%D9%88%D8%AF%DA%A9",
@@ -349,36 +448,6 @@
       "rssDescription": "زنجان - در این فیلم تصاویری از دویست و بیست‌وسومین اجتماع پرشور مردم ولایتمدار زنجان در حمایت از رهبری و نظام مقدس جمهوری اسلامی ایران و دفاع از وطن را می‌بینید."
     },
     {
-      "title": "۲۲۳ شب لبیک؛ بازخوانی عزم استوار مردم دیار آفتاب در پاسداشت انقلاب",
-      "link": "https://www.mehrnews.com/news/6972860/%DB%B2%DB%B2%DB%B3-%D8%B4%D8%A8-%D9%84%D8%A8%DB%8C%DA%A9-%D8%A8%D8%A7%D8%B2%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B9%D8%B2%D9%85-%D8%A7%D8%B3%D8%AA%D9%88%D8%A7%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8",
-      "date": "2026-10-09T21:21:30.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۲۱",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "اراک- در این ویدئو ۲۲۳ شب لبیک‌ و بازخوانی عزم استوار مردم دیار آفتاب در پاسداشت انقلاب را ملاحظه می کنید."
-    },
-    {
-      "title": "۲۲۳ شب خروش مردم محلات در حمایت از ولایت فقیه",
-      "link": "https://www.mehrnews.com/news/6972869/%DB%B2%DB%B2%DB%B3-%D8%B4%D8%A8-%D8%AE%D8%B1%D9%88%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%AD%D9%84%D8%A7%D8%AA-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%81%D9%82%DB%8C%D9%87",
-      "date": "2026-10-09T21:20:56.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۲۰",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "محلات- در این ویدئو ۲۲۳ شب خروش مردم محلات در حمایت از ولایت فقیه را ملاحظه می کنید."
-    },
-    {
-      "title": "پیکر مطهر شهید «مرتضی حضرتی» در تبریز تشییع شد",
-      "link": "https://www.mehrnews.com/news/6972672/%D9%BE%DB%8C%DA%A9%D8%B1-%D9%85%D8%B7%D9%87%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%B1%D8%AA%D8%B6%DB%8C-%D8%AD%D8%B6%D8%B1%D8%AA%DB%8C-%D8%AF%D8%B1-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D8%AA%D8%B4%DB%8C%DB%8C%D8%B9-%D8%B4%D8%AF",
-      "date": "2026-10-09T21:19:07.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۱۹",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "تبریز- پیکر مطهر بسیجی شهید «مرتضی حضرتی» که حین امهای مهمات باقی‌مانده از جنگ رمضان به شهادت رسیده بود با حضور مردم و نمازگزاران تبریز تشییع شد."
-    },
-    {
       "title": "خوشحالی کیهان از اعتراض دانش آموزان در جمهوری آذربایجان/ ویدئو",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3251183",
       "date": "2026-10-09T21:18:52.000Z",
@@ -387,16 +456,6 @@
       "flag": "🇮🇷",
       "category": "اجتماعی",
       "rssDescription": "کیهان نوشت: دانش‌آموزان مدرسه شماره 69 باکو، نسبت به عدم اجازه ورود همکلاسی‌هایشان که حجاب دارند به مدرسه، اعتراض کردند. دانش‌آموزان به نشانه اعتراض، در کلاس‌ها شرکت نکردند و خواستار اجازه ورود همکلاسی‌های محجبه به مدرسه شدند."
-    },
-    {
-      "title": "دویست‌وبیست‌وسومین شب همدلی تبریزی‌ها در اجتماع مردمی",
-      "link": "https://www.mehrnews.com/news/6972852/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85%DB%8C",
-      "date": "2026-10-09T21:17:18.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۱۷",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "تبریز- دویست‌وبیست‌وسومین اجتماع شبانه مردم تبریز با حضور اقشار مختلف مردم و با محوریت همدلی، وحدت و همبستگی برگزار شد."
     },
     {
       "title": "عضو ارشد انصارالله: باب المندب فقط برای کشتی‌های عربستان مسدود است",
@@ -646,7 +705,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/U8fS7WKfE2ykG08Y9IlpCiihhjNNI63Tdz5jV5WifTnWOSMrOSO9sVaiPqi6eJudUww-Jk6219pZ3jHg_cXt9x5oxPsCUCkidB8jE2pVbLz0GzBv-lm4UCmKjMO6CDMAV8ObWEWDTr1pte3GK53aKXhetB_AJg-n5QSYTuQOdYj_h4kwTrDJ5vMOEn2pjJzK/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/wFjv0GaOQWYbsfxt44fjL8b9Ru3VnvzJBaNgJ3OkmMoT2NdRJ2b-5LCffy4Or9zIK1g_E8Qy1ftjJCKbZCXPXQ5eM3AKHGV127RjlHf1SstFXIHllTKD9Ps2JWaZX_jxhOHN40QT1DXW9btdsVeBudwI5WZl5DmLrJG0PY2vTJTjcWg5ZgKNKqj9iGwFUcNN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۸ مهر ۱۴۰۵",
@@ -656,7 +715,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/-lTOlhyddnON8ihpdaLneKvfsZ2cX2U40UHQ0LDVetuy8FRO-7MRxby16B8q9xEeskyBTbiu5mLN496NXhnNa1Kd1LgAqz2Cd5vXAfSzLmmpgrH1V9KZfUpEXdE_UxEaZ4e8M6qzVLYzPizWTBro-kIopYxw6HX_tAPXmKuqe1IBQOMFruW6F5b63iGDf8mh/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/2RLVbR5fnUZVaj3OUZBxMPUG-w2ZWUKRCpuLKglDg3kn5-Q6z3Rr5H8wEZS2WcFu-wlc2jRpPbYkvorbVULF95vX2FW25JhP5PYZtGX2-ZlW_yznL2BrdQZqItlR7Zp_HYZYh9SUGodUWTZZFeCkAlXt_c-CgH29229KSPMTAiOB6jgBXRgdfh8k0G4Gz4OB/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۸ مهر ۱۴۰۵",
@@ -666,7 +725,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/1GguZo42UKWPkPDZQS60wnn5xdJ9rAUr9holpYcaTW_EdW_qyK4_s652rxjvxOvXUDZjTJITCarq3us0ZG3BzONRbN1A_yMmKxXYh_rPtPSj9li9SnNWuy0jgv3J9irWxjoWwxA4btofMi4l1rxhoBnp-_JN9RU6Uh0t1G0CAL6d1Am9895uN58_EnK4hIsb/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/uXF3Mryq8r0lfZNCpFbibck_EJ7eGQQI-UyxvglBoba7kQ8BjIVcoTpTa7Q0upfMxBwPAtcrg1WGPi3MMy64QBf6rSTHFVQjbjwuA6S1fTtQrjeyEoS-B92bJvZw_9zSToKwFFoNZZuY7ZN6DOQPx95ET-krR9g0U-yEqYoK3MrxhNAthHaznk9zt9S0Srj5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۸ مهر + جدول",
@@ -676,7 +735,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/CccioXo--hdkhfzR7nKBYoAIskxzJvBXBbttyW2VeJNauHKOXhBUsE4qmrx7-kLI2Ve9CD3mheuW4BmKlmvINt3xAcMGvfdlzT9GR39OrIz8x8UdF_5RTGjNuFOjARBWOjOzMONqjeDfc4Kb0SV8-R7FkYMW417o2oGSLoO5Wqei-CXw-NYVkEdIqWFs6oGp/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ui-7bnite617VnWF02E2bpT745dbep3iBp9NqgXkhJBFlnahWHUvG3clCcm4RcPMxtnMrD9dVTdsuHogPMmbEMXr0az1JxhO6HtdBgW7ZiUemtnOROelyc3OZFQXPf4gDYz0JiaNY0PMegalRNL9Aw9jxZ5f7vaq6RFydRx3oWiUWJ2JuFxZB9Yv-kramBHs/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۸ مهر ۱۴۰۵",
@@ -686,7 +745,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qfMz-cS43wKTXZ88Hxr3TWjZOYuSHghGvubZ6q80nZakxmXz9zF7Dn5nSvnQvn6Dq-FeycqKLg5vH98uaM4cSshyARMswy9ZVmiY1Hj2_j6gcflkEtjUhTIne6bbjRySmJUYMWgWGtxCdypyFTE3h9Mmwz3tqVw26C4lQQuwno8eNdKEsUkhlsAMtGAVnFfC/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/2aaQay1p3Ip_KZV56caoSum-3QZxaQMU304e2ngLvV4Q98ZKy5L1-hgSEoBJQBpHWUwgl6NClvnTWVVKNtigkf4q3ZYdLllGEgfQjkTt-p6EewLqN33dNpnekHz1Ktdxxcf4a2YHkl3oiibnxxgI51idqo278GjTC22MMYfn6Tr5jCjFURW0hnEhHA8LkGHU/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "غذایی مفید و مغذی برای کودکان در سن رشد",
@@ -767,16 +826,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "«ولادیمیر پوتین»، رئیس‌جمهور روسیه، روز جمعه در تماس تلفنی با «دونالد ترامپ» همتای آمریکایی خود، آمادگی روسیه برای تامین نفت و فرآورده‌های نفتی بازارهای آمریکا و جهان را تایید کرد."
-    },
-    {
-      "title": "‌همین‌قدر خاک بر سر هستیم ⁧«ما اصولگراها⁩»/ انتقاد محمد مهاجری از کسانی که به جای روبیو به رقیبان سیاسی خود در داخل حمله می کنند",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3251177",
-      "date": "2026-10-09T20:28:30.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۲۸",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "فعال سیاسی اصولگرا نوشت: از روبیو⁩ ( که علیه اقتدار ایران در دوره هخامنشیان عقده‌گشایی کرده ) بی‌شرف‌تر، کسانی که هستندکه بجای پاسخ به او به رقیبان سیاسی خود در داخل حمله می‌کنند و انسجام ملی‌را تضعیف می‌کنند.‌همین‌قدر خاک‌برسر هستیم ،ما اصولگراها⁩!"
     },
     {
       "title": "تماس تلفنی ترامپ و پوتین/ سخنگوی کرملین: در این تماس به موضوع ایران پرداخته شد",
@@ -919,16 +968,6 @@
       "rssDescription": "علیرضا پناهیان گفت: در تجمعات کسانی که می‌گفتند مذاکرات خیانت به خون شهداست و به مسئولان توهین و فحاشی می کردند را دستگیر کردند مشخص شد هم ضدانقلاب هستند هم بهایی!"
     },
     {
-      "title": "تکواندو گرندپری پاریس؛ سلیمی و زندی طلایی شدند",
-      "link": "https://www.irna.ir/news/86287879/%D8%AA%DA%A9%D9%88%D8%A7%D9%86%D8%AF%D9%88-%DA%AF%D8%B1%D9%86%D8%AF%D9%BE%D8%B1%DB%8C-%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3-%D8%B3%D9%84%DB%8C%D9%85%DB%8C-%D9%88-%D8%B2%D9%86%D8%AF%DB%8C-%D8%B7%D9%84%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF",
-      "date": "2026-10-09T20:09:24.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۰۹",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "تهران-ایرنا- ابوالفضل زندی و آرین سلیمی به مدال طلای رقابت‌های تکواندو گرندپری پاریس دست یافتند."
-    },
-    {
       "title": "ادعای ترامپ: روسیه مقادیر زیادی گازوئیل به آمریکا و بازارهای جهانی عرضه خواهد کرد",
       "link": "https://www.isna.ir/news/1405071711318/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%85%D9%82%D8%A7%D8%AF%DB%8C%D8%B1-%D8%B2%DB%8C%D8%A7%D8%AF%DB%8C-%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%88-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C",
       "date": "2026-10-09T20:02:35.000Z",
@@ -987,50 +1026,30 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "رئیس مجلس شورای اسلامی در پیامی به ادعاهای روبیو واکنش نشان داد و تاکید کرد که کسانی که به دنبال میراث اسکندر هستند، به سرنوشت والرین دچار خواهند شد؛ زانو خواهید زد!"
-    },
-    {
-      "title": "تعجب امیرحسین قیاسی از دیدن اکسپلور اینستاگرام رضا گلزار",
-      "link": "https://www.asriran.com/fa/news/1197577/%D8%AA%D8%B9%D8%AC%D8%A8-%D8%A7%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86-%D9%82%DB%8C%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%AF%DB%8C%D8%AF%D9%86-%D8%A7%DA%A9%D8%B3%D9%BE%D9%84%D9%88%D8%B1-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1",
-      "date": "2026-10-09T19:57:12.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۷",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "در بخشی از گفت‌وگوی امیرحسین قیاسی با محمدرضا گلزار، اتفاقی جالبی رخ داد؛ جایی که قیاسی از گلزار خواست صفحه اکسپلور اینستاگرامش را نشان دهد."
-    },
-    {
-      "title": "ویدیو: گل سوم النصر به القادسیه توسط کومان",
-      "link": "https://www.ilna.ir/fa/tiny/news-1850150",
-      "date": "2026-10-09T19:54:37.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۴",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل سوم النصر به القادسیه توسط کومان زده شد."
-    },
-    {
-      "title": "زمین‌لرزه ۷.۷ ریشتری پاناما را لرزاند",
-      "link": "https://www.asriran.com/fa/news/1197576/%D8%B2%D9%85%DB%8C%D9%86-%D9%84%D8%B1%D8%B2%D9%87-7-7-%D8%B1%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C-%D9%BE%D8%A7%D9%86%D8%A7%D9%85%D8%A7-%D8%B1%D8%A7-%D9%84%D8%B1%D8%B2%D8%A7%D9%86%D8%AF",
-      "date": "2026-10-09T19:54:21.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۴",
-      "source": "عصر ایران",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "این زمین‌لرزه در عمق ۱۲.۶ کیلومتری زمین , در ۱۲ کیلومتری جنوب غربی منطقه پیتالوزا آریبا به وقوع پیوسته است."
-    },
-    {
-      "title": "واکنش صالحی امیری به روبیو: با زبان احترام سخن بگویید!",
-      "link": "https://www.isna.ir/news/1405071711315/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B5%D8%A7%D9%84%D8%AD%DB%8C-%D8%A7%D9%85%DB%8C%D8%B1%DB%8C-%D8%A8%D9%87-%D8%B1%D9%88%D8%A8%DB%8C%D9%88-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%85-%D8%B3%D8%AE%D9%86-%D8%A8%DA%AF%D9%88%DB%8C%DB%8C%D8%AF",
-      "date": "2026-10-09T19:53:59.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۳",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "وزیر میراث‌ فرهنگی، گردشگری و صنایع‌دستی در واکنش به روایت وزیر امور خارجه آمریکا از جنگ‌ ایران و یونان، با تاکید بر دیرپایی تمدن ایران و استقلال هویت تمدنی ملت‌ها از قدرت‌های سیاسی، تصریح کرد: با ایران باید با زبان احترام سخن گفت، زیرا ایران نه دشمنی برساخته در یک خطابه سیاسی، بلکه تمدنی زنده، ملتی بزرگ و حقیقتی ماندگار در تاریخ جهان است."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "خروش حماسی مردم انقلابی سلماس در لبیک به ندای رهبری",
+        "link": "https://www.mehrnews.com/news/6972882/%D8%AE%D8%B1%D9%88%D8%B4-%D8%AD%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D9%84%D8%A8%DB%8C%DA%A9-%D8%A8%D9%87-%D9%86%D8%AF%D8%A7%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1%DB%8C",
+        "date": "2026-10-09T22:39:48.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۹",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "ارومیه - مردم ولایی سلماس در تداوم حمایت از رهبری و انقلاب وخونخواهی رهبر شهید انقلاب در شب ۲۲۳ مقاومت ملی در خیابان تجمع کردند."
+      },
+      {
+        "title": "اتحاد و همدلی ارومیه‌ای‌ها در حمایت از وطن به شب ۲۲۳ رسید",
+        "link": "https://www.mehrnews.com/news/6972880/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%A7%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D8%B7%D9%86-%D8%A8%D9%87-%D8%B4%D8%A8-%DB%B2%DB%B2%DB%B3-%D8%B1%D8%B3%DB%8C%D8%AF",
+        "date": "2026-10-09T22:39:19.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۹",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "ارومیه - مردم ولایی ارومیه در ادامه اجتماع شبانه با حضور در میدان ولایت فقیه حمایت خود را از وطن، رهبری و انقلاب اعلام کردند."
+      },
       {
         "title": "اولین تصویر از تانکر منفجرشده در هرمز/ سپاه «ان‌وی سان‌شاین» را چگونه هدف گرفت؟",
         "link": "https://www.khabaronline.ir/news/2286035/%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D8%A7%D8%B2-%D8%AA%D8%A7%D9%86%DA%A9%D8%B1-%D9%85%D9%86%D9%81%D8%AC%D8%B1%D8%B4%D8%AF%D9%87-%D8%AF%D8%B1-%D9%87%D8%B1%D9%85%D8%B2-%D8%B3%D9%BE%D8%A7%D9%87-%D8%A7%D9%86-%D9%88%DB%8C-%D8%B3%D8%A7%D9%86-%D8%B4%D8%A7%DB%8C%D9%86",
@@ -1133,6 +1152,16 @@
       }
     ],
     "اقتصادی": [
+      {
+        "title": "از عطاری تا اینستاگرام؛ بازار توصیه‌هایی که قرار است  همه‌چیز را درمان کنند/ یک نسخه برای ده‌ها درد!",
+        "link": "https://www.qudsonline.ir/news/1169571/%D8%A7%D8%B2-%D8%B9%D8%B7%D8%A7%D8%B1%DB%8C-%D8%AA%D8%A7-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%AA%D9%88%D8%B5%DB%8C%D9%87-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D9%82%D8%B1%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA-%D9%87%D9%85%D9%87-%DA%86%DB%8C%D8%B2",
+        "date": "2026-10-09T22:42:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۴۲",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "اقتصادی",
+        "rssDescription": "سازمان غذا و دارو از شناسایی بیش از هزار و ۲۰۰ دامنه فعال در عرضه غیرمجاز فراورده‌های سلامت‌محور خبر داده است؛ بازاری که در آن، دارو و فراورده‌های سلامت‌محور می‌توانند خارج از زنجیره رسمی تأمین و نظارت به دست مصرف‌کننده برسند."
+      },
       {
         "title": "انبوه‌سازان مسکن ایرانی راه خارج را بلد شده‌اند!",
         "link": "https://www.isna.ir/news/1405071711151/%D8%A7%D9%86%D8%A8%D9%88%D9%87-%D8%B3%D8%A7%D8%B2%D8%A7%D9%86-%D9%85%D8%B3%DA%A9%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7%D9%87-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%B1%D8%A7-%D8%A8%D9%84%D8%AF-%D8%B4%D8%AF%D9%87-%D8%A7%D9%86%D8%AF",
@@ -1303,19 +1332,19 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "مهدی تاج، رئیس فدراسیون فوتبال، از نزدیک‌تر بودن یحیی گل‌محمدی به نیمکت تیم ملی فوتبال امید ایران خبر داد."
-      },
-      {
-        "title": "ویدیو: گل سوم النصر به القادسیه توسط کومان",
-        "link": "https://www.ilna.ir/fa/tiny/news-1850150",
-        "date": "2026-10-09T19:54:37.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۴",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل سوم النصر به القادسیه توسط کومان زده شد."
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "گوش دادن به موسیقی مورد علاقه، درد تزریق را کم می‌کند",
+        "link": "https://www.isna.ir/news/1405071711132/%DA%AF%D9%88%D8%B4-%D8%AF%D8%A7%D8%AF%D9%86-%D8%A8%D9%87-%D9%85%D9%88%D8%B3%DB%8C%D9%82%DB%8C-%D9%85%D9%88%D8%B1%D8%AF-%D8%B9%D9%84%D8%A7%D9%82%D9%87-%D8%AF%D8%B1%D8%AF-%D8%AA%D8%B2%D8%B1%DB%8C%D9%82-%D8%B1%D8%A7-%DA%A9%D9%85-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
+        "date": "2026-10-09T22:48:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۴۸",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "دانشمندان سوئیسی در پژوهش جدید خود دریافتند که گوش دادن به موسیقی مورد علاقه می‌تواند به کاهش درد ناشی از اقدامات پزشکی کوچک مانند تزریق کمک کند."
+      },
       {
         "title": "جان سینا و گلشیفته فراهانی همبازی شدند",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3251191",
@@ -1404,19 +1433,29 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "سنندج - ایرنا - دومین جشن جهانی مهرگان در جوار غار باستانی کرفتو در شهرستان دیواندره برگزار شد."
-      },
-      {
-        "title": "واکنش صالحی امیری به روبیو: با زبان احترام سخن بگویید!",
-        "link": "https://www.isna.ir/news/1405071711315/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B5%D8%A7%D9%84%D8%AD%DB%8C-%D8%A7%D9%85%DB%8C%D8%B1%DB%8C-%D8%A8%D9%87-%D8%B1%D9%88%D8%A8%DB%8C%D9%88-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%85-%D8%B3%D8%AE%D9%86-%D8%A8%DA%AF%D9%88%DB%8C%DB%8C%D8%AF",
-        "date": "2026-10-09T19:53:59.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۳",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "وزیر میراث‌ فرهنگی، گردشگری و صنایع‌دستی در واکنش به روایت وزیر امور خارجه آمریکا از جنگ‌ ایران و یونان، با تاکید بر دیرپایی تمدن ایران و استقلال هویت تمدنی ملت‌ها از قدرت‌های سیاسی، تصریح کرد: با ایران باید با زبان احترام سخن گفت، زیرا ایران نه دشمنی برساخته در یک خطابه سیاسی، بلکه تمدنی زنده، ملتی بزرگ و حقیقتی ماندگار در تاریخ جهان است."
       }
     ],
     "اجتماعی": [
+      {
+        "title": "تصادف زنجیره ای ۶ خودرو با یک کشته و ۱۹ مصدوم",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3251192",
+        "date": "2026-10-09T22:32:16.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۲",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "تصادف زنجیره‌ای ۶ خودرو شامل ۲ تریلی و ۴ خودروی سواری در کیلومتر ۸۷ جاده دامغان ـ سمنان، یک کشته و ۱۹ مصدوم بر جا گذاشت. مصدومان این حادثه با همکاری نیروهای هلال‌احمر و اورژانس ۱۱۵ به بیمارستان منتقل شدند."
+      },
+      {
+        "title": "جیش‌الظلم مسئول ترور زاهدان شد",
+        "link": "https://www.tabnak.ir/fa/news/1398016/%D8%AC%DB%8C%D8%B4-%D8%A7%D9%84%D8%B8%D9%84%D9%85-%D9%85%D8%B3%D8%A6%D9%88%D9%84-%D8%AA%D8%B1%D9%88%D8%B1-%D8%B2%D8%A7%D9%87%D8%AF%D8%A7%D9%86-%D8%B4%D8%AF",
+        "date": "2026-10-09T22:30:01.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۰",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "گروه تروریستی جیش‌الظلم با انتشار بیانیه‌ای، مسئولیت حادثه تروریستی در محور چشمه زیارت زاهدان را بر عهده گرفت."
+      },
       {
         "title": "پزشکیان: دیپلماسی منطقه‌ای نباید صرفاً به برگزاری نشست‌ها محدود شود",
         "link": "https://www.irna.ir/news/86287909/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A7%DB%8C-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%B5%D8%B1%D9%81%D8%A7-%D8%A8%D9%87-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D9%86%D8%B4%D8%B3%D8%AA-%D9%87%D8%A7-%D9%85%D8%AD%D8%AF%D9%88%D8%AF",
@@ -1530,6 +1569,36 @@
     ],
     "علمی و فناوری": [],
     "بین‌الملل": [
+      {
+        "title": "ادعای دادستان امارات درباره طرح انتحاری کمک‌خلبان فلای‌دبی علیه فرودگاه بن‌گوریون",
+        "link": "https://www.isna.ir/news/1405071811323/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AF%D8%A7%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%B7%D8%B1%D8%AD-%D8%A7%D9%86%D8%AA%D8%AD%D8%A7%D8%B1%DB%8C-%DA%A9%D9%85%DA%A9-%D8%AE%D9%84%D8%A8%D8%A7%D9%86-%D9%81%D9%84%D8%A7%DB%8C-%D8%AF%D8%A8%DB%8C-%D8%B9%D9%84%DB%8C%D9%87",
+        "date": "2026-10-09T22:35:04.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۵",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "دادستان کل امارات ادعا کرد کمک‌خلبان ۲۹ ساله عمانی پرواز شرکت فلای‌دبی در مسیر دبی به تل‌آویو قصد داشته هواپیما را در کنترل خود بگیرد و با کوبیدن آن به یکی از پایانه‌های فرودگاه بن‌گوریون، حمله‌ای انتحاری را انجام دهد."
+      },
+      {
+        "title": "روایت کرملین از گفتگوی پوتین و ترامپ درباره تأمین سوخت بازارهای جهانی",
+        "link": "https://www.mehrnews.com/news/6972881/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%DA%A9%D8%B1%D9%85%D9%84%DB%8C%D9%86-%D8%A7%D8%B2-%DA%AF%D9%81%D8%AA%DA%AF%D9%88%DB%8C-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D9%88-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-%D8%B3%D9%88%D8%AE%D8%AA-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C",
+        "date": "2026-10-09T22:34:02.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۴",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "کاخ کرملین در پی گفتگوی تلفنی پوتین و ترامپ، از آمادگی روسیه برای عرضه نفت و فرآورده‌های نفتی به بازار آمریکا و جهان خبر داد."
+      },
+      {
+        "title": "اوشاکوف: پوتین در تماس تلفنی با ترامپ بر ضرورت دستیابی به توافق با ایران تاکید کرد",
+        "link": "https://www.irna.ir/news/86287904/%D8%A7%D9%88%D8%B4%D8%A7%DA%A9%D9%88%D9%81-%D9%BE%D9%88%D8%AA%DB%8C%D9%86-%D8%AF%D8%B1-%D8%AA%D9%85%D8%A7%D8%B3-%D8%AA%D9%84%D9%81%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%AF%D8%B3%D8%AA%DB%8C%D8%A7%D8%A8%DB%8C-%D8%A8%D9%87-%D8%AA%D9%88%D8%A7%D9%81%D9%82",
+        "date": "2026-10-09T22:32:58.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۲",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- «یوری اوشاکوف» دستیار رئیس جمهور روسیه در اظهاراتی با اشاره به تماس تلفنی ولادیمیر پوتین با همتای آمریکایی خود، اعلام کرد که رئیس جمهور روسیه در جریان این گفت وگو بر ضرورت دستیابی به توافق با ایران تاکید کرده است."
+      },
       {
         "title": "حمله تند ولودیمیر زلنسکی به باج نفتی ترامپ به پوتین",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3251190",
@@ -1781,16 +1850,6 @@
         "rssDescription": "تهران- ایرنا- کاخ کرملین در بیانیه‌ای اعلام کرد که روسیه آمادگی خود را برای تأمین نفت و فرآورده‌های نفتی مورد نیاز بازارهای آمریکا و سراسر جهان اعلام کرده است."
       },
       {
-        "title": "تکواندو گرندپری پاریس؛ سلیمی و زندی طلایی شدند",
-        "link": "https://www.irna.ir/news/86287879/%D8%AA%DA%A9%D9%88%D8%A7%D9%86%D8%AF%D9%88-%DA%AF%D8%B1%D9%86%D8%AF%D9%BE%D8%B1%DB%8C-%D9%BE%D8%A7%D8%B1%DB%8C%D8%B3-%D8%B3%D9%84%DB%8C%D9%85%DB%8C-%D9%88-%D8%B2%D9%86%D8%AF%DB%8C-%D8%B7%D9%84%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%D9%86%D8%AF",
-        "date": "2026-10-09T20:09:24.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۰۹",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "تهران-ایرنا- ابوالفضل زندی و آرین سلیمی به مدال طلای رقابت‌های تکواندو گرندپری پاریس دست یافتند."
-      },
-      {
         "title": "ادعای ترامپ: روسیه مقادیر زیادی گازوئیل به آمریکا و بازارهای جهانی عرضه خواهد کرد",
         "link": "https://www.isna.ir/news/1405071711318/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%85%D9%82%D8%A7%D8%AF%DB%8C%D8%B1-%D8%B2%DB%8C%D8%A7%D8%AF%DB%8C-%DA%AF%D8%A7%D8%B2%D9%88%D8%A6%DB%8C%D9%84-%D8%A8%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%88-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C",
         "date": "2026-10-09T20:02:35.000Z",
@@ -1813,6 +1872,15 @@
     ],
     "متفرقه": [
       {
+        "title": "دومین جشن مهرگان کردستان",
+        "link": "https://www.mehrnews.com/photo/6972884/%D8%AF%D9%88%D9%85%DB%8C%D9%86-%D8%AC%D8%B4%D9%86-%D9%85%D9%87%D8%B1%DA%AF%D8%A7%D9%86-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86",
+        "date": "2026-10-09T22:37:13.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۲:۳۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه"
+      },
+      {
         "title": "مهدی کروبی برای انتشار کلیپ تبلیغاتی از رهبر شهید مجوز گرفته بود/ ویدئو",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3251187",
         "date": "2026-10-09T21:49:47.000Z",
@@ -1821,46 +1889,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "جزئیات جدید از مجوز رهبر شهید برای انتشار کلیپ تبلیغاتی مهدی کروبی در صداوسیما در سال ۸۸ از زبان ضرغامی را ببینید."
-      },
-      {
-        "title": "۲۲۳ شب لبیک؛ بازخوانی عزم استوار مردم دیار آفتاب در پاسداشت انقلاب",
-        "link": "https://www.mehrnews.com/news/6972860/%DB%B2%DB%B2%DB%B3-%D8%B4%D8%A8-%D9%84%D8%A8%DB%8C%DA%A9-%D8%A8%D8%A7%D8%B2%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B9%D8%B2%D9%85-%D8%A7%D8%B3%D8%AA%D9%88%D8%A7%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8",
-        "date": "2026-10-09T21:21:30.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۲۱",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "اراک- در این ویدئو ۲۲۳ شب لبیک‌ و بازخوانی عزم استوار مردم دیار آفتاب در پاسداشت انقلاب را ملاحظه می کنید."
-      },
-      {
-        "title": "۲۲۳ شب خروش مردم محلات در حمایت از ولایت فقیه",
-        "link": "https://www.mehrnews.com/news/6972869/%DB%B2%DB%B2%DB%B3-%D8%B4%D8%A8-%D8%AE%D8%B1%D9%88%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%AD%D9%84%D8%A7%D8%AA-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%81%D9%82%DB%8C%D9%87",
-        "date": "2026-10-09T21:20:56.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۲۰",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "محلات- در این ویدئو ۲۲۳ شب خروش مردم محلات در حمایت از ولایت فقیه را ملاحظه می کنید."
-      },
-      {
-        "title": "پیکر مطهر شهید «مرتضی حضرتی» در تبریز تشییع شد",
-        "link": "https://www.mehrnews.com/news/6972672/%D9%BE%DB%8C%DA%A9%D8%B1-%D9%85%D8%B7%D9%87%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%B1%D8%AA%D8%B6%DB%8C-%D8%AD%D8%B6%D8%B1%D8%AA%DB%8C-%D8%AF%D8%B1-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D8%AA%D8%B4%DB%8C%DB%8C%D8%B9-%D8%B4%D8%AF",
-        "date": "2026-10-09T21:19:07.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۱۹",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "تبریز- پیکر مطهر بسیجی شهید «مرتضی حضرتی» که حین امهای مهمات باقی‌مانده از جنگ رمضان به شهادت رسیده بود با حضور مردم و نمازگزاران تبریز تشییع شد."
-      },
-      {
-        "title": "دویست‌وبیست‌وسومین شب همدلی تبریزی‌ها در اجتماع مردمی",
-        "link": "https://www.mehrnews.com/news/6972852/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85%DB%8C",
-        "date": "2026-10-09T21:17:18.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۱:۱۷",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "تبریز- دویست‌وبیست‌وسومین اجتماع شبانه مردم تبریز با حضور اقشار مختلف مردم و با محوریت همدلی، وحدت و همبستگی برگزار شد."
       },
       {
         "title": "ظریف: ما همه چیز را تهدید می‌بینیم، ما حجاب را خاکریز می‌بینیم/ ویدئو",
@@ -1890,7 +1918,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/U8fS7WKfE2ykG08Y9IlpCiihhjNNI63Tdz5jV5WifTnWOSMrOSO9sVaiPqi6eJudUww-Jk6219pZ3jHg_cXt9x5oxPsCUCkidB8jE2pVbLz0GzBv-lm4UCmKjMO6CDMAV8ObWEWDTr1pte3GK53aKXhetB_AJg-n5QSYTuQOdYj_h4kwTrDJ5vMOEn2pjJzK/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/wFjv0GaOQWYbsfxt44fjL8b9Ru3VnvzJBaNgJ3OkmMoT2NdRJ2b-5LCffy4Or9zIK1g_E8Qy1ftjJCKbZCXPXQ5eM3AKHGV127RjlHf1SstFXIHllTKD9Ps2JWaZX_jxhOHN40QT1DXW9btdsVeBudwI5WZl5DmLrJG0PY2vTJTjcWg5ZgKNKqj9iGwFUcNN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۸ مهر ۱۴۰۵",
@@ -1900,7 +1928,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/-lTOlhyddnON8ihpdaLneKvfsZ2cX2U40UHQ0LDVetuy8FRO-7MRxby16B8q9xEeskyBTbiu5mLN496NXhnNa1Kd1LgAqz2Cd5vXAfSzLmmpgrH1V9KZfUpEXdE_UxEaZ4e8M6qzVLYzPizWTBro-kIopYxw6HX_tAPXmKuqe1IBQOMFruW6F5b63iGDf8mh/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/2RLVbR5fnUZVaj3OUZBxMPUG-w2ZWUKRCpuLKglDg3kn5-Q6z3Rr5H8wEZS2WcFu-wlc2jRpPbYkvorbVULF95vX2FW25JhP5PYZtGX2-ZlW_yznL2BrdQZqItlR7Zp_HYZYh9SUGodUWTZZFeCkAlXt_c-CgH29229KSPMTAiOB6jgBXRgdfh8k0G4Gz4OB/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۸ مهر ۱۴۰۵",
@@ -1910,7 +1938,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/1GguZo42UKWPkPDZQS60wnn5xdJ9rAUr9holpYcaTW_EdW_qyK4_s652rxjvxOvXUDZjTJITCarq3us0ZG3BzONRbN1A_yMmKxXYh_rPtPSj9li9SnNWuy0jgv3J9irWxjoWwxA4btofMi4l1rxhoBnp-_JN9RU6Uh0t1G0CAL6d1Am9895uN58_EnK4hIsb/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/uXF3Mryq8r0lfZNCpFbibck_EJ7eGQQI-UyxvglBoba7kQ8BjIVcoTpTa7Q0upfMxBwPAtcrg1WGPi3MMy64QBf6rSTHFVQjbjwuA6S1fTtQrjeyEoS-B92bJvZw_9zSToKwFFoNZZuY7ZN6DOQPx95ET-krR9g0U-yEqYoK3MrxhNAthHaznk9zt9S0Srj5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۸ مهر + جدول",
@@ -1920,7 +1948,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/CccioXo--hdkhfzR7nKBYoAIskxzJvBXBbttyW2VeJNauHKOXhBUsE4qmrx7-kLI2Ve9CD3mheuW4BmKlmvINt3xAcMGvfdlzT9GR39OrIz8x8UdF_5RTGjNuFOjARBWOjOzMONqjeDfc4Kb0SV8-R7FkYMW417o2oGSLoO5Wqei-CXw-NYVkEdIqWFs6oGp/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ui-7bnite617VnWF02E2bpT745dbep3iBp9NqgXkhJBFlnahWHUvG3clCcm4RcPMxtnMrD9dVTdsuHogPMmbEMXr0az1JxhO6HtdBgW7ZiUemtnOROelyc3OZFQXPf4gDYz0JiaNY0PMegalRNL9Aw9jxZ5f7vaq6RFydRx3oWiUWJ2JuFxZB9Yv-kramBHs/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۸ مهر ۱۴۰۵",
@@ -1930,7 +1958,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/qfMz-cS43wKTXZ88Hxr3TWjZOYuSHghGvubZ6q80nZakxmXz9zF7Dn5nSvnQvn6Dq-FeycqKLg5vH98uaM4cSshyARMswy9ZVmiY1Hj2_j6gcflkEtjUhTIne6bbjRySmJUYMWgWGtxCdypyFTE3h9Mmwz3tqVw26C4lQQuwno8eNdKEsUkhlsAMtGAVnFfC/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/2aaQay1p3Ip_KZV56caoSum-3QZxaQMU304e2ngLvV4Q98ZKy5L1-hgSEoBJQBpHWUwgl6NClvnTWVVKNtigkf4q3ZYdLllGEgfQjkTt-p6EewLqN33dNpnekHz1Ktdxxcf4a2YHkl3oiibnxxgI51idqo278GjTC22MMYfn6Tr5jCjFURW0hnEhHA8LkGHU/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "تصاویر تازه امیرحسین قیاسی و همسرش پربازدید شد؛ زوج خبرساز فضای مجازی + عکس",
@@ -1973,16 +2001,6 @@
         "rssDescription": "روزنامه قدس شماره ۱۱۰۴۷ - شنبه ۱۸ مهر ۱۴۰۵"
       },
       {
-        "title": "‌همین‌قدر خاک بر سر هستیم ⁧«ما اصولگراها⁩»/ انتقاد محمد مهاجری از کسانی که به جای روبیو به رقیبان سیاسی خود در داخل حمله می کنند",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3251177",
-        "date": "2026-10-09T20:28:30.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۲۸",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "فعال سیاسی اصولگرا نوشت: از روبیو⁩ ( که علیه اقتدار ایران در دوره هخامنشیان عقده‌گشایی کرده ) بی‌شرف‌تر، کسانی که هستندکه بجای پاسخ به او به رقیبان سیاسی خود در داخل حمله می‌کنند و انسجام ملی‌را تضعیف می‌کنند.‌همین‌قدر خاک‌برسر هستیم ،ما اصولگراها⁩!"
-      },
-      {
         "title": "هشدار جدی نهاد آبراه خلیج فارس",
         "link": "https://www.tabnak.ir/fa/news/1398027/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AC%D8%AF%DB%8C-%D9%86%D9%87%D8%A7%D8%AF-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3",
         "date": "2026-10-09T20:22:31.000Z",
@@ -2021,26 +2039,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "قالیباف در پاسخ به روبیو: در طول تاریخ، ما ایرانیان با کسانی روبه‌رو شده‌ایم که خود را سروران جهان اعلام کردند و کوشیدند تمدن‌های کهن را از صفحهٔ روزگار محو کنند. کسانی که به دنبال میراث اسکندر هستند، سرنوشت والرین را خواهند داشت: زانو خواهید زد."
-      },
-      {
-        "title": "تعجب امیرحسین قیاسی از دیدن اکسپلور اینستاگرام رضا گلزار",
-        "link": "https://www.asriran.com/fa/news/1197577/%D8%AA%D8%B9%D8%AC%D8%A8-%D8%A7%D9%85%DB%8C%D8%B1%D8%AD%D8%B3%DB%8C%D9%86-%D9%82%DB%8C%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%AF%DB%8C%D8%AF%D9%86-%D8%A7%DA%A9%D8%B3%D9%BE%D9%84%D9%88%D8%B1-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%DA%AF%D9%84%D8%B2%D8%A7%D8%B1",
-        "date": "2026-10-09T19:57:12.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۷",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "در بخشی از گفت‌وگوی امیرحسین قیاسی با محمدرضا گلزار، اتفاقی جالبی رخ داد؛ جایی که قیاسی از گلزار خواست صفحه اکسپلور اینستاگرامش را نشان دهد."
-      },
-      {
-        "title": "زمین‌لرزه ۷.۷ ریشتری پاناما را لرزاند",
-        "link": "https://www.asriran.com/fa/news/1197576/%D8%B2%D9%85%DB%8C%D9%86-%D9%84%D8%B1%D8%B2%D9%87-7-7-%D8%B1%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C-%D9%BE%D8%A7%D9%86%D8%A7%D9%85%D8%A7-%D8%B1%D8%A7-%D9%84%D8%B1%D8%B2%D8%A7%D9%86%D8%AF",
-        "date": "2026-10-09T19:54:21.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۱۹:۵۴",
-        "source": "عصر ایران",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "این زمین‌لرزه در عمق ۱۲.۶ کیلومتری زمین , در ۱۲ کیلومتری جنوب غربی منطقه پیتالوزا آریبا به وقوع پیوسته است."
       }
     ]
   }
