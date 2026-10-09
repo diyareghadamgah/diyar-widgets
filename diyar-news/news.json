@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-09T23:39:17.319Z",
-  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۳۹",
+  "lastUpdate": "2026-10-09T23:51:49.869Z",
+  "lastUpdatePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۵۱",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,36 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "امیریه، سردشت و دهرم در فهرست لرزه‌خیزهای هفته گذشته",
+      "link": "https://www.isna.ir/news/1405071711134/%D8%A7%D9%85%DB%8C%D8%B1%DB%8C%D9%87-%D8%B3%D8%B1%D8%AF%D8%B4%D8%AA-%D9%88-%D8%AF%D9%87%D8%B1%D9%85-%D8%AF%D8%B1-%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D9%84%D8%B1%D8%B2%D9%87-%D8%AE%DB%8C%D8%B2%D9%87%D8%A7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87",
+      "date": "2026-10-09T23:51:00.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۵۱",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "در هفته گذشته زمینلرزه‌هایی در چندین استان کشور به ثبت رسید که در میان آنها، امیریه در استان سمنان و سردشت در آذربایجان غربی با زلزله‌هایی به بزرگای ۳.۶، از کانون‌های شاخص لرزه‌ای این بازه زمانی بودند."
+    },
+    {
+      "title": "حماس: تحریم دیوان بین‌المللی کیفری تلاشی آشکار برای حمایت از نتانیاهو است",
+      "link": "https://www.irna.ir/news/86287917/%D8%AD%D9%85%D8%A7%D8%B3-%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D8%AF%DB%8C%D9%88%D8%A7%D9%86-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C-%DA%A9%DB%8C%D9%81%D8%B1%DB%8C-%D8%AA%D9%84%D8%A7%D8%B4%DB%8C-%D8%A2%D8%B4%DA%A9%D8%A7%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2",
+      "date": "2026-10-09T23:46:33.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۴۶",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران- ایرنا- جنبش مقاومت اسلامی فلسطین (حماس) در بیانیه‌ای اعلام کرد که تصمیم رئیس‌جمهور آمریکا برای اعمال تحریم علیه دیوان بین‌المللی کیفری، تعرضی خطرناک به عدالت بین‌المللی و تلاشی آشکار برای حمایت از بنیامین نتانیاهو و رهبران اشغالگر در برابر پاسخ‌گویی به اتهام ارتکاب جنایات جنگی، نسل‌کشی و جنایات علیه بشریت علیه ملت فلسطین در نوار غزه است."
+    },
+    {
+      "title": "واکنش سخنگوی وزارت امور خارجه بعد از تماشای نمایش «آرش»",
+      "link": "https://www.isna.ir/news/1405071811326/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%A8%D8%B9%D8%AF-%D8%A7%D8%B2-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A2%D8%B1%D8%B4",
+      "date": "2026-10-09T23:42:47.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۴۲",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "سخنگوی وزارت امور خارجه در پیامی نوشت: «هویت یک ملت، در فراسوی تفاوت‌ها و سلیقه‌ها، بر خاطره‌ها و ارزش‌های مشترک استوار است و در بزنگاه‌های تاریخی آنچه همه ما را به هم پیوند می‌دهد و یکی می‌کند، چیزی نیست جز میهن: ایران.»"
+    },
     {
       "title": "آمریکا مدعی میانجیگری شد / روسیه و اوکراین یکدیگر را متهم کردند",
       "link": "https://www.irna.ir/news/86287911/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%D8%AF%D8%B9%DB%8C-%D9%85%DB%8C%D8%A7%D9%86%D8%AC%DB%8C%DA%AF%D8%B1%DB%8C-%D8%B4%D8%AF-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%88-%D8%A7%D9%88%DA%A9%D8%B1%D8%A7%DB%8C%D9%86-%DB%8C%DA%A9%D8%AF%DB%8C%DA%AF%D8%B1-%D8%B1%D8%A7-%D9%85%D8%AA%D9%87%D9%85-%DA%A9%D8%B1%D8%AF%D9%86%D8%AF",
@@ -767,16 +797,6 @@
       "rssDescription": "رئیس کل دادگستری استان کردستان از بازداشت متهم تجاوز در شهرستان دیواندره خبر داد."
     },
     {
-      "title": "سومین جشنواره گردو ثمرین",
-      "link": "https://www.irna.ir/photo/86287780/%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%DA%AF%D8%B1%D8%AF%D9%88-%D8%AB%D9%85%D8%B1%DB%8C%D9%86",
-      "date": "2026-10-09T20:35:15.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۳۵",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "سومین جشنواره گردشگری گردو، عصر جمعه (۱۷ مهر ۱۴۰۵) در شهر تاریخی ثمرین با برپایی بیش از ۵۰ غرفه عرضه محصولات صنایع دستی، آش و غذاهای محلی، محصولات کشاورزی و تولیدات بومی منطقه برگزار شد."
-    },
-    {
       "title": "رابطه مسی و رونالدو؛ چیزی فراتر از احترام",
       "link": "https://www.khabaronline.ir/news/2285900/%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%D9%85%D8%B3%DB%8C-%D9%88-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%DA%86%DB%8C%D8%B2%DB%8C-%D9%81%D8%B1%D8%A7%D8%AA%D8%B1-%D8%A7%D8%B2-%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%85",
       "date": "2026-10-09T20:35:00.000Z",
@@ -814,7 +834,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/wFjv0GaOQWYbsfxt44fjL8b9Ru3VnvzJBaNgJ3OkmMoT2NdRJ2b-5LCffy4Or9zIK1g_E8Qy1ftjJCKbZCXPXQ5eM3AKHGV127RjlHf1SstFXIHllTKD9Ps2JWaZX_jxhOHN40QT1DXW9btdsVeBudwI5WZl5DmLrJG0PY2vTJTjcWg5ZgKNKqj9iGwFUcNN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/yY9Bv018NdYSQ7Vn_fOIf25LOkLmOlOta2swsOmYt2aDJ6N_ZZq448kLsdsizS_r-hjglLq_FOMKNA9AnvBQblSURs0P4PRGo5hELKDcGadTwWDEKjjJuhnlm_IhAx4PEO-TThC3fXxnmeydMoZqM0ILxsmql-KQ2yDBy2ldQksMRFTYxjCN7ehK8F85yjWh/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - شنبه ۱۸ مهر ۱۴۰۵",
@@ -824,7 +844,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/2RLVbR5fnUZVaj3OUZBxMPUG-w2ZWUKRCpuLKglDg3kn5-Q6z3Rr5H8wEZS2WcFu-wlc2jRpPbYkvorbVULF95vX2FW25JhP5PYZtGX2-ZlW_yznL2BrdQZqItlR7Zp_HYZYh9SUGodUWTZZFeCkAlXt_c-CgH29229KSPMTAiOB6jgBXRgdfh8k0G4Gz4OB/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zpfS9Klc8ySRXlgxzbylmfTk3lcIus-CZO93FWU_Io0PpBKmcoANjA9pCE5ZfAp-Y3yQj5vkn26rc9NLaeErkJtS81pQOlTS-Oq-i3MO2eXuvIXC4_EONwrJwfNaJ_u_ex-3ec8M1fC3as0oVOp4EKdsbXHD1-4HOtZCnoepGaPVQ8flRwW-xTPopnZNpnii/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - شنبه ۱۸ مهر ۱۴۰۵",
@@ -834,7 +854,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/uXF3Mryq8r0lfZNCpFbibck_EJ7eGQQI-UyxvglBoba7kQ8BjIVcoTpTa7Q0upfMxBwPAtcrg1WGPi3MMy64QBf6rSTHFVQjbjwuA6S1fTtQrjeyEoS-B92bJvZw_9zSToKwFFoNZZuY7ZN6DOQPx95ET-krR9g0U-yEqYoK3MrxhNAthHaznk9zt9S0Srj5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/NhHEGVcffPT6zhDMVc_yPekFgcJpHaf8Ez8JPYtFEkH6lTGoKFBGBI3dJ8mm4_qAqxF6Plh_YvEVg9BeIE8OdIu43uPNml1Yr5pkTcDvjjVr79wJKayKkGhvYwE3oKmemoZ9_t2Jk5g7d_a8MWAhjCtK5ETERKC2pfl-2_-DQNmmhv100Pq_x6uut1qqQ2sy/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "ساعات سعد و نحس امروز شنبه ۱۸ مهر + جدول",
@@ -844,7 +864,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ui-7bnite617VnWF02E2bpT745dbep3iBp9NqgXkhJBFlnahWHUvG3clCcm4RcPMxtnMrD9dVTdsuHogPMmbEMXr0az1JxhO6HtdBgW7ZiUemtnOROelyc3OZFQXPf4gDYz0JiaNY0PMegalRNL9Aw9jxZ5f7vaq6RFydRx3oWiUWJ2JuFxZB9Yv-kramBHs/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VpVNPdjHvyyIIxWkJk3ZXJRMFpBdrpbVwMAp7SAYeEl7vBUfyUme7djnRlWStYkQkFE_N2iFCK1vTpVUIA9X4bOUdLHBDk3wrY3qgfC6jiMguIGFEDPNxKy8vHWWHWHrMvIThN-37tDm7jwRko6rfGhpfNKBEOWiNqGqxDS9ApAUd0G6Y3RtxODRs8k4rICd/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز شنبه ۱۸ مهر ۱۴۰۵",
@@ -854,7 +874,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/2aaQay1p3Ip_KZV56caoSum-3QZxaQMU304e2ngLvV4Q98ZKy5L1-hgSEoBJQBpHWUwgl6NClvnTWVVKNtigkf4q3ZYdLllGEgfQjkTt-p6EewLqN33dNpnekHz1Ktdxxcf4a2YHkl3oiibnxxgI51idqo278GjTC22MMYfn6Tr5jCjFURW0hnEhHA8LkGHU/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/KzR2pIIvh_g73n7awn5bpKcDEzWBjljdjMMCX7gORaciLvPGCuIe3GoAwVCmikg6neKGB_J_xL3sQKm6nv4nfX1ahTB5oGr-2J69pI0z45adkKmQX5nR58wLHdZ1g4-OSvh_CBgAZH5d-CQVsNFMHwbvfMaBIzhXrS4rZMa8zskqw5xcpO1ID9kPTUlzTYA1/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "غذایی مفید و مغذی برای کودکان در سن رشد",
@@ -967,6 +987,16 @@
       "rssDescription": "نهاد آبراه خلیج فارس با انتشار اطلاعیه‌ای نسبت به سوءاستفاده از دامنه‌های جعلی هشدار داد و اعلام کرد که مکاتبات رسمی این نهاد صرفاً از طریق ایمیل با دامنه PGSA.ir انجام می‌شود و هیچ دامنه دیگری اعتبار ندارد."
     },
     {
+      "title": "پناهیان: عده‌ای بهایی دستگیر شدند که در تظاهرات علیه مسئولین شعار می‌دادند!",
+      "link": "https://www.tabnak.ir/fa/news/1398032/%D9%BE%D9%86%D8%A7%D9%87%DB%8C%D8%A7%D9%86-%D8%B9%D8%AF%D9%87-%D8%A7%DB%8C-%D8%A8%D9%87%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AF-%DA%A9%D9%87-%D8%AF%D8%B1-%D8%AA%D8%B8%D8%A7%D9%87%D8%B1%D8%A7%D8%AA-%D8%B9%D9%84%DB%8C%D9%87-%D9%85%D8%B3%D8%A6%D9%88%D9%84%DB%8C%D9%86-%D8%B4%D8%B9%D8%A7%D8%B1-%D9%85%DB%8C-%D8%AF%D8%A7%D8%AF%D9%86%D8%AF",
+      "date": "2026-10-09T20:22:28.000Z",
+      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۲۲",
+      "source": "تابناک",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "حجت الاسلام علیرضا پناهیان فاش کرد: «در این چند روزه یک عده‌ای دستگیر کردند که اینها به عنوان انقلابی، فحش‌های انقلابی شدید در برخی تظاهرات‌ها به برخی دیگر از مسئولین مثلاً سر قصه مذاکرات می‌دادند که آقا شما به خون شهدا خیانت کردید. دستگیر کردند و بعد دیدند این عضو ضدانقلاب‌های بهایی است، نه ضدانقلاب معمولی... بنده خودم توصیه‌های در فضای مجازی از طرف ضدانقلاب به یاران‌شان را دیدم که بروید اکانت‌های حزب اللهی درست کنید و به عنوان انقلابی به گروه دیگر حمله کنید...» اظهارات تکان دهنده پناهیان را می‌بینید و می‌شنوید."
+    },
+    {
       "title": "صالحی‌امیری: با ایران باید با زبان احترام سخن گفت",
       "link": "https://www.imna.ir/news/1010874/%D8%B5%D8%A7%D9%84%D8%AD%DB%8C-%D8%A7%D9%85%DB%8C%D8%B1%DB%8C-%D8%A8%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%A7-%D8%B2%D8%A8%D8%A7%D9%86-%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%85-%D8%B3%D8%AE%D9%86-%DA%AF%D9%81%D8%AA",
       "date": "2026-10-09T20:21:41.000Z",
@@ -995,40 +1025,20 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "نماینده ولی‌فقیه در استان اصفهان با تأکید بر ضرورت مدارا و تذکر محبت‌آمیز در حوزه عفاف و حجاب گفت: برخورد با مسائل حجاب و عفاف باید تدریجی و مستمر باشد و نباید به اقدامات ضربتی و ناگهانی متوسل شد."
-    },
-    {
-      "title": "فرماندار جیرفت: تکریم خانواده شهدا، پاسداشت امنیت و صبر است",
-      "link": "https://www.isna.ir/news/1405071711319/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D8%AC%DB%8C%D8%B1%D9%81%D8%AA-%D8%AA%DA%A9%D8%B1%DB%8C%D9%85-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%B4%D9%87%D8%AF%D8%A7-%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%88-%D8%B5%D8%A8%D8%B1-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-09T20:15:51.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۵",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "فرماندار جیرفت با خانواده‌های معظم شهدای امنیت در شهر علی‌آباد دیدار کرد و ضمن تأکید بر جایگاه والای شهدا، امنیت پایدار امروز را مرهون خون آنها دانست و از صبر و استقامت خانواده‌های آنان تکریم کرد."
-    },
-    {
-      "title": "فوری/ اطلاعیه نهاد آبراه خلیح فارس در مورد وجود دامنه‌های جعلی",
-      "link": "https://www.khabaronline.ir/news/2286016/%D9%81%D9%88%D8%B1%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%DB%8C%D9%87-%D9%86%D9%87%D8%A7%D8%AF-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AD-%D9%81%D8%A7%D8%B1%D8%B3-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D9%88%D8%AC%D9%88%D8%AF-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%B9%D9%84%DB%8C",
-      "date": "2026-10-09T20:15:00.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۵",
-      "source": "خبرآنلاین",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "نهاد آبراه خلیح فارس در اطلاعیه‌ای درباره وجود دامنه‌های جعلی تاکید کرد که کلیه مکاتبات پی‌جی‌اس‌ای از طریق ایمیل و با دامنه PGSA.ir صورت می‌گیرد."
-    },
-    {
-      "title": "مانند والرین زانو خواهید زد!",
-      "link": "https://www.imna.ir/photo/1010870/%D9%85%D8%A7%D9%86%D9%86%D8%AF-%D9%88%D8%A7%D9%84%D8%B1%DB%8C%D9%86-%D8%B2%D8%A7%D9%86%D9%88-%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D8%AF-%D8%B2%D8%AF",
-      "date": "2026-10-09T20:12:44.000Z",
-      "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۲",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "قالیباف در پاسخ به روبیو: در طول تاریخ، ما ایرانیان با کسانی روبه‌رو شده‌ایم که خود را سروران جهان اعلام کردند و کوشیدند تمدن‌های کهن را از صفحهٔ روزگار محو کنند. کسانی که به دنبال میراث اسکندر هستند، سرنوشت والرین را خواهند داشت: زانو خواهید زد."
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "واکنش سخنگوی وزارت امور خارجه بعد از تماشای نمایش «آرش»",
+        "link": "https://www.isna.ir/news/1405071811326/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%A8%D8%B9%D8%AF-%D8%A7%D8%B2-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A2%D8%B1%D8%B4",
+        "date": "2026-10-09T23:42:47.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۴۲",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "سخنگوی وزارت امور خارجه در پیامی نوشت: «هویت یک ملت، در فراسوی تفاوت‌ها و سلیقه‌ها، بر خاطره‌ها و ارزش‌های مشترک استوار است و در بزنگاه‌های تاریخی آنچه همه ما را به هم پیوند می‌دهد و یکی می‌کند، چیزی نیست جز میهن: ایران.»"
+      },
       {
         "title": "فاطمه مهاجرانی هم جواب روبیو را داد",
         "link": "https://www.khabaronline.ir/news/2286040/%D9%81%D8%A7%D8%B7%D9%85%D9%87-%D9%85%D9%87%D8%A7%D8%AC%D8%B1%D8%A7%D9%86%DB%8C-%D9%87%D9%85-%D8%AC%D9%88%D8%A7%D8%A8-%D8%B1%D9%88%D8%A8%DB%8C%D9%88-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%AF",
@@ -1108,16 +1118,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "سخنگوی وزارت امور خارجه بعد از تماشای نمایش «آرش»، اسطوره‌ «آرش» را نماد فداکاری و مسئولیت‌پذیری برای میهن برشمرد."
-      },
-      {
-        "title": "فرماندار جیرفت: تکریم خانواده شهدا، پاسداشت امنیت و صبر است",
-        "link": "https://www.isna.ir/news/1405071711319/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D8%AC%DB%8C%D8%B1%D9%81%D8%AA-%D8%AA%DA%A9%D8%B1%DB%8C%D9%85-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%B4%D9%87%D8%AF%D8%A7-%D9%BE%D8%A7%D8%B3%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%88-%D8%B5%D8%A8%D8%B1-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-09T20:15:51.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۵",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "فرماندار جیرفت با خانواده‌های معظم شهدای امنیت در شهر علی‌آباد دیدار کرد و ضمن تأکید بر جایگاه والای شهدا، امنیت پایدار امروز را مرهون خون آنها دانست و از صبر و استقامت خانواده‌های آنان تکریم کرد."
       }
     ],
     "اقتصادی": [
@@ -1333,16 +1333,6 @@
         "rssDescription": "هوادار خردسال پرسپولیس برای ورود به ورزشگاه شهدای شهرقدس از نرده‌ها بالا رفت؛ درحالی‌که کابل برق در نزدیکی محل عبور او قرار داشت و خطر برق‌گرفتگی، نگرانی‌ها درباره ایمنی تماشاگران، به‌ویژه کودکان، را افزایش می‌داد. منبع: تسنیم"
       },
       {
-        "title": "سومین جشنواره گردو ثمرین",
-        "link": "https://www.irna.ir/photo/86287780/%D8%B3%D9%88%D9%85%DB%8C%D9%86-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%DA%AF%D8%B1%D8%AF%D9%88-%D8%AB%D9%85%D8%B1%DB%8C%D9%86",
-        "date": "2026-10-09T20:35:15.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۳۵",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "سومین جشنواره گردشگری گردو، عصر جمعه (۱۷ مهر ۱۴۰۵) در شهر تاریخی ثمرین با برپایی بیش از ۵۰ غرفه عرضه محصولات صنایع دستی، آش و غذاهای محلی، محصولات کشاورزی و تولیدات بومی منطقه برگزار شد."
-      },
-      {
         "title": "ضرغامی، رئیس پیشین صداوسیما: پخش خطبه‌های نماز جمعه از اشتباهات من بود!",
         "link": "https://www.khabaronline.ir/news/2286021/%D8%B6%D8%B1%D8%BA%D8%A7%D9%85%DB%8C-%D8%B1%D8%A6%DB%8C%D8%B3-%D9%BE%DB%8C%D8%B4%DB%8C%D9%86-%D8%B5%D8%AF%D8%A7%D9%88%D8%B3%DB%8C%D9%85%D8%A7-%D9%BE%D8%AE%D8%B4-%D8%AE%D8%B7%D8%A8%D9%87-%D9%87%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%D8%B2-%D8%AC%D9%85%D8%B9%D9%87-%D8%A7%D8%B2-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87%D8%A7%D8%AA",
         "date": "2026-10-09T20:30:00.000Z",
@@ -1364,6 +1354,16 @@
       }
     ],
     "اجتماعی": [
+      {
+        "title": "امیریه، سردشت و دهرم در فهرست لرزه‌خیزهای هفته گذشته",
+        "link": "https://www.isna.ir/news/1405071711134/%D8%A7%D9%85%DB%8C%D8%B1%DB%8C%D9%87-%D8%B3%D8%B1%D8%AF%D8%B4%D8%AA-%D9%88-%D8%AF%D9%87%D8%B1%D9%85-%D8%AF%D8%B1-%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D9%84%D8%B1%D8%B2%D9%87-%D8%AE%DB%8C%D8%B2%D9%87%D8%A7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%DA%AF%D8%B0%D8%B4%D8%AA%D9%87",
+        "date": "2026-10-09T23:51:00.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۵۱",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "در هفته گذشته زمینلرزه‌هایی در چندین استان کشور به ثبت رسید که در میان آنها، امیریه در استان سمنان و سردشت در آذربایجان غربی با زلزله‌هایی به بزرگای ۳.۶، از کانون‌های شاخص لرزه‌ای این بازه زمانی بودند."
+      },
       {
         "title": "پزشکیان: دیپلماسی منطقه‌ای باید ابزار واقعی مدیریت بحران باشد",
         "link": "https://www.isna.ir/news/1405071811325/%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%D8%A7%D9%86-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A7%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D9%88%D8%A7%D9%82%D8%B9%DB%8C-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A8%D8%AD%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B4%D8%AF",
@@ -1517,6 +1517,16 @@
     ],
     "علمی و فناوری": [],
     "بین‌الملل": [
+      {
+        "title": "حماس: تحریم دیوان بین‌المللی کیفری تلاشی آشکار برای حمایت از نتانیاهو است",
+        "link": "https://www.irna.ir/news/86287917/%D8%AD%D9%85%D8%A7%D8%B3-%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D8%AF%DB%8C%D9%88%D8%A7%D9%86-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C-%DA%A9%DB%8C%D9%81%D8%B1%DB%8C-%D8%AA%D9%84%D8%A7%D8%B4%DB%8C-%D8%A2%D8%B4%DA%A9%D8%A7%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2",
+        "date": "2026-10-09T23:46:33.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۳:۴۶",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران- ایرنا- جنبش مقاومت اسلامی فلسطین (حماس) در بیانیه‌ای اعلام کرد که تصمیم رئیس‌جمهور آمریکا برای اعمال تحریم علیه دیوان بین‌المللی کیفری، تعرضی خطرناک به عدالت بین‌المللی و تلاشی آشکار برای حمایت از بنیامین نتانیاهو و رهبران اشغالگر در برابر پاسخ‌گویی به اتهام ارتکاب جنایات جنگی، نسل‌کشی و جنایات علیه بشریت علیه ملت فلسطین در نوار غزه است."
+      },
       {
         "title": "آمریکا مدعی میانجیگری شد / روسیه و اوکراین یکدیگر را متهم کردند",
         "link": "https://www.irna.ir/news/86287911/%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%D8%AF%D8%B9%DB%8C-%D9%85%DB%8C%D8%A7%D9%86%D8%AC%DB%8C%DA%AF%D8%B1%DB%8C-%D8%B4%D8%AF-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%88-%D8%A7%D9%88%DA%A9%D8%B1%D8%A7%DB%8C%D9%86-%DB%8C%DA%A9%D8%AF%DB%8C%DA%AF%D8%B1-%D8%B1%D8%A7-%D9%85%D8%AA%D9%87%D9%85-%DA%A9%D8%B1%D8%AF%D9%86%D8%AF",
@@ -1856,6 +1866,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "سخنگوی کاخ کرملین از تماس تلفنی ولادیمیر پوتین رئیس جمهور روسیه و دوالد ترامپ رئیس تروریست آمریکا خبر داد."
+      },
+      {
+        "title": "پناهیان: عده‌ای بهایی دستگیر شدند که در تظاهرات علیه مسئولین شعار می‌دادند!",
+        "link": "https://www.tabnak.ir/fa/news/1398032/%D9%BE%D9%86%D8%A7%D9%87%DB%8C%D8%A7%D9%86-%D8%B9%D8%AF%D9%87-%D8%A7%DB%8C-%D8%A8%D9%87%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1-%D8%B4%D8%AF%D9%86%D8%AF-%DA%A9%D9%87-%D8%AF%D8%B1-%D8%AA%D8%B8%D8%A7%D9%87%D8%B1%D8%A7%D8%AA-%D8%B9%D9%84%DB%8C%D9%87-%D9%85%D8%B3%D8%A6%D9%88%D9%84%DB%8C%D9%86-%D8%B4%D8%B9%D8%A7%D8%B1-%D9%85%DB%8C-%D8%AF%D8%A7%D8%AF%D9%86%D8%AF",
+        "date": "2026-10-09T20:22:28.000Z",
+        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۲۲",
+        "source": "تابناک",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "حجت الاسلام علیرضا پناهیان فاش کرد: «در این چند روزه یک عده‌ای دستگیر کردند که اینها به عنوان انقلابی، فحش‌های انقلابی شدید در برخی تظاهرات‌ها به برخی دیگر از مسئولین مثلاً سر قصه مذاکرات می‌دادند که آقا شما به خون شهدا خیانت کردید. دستگیر کردند و بعد دیدند این عضو ضدانقلاب‌های بهایی است، نه ضدانقلاب معمولی... بنده خودم توصیه‌های در فضای مجازی از طرف ضدانقلاب به یاران‌شان را دیدم که بروید اکانت‌های حزب اللهی درست کنید و به عنوان انقلابی به گروه دیگر حمله کنید...» اظهارات تکان دهنده پناهیان را می‌بینید و می‌شنوید."
       }
     ],
     "متفرقه": [
@@ -1916,7 +1936,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/wFjv0GaOQWYbsfxt44fjL8b9Ru3VnvzJBaNgJ3OkmMoT2NdRJ2b-5LCffy4Or9zIK1g_E8Qy1ftjJCKbZCXPXQ5eM3AKHGV127RjlHf1SstFXIHllTKD9Ps2JWaZX_jxhOHN40QT1DXW9btdsVeBudwI5WZl5DmLrJG0PY2vTJTjcWg5ZgKNKqj9iGwFUcNN/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/yY9Bv018NdYSQ7Vn_fOIf25LOkLmOlOta2swsOmYt2aDJ6N_ZZq448kLsdsizS_r-hjglLq_FOMKNA9AnvBQblSURs0P4PRGo5hELKDcGadTwWDEKjjJuhnlm_IhAx4PEO-TThC3fXxnmeydMoZqM0ILxsmql-KQ2yDBy2ldQksMRFTYxjCN7ehK8F85yjWh/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - شنبه ۱۸ مهر ۱۴۰۵",
@@ -1926,7 +1946,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/2RLVbR5fnUZVaj3OUZBxMPUG-w2ZWUKRCpuLKglDg3kn5-Q6z3Rr5H8wEZS2WcFu-wlc2jRpPbYkvorbVULF95vX2FW25JhP5PYZtGX2-ZlW_yznL2BrdQZqItlR7Zp_HYZYh9SUGodUWTZZFeCkAlXt_c-CgH29229KSPMTAiOB6jgBXRgdfh8k0G4Gz4OB/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/zpfS9Klc8ySRXlgxzbylmfTk3lcIus-CZO93FWU_Io0PpBKmcoANjA9pCE5ZfAp-Y3yQj5vkn26rc9NLaeErkJtS81pQOlTS-Oq-i3MO2eXuvIXC4_EONwrJwfNaJ_u_ex-3ec8M1fC3as0oVOp4EKdsbXHD1-4HOtZCnoepGaPVQ8flRwW-xTPopnZNpnii/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - شنبه ۱۸ مهر ۱۴۰۵",
@@ -1936,7 +1956,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/uXF3Mryq8r0lfZNCpFbibck_EJ7eGQQI-UyxvglBoba7kQ8BjIVcoTpTa7Q0upfMxBwPAtcrg1WGPi3MMy64QBf6rSTHFVQjbjwuA6S1fTtQrjeyEoS-B92bJvZw_9zSToKwFFoNZZuY7ZN6DOQPx95ET-krR9g0U-yEqYoK3MrxhNAthHaznk9zt9S0Srj5/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/NhHEGVcffPT6zhDMVc_yPekFgcJpHaf8Ez8JPYtFEkH6lTGoKFBGBI3dJ8mm4_qAqxF6Plh_YvEVg9BeIE8OdIu43uPNml1Yr5pkTcDvjjVr79wJKayKkGhvYwE3oKmemoZ9_t2Jk5g7d_a8MWAhjCtK5ETERKC2pfl-2_-DQNmmhv100Pq_x6uut1qqQ2sy/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "ساعات سعد و نحس امروز شنبه ۱۸ مهر + جدول",
@@ -1946,7 +1966,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/ui-7bnite617VnWF02E2bpT745dbep3iBp9NqgXkhJBFlnahWHUvG3clCcm4RcPMxtnMrD9dVTdsuHogPMmbEMXr0az1JxhO6HtdBgW7ZiUemtnOROelyc3OZFQXPf4gDYz0JiaNY0PMegalRNL9Aw9jxZ5f7vaq6RFydRx3oWiUWJ2JuFxZB9Yv-kramBHs/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/VpVNPdjHvyyIIxWkJk3ZXJRMFpBdrpbVwMAp7SAYeEl7vBUfyUme7djnRlWStYkQkFE_N2iFCK1vTpVUIA9X4bOUdLHBDk3wrY3qgfC6jiMguIGFEDPNxKy8vHWWHWHrMvIThN-37tDm7jwRko6rfGhpfNKBEOWiNqGqxDS9ApAUd0G6Y3RtxODRs8k4rICd/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز شنبه ۱۸ مهر ۱۴۰۵",
@@ -1956,7 +1976,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/2aaQay1p3Ip_KZV56caoSum-3QZxaQMU304e2ngLvV4Q98ZKy5L1-hgSEoBJQBpHWUwgl6NClvnTWVVKNtigkf4q3ZYdLllGEgfQjkTt-p6EewLqN33dNpnekHz1Ktdxxcf4a2YHkl3oiibnxxgI51idqo278GjTC22MMYfn6Tr5jCjFURW0hnEhHA8LkGHU/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/KzR2pIIvh_g73n7awn5bpKcDEzWBjljdjMMCX7gORaciLvPGCuIe3GoAwVCmikg6neKGB_J_xL3sQKm6nv4nfX1ahTB5oGr-2J69pI0z45adkKmQX5nR58wLHdZ1g4-OSvh_CBgAZH5d-CQVsNFMHwbvfMaBIzhXrS4rZMa8zskqw5xcpO1ID9kPTUlzTYA1/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "تصاویر تازه امیرحسین قیاسی و همسرش پربازدید شد؛ زوج خبرساز فضای مجازی + عکس",
@@ -2017,26 +2037,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "نماینده ولی‌فقیه در استان اصفهان با تأکید بر ضرورت مدارا و تذکر محبت‌آمیز در حوزه عفاف و حجاب گفت: برخورد با مسائل حجاب و عفاف باید تدریجی و مستمر باشد و نباید به اقدامات ضربتی و ناگهانی متوسل شد."
-      },
-      {
-        "title": "فوری/ اطلاعیه نهاد آبراه خلیح فارس در مورد وجود دامنه‌های جعلی",
-        "link": "https://www.khabaronline.ir/news/2286016/%D9%81%D9%88%D8%B1%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%DB%8C%D9%87-%D9%86%D9%87%D8%A7%D8%AF-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AD-%D9%81%D8%A7%D8%B1%D8%B3-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%D9%88%D8%AC%D9%88%D8%AF-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%B9%D9%84%DB%8C",
-        "date": "2026-10-09T20:15:00.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۵",
-        "source": "خبرآنلاین",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "نهاد آبراه خلیح فارس در اطلاعیه‌ای درباره وجود دامنه‌های جعلی تاکید کرد که کلیه مکاتبات پی‌جی‌اس‌ای از طریق ایمیل و با دامنه PGSA.ir صورت می‌گیرد."
-      },
-      {
-        "title": "مانند والرین زانو خواهید زد!",
-        "link": "https://www.imna.ir/photo/1010870/%D9%85%D8%A7%D9%86%D9%86%D8%AF-%D9%88%D8%A7%D9%84%D8%B1%DB%8C%D9%86-%D8%B2%D8%A7%D9%86%D9%88-%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D8%AF-%D8%B2%D8%AF",
-        "date": "2026-10-09T20:12:44.000Z",
-        "datePersian": "۱۷ مهر ۱۴۰۵، ۲۰:۱۲",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "قالیباف در پاسخ به روبیو: در طول تاریخ، ما ایرانیان با کسانی روبه‌رو شده‌ایم که خود را سروران جهان اعلام کردند و کوشیدند تمدن‌های کهن را از صفحهٔ روزگار محو کنند. کسانی که به دنبال میراث اسکندر هستند، سرنوشت والرین را خواهند داشت: زانو خواهید زد."
       }
     ]
   }
