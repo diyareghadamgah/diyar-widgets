@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-10T21:40:01.499Z",
-  "lastUpdatePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۴۰",
+  "lastUpdate": "2026-10-10T21:52:24.286Z",
+  "lastUpdatePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۵۲",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,36 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "۲۲۴ شب پایداری در خمین؛ عهدی که با آفتاب ولایت گره خورد",
+      "link": "https://www.mehrnews.com/news/6973956/%DB%B2%DB%B2%DB%B4-%D8%B4%D8%A8-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D8%AE%D9%85%DB%8C%D9%86-%D8%B9%D9%87%D8%AF%DB%8C-%DA%A9%D9%87-%D8%A8%D8%A7-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%DA%AF%D8%B1%D9%87-%D8%AE%D9%88%D8%B1%D8%AF",
+      "date": "2026-10-10T21:50:04.000Z",
+      "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۵۰",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "خمین- در این ویدئو ۲۲۴ شب پایداری مردم خمین در تجدیدمیثاق با رهبر معظم انقلاب را ملاحظه می کنید."
+    },
+    {
+      "title": "سخنگوی نیروهای مسلح یمن وابسته به دولت عدن: بیش از 1900 عملیات علیه مواضع انصارالله اجرا شد",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3251446",
+      "date": "2026-10-10T21:44:25.000Z",
+      "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۴۴",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "سخنگوی نیروهای مسلح یمن وابسته به دولت عدن اعلام کرد که نیروهای مسلح یمن طی ۲۴ ساعت گذشته و در چارچوب عملیات فجر الیمن، بیش از هزار و 900 عملیات علیه انصارالله انجام دادند."
+    },
+    {
+      "title": "انفجار در فرودگاه های «جده» و «ملک فهد» در دمام عربستان سعودی",
+      "link": "https://www.irna.ir/news/86288905/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%D9%87-%D9%88-%D9%85%D9%84%DA%A9-%D9%81%D9%87%D8%AF-%D8%AF%D8%B1-%D8%AF%D9%85%D8%A7%D9%85-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C",
+      "date": "2026-10-10T21:43:33.000Z",
+      "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۴۳",
+      "source": "ایرنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تهران - ایرنا - رسانه های عربی از وقوع انفجار در فرودگاه های جده و ملک فهد در شهر بندری دمام عربستان سعودی خبر دادند."
+    },
     {
       "title": "حملات ارتش اسرائیل به جنوب لبنان/ نظامیان رژیم صهیونیستی یک مدرسه را به آتش کشیدند",
       "link": "https://www.khabarfoori.com/fa/tiny/news-3251445",
@@ -351,16 +381,6 @@
       "rssDescription": "یک سازمان عملیات تجارت اعلام کرد که چند کشتی در آب های امارات گزارشی برای ترک محل پهلوگیری خود دریافت کردند."
     },
     {
-      "title": "مروی:نیروهای انتظامی پشتوانه آرامش مردم و رزمندگان است",
-      "link": "https://www.mehrnews.com/news/6973945/%D9%85%D8%B1%D9%88%DB%8C-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D9%BE%D8%B4%D8%AA%D9%88%D8%A7%D9%86%D9%87-%D8%A2%D8%B1%D8%A7%D9%85%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D8%B1%D8%B2%D9%85%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
-      "date": "2026-10-10T20:55:47.000Z",
-      "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۵۵",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "مشهد- تولیت آستان قدس رضوی گفت: امنیتی که نیروی انتظامی در داخل کشور برقرار می‌کند، پشتوانه آرامش نیروهای مستقر در خط مقدم جبهه و مایه اطمینان خاطر آنان است."
-    },
-    {
       "title": "رضایی: می‌توانستیم پیکان را ببریم؛ به سورگی افتخار می‌کنیم",
       "link": "https://www.ilna.ir/fa/tiny/news-1850621",
       "date": "2026-10-10T20:55:38.000Z",
@@ -548,7 +568,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/rXbQImiKCNDrsuld7ALbPPt0YORPVXkiSsWLvu3MCV9Tm3p0iGDgA9imPL8xZVw50Ej7lebT7_UCRkJqDKGM-mIKc0Tn1ods-b3-jbo95TNHFfi-v-SORwJdSzvdvD6kVbd8gAJCj6LlMVcO7lOO7gjo1-t97LNRjEKmIkvUKaBbme6svZI_6nyC3RYks2cG/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/EXryTHKsHIqOPPl8l6xFh3P2nCGorfMRGy_fBT1gsB-5qac4yJKGP38gWlxH3H-jTh2LaNhT10ShaxilXjkuCHiUre9Rds-uXpP6v_JBQpJQAFSeXB1zEEgGYzK7LYwvBj37I2uOzBybl4ehF89LgS6D-9M9mMoZNP75cchZDOBu1qf90CMUJkqx8Y5p1i0R/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
     },
     {
       "title": "طالع بینی متولدین ۱۹ مهر",
@@ -558,7 +578,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/UYDOKYYYx8xn0DX0Vkzv8sMZNj_XCczlc21nL3HomXO_BCKOJKHIEpBPMzir4R1aztzYWBe2G7syHZlYA9Jc1D9_BJCDy4qVr3AWbS-SgODeQmvvkvQZKrJlXGSv9fzUB3LZZBQ1SsarClcO_0IVzkv3bJ9kd7HcfWAVSD4XgSnA2eWWaFzxgr798bhDunY0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/j-kdLYGNyBBUOV4VzKrCICHTt6_WHciHhz7Ot8wAdBGFjHaB_52_MkrdlelSGXHEdyQkebL16gwzVWIwIOOxUFsvWROF6nThObe632TaQ4ojlYeSTumsK_rDMi9bMzoSQ9Nek1jcUHsyBxyo2Wtvuihw914XcCy98I9WYVuMsrmOv0Nyy7hU3BL_D-dqkWvn/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     },
     {
       "title": "فال حافظ متولدین هر ماه - یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -568,7 +588,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/6L6bD4E6QEkZG7h9Obmz6MtdD2sk8cHLRa5g22A2fwCW1YOjMuFeLUmmH15CjYBanNjryr7ggjXcRM8gGPPg0gm3E5V7mgZzieaDZDluiNsiwgIvxbzYU2-a1cD3ymlGVlLqW7kB0bFTZzN4B5o1U0AUGRtxS3s_a5EXYw9V3yIYMUWWk1ve9x0kQa1Y50-0/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/szIeBDzx_UVA-SxRFebBR4twK6h8OX0ob3Voqm0gQJssgqtXH9L3mEgy0yUiWPnZYgN5qWBeDqcd0oiyuAI3z19V5NTj6xYexRRWZu0MjESj-2suy1v4bot36-F1qAd8KRZWPgsA-CO1w5cQXPhl8pHhxJ9oMO2SF8jiRPv6c0L41hh1E5HQjzWrlpAKHmiO/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
     },
     {
       "title": "فال روزانه ماه تولد - یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -578,7 +598,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/9xyqS909V6fLJRtGur0xLn6Xyze2N_slRu7NqRC4Mg7Ptp50-IQ_0vXnTJJu1mkq2OKPSoSeBP6dQl-w83njRmEZK2BBDi9jJlTvw5o31HAJJykNw2oRoIy1sgQap7hWSDC9PUMjpoG3VOANmBpbzcIp1mMd8BkXdjTZrrtma1HU9p__oWpprfyLnC46yJmy/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/XIOwyb2PqZRd9rssu6pgdtTexwsdf9fki5aZdri3JRl0Kq0jG6d-NaZFQUchR-EIKfVSlOeoj1MMgNFaQvvWSoaDDpgmHplZa-VRHcVtM_6z31bkgwLl5boXrVcMO4XwsXt3cHebUitBTcndogNSygDnbiSGsgwO1nmqx5tMNPbK76mdMuy7RrSWX0NmRNnL/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
     },
     {
       "title": "اوقات شرعی امروز یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -588,7 +608,7 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/0gm3mKNqIphOf5bT9KKosa2RhrjTfmNvNZ82Rx2iE-PYoH-pYnwHV0rwhR_YYpiJfkU9XeXCwGjOm1QXgOtZVNMYjP6RU38EJlC_qAqYa7fvwM20OPeAFca4WD2U1HBLJy-dxIjBNlbogQQKMP_rQzMPEwnqudJCDy2U73sDyUCGxjANe0JlbtiarHd-Uh-A/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/sdw1l_47QjC0a4-7OLmKMSmT1XLdmCcgLC_PjQH4jry--Xm2x0BOQuhF-ofcI9JWUoqgiSGuPozOcwrAmbRTOuWAaC5NDR48SnNuR24r_8DG8xZqz2S38mwmfIV7PSbG4hMjHCpUqv_NjYyAoZ6n0XaztfO6kl2G8UOvYXkwiiHdAFsdFaOSRHa63g10GO-T/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
     },
     {
       "title": "پیام فوری VHF به نفتکش‌های اماراتی",
@@ -731,7 +751,7 @@
       "rssDescription": "دعای فرج تنها نیایشی برای تعجیل در ظهور حضرت مهدی (عج) نیست؛ این دعای پرفضیلت، با یادآوری سختی‌های دوران غیبت و تأکید بر امید، توکل و توسل، جایگاهی ویژه در فرهنگ انتظار شیعه دارد. آشنایی با مفاهیم این دعا، پیشینه نقل آن و فضایل و آثار معنوی‌اش می‌تواند دریچه‌ای تازه برای درک عمیق‌تر این نیایش و نقش آن در زندگی فردی و اجتماعی منتظران بگشاید."
     },
     {
-      "title": "پرافتخارترین رزمی‌کار کشور: قهرمانی با «خودباوری» و «تخصص علمی» محقق می‌شود",
+      "title": "قهرمانی با «خودباوری» و «تخصص علمی» محقق می‌شود",
       "link": "https://www.isna.ir/news/1405071812097/%D9%BE%D8%B1%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%B2%D9%85%DB%8C-%DA%A9%D8%A7%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AE%D9%88%D8%AF%D8%A8%D8%A7%D9%88%D8%B1%DB%8C-%D9%88-%D8%AA%D8%AE%D8%B5%D8%B5-%D8%B9%D9%84%D9%85%DB%8C",
       "date": "2026-10-10T20:20:45.000Z",
       "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۲۰",
@@ -980,16 +1000,6 @@
       "rssDescription": "سنندج- ایرنا- سرپرست معاونت هماهنگی امور عمرانی استانداری کردستان با تأکید بر ضرورت مناسب‌سازی ساختمان‌ها و فضاهای شهری برای افراد دارای معلولیت و سالمندان گفت: دستگاه‌های اجرایی و نهادهای مسئول باید با رعایت الزامات قانونی، دسترسی آسان این افراد به خدمات و امکانات عمومی را فراهم کنند."
     },
     {
-      "title": "دیدار معاون وزیر ورزش با خانواده دو خواهر شهید ورزشکار رشته پیلاتس",
-      "link": "https://www.irna.ir/news/86288880/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%D9%88%D8%B1%D8%B2%D8%B4-%D8%A8%D8%A7-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%AF%D9%88-%D8%AE%D9%88%D8%A7%D9%87%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%88%D8%B1%D8%B2%D8%B4%DA%A9%D8%A7%D8%B1-%D8%B1%D8%B4%D8%AA%D9%87-%D9%BE%DB%8C%D9%84%D8%A7%D8%AA%D8%B3",
-      "date": "2026-10-10T20:02:23.000Z",
-      "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۰۲",
-      "source": "ایرنا",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "تهران-ایرنا- معاون توسعه مدیریت و منابع وزارت ورزش و جوانان به همراه جمعی از مدیران این وزارتخانه، با حضور در منزل خانواده شهیدان فاطمه و فائزه محمدی نصرآبادی، از شهدای بسیجی و ورزشکار رشته پیلاتس، با والدین این دو شهیده دیدار و گفت‌وگو کرد."
-    },
-    {
       "title": "۹ کشته بر اثر تیراندازی در خانه ای در آمریکا",
       "link": "https://www.asriran.com/fa/news/1197846/9-%DA%A9%D8%B4%D8%AA%D9%87-%D8%A8%D8%B1-%D8%A7%D8%AB%D8%B1-%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",
       "date": "2026-10-10T20:00:48.000Z",
@@ -1018,16 +1028,6 @@
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
       "rssDescription": "تصاویری جدید از وسعت خرابی‌های ناشی از اصابت موشک یمنی‌ به فرودگاه ملک خالد ریاض را ببینید. این حمله تلافی‌جویانه ساعاتی پیش انجام شد و بر اساس ادعای رسانه‌های عربی، باعث کشته شدن چند نفر شد. / آخرین خبر"
-    },
-    {
-      "title": "خلاصه بازی اینتر مقابل پارما + لینک دانلود فیلم",
-      "link": "https://www.imna.ir/news/1011170/%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D9%BE%D8%A7%D8%B1%D9%85%D8%A7-%D9%84%DB%8C%D9%86%DA%A9-%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D9%81%DB%8C%D9%84%D9%85",
-      "date": "2026-10-10T19:59:20.000Z",
-      "datePersian": "۱۸ مهر ۱۴۰۵، ۱۹:۵۹",
-      "source": "ایمنا",
-      "flag": "🇮🇷",
-      "category": "فرهنگی و هنری",
-      "rssDescription": "دانلود فیلم خلاصه بازی اینتر و پارما که امشب در ورزشگاه جوزپه مه آتزا برگزار شد، مورد توجه کاربران فضای مجازی است؛ لینک دانلود فیلم جدال اینتر و پارما در ادامه آمده است."
     }
   ],
   "categorizedNews": {
@@ -1101,16 +1101,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "احمد فاطمی به خبرآنلاین گفت: فضای بسیار بی‌اعتمادی وجود دارد و این موضوع نیز در طول تاریخ به رفتار آمریکا و آمریکایی‌ها برمی‌گردد. ما البته دیپلماسی و مذاکره را اصولاً برای تثبیت پیروزی‌ای که در جنگ به دست آورده‌ایم، دنبال می‌کنیم و از این منظر به مذاکره نگاه می‌کنیم."
-      },
-      {
-        "title": "مروی:نیروهای انتظامی پشتوانه آرامش مردم و رزمندگان است",
-        "link": "https://www.mehrnews.com/news/6973945/%D9%85%D8%B1%D9%88%DB%8C-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D9%BE%D8%B4%D8%AA%D9%88%D8%A7%D9%86%D9%87-%D8%A2%D8%B1%D8%A7%D9%85%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D8%B1%D8%B2%D9%85%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
-        "date": "2026-10-10T20:55:47.000Z",
-        "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۵۵",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "مشهد- تولیت آستان قدس رضوی گفت: امنیتی که نیروی انتظامی در داخل کشور برقرار می‌کند، پشتوانه آرامش نیروهای مستقر در خط مقدم جبهه و مایه اطمینان خاطر آنان است."
       },
       {
         "title": "ضرورت حفظ پایداری فعالیت واحدهای صنعتی در قم",
@@ -1191,16 +1181,6 @@
         "flag": "🇮🇷",
         "category": "سیاسی",
         "rssDescription": "سنندج- ایرنا- سرپرست معاونت هماهنگی امور عمرانی استانداری کردستان با تأکید بر ضرورت مناسب‌سازی ساختمان‌ها و فضاهای شهری برای افراد دارای معلولیت و سالمندان گفت: دستگاه‌های اجرایی و نهادهای مسئول باید با رعایت الزامات قانونی، دسترسی آسان این افراد به خدمات و امکانات عمومی را فراهم کنند."
-      },
-      {
-        "title": "دیدار معاون وزیر ورزش با خانواده دو خواهر شهید ورزشکار رشته پیلاتس",
-        "link": "https://www.irna.ir/news/86288880/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%D9%88%D8%B1%D8%B2%D8%B4-%D8%A8%D8%A7-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%AF%D9%88-%D8%AE%D9%88%D8%A7%D9%87%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%88%D8%B1%D8%B2%D8%B4%DA%A9%D8%A7%D8%B1-%D8%B1%D8%B4%D8%AA%D9%87-%D9%BE%DB%8C%D9%84%D8%A7%D8%AA%D8%B3",
-        "date": "2026-10-10T20:02:23.000Z",
-        "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۰۲",
-        "source": "ایرنا",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "تهران-ایرنا- معاون توسعه مدیریت و منابع وزارت ورزش و جوانان به همراه جمعی از مدیران این وزارتخانه، با حضور در منزل خانواده شهیدان فاطمه و فائزه محمدی نصرآبادی، از شهدای بسیجی و ورزشکار رشته پیلاتس، با والدین این دو شهیده دیدار و گفت‌وگو کرد."
       }
     ],
     "اقتصادی": [
@@ -1347,7 +1327,7 @@
         "rssDescription": "سرمربیانی که از بازیکنانی معمولی نیمکت های بزرگ رسیدند."
       },
       {
-        "title": "پرافتخارترین رزمی‌کار کشور: قهرمانی با «خودباوری» و «تخصص علمی» محقق می‌شود",
+        "title": "قهرمانی با «خودباوری» و «تخصص علمی» محقق می‌شود",
         "link": "https://www.isna.ir/news/1405071812097/%D9%BE%D8%B1%D8%A7%D9%81%D8%AA%D8%AE%D8%A7%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%B2%D9%85%DB%8C-%DA%A9%D8%A7%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AE%D9%88%D8%AF%D8%A8%D8%A7%D9%88%D8%B1%DB%8C-%D9%88-%D8%AA%D8%AE%D8%B5%D8%B5-%D8%B9%D9%84%D9%85%DB%8C",
         "date": "2026-10-10T20:20:45.000Z",
         "datePersian": "۱۸ مهر ۱۴۰۵، ۲۰:۲۰",
@@ -1447,16 +1427,6 @@
         "flag": "🇮🇷",
         "category": "فرهنگی و هنری",
         "rssDescription": "تصاویری جدید از وسعت خرابی‌های ناشی از اصابت موشک یمنی‌ به فرودگاه ملک خالد ریاض را ببینید. این حمله تلافی‌جویانه ساعاتی پیش انجام شد و بر اساس ادعای رسانه‌های عربی، باعث کشته شدن چند نفر شد. / آخرین خبر"
-      },
-      {
-        "title": "خلاصه بازی اینتر مقابل پارما + لینک دانلود فیلم",
-        "link": "https://www.imna.ir/news/1011170/%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D9%BE%D8%A7%D8%B1%D9%85%D8%A7-%D9%84%DB%8C%D9%86%DA%A9-%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D9%81%DB%8C%D9%84%D9%85",
-        "date": "2026-10-10T19:59:20.000Z",
-        "datePersian": "۱۸ مهر ۱۴۰۵، ۱۹:۵۹",
-        "source": "ایمنا",
-        "flag": "🇮🇷",
-        "category": "فرهنگی و هنری",
-        "rssDescription": "دانلود فیلم خلاصه بازی اینتر و پارما که امشب در ورزشگاه جوزپه مه آتزا برگزار شد، مورد توجه کاربران فضای مجازی است؛ لینک دانلود فیلم جدال اینتر و پارما در ادامه آمده است."
       }
     ],
     "اجتماعی": [
@@ -1614,6 +1584,26 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "سخنگوی نیروهای مسلح یمن وابسته به دولت عدن: بیش از 1900 عملیات علیه مواضع انصارالله اجرا شد",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3251446",
+        "date": "2026-10-10T21:44:25.000Z",
+        "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۴۴",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "سخنگوی نیروهای مسلح یمن وابسته به دولت عدن اعلام کرد که نیروهای مسلح یمن طی ۲۴ ساعت گذشته و در چارچوب عملیات فجر الیمن، بیش از هزار و 900 عملیات علیه انصارالله انجام دادند."
+      },
+      {
+        "title": "انفجار در فرودگاه های «جده» و «ملک فهد» در دمام عربستان سعودی",
+        "link": "https://www.irna.ir/news/86288905/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D8%AF%D8%B1-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%D9%87-%D9%88-%D9%85%D9%84%DA%A9-%D9%81%D9%87%D8%AF-%D8%AF%D8%B1-%D8%AF%D9%85%D8%A7%D9%85-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D8%B3%D8%B9%D9%88%D8%AF%DB%8C",
+        "date": "2026-10-10T21:43:33.000Z",
+        "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۴۳",
+        "source": "ایرنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تهران - ایرنا - رسانه های عربی از وقوع انفجار در فرودگاه های جده و ملک فهد در شهر بندری دمام عربستان سعودی خبر دادند."
+      },
       {
         "title": "حملات ارتش اسرائیل به جنوب لبنان/ نظامیان رژیم صهیونیستی یک مدرسه را به آتش کشیدند",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3251445",
@@ -1867,6 +1857,16 @@
     ],
     "متفرقه": [
       {
+        "title": "۲۲۴ شب پایداری در خمین؛ عهدی که با آفتاب ولایت گره خورد",
+        "link": "https://www.mehrnews.com/news/6973956/%DB%B2%DB%B2%DB%B4-%D8%B4%D8%A8-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D8%AE%D9%85%DB%8C%D9%86-%D8%B9%D9%87%D8%AF%DB%8C-%DA%A9%D9%87-%D8%A8%D8%A7-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%DA%AF%D8%B1%D9%87-%D8%AE%D9%88%D8%B1%D8%AF",
+        "date": "2026-10-10T21:50:04.000Z",
+        "datePersian": "۱۸ مهر ۱۴۰۵، ۲۱:۵۰",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "خمین- در این ویدئو ۲۲۴ شب پایداری مردم خمین در تجدیدمیثاق با رهبر معظم انقلاب را ملاحظه می کنید."
+      },
+      {
         "title": "ایرانیان دوران ساسانی جهان پس از مرگ را چطور می‌دیدند؟",
         "link": "https://www.asriran.com/fa/news/1197688/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%D8%A7%D9%86-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%D8%B3%D8%A7%D8%B3%D8%A7%D9%86%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D9%85%D8%B1%DA%AF-%D8%B1%D8%A7-%DA%86%D8%B7%D9%88%D8%B1-%D9%85%DB%8C-%D8%AF%DB%8C%D8%AF%D9%86%D8%AF",
         "date": "2026-10-10T21:30:02.000Z",
@@ -1924,7 +1924,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/rXbQImiKCNDrsuld7ALbPPt0YORPVXkiSsWLvu3MCV9Tm3p0iGDgA9imPL8xZVw50Ej7lebT7_UCRkJqDKGM-mIKc0Tn1ods-b3-jbo95TNHFfi-v-SORwJdSzvdvD6kVbd8gAJCj6LlMVcO7lOO7gjo1-t97LNRjEKmIkvUKaBbme6svZI_6nyC3RYks2cG/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/EXryTHKsHIqOPPl8l6xFh3P2nCGorfMRGy_fBT1gsB-5qac4yJKGP38gWlxH3H-jTh2LaNhT10ShaxilXjkuCHiUre9Rds-uXpP6v_JBQpJQAFSeXB1zEEgGYzK7LYwvBj37I2uOzBybl4ehF89LgS6D-9M9mMoZNP75cchZDOBu1qf90CMUJkqx8Y5p1i0R/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
       },
       {
         "title": "طالع بینی متولدین ۱۹ مهر",
@@ -1934,7 +1934,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/UYDOKYYYx8xn0DX0Vkzv8sMZNj_XCczlc21nL3HomXO_BCKOJKHIEpBPMzir4R1aztzYWBe2G7syHZlYA9Jc1D9_BJCDy4qVr3AWbS-SgODeQmvvkvQZKrJlXGSv9fzUB3LZZBQ1SsarClcO_0IVzkv3bJ9kd7HcfWAVSD4XgSnA2eWWaFzxgr798bhDunY0/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/j-kdLYGNyBBUOV4VzKrCICHTt6_WHciHhz7Ot8wAdBGFjHaB_52_MkrdlelSGXHEdyQkebL16gwzVWIwIOOxUFsvWROF6nThObe632TaQ4ojlYeSTumsK_rDMi9bMzoSQ9Nek1jcUHsyBxyo2Wtvuihw914XcCy98I9WYVuMsrmOv0Nyy7hU3BL_D-dqkWvn/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       },
       {
         "title": "فال حافظ متولدین هر ماه - یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -1944,7 +1944,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/6L6bD4E6QEkZG7h9Obmz6MtdD2sk8cHLRa5g22A2fwCW1YOjMuFeLUmmH15CjYBanNjryr7ggjXcRM8gGPPg0gm3E5V7mgZzieaDZDluiNsiwgIvxbzYU2-a1cD3ymlGVlLqW7kB0bFTZzN4B5o1U0AUGRtxS3s_a5EXYw9V3yIYMUWWk1ve9x0kQa1Y50-0/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/szIeBDzx_UVA-SxRFebBR4twK6h8OX0ob3Voqm0gQJssgqtXH9L3mEgy0yUiWPnZYgN5qWBeDqcd0oiyuAI3z19V5NTj6xYexRRWZu0MjESj-2suy1v4bot36-F1qAd8KRZWPgsA-CO1w5cQXPhl8pHhxJ9oMO2SF8jiRPv6c0L41hh1E5HQjzWrlpAKHmiO/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
       },
       {
         "title": "فال روزانه ماه تولد - یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -1954,7 +1954,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/9xyqS909V6fLJRtGur0xLn6Xyze2N_slRu7NqRC4Mg7Ptp50-IQ_0vXnTJJu1mkq2OKPSoSeBP6dQl-w83njRmEZK2BBDi9jJlTvw5o31HAJJykNw2oRoIy1sgQap7hWSDC9PUMjpoG3VOANmBpbzcIp1mMd8BkXdjTZrrtma1HU9p__oWpprfyLnC46yJmy/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/XIOwyb2PqZRd9rssu6pgdtTexwsdf9fki5aZdri3JRl0Kq0jG6d-NaZFQUchR-EIKfVSlOeoj1MMgNFaQvvWSoaDDpgmHplZa-VRHcVtM_6z31bkgwLl5boXrVcMO4XwsXt3cHebUitBTcndogNSygDnbiSGsgwO1nmqx5tMNPbK76mdMuy7RrSWX0NmRNnL/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
       },
       {
         "title": "اوقات شرعی امروز یکشنبه ۱۹ مهر ۱۴۰۵",
@@ -1964,7 +1964,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/0gm3mKNqIphOf5bT9KKosa2RhrjTfmNvNZ82Rx2iE-PYoH-pYnwHV0rwhR_YYpiJfkU9XeXCwGjOm1QXgOtZVNMYjP6RU38EJlC_qAqYa7fvwM20OPeAFca4WD2U1HBLJy-dxIjBNlbogQQKMP_rQzMPEwnqudJCDy2U73sDyUCGxjANe0JlbtiarHd-Uh-A/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/sdw1l_47QjC0a4-7OLmKMSmT1XLdmCcgLC_PjQH4jry--Xm2x0BOQuhF-ofcI9JWUoqgiSGuPozOcwrAmbRTOuWAaC5NDR48SnNuR24r_8DG8xZqz2S38mwmfIV7PSbG4hMjHCpUqv_NjYyAoZ6n0XaztfO6kl2G8UOvYXkwiiHdAFsdFaOSRHa63g10GO-T/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
       },
       {
         "title": "سرو متفاوت نوشیدنی در یک کافه در بابلسر + عکس",
