@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-12T22:43:41.639Z",
-  "lastUpdatePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۴۳",
+  "lastUpdate": "2026-10-12T22:59:56.162Z",
+  "lastUpdatePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۹",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,46 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "میدان داری مردم ولایی سلماس ‌در شب ۲۲۶ در سنگر خیابان",
+      "link": "https://www.mehrnews.com/news/6976146/%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%B4%D8%A8-%DB%B2%DB%B2%DB%B6-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
+      "date": "2026-10-12T22:58:11.000Z",
+      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۸",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "سیاسی",
+      "rssDescription": "ارومیه - مردم ولایی سلماس در تداوم حمایت از رهبری و انقلاب در موج ۲۲۶ مقاومت ملی در خیابان تجمع کردند."
+    },
+    {
+      "title": "اتحاد ‌و ایستادگی مردم ارومیه در خیابان به موج ۲۲۶ رسید",
+      "link": "https://www.mehrnews.com/news/6976145/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D9%88%D8%AC-%DB%B2%DB%B2%DB%B6-%D8%B1%D8%B3%DB%8C%D8%AF",
+      "date": "2026-10-12T22:57:33.000Z",
+      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "ارومیه -تجمع حماسی اتحاد و همدلی مردم انقلابی ارومیه در دویست و بیست و ششمین شب موج مقاومت ملی برگزار شد."
+    },
+    {
+      "title": "دلبری رونالدو با شال عربستان در شب پرالتهاب ریاض/ ویدئو",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3252012",
+      "date": "2026-10-12T22:54:39.000Z",
+      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۴",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "تیم فوتبال النصر عربستان در شبی پرالتهاب در ریاض، موفق شد با نتیجه ۳ بر یک از سد نفتچی ازبکستان عبور کند؛ دیداری که با یک ساعت تأخیر آغاز شد و کریستیانو رونالدو نیز در آن موفق به گلزنی شد."
+    },
+    {
+      "title": "به مناسبت بزرگداشت حافظ؛ نگاهی به نسبت ادبیات و حوزه‌های علمیه/ حافظ در حجره، فارسی بر منبر",
+      "link": "https://www.qudsonline.ir/news/1170106/%D8%A8%D9%87-%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%AA-%D8%A8%D8%B2%D8%B1%DA%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%AD%D8%A7%D9%81%D8%B8-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%D9%86%D8%B3%D8%A8%D8%AA-%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA-%D9%88-%D8%AD%D9%88%D8%B2%D9%87-%D9%87%D8%A7%DB%8C-%D8%B9%D9%84%D9%85%DB%8C%D9%87",
+      "date": "2026-10-12T22:54:00.000Z",
+      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۴",
+      "source": "قدس آنلاین",
+      "flag": "🇮🇷",
+      "category": "فرهنگی و هنری",
+      "rssDescription": "حوزه علمیه معمولاً با فقاهت و علوم دینی شناخته می‌شود؛ اما یکی از ابعاد مهم حوزه‌های علمیه، عرصه ادبیات است که هم برای فهم متون دینی و هم انتقال مفاهیمش، بخش مهمی از حیات طلبگی را به خود اختصاص می‌دهد."
+    },
     {
       "title": "تجاوز توپخانه‌ای رژیم صهیونیستی به جنوب لبنان",
       "link": "https://www.irna.ir/news/86291062/%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
@@ -119,6 +159,16 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "زنجان- در این فیلم تصاویری از دویست و بیست‌و ششمین اجتماع پرشور مردم ولایتمدار زنجان در حمایت از رهبری و نظام مقدس جمهوری اسلامی ایران و دفاع از وطن را مشاهده می کنید."
+    },
+    {
+      "title": "تعلیق سفر فرستادگان ترامپ به روسیه",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3252009",
+      "date": "2026-10-12T22:23:17.000Z",
+      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۲۳",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "در حالی که دولت دونالد ترامپ برای توقف حملات به تأسیسات انرژی روسیه تلاش می‌کند، فرستادگان او سفر به مسکو را تا مشخص‌شدن موضع کی‌یف به تعویق انداخته‌اند. آکسیوس گزارش داده است نارضایتی ترامپ از زلنسکی و اختلاف دو طرف بر سر شروط آتش‌بس، تلاش‌های واشنگتن برای پیشبرد توافق را پیچیده کرده است."
     },
     {
       "title": "گودرزی: می‌خواهیم از تاریخ بزرگ استقلال دفاع کنیم",
@@ -509,26 +559,6 @@
       "flag": "🇮🇷",
       "category": "فرهنگی و هنری",
       "rssDescription": "آرجی میت، بازیگر سریال «بریکینگ بد» که نقش والتر جونیور، پسر والتر وایت با بازی برایان کرانستون، را بازی می‌کرد، در ۳۴ سالگی درگذشت."
-    },
-    {
-      "title": "بختیاری‌زاده:می‌توانستیم گل‌های بیشتری بزنیم؛ بازیکنان فداکاری می‌کنند",
-      "link": "https://www.mehrnews.com/news/6976118/%D8%A8%D8%AE%D8%AA%DB%8C%D8%A7%D8%B1%DB%8C-%D8%B2%D8%A7%D8%AF%D9%87-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%B3%D8%AA%DB%8C%D9%85-%DA%AF%D9%84-%D9%87%D8%A7%DB%8C-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B2%D9%86%DB%8C%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%D8%A7%D9%86-%D9%81%D8%AF%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C",
-      "date": "2026-10-12T21:13:51.000Z",
-      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۱:۱۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "سرمربی تیم فوتبال استقلال گفت: با احترام به الغرافه تیم برتر زمین ما بودیم و می‌توانستیم گل های بیشتری به حریف بزنیم‌."
-    },
-    {
-      "title": "بازتاب پیامدهای جنگ علیه ایران در رسانه‌های جهان",
-      "link": "https://www.mehrnews.com/news/6975235/%D8%A8%D8%A7%D8%B2%D8%AA%D8%A7%D8%A8-%D9%BE%DB%8C%D8%A7%D9%85%D8%AF%D9%87%D8%A7%DB%8C-%D8%AC%D9%86%DA%AF-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86",
-      "date": "2026-10-12T21:13:50.000Z",
-      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۱:۱۳",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "از آغاز تجاوز نظامی آمریکا و رژیم صهیونیستی علیه ایران، نه‌تنها اهداف اعلامی این عملیات محقق نشد، بلکه به اذعان مقامات غربی و رسانه‌های آمریکایی، شکست راهبردی به متجاوزان تحمیل شده است."
     },
     {
       "title": "هیچ قدرت فرامنطقه‌ای حق ندارد در تنگه هرمز مداخله کند",
@@ -998,41 +1028,21 @@
       "source": "ایلنا",
       "flag": "🇮🇷",
       "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9-8R00AcqgjFKovtfwEQN7zUSyI0uxD8Jn6uGNroTD2jV1CRP68c5wtgV6liBy9OH8dPRZBMD6AJTC4mRh1KecEoni3Nd5up4b7j7I1TpF9XUZ-DRmMFa-iL4ZVMAPLcHVEchI3PKCo-fNOHuZnKEN0UPCHB2a6fSNrXNNpR0SxB6U0m_0LqYkQWMfnwt6Vc/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال حافظ متولدین هر ماه - سه شنبه ۲۱ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1851576",
-      "date": "2026-10-12T20:31:00.000Z",
-      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/FAYTqrqNBbuWVlPy6BGmnbpajkDJTK9XENnDn9q3AH85me3p_j4JwgMMHFxlCyb_56h1aBJxgNAV-woiWCzgt4okjyIVqL8QyY64ixIEY481bh8vXpzLaGeg0lePUPWRvfhldFclQ-xL4IN-pHeTpQb7SLF08AE9Vbv8BJ3uMEGKRpWUksiTWMv58HNYl7Bw/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال روزانه ماه تولد - سه شنبه ۲۱ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1851575",
-      "date": "2026-10-12T20:31:00.000Z",
-      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/iojBUyJ1hg_hp1DizRGrX9uIwKnjthtkX_gvmt7_vFUMUIrnKHQxLX7rvLoaFoaO1g-VsTKcc6udt0ZAInSR2ks3_xJ4lrEMD8HthPfo8nMnZDWoTrOtEOkLEhPM5qNuAXqw_iXqBJAWzcsT7oUcfT681endhAZdYqWqp-NSpB7pfsitDme4Xs7QHnmtm5Dq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-    },
-    {
-      "title": "ساعات سعد و نحس امروز سه شنبه ۲۱ مهر + جدول",
-      "link": "https://www.ilna.ir/fa/tiny/news-1851574",
-      "date": "2026-10-12T20:31:00.000Z",
-      "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/okB5iq8RN9Pq9C-u4KPhs6gsKHovWCWMICAOSh5ojSXp8w8tENxOXRlgBtwOnrLk0D8CTRhtzJstY8eIRNnWWOUsXWHwyYgL5x6_ciFn1M-dBW6-5FqrINn6z-KzujPY7CZCXKObEH6JHnuKhqJviTccuQhequBTKAxu5yGIpehKMwBjiyqtiOOhkHkQMsi3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PH_k5mhsGzTIXlHJXdcjH9m03xyTgU7lCbCUquC1YCb9e7Tg-NIowKuuVSTqLuAH67mUqsvdU50vG3JTDVDaRjZNVqvofLuC65nNYTXNwWX8CTukGxWqRap8YBGgRgF00pMMxWqxD88ln-zlzU9FqSFfjUMRgM9QmylVgX-YHURyL4jOZ_gvdjHft9-XkxAe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
     }
   ],
   "categorizedNews": {
     "سیاسی": [
+      {
+        "title": "میدان داری مردم ولایی سلماس ‌در شب ۲۲۶ در سنگر خیابان",
+        "link": "https://www.mehrnews.com/news/6976146/%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%DB%8C-%D8%B3%D9%84%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%B4%D8%A8-%DB%B2%DB%B2%DB%B6-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86",
+        "date": "2026-10-12T22:58:11.000Z",
+        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۸",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "سیاسی",
+        "rssDescription": "ارومیه - مردم ولایی سلماس در تداوم حمایت از رهبری و انقلاب در موج ۲۲۶ مقاومت ملی در خیابان تجمع کردند."
+      },
       {
         "title": "دویست و بیست‌و ششمین شب تجمعات مردم زنجان در میدان",
         "link": "https://www.mehrnews.com/news/6976134/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D8%B4%D8%B4%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
@@ -1218,16 +1228,6 @@
         "rssDescription": "مدافع تیم فوتبال استقلال گفت: تمام تلاشمان را می کنیم تا هواداران استقلال را در هر بازی خوشحال کنیم."
       },
       {
-        "title": "بختیاری‌زاده:می‌توانستیم گل‌های بیشتری بزنیم؛ بازیکنان فداکاری می‌کنند",
-        "link": "https://www.mehrnews.com/news/6976118/%D8%A8%D8%AE%D8%AA%DB%8C%D8%A7%D8%B1%DB%8C-%D8%B2%D8%A7%D8%AF%D9%87-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%B3%D8%AA%DB%8C%D9%85-%DA%AF%D9%84-%D9%87%D8%A7%DB%8C-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B2%D9%86%DB%8C%D9%85-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%D8%A7%D9%86-%D9%81%D8%AF%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C",
-        "date": "2026-10-12T21:13:51.000Z",
-        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۱:۱۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "سرمربی تیم فوتبال استقلال گفت: با احترام به الغرافه تیم برتر زمین ما بودیم و می‌توانستیم گل های بیشتری به حریف بزنیم‌."
-      },
-      {
         "title": "گودرزی: با تمام وجود از نام بزرگ استقلال و تاریخش دفاع می‌کنیم",
         "link": "https://www.khabaronline.ir/news/2287627/%DA%AF%D9%88%D8%AF%D8%B1%D8%B2%DB%8C-%D8%A8%D8%A7-%D8%AA%D9%85%D8%A7%D9%85-%D9%88%D8%AC%D9%88%D8%AF-%D8%A7%D8%B2-%D9%86%D8%A7%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%88-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%D8%B4-%D8%AF%D9%81%D8%A7%D8%B9-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85",
         "date": "2026-10-12T21:09:08.000Z",
@@ -1399,6 +1399,16 @@
       }
     ],
     "فرهنگی و هنری": [
+      {
+        "title": "به مناسبت بزرگداشت حافظ؛ نگاهی به نسبت ادبیات و حوزه‌های علمیه/ حافظ در حجره، فارسی بر منبر",
+        "link": "https://www.qudsonline.ir/news/1170106/%D8%A8%D9%87-%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%AA-%D8%A8%D8%B2%D8%B1%DA%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%AD%D8%A7%D9%81%D8%B8-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%D9%86%D8%B3%D8%A8%D8%AA-%D8%A7%D8%AF%D8%A8%DB%8C%D8%A7%D8%AA-%D9%88-%D8%AD%D9%88%D8%B2%D9%87-%D9%87%D8%A7%DB%8C-%D8%B9%D9%84%D9%85%DB%8C%D9%87",
+        "date": "2026-10-12T22:54:00.000Z",
+        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۴",
+        "source": "قدس آنلاین",
+        "flag": "🇮🇷",
+        "category": "فرهنگی و هنری",
+        "rssDescription": "حوزه علمیه معمولاً با فقاهت و علوم دینی شناخته می‌شود؛ اما یکی از ابعاد مهم حوزه‌های علمیه، عرصه ادبیات است که هم برای فهم متون دینی و هم انتقال مفاهیمش، بخش مهمی از حیات طلبگی را به خود اختصاص می‌دهد."
+      },
       {
         "title": "انتقاد از رواج تفأل به حافظ",
         "link": "https://www.isna.ir/news/1405072113638/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D8%AF-%D8%A7%D8%B2-%D8%B1%D9%88%D8%A7%D8%AC-%D8%AA%D9%81%D8%A3%D9%84-%D8%A8%D9%87-%D8%AD%D8%A7%D9%81%D8%B8",
@@ -1596,6 +1606,16 @@
     ],
     "بین‌الملل": [
       {
+        "title": "دلبری رونالدو با شال عربستان در شب پرالتهاب ریاض/ ویدئو",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3252012",
+        "date": "2026-10-12T22:54:39.000Z",
+        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۴",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "تیم فوتبال النصر عربستان در شبی پرالتهاب در ریاض، موفق شد با نتیجه ۳ بر یک از سد نفتچی ازبکستان عبور کند؛ دیداری که با یک ساعت تأخیر آغاز شد و کریستیانو رونالدو نیز در آن موفق به گلزنی شد."
+      },
+      {
         "title": "تجاوز توپخانه‌ای رژیم صهیونیستی به جنوب لبنان",
         "link": "https://www.irna.ir/news/86291062/%D8%AA%D8%AC%D8%A7%D9%88%D8%B2-%D8%AA%D9%88%D9%BE%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
         "date": "2026-10-12T22:34:25.000Z",
@@ -1614,6 +1634,16 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "عربستان از فعال شدن آژیر هشدار در جنوب این کشور خبر داد."
+      },
+      {
+        "title": "تعلیق سفر فرستادگان ترامپ به روسیه",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3252009",
+        "date": "2026-10-12T22:23:17.000Z",
+        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۲۳",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "در حالی که دولت دونالد ترامپ برای توقف حملات به تأسیسات انرژی روسیه تلاش می‌کند، فرستادگان او سفر به مسکو را تا مشخص‌شدن موضع کی‌یف به تعویق انداخته‌اند. آکسیوس گزارش داده است نارضایتی ترامپ از زلنسکی و اختلاف دو طرف بر سر شروط آتش‌بس، تلاش‌های واشنگتن برای پیشبرد توافق را پیچیده کرده است."
       },
       {
         "title": "رویترز: ویتکاف و کوشنر توافق نفتی اخیر ترامپ را عامل احیای مذاکرات صلح در اوکراین می‌دانند",
@@ -1724,16 +1754,6 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "یک تحلیلگر سیاسی، در گفتگویی در صدا و سیما، درباره درگیری‌های انصارالله و عربستان سعودی، گفت: عربستان سعودی خیال نمی‌کرد که خدماتی که برای آمریکا انجام داده است، بی‌مواجب بماند. ضمن اینکه هم امارات، پاکستان، ترکیه، مصر و رژیم صهیونیستی، در مواجهه با یمنی‌ها به شدت احتیاط می‌کنند. همه این‌ها هم یک جوری یک ضریه شستی از یمنی‌ها خورده اند."
-      },
-      {
-        "title": "بازتاب پیامدهای جنگ علیه ایران در رسانه‌های جهان",
-        "link": "https://www.mehrnews.com/news/6975235/%D8%A8%D8%A7%D8%B2%D8%AA%D8%A7%D8%A8-%D9%BE%DB%8C%D8%A7%D9%85%D8%AF%D9%87%D8%A7%DB%8C-%D8%AC%D9%86%DA%AF-%D8%B9%D9%84%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86",
-        "date": "2026-10-12T21:13:50.000Z",
-        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۱:۱۳",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "از آغاز تجاوز نظامی آمریکا و رژیم صهیونیستی علیه ایران، نه‌تنها اهداف اعلامی این عملیات محقق نشد، بلکه به اذعان مقامات غربی و رسانه‌های آمریکایی، شکست راهبردی به متجاوزان تحمیل شده است."
       },
       {
         "title": "هیچ قدرت فرامنطقه‌ای حق ندارد در تنگه هرمز مداخله کند",
@@ -1888,6 +1908,16 @@
     ],
     "متفرقه": [
       {
+        "title": "اتحاد ‌و ایستادگی مردم ارومیه در خیابان به موج ۲۲۶ رسید",
+        "link": "https://www.mehrnews.com/news/6976145/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%88-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B1%D9%88%D9%85%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D9%88%D8%AC-%DB%B2%DB%B2%DB%B6-%D8%B1%D8%B3%DB%8C%D8%AF",
+        "date": "2026-10-12T22:57:33.000Z",
+        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۲:۵۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "ارومیه -تجمع حماسی اتحاد و همدلی مردم انقلابی ارومیه در دویست و بیست و ششمین شب موج مقاومت ملی برگزار شد."
+      },
+      {
         "title": "کره شمالی یک موشک بالستیک تاکتیکی را آزمایش کرد",
         "link": "https://www.irna.ir/news/86291060/%DA%A9%D8%B1%D9%87-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%DB%8C%DA%A9-%D9%85%D9%88%D8%B4%DA%A9-%D8%A8%D8%A7%D9%84%D8%B3%D8%AA%DB%8C%DA%A9-%D8%AA%D8%A7%DA%A9%D8%AA%DB%8C%DA%A9%DB%8C-%D8%B1%D8%A7-%D8%A2%D8%B2%D9%85%D8%A7%DB%8C%D8%B4-%DA%A9%D8%B1%D8%AF",
         "date": "2026-10-12T22:30:52.000Z",
@@ -2015,37 +2045,7 @@
         "source": "ایلنا",
         "flag": "🇮🇷",
         "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/9-8R00AcqgjFKovtfwEQN7zUSyI0uxD8Jn6uGNroTD2jV1CRP68c5wtgV6liBy9OH8dPRZBMD6AJTC4mRh1KecEoni3Nd5up4b7j7I1TpF9XUZ-DRmMFa-iL4ZVMAPLcHVEchI3PKCo-fNOHuZnKEN0UPCHB2a6fSNrXNNpR0SxB6U0m_0LqYkQWMfnwt6Vc/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال حافظ متولدین هر ماه - سه شنبه ۲۱ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1851576",
-        "date": "2026-10-12T20:31:00.000Z",
-        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/FAYTqrqNBbuWVlPy6BGmnbpajkDJTK9XENnDn9q3AH85me3p_j4JwgMMHFxlCyb_56h1aBJxgNAV-woiWCzgt4okjyIVqL8QyY64ixIEY481bh8vXpzLaGeg0lePUPWRvfhldFclQ-xL4IN-pHeTpQb7SLF08AE9Vbv8BJ3uMEGKRpWUksiTWMv58HNYl7Bw/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال روزانه ماه تولد - سه شنبه ۲۱ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1851575",
-        "date": "2026-10-12T20:31:00.000Z",
-        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/iojBUyJ1hg_hp1DizRGrX9uIwKnjthtkX_gvmt7_vFUMUIrnKHQxLX7rvLoaFoaO1g-VsTKcc6udt0ZAInSR2ks3_xJ4lrEMD8HthPfo8nMnZDWoTrOtEOkLEhPM5qNuAXqw_iXqBJAWzcsT7oUcfT681endhAZdYqWqp-NSpB7pfsitDme4Xs7QHnmtm5Dq/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-      },
-      {
-        "title": "ساعات سعد و نحس امروز سه شنبه ۲۱ مهر + جدول",
-        "link": "https://www.ilna.ir/fa/tiny/news-1851574",
-        "date": "2026-10-12T20:31:00.000Z",
-        "datePersian": "۲۰ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/okB5iq8RN9Pq9C-u4KPhs6gsKHovWCWMICAOSh5ojSXp8w8tENxOXRlgBtwOnrLk0D8CTRhtzJstY8eIRNnWWOUsXWHwyYgL5x6_ciFn1M-dBW6-5FqrINn6z-KzujPY7CZCXKObEH6JHnuKhqJviTccuQhequBTKAxu5yGIpehKMwBjiyqtiOOhkHkQMsi3/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
+        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/PH_k5mhsGzTIXlHJXdcjH9m03xyTgU7lCbCUquC1YCb9e7Tg-NIowKuuVSTqLuAH67mUqsvdU50vG3JTDVDaRjZNVqvofLuC65nNYTXNwWX8CTukGxWqRap8YBGgRgF00pMMxWqxD88ln-zlzU9FqSFfjUMRgM9QmylVgX-YHURyL4jOZ_gvdjHft9-XkxAe/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
       }
     ]
   }
