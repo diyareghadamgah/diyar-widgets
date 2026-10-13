@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-10-13T22:08:36.120Z",
-  "lastUpdatePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۸",
+  "lastUpdate": "2026-10-13T22:34:56.128Z",
+  "lastUpdatePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۳۴",
   "totalNews": 100,
   "failedSources": [
     "فارس"
@@ -30,6 +30,126 @@
     "متفرقه"
   ],
   "news": [
+    {
+      "title": "رهبر کره شمالی موشک بالستیک قاره‌پیما با قابلیت رسیدن به خاک آمریکا را به نمایش گذاشت",
+      "link": "https://www.isna.ir/news/1405072214438/%D8%B1%D9%87%D8%A8%D8%B1-%DA%A9%D8%B1%D9%87-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D9%88%D8%B4%DA%A9-%D8%A8%D8%A7%D9%84%D8%B3%D8%AA%DB%8C%DA%A9-%D9%82%D8%A7%D8%B1%D9%87-%D9%BE%DB%8C%D9%85%D8%A7-%D8%A8%D8%A7-%D9%82%D8%A7%D8%A8%D9%84%DB%8C%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF%D9%86-%D8%A8%D9%87-%D8%AE%D8%A7%DA%A9",
+      "date": "2026-10-13T22:33:48.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۳۳",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "بین‌الملل",
+      "rssDescription": "رهبر کره شمالی، از موزه صنایع دفاعی این کشور بازدید کرد که در آن یک موشک بالستیک قاره‌پیما با توانایی رسیدن به خاک آمریکا به نمایش گذاشته شده بود؛ رویدادی که یک روز بعد از آن رخ داد که دونالد ترامپ، رئیس‌جمهور آمریکا، از احتمال دیدار با رهبر کره شمالی در سفر برنامه‌ریزی‌شده خود به آسیا خبر داد."
+    },
+    {
+      "title": "دویست و بیست‌و هفتمین شب تجمعات مردم زنجان در میدان",
+      "link": "https://www.mehrnews.com/news/6977263/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D9%81%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+      "date": "2026-10-13T22:27:18.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۷",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و بیست‌و هفتمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
+    },
+    {
+      "title": "آلگری: با تمرکز بیشتری کار کنیم و امتیازاتی را که برای صعود نیاز داریم به دست بیاوریم",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852115",
+      "date": "2026-10-13T22:23:19.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۳",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "ماسیمیلیانو آلگری اعتراف کرد که در جریان شکست ۳-۱ ناپولی مقابل ویارئال، بار دیگر با کوین دی‌بروینه وارد بحث شده است."
+    },
+    {
+      "title": "اجتماع مردم انقلابی آبدان در شب۲۲۷",
+      "link": "https://www.mehrnews.com/news/6977259/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A2%D8%A8%D8%AF%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B4%D8%A8%DB%B2%DB%B2%DB%B7",
+      "date": "2026-10-13T22:22:06.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۲",
+      "source": "مهر",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "بوشهر- دویست و بیست و هفتمین اجتماع شبانه مردم انقلابی آبدان در حمایت از انقلاب اسلامی برگزار شد."
+    },
+    {
+      "title": "کمپانی: اولیسه صددرصد مقصر بود اما نباید بهانه بیاوریم",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852114",
+      "date": "2026-10-13T22:17:33.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۷",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "ونسان کمپانی می‌گوید مسئولیت اشتباهات بازیکنانش و تساوی برابر وایکینگ را می‌پذیرد."
+    },
+    {
+      "title": "فلیک: حرفهای بین دو نیمه در رختکن می‌ماند",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852113",
+      "date": "2026-10-13T22:15:10.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۵",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "هانسی فلیک بعد از پیروزی 4-1 مقابل گالاتاسرای از نقش لامین یامال در این پیروزی ستایش کرد."
+    },
+    {
+      "title": "ویدیو: خلاصه بازی وایکینگ 3 - بایرن مونیخ 3",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852112",
+      "date": "2026-10-13T22:12:41.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۲",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "بایرن مونیخ در مقابل وایکینگ 3 بر 3 متوقف شد."
+    },
+    {
+      "title": "صعود جرکنی و یزدی به نیمه نهایی کشتی فرنگی امیدهای جهان/ شکست شمسی پور و حذف فتحی",
+      "link": "https://www.isna.ir/news/1405072214437/%D8%B5%D8%B9%D9%88%D8%AF-%D8%AC%D8%B1%DA%A9%D9%86%DB%8C-%D9%88-%DB%8C%D8%B2%D8%AF%DB%8C-%D8%A8%D9%87-%D9%86%DB%8C%D9%85%D9%87-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%81%D8%B1%D9%86%DA%AF%DB%8C-%D8%A7%D9%85%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%B4%DA%A9%D8%B3%D8%AA",
+      "date": "2026-10-13T22:12:33.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۲",
+      "source": "ایسنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "عرفان جرکنی در ۶۳ و یاسین یزدی در وزن ۸۷ کیلوگرم با شکست رقبای خود راهی نیمه نهایی کشتی فرنگی امیدهای جهان شدند اما آرمین شمسی پور در وزن ۵۵ کیلوگرم از رسیدن به نیمه نهایی بازماند و ابوالفضل فتحی نیز در سنگین وزن حذف شد."
+    },
+    {
+      "title": "ویدیو: خلاصه بازی اینتر 3 - کلوب بروژ 4",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852111",
+      "date": "2026-10-13T22:10:33.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۰",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "کلوب بروژ دیداری پرگل 4 بر 3 اینتر را برد."
+    },
+    {
+      "title": "ویدیو: خلاصه بازی گالاتاسرای 1 - بارسلونا 4",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852109",
+      "date": "2026-10-13T22:08:51.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۸",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "ورزشی",
+      "rssDescription": "بارسلونا در دیداری پرگل 4 بر یک گالاتاسرای را برد."
+    },
+    {
+      "title": "جنایت هولناک در مرودشت؛ جسد مرد ۶۰ ساله با دست‌وپا و صورت بسته در چاه پیدا شد",
+      "link": "https://www.khabarfoori.com/fa/tiny/news-3252259",
+      "date": "2026-10-13T22:07:48.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۷",
+      "source": "خبر فوری",
+      "flag": "🇮🇷",
+      "category": "اجتماعی",
+      "rssDescription": "رئیس پلیس شهرستان مرودشت از کشف پیکر مردی ۶۰ ساله که هفته‌ی گذشته مفقود شده بود، در چاه حیاط منزل زنی ۵۰ ساله خبر داد و اعلام کرد که متهم به قتل پس از تحقیقات پلیسی در یکی از روستاهای این شهرستان دستگیر شده است."
+    },
+    {
+      "title": "ویدیو: خلاصه بازی اتلتیکومادرید 2 - منچستریونایتد 0",
+      "link": "https://www.ilna.ir/fa/tiny/news-1852108",
+      "date": "2026-10-13T22:06:51.000Z",
+      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۶",
+      "source": "ایلنا",
+      "flag": "🇮🇷",
+      "category": "متفرقه",
+      "rssDescription": "اتلتیکو مادرید موفق شد 2 بر صفر منچستریونایتد را شکست دهد."
+    },
     {
       "title": "دویست و بیست و هفتمین اجتماع شبانه مردم دیّر",
       "link": "https://www.mehrnews.com/news/6977252/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D9%81%D8%AA%D9%85%DB%8C%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%DB%8C%D8%B1",
@@ -481,16 +601,6 @@
       "rssDescription": "بارش‌های شدید اخیر در استان فارس منجر به جاری شدن سیلاب و آبگرفتگی گسترده در سطح شهرستان فراشبند شد."
     },
     {
-      "title": "معتمدیان از پیگیری اتصال ۱۲ شهرستان به شبکه حمل‌ونقل عمومی خبر داد",
-      "link": "https://www.mehrnews.com/news/6977249/%D9%85%D8%B9%D8%AA%D9%85%D8%AF%DB%8C%D8%A7%D9%86-%D8%A7%D8%B2-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%AA%D8%B5%D8%A7%D9%84-%DB%B1%DB%B2-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D8%A8%DA%A9%D9%87-%D8%AD%D9%85%D9%84-%D9%88%D9%86%D9%82%D9%84-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D8%AE%D8%A8%D8%B1",
-      "date": "2026-10-13T21:08:45.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۱:۰۸",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "سیاسی",
-      "rssDescription": "ملارد- استاندار تهران با اشاره به تردد روزانه بیش از ۳۵۰ هزار خودرو در محورهای غربی استان، از پیگیری طرح اتصال ۱۲ شهرستان به شبکه حمل‌ونقل عمومی برای کاهش ترافیک خبر داد."
-    },
-    {
       "title": "حمله پهپادی به ریاض؛ هشدار در 2 استان عربستان",
       "link": "https://www.tasnimnews.ir/fa/news/1405/07/22/3722361/%D8%AD%D9%85%D9%84%D9%87-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF%DB%8C-%D8%A8%D9%87-%D8%B1%DB%8C%D8%A7%D8%B6-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-2-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86",
       "date": "2026-10-13T21:08:11.000Z",
@@ -539,16 +649,6 @@
       "flag": "🇮🇷",
       "category": "متفرقه",
       "rssDescription": "یک روان‌شناس چرایی رفتار متفاوت والدین با فرزندان را تشریح کرد."
-    },
-    {
-      "title": "اجتماع مردم مبعوث دیار پانزده خرداد شهرستان قرچک",
-      "link": "https://www.mehrnews.com/news/6977209/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%A8%D8%B9%D9%88%D8%AB-%D8%AF%DB%8C%D8%A7%D8%B1-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87-%D8%AE%D8%B1%D8%AF%D8%A7%D8%AF-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%82%D8%B1%DA%86%DA%A9",
-      "date": "2026-10-13T21:04:22.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۱:۰۴",
-      "source": "مهر",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "قرچک- اجتماع ملت مبعوث شده جنوب شرق استان تهران، دیار پانزده خرداد، شهرستان قرچک را از دریچه دوربین خبرگزاری مهر مشاهده می‌کنید."
     },
     {
       "title": "خروش مردم اراک در دویست‌وبیست‌وهفتمین شب همبستگی ملی+فیلم",
@@ -781,56 +881,6 @@
       "rssDescription": "عربستان در پی حملات موشکی و پهپادی به فرودگاه ریاض، تحقیقاتی را برای بررسی عملکرد سامانه‌های پدافند هوایی و علت احتمالی عبور تسلیحات مهاجم از شبکه دفاعی این کشور آغاز کرده است."
     },
     {
-      "title": "طالع بینی متولدین ۲۲ مهر",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852081",
-      "date": "2026-10-13T20:31:00.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5Aa7troijApoPA4d5oK6GuVLdd5S2gUKl1KIdi7RQnCXPUAA9sd7F-RP538_0p4sOcBzWkiUG1HU02S_9z77E3oPhBbtYv5iWBPv9lz3hDat5c-a0a6bjb6e8MAbUBX5Z0uzrXzbQH_DGh-vLBg-AbHYWfpUiE9MY8DRtuurHtGcmnJSnOnoJtcLFIRGt61M/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال حافظ متولدین هر ماه - چهارشنبه ۲۲ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852072",
-      "date": "2026-10-13T20:31:00.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/CRoKaoqHUmmPVk6KEl5mxec1A3AW9MjsMftiJKu5wKpmyGA_sZ8QSYx-UcTmhBX5QDewvo6eUVz0xJLhhZ9scIZdyI3r-Y3tSOqAKapEEtwihv5MC0QSzrqRoEG9TpySUR-ezemwfF1UOILcBufLhmb5QmVZkFO6GLZOEzxqLMKKWvuZTAcxI95wZRINxWq8/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-    },
-    {
-      "title": "فال روزانه ماه تولد - چهارشنبه ۲۲ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852071",
-      "date": "2026-10-13T20:31:00.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/bORJnSwSRUhtJXkNLBgjChXYflH1CTQPsWzD1GFMneLIYfMa8cayCwmVHcqrgH9fFLRqu-eW_2zVtByEWX4TSlyHC1yBU_kRhMY5b3NurJngSGOMK6wOLweUD2J-W0HZLmE4rwsIHkzg8FNsFu3TvegaRq3SFT4rSs9MznUxL2WGVpNrGJ-QonEgFjkxC49-/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-    },
-    {
-      "title": "ساعات سعد و نحس امروز چهارشنبه ۲۲ مهر + جدول",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852070",
-      "date": "2026-10-13T20:31:00.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/jXyg1nqvaD3nCV2OFhMeQB5Fvk1kSBWqDZyQCNLZJDUJR5_cNCFRq_J1w9NV27ZuB82X7dd-mwA9YaRWLryg6zqwfXd0thLQe20jMIMDWzvuqN0PQ3OYBCXeneJi8dsgoOWIv2F2llQNwrtn6DXjMr2nvLbqC8_-YNXoEWGSPdGAxTNEiKWBPNZXQtpbqvxl/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-    },
-    {
-      "title": "اوقات شرعی امروز چهارشنبه ۲۲ مهر ۱۴۰۵",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852069",
-      "date": "2026-10-13T20:31:00.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/KnsbuEHn3s0vWVTkexIzyfP4F0WYX2kEZnI4VmDs5lsjW0Ve38OxMByxmKl3ymyGyToPKNNZ_CHNo_vfENz7Id-1JQkMDnXqvI7QNGn4tlFZcFexbOC5jJuKU_D85oLO3XuJa8yAGboY0XmgpD8e7OG7aGVAs4UGe_WyvJdxo81NFp-Ak9aSoij1_GBEbZ_n/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
-    },
-    {
       "title": "سرمربی آلومینیوم: شکست برابر فجر سپاسی غیرمنتظره بود",
       "link": "https://www.qudsonline.ir/news/1170337/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D8%B4%DA%A9%D8%B3%D8%AA-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D9%81%D8%AC%D8%B1-%D8%B3%D9%BE%D8%A7%D8%B3%DB%8C-%D8%BA%DB%8C%D8%B1%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%87-%D8%A8%D9%88%D8%AF",
       "date": "2026-10-13T20:30:28.000Z",
@@ -951,16 +1001,6 @@
       "rssDescription": "بعد از آنکه دونالد ترامپ اعلام کرد ممکن است با رئیس کره شمالی دیدار کند او موشکی را به نمایش گذاشت که قابلیت رسیدن به خاک آمریکا را دارد."
     },
     {
-      "title": "ویدیو: گل دوم بایرن مونیخ به وایکینگ توسط هری کین",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852097",
-      "date": "2026-10-13T20:22:09.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۲",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل اول بایرن مونیخ به وایکینگ توسط هری کین زده شد."
-    },
-    {
       "title": "سفیر ایران در روسیه: ادعای ترامپ درباره برنامه نابودی شهرهای آمریکا بی‌اساس است",
       "link": "https://www.khabaronline.ir/news/2288135/%D8%B3%D9%81%DB%8C%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D8%A7%D8%A8%D9%88%D8%AF%DB%8C-%D8%B4%D9%87%D8%B1%D9%87%D8%A7%DB%8C",
       "date": "2026-10-13T20:22:06.000Z",
@@ -969,16 +1009,6 @@
       "flag": "🇮🇷",
       "category": "بین‌الملل",
       "rssDescription": "سفیر جمهوری اسلامی ایران در روسیه تأکید کرد: ادعاهای رئیس‌ جمهور آمریکا درباره برنامه تهران برای نابودی شهرهای آمریکا، کاملاً بی‌اساس، غیرواقعی و تنها یک لفاظی انتخاباتی است."
-    },
-    {
-      "title": "ویدیو: گل اول بایرن مونیخ به وایکینگ توسط هری کین",
-      "link": "https://www.ilna.ir/fa/tiny/news-1852096",
-      "date": "2026-10-13T20:21:33.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۱",
-      "source": "ایلنا",
-      "flag": "🇮🇷",
-      "category": "ورزشی",
-      "rssDescription": "گل اول بایرن مونیخ به وایکینگ توسط هری کین زده شد."
     },
     {
       "title": "یلدا کاسبی: خرسندی که پدرم این همه درد و داغ را ندید",
@@ -991,16 +1021,6 @@
       "rssDescription": "مراسم بزرگداشت محمد کاسبی، بازیگر آثاری چون «پدر» ، «خوش‌رکاب» و «مریم مقدس»، در حالی برگزار شد که علی شاه‌حاتمی پیشنهاد داد نام تماشاخانه مهر به نام این هنرمند فقید نامگذاری شود."
     },
     {
-      "title": "قتل خانوادگی در دهلران منجر به مرگ ۵ نفر شد",
-      "link": "https://www.khabarfoori.com/fa/tiny/news-3252245",
-      "date": "2026-10-13T20:20:53.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۰",
-      "source": "خبر فوری",
-      "flag": "🇮🇷",
-      "category": "اجتماعی",
-      "rssDescription": "فرمانده انتظامی شهرستان دهلران از وقوع یک مورد قتل خانوادگی و مرگ پنج نفر خبر داد و گفت: بررسی ابعاد و علت دقیق این حادثه در دست بررسی است."
-    },
-    {
       "title": "«آیت‌الله مجتبی خامنه‌ای را دیدم، آوار ضعیفی روی‌شان بود» / روایت یک امدادگر هلال‌احمر از روز ۹ اسفند",
       "link": "https://www.khabaronline.ir/news/2288130/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%DB%8C%DA%A9-%D8%A7%D9%85%D8%AF%D8%A7%D8%AF%DA%AF%D8%B1-%D9%87%D9%84%D8%A7%D9%84-%D8%A7%D8%AD%D9%85%D8%B1-%D8%A7%D8%B2-%D8%B1%D9%88%D8%B2-%DB%B9-%D8%A7%D8%B3%D9%81%D9%86%D8%AF-%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D9%85%D8%AC%D8%AA%D8%A8%DB%8C-%D8%AE%D8%A7%D9%85%D9%86%D9%87-%D8%A7%DB%8C",
       "date": "2026-10-13T20:20:36.000Z",
@@ -1009,26 +1029,6 @@
       "flag": "🇮🇷",
       "category": "سیاسی",
       "rssDescription": "امیر استکی، امدادگر هلال‌احمر، در ویژه‌برنامه سمفونی ایران با اشاره به حضور نیروهای امدادی در روز حمله به بیت رهبری مشاهدات خود را بیان کرد."
-    },
-    {
-      "title": "دستور تخلیه مقر آرامکو در الظهران عربستان همزمان با وقوع انفجار مهیب",
-      "link": "https://www.tasnimnews.ir/fa/news/1405/07/21/3722355/%D8%AF%D8%B3%D8%AA%D9%88%D8%B1-%D8%AA%D8%AE%D9%84%DB%8C%D9%87-%D9%85%D9%82%D8%B1-%D8%A2%D8%B1%D8%A7%D9%85%DA%A9%D9%88-%D8%AF%D8%B1-%D8%A7%D9%84%D8%B8%D9%87%D8%B1%D8%A7%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D9%88%D9%82%D9%88%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D9%85%D9%87%DB%8C%D8%A8",
-      "date": "2026-10-13T20:20:15.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۰",
-      "source": "تسنیم",
-      "flag": "🇮🇷",
-      "category": "بین‌الملل",
-      "rssDescription": "گزارش‌های رسانه‌ای از دستور تخلیه مقر اصلی شرکت آرامکو در منطقه الظهران در جنوب شرق عربستان حکایت دارد."
-    },
-    {
-      "title": "«نقش ژئوپارک‌ها در کاهش ریسک بلایا و ارتقای تاب‌آوری جوامع محلی» بررسی می‌شود",
-      "link": "https://www.isna.ir/news/1405072114426/%D9%86%D9%82%D8%B4-%DA%98%D8%A6%D9%88%D9%BE%D8%A7%D8%B1%DA%A9-%D9%87%D8%A7-%D8%AF%D8%B1-%DA%A9%D8%A7%D9%87%D8%B4-%D8%B1%DB%8C%D8%B3%DA%A9-%D8%A8%D9%84%D8%A7%DB%8C%D8%A7-%D9%88-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7%DB%8C-%D8%AA%D8%A7%D8%A8-%D8%A2%D9%88%D8%B1%DB%8C-%D8%AC%D9%88%D8%A7%D9%85%D8%B9-%D9%85%D8%AD%D9%84%DB%8C",
-      "date": "2026-10-13T20:18:01.000Z",
-      "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۱۸",
-      "source": "ایسنا",
-      "flag": "🇮🇷",
-      "category": "متفرقه",
-      "rssDescription": "مدیر ژئوپارک جهانی قشم از برگزاری نشست تخصصی و کارگاه آموزشی «نقش ژئوپارک‌ها در کاهش ریسک بلایا و ارتقای تاب‌آوری جوامع محلی» به میزبانی این ژئوپارک و با همکاری شبکه ژئوپارک‌های جهانی ایران خبر داد."
     }
   ],
   "categorizedNews": {
@@ -1094,16 +1094,6 @@
         "rssDescription": "طرح بازآفرینی و ساماندهی محور گردشگری «گذر دردشت»، حدفاصل مقبره باباقاسم تا قصر جمیلان اصفهان با رویکرد حفظ اصالت تاریخی، بهسازی منظر شهری و ارتقای کیفیت فضاهای عمومی، شامگاه سه‌شنبه (۲۱ مهر ۱۴۰۵) با حضور «حسین افشین» معاون علمی، فناوری و اقتصاد دانش‌بنیان رئیس‌جمهور ،استاندار و شهردار اصفهان افتتاح شد."
       },
       {
-        "title": "معتمدیان از پیگیری اتصال ۱۲ شهرستان به شبکه حمل‌ونقل عمومی خبر داد",
-        "link": "https://www.mehrnews.com/news/6977249/%D9%85%D8%B9%D8%AA%D9%85%D8%AF%DB%8C%D8%A7%D9%86-%D8%A7%D8%B2-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%AA%D8%B5%D8%A7%D9%84-%DB%B1%DB%B2-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%B4%D8%A8%DA%A9%D9%87-%D8%AD%D9%85%D9%84-%D9%88%D9%86%D9%82%D9%84-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D8%AE%D8%A8%D8%B1",
-        "date": "2026-10-13T21:08:45.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۱:۰۸",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "سیاسی",
-        "rssDescription": "ملارد- استاندار تهران با اشاره به تردد روزانه بیش از ۳۵۰ هزار خودرو در محورهای غربی استان، از پیگیری طرح اتصال ۱۲ شهرستان به شبکه حمل‌ونقل عمومی برای کاهش ترافیک خبر داد."
-      },
-      {
         "title": "سید محمد خاتمی: نظم‌ فعلی جهان را ظالمانه می‌دانیم، اما باید در چهارچوب آن فعالیت کنیم/ روایت رییس دولت اصلاحات از فعالیت صلح آمیز هسته ای در اصفهان",
         "link": "https://www.khabarfoori.com/fa/tiny/news-3252249",
         "date": "2026-10-13T20:56:47.000Z",
@@ -1167,6 +1157,46 @@
       }
     ],
     "ورزشی": [
+      {
+        "title": "کمپانی: اولیسه صددرصد مقصر بود اما نباید بهانه بیاوریم",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852114",
+        "date": "2026-10-13T22:17:33.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۷",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "ونسان کمپانی می‌گوید مسئولیت اشتباهات بازیکنانش و تساوی برابر وایکینگ را می‌پذیرد."
+      },
+      {
+        "title": "ویدیو: خلاصه بازی وایکینگ 3 - بایرن مونیخ 3",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852112",
+        "date": "2026-10-13T22:12:41.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۲",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "بایرن مونیخ در مقابل وایکینگ 3 بر 3 متوقف شد."
+      },
+      {
+        "title": "صعود جرکنی و یزدی به نیمه نهایی کشتی فرنگی امیدهای جهان/ شکست شمسی پور و حذف فتحی",
+        "link": "https://www.isna.ir/news/1405072214437/%D8%B5%D8%B9%D9%88%D8%AF-%D8%AC%D8%B1%DA%A9%D9%86%DB%8C-%D9%88-%DB%8C%D8%B2%D8%AF%DB%8C-%D8%A8%D9%87-%D9%86%DB%8C%D9%85%D9%87-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%81%D8%B1%D9%86%DA%AF%DB%8C-%D8%A7%D9%85%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86-%D8%B4%DA%A9%D8%B3%D8%AA",
+        "date": "2026-10-13T22:12:33.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۲",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "عرفان جرکنی در ۶۳ و یاسین یزدی در وزن ۸۷ کیلوگرم با شکست رقبای خود راهی نیمه نهایی کشتی فرنگی امیدهای جهان شدند اما آرمین شمسی پور در وزن ۵۵ کیلوگرم از رسیدن به نیمه نهایی بازماند و ابوالفضل فتحی نیز در سنگین وزن حذف شد."
+      },
+      {
+        "title": "ویدیو: خلاصه بازی گالاتاسرای 1 - بارسلونا 4",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852109",
+        "date": "2026-10-13T22:08:51.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۸",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "ورزشی",
+        "rssDescription": "بارسلونا در دیداری پرگل 4 بر یک گالاتاسرای را برد."
+      },
       {
         "title": "ویدیو: خلاصه بازی آرسنال 3 - لیل 0",
         "link": "https://www.ilna.ir/fa/tiny/news-1852107",
@@ -1266,26 +1296,6 @@
         "flag": "🇮🇷",
         "category": "ورزشی",
         "rssDescription": "قربانی با بیان اینکه شکست برابر فجر شهید سپاسی مطابق انتظارش نبوده است، واکنش شاگردانش به نخستین باخت فصل را در ادامه رقابت‌های لیگ برتر تعیین‌کننده دانست و گفت: باید مشکلات تیم را شناسایی کنیم و با تلاش بیشتر به روند خوب خود بازگردیم."
-      },
-      {
-        "title": "ویدیو: گل دوم بایرن مونیخ به وایکینگ توسط هری کین",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852097",
-        "date": "2026-10-13T20:22:09.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۲",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل اول بایرن مونیخ به وایکینگ توسط هری کین زده شد."
-      },
-      {
-        "title": "ویدیو: گل اول بایرن مونیخ به وایکینگ توسط هری کین",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852096",
-        "date": "2026-10-13T20:21:33.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "ورزشی",
-        "rssDescription": "گل اول بایرن مونیخ به وایکینگ توسط هری کین زده شد."
       }
     ],
     "فرهنگی و هنری": [
@@ -1341,6 +1351,16 @@
       }
     ],
     "اجتماعی": [
+      {
+        "title": "جنایت هولناک در مرودشت؛ جسد مرد ۶۰ ساله با دست‌وپا و صورت بسته در چاه پیدا شد",
+        "link": "https://www.khabarfoori.com/fa/tiny/news-3252259",
+        "date": "2026-10-13T22:07:48.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۷",
+        "source": "خبر فوری",
+        "flag": "🇮🇷",
+        "category": "اجتماعی",
+        "rssDescription": "رئیس پلیس شهرستان مرودشت از کشف پیکر مردی ۶۰ ساله که هفته‌ی گذشته مفقود شده بود، در چاه حیاط منزل زنی ۵۰ ساله خبر داد و اعلام کرد که متهم به قتل پس از تحقیقات پلیسی در یکی از روستاهای این شهرستان دستگیر شده است."
+      },
       {
         "title": "چهارمین یادواره شهدای یزدی جبهه غرب کشور برگزار شد",
         "link": "https://www.mehrnews.com/news/6977248/%DA%86%D9%87%D8%A7%D8%B1%D9%85%DB%8C%D9%86-%DB%8C%D8%A7%D8%AF%D9%88%D8%A7%D8%B1%D9%87-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%DB%8C%D8%B2%D8%AF%DB%8C-%D8%AC%D8%A8%D9%87%D9%87-%D8%BA%D8%B1%D8%A8-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1-%D8%B4%D8%AF",
@@ -1440,16 +1460,6 @@
         "flag": "🇮🇷",
         "category": "اجتماعی",
         "rssDescription": "کمیسیون اساسنامه ها و مقررات تحصیلی شورای عالی آموزش و پرورش شرایط ثبت نام دانش آموزان در مدارس بزرگسالان و آموزش از راه دور را اعلام کرد."
-      },
-      {
-        "title": "قتل خانوادگی در دهلران منجر به مرگ ۵ نفر شد",
-        "link": "https://www.khabarfoori.com/fa/tiny/news-3252245",
-        "date": "2026-10-13T20:20:53.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۰",
-        "source": "خبر فوری",
-        "flag": "🇮🇷",
-        "category": "اجتماعی",
-        "rssDescription": "فرمانده انتظامی شهرستان دهلران از وقوع یک مورد قتل خانوادگی و مرگ پنج نفر خبر داد و گفت: بررسی ابعاد و علت دقیق این حادثه در دست بررسی است."
       }
     ],
     "علمی و فناوری": [
@@ -1495,6 +1505,16 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "رهبر کره شمالی موشک بالستیک قاره‌پیما با قابلیت رسیدن به خاک آمریکا را به نمایش گذاشت",
+        "link": "https://www.isna.ir/news/1405072214438/%D8%B1%D9%87%D8%A8%D8%B1-%DA%A9%D8%B1%D9%87-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D9%88%D8%B4%DA%A9-%D8%A8%D8%A7%D9%84%D8%B3%D8%AA%DB%8C%DA%A9-%D9%82%D8%A7%D8%B1%D9%87-%D9%BE%DB%8C%D9%85%D8%A7-%D8%A8%D8%A7-%D9%82%D8%A7%D8%A8%D9%84%DB%8C%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF%D9%86-%D8%A8%D9%87-%D8%AE%D8%A7%DA%A9",
+        "date": "2026-10-13T22:33:48.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۳۳",
+        "source": "ایسنا",
+        "flag": "🇮🇷",
+        "category": "بین‌الملل",
+        "rssDescription": "رهبر کره شمالی، از موزه صنایع دفاعی این کشور بازدید کرد که در آن یک موشک بالستیک قاره‌پیما با توانایی رسیدن به خاک آمریکا به نمایش گذاشته شده بود؛ رویدادی که یک روز بعد از آن رخ داد که دونالد ترامپ، رئیس‌جمهور آمریکا، از احتمال دیدار با رهبر کره شمالی در سفر برنامه‌ریزی‌شده خود به آسیا خبر داد."
+      },
       {
         "title": "هشدار سازمان ملل درباره پیامدهای تشدید تنش‌های نظامی بین یمن و عربستان",
         "link": "https://www.isna.ir/news/1405072214436/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%BE%DB%8C%D8%A7%D9%85%D8%AF%D9%87%D8%A7%DB%8C-%D8%AA%D8%B4%D8%AF%DB%8C%D8%AF-%D8%AA%D9%86%D8%B4-%D9%87%D8%A7%DB%8C-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A8%DB%8C%D9%86-%DB%8C%D9%85%D9%86",
@@ -1794,19 +1814,69 @@
         "flag": "🇮🇷",
         "category": "بین‌الملل",
         "rssDescription": "سفیر جمهوری اسلامی ایران در روسیه تأکید کرد: ادعاهای رئیس‌ جمهور آمریکا درباره برنامه تهران برای نابودی شهرهای آمریکا، کاملاً بی‌اساس، غیرواقعی و تنها یک لفاظی انتخاباتی است."
-      },
-      {
-        "title": "دستور تخلیه مقر آرامکو در الظهران عربستان همزمان با وقوع انفجار مهیب",
-        "link": "https://www.tasnimnews.ir/fa/news/1405/07/21/3722355/%D8%AF%D8%B3%D8%AA%D9%88%D8%B1-%D8%AA%D8%AE%D9%84%DB%8C%D9%87-%D9%85%D9%82%D8%B1-%D8%A2%D8%B1%D8%A7%D9%85%DA%A9%D9%88-%D8%AF%D8%B1-%D8%A7%D9%84%D8%B8%D9%87%D8%B1%D8%A7%D9%86-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D9%88%D9%82%D9%88%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D9%85%D9%87%DB%8C%D8%A8",
-        "date": "2026-10-13T20:20:15.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۲۰",
-        "source": "تسنیم",
-        "flag": "🇮🇷",
-        "category": "بین‌الملل",
-        "rssDescription": "گزارش‌های رسانه‌ای از دستور تخلیه مقر اصلی شرکت آرامکو در منطقه الظهران در جنوب شرق عربستان حکایت دارد."
       }
     ],
     "متفرقه": [
+      {
+        "title": "دویست و بیست‌و هفتمین شب تجمعات مردم زنجان در میدان",
+        "link": "https://www.mehrnews.com/news/6977263/%D8%AF%D9%88%DB%8C%D8%B3%D8%AA-%D9%88-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D9%81%D8%AA%D9%85%DB%8C%D9%86-%D8%B4%D8%A8-%D8%AA%D8%AC%D9%85%D8%B9%D8%A7%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86",
+        "date": "2026-10-13T22:27:18.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۷",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "زنجان- در این ویدئو حضور با شکوه زنجانی‌ها در دویست و بیست‌و هفتمین شب از شب‌های حمایت از وطن و پشتیبانی از نظام مقدس جمهوری اسلامی ایران را مشاهده می‌کنید."
+      },
+      {
+        "title": "آلگری: با تمرکز بیشتری کار کنیم و امتیازاتی را که برای صعود نیاز داریم به دست بیاوریم",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852115",
+        "date": "2026-10-13T22:23:19.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۳",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "ماسیمیلیانو آلگری اعتراف کرد که در جریان شکست ۳-۱ ناپولی مقابل ویارئال، بار دیگر با کوین دی‌بروینه وارد بحث شده است."
+      },
+      {
+        "title": "اجتماع مردم انقلابی آبدان در شب۲۲۷",
+        "link": "https://www.mehrnews.com/news/6977259/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A2%D8%A8%D8%AF%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B4%D8%A8%DB%B2%DB%B2%DB%B7",
+        "date": "2026-10-13T22:22:06.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۲۲",
+        "source": "مهر",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "بوشهر- دویست و بیست و هفتمین اجتماع شبانه مردم انقلابی آبدان در حمایت از انقلاب اسلامی برگزار شد."
+      },
+      {
+        "title": "فلیک: حرفهای بین دو نیمه در رختکن می‌ماند",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852113",
+        "date": "2026-10-13T22:15:10.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۵",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "هانسی فلیک بعد از پیروزی 4-1 مقابل گالاتاسرای از نقش لامین یامال در این پیروزی ستایش کرد."
+      },
+      {
+        "title": "ویدیو: خلاصه بازی اینتر 3 - کلوب بروژ 4",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852111",
+        "date": "2026-10-13T22:10:33.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۱۰",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "کلوب بروژ دیداری پرگل 4 بر 3 اینتر را برد."
+      },
+      {
+        "title": "ویدیو: خلاصه بازی اتلتیکومادرید 2 - منچستریونایتد 0",
+        "link": "https://www.ilna.ir/fa/tiny/news-1852108",
+        "date": "2026-10-13T22:06:51.000Z",
+        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۲:۰۶",
+        "source": "ایلنا",
+        "flag": "🇮🇷",
+        "category": "متفرقه",
+        "rssDescription": "اتلتیکو مادرید موفق شد 2 بر صفر منچستریونایتد را شکست دهد."
+      },
       {
         "title": "هواپیمایی که پس از ۱۲ سال هنوز پیدا نشده است",
         "link": "https://www.asriran.com/fa/news/1198485/%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D9%BE%D8%B3-%D8%A7%D8%B2-12-%D8%B3%D8%A7%D9%84-%D9%87%D9%86%D9%88%D8%B2-%D9%BE%DB%8C%D8%AF%D8%A7-%D9%86%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA",
@@ -1898,16 +1968,6 @@
         "rssDescription": "یک روان‌شناس چرایی رفتار متفاوت والدین با فرزندان را تشریح کرد."
       },
       {
-        "title": "اجتماع مردم مبعوث دیار پانزده خرداد شهرستان قرچک",
-        "link": "https://www.mehrnews.com/news/6977209/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%B1%D8%AF%D9%85-%D9%85%D8%A8%D8%B9%D9%88%D8%AB-%D8%AF%DB%8C%D8%A7%D8%B1-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87-%D8%AE%D8%B1%D8%AF%D8%A7%D8%AF-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%82%D8%B1%DA%86%DA%A9",
-        "date": "2026-10-13T21:04:22.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۱:۰۴",
-        "source": "مهر",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "قرچک- اجتماع ملت مبعوث شده جنوب شرق استان تهران، دیار پانزده خرداد، شهرستان قرچک را از دریچه دوربین خبرگزاری مهر مشاهده می‌کنید."
-      },
-      {
         "title": "شکار ماهی مرکب توسط نهنگ عنبر",
         "link": "https://www.asriran.com/fa/news/1198725/%D8%B4%DA%A9%D8%A7%D8%B1-%D9%85%D8%A7%D9%87%DB%8C-%D9%85%D8%B1%DA%A9%D8%A8-%D8%AA%D9%88%D8%B3%D8%B7-%D9%86%D9%87%D9%86%DA%AF-%D8%B9%D9%86%D8%A8%D8%B1",
         "date": "2026-10-13T20:53:29.000Z",
@@ -1948,56 +2008,6 @@
         "rssDescription": "در پی فعالیت سامانه بارشی اخیر در جنوب کشور، تصاویر و گزارش‌های ویدئویی متعددی از شهرستان بشاگرد در استان هرمزگان منتشر شده که از وقوع بارش شدید تگرگ حکایت دارد؛ پدیده‌ای جوی که با نزول توده‌ای از تگرگ در این منطقه مستعد و گرمسیری، مناظر کم‌سابقه‌ای را رقم زده."
       },
       {
-        "title": "طالع بینی متولدین ۲۲ مهر",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852081",
-        "date": "2026-10-13T20:31:00.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/TdOLTFWUMQAs/5Aa7troijApoPA4d5oK6GuVLdd5S2gUKl1KIdi7RQnCXPUAA9sd7F-RP538_0p4sOcBzWkiUG1HU02S_9z77E3oPhBbtYv5iWBPv9lz3hDat5c-a0a6bjb6e8MAbUBX5Z0uzrXzbQH_DGh-vLBg-AbHYWfpUiE9MY8DRtuurHtGcmnJSnOnoJtcLFIRGt61M/%D8%B7%D8%A7%D9%84%D8%B9+%D8%A8%DB%8C%D9%86%DB%8C.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال حافظ متولدین هر ماه - چهارشنبه ۲۲ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852072",
-        "date": "2026-10-13T20:31:00.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/fupffFYDUHqT/CRoKaoqHUmmPVk6KEl5mxec1A3AW9MjsMftiJKu5wKpmyGA_sZ8QSYx-UcTmhBX5QDewvo6eUVz0xJLhhZ9scIZdyI3r-Y3tSOqAKapEEtwihv5MC0QSzrqRoEG9TpySUR-ezemwfF1UOILcBufLhmb5QmVZkFO6GLZOEzxqLMKKWvuZTAcxI95wZRINxWq8/%D9%81%D8%A7%D9%84+%D8%AD%D8%A7%D9%81%D8%B8.jpg\"> <div></div>"
-      },
-      {
-        "title": "فال روزانه ماه تولد - چهارشنبه ۲۲ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852071",
-        "date": "2026-10-13T20:31:00.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/6jEYVWA9Trhl/bORJnSwSRUhtJXkNLBgjChXYflH1CTQPsWzD1GFMneLIYfMa8cayCwmVHcqrgH9fFLRqu-eW_2zVtByEWX4TSlyHC1yBU_kRhMY5b3NurJngSGOMK6wOLweUD2J-W0HZLmE4rwsIHkzg8FNsFu3TvegaRq3SFT4rSs9MznUxL2WGVpNrGJ-QonEgFjkxC49-/%D9%81%D8%A7%D9%84+%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87.jpg\"> <div></div>"
-      },
-      {
-        "title": "ساعات سعد و نحس امروز چهارشنبه ۲۲ مهر + جدول",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852070",
-        "date": "2026-10-13T20:31:00.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/Zypr4KZ2xymS/jXyg1nqvaD3nCV2OFhMeQB5Fvk1kSBWqDZyQCNLZJDUJR5_cNCFRq_J1w9NV27ZuB82X7dd-mwA9YaRWLryg6zqwfXd0thLQe20jMIMDWzvuqN0PQ3OYBCXeneJi8dsgoOWIv2F2llQNwrtn6DXjMr2nvLbqC8_-YNXoEWGSPdGAxTNEiKWBPNZXQtpbqvxl/%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA+%D8%B3%D8%B9%D8%AF+%D9%88+%D9%86%D8%AD%D8%B3.jpg\"> <div></div>"
-      },
-      {
-        "title": "اوقات شرعی امروز چهارشنبه ۲۲ مهر ۱۴۰۵",
-        "link": "https://www.ilna.ir/fa/tiny/news-1852069",
-        "date": "2026-10-13T20:31:00.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۳۱",
-        "source": "ایلنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "<img src=\"https://cdn.ilna.ir/thumbnail/T3gpRgfrOlnY/KnsbuEHn3s0vWVTkexIzyfP4F0WYX2kEZnI4VmDs5lsjW0Ve38OxMByxmKl3ymyGyToPKNNZ_CHNo_vfENz7Id-1JQkMDnXqvI7QNGn4tlFZcFexbOC5jJuKU_D85oLO3XuJa8yAGboY0XmgpD8e7OG7aGVAs4UGe_WyvJdxo81NFp-Ak9aSoij1_GBEbZ_n/%D8%A7%D9%88%D9%82%D8%A7%D8%AA+%D8%B4%D8%B1%D8%B9%DB%8C+1405.jpg\"> <div></div>"
-      },
-      {
         "title": "قدس طوس شماره ۱۱۰۵۱",
         "link": "https://www.qudsonline.ir/news/1170329/%D9%82%D8%AF%D8%B3-%D8%B7%D9%88%D8%B3-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%DB%B1%DB%B1%DB%B0%DB%B5%DB%B1",
         "date": "2026-10-13T20:30:00.000Z",
@@ -2036,16 +2046,6 @@
         "flag": "🇮🇷",
         "category": "متفرقه",
         "rssDescription": "ویدئویی از آسیب دیدن دست گلزار به دلیل ازدحام مردم را مشاهده کنید."
-      },
-      {
-        "title": "«نقش ژئوپارک‌ها در کاهش ریسک بلایا و ارتقای تاب‌آوری جوامع محلی» بررسی می‌شود",
-        "link": "https://www.isna.ir/news/1405072114426/%D9%86%D9%82%D8%B4-%DA%98%D8%A6%D9%88%D9%BE%D8%A7%D8%B1%DA%A9-%D9%87%D8%A7-%D8%AF%D8%B1-%DA%A9%D8%A7%D9%87%D8%B4-%D8%B1%DB%8C%D8%B3%DA%A9-%D8%A8%D9%84%D8%A7%DB%8C%D8%A7-%D9%88-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7%DB%8C-%D8%AA%D8%A7%D8%A8-%D8%A2%D9%88%D8%B1%DB%8C-%D8%AC%D9%88%D8%A7%D9%85%D8%B9-%D9%85%D8%AD%D9%84%DB%8C",
-        "date": "2026-10-13T20:18:01.000Z",
-        "datePersian": "۲۱ مهر ۱۴۰۵، ۲۰:۱۸",
-        "source": "ایسنا",
-        "flag": "🇮🇷",
-        "category": "متفرقه",
-        "rssDescription": "مدیر ژئوپارک جهانی قشم از برگزاری نشست تخصصی و کارگاه آموزشی «نقش ژئوپارک‌ها در کاهش ریسک بلایا و ارتقای تاب‌آوری جوامع محلی» به میزبانی این ژئوپارک و با همکاری شبکه ژئوپارک‌های جهانی ایران خبر داد."
       }
     ]
   }
