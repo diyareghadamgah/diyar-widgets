@@ -31,6 +31,12 @@
             <select id="jDay" aria-label="روز شمسی"></select>
           </div>
           <input type="hidden" id="date">
+          <div style="display:flex; gap:6px; margin-top:6px; flex-wrap:wrap;">
+            <button type="button" id="today" class="alt" style="flex:1; font-size:13px; padding:6px;">امروز</button>
+            <button type="button" id="tomorrow" class="alt" style="flex:1; font-size:13px; padding:6px;">فردا</button>
+            <button type="button" id="prevDay" class="alt" style="flex:1; font-size:13px; padding:6px;">◀ روز قبل</button>
+            <button type="button" id="nextDay" class="alt" style="flex:1; font-size:13px; padding:6px;">روز بعد ▶</button>
+          </div>
           <div class="help" style="margin-top:5px">سال، ماه و روز را به تقویم شمسی انتخاب کنید.</div>
         </label>
         <label>انتخاب لوگو<input type="file" id="logo" accept="image/*"></label>
@@ -128,6 +134,15 @@
           <button id="downloadSVG" class="gold-out" type="button">🎨 SVG کلیک‌پذیر</button>
         </div>
         <button id="zip" class="alt">دانلود ZIP از این روز به بعد</button>
+        <div id="zipProgress" style="display:none; margin-top:10px;">
+          <div style="height:6px; background:#e0e7e4; border-radius:3px; overflow:hidden;">
+            <div id="zipProgressBar" style="height:100%; width:0%; background:var(--green); transition:width 0.2s;"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
+            <span id="zipProgressText" style="font-size:12px; color:#60716c;">۰٪</span>
+            <button type="button" id="zipCancel" class="alt" style="font-size:12px; padding:4px 8px;">لغو</button>
+          </div>
+        </div>
         <p class="help"><b>PNG</b> برای اشتراک در شبکه‌های اجتماعی (لینک کلیک‌پذیر نیست، QR را اسکن کنید).<br><b>HTML</b> مطمئن‌ترین فرمت — روی همهٔ مرورگرها و اندروید باز می‌شود، لینک‌ها کار می‌کنند.<br><b>SVG</b> تصویر برداری — در مرورگر رایانه و موبایل، لینک‌ها کلیک‌پذیرند.</p>
       </div>
     </section>
