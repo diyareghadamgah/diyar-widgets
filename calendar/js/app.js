@@ -65,23 +65,53 @@ const CLICK_PHONE={x:70,y:1005,w:410,h:130};
 const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
 const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
 
-function jalaliToGregorian(jy,jm,jd){
-  jy=Number(jy);jm=Number(jm);jd=Number(jd);const gy=jy+621;
-  const breaks=[-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2192,2262,2324,2394,2456,3178];
-  let leapJ=-14,jp=breaks[0],jump=0;
-  for(let i=1;i<breaks.length;i++){
-    const jm0=breaks[i]; jump=jm0-jp;
-    if(jy<jm0) break;
-    leapJ += Math.floor(jump/33)*8 + Math.floor((jump%33)/4);
-    jp=jm0;
+function jalaliToGregorian(jy, jm, jd) {
+  jy = Number(jy); jm = Number(jm); jd = Number(jd);
+  const g_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const j_days_in_month = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29];
+
+  let jy2 = jy - 979;
+  let jm2 = jm - 1;
+  let jd2 = jd - 1;
+
+  let j_day_no = 365 * jy2 + Math.floor(jy2 / 33) * 8 + Math.floor(((jy2 % 33) + 3) / 4);
+  for (let i = 0; i < jm2; ++i) j_day_no += j_days_in_month[i];
+  j_day_no += jd2;
+
+  let g_day_no = j_day_no + 79;
+
+  let gy = 1600 + 400 * Math.floor(g_day_no / 146097);
+  g_day_no = g_day_no % 146097;
+
+  let leap = true;
+  if (g_day_no >= 36525) {
+    g_day_no--;
+    gy += 100 * Math.floor(g_day_no / 36524);
+    g_day_no = g_day_no % 36524;
+    if (g_day_no >= 365) g_day_no++;
+    else leap = false;
   }
-  const n=jy-jp;
-  leapJ += Math.floor(n/33)*8 + Math.floor((n%33+3)/4);
-  if(jump%33===4 && jump-n===4) leapJ++;
-  const leapG=Math.floor(gy/4)-Math.floor((Math.floor(gy/100)+1)*3/4)-150;
-  const march=20+leapJ-leapG;
-  const gday=jm<=6?(jm-1)*31+jd-1:(jm-7)*30+jd-1+186;
-  return new Date(Date.UTC(gy,2,march,12)+gday*864e5);
+
+  gy += 4 * Math.floor(g_day_no / 1461);
+  g_day_no %= 1461;
+
+  if (g_day_no >= 366) {
+    leap = false;
+    g_day_no--;
+    gy += Math.floor(g_day_no / 365);
+    g_day_no = g_day_no % 365;
+  }
+
+  let gd = g_day_no + 1;
+  let gm = 0;
+  for (let i = 0; i < 12; ++i) {
+    let days_in_month = g_days_in_month[i];
+    if (i === 1 && leap) days_in_month = 29;
+    if (gd <= days_in_month) break;
+    gd -= days_in_month;
+    gm++;
+  }
+  return new Date(Date.UTC(gy, gm, gd, 12));
 }
 function gregorianToJalali(gdate){
   const gy=gdate.getUTCFullYear(),gm=gdate.getUTCMonth()+1,gd=gdate.getUTCDate(),gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
@@ -106,8 +136,6 @@ function setGregorianISOFromJalali(){const d=jalaliToGregorian(+jYearEl.value,+j
 function syncJalaliFromISO(){
   const v=dateEl.value;if(!v)return;
   const [y,m,d]=v.split('-').map(Number);
-  // تبدیل میلادی به شمسی را با موتور تقویم رسمی Intl انجام بده؛
-  // تابع قبلی یک روز عقب می‌افتاد (مثلاً 2026-10-04 را 1405/07/11 می‌خواند).
   const p=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'
   }).formatToParts(new Date(Date.UTC(y,m-1,d,12)));
@@ -206,6 +234,7 @@ function render(){
     ctx.fillStyle='#9b2c2c';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',cv.width/2,cv.height/2);
   });
+  debouncedSave();
 }
 
 const fontsReady=(async()=>{
@@ -217,14 +246,77 @@ const fontsReady=(async()=>{
   }catch(_){}
 })();
 
-/* شاخهٔ برگ تزئینی */
+/* ---------- ذخیره و بازیابی تنظیمات ---------- */
+const SETTINGS_KEY = 'diyar-calendar-settings-v1';
+let saveTimeout;
+function debouncedSave() {
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(saveSettings, 500);
+}
+function saveSettings() {
+  const settings = {
+    templateMode,
+    colors: S,
+    photoZoom, photoX, photoY,
+    dhikrSettings,
+    dhikrTexts: DHIKR,
+    channel: chEl.value,
+    channelUrl: chUrlEl.value,
+    phone: phEl.value,
+    showQR: showQREl.checked,
+    lunarOffset: offEl.value,
+    note: noteEl.value
+  };
+  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch(_) {}
+}
+function loadSettings() {
+  try {
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
 
-/* آیکن دوربین برای جای خالی عکس */
+    if (s.templateMode && TEMPLATES[s.templateMode]) {
+      templateMode = s.templateMode;
+      templateSelectEl.value = templateMode;
+      templateCards.forEach(c => c.classList.toggle('active', c.dataset.template === templateMode));
+    }
+    if (s.colors) Object.assign(S, s.colors);
+    if (s.photoZoom) photoZoom = s.photoZoom;
+    if (s.photoX) photoX = s.photoX;
+    if (s.photoY) photoY = s.photoY;
+    updatePhotoUI();
 
-/* سیلوئت مسجد */
+    if (s.dhikrSettings) {
+      for (let i = 0; i < 7; i++) {
+        if (s.dhikrSettings[i]) Object.assign(dhikrSettings[i], s.dhikrSettings[i]);
+      }
+    }
+    if (s.dhikrTexts) {
+      for (let i = 0; i < 7; i++) {
+        if (s.dhikrTexts[i]) DHIKR[i] = s.dhikrTexts[i];
+      }
+    }
+    syncDhikrEditor();
 
+    if (s.channel) chEl.value = s.channel;
+    if (s.channelUrl) { chUrlEl.value = s.channelUrl; chLink.href = s.channelUrl; }
+    if (s.phone) { phEl.value = s.phone; phLink.href = phoneHref(s.phone); }
+    if (s.showQR !== undefined) showQREl.checked = s.showQR;
+    if (s.lunarOffset) offEl.value = s.lunarOffset;
+    if (s.note) noteEl.value = s.note;
+
+    // به‌روزرسانی رنگ‌ها در رابط کاربری
+    ['frame','inner','panel','goldText','darkText','canvasBg'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && s.colors && s.colors[id]) el.value = s.colors[id];
+    });
+  } catch (e) {
+    console.warn('خطا در بازیابی تنظیمات:', e);
+  }
+}
+
+/* ---------- تولید SVG و HTML ---------- */
 function buildSVG(i){return buildRasterSVG(i);}
-
 const xesc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 
 function buildRasterSVG(i){
@@ -473,34 +565,111 @@ document.getElementById('downloadSVG').onclick=async()=>{
   const svg=buildSVG(i);
   save(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}),'calendar-'+dateEl.value+'.svg');
 };
-document.getElementById('zip').onclick=async(e)=>{
-  const btn=e.currentTarget;const original=btn.textContent;
-  const i0=cur();if(!i0){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
-  const n=Math.max(1,Math.min(366,+nEl.value||1));
-  const [y,m,d]=dateEl.value.split('-').map(Number);
-  const off=+offEl.value||0;
-  if(typeof JSZip==='undefined'){alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.');return;}
-  const zip=new JSZip();
-  btn.disabled=true;
-  try{
-    for(let k=0;k<n;k++){
-      btn.textContent='در حال ساخت '+fa(k+1)+'/'+fa(n)+' …';
-      const dt=new Date(Date.UTC(y,m-1,d+k,12));
-      await draw(info(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate(),off));
-      zip.file(dt.toISOString().slice(0,10)+'.png',await blobOf('image/png'));
-      await new Promise(r=>setTimeout(r,0));
+
+document.getElementById('zip').onclick = async (e) => {
+  const btn = e.currentTarget;
+  const original = btn.textContent;
+  const i0 = cur();
+  if (!i0) { alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
+  const n = Math.max(1, Math.min(366, +nEl.value || 1));
+  const [y, m, d] = dateEl.value.split('-').map(Number);
+  const off = +offEl.value || 0;
+  if (typeof JSZip === 'undefined') { alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.'); return; }
+
+  const zip = new JSZip();
+  btn.disabled = true;
+  const progressContainer = document.getElementById('zipProgress');
+  const progressBar = document.getElementById('zipProgressBar');
+  const progressText = document.getElementById('zipProgressText');
+  progressContainer.style.display = 'block';
+  let cancelled = false;
+
+  document.getElementById('zipCancel').onclick = () => {
+    cancelled = true;
+    btn.disabled = false;
+    btn.textContent = original;
+    progressContainer.style.display = 'none';
+  };
+
+  try {
+    for (let k = 0; k < n; k++) {
+      if (cancelled) break;
+      btn.textContent = `در حال ساخت ${fa(k + 1)}/${fa(n)} …`;
+      const dt = new Date(Date.UTC(y, m - 1, d + k, 12));
+      await draw(info(dt.getUTCFullYear(), dt.getUTCMonth() + 1, dt.getUTCDate(), off));
+      zip.file(dt.toISOString().slice(0, 10) + '.png', await blobOf('image/png'));
+
+      const percent = Math.round(((k + 1) / n) * 100);
+      progressBar.style.width = percent + '%';
+      progressText.textContent = fa(percent) + '٪';
+
+      await new Promise(r => setTimeout(r, 0));
     }
-    btn.textContent='در حال فشرده‌سازی …';
-    const out=await zip.generateAsync({type:'blob'});
-    save(out,'calendar-cards.zip');
-  }catch(err){console.error(err);alert('خطا در ساخت ZIP.');}
-  finally{btn.disabled=false;btn.textContent=original;render();}
+
+    if (!cancelled) {
+      btn.textContent = 'در حال فشرده‌سازی …';
+      const out = await zip.generateAsync({ type: 'blob' });
+      save(out, 'calendar-cards.zip');
+    }
+  } catch (err) {
+    console.error(err);
+    alert('خطا در ساخت ZIP.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = original;
+    progressContainer.style.display = 'none';
+    render();
+  }
 };
 
+/* ---------- دکمه‌های ناوبری تاریخ ---------- */
+document.getElementById('today').onclick = () => {
+  const tehranNow = new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn', {
+    timeZone: 'Asia/Tehran', year: 'numeric', month: 'numeric', day: 'numeric'
+  }).formatToParts(new Date());
+  const tp = Object.fromEntries(tehranNow.filter(x => x.type !== 'literal' && x.type !== 'era').map(x => [x.type, Number(x.value)]));
+  jYearEl.value = tp.year;
+  jMonthEl.value = tp.month;
+  refreshJalaliDays();
+  jDayEl.value = tp.day;
+  setGregorianISOFromJalali();
+  syncEventEditor();
+  render();
+  updateEventInfo();
+};
+
+document.getElementById('tomorrow').onclick = () => {
+  const d = new Date(dateEl.value);
+  d.setDate(d.getDate() + 1);
+  dateEl.value = d.toISOString().slice(0, 10);
+  syncJalaliFromISO();
+  syncEventEditor();
+  render();
+  updateEventInfo();
+};
+
+document.getElementById('prevDay').onclick = () => {
+  const d = new Date(dateEl.value);
+  d.setDate(d.getDate() - 1);
+  dateEl.value = d.toISOString().slice(0, 10);
+  syncJalaliFromISO();
+  syncEventEditor();
+  render();
+  updateEventInfo();
+};
+
+document.getElementById('nextDay').onclick = () => {
+  const d = new Date(dateEl.value);
+  d.setDate(d.getDate() + 1);
+  dateEl.value = d.toISOString().slice(0, 10);
+  syncJalaliFromISO();
+  syncEventEditor();
+  render();
+  updateEventInfo();
+};
+
+/* ---------- راه‌اندازی اولیه ---------- */
 (function init(){
-  // تاریخ پیش‌فرض را مستقیماً از تقویم شمسیِ منطقه زمانی ایران بگیر.
-  // قبلاً ابتدا تاریخ میلادی ساخته می‌شد و سپس تبدیل می‌شد و همین مسیر باعث
-  // اختلاف یک‌روزه بین انتخابگر بالای فرم و تاریخ روی کارت می‌شد.
   const tehranNow=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     timeZone:'Asia/Tehran', year:'numeric', month:'numeric', day:'numeric'
   }).formatToParts(new Date());
@@ -514,5 +683,6 @@ document.getElementById('zip').onclick=async(e)=>{
   updatePhotoUI();
   syncEventEditor();
   updateEventInfo();
+  loadSettings(); // <--- بازیابی تنظیمات ذخیره‌شده
   render();
 })();
