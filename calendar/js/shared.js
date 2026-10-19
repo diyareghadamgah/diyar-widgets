@@ -183,6 +183,7 @@ function drawNoteArea(x,y,w,h){
 /* کادر یکسان مناسبت روز برای همه قالب‌ها؛ در روز بدون مناسبت، کادر کاملاً خالی است. */
 function drawEventPanel(i, cfg){
   cfg = cfg || {};
+  window.__eventPanelDrawn=true;
   const x=cfg.x||485, y=cfg.y||620, w=cfg.w||510, h=cfg.h||70;
   const radius=cfg.radius==null?18:cfg.radius;
   const stroke=cfg.stroke||S.frame||'#3d6518';
@@ -201,7 +202,9 @@ function drawEventPanel(i, cfg){
   ctx.font='800 '+fit('مناسبت روز',titleW-16,15,800)+'px Vazirmatn';
   ctx.fillText('مناسبت روز',titleX+titleW/2,titleY+titleH/2+1);
   const bodyX=x+14, bodyW=w-titleW-34, bodyRight=x+w-titleW-18;
-  const titles=events.slice(0,5).map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title);
+  const cap=Math.max(1,Math.min(5,Math.floor((h-10)/17)));      // تعداد مناسبتی که واقعاً در ارتفاع کادر جا می‌شود
+  const perItemLines=h<90?1:2;
+  const titles=events.slice(0,cap).map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title);
   let fs=cfg.fontSize||16;
   const maxLines=Math.max(1,Math.min(3,titles.length));
   const availableH=Math.max(22,h-18);
@@ -211,7 +214,8 @@ function drawEventPanel(i, cfg){
     let f=fs;
     let lines=wrapText(txt,bodyW-8,'700 '+f+'px Vazirmatn');
     while(lines.length>1 && f>10){f--;lines=wrapText(txt,bodyW-8,'700 '+f+'px Vazirmatn');}
-    return {lines:lines.slice(0,2),f};
+    if(lines.length>perItemLines){lines=lines.slice(0,perItemLines);let last=lines[perItemLines-1];while(last.length>1&&ctx.measureText(last+'…').width>bodyW-8)last=last.slice(0,-1);lines[perItemLines-1]=last+'…';}
+    return {lines,f};
   });
   const totalH=prepared.reduce((sum,p)=>sum+Math.max(targetLineH,p.lines.length*Math.max(15,p.f+2)),0);
   let yy=y+(h-totalH)/2;
@@ -221,8 +225,8 @@ function drawEventPanel(i, cfg){
     p.lines.forEach(line=>{ctx.font='700 '+p.f+'px Vazirmatn';ctx.fillText(line,bodyRight,yy+lh/2);yy+=lh;});
     yy+=2;
   });
-  if(events.length>5){
-    ctx.textAlign='left';ctx.font='600 10px Vazirmatn';ctx.fillText('…',x+10,y+h-8);
+  if(events.length>titles.length){
+    ctx.textAlign='left';ctx.font='600 10px Vazirmatn';ctx.fillText('+'+fa(events.length-titles.length)+' مورد دیگر',x+10,y+h-8);
   }
   ctx.restore();
 }

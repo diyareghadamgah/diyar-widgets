@@ -65,62 +65,23 @@ const CLICK_PHONE={x:70,y:1005,w:410,h:130};
 const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
 const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
 
-function jalaliToGregorian(jy, jm, jd) {
-  jy = Number(jy); jm = Number(jm); jd = Number(jd);
-  const g_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  const j_days_in_month = [31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29];
-
-  let jy2 = jy - 979;
-  let jm2 = jm - 1;
-  let jd2 = jd - 1;
-
-  let j_day_no = 365 * jy2 + Math.floor(jy2 / 33) * 8 + Math.floor(((jy2 % 33) + 3) / 4);
-  for (let i = 0; i < jm2; ++i) j_day_no += j_days_in_month[i];
-  j_day_no += jd2;
-
-  let g_day_no = j_day_no + 79;
-
-  let gy = 1600 + 400 * Math.floor(g_day_no / 146097);
-  g_day_no = g_day_no % 146097;
-
-  let leap = true;
-  if (g_day_no >= 36525) {
-    g_day_no--;
-    gy += 100 * Math.floor(g_day_no / 36524);
-    g_day_no = g_day_no % 36524;
-    if (g_day_no >= 365) g_day_no++;
-    else leap = false;
+function jalaliToGregorian(jy,jm,jd){
+  jy=Number(jy);jm=Number(jm);jd=Number(jd);const gy=jy+621;
+  const breaks=[-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2192,2262,2324,2394,2456,3178];
+  let leapJ=-14,jp=breaks[0],jump=0;
+  for(let i=1;i<breaks.length;i++){
+    const jm0=breaks[i]; jump=jm0-jp;
+    if(jy<jm0) break;
+    leapJ += Math.floor(jump/33)*8 + Math.floor((jump%33)/4);
+    jp=jm0;
   }
-
-  gy += 4 * Math.floor(g_day_no / 1461);
-  g_day_no %= 1461;
-
-  if (g_day_no >= 366) {
-    leap = false;
-    g_day_no--;
-    gy += Math.floor(g_day_no / 365);
-    g_day_no = g_day_no % 365;
-  }
-
-  let gd = g_day_no + 1;
-  let gm = 0;
-  for (let i = 0; i < 12; ++i) {
-    let days_in_month = g_days_in_month[i];
-    if (i === 1 && leap) days_in_month = 29;
-    if (gd <= days_in_month) break;
-    gd -= days_in_month;
-    gm++;
-  }
-  return new Date(Date.UTC(gy, gm, gd, 12));
-}
-function gregorianToJalali(gdate){
-  const gy=gdate.getUTCFullYear(),gm=gdate.getUTCMonth()+1,gd=gdate.getUTCDate(),gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
-  let gy2=gy+1,days=355666+365*gy+Math.floor(gy2/4)-Math.floor(gy2/100)+Math.floor(gy2/400)+gd+gdm[gm-1];
-  if(gm>2&&((gy%4===0&&gy%100!==0)||gy%400===0))days++;
-  let jy=-1595+33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;
-  if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
-  const jm=days<186?1+Math.floor(days/31):7+Math.floor((days-186)/30),jd=1+(days<186?days%31:(days-186)%30);
-  return {y:jy,m:jm,d:jd};
+  const n=jy-jp;
+  leapJ += Math.floor(n/33)*8 + Math.floor((n%33+3)/4);
+  if(jump%33===4 && jump-n===4) leapJ++;
+  const leapG=Math.floor(gy/4)-Math.floor((Math.floor(gy/100)+1)*3/4)-150;
+  const march=20+leapJ-leapG;
+  const gday=jm<=6?(jm-1)*31+jd-1:(jm-7)*30+jd-1+186;
+  return new Date(Date.UTC(gy,2,march,12)+gday*864e5);
 }
 const JMONTHS=FA_M;
 function fillJalaliSelectors(){
@@ -136,6 +97,8 @@ function setGregorianISOFromJalali(){const d=jalaliToGregorian(+jYearEl.value,+j
 function syncJalaliFromISO(){
   const v=dateEl.value;if(!v)return;
   const [y,m,d]=v.split('-').map(Number);
+  // تبدیل میلادی به شمسی را با موتور تقویم رسمی Intl انجام بده؛
+  // تابع قبلی یک روز عقب می‌افتاد (مثلاً 2026-10-04 را 1405/07/11 می‌خواند).
   const p=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'
   }).formatToParts(new Date(Date.UTC(y,m-1,d,12)));
@@ -153,7 +116,7 @@ function parts(date,cal){
 function info(y,m,d,off){
   const dt=new Date(Date.UTC(y,m-1,d,12));
   const hj=new Date(dt.getTime()+off*864e5);
-  return {wd:dt.getUTCDay(),s:parts(dt,'persian'),h:parts(hj,'islamic-umalqura'),g:{d,m,y}};
+  return {wd:dt.getUTCDay(),s:parts(dt,'persian'),h:hijriParts(hj),g:{d,m,y}};
 }
 function cur(){
   const v=dateEl.value;if(!v)return null;
@@ -183,13 +146,14 @@ function wrapText(text,maxW,font){
 }
 
 function getQRMatrix(url){
-  if(typeof qrcode!=='function')return null;
+  url=validUrl(url);
+  if(!url||typeof qrcode!=='function')return null;
   try{
     const qr=qrcode(0,'M');qr.addData(url,'Byte');qr.make();
     const count=qr.getModuleCount();const matrix=[];
     for(let r=0;r<count;r++){const row=[];for(let c=0;c<count;c++)row.push(qr.isDark(r,c));matrix.push(row);}
     return {count,matrix};
-  }catch(err){console.error('QR:',err);return null;}
+  }catch(err){console.warn('QR:',err.message);return null;}
 }
 function drawQRCanvas(data,boxX,boxY,boxSize){
   if(!data)return;
@@ -204,10 +168,10 @@ function drawQRCanvas(data,boxX,boxY,boxSize){
 }
 
 function background(){
-  const t=TS();ctx.fillStyle=t.bg;ctx.fillRect(0,0,cv.width,cv.height);
+  const t=TS();ctx.fillStyle=t.bg;ctx.fillRect(0,0,CARD_W,CARD_H);
   ctx.save();ctx.globalAlpha=templateMode==='blackgold'?.06:.10;
   ctx.strokeStyle=templateMode==='ribbon'?'#8b6b2b':'#6d8b86';ctx.lineWidth=2;
-  for(let x=25;x<cv.width;x+=88)for(let y=20;y<cv.height;y+=92){
+  for(let x=25;x<CARD_W;x+=88)for(let y=20;y<CARD_H;y+=92){
     ctx.beginPath();ctx.arc(x,y,14,0,Math.PI*2);ctx.stroke();
     ctx.beginPath();ctx.moveTo(x-9,y);ctx.lineTo(x+9,y);ctx.moveTo(x,y-9);ctx.lineTo(x,y+9);ctx.stroke();
   }
@@ -221,20 +185,20 @@ async function draw(i){
 }
 
 function render(){
+  if(window.__exporting)return;
   const seq=++renderSeq;const i=cur();
-  ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.clearRect(0,0,CARD_W,CARD_H);
   if(!i){
     background();
     ctx.fillStyle=S.darkText;ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.font='700 26px Vazirmatn';ctx.fillText('لطفاً تاریخ را انتخاب کنید',cv.width/2,cv.height/2);
+    ctx.font='700 26px Vazirmatn';ctx.fillText('لطفاً تاریخ را انتخاب کنید',CARD_W/2,CARD_H/2);
     return;
   }
   draw(i).then(()=>{if(seq!==renderSeq)return;}).catch(err=>{
     console.error('Render error:',err);background();
     ctx.fillStyle='#9b2c2c';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',cv.width/2,cv.height/2);
+    ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',CARD_W/2,CARD_H/2);
   });
-  debouncedSave();
 }
 
 const fontsReady=(async()=>{
@@ -246,96 +210,36 @@ const fontsReady=(async()=>{
   }catch(_){}
 })();
 
-/* ---------- ذخیره و بازیابی تنظیمات ---------- */
-const SETTINGS_KEY = 'diyar-calendar-settings-v1';
-let saveTimeout;
-function debouncedSave() {
-  clearTimeout(saveTimeout);
-  saveTimeout = setTimeout(saveSettings, 500);
-}
-function saveSettings() {
-  const settings = {
-    templateMode,
-    colors: S,
-    photoZoom, photoX, photoY,
-    dhikrSettings,
-    dhikrTexts: DHIKR,
-    channel: chEl.value,
-    channelUrl: chUrlEl.value,
-    phone: phEl.value,
-    showQR: showQREl.checked,
-    lunarOffset: offEl.value,
-    note: noteEl.value
-  };
-  try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch(_) {}
-}
-function loadSettings() {
-  try {
-    const raw = localStorage.getItem(SETTINGS_KEY);
-    if (!raw) return;
-    const s = JSON.parse(raw);
+/* شاخهٔ برگ تزئینی */
 
-    if (s.templateMode && TEMPLATES[s.templateMode]) {
-      templateMode = s.templateMode;
-      templateSelectEl.value = templateMode;
-      templateCards.forEach(c => c.classList.toggle('active', c.dataset.template === templateMode));
-    }
-    if (s.colors) Object.assign(S, s.colors);
-    if (s.photoZoom) photoZoom = s.photoZoom;
-    if (s.photoX) photoX = s.photoX;
-    if (s.photoY) photoY = s.photoY;
-    updatePhotoUI();
+/* آیکن دوربین برای جای خالی عکس */
 
-    if (s.dhikrSettings) {
-      for (let i = 0; i < 7; i++) {
-        if (s.dhikrSettings[i]) Object.assign(dhikrSettings[i], s.dhikrSettings[i]);
-      }
-    }
-    if (s.dhikrTexts) {
-      for (let i = 0; i < 7; i++) {
-        if (s.dhikrTexts[i]) DHIKR[i] = s.dhikrTexts[i];
-      }
-    }
-    syncDhikrEditor();
+/* سیلوئت مسجد */
 
-    if (s.channel) chEl.value = s.channel;
-    if (s.channelUrl) { chUrlEl.value = s.channelUrl; chLink.href = s.channelUrl; }
-    if (s.phone) { phEl.value = s.phone; phLink.href = phoneHref(s.phone); }
-    if (s.showQR !== undefined) showQREl.checked = s.showQR;
-    if (s.lunarOffset) offEl.value = s.lunarOffset;
-    if (s.note) noteEl.value = s.note;
-
-    // به‌روزرسانی رنگ‌ها در رابط کاربری
-    ['frame','inner','panel','goldText','darkText','canvasBg'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el && s.colors && s.colors[id]) el.value = s.colors[id];
-    });
-  } catch (e) {
-    console.warn('خطا در بازیابی تنظیمات:', e);
-  }
-}
-
-/* ---------- تولید SVG و HTML ---------- */
 function buildSVG(i){return buildRasterSVG(i);}
+
 const xesc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 
+function cardAltText(i){
+  const ev=getEvents(i).map(e=>e.title).join('، ');
+  return 'کارت تقویم: '+WD[i.wd]+' '+fa(i.s.d)+' '+FA_M[i.s.m-1]+' '+fa(i.s.y)+(ev?' — '+ev:'');
+}
 function buildRasterSVG(i){
   const dataUrl=cv.toDataURL('image/png');
-  const url=normalizeUrl(chUrlEl.value);
+  const url=validUrl(chUrlEl.value)||'';
   const phone=(phEl.value||'').replace(/[^\d+]/g,'');
   let overlay='';
+  const rect=r=>`<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="transparent" style="cursor:pointer"/>`;
   if(url){
-    overlay+=`<a href="${xesc(url)}" xlink:href="${xesc(url)}" target="_blank">
-      <rect x="430" y="980" width="${cv.width-430}" height="${cv.height-980}" fill="transparent" style="cursor:pointer"/>
-      <rect x="440" y="600" width="560" height="80" fill="transparent" style="cursor:pointer"/>
-    </a>`;
+    overlay+=`<a href="${xesc(url)}" xlink:href="${xesc(url)}" target="_blank" rel="noopener noreferrer"><title>${xesc(chEl.value||'کانال')}</title>${channelRegions().map(rect).join('')}</a>`;
   }
   if(phone){
-    overlay+=`<a href="tel:${phone}"><rect x="0" y="980" width="430" height="${cv.height-980}" fill="transparent" style="cursor:pointer"/></a>`;
+    overlay+=`<a href="tel:${phone}"><title>تماس</title>${rect(CLICK_PHONE)}</a>`;
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${cv.width}" height="${cv.height}" viewBox="0 0 ${cv.width} ${cv.height}">
-  <image href="${dataUrl}" xlink:href="${dataUrl}" width="${cv.width}" height="${cv.height}" preserveAspectRatio="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${CARD_W}" height="${CARD_H}" viewBox="0 0 ${CARD_W} ${CARD_H}" role="img" aria-label="${xesc(cardAltText(i))}">
+  <title>${xesc(cardAltText(i))}</title>
+  <image href="${dataUrl}" xlink:href="${dataUrl}" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="none"/>
   ${overlay}
 </svg>`;
 }
@@ -361,8 +265,13 @@ ${svg}
 }
 
 function normalizeUrl(u){u=(u||'').trim();if(!u)return '';if(!/^https?:\/\//i.test(u))u='https://'+u;return u;}
+/* اعتبارسنجی لینک: null = خالی، false = نامعتبر، رشته = لینک http/https معتبر */
+function validUrl(u){
+  const n=normalizeUrl(u);if(!n)return null;
+  try{const x=new URL(n);return ((x.protocol==='http:'||x.protocol==='https:')&&x.hostname.includes('.')&&!/\s/.test(n))?x.href:false;}catch(_){return false;}
+}
 
-function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.left)*cv.width/r.width,y:(e.clientY-r.top)*cv.height/r.height};}
+function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.left)*CARD_W/r.width,y:(e.clientY-r.top)*CARD_H/r.height};}
 const inRect=(r,x,y)=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h;
 const inPhoneRegion=(x,y)=>inRect(CLICK_PHONE,x,y);
 function channelRegions(){
@@ -380,7 +289,7 @@ const inPhotoArea=(x,y)=>inRect((TEMPLATES[templateMode]&&TEMPLATES[templateMode
 const phoneHref=v=>'tel:'+(v||'').replace(/[^\d+]/g,'');
 
 function openPhone(){const p=(phEl.value||'').replace(/[^\d+]/g,'');if(p)window.open('tel:'+p,'_blank');}
-function openChannel(){const u=normalizeUrl(chUrlEl.value);if(u)window.open(u,'_blank');}
+function openChannel(){const u=validUrl(chUrlEl.value);if(u)window.open(u,'_blank','noopener');}
 
 let pointerDown=null,moved=false;
 const activePointers=new Map();
@@ -412,7 +321,7 @@ window.addEventListener('pointermove',e=>{
     const dx=pts[1].x-pts[0].x,dy=pts[1].y-pts[0].y;
     const dist=Math.max(1,Math.hypot(dx,dy));
     const midX=(pts[0].x+pts[1].x)/2,midY=(pts[0].y+pts[1].y)/2;
-    const r=cv.getBoundingClientRect();const sx=cv.width/r.width,sy=cv.height/r.height;
+    const r=cv.getBoundingClientRect();const sx=CARD_W/r.width,sy=CARD_H/r.height;
     photoZoom=Math.max(1,Math.min(3,pinchStart.zoom*dist/pinchStart.distance));
     photoX=Math.max(-300,Math.min(300,pinchStart.x+(midX-pinchStart.midX)*sx));
     photoY=Math.max(-300,Math.min(300,pinchStart.y+(midY-pinchStart.midY)*sy));
@@ -431,7 +340,7 @@ window.addEventListener('pointermove',e=>{
   const dy=e.clientY-pointerDown.cy;
   if(Math.abs(dx)+Math.abs(dy)>3)moved=true;
   if(pointerDown.isPhoto&&moved){
-    const r=cv.getBoundingClientRect();const sx=cv.width/r.width,sy=cv.height/r.height;
+    const r=cv.getBoundingClientRect();const sx=CARD_W/r.width,sy=CARD_H/r.height;
     photoX=Math.max(-300,Math.min(300,pointerDown.px+dx*sx));
     photoY=Math.max(-300,Math.min(300,pointerDown.py+dy*sy));
     updatePhotoUI();render();e.preventDefault();
@@ -492,7 +401,7 @@ function syncEventEditor(){
 function updateEventInfo(){
   const i=cur();const el=document.getElementById('eventInfo');if(!el)return;
   const ev=i?getEvents(i):[];
-  el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):'برای این روز مناسبت ثبت‌شده‌ای نیست.';
+  el.textContent=ev.length?ev.map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title).join(' • '):(i&&i.s.y!==1405?'داده‌های رسمی مناسبت‌ها فعلاً فقط برای سال ۱۴۰۵ موجود است؛ می‌توانید مناسبت شخصی ثبت کنید.':'برای این روز مناسبت ثبت‌شده‌ای نیست.');
 }
 function jalaliChanged(){refreshJalaliDays();setGregorianISOFromJalali();syncEventEditor();render();updateEventInfo();}
 jYearEl.onchange=jalaliChanged;jMonthEl.onchange=jalaliChanged;jDayEl.onchange=()=>{setGregorianISOFromJalali();syncEventEditor();render();updateEventInfo();};
@@ -507,7 +416,7 @@ if(saveCustomEventBtn)saveCustomEventBtn.onclick=()=>{
 if(clearCustomEventBtn)clearCustomEventBtn.onclick=()=>{
   const i=cur();if(!i)return;const map=getUserEventMap();delete map[eventDateKey(i.s)];setUserEventMap(map);syncEventEditor();render();updateEventInfo();
 };
-offEl.onchange=()=>{localStorage.setItem('calendar-lunar-offset',String(offEl.value));render();updateEventInfo();};
+offEl.onchange=()=>{try{localStorage.setItem('calendar-lunar-offset',String(offEl.value));}catch(_){}render();updateEventInfo();};
 chEl.oninput=render;
 showQREl.onchange=render;
 chUrlEl.oninput=()=>{const url=(chUrlEl.value||'').trim();chLink.href=url||'#';chLink.style.display=url?'inline-flex':'none';render();};
@@ -519,21 +428,25 @@ noteEl.oninput=render;
 });
 
 const blobUrls={logo:null,photo:null};
-(function restoreOffset(){const saved=localStorage.getItem('calendar-lunar-offset');if(saved!==null&&/^-?\d+$/.test(saved))offEl.value=Math.max(-2,Math.min(2,+saved));})();
+(function restoreOffset(){let saved=null;try{saved=localStorage.getItem('calendar-lunar-offset');}catch(_){}if(saved!==null&&/^-?\d+$/.test(saved))offEl.value=Math.max(-2,Math.min(2,+saved));})();
 function fileInput(inputId,which,previewId){
   document.getElementById(inputId).onchange=e=>{
     const f=e.target.files&&e.target.files[0];if(!f)return;
+    const fail=m=>{e.target.value='';(window.__say?window.__say(m,'err',8000):alert(m));};
+    if(!/^image\/(png|jpe?g|webp|gif|bmp|avif)$/i.test(f.type)){fail('فقط فایل تصویر (PNG، JPG، WebP، GIF) پذیرفته می‌شود.');return;}
+    if(f.size>15*1024*1024){fail('حجم تصویر بیش از ۱۵ مگابایت است؛ لطفاً تصویر کوچک‌تری انتخاب کنید.');return;}
     if(blobUrls[which])URL.revokeObjectURL(blobUrls[which]);
     const url=URL.createObjectURL(f);blobUrls[which]=url;
     const im=new Image();
     im.onload=()=>{
+      if(which==='photo'&&(im.naturalWidth<400||im.naturalHeight<400)&&window.__say)window.__say('هشدار: وضوح تصویر پایین است ('+fa(im.naturalWidth)+'×'+fa(im.naturalHeight)+') و در خروجی ممکن است تار دیده شود.','warn',9000);
       if(which==='logo')logo=im;
       else{photo=im;photoZoom=1;photoX=0;photoY=0;updatePhotoUI();}
       const box=document.getElementById(previewId);
       box.hidden=false;box.querySelector('img').src=url;
       requestAnimationFrame(render);
     };
-    im.onerror=()=>{URL.revokeObjectURL(url);blobUrls[which]=null;alert('بارگذاری تصویر انجام نشد.');};
+    im.onerror=()=>{URL.revokeObjectURL(url);blobUrls[which]=null;e.target.value='';const m='بارگذاری تصویر انجام نشد؛ فایل خراب یا پشتیبانی‌نشده است.';(window.__say?window.__say(m,'err',8000):alert(m));};
     im.src=url;
   };
 }
@@ -565,111 +478,34 @@ document.getElementById('downloadSVG').onclick=async()=>{
   const svg=buildSVG(i);
   save(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}),'calendar-'+dateEl.value+'.svg');
 };
-
-document.getElementById('zip').onclick = async (e) => {
-  const btn = e.currentTarget;
-  const original = btn.textContent;
-  const i0 = cur();
-  if (!i0) { alert('لطفاً ابتدا یک تاریخ انتخاب کنید.'); return; }
-  const n = Math.max(1, Math.min(366, +nEl.value || 1));
-  const [y, m, d] = dateEl.value.split('-').map(Number);
-  const off = +offEl.value || 0;
-  if (typeof JSZip === 'undefined') { alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.'); return; }
-
-  const zip = new JSZip();
-  btn.disabled = true;
-  const progressContainer = document.getElementById('zipProgress');
-  const progressBar = document.getElementById('zipProgressBar');
-  const progressText = document.getElementById('zipProgressText');
-  progressContainer.style.display = 'block';
-  let cancelled = false;
-
-  document.getElementById('zipCancel').onclick = () => {
-    cancelled = true;
-    btn.disabled = false;
-    btn.textContent = original;
-    progressContainer.style.display = 'none';
-  };
-
-  try {
-    for (let k = 0; k < n; k++) {
-      if (cancelled) break;
-      btn.textContent = `در حال ساخت ${fa(k + 1)}/${fa(n)} …`;
-      const dt = new Date(Date.UTC(y, m - 1, d + k, 12));
-      await draw(info(dt.getUTCFullYear(), dt.getUTCMonth() + 1, dt.getUTCDate(), off));
-      zip.file(dt.toISOString().slice(0, 10) + '.png', await blobOf('image/png'));
-
-      const percent = Math.round(((k + 1) / n) * 100);
-      progressBar.style.width = percent + '%';
-      progressText.textContent = fa(percent) + '٪';
-
-      await new Promise(r => setTimeout(r, 0));
+document.getElementById('zip').onclick=async(e)=>{
+  const btn=e.currentTarget;const original=btn.textContent;
+  const i0=cur();if(!i0){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
+  const n=Math.max(1,Math.min(366,+nEl.value||1));
+  const [y,m,d]=dateEl.value.split('-').map(Number);
+  const off=+offEl.value||0;
+  if(typeof JSZip==='undefined'){alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.');return;}
+  const zip=new JSZip();
+  btn.disabled=true;
+  try{
+    for(let k=0;k<n;k++){
+      btn.textContent='در حال ساخت '+fa(k+1)+'/'+fa(n)+' …';
+      const dt=new Date(Date.UTC(y,m-1,d+k,12));
+      await draw(info(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate(),off));
+      zip.file(dt.toISOString().slice(0,10)+'.png',await blobOf('image/png'));
+      await new Promise(r=>setTimeout(r,0));
     }
-
-    if (!cancelled) {
-      btn.textContent = 'در حال فشرده‌سازی …';
-      const out = await zip.generateAsync({ type: 'blob' });
-      save(out, 'calendar-cards.zip');
-    }
-  } catch (err) {
-    console.error(err);
-    alert('خطا در ساخت ZIP.');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = original;
-    progressContainer.style.display = 'none';
-    render();
-  }
+    btn.textContent='در حال فشرده‌سازی …';
+    const out=await zip.generateAsync({type:'blob'});
+    save(out,'calendar-cards.zip');
+  }catch(err){console.error(err);alert('خطا در ساخت ZIP.');}
+  finally{btn.disabled=false;btn.textContent=original;render();}
 };
 
-/* ---------- دکمه‌های ناوبری تاریخ ---------- */
-document.getElementById('today').onclick = () => {
-  const tehranNow = new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn', {
-    timeZone: 'Asia/Tehran', year: 'numeric', month: 'numeric', day: 'numeric'
-  }).formatToParts(new Date());
-  const tp = Object.fromEntries(tehranNow.filter(x => x.type !== 'literal' && x.type !== 'era').map(x => [x.type, Number(x.value)]));
-  jYearEl.value = tp.year;
-  jMonthEl.value = tp.month;
-  refreshJalaliDays();
-  jDayEl.value = tp.day;
-  setGregorianISOFromJalali();
-  syncEventEditor();
-  render();
-  updateEventInfo();
-};
-
-document.getElementById('tomorrow').onclick = () => {
-  const d = new Date(dateEl.value);
-  d.setDate(d.getDate() + 1);
-  dateEl.value = d.toISOString().slice(0, 10);
-  syncJalaliFromISO();
-  syncEventEditor();
-  render();
-  updateEventInfo();
-};
-
-document.getElementById('prevDay').onclick = () => {
-  const d = new Date(dateEl.value);
-  d.setDate(d.getDate() - 1);
-  dateEl.value = d.toISOString().slice(0, 10);
-  syncJalaliFromISO();
-  syncEventEditor();
-  render();
-  updateEventInfo();
-};
-
-document.getElementById('nextDay').onclick = () => {
-  const d = new Date(dateEl.value);
-  d.setDate(d.getDate() + 1);
-  dateEl.value = d.toISOString().slice(0, 10);
-  syncJalaliFromISO();
-  syncEventEditor();
-  render();
-  updateEventInfo();
-};
-
-/* ---------- راه‌اندازی اولیه ---------- */
 (function init(){
+  // تاریخ پیش‌فرض را مستقیماً از تقویم شمسیِ منطقه زمانی ایران بگیر.
+  // قبلاً ابتدا تاریخ میلادی ساخته می‌شد و سپس تبدیل می‌شد و همین مسیر باعث
+  // اختلاف یک‌روزه بین انتخابگر بالای فرم و تاریخ روی کارت می‌شد.
   const tehranNow=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     timeZone:'Asia/Tehran', year:'numeric', month:'numeric', day:'numeric'
   }).formatToParts(new Date());
@@ -683,6 +519,5 @@ document.getElementById('nextDay').onclick = () => {
   updatePhotoUI();
   syncEventEditor();
   updateEventInfo();
-  loadSettings(); // <--- بازیابی تنظیمات ذخیره‌شده
   render();
 })();

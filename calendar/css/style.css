@@ -57,16 +57,7 @@ canvas{width:100%;height:auto;display:block;border-radius:13px;box-shadow:0 5px 
 .template-swatch.blackgold{background:linear-gradient(90deg,#151515 0 42%,#d4a437 42% 58%,#151515 58%)}
 .template-swatch.ribbon{background:linear-gradient(135deg,#d8b25b,#fff0a8 48%,#b77a19)}
 @media(min-width:951px){.photo-controls-grid{grid-template-columns:1fr 1fr 1fr;gap:7px}.photo-settings-top .file-preview{max-width:150px}}
-@media(max-width:950px){
-  .app {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .preview { order: 1; }
-  .sidebar { order: 2; position: static; max-height: none; }
-  .preview-head { position: sticky; top: 0; z-index: 10; background: white; }
-}
+@media(max-width:950px){.app{grid-template-columns:1fr}.sidebar{position:static;max-height:none}}
 
 /* ===== منوهای کشویی ===== */
 .acc-head{cursor:pointer;user-select:none;-webkit-user-select:none}
@@ -85,11 +76,23 @@ canvas{width:100%;height:auto;display:block;border-radius:13px;box-shadow:0 5px 
 .template-grid{max-height:330px;overflow-y:auto;padding:2px 2px 4px}
 .tpl-group{grid-column:1/-1;font-size:12px;font-weight:800;color:var(--green);border-bottom:1px dashed #c7d0cd;padding:4px 2px 2px;margin-top:2px}
 
-/* ===== نوار پیشرفت ZIP ===== */
-#zipProgress {
-  margin-top: 10px;
-  background: #f8faf9;
-  border-radius: 8px;
-  padding: 8px;
-  border: 1px solid #e0e7e4;
-                      }
+/* ===== v9: ابزار سریع، وضعیت، موبایل ===== */
+button,select{min-height:40px}
+select{width:100%;font:inherit;border:1px solid #c7d0cd;border-radius:9px;padding:9px;background:white}
+button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.quickbar{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:8px;margin-top:10px}
+.quickbar button{margin-top:0}
+.status{min-height:22px;margin-top:8px;font-size:13px;font-weight:700;color:var(--green)}
+.status.err{color:#9b2c2c}
+.status.warn{color:#8a5a00}
+.field-bad{border-color:#9b2c2c!important;background:#fff5f5}
+.help.bad{color:#9b2c2c;font-weight:700}
+#cancelZip{border-color:#9b2c2c;color:#9b2c2c}
+@media(max-width:950px){
+  .app{padding:10px}
+  .preview{order:-1}
+  .quickbar{position:fixed;left:0;right:0;bottom:0;z-index:20;margin:0;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(248,250,249,.97);box-shadow:0 -3px 14px #0003}
+  .quickbar button{min-height:46px;font-size:14px}
+  body{padding-bottom:72px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

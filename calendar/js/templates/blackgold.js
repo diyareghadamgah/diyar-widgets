@@ -32,17 +32,17 @@
 
   function drawBlackGold(i){
     const t=TS();
-    ctx.fillStyle=t.bg;ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.fillStyle=t.bg;ctx.fillRect(0,0,CARD_W,CARD_H);
     panel(30,30,955,1125,24);
     ctx.strokeStyle='#777';ctx.lineWidth=3;
     [145,870].forEach(px=>{ctx.beginPath();ctx.moveTo(px,0);ctx.lineTo(px,30);ctx.stroke();ctx.fillStyle='#333';ctx.fillRect(px-12,28,24,18);});
-    drawPhotoBox({x:65,y:85,w:390,h:520},{x:100,y:620,w:320,h:58},22,t.frame);
+    drawPhotoBox({x:65,y:85,w:390,h:430},{x:100,y:527,w:320,h:52},22,t.frame);
     ctx.fillStyle=t.goldB;rr(500,85,430,90,35);ctx.fill();
     drawTextCenter(WD[i.wd],715,130,360,52,900,t.darkText);
     drawInfoPill(500,205,430,105,fa(i.s.d),FA_M[i.s.m-1],fa(i.s.y),'▦',t);
     drawInfoPill(500,320,430,105,fa(i.h.d),AR_M[i.h.m-1],fa(i.h.y),'☾',t);
     drawInfoPill(500,435,430,105,fa(i.g.d),EN_M[i.g.m-1],String(i.g.y),'◎',t);
-    drawEventPanel(i,{x:55,y:555,w:905,h:115,radius:18,stroke:t.frame,fill:t.panel,titleFill:t.goldB,titleColor:t.darkText,textColor:t.goldText,fontSize:17});
+    drawEventPanel(i,{x:55,y:594,w:905,h:80,radius:18,stroke:t.frame,fill:t.panel,titleFill:t.goldB,titleColor:t.darkText,textColor:t.goldText,fontSize:17});
     ctx.fillStyle=t.panel;rr(55,700,905,250,18);ctx.fill();
     ctx.strokeStyle=t.frame;ctx.lineWidth=4;rr(55,700,905,250,18);ctx.stroke();
     ctx.fillStyle=t.goldB;rr(310,680,395,58,29);ctx.fill();
@@ -65,7 +65,7 @@ registerTemplate({
   id:'blackgold',
   label:'مشکی و طلایی',
   short:'مشکی و طلایی',
-  photoArea:{x:65,y:85,w:390,h:520},
+  photoArea:{x:65,y:85,w:390,h:430},
   swatch:'linear-gradient(90deg,#151515 0 42%,#d4a437 42% 58%,#151515 58%)',
   style:{panel:'#171717',frame:'#d9a52f',inner:'#f1cf67',goldText:'#f4c64f',darkText:'#161616',bg:'#e9ece9',panelR:18,outerR:24,photoR:18,softR:12,pillR:10,goldA:'#8f5a08',goldB:'#f4c64f',shadow:0.30},
   draw:drawBlackGold

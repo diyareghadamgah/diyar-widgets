@@ -26,11 +26,11 @@
 
   function drawRibbonTemplate(i){
     const green='#1f5b48', greenDark='#0e3d31';
-    const bg=ctx.createRadialGradient(cv.width/2,cv.height/2,100,cv.width/2,cv.height/2,900);
+    const bg=ctx.createRadialGradient(CARD_W/2,CARD_H/2,100,CARD_W/2,CARD_H/2,900);
     bg.addColorStop(0,'#fdf6e6');bg.addColorStop(1,'#efe3c8');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.fillStyle=bg;ctx.fillRect(0,0,CARD_W,CARD_H);
     ctx.save();ctx.globalAlpha=.09;ctx.strokeStyle='#b8913a';ctx.lineWidth=1.4;
-    for(let x=55;x<cv.width;x+=110)for(let y=55;y<cv.height;y+=110){ctx.beginPath();for(let k=0;k<16;k++){const a=k*Math.PI/8,r=k%2?14:28;ctx[k?'lineTo':'moveTo'](x+Math.cos(a)*r,y+Math.sin(a)*r);}ctx.closePath();ctx.stroke();}
+    for(let x=55;x<CARD_W;x+=110)for(let y=55;y<CARD_H;y+=110){ctx.beginPath();for(let k=0;k<16;k++){const a=k*Math.PI/8,r=k%2?14:28;ctx[k?'lineTo':'moveTo'](x+Math.cos(a)*r,y+Math.sin(a)*r);}ctx.closePath();ctx.stroke();}
     ctx.restore();
     ctx.strokeStyle='#c9a44a';ctx.lineWidth=5;rr(18,18,1014,1144,30);ctx.stroke();
     ctx.strokeStyle='#e0c576';ctx.lineWidth=1.5;rr(28,28,994,1124,24);ctx.stroke();
@@ -166,24 +166,24 @@
     /* ---------- پیل ذکر روز ---------- */
     const ds=dhikrSettings[i.wd];
     const TITLE='ذکر روز '+WD[i.wd];
-    const tpw=400,tpx=(cv.width-tpw)/2,tpy=736,tph=58;
+    const tpw=400,tpx=(CARD_W-tpw)/2,tpy=736,tph=58;
     ctx.fillStyle=greenDark;rr(tpx,tpy,tpw,tph,tph/2);ctx.fill();
     ctx.fillStyle='#fff';const tz=fit(TITLE,tpw-40,ds.titleSize-3,900);
     ctx.font='900 '+tz+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(TITLE,cv.width/2,tpy+tph/2);
+    ctx.fillText(TITLE,CARD_W/2,tpy+tph/2);
 
     /* ---------- جعبه ذکر ---------- */
     ctx.fillStyle='#fffdf5';rr(45,760,960,240,22);ctx.fill();
     ctx.strokeStyle=grad('#a56a08','#f0c34f',760,1000);ctx.lineWidth=4.5;rr(45,760,960,240,22);ctx.stroke();
     ctx.strokeStyle='#d6b25a';ctx.lineWidth=1.3;rr(57,772,936,216,17);ctx.stroke();
     ctx.fillStyle=greenDark;rr(tpx,tpy,tpw,tph,tph/2);ctx.fill();ctx.strokeStyle='#c9a44a';ctx.lineWidth=2.5;rr(tpx,tpy,tpw,tph,tph/2);ctx.stroke();
-    ctx.fillStyle='#fff';ctx.font='900 '+tz+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(TITLE,cv.width/2,tpy+tph/2);
+    ctx.fillStyle='#fff';ctx.font='900 '+tz+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(TITLE,CARD_W/2,tpy+tph/2);
     const [ar,tr]=DHIKR[i.wd];
     ctx.fillStyle='#10201c';const az=fit(ar,850,ds.arabicSize+6);
     ctx.font='900 '+az+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(ar,cv.width/2,862);
+    ctx.fillText(ar,CARD_W/2,862);
     ctx.fillStyle='#2a3a34';const trz=fit(tr,850,ds.translationSize,700);
-    ctx.font='700 '+trz+'px Vazirmatn';ctx.fillText(tr,cv.width/2,945);
+    ctx.font='700 '+trz+'px Vazirmatn';ctx.fillText(tr,CARD_W/2,945);
 
     /* ---------- فوتر: بنر روبان طلایی ---------- */
     const FY=1050,FH=80,FCY=FY+FH/2;

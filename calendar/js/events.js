@@ -239,7 +239,7 @@ for(const event of EVENTS_1405)(EVENTS_BY_DATE[event.date] ||= []).push(event);
 function eventDateKey(s){return `${s.y}/${String(s.m).padStart(2,'0')}/${String(s.d).padStart(2,'0')}`;}
 function getOfficialEvents(i){return EVENTS_BY_DATE[eventDateKey(i.s)] || [];}
 function getUserEventMap(){try{return JSON.parse(localStorage.getItem('calendar-user-events-1405')||'{}')||{};}catch(e){return {};}}
-function setUserEventMap(map){localStorage.setItem('calendar-user-events-1405',JSON.stringify(map||{}));}
+function setUserEventMap(map){try{localStorage.setItem('calendar-user-events-1405',JSON.stringify(map||{}));}catch(err){console.warn('ذخیرهٔ مناسبت شخصی انجام نشد');}}
 function getUserEvent(i){const key=eventDateKey(i.s),map=getUserEventMap(),v=map[key];return v&&typeof v==='object'?v:null;}
 function getEvents(i){
   const official=getOfficialEvents(i);
@@ -256,7 +256,7 @@ function getEventEditorReplace(i){return !!getUserEvent(i)?.replaceOfficial;}
 function eventSummary(i){return getEvents(i).map(e=>e.title).join(' • ');}
 function drawEventsBadge(i){
   const events=getEvents(i); if(!events.length) return;
-  const W=cv.width, text=events.map(e=>e.title).join(' • ');
+  const W=CARD_W, text=events.map(e=>e.title).join(' • ');
   const holiday=events.some(e=>e.holiday);
   const label=holiday?'تعطیل · ':'مناسبت · ';
   const maxChars=70;

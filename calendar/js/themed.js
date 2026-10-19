@@ -30,7 +30,7 @@ function drawBlossom(cx,cy,r,col,center){
 }
 
 function drawThemedCard(i,T){
-  const W=cv.width,H=cv.height;
+  const W=CARD_W,H=CARD_H;
   const acc=(y0,y1)=>themedGrad(T.acc[0],T.acc[1],y0,y1);
   const line=(y0,y1)=>themedGrad(T.line[0],T.line[1],y0,y1);
   T.paint(W,H,line);

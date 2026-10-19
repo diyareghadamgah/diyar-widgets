@@ -2,7 +2,7 @@
 (function(){
 'use strict';
   function drawRoyalTemplate(i){
-    const W=cv.width,H=cv.height,GA='#a56a08',GB='#f6dc85';
+    const W=CARD_W,H=CARD_H,GA='#a56a08',GB='#f6dc85';
     const gold=(y0,y1)=>grad(GA,GB,y0,y1);
     const glass='rgba(255,255,255,0.07)';
     const bg=ctx.createLinearGradient(0,0,0,H);

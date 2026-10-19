@@ -3,9 +3,9 @@
 'use strict';
   function drawLightTemplate(i){
     const green='#0d594d', greenDark='#063d35', cream='#fffdf8';
-    const bg=ctx.createLinearGradient(0,0,0,cv.height);
+    const bg=ctx.createLinearGradient(0,0,0,CARD_H);
     bg.addColorStop(0,'#faf6ec');bg.addColorStop(1,'#eee6d3');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.fillStyle=bg;ctx.fillRect(0,0,CARD_W,CARD_H);
     ctx.strokeStyle='#d6c48e';ctx.lineWidth=3;rr(18,18,1014,1144,26);ctx.stroke();
     ctx.strokeStyle=green;ctx.lineWidth=1.2;rr(26,26,998,1128,22);ctx.stroke();
 
@@ -77,11 +77,11 @@
 
     const ds=dhikrSettings[i.wd];
     const TITLE='ذکر روز '+WD[i.wd];
-    const tpw=380,tpx=(cv.width-tpw)/2,tpy=650,tph=54;
+    const tpw=380,tpx=(CARD_W-tpw)/2,tpy=650,tph=54;
     ctx.fillStyle=green;rr(tpx,tpy,tpw,tph,tph/2);ctx.fill();
     ctx.fillStyle='#fff';const tz=fit(TITLE,tpw-40,ds.titleSize-4,900);
     ctx.font='900 '+tz+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(TITLE,cv.width/2,tpy+tph/2);
+    ctx.fillText(TITLE,CARD_W/2,tpy+tph/2);
 
     ctx.fillStyle=cream;rr(50,720,950,255,26);ctx.fill();
     ctx.strokeStyle='#d6c48e';ctx.lineWidth=2;rr(50,720,950,255,26);ctx.stroke();
@@ -90,9 +90,9 @@
     const [ar,tr]=DHIKR[i.wd];
     ctx.fillStyle='#10201c';const az=fit(ar,830,ds.arabicSize+4);
     ctx.font='900 '+az+'px Vazirmatn';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText(ar,cv.width/2,805);
+    ctx.fillText(ar,CARD_W/2,805);
     ctx.fillStyle='#3a4a44';const trz=fit(tr,830,ds.translationSize,700);
-    ctx.font='700 '+trz+'px Vazirmatn';ctx.fillText(tr,cv.width/2,910);
+    ctx.font='700 '+trz+'px Vazirmatn';ctx.fillText(tr,CARD_W/2,910);
 
     const FY=1010,FH=140;
     ctx.save();rr(40,FY,970,FH,26);ctx.clip();
