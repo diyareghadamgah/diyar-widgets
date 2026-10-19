@@ -175,6 +175,15 @@
       <span class="badge hint">کلیک روی شماره/کانال = بازکردن لینک</span>
     </div>
     <div class="canvas-wrap"><canvas id="c" width="1050" height="1180" role="img" aria-label="پیش‌نمایش کارت تقویم"></canvas></div>
+
+    <!-- ⬇⬇⬇ ناوبری صفحات A4 — افزوده‌شده ⬇⬇⬇ -->
+    <div id="pageNav" class="page-nav" hidden>
+      <button type="button" id="pagePrev" class="alt" title="صفحهٔ قبل">◀ صفحهٔ قبل</button>
+      <span id="pageIndicator" aria-live="polite">صفحهٔ ۱ از ۱</span>
+      <button type="button" id="pageNext" class="alt" title="صفحهٔ بعد">صفحهٔ بعد ▶</button>
+    </div>
+    <!-- ⬆⬆⬆ ناوبری صفحات A4 ⬆⬆⬆ -->
+
     <div id="status" class="status" role="status" aria-live="polite"></div>
     <div class="quickbar" role="toolbar" aria-label="ابزار سریع">
       <button type="button" class="alt" id="prevDay" title="روز قبل (→)">▶ روز قبل</button>
@@ -218,10 +227,66 @@
 <script src="js/app.js"></script>
 <script src="js/accordion.js"></script>
 <script src="js/features.js"></script>
+
+<!-- ⬇⬇⬇ اسکریپت ناوبری صفحات A4 — افزوده‌شده ⬇⬇⬇ -->
+<script>
+(function(){
+  const nav = document.getElementById('pageNav');
+  const prev = document.getElementById('pagePrev');
+  const next = document.getElementById('pageNext');
+  const ind = document.getElementById('pageIndicator');
+  if (!nav) return;
+
+  function fa(n){ return String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]); }
+
+  function updateNav(){
+    const info = window.__a4PageInfo || { current: 1, total: 1 };
+    const isA4 = (typeof window.templateMode !== 'undefined' && window.templateMode === 'a4notes');
+    // در برخی مرورگرها `templateMode` به‌صورت مستقیم در window نیست (متغیر let)،
+    // پس از TEMPLATES و selector هم کمک می‌گیریم:
+    const isA4Fallback = (function(){
+      try {
+        const sel = document.getElementById('templateSelect');
+        return sel && sel.value === 'a4notes';
+      } catch(_) { return false; }
+    })();
+    const show = (isA4 || isA4Fallback) && info.total > 1;
+    nav.hidden = !show;
+    if (show) {
+      ind.textContent = 'صفحهٔ ' + fa(info.current) + ' از ' + fa(info.total);
+      prev.disabled = info.current <= 1;
+      next.disabled = info.current >= info.total;
+    }
+  }
+
+  prev.onclick = () => {
+    const cur = window.__a4PreviewPage || 1;
+    if (cur > 1) {
+      window.__a4PreviewPage = cur - 1;
+      if (typeof render === 'function') render();
+    }
+  };
+  next.onclick = () => {
+    const info = window.__a4PageInfo || { total: 1 };
+    const cur = window.__a4PreviewPage || 1;
+    if (cur < info.total) {
+      window.__a4PreviewPage = cur + 1;
+      if (typeof render === 'function') render();
+    }
+  };
+
+  // این تابع از داخل app.js پس از هر رندر صدا زده می‌شود
+  window.__onAfterRender = updateNav;
+  // یک‌بار هم بعد از بارگذاری چک کنیم (در صورت نبود render)
+  setTimeout(updateNav, 800);
+})();
+</script>
+<!-- ⬆⬆⬆ اسکریپت ناوبری صفحات A4 ⬆⬆⬆ -->
+
 <script>
 if('serviceWorker' in navigator&&location.protocol.startsWith('http')){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
 </script>
 </body>
-  </html>
+            </html>
