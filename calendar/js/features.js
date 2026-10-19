@@ -1,5 +1,6 @@
 /* امکانات v9: ناوبری روزها، خروجی با مقیاس، تولید گروهی قابل لغو، ذخیرهٔ خودکار تنظیمات، پشتیبان JSON، اعتبارسنجی لینک.
-   این فایل پس از app.js بارگذاری می‌شود و فقط کنترل‌های جدید را اضافه یا handler دکمه‌های خروجی را جایگزین می‌کند. */
+   این فایل پس از app.js بارگذاری می‌شود و فقط کنترل‌های جدید را اضافه یا handler دکمه‌های خروجی را جایگزین می‌کند.
+   نسخهٔ اصلاح‌شده: ابعاد خروجی از dimsOf(templateMode) گرفته می‌شود تا قالب A4 (1240×1754) هم پشتیبانی شود. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -53,16 +54,20 @@ function fontAvailable(){
 }
 fontsReady.then(()=>{if(!fontAvailable())say('فونت وزیرمتن بارگذاری نشده است (اینترنت لازم است یا فونت هنوز ذخیره نشده). خروجی با فونت جایگزین ساخته می‌شود.','warn');});
 
-/* ---------- هستهٔ خروجی ---------- */
+/* ---------- هستهٔ خروجی (با پشتیبانی از ابعاد پویای قالب) ---------- */
 const EXPORT_BTNS=['download','downloadHTML','downloadSVG','zip','quickPng','copyText'];
 function lockUI(b){window.__exporting=b;EXPORT_BTNS.forEach(id=>{const el=$(id);if(el)el.disabled=b;});}
 async function paintScaled(i,scale){
   await fontsReady;
-  cv.width=CARD_W*scale;cv.height=CARD_H*scale;       // تغییر اندازه، بوم را پاک می‌کند
+  const d=dimsOf(templateMode);
+  cv.width=d.w*scale;cv.height=d.h*scale;       // تغییر اندازه، بوم را پاک می‌کند
   ctx.setTransform(scale,0,0,scale,0,0);
   await draw(i);
 }
-function restoreCanvas(){cv.width=CARD_W;cv.height=CARD_H;ctx.setTransform(1,0,0,1,0,0);}
+function restoreCanvas(){
+  const d=dimsOf(templateMode);
+  cv.width=d.w;cv.height=d.h;ctx.setTransform(1,0,0,1,0,0);
+}
 async function withExport(fn){
   if(window.__exporting)return;
   lockUI(true);
@@ -74,13 +79,13 @@ const needDate=()=>{const i=cur();if(!i)say('لطفاً ابتدا یک تاری
 
 async function downloadPNG(){
   await withExport(async()=>{
-    const i=needDate();if(!i)return;const sc=scaleValue();
+    const i=needDate();if(!i)return;const sc=scaleValue();const d=dimsOf(templateMode);
     say('در حال ساخت تصویر…');
     await paintScaled(i,sc);
     const blob=await blobOf('image/png');
     if(!blob)throw new Error('مرورگر نتوانست تصویر را بسازد');
     save(blob,stem(i)+scaleTag(sc)+'.png');
-    say('✔ PNG آماده شد ('+fa(CARD_W*sc)+'×'+fa(CARD_H*sc)+'، حدود '+sizeText(blob.size)+')','',7000);
+    say('✔ PNG آماده شد ('+fa(d.w*sc)+'×'+fa(d.h*sc)+'، حدود '+sizeText(blob.size)+')','',7000);
   });
 }
 async function downloadSvgOrHtml(kind){
@@ -142,13 +147,14 @@ $('zip').onclick=async()=>{
   const zip=new JSZip();
   try{
     await fontsReady;
-    cv.width=CARD_W*sc;cv.height=CARD_H*sc;
+    const dScale=dimsOf(templateMode);
+    cv.width=dScale.w*sc;cv.height=dScale.h*sc;
     for(let k=0;k<n&&!zipAbort;k++){
       const dt=new Date(Date.UTC(y,m-1,d+k,12));
       const i=info(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate(),off);
       rep.textContent='در حال ساخت '+fa(k+1)+' از '+fa(n)+' — موفق: '+fa(ok.length)+'، ناموفق: '+fa(bad.length);
       try{
-        ctx.setTransform(sc,0,0,sc,0,0);ctx.clearRect(0,0,CARD_W,CARD_H);
+        ctx.setTransform(sc,0,0,sc,0,0);ctx.clearRect(0,0,dScale.w,dScale.h);
         await draw(i);
         const blob=await blobOf('image/png');
         if(!blob)throw new Error('blob');
@@ -203,7 +209,7 @@ function sanitize(o){
     if(!o.colors||typeof o.colors!=='object')throw new Error('رنگ‌ها معتبر نیستند.');
     c.colors={};for(const k of COLOR_IDS)if(o.colors[k]!==undefined){if(!/^#[0-9a-fA-F]{6}$/.test(o.colors[k]))throw new Error('رنگ «'+k+'» معتبر نیست.');c.colors[k]=o.colors[k];}
   }
-  for(const [k,max] of [['channel',80],['channelUrl',500],['note',300]])if(o[k]!==undefined){if(!isStr(o[k],max))throw new Error('مقدار «'+k+'» معتبر نیست.');c[k]=o[k];}
+  for(const [k,max] of [['channel',80],['channelUrl',500],['note',2000]])if(o[k]!==undefined){if(!isStr(o[k],max))throw new Error('مقدار «'+k+'» معتبر نیست.');c[k]=o[k];}
   if(o.phone!==undefined){if(!isStr(o.phone,24)||!/^[+\d\s()-]*$/.test(o.phone))throw new Error('شمارهٔ تماس معتبر نیست.');c.phone=o.phone;}
   if(o.showQR!==undefined){if(typeof o.showQR!=='boolean')throw new Error('گزینهٔ QR معتبر نیست.');c.showQR=o.showQR;}
   if(o.n!==undefined){if(!isInt(o.n,1,366))throw new Error('تعداد روز معتبر نیست.');c.n=o.n;}
@@ -221,7 +227,7 @@ function sanitize(o){
     const u=o.userEvents;if(!u||typeof u!=='object'||Array.isArray(u))throw new Error('مناسبت‌های شخصی معتبر نیستند.');
     const keys=Object.keys(u);if(keys.length>800)throw new Error('تعداد مناسبت‌های شخصی بیش از حد است.');
     c.userEvents={};for(const k of keys){
-      const v=u[k];if(!/^\d{4}\/\d{2}\/\d{2}$/.test(k)||!v||typeof v!=='object'||!isStr(v.text,600))throw new Error('یکی از مناسبت‌های شخصی معتبر نیست.');
+      const v=u[k];if(!/^\d{4}\/\d{2}\/\d{2}$/.test(k)||!v||typeof v!=='object'||!isStr(v.text,3000))throw new Error('یکی از مناسبت‌های شخصی معتبر نیست.');
       c.userEvents[k]={text:v.text,replaceOfficial:v.replaceOfficial===true};
     }
   }
