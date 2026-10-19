@@ -55,6 +55,12 @@ let photoZoom=1,photoX=0,photoY=0;
 const DHIKR_DEFAULT=DHIKR.map(v=>[...v]);
 const dhikrSettings=Array.from({length:7},()=>({arabicSize:31,translationSize:24,titleSize:29}));
 let templateMode=DEFAULT_TEMPLATE;
+
+/* ===== پشتیبانی چندصفحه‌ای برای قالب A4 ===== */
+window.__a4PreviewPage = 1;   // شمارهٔ صفحهٔ در حال پیش‌نمایش (فقط در قالب‌های multipage)
+window.__a4PageInfo = null;   // {current, total, totalNoteLines} توسط خود قالب پر می‌شود
+/* ============================================ */
+
 function TS(){return (TEMPLATES[templateMode]||TEMPLATES.classic).style;}
 
 /* ابعاد canvas را با قالب فعلی هم‌تراز می‌کند (پیش‌فرض 1050×1180، برای قالب A4 = 1240×1754) */
@@ -67,6 +73,8 @@ function applyCanvasDimensions(){
 }
 
 function templateChanged(){
+  window.__a4PreviewPage = 1;   // ← تغییر ۲: با تغییر قالب به صفحهٔ ۱ برگرد
+  window.__a4PageInfo = null;   // ← تغییر ۲: اطلاعات صفحهٔ قبلی را پاک کن
   templateMode=templateSelectEl.value;
   templateCards.forEach(c=>c.classList.toggle('active',c.dataset.template===templateMode));
   applyCanvasDimensions();
@@ -211,7 +219,10 @@ function render(){
     ctx.font='700 26px Vazirmatn';ctx.fillText('لطفاً تاریخ را انتخاب کنید',cv.width/2,cv.height/2);
     return;
   }
-  draw(i).then(()=>{if(seq!==renderSeq)return;}).catch(err=>{
+  draw(i).then(()=>{
+    if(seq!==renderSeq)return;
+    if(window.__onAfterRender)window.__onAfterRender();   // ← تغییر ۳: اطلاع به رابط صفحه‌بندی
+  }).catch(err=>{
     console.error('Render error:',err);background();
     ctx.fillStyle='#9b2c2c';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',cv.width/2,cv.height/2);
@@ -433,7 +444,12 @@ chEl.oninput=render;
 showQREl.onchange=render;
 chUrlEl.oninput=()=>{const url=(chUrlEl.value||'').trim();chLink.href=url||'#';chLink.style.display=url?'inline-flex':'none';render();};
 phEl.oninput=()=>{phLink.href=phoneHref(phEl.value);render();};
-noteEl.oninput=render;
+
+/* ← تغییر ۴: در A4 با تغییر یادداشت، به صفحهٔ ۱ برگرد (تعداد صفحات ممکن است عوض شود) */
+noteEl.oninput=()=>{
+  if(templateMode==='a4notes')window.__a4PreviewPage=1;
+  render();
+};
 
 ['frame','inner','panel','goldText','darkText','canvasBg'].forEach(id=>{
   document.getElementById(id).oninput=e=>{S[id]=e.target.value;render();};
