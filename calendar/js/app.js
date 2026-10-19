@@ -56,14 +56,31 @@ const DHIKR_DEFAULT=DHIKR.map(v=>[...v]);
 const dhikrSettings=Array.from({length:7},()=>({arabicSize:31,translationSize:24,titleSize:29}));
 let templateMode=DEFAULT_TEMPLATE;
 function TS(){return (TEMPLATES[templateMode]||TEMPLATES.classic).style;}
-function templateChanged(){templateMode=templateSelectEl.value;templateCards.forEach(c=>c.classList.toggle('active',c.dataset.template===templateMode));render();}
+
+/* ابعاد canvas را با قالب فعلی هم‌تراز می‌کند (پیش‌فرض 1050×1180، برای قالب A4 = 1240×1754) */
+function applyCanvasDimensions(){
+  const d = dimsOf(templateMode);
+  if (cv.width !== d.w || cv.height !== d.h) {
+    cv.width = d.w;
+    cv.height = d.h;
+  }
+}
+
+function templateChanged(){
+  templateMode=templateSelectEl.value;
+  templateCards.forEach(c=>c.classList.toggle('active',c.dataset.template===templateMode));
+  applyCanvasDimensions();
+  render();
+}
 
 const S={frame:'#d4a437',inner:'#f7f1d9',panel:'#063d35',goldText:'#f0c34f',darkText:'#10201c',canvasBg:'#edf2ef'};
 
 const IMG_AREA={x:73,y:73,w:339,h:520};
-const CLICK_PHONE={x:70,y:1005,w:410,h:130};
-const CLICK_CHANNEL_FOOTER={x:620,y:1005,w:350,h:80};
-const CLICK_CHANNEL_PILL={x:485,y:566,w:510,h:46};
+const CLICK_PHONE_DEFAULT={x:70,y:1005,w:410,h:130};
+function phoneRegion(){
+  if(templateMode==='a4notes')return {x:80,y:1640,w:380,h:84};
+  return CLICK_PHONE_DEFAULT;
+}
 
 function jalaliToGregorian(jy,jm,jd){
   jy=Number(jy);jm=Number(jm);jd=Number(jd);const gy=jy+621;
@@ -97,8 +114,6 @@ function setGregorianISOFromJalali(){const d=jalaliToGregorian(+jYearEl.value,+j
 function syncJalaliFromISO(){
   const v=dateEl.value;if(!v)return;
   const [y,m,d]=v.split('-').map(Number);
-  // تبدیل میلادی به شمسی را با موتور تقویم رسمی Intl انجام بده؛
-  // تابع قبلی یک روز عقب می‌افتاد (مثلاً 2026-10-04 را 1405/07/11 می‌خواند).
   const p=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'
   }).formatToParts(new Date(Date.UTC(y,m-1,d,12)));
@@ -168,10 +183,12 @@ function drawQRCanvas(data,boxX,boxY,boxSize){
 }
 
 function background(){
-  const t=TS();ctx.fillStyle=t.bg;ctx.fillRect(0,0,CARD_W,CARD_H);
+  const t=TS();
+  const W=cv.width,H=cv.height;
+  ctx.fillStyle=t.bg;ctx.fillRect(0,0,W,H);
   ctx.save();ctx.globalAlpha=templateMode==='blackgold'?.06:.10;
   ctx.strokeStyle=templateMode==='ribbon'?'#8b6b2b':'#6d8b86';ctx.lineWidth=2;
-  for(let x=25;x<CARD_W;x+=88)for(let y=20;y<CARD_H;y+=92){
+  for(let x=25;x<W;x+=88)for(let y=20;y<H;y+=92){
     ctx.beginPath();ctx.arc(x,y,14,0,Math.PI*2);ctx.stroke();
     ctx.beginPath();ctx.moveTo(x-9,y);ctx.lineTo(x+9,y);ctx.moveTo(x,y-9);ctx.lineTo(x,y+9);ctx.stroke();
   }
@@ -187,17 +204,17 @@ async function draw(i){
 function render(){
   if(window.__exporting)return;
   const seq=++renderSeq;const i=cur();
-  ctx.clearRect(0,0,CARD_W,CARD_H);
+  ctx.clearRect(0,0,cv.width,cv.height);
   if(!i){
     background();
     ctx.fillStyle=S.darkText;ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.font='700 26px Vazirmatn';ctx.fillText('لطفاً تاریخ را انتخاب کنید',CARD_W/2,CARD_H/2);
+    ctx.font='700 26px Vazirmatn';ctx.fillText('لطفاً تاریخ را انتخاب کنید',cv.width/2,cv.height/2);
     return;
   }
   draw(i).then(()=>{if(seq!==renderSeq)return;}).catch(err=>{
     console.error('Render error:',err);background();
     ctx.fillStyle='#9b2c2c';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',CARD_W/2,CARD_H/2);
+    ctx.font='700 22px Vazirmatn';ctx.fillText('خطا در نمایش تقویم',cv.width/2,cv.height/2);
   });
 }
 
@@ -210,12 +227,6 @@ const fontsReady=(async()=>{
   }catch(_){}
 })();
 
-/* شاخهٔ برگ تزئینی */
-
-/* آیکن دوربین برای جای خالی عکس */
-
-/* سیلوئت مسجد */
-
 function buildSVG(i){return buildRasterSVG(i);}
 
 const xesc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
@@ -226,6 +237,7 @@ function cardAltText(i){
 }
 function buildRasterSVG(i){
   const dataUrl=cv.toDataURL('image/png');
+  const d=dimsOf(templateMode);   // ابعاد منطقی قالب (1050×1180 یا 1240×1754)
   const url=validUrl(chUrlEl.value)||'';
   const phone=(phEl.value||'').replace(/[^\d+]/g,'');
   let overlay='';
@@ -234,12 +246,12 @@ function buildRasterSVG(i){
     overlay+=`<a href="${xesc(url)}" xlink:href="${xesc(url)}" target="_blank" rel="noopener noreferrer"><title>${xesc(chEl.value||'کانال')}</title>${channelRegions().map(rect).join('')}</a>`;
   }
   if(phone){
-    overlay+=`<a href="tel:${phone}"><title>تماس</title>${rect(CLICK_PHONE)}</a>`;
+    overlay+=`<a href="tel:${phone}"><title>تماس</title>${rect(phoneRegion())}</a>`;
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${CARD_W}" height="${CARD_H}" viewBox="0 0 ${CARD_W} ${CARD_H}" role="img" aria-label="${xesc(cardAltText(i))}">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${d.w}" height="${d.h}" viewBox="0 0 ${d.w} ${d.h}" role="img" aria-label="${xesc(cardAltText(i))}">
   <title>${xesc(cardAltText(i))}</title>
-  <image href="${dataUrl}" xlink:href="${dataUrl}" width="${CARD_W}" height="${CARD_H}" preserveAspectRatio="none"/>
+  <image href="${dataUrl}" xlink:href="${dataUrl}" width="${d.w}" height="${d.h}" preserveAspectRatio="none"/>
   ${overlay}
 </svg>`;
 }
@@ -265,22 +277,22 @@ ${svg}
 }
 
 function normalizeUrl(u){u=(u||'').trim();if(!u)return '';if(!/^https?:\/\//i.test(u))u='https://'+u;return u;}
-/* اعتبارسنجی لینک: null = خالی، false = نامعتبر، رشته = لینک http/https معتبر */
 function validUrl(u){
   const n=normalizeUrl(u);if(!n)return null;
   try{const x=new URL(n);return ((x.protocol==='http:'||x.protocol==='https:')&&x.hostname.includes('.')&&!/\s/.test(n))?x.href:false;}catch(_){return false;}
 }
 
-function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.left)*CARD_W/r.width,y:(e.clientY-r.top)*CARD_H/r.height};}
+function toCanvas(e){const r=cv.getBoundingClientRect();return {x:(e.clientX-r.left)*cv.width/r.width,y:(e.clientY-r.top)*cv.height/r.height};}
 const inRect=(r,x,y)=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h;
-const inPhoneRegion=(x,y)=>inRect(CLICK_PHONE,x,y);
+const inPhoneRegion=(x,y)=>inRect(phoneRegion(),x,y);
 function channelRegions(){
   const map={
     royal:[{x:575,y:566,w:335,h:46},{x:570,y:1035,w:350,h:70}],
     classic:[{x:630,y:1038,w:320,h:64},{x:585,y:600,w:420,h:60}],
     light:[{x:640,y:1015,w:300,h:70},{x:485,y:566,w:510,h:46}],
     blackgold:[{x:680,y:1018,w:230,h:54}],
-    ribbon:[{x:365,y:350,w:310,h:80},{x:665,y:1020,w:300,h:60}]
+    ribbon:[{x:365,y:350,w:310,h:80},{x:665,y:1020,w:300,h:60}],
+    a4notes:[{x:680,y:1640,w:480,h:84}]
   };
   return map[templateMode]||[{x:485,y:566,w:510,h:46},{x:620,y:1005,w:350,h:80}];
 }
@@ -321,7 +333,7 @@ window.addEventListener('pointermove',e=>{
     const dx=pts[1].x-pts[0].x,dy=pts[1].y-pts[0].y;
     const dist=Math.max(1,Math.hypot(dx,dy));
     const midX=(pts[0].x+pts[1].x)/2,midY=(pts[0].y+pts[1].y)/2;
-    const r=cv.getBoundingClientRect();const sx=CARD_W/r.width,sy=CARD_H/r.height;
+    const r=cv.getBoundingClientRect();const sx=cv.width/r.width,sy=cv.height/r.height;
     photoZoom=Math.max(1,Math.min(3,pinchStart.zoom*dist/pinchStart.distance));
     photoX=Math.max(-300,Math.min(300,pinchStart.x+(midX-pinchStart.midX)*sx));
     photoY=Math.max(-300,Math.min(300,pinchStart.y+(midY-pinchStart.midY)*sy));
@@ -340,7 +352,7 @@ window.addEventListener('pointermove',e=>{
   const dy=e.clientY-pointerDown.cy;
   if(Math.abs(dx)+Math.abs(dy)>3)moved=true;
   if(pointerDown.isPhoto&&moved){
-    const r=cv.getBoundingClientRect();const sx=CARD_W/r.width,sy=CARD_H/r.height;
+    const r=cv.getBoundingClientRect();const sx=cv.width/r.width,sy=cv.height/r.height;
     photoX=Math.max(-300,Math.min(300,pointerDown.px+dx*sx));
     photoY=Math.max(-300,Math.min(300,pointerDown.py+dy*sy));
     updatePhotoUI();render();e.preventDefault();
@@ -461,51 +473,9 @@ function save(blob,name){
 }
 const blobOf=(type,q)=>new Promise(res=>cv.toBlob(res,type||'image/png',q));
 
-document.getElementById('download').onclick=async()=>{
-  const i=cur();if(!i){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
-  await draw(i);
-  save(await blobOf('image/png'),'calendar-'+dateEl.value+'.png');
-};
-document.getElementById('downloadHTML').onclick=async()=>{
-  const i=cur();if(!i){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
-  await fontsReady;await draw(i);
-  const html=buildHTML(i);
-  save(new Blob([html],{type:'text/html;charset=utf-8'}),'calendar-'+dateEl.value+'.html');
-};
-document.getElementById('downloadSVG').onclick=async()=>{
-  const i=cur();if(!i){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
-  await fontsReady;await draw(i);
-  const svg=buildSVG(i);
-  save(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}),'calendar-'+dateEl.value+'.svg');
-};
-document.getElementById('zip').onclick=async(e)=>{
-  const btn=e.currentTarget;const original=btn.textContent;
-  const i0=cur();if(!i0){alert('لطفاً ابتدا یک تاریخ انتخاب کنید.');return;}
-  const n=Math.max(1,Math.min(366,+nEl.value||1));
-  const [y,m,d]=dateEl.value.split('-').map(Number);
-  const off=+offEl.value||0;
-  if(typeof JSZip==='undefined'){alert('کتابخانهٔ ZIP در دسترس نیست. فایل محلی js/vendor/jszip.min.js را بررسی کنید.');return;}
-  const zip=new JSZip();
-  btn.disabled=true;
-  try{
-    for(let k=0;k<n;k++){
-      btn.textContent='در حال ساخت '+fa(k+1)+'/'+fa(n)+' …';
-      const dt=new Date(Date.UTC(y,m-1,d+k,12));
-      await draw(info(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate(),off));
-      zip.file(dt.toISOString().slice(0,10)+'.png',await blobOf('image/png'));
-      await new Promise(r=>setTimeout(r,0));
-    }
-    btn.textContent='در حال فشرده‌سازی …';
-    const out=await zip.generateAsync({type:'blob'});
-    save(out,'calendar-cards.zip');
-  }catch(err){console.error(err);alert('خطا در ساخت ZIP.');}
-  finally{btn.disabled=false;btn.textContent=original;render();}
-};
+/* دکمه‌های خروجی توسط features.js مدیریت می‌شوند؛ handler قدیمی این‌جا لازم نیست. */
 
 (function init(){
-  // تاریخ پیش‌فرض را مستقیماً از تقویم شمسیِ منطقه زمانی ایران بگیر.
-  // قبلاً ابتدا تاریخ میلادی ساخته می‌شد و سپس تبدیل می‌شد و همین مسیر باعث
-  // اختلاف یک‌روزه بین انتخابگر بالای فرم و تاریخ روی کارت می‌شد.
   const tehranNow=new Intl.DateTimeFormat('en-US-u-ca-persian-nu-latn',{
     timeZone:'Asia/Tehran', year:'numeric', month:'numeric', day:'numeric'
   }).formatToParts(new Date());
@@ -519,5 +489,6 @@ document.getElementById('zip').onclick=async(e)=>{
   updatePhotoUI();
   syncEventEditor();
   updateEventInfo();
+  applyCanvasDimensions();
   render();
 })();
