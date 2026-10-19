@@ -1,6 +1,6 @@
 /* امکانات v9: ناوبری روزها، خروجی با مقیاس، تولید گروهی قابل لغو، ذخیرهٔ خودکار تنظیمات، پشتیبان JSON، اعتبارسنجی لینک.
    این فایل پس از app.js بارگذاری می‌شود و فقط کنترل‌های جدید را اضافه یا handler دکمه‌های خروجی را جایگزین می‌کند.
-   نسخهٔ اصلاح‌شده: ابعاد خروجی از dimsOf(templateMode) گرفته می‌شود تا قالب A4 (1240×1754) هم پشتیبانی شود. */
+   نسخهٔ v23: پشتیبانی از قالب‌های چندصفحه‌ای (مثل A4) — اگر متن به بیش از یک صفحه برسد، خروجی PNG/SVG/HTML به‌صورت ZIP با page1.png/page2.png/... ذخیره می‌شود. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -54,7 +54,7 @@ function fontAvailable(){
 }
 fontsReady.then(()=>{if(!fontAvailable())say('فونت وزیرمتن بارگذاری نشده است (اینترنت لازم است یا فونت هنوز ذخیره نشده). خروجی با فونت جایگزین ساخته می‌شود.','warn');});
 
-/* ---------- هستهٔ خروجی (با پشتیبانی از ابعاد پویای قالب) ---------- */
+/* ---------- هستهٔ خروجی (با پشتیبانی از ابعاد پویای قالب و چندصفحه‌ای) ---------- */
 const EXPORT_BTNS=['download','downloadHTML','downloadSVG','zip','quickPng','copyText'];
 function lockUI(b){window.__exporting=b;EXPORT_BTNS.forEach(id=>{const el=$(id);if(el)el.disabled=b;});}
 async function paintScaled(i,scale){
@@ -77,9 +77,44 @@ async function withExport(fn){
 }
 const needDate=()=>{const i=cur();if(!i)say('لطفاً ابتدا یک تاریخ انتخاب کنید.','err');return i;};
 
+const isMultiPageTemplate=()=>!!(TEMPLATES[templateMode]&&TEMPLATES[templateMode].multipage);
+
+/* رندر صفحهٔ ۱ برای تعیین تعداد کل صفحات؛ سپس تمام صفحات را برمی‌گرداند */
+async function renderAllPages(i,scale){
+  window.__a4PreviewPage=1;
+  await paintScaled(i,scale);
+  const info=window.__a4PageInfo||{total:1};
+  const totalPages=info.total;
+  if(totalPages<=1)return {pages:[1],total:1};
+  return {pages:Array.from({length:totalPages},(_,k)=>k+1),total:totalPages};
+}
+
 async function downloadPNG(){
   await withExport(async()=>{
     const i=needDate();if(!i)return;const sc=scaleValue();const d=dimsOf(templateMode);
+
+    if(isMultiPageTemplate()){
+      const {pages,total}=await renderAllPages(i,sc);
+      if(total>1){
+        if(typeof JSZip==='undefined')throw new Error('کتابخانهٔ ZIP در دسترس نیست');
+        say('در حال ساخت '+fa(total)+' صفحه…');
+        const zip=new JSZip();
+        for(const p of pages){
+          window.__a4PreviewPage=p;
+          await paintScaled(i,sc);
+          const blob=await blobOf('image/png');
+          if(!blob)throw new Error('ساخت صفحهٔ '+p+' ناموفق');
+          zip.file(stem(i)+'-page'+p+scaleTag(sc)+'.png',blob);
+        }
+        window.__a4PreviewPage=1;
+        const out=await zip.generateAsync({type:'blob',compression:'STORE'});
+        save(out,stem(i)+'-pages-'+fa(total)+scaleTag(sc)+'.zip');
+        say('✔ '+fa(total)+' صفحه در ZIP آماده شد ('+sizeText(out.size)+')','ok',8000);
+        return;
+      }
+    }
+
+    window.__a4PreviewPage=1;
     say('در حال ساخت تصویر…');
     await paintScaled(i,sc);
     const blob=await blobOf('image/png');
@@ -88,14 +123,39 @@ async function downloadPNG(){
     say('✔ PNG آماده شد ('+fa(d.w*sc)+'×'+fa(d.h*sc)+'، حدود '+sizeText(blob.size)+')','',7000);
   });
 }
+
 async function downloadSvgOrHtml(kind){
   await withExport(async()=>{
     const i=needDate();if(!i)return;const sc=scaleValue();
+    const ext=kind==='html'?'.html':'.svg';
+    const mime=kind==='html'?'text/html;charset=utf-8':'image/svg+xml;charset=utf-8';
+
+    if(isMultiPageTemplate()){
+      const {pages,total}=await renderAllPages(i,sc);
+      if(total>1){
+        if(typeof JSZip==='undefined')throw new Error('کتابخانهٔ ZIP در دسترس نیست');
+        say('در حال ساخت '+fa(total)+' صفحه…');
+        const zip=new JSZip();
+        for(const p of pages){
+          window.__a4PreviewPage=p;
+          await paintScaled(i,sc);
+          const text=kind==='html'?buildHTML(i):buildSVG(i);
+          zip.file(stem(i)+'-page'+p+scaleTag(sc)+ext,text);
+        }
+        window.__a4PreviewPage=1;
+        const out=await zip.generateAsync({type:'blob',compression:'STORE'});
+        save(out,stem(i)+'-pages-'+fa(total)+scaleTag(sc)+'.zip');
+        say('✔ '+fa(total)+' صفحه در ZIP آماده شد','ok',8000);
+        return;
+      }
+    }
+
+    window.__a4PreviewPage=1;
     say('در حال ساخت فایل…');
     await paintScaled(i,sc);
     const text=kind==='html'?buildHTML(i):buildSVG(i);
-    const blob=new Blob([text],{type:kind==='html'?'text/html;charset=utf-8':'image/svg+xml;charset=utf-8'});
-    save(blob,stem(i)+scaleTag(sc)+(kind==='html'?'.html':'.svg'));
+    const blob=new Blob([text],{type:mime});
+    save(blob,stem(i)+scaleTag(sc)+ext);
     say('✔ '+(kind==='html'?'HTML':'SVG')+' آماده شد ('+sizeText(blob.size)+')','',7000);
   });
 }
@@ -155,6 +215,7 @@ $('zip').onclick=async()=>{
       rep.textContent='در حال ساخت '+fa(k+1)+' از '+fa(n)+' — موفق: '+fa(ok.length)+'، ناموفق: '+fa(bad.length);
       try{
         ctx.setTransform(sc,0,0,sc,0,0);ctx.clearRect(0,0,dScale.w,dScale.h);
+        window.__a4PreviewPage=1;
         await draw(i);
         const blob=await blobOf('image/png');
         if(!blob)throw new Error('blob');
@@ -209,7 +270,7 @@ function sanitize(o){
     if(!o.colors||typeof o.colors!=='object')throw new Error('رنگ‌ها معتبر نیستند.');
     c.colors={};for(const k of COLOR_IDS)if(o.colors[k]!==undefined){if(!/^#[0-9a-fA-F]{6}$/.test(o.colors[k]))throw new Error('رنگ «'+k+'» معتبر نیست.');c.colors[k]=o.colors[k];}
   }
-  for(const [k,max] of [['channel',80],['channelUrl',500],['note',2000]])if(o[k]!==undefined){if(!isStr(o[k],max))throw new Error('مقدار «'+k+'» معتبر نیست.');c[k]=o[k];}
+  for(const [k,max] of [['channel',80],['channelUrl',500],['note',20000]])if(o[k]!==undefined){if(!isStr(o[k],max))throw new Error('مقدار «'+k+'» معتبر نیست.');c[k]=o[k];}
   if(o.phone!==undefined){if(!isStr(o.phone,24)||!/^[+\d\s()-]*$/.test(o.phone))throw new Error('شمارهٔ تماس معتبر نیست.');c.phone=o.phone;}
   if(o.showQR!==undefined){if(typeof o.showQR!=='boolean')throw new Error('گزینهٔ QR معتبر نیست.');c.showQR=o.showQR;}
   if(o.n!==undefined){if(!isInt(o.n,1,366))throw new Error('تعداد روز معتبر نیست.');c.n=o.n;}
