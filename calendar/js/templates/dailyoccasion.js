@@ -39,6 +39,9 @@ function drawPhoto(){
   if((noteEl.value||'').trim()) drawNoteArea(x+22,y+h-75,w-44,54);
 }
 
+/* پنل مناسبت‌ها — اگر همهٔ موارد توسط کاربر ثبت شده باشند، برچسب
+   «مناسبت روز» حذف می‌شود و متن آزاد (تقدیر، تشکر، تمجید، ...) در
+   عرض کامل و با فضای بیشتر نمایش داده می‌شود. */
 function drawOccasionPanel(i){
   const x=670,y=125,w=325,h=580;
   const events=getEvents(i);
@@ -46,13 +49,31 @@ function drawOccasionPanel(i){
   ctx.fillStyle='#385f12';rr(x,y,w,h,22);ctx.fill();
   ctx.strokeStyle='#e8c75d';ctx.lineWidth=5;rr(x,y,w,h,22);ctx.stroke();
   if(!events.length){ctx.restore();return;}
-  ctx.fillStyle='#f4df8a';rr(x+30,y+22,w-60,70,22);ctx.fill();
-  ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.font='900 '+fit('مناسبت روز',w-90,39,900)+'px Vazirmatn';ctx.fillText('مناسبت روز',x+w/2,y+57);
-  const bodyTop=y+118, bottom=y+h-28, bodyW=w-76;
-  const items=events.slice(0,6);
-  let fs=20;
-  if(items.length>3)fs=17;if(items.length>4)fs=15;if(items.length>5)fs=13;
+
+  // آیا همهٔ موارد توسط کاربر ثبت شده‌اند؟ (هیچ مناسبت رسمی باقی نمانده)
+  const allUser = events.every(e => e.user === true);
+
+  let bodyTop;
+  if (allUser) {
+    // ===== بدون برچسب «مناسبت روز» — فضای بیشتر برای متن آزاد =====
+    bodyTop = y + 30;
+  } else {
+    // ===== مسیر عادی با برچسب «مناسبت روز» =====
+    ctx.fillStyle='#f4df8a';rr(x+30,y+22,w-60,70,22);ctx.fill();
+    ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.font='900 '+fit('مناسبت روز',w-90,39,900)+'px Vazirmatn';
+    ctx.fillText('مناسبت روز',x+w/2,y+57);
+    bodyTop = y + 118;
+  }
+
+  const bottom=y+h-28, bodyW=w-76;
+  const items=events.slice(0, allUser ? 8 : 6);
+  let fs = allUser ? 18 : 20;
+  if(items.length>3)fs=Math.min(fs, allUser ? 16 : 17);
+  if(items.length>4)fs=Math.min(fs, 15);
+  if(items.length>5)fs=Math.min(fs, 13);
+  if(items.length>6)fs=Math.min(fs, 12);
+
   const prepared=items.map(e=>{
     const prefix=e.holiday?'تعطیل رسمی: ':'';let f=fs;
     let lines=wrapText(prefix+e.title,bodyW,'700 '+f+'px Vazirmatn');
@@ -69,7 +90,7 @@ function drawOccasionPanel(i){
   });
   if(events.length>items.length){
     ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.font='700 15px Vazirmatn';
-    ctx.fillText('و مناسبت‌های دیگر…',x+w/2,bottom);
+    ctx.fillText('و '+fa(events.length-items.length)+' مورد دیگر…',x+w/2,bottom);
   }
   ctx.restore();
 }
