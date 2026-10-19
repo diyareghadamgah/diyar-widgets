@@ -180,53 +180,111 @@ function drawNoteArea(x,y,w,h){
   });
 }
 
-/* کادر یکسان مناسبت روز برای همه قالب‌ها؛ در روز بدون مناسبت، کادر کاملاً خالی است. */
+/* ==================================================================
+   کادر یکسان مناسبت روز برای همه قالب‌ها
+   - در روز بدون مناسبت، کادر کاملاً خالی است.
+   - اگر همهٔ موارد توسط کاربر ثبت شده باشند (یعنی هیچ مناسبت رسمی وجود
+     نداشته باشد، یا گزینهٔ «جایگزینی» فعال باشد)، برچسب «مناسبت روز»
+     نمایش داده نمی‌شود و متن در عرض کامل قرار می‌گیرد. این طوری کاربر
+     می‌تواند متن آزاد مثل تقدیر، تشکر، تمجید، تعریف و ... بنویسد.
+   ================================================================== */
 function drawEventPanel(i, cfg){
   cfg = cfg || {};
-  window.__eventPanelDrawn=true;
-  const x=cfg.x||485, y=cfg.y||620, w=cfg.w||510, h=cfg.h||70;
-  const radius=cfg.radius==null?18:cfg.radius;
-  const stroke=cfg.stroke||S.frame||'#3d6518';
-  const fill=cfg.fill||'rgba(255,255,255,.94)';
-  const titleFill=cfg.titleFill||stroke;
-  const titleColor=cfg.titleColor||'#fff';
-  const textColor=cfg.textColor||S.darkText||'#183318';
-  const events=typeof getEvents==='function'?getEvents(i):[];
+  window.__eventPanelDrawn = true;
+
+  const x = cfg.x || 485, y = cfg.y || 620, w = cfg.w || 510, h = cfg.h || 70;
+  const radius = cfg.radius == null ? 18 : cfg.radius;
+  const stroke = cfg.stroke || S.frame || '#3d6518';
+  const fill = cfg.fill || 'rgba(255,255,255,.94)';
+  const titleFill = cfg.titleFill || stroke;
+  const titleColor = cfg.titleColor || '#fff';
+  const textColor = cfg.textColor || S.darkText || '#183318';
+
+  const events = typeof getEvents === 'function' ? getEvents(i) : [];
+
   ctx.save();
-  ctx.fillStyle=fill;rr(x,y,w,h,radius);ctx.fill();
-  ctx.strokeStyle=stroke;ctx.lineWidth=2.5;rr(x,y,w,h,radius);ctx.stroke();
-  if(!events.length){ctx.restore();return;}
-  const titleW=Math.min(150,w*.30), titleH=Math.min(34,h-12), titleX=x+w-titleW-10, titleY=y+6;
-  ctx.fillStyle=titleFill;rr(titleX,titleY,titleW,titleH,titleH/2);ctx.fill();
-  ctx.fillStyle=titleColor;ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.font='800 '+fit('مناسبت روز',titleW-16,15,800)+'px Vazirmatn';
-  ctx.fillText('مناسبت روز',titleX+titleW/2,titleY+titleH/2+1);
-  const bodyX=x+14, bodyW=w-titleW-34, bodyRight=x+w-titleW-18;
-  const cap=Math.max(1,Math.min(5,Math.floor((h-10)/17)));      // تعداد مناسبتی که واقعاً در ارتفاع کادر جا می‌شود
-  const perItemLines=h<90?1:2;
-  const titles=events.slice(0,cap).map(e=>(e.holiday?'تعطیل رسمی: ':'')+e.title);
-  let fs=cfg.fontSize||16;
-  const maxLines=Math.max(1,Math.min(3,titles.length));
-  const availableH=Math.max(22,h-18);
-  const targetLineH=Math.min(24,Math.max(15,Math.floor(availableH/maxLines)));
-  if(titles.length>2)fs=Math.min(fs,Math.max(11,Math.floor(fs-(titles.length-2)*2)));
-  const prepared=titles.map(txt=>{
-    let f=fs;
-    let lines=wrapText(txt,bodyW-8,'700 '+f+'px Vazirmatn');
-    while(lines.length>1 && f>10){f--;lines=wrapText(txt,bodyW-8,'700 '+f+'px Vazirmatn');}
-    if(lines.length>perItemLines){lines=lines.slice(0,perItemLines);let last=lines[perItemLines-1];while(last.length>1&&ctx.measureText(last+'…').width>bodyW-8)last=last.slice(0,-1);lines[perItemLines-1]=last+'…';}
-    return {lines,f};
-  });
-  const totalH=prepared.reduce((sum,p)=>sum+Math.max(targetLineH,p.lines.length*Math.max(15,p.f+2)),0);
-  let yy=y+(h-totalH)/2;
-  ctx.fillStyle=textColor;ctx.textAlign='right';ctx.textBaseline='middle';
-  prepared.forEach(p=>{
-    const lh=Math.max(15,Math.min(targetLineH,p.f+2));
-    p.lines.forEach(line=>{ctx.font='700 '+p.f+'px Vazirmatn';ctx.fillText(line,bodyRight,yy+lh/2);yy+=lh;});
-    yy+=2;
-  });
-  if(events.length>titles.length){
-    ctx.textAlign='left';ctx.font='600 10px Vazirmatn';ctx.fillText('+'+fa(events.length-titles.length)+' مورد دیگر',x+10,y+h-8);
+  ctx.fillStyle = fill; rr(x, y, w, h, radius); ctx.fill();
+  ctx.strokeStyle = stroke; ctx.lineWidth = 2.5; rr(x, y, w, h, radius); ctx.stroke();
+
+  if (!events.length) { ctx.restore(); return; }
+
+  // آیا همهٔ موارد توسط کاربر ثبت شده‌اند؟ (هیچ مناسبت رسمی باقی نمانده)
+  const allUser = events.every(e => e.user === true);
+
+  let bodyW, bodyRight, cap, perItemLines;
+
+  if (allUser) {
+    // ===== بدون برچسب «مناسبت روز» — متن آزاد در عرض کامل =====
+    bodyW = w - 28;
+    bodyRight = x + w - 18;
+    cap = Math.max(1, Math.min(4, Math.floor((h - 10) / 17)));
+    perItemLines = h < 90 ? 2 : 3;
+  } else {
+    // ===== مسیر عادی با برچسب «مناسبت روز» =====
+    const titleW = Math.min(150, w * .30);
+    const titleH = Math.min(34, h - 12);
+    const titleX = x + w - titleW - 10;
+    const titleY = y + 6;
+
+    ctx.fillStyle = titleFill;
+    rr(titleX, titleY, titleW, titleH, titleH / 2); ctx.fill();
+    ctx.fillStyle = titleColor;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = '800 ' + fit('مناسبت روز', titleW - 16, 15, 800) + 'px Vazirmatn';
+    ctx.fillText('مناسبت روز', titleX + titleW / 2, titleY + titleH / 2 + 1);
+
+    bodyW = w - titleW - 34;
+    bodyRight = x + w - titleW - 18;
+    cap = Math.max(1, Math.min(5, Math.floor((h - 10) / 17)));
+    perItemLines = h < 90 ? 1 : 2;
   }
+
+  const titles = events.slice(0, cap).map(e => (e.holiday ? 'تعطیل رسمی: ' : '') + e.title);
+  let fs = cfg.fontSize || 16;
+  const maxLines = Math.max(1, Math.min(allUser ? 4 : 3, titles.length));
+  const availableH = Math.max(22, h - 18);
+  const targetLineH = Math.min(24, Math.max(15, Math.floor(availableH / maxLines)));
+
+  if (titles.length > 2) fs = Math.min(fs, Math.max(11, Math.floor(fs - (titles.length - 2) * 2)));
+
+  const prepared = titles.map(txt => {
+    let f = fs;
+    let lines = wrapText(txt, bodyW - 8, '700 ' + f + 'px Vazirmatn');
+    while (lines.length > 1 && f > 10) {
+      f--;
+      lines = wrapText(txt, bodyW - 8, '700 ' + f + 'px Vazirmatn');
+    }
+    if (lines.length > perItemLines) {
+      lines = lines.slice(0, perItemLines);
+      let last = lines[perItemLines - 1];
+      while (last.length > 1 && ctx.measureText(last + '…').width > bodyW - 8) last = last.slice(0, -1);
+      lines[perItemLines - 1] = last + '…';
+    }
+    return { lines, f };
+  });
+
+  const totalH = prepared.reduce((sum, p) => sum + Math.max(targetLineH, p.lines.length * Math.max(15, p.f + 2)), 0);
+  let yy = y + (h - totalH) / 2;
+
+  ctx.fillStyle = textColor;
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'middle';
+
+  prepared.forEach(p => {
+    const lh = Math.max(15, Math.min(targetLineH, p.f + 2));
+    p.lines.forEach(line => {
+      ctx.font = '700 ' + p.f + 'px Vazirmatn';
+      ctx.fillText(line, bodyRight, yy + lh / 2);
+      yy += lh;
+    });
+    yy += 2;
+  });
+
+  if (events.length > titles.length) {
+    ctx.textAlign = 'left';
+    ctx.font = '600 10px Vazirmatn';
+    ctx.fillText('+' + fa(events.length - titles.length) + ' مورد دیگر', x + 10, y + h - 8);
+  }
+
   ctx.restore();
-}
+      }
