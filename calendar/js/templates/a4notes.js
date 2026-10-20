@@ -17,35 +17,38 @@ function computeAllPages(i, noteText) {
   const bodyW = A4W - 160;
   const textW = bodyW - 80;
   const events = (typeof getEvents === 'function') ? getEvents(i) : [];
-
-  // تخمین ارتفاع مناسبت‌ها روی صفحهٔ ۱
-  let p1Start = BODY_TOP_P1 + LINE_HEIGHT;
-  if (events.length > 0) {
-    const n = Math.min(events.length, 5);
-    p1Start += n * Math.round(LINE_HEIGHT * 1.15) + LINE_HEIGHT;
-  }
-
-  // تعداد خطوط قابل نمایش در هر صفحه
-  const p1Lines = Math.max(5, Math.floor((BODY_BOTTOM - p1Start) / LINE_HEIGHT));
-  const p2Lines = Math.max(5, Math.floor((BODY_BOTTOM - BODY_TOP_P2) / LINE_HEIGHT));
-
-  // اندازه‌گیری متن
   const oldFont = ctx.font;
-  ctx.font = NOTE_FONT;
-  const allLines = wrapText(noteText || '', textW, NOTE_FONT);
-  ctx.font = oldFont;
-
-  if (!allLines.length) return [[]];
-
-  const pages = [];
-  let idx = 0;
-  pages.push(allLines.slice(idx, idx + p1Lines));
-  idx += p1Lines;
-  while (idx < allLines.length) {
-    pages.push(allLines.slice(idx, idx + p2Lines));
-    idx += p2Lines;
+  const eventLines = [];
+  try {
+    // اندازه‌گیری و رسم باید از یک عرض و فونت مشترک استفاده کنند.
+    ctx.font = '600 ' + FONT_SIZE + 'px Vazirmatn';
+    const official = events.filter(e => !e.user);
+    const users = events.filter(e => e.user);
+    if (official.length) {
+      eventLines.push({kind:'heading', text:official.some(e=>e.holiday) ? '📌 تعطیل رسمی / مناسبت روز' : '📌 مناسبت روز'});
+      official.forEach(ev => wrapText((ev.holiday ? 'تعطیل رسمی: ' : '') + ev.title, bodyW - 100, '600 ' + FONT_SIZE + 'px Vazirmatn')
+        .forEach(text => eventLines.push({kind:'official',text})));
+      eventLines.push({kind:'gap',text:''});
+    }
+    users.forEach(ev => wrapText(ev.title, bodyW - 100, '700 ' + FONT_SIZE + 'px Vazirmatn')
+      .forEach(text => eventLines.push({kind:'user',text})));
+    if (users.length) eventLines.push({kind:'gap',text:''});
+    ctx.font = NOTE_FONT;
+    const noteLines = wrapText(String(noteText == null ? '' : noteText), textW, NOTE_FONT)
+      .map(text => ({kind:'note',text}));
+    const lineStep = LINE_HEIGHT;
+    // مناسبت‌ها و یادداشت یک جریان پیوسته‌اند؛ هیچ‌کدام با محدودیت پنل حذف نمی‌شود.
+    const content = eventLines.concat(noteLines);
+    const p1Cursor = BODY_TOP_P1 + LINE_HEIGHT / 2;
+    const p1Lines = Math.max(1, Math.floor((BODY_BOTTOM - 8 - p1Cursor) / lineStep) + 1);
+    const p2Cursor = BODY_TOP_P2 + LINE_HEIGHT / 2;
+    const p2Lines = Math.max(1, Math.floor((BODY_BOTTOM - 8 - p2Cursor) / lineStep) + 1);
+    const pages = [{content:content.splice(0,p1Lines)}];
+    while (content.length) pages.push({content:content.splice(0,p2Lines)});
+    return pages;
+  } finally {
+    ctx.font = oldFont;
   }
-  return pages;
 }
 
 /* رسم سرصفحهٔ صفحهٔ ۱ */
@@ -165,17 +168,18 @@ function drawEventsOnPage1(i, startY) {
 
 function drawA4Notes(i) {
   const currentPage = Math.max(1, window.__a4PreviewPage || 1);
-  const noteText = (noteEl.value || '').trim();
+  const noteText = noteEl.value || '';
   const pages = computeAllPages(i, noteText);
   const totalPages = pages.length;
   const pageNum = Math.min(currentPage, totalPages);
-  const currentLines = pages[pageNum - 1] || [];
+  const pageContent = pages[pageNum - 1] || {content:[]};
+  const currentLines = pageContent.content || [];
 
   // ذخیرهٔ وضعیت برای رابط کاربری
   window.__a4PageInfo = {
     current: pageNum,
     total: totalPages,
-    totalNoteLines: pages.reduce((s, p) => s + p.length, 0)
+    totalContentLines: pages.reduce((s, p) => s + (p.content||[]).length, 0)
   };
   window.__a4PreviewPage = pageNum;
 
@@ -213,17 +217,19 @@ function drawA4Notes(i) {
   const textRight = BODY_X + bodyW - 20;
   const maxY = BODY_BOTTOM - 8;
 
-  // مناسبت‌ها فقط روی صفحهٔ ۱
-  if (pageNum === 1) {
-    curY = drawEventsOnPage1(i, curY);
-  }
-
-  // خطوط یادداشت این صفحه
+  // مناسبت‌ها و یادداشت در یک جریان صفحه‌بندی‌شده رسم می‌شوند.
   currentLines.forEach(line => {
-    if (curY > maxY) return;
-    ctx.fillStyle = '#10201c'; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
-    ctx.font = NOTE_FONT;
-    ctx.fillText(line, textRight, curY);
+    if (curY > maxY) {
+      console.error('A4 pagination invariant failed: a content line would exceed the body area.');
+      return;
+    }
+    ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    if (line.kind === 'gap') { curY += LINE_HEIGHT; return; }
+    if (line.kind === 'heading') { ctx.fillStyle = '#063d35'; ctx.font = '800 18px Vazirmatn'; }
+    else if (line.kind === 'official') { ctx.fillStyle = '#17310f'; ctx.font = '600 ' + FONT_SIZE + 'px Vazirmatn'; }
+    else if (line.kind === 'user') { ctx.fillStyle = '#10201c'; ctx.font = '700 ' + FONT_SIZE + 'px Vazirmatn'; }
+    else { ctx.fillStyle = '#10201c'; ctx.font = NOTE_FONT; }
+    ctx.fillText(line.text, textRight, curY);
     curY += LINE_HEIGHT;
   });
 

@@ -67,30 +67,32 @@ function drawOccasionPanel(i){
   }
 
   const bottom=y+h-28, bodyW=w-76;
-  const items=events.slice(0, allUser ? 8 : 6);
-  let fs = allUser ? 18 : 20;
-  if(items.length>3)fs=Math.min(fs, allUser ? 16 : 17);
-  if(items.length>4)fs=Math.min(fs, 15);
-  if(items.length>5)fs=Math.min(fs, 13);
-  if(items.length>6)fs=Math.min(fs, 12);
-
-  const prepared=items.map(e=>{
-    const prefix=e.holiday?'تعطیل رسمی: ':'';let f=fs;
-    let lines=wrapText(prefix+e.title,bodyW,'700 '+f+'px Vazirmatn');
-    while(lines.length>2&&f>11){f--;lines=wrapText(prefix+e.title,bodyW,'700 '+f+'px Vazirmatn');}
-    return {lines:lines.slice(0,2),f};
+  const items=events;
+  const availableH=bottom-bodyTop;
+  let fs=allUser?18:19, prepared=[], total=Infinity;
+  // همهٔ مناسبت‌ها و تمام خطوط متن حفظ می‌شوند؛ قلم تا حد خوانایی کوچک می‌شود.
+  for(;fs>=9;fs--){
+    prepared=items.map(e=>{
+      const prefix=e.holiday?'تعطیل رسمی: ':'';
+      return {lines:wrapText(prefix+e.title,bodyW,'700 '+fs+'px Vazirmatn'),f:fs};
+    });
+    total=prepared.reduce((n,item)=>n+item.lines.length*Math.max(11,fs+3)+8,0);
+    if(total<=availableH)break;
+  }
+  let yy=bodyTop+Math.max(0,(availableH-total)/2);
+  prepared.forEach(item=>{
+    item.lines.forEach((line,j)=>{
+      if(j===0){ctx.fillStyle='#f3d36b';ctx.beginPath();ctx.arc(x+38,yy+Math.max(4,item.f/2),Math.max(2,item.f*.22),0,Math.PI*2);ctx.fill();}
+      ctx.fillStyle='#fffdf4';ctx.textAlign='right';ctx.textBaseline='top';ctx.font='700 '+item.f+'px Vazirmatn';
+      ctx.fillText(line,x+w-28,yy);
+      yy+=Math.max(11,item.f+3);
+    });
+    yy+=8;
   });
-  const total=prepared.reduce((n,p)=>n+Math.max(42,p.lines.length*Math.max(20,p.f+7)),0);
-  let yy=bodyTop+Math.max(0,(bottom-bodyTop-total)/2);
-  prepared.forEach(p=>{
-    ctx.fillStyle='#f3d36b';ctx.beginPath();ctx.arc(x+38,yy+10,6,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='#fffdf4';ctx.textAlign='right';ctx.textBaseline='top';ctx.font='700 '+p.f+'px Vazirmatn';
-    p.lines.forEach((line,j)=>ctx.fillText(line,x+w-28,yy+j*Math.max(20,p.f+7)));
-    yy+=Math.max(42,p.lines.length*Math.max(20,p.f+7)+12);
-  });
-  if(events.length>items.length){
-    ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.font='700 15px Vazirmatn';
-    ctx.fillText('و '+fa(events.length-items.length)+' مورد دیگر…',x+w/2,bottom);
+  if(total>availableH){
+    // محتوای بیش از ظرفیت فیزیکی کارت را پنهان نکن؛ برای چاپ کامل، قالب A4 پیشنهاد می‌شود.
+    ctx.fillStyle='#f4df8a';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.font='700 11px Vazirmatn';
+    ctx.fillText('برای متن بسیار بلند، قالب «یادداشت A4» را انتخاب کنید',x+w/2,bottom);
   }
   ctx.restore();
 }
