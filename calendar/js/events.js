@@ -255,17 +255,41 @@ function getEventEditorText(i){const u=getUserEvent(i);return u?.text||'';}
 function getEventEditorReplace(i){return !!getUserEvent(i)?.replaceOfficial;}
 function eventSummary(i){return getEvents(i).map(e=>e.title).join(' • ');}
 function drawEventsBadge(i){
-  const events=getEvents(i); if(!events.length) return;
-  const W=CARD_W, text=events.map(e=>e.title).join(' • ');
-  const holiday=events.some(e=>e.holiday);
-  const label=holiday?'تعطیل · ':'مناسبت · ';
-  const maxChars=70;
-  const shown=(label+text).length>maxChars?(label+text).slice(0,maxChars-1)+'…':label+text;
-  const fs=fit(shown,W-130,18,700);
+  const events = getEvents(i);
+  if (!events.length) return;
+  const W = CARD_W;
+  const holiday = events.some(e => e.holiday);
+  const label = holiday ? 'تعطیل · ' : 'مناسبت · ';
+  const fullText = events.map(e => e.title).join(' • ');
+  const maxWidth = W - 130;
+  const fontSize = 16;
+  const lineHeight = 20;
+  const maxLines = 3;
+  const padV = 12;
+  const font = '700 ' + fontSize + 'px Vazirmatn';
+
   ctx.save();
-  ctx.fillStyle=holiday?'rgba(139,44,44,.94)':'rgba(6,61,53,.94)';
-  rr(55,1118,W-110,44,22);ctx.fill();
-  ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';
-  ctx.font='700 '+fs+'px Vazirmatn';ctx.fillText(shown,W/2,1140);
+  ctx.font = font;
+  let lines = wrapText(label + fullText, maxWidth, font);
+  if (lines.length > maxLines) {
+    lines = lines.slice(0, maxLines);
+    let last = lines[maxLines - 1];
+    while (last.length > 1 && ctx.measureText(last + '…').width > maxWidth) last = last.slice(0, -1);
+    lines[maxLines - 1] = last + '…';
+  }
+  const lineCount = Math.max(1, lines.length);
+  const badgeH = lineCount * lineHeight + padV * 2;
+  const badgeY = CARD_H - 20 - badgeH;
+
+  ctx.fillStyle = holiday ? 'rgba(139,44,44,.94)' : 'rgba(6,61,53,.94)';
+  rr(55, badgeY, W - 110, badgeH, 22);
+  ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  const startY = badgeY + padV + lineHeight / 2;
+  lines.forEach((line, idx) => {
+    ctx.fillText(line, W / 2, startY + idx * lineHeight);
+  });
   ctx.restore();
 }

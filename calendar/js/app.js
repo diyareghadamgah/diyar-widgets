@@ -41,7 +41,7 @@ sortedTemplates.forEach(t=>{
   const o=document.createElement('option');o.value=t.id;o.textContent=t.label;optGroup.appendChild(o);
   const c=document.createElement('div');c.className='template-card';c.dataset.template=t.id;
   const sw=document.createElement('div');sw.className='template-swatch';sw.style.background=t.swatch;
-  c.appendChild(sw);c.appendChild(document.createTextNode(t.short||t.label));templateGridEl.appendChild(c);
+  c.title=t.label;c.setAttribute('role','button');c.setAttribute('tabindex','0');c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();templateSelectEl.value=c.dataset.template;templateChanged();}});c.appendChild(sw);c.appendChild(document.createTextNode(t.short||t.label));templateGridEl.appendChild(c);
 });
 templateSelectEl.value=DEFAULT_TEMPLATE;
 const templateCards=[...templateGridEl.querySelectorAll('.template-card')];
