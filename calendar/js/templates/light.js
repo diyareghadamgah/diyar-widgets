@@ -108,7 +108,7 @@
 
     ctx.fillStyle='#fff';ctx.textAlign='left';ctx.textBaseline='middle';
     const pz=fit(phEl.value||'',300,20,700);ctx.font='700 '+pz+'px Arial';
-    ctx.save();ctx.direction='ltr';ctx.fillText(phEl.value||'',125,FY+FH/2);ctx.restore();drawRoundIcon('phone',90,FY+FH/2,24,'#fff',green);
+    ctx.save();ctx.direction='ltr';drawPhoneInline(125, FY+FH/2, {align:'left', phoneSize:20, labelSize:12, fill:'#fff', maxWidth:300});ctx.restore();drawRoundIcon('phone',90,FY+FH/2,24,'#fff',green);
     ctx.textAlign='right';const chz=fit(ch,245,18,700);
     ctx.font='700 '+chz+'px Vazirmatn';ctx.fillText(ch,895,FY+FH/2);drawRoundIcon('plane',958,FY+FH/2,24,'#fff',green);
 

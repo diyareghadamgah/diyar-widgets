@@ -136,7 +136,7 @@ function drawFooter(i){
   const channelSize=fit(channelName,445,22,800);
   ctx.font='800 '+channelSize+'px Vazirmatn';
   ctx.fillText(channelName,535,y+33);
-  ctx.direction='ltr';ctx.textAlign='left';ctx.font='700 20px Arial';ctx.fillText(phEl.value||'',75,y+73);ctx.direction='rtl';
+  ctx.direction='ltr';ctx.textAlign='left';ctx.font='700 20px Arial';drawPhoneInline(75, y+73, {align:'left', phoneSize:20, labelSize:12, fill:'#fff4cf', maxWidth:260});ctx.direction='rtl';
   const url=(chUrlEl.value||'').trim();if(showQREl.checked&&url)drawQRCanvas(getQRMatrix(url),555,y+10,82);
   ctx.fillStyle='#31570f';ctx.textAlign='center';ctx.font='700 16px Vazirmatn';ctx.fillText('امروز را زیبا بسازیم 🌿',350,y+92);
 }

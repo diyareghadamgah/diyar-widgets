@@ -112,7 +112,7 @@
   function footer(){
     panel(55,1000,925,140,28);
     ctx.save();ctx.fillStyle=S.goldText;ctx.textAlign='left';ctx.direction='ltr';
-    ctx.font='700 22px Arial';ctx.textBaseline='middle';ctx.fillText(phEl.value||'',150,1070);ctx.restore();drawRoundIcon('phone',112,1070,24,S.goldText,S.panel);ctx.save();
+    ctx.font='700 22px Arial';ctx.textBaseline='middle';drawPhoneInline(150, 1070, {align:'left', phoneSize:22, labelSize:13, fill:S.goldText, maxWidth:340});ctx.restore();drawRoundIcon('phone',112,1070,24,S.goldText,S.panel);ctx.save();
     ctx.restore();
     ctx.strokeStyle=S.frame;ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(490,1020);ctx.lineTo(490,1120);ctx.stroke();

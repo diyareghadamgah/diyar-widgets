@@ -288,3 +288,67 @@ function drawEventPanel(i, cfg){
 
   ctx.restore();
       }
+
+/* ==== v25c: نمایش شماره تماس + برچسب اختیاری در یک خط ==== */
+function drawPhoneInline(x, y, opts) {
+  opts = opts || {};
+  const phone = (phEl.value || '').trim();
+  const labelEl = document.getElementById('phoneLabel');
+  const label = (labelEl ? labelEl.value : '').trim();
+  if (!phone && !label) return 0;
+
+  const phoneSize = opts.phoneSize || 22;
+  const labelSize = opts.labelSize || 13;
+  const fill = opts.fill || '#f0c34f';
+  const align = opts.align || 'left';
+  const maxW = opts.maxWidth || 400;
+  const sep = opts.separator || '·';
+
+  ctx.save();
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = fill;
+
+  let phoneW = 0, labelW = 0, sepW = 0;
+  if (phone) {
+    ctx.font = '700 ' + phoneSize + 'px Arial, Tahoma, sans-serif';
+    phoneW = Math.min(ctx.measureText(phone).width, maxW * 0.55);
+  }
+  if (label) {
+    ctx.font = '600 ' + labelSize + 'px Vazirmatn, Tahoma, sans-serif';
+    labelW = Math.min(ctx.measureText(label).width, maxW * 0.42);
+  }
+  if (phone && label) {
+    ctx.font = '600 ' + labelSize + 'px Vazirmatn, Tahoma, sans-serif';
+    sepW = ctx.measureText(' ' + sep + ' ').width;
+  }
+
+  const totalW = phoneW + sepW + labelW;
+  let curX;
+  if (align === 'left') curX = x;
+  else if (align === 'right') curX = x - totalW;
+  else curX = x - totalW / 2;
+
+  if (phone) {
+    ctx.save();
+    ctx.direction = 'ltr';
+    ctx.textAlign = 'left';
+    ctx.font = '700 ' + phoneSize + 'px Arial, Tahoma, sans-serif';
+    ctx.fillText(phone, curX, y);
+    ctx.restore();
+    curX += phoneW;
+  }
+  if (phone && label) {
+    ctx.textAlign = 'left';
+    ctx.font = '600 ' + labelSize + 'px Vazirmatn, Tahoma, sans-serif';
+    ctx.fillText(' ' + sep + ' ', curX, y);
+    curX += sepW;
+  }
+  if (label) {
+    ctx.textAlign = 'left';
+    ctx.font = '600 ' + labelSize + 'px Vazirmatn, Tahoma, sans-serif';
+    ctx.fillText(label, curX, y);
+  }
+
+  ctx.restore();
+  return totalW;
+}

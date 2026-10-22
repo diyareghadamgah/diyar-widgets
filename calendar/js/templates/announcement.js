@@ -238,7 +238,7 @@ function drawFooter(pageNum, totalPages) {
   }
 
   const ph = phEl.value || '';
-  if (ph) {
+  if (ph || (document.getElementById('phoneLabel') && document.getElementById('phoneLabel').value.trim())) {
     if (typeof drawRoundIcon === 'function') {
       drawRoundIcon('phone', fx + 40, fcy, 18, '#d4a437', '#063d35');
     }
@@ -248,7 +248,7 @@ function drawFooter(pageNum, totalPages) {
     ctx.textBaseline = 'middle';
     ctx.save();
     ctx.direction = 'ltr';
-    ctx.fillText(ph, fx + 72, fcy);
+    drawPhoneInline(fx + 72, fcy, {align:'left', phoneSize:18, labelSize:12, fill:'#f0c34f', maxWidth:340});
     ctx.restore();
   }
 

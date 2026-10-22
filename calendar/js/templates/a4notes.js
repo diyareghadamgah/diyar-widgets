@@ -252,7 +252,7 @@ function drawA4Notes(i) {
   drawRoundIcon('phone', fX + 40, fCY, 18, '#d4a437', '#063d35');
   ctx.fillStyle = '#f0c34f'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
   ctx.save(); ctx.direction = 'ltr'; ctx.font = '700 20px Arial';
-  ctx.fillText(phEl.value || '', fX + 75, fCY); ctx.restore();
+  drawPhoneInline(fX + 75, fCY, {align:'left', phoneSize:20, labelSize:12, fill:'#f0c34f', maxWidth:320}); ctx.restore();
 
   // QR فقط در صفحهٔ ۱
   const url = validUrl(chUrlEl.value);

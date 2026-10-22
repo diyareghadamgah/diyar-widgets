@@ -208,6 +208,7 @@ function publishText(i){
   if(ev.length){L.push('');L.push('📌 مناسبت‌ها:');ev.forEach(t=>L.push('• '+t));}
   const nt=(noteEl.value||'').trim();if(nt){L.push('');L.push(nt);}
   L.push('');L.push('🕌 ذکر روز '+WD[i.wd]+':');L.push(ar);L.push(tr);
+  const _pl=document.getElementById('phoneLabel');const _plV=_pl?(_pl.value||'').trim():'';const _ph=(phEl.value||'').trim();if(_ph){L.push('');L.push('📞 '+_ph+(_plV?' — '+_plV:''));}
   L.push('');L.push('🏡 '+(chEl.value||'').replace('@',''));if(url)L.push(url);
   return L.join('\n');
 }
@@ -310,7 +311,7 @@ const SKEY='diyar-calendar-settings-v1';
 const COLOR_IDS=['frame','inner','panel','goldText','darkText','canvasBg'];
 const settingsMsg=$('settingsMsg');
 function collect(withEvents){
-  const o={app:'diyar-calendar',v:1,template:templateMode,colors:{},channel:chEl.value,channelUrl:chUrlEl.value,phone:phEl.value,
+  const _pl=document.getElementById('phoneLabel');const o={app:'diyar-calendar',v:1,template:templateMode,colors:{},channel:chEl.value,channelUrl:chUrlEl.value,phone:phEl.value,phoneLabel:_pl?_pl.value:'',
     showQR:showQREl.checked,note:noteEl.value,n:+nEl.value||7,scale:scaleValue(),off:+offEl.value||0,
     dhikr:DHIKR.map(v=>[v[0],v[1]]),dhikrSettings:dhikrSettings.map(x=>({arabicSize:x.arabicSize,translationSize:x.translationSize,titleSize:x.titleSize}))};
   COLOR_IDS.forEach(k=>o.colors[k]=S[k]);
@@ -332,6 +333,7 @@ function sanitize(o){
   if(o.channelUrl!==undefined){if(!isStr(o.channelUrl,500))throw new Error('مقدار «channelUrl» معتبر نیست.');c.channelUrl=o.channelUrl;}
   if(o.note!==undefined){if(typeof o.note!=='string')throw new Error('مقدار «note» معتبر نیست.');c.note=o.note.length>20000?o.note.slice(0,20000):o.note;}
   if(o.phone!==undefined){if(!isStr(o.phone,24)||!/^[+\d\s()-]*$/.test(o.phone))throw new Error('شمارهٔ تماس معتبر نیست.');c.phone=o.phone;}
+  if(o.phoneLabel!==undefined){if(!isStr(o.phoneLabel,60))throw new Error('عنوان شماره تماس معتبر نیست.');c.phoneLabel=o.phoneLabel;}
   if(o.showQR!==undefined){if(typeof o.showQR!=='boolean')throw new Error('گزینهٔ QR معتبر نیست.');c.showQR=o.showQR;}
   if(o.n!==undefined){if(!isInt(o.n,1,366))throw new Error('تعداد روز معتبر نیست.');c.n=o.n;}
   if(o.scale!==undefined){if(![1,2,3].includes(o.scale))throw new Error('مقیاس خروجی معتبر نیست.');c.scale=o.scale;}
@@ -362,6 +364,7 @@ function apply(c){
   if(c.channel!==undefined)chEl.value=c.channel;
   if(c.channelUrl!==undefined){chUrlEl.value=c.channelUrl;chUrlEl.oninput();}
   if(c.phone!==undefined){phEl.value=c.phone;phEl.oninput();}
+  if(c.phoneLabel!==undefined){const _pl=document.getElementById('phoneLabel');if(_pl)_pl.value=c.phoneLabel;}
   if(c.showQR!==undefined)showQREl.checked=c.showQR;
   if(c.note!==undefined)noteEl.value=c.note;
   if(c.n!==undefined)nEl.value=c.n;
