@@ -96,3 +96,31 @@ button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-vis
   body{padding-bottom:72px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== نوار پیشرفت ZIP (v25) ===== */
+#zipProgress{margin-top:10px;width:100%}
+#zipProgress::-webkit-progress-bar{background:#e0e7e4;border-radius:3px}
+#zipProgress::-webkit-progress-value{background:var(--green);border-radius:3px}
+#zipProgress::-moz-progress-bar{background:var(--green);border-radius:3px}
+
+/* ===== شمارندهٔ متن (v25) ===== */
+.char-counter{font-size:11px;color:#7a8a84;text-align:left;margin:-6px 0 8px;direction:ltr;padding:0 2px}
+.char-counter.warn{color:#8a5a00;font-weight:700}
+.char-counter.bad{color:#9b2c2c;font-weight:700}
+
+/* ===== ناوبری صفحات A4 (v25) ===== */
+.page-nav{
+  display:flex;gap:8px;align-items:center;justify-content:center;
+  margin-top:10px;padding:8px 12px;
+  background:#f8faf9;border-radius:10px;box-shadow:0 2px 8px #0001;
+  direction:rtl;
+}
+.page-nav[hidden]{display:none}
+.page-nav button{font-size:13px;padding:6px 12px;min-height:auto;margin:0;flex:0 0 auto}
+.page-nav button:disabled{opacity:.4;cursor:default}
+.page-nav span{font-size:14px;font-weight:800;color:var(--green);padding:0 10px;min-width:110px;text-align:center;white-space:nowrap}
+@media(max-width:520px){
+  .page-nav{gap:6px;padding:6px 8px}
+  .page-nav button{font-size:12px;padding:5px 9px}
+  .page-nav span{font-size:13px;min-width:90px;padding:0 6px}
+}

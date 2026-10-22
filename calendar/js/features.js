@@ -1,6 +1,5 @@
-/* امکانات v9: ناوبری روزها، خروجی با مقیاس، تولید گروهی قابل لغو، ذخیرهٔ خودکار تنظیمات، پشتیبان JSON، اعتبارسنجی لینک.
-   این فایل پس از app.js بارگذاری می‌شود و فقط کنترل‌های جدید را اضافه یا handler دکمه‌های خروجی را جایگزین می‌کند.
-   نسخهٔ v23: پشتیبانی از قالب‌های چندصفحه‌ای (مثل A4) — اگر متن به بیش از یک صفحه برسد، خروجی PNG/SVG/HTML به‌صورت ZIP با page1.png/page2.png/... ذخیره می‌شود. */
+/* امکانات v9 + v25: ناوبری روزها، خروجی با مقیاس، تولید گروهی قابل لغو، ذخیرهٔ خودکار تنظیمات، پشتیبان JSON، اعتبارسنجی لینک.
+   نسخهٔ v25: پشتیبانی از قالب‌های چندصفحه‌ای + شمارندهٔ متن + پیش‌نمایش کامل + هشدار متن بلند. */
 (function(){
 'use strict';
 const $=id=>document.getElementById(id);
@@ -39,7 +38,7 @@ document.addEventListener('keydown',e=>{
   const tag=(e.target&&e.target.tagName||'').toLowerCase();
   if(e.ctrlKey||e.metaKey){if(e.key.toLowerCase()==='s'){e.preventDefault();downloadPNG();}return;}
   if(['input','textarea','select'].includes(tag)||e.altKey||e.shiftKey)return;
-  if(e.key==='ArrowRight'){e.preventDefault();shiftDay(-1);}      // راست‌چین: راست = روز قبل
+  if(e.key==='ArrowRight'){e.preventDefault();shiftDay(-1);}
   else if(e.key==='ArrowLeft'){e.preventDefault();shiftDay(1);}
 });
 
@@ -54,13 +53,13 @@ function fontAvailable(){
 }
 fontsReady.then(()=>{if(!fontAvailable())say('فونت وزیرمتن بارگذاری نشده است (اینترنت لازم است یا فونت هنوز ذخیره نشده). خروجی با فونت جایگزین ساخته می‌شود.','warn');});
 
-/* ---------- هستهٔ خروجی (با پشتیبانی از ابعاد پویای قالب و چندصفحه‌ای) ---------- */
+/* ---------- هستهٔ خروجی ---------- */
 const EXPORT_BTNS=['download','downloadHTML','downloadSVG','zip','quickPng','copyText'];
 function lockUI(b){window.__exporting=b;EXPORT_BTNS.forEach(id=>{const el=$(id);if(el)el.disabled=b;});}
 async function paintScaled(i,scale){
   await fontsReady;
   const d=dimsOf(templateMode);
-  cv.width=d.w*scale;cv.height=d.h*scale;       // تغییر اندازه، بوم را پاک می‌کند
+  cv.width=d.w*scale;cv.height=d.h*scale;
   ctx.setTransform(scale,0,0,scale,0,0);
   await draw(i);
 }
@@ -79,7 +78,6 @@ const needDate=()=>{const i=cur();if(!i)say('لطفاً ابتدا یک تاری
 
 const isMultiPageTemplate=()=>!!(TEMPLATES[templateMode]&&TEMPLATES[templateMode].multipage);
 
-/* رندر صفحهٔ ۱ برای تعیین تعداد کل صفحات؛ سپس تمام صفحات را برمی‌گرداند */
 async function renderAllPages(i,scale){
   window.__a4PreviewPage=1;
   await paintScaled(i,scale);
@@ -89,12 +87,21 @@ async function renderAllPages(i,scale){
   return {pages:Array.from({length:totalPages},(_,k)=>k+1),total:totalPages};
 }
 
+/* هشدار متن بسیار بلند A4 */
+function confirmLongPdf(total){
+  if (total > 10) {
+    return confirm('متن شما به ' + fa(total) + ' صفحه A4 تبدیل می‌شود. برای جلوگیری از کندی روی گوشی ضعیف، ادامه می‌دهید؟');
+  }
+  return true;
+}
+
 async function downloadPNG(){
   await withExport(async()=>{
     const i=needDate();if(!i)return;const sc=scaleValue();const d=dimsOf(templateMode);
 
     if(isMultiPageTemplate()){
       const {pages,total}=await renderAllPages(i,sc);
+      if(!confirmLongPdf(total)){say('تولید خروجی لغو شد.','warn',3000);return;}
       if(total>1){
         if(typeof JSZip==='undefined')throw new Error('کتابخانهٔ ZIP در دسترس نیست');
         say('در حال ساخت '+fa(total)+' صفحه…');
@@ -132,6 +139,7 @@ async function downloadSvgOrHtml(kind){
 
     if(isMultiPageTemplate()){
       const {pages,total}=await renderAllPages(i,sc);
+      if(!confirmLongPdf(total)){say('تولید خروجی لغو شد.','warn',3000);return;}
       if(total>1){
         if(typeof JSZip==='undefined')throw new Error('کتابخانهٔ ZIP در دسترس نیست');
         say('در حال ساخت '+fa(total)+' صفحه…');
@@ -162,6 +170,32 @@ async function downloadSvgOrHtml(kind){
 $('download').onclick=downloadPNG;$('quickPng').onclick=downloadPNG;
 $('downloadHTML').onclick=()=>downloadSvgOrHtml('html');
 $('downloadSVG').onclick=()=>downloadSvgOrHtml('svg');
+
+/* ---------- پیش‌نمایش کامل (B3) ---------- */
+const previewFullBtn=$('previewFull');
+if (previewFullBtn) {
+  previewFullBtn.onclick = () => {
+    try {
+      const i = cur();
+      if (!i) { say('لطفاً ابتدا یک تاریخ انتخاب کنید.','err'); return; }
+      const url = cv.toDataURL('image/png');
+      const w = window.open('', '_blank');
+      if (!w) { say('مرورگر پنجرهٔ جدید را مسدود کرد. لطفاً pop-up را برای این سایت مجاز کنید.','err', 6000); return; }
+      w.document.write(
+        '<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8">' +
+        '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+        '<title>پیش‌نمایش کامل</title>' +
+        '<style>body{margin:0;background:#edf2ef;display:flex;justify-content:center;padding:16px;font-family:Vazirmatn,Tahoma,sans-serif}' +
+        'img{max-width:100%;height:auto;border-radius:13px;box-shadow:0 6px 30px rgba(0,0,0,.18);background:#fff}' +
+        '</style></head><body><img alt="پیش‌نمایش کارت تقویم" src="' + url + '"></body></html>'
+      );
+      w.document.close();
+    } catch (e) {
+      console.error(e);
+      say('بازکردن پیش‌نمایش کامل ممکن نشد.','err',5000);
+    }
+  };
+}
 
 /* ---------- متن آمادهٔ انتشار ---------- */
 function publishText(i){
@@ -223,7 +257,7 @@ $('zip').onclick=async()=>{
         zip.file(name,blob);ok.push(name);
       }catch(err){console.error(err);bad.push(i.s.y+'/'+pad(i.s.m)+'/'+pad(i.s.d));}
       prog.value=k+1;
-      await new Promise(r=>setTimeout(r,0));   // فرصت به رابط برای پاسخ‌گویی و لغو
+      await new Promise(r=>setTimeout(r,0));
     }
     if(zipAbort){rep.textContent='✖ عملیات لغو شد؛ فایلی دانلود نشد.';return;}
     if(!ok.length)throw new Error('هیچ کارتی ساخته نشد');
@@ -248,6 +282,29 @@ function updateUrlHint(){
 }
 chUrlEl.addEventListener('input',updateUrlHint);showQREl.addEventListener('change',updateUrlHint);
 
+/* ---------- شمارندهٔ متن (A3) ---------- */
+function updateCounter(inputId, counterId, max){
+  const inp = $(inputId), cnt = $(counterId);
+  if (!inp || !cnt) return;
+  const len = (inp.value || '').length;
+  const ratio = len / max;
+  cnt.textContent = fa(len) + ' / ' + fa(max);
+  cnt.className = 'char-counter' + (ratio >= 1 ? ' bad' : ratio >= 0.9 ? ' warn' : '');
+}
+function bindCounters(){
+  const noteInp = noteEl, noteCnt = $('noteCounter');
+  if (noteInp && noteCnt) {
+    noteInp.addEventListener('input', () => updateCounter('note', 'noteCounter', 20000));
+    updateCounter('note', 'noteCounter', 20000);
+  }
+  const evInp = customEventTextEl, evCnt = $('eventCounter');
+  if (evInp && evCnt) {
+    evInp.addEventListener('input', () => updateCounter('customEventText', 'eventCounter', 3000));
+    updateCounter('customEventText', 'eventCounter', 3000);
+  }
+}
+bindCounters();
+
 /* ---------- ذخیره و بازیابی تنظیمات ---------- */
 const SKEY='diyar-calendar-settings-v1';
 const COLOR_IDS=['frame','inner','panel','goldText','darkText','canvasBg'];
@@ -270,7 +327,10 @@ function sanitize(o){
     if(!o.colors||typeof o.colors!=='object')throw new Error('رنگ‌ها معتبر نیستند.');
     c.colors={};for(const k of COLOR_IDS)if(o.colors[k]!==undefined){if(!/^#[0-9a-fA-F]{6}$/.test(o.colors[k]))throw new Error('رنگ «'+k+'» معتبر نیست.');c.colors[k]=o.colors[k];}
   }
-  for(const [k,max] of [['channel',80],['channelUrl',500],['note',20000]])if(o[k]!==undefined){if(!isStr(o[k],max))throw new Error('مقدار «'+k+'» معتبر نیست.');c[k]=o[k];}
+  /* A3: متن را در صورت بیش‌بودن کوتاه می‌کنیم، کل تنظیمات را رد نمی‌کنیم. */
+  if(o.channel!==undefined){if(!isStr(o.channel,80))throw new Error('مقدار «channel» معتبر نیست.');c.channel=o.channel;}
+  if(o.channelUrl!==undefined){if(!isStr(o.channelUrl,500))throw new Error('مقدار «channelUrl» معتبر نیست.');c.channelUrl=o.channelUrl;}
+  if(o.note!==undefined){if(typeof o.note!=='string')throw new Error('مقدار «note» معتبر نیست.');c.note=o.note.length>20000?o.note.slice(0,20000):o.note;}
   if(o.phone!==undefined){if(!isStr(o.phone,24)||!/^[+\d\s()-]*$/.test(o.phone))throw new Error('شمارهٔ تماس معتبر نیست.');c.phone=o.phone;}
   if(o.showQR!==undefined){if(typeof o.showQR!=='boolean')throw new Error('گزینهٔ QR معتبر نیست.');c.showQR=o.showQR;}
   if(o.n!==undefined){if(!isInt(o.n,1,366))throw new Error('تعداد روز معتبر نیست.');c.n=o.n;}
@@ -288,8 +348,11 @@ function sanitize(o){
     const u=o.userEvents;if(!u||typeof u!=='object'||Array.isArray(u))throw new Error('مناسبت‌های شخصی معتبر نیستند.');
     const keys=Object.keys(u);if(keys.length>800)throw new Error('تعداد مناسبت‌های شخصی بیش از حد است.');
     c.userEvents={};for(const k of keys){
-      const v=u[k];if(!/^\d{4}\/\d{2}\/\d{2}$/.test(k)||!v||typeof v!=='object'||!isStr(v.text,3000))throw new Error('یکی از مناسبت‌های شخصی معتبر نیست.');
-      c.userEvents[k]={text:v.text,replaceOfficial:v.replaceOfficial===true};
+      const v=u[k];
+      if(!/^\d{4}\/\d{2}\/\d{2}$/.test(k)||!v||typeof v!=='object'||typeof v.text!=='string')throw new Error('یکی از مناسبت‌های شخصی معتبر نیست.');
+      /* A3: متن هر مناسبت هم کوتاه می‌شود، نه کل تنظیمات رد. */
+      const txt=v.text.length>3000?v.text.slice(0,3000):v.text;
+      c.userEvents[k]={text:txt,replaceOfficial:v.replaceOfficial===true};
     }
   }
   return c;
@@ -310,6 +373,8 @@ function apply(c){
   if(c.userEvents)setUserEventMap(c.userEvents);
   if(c.template){templateSelectEl.value=c.template;templateChanged();}
   syncEventEditor();updateEventInfo();updateUrlHint();render();
+  /* شمارنده‌ها بعد از بارگذاری هم به‌روز شوند */
+  try { updateCounter('note','noteCounter',20000); updateCounter('customEventText','eventCounter',3000); } catch(_){}
 }
 let persistTimer=null;
 function persistNow(){try{localStorage.setItem(SKEY,JSON.stringify(collect(false)));}catch(_){/* حافظه پر یا خصوصی */}}

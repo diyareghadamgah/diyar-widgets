@@ -51,18 +51,20 @@
           <div class="subsec-title">🧩 انتخاب شکل و فرم قالب</div>
           <select id="templateSelect" aria-label="قالب تقویم"></select>
           <div class="template-grid" id="templateGrid" style="margin-top:7px"></div>
-          <div class="help" style="margin-top:6px">محتوا، عکس، ذکر، لوگو و QR حفظ می‌شوند؛ هر قالب چیدمان، قاب‌ها و فرم بصری متفاوتی دارد. قالب «یادداشت A4 📝» برای متن‌های طولانی، تقدیر، تشکر و ... فضای بزرگی دارد.</div>
+          <div class="help" style="margin-top:6px">محتوا، عکس، ذکر، لوگو و QR حفظ می‌شوند؛ هر قالب چیدمان، قاب‌ها و فرم بصری متفاوتی دارد. قالب «یادداشت A4 📝» برای متن‌های طولانی، تقدیر، تشکر و ... فضای بزرگی دارد. قالب «اطلاعیه رسمی 📢» برای پیام‌های رسمی با ظاهر تابلوی اعلانات طراحی شده است.</div>
         </div>
 
-        <label style="margin-top:10px">یادداشت / متن آزاد<textarea id="note" rows="5" placeholder="متن یادداشت (اختیاری). در قالب «یادداشت A4» این متن در بدنهٔ اصلی و با فضای زیاد نمایش داده می‌شود..."></textarea></label>
+        <label style="margin-top:10px">یادداشت / متن آزاد<textarea id="note" rows="5" maxlength="20000" placeholder="متن یادداشت (اختیاری). در قالب «یادداشت A4» و «اطلاعیه رسمی»، این متن در بدنهٔ اصلی و با فضای زیاد نمایش داده می‌شود..."></textarea></label>
+        <div class="char-counter" id="noteCounter" aria-live="polite"></div>
 
         <div class="subsec event-editor">
           <div class="subsec-title">📌 ثبت / اصلاح مناسبت روز</div>
           <div class="help" id="eventEditorHint" style="margin-bottom:7px">برای تاریخ انتخاب‌شده، متن خود را در هر خط یک مورد بنویسید. اگر مناسبت رسمی وجود نداشته باشد یا گزینهٔ «جایگزینی» فعال شود، برچسب «مناسبت روز» حذف می‌شود و متن شما در عرض کامل نمایش می‌یابد (مناسب برای تقدیر، تشکر، تعریف، تمجید و ...).</div>
-          <textarea id="customEventText" rows="5" placeholder="مثلاً:
+          <textarea id="customEventText" rows="5" maxlength="3000" placeholder="مثلاً:
 تقدیر از زحمات همکاران
 تشکر از حضور شما
 مراسم محلی امروز"></textarea>
+          <div class="char-counter" id="eventCounter" aria-live="polite"></div>
           <label class="check-row" for="replaceOfficialEvents"><input type="checkbox" id="replaceOfficialEvents"><span>جایگزینی مناسبت‌های رسمی با این موارد (برچسب «مناسبت روز» حذف می‌شود)</span></label>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
             <button id="saveCustomEvent" type="button" style="font-size:12px;padding:7px">ثبت / اصلاح مناسبت</button>
@@ -131,7 +133,7 @@
             <option value="3">سه برابر (چاپ/تصویر بزرگ) — ۳۱۵۰×۳۵۴۰</option>
           </select>
         </label>
-        <div id="scaleHelp" class="help" style="margin:-4px 0 8px">مقیاس‌های بالاتر حجم و زمان بیشتری دارند؛ روی گوشی ضعیف برای ZIP از «استاندارد» استفاده کنید. در قالب «یادداشت A4» ابعاد پایه ۱۲۴۰×۱۷۵۴ است.</div>
+        <div id="scaleHelp" class="help" style="margin:-4px 0 8px">مقیاس‌های بالاتر حجم و زمان بیشتری دارند؛ روی گوشی ضعیف برای ZIP از «استاندارد» استفاده کنید. در قالب «یادداشت A4» و «اطلاعیه رسمی»، ابعاد پایه ۱۲۴۰×۱۷۵۴ است.</div>
         <button id="download">دانلود PNG</button>
         <div class="row2">
           <button id="downloadHTML" class="gold" type="button">📄 HTML کلیک‌پذیر</button>
@@ -176,19 +178,18 @@
     </div>
     <div class="canvas-wrap"><canvas id="c" width="1050" height="1180" role="img" aria-label="پیش‌نمایش کارت تقویم"></canvas></div>
 
-    <!-- ⬇⬇⬇ ناوبری صفحات A4 — افزوده‌شده ⬇⬇⬇ -->
     <div id="pageNav" class="page-nav" hidden>
       <button type="button" id="pagePrev" class="alt" title="صفحهٔ قبل">◀ صفحهٔ قبل</button>
       <span id="pageIndicator" aria-live="polite">صفحهٔ ۱ از ۱</span>
       <button type="button" id="pageNext" class="alt" title="صفحهٔ بعد">صفحهٔ بعد ▶</button>
     </div>
-    <!-- ⬆⬆⬆ ناوبری صفحات A4 ⬆⬆⬆ -->
 
     <div id="status" class="status" role="status" aria-live="polite"></div>
     <div class="quickbar" role="toolbar" aria-label="ابزار سریع">
       <button type="button" class="alt" id="prevDay" title="روز قبل (→)">▶ روز قبل</button>
       <button type="button" class="alt" id="todayBtn" title="رفتن به امروز">امروز</button>
       <button type="button" class="alt" id="nextDay" title="روز بعد (←)">روز بعد ◀</button>
+      <button type="button" class="alt" id="previewFull" title="پیش‌نمایش کامل در تب جدید">🔍 پیش‌نمایش کامل</button>
       <button type="button" id="quickPng" title="دانلود PNG (Ctrl+S)">⬇ PNG</button>
     </div>
   </main>
@@ -209,6 +210,7 @@
 <script src="js/templates/ribbon.js"></script>
 <script src="js/templates/dailyoccasion.js"></script>
 <script src="js/templates/a4notes.js"></script>
+<script src="js/templates/announcement.js"></script>
 <script src="js/templates/occasions/ramadan.js"></script>
 <script src="js/templates/occasions/muharram.js"></script>
 <script src="js/templates/occasions/eid.js"></script>
@@ -228,7 +230,6 @@
 <script src="js/accordion.js"></script>
 <script src="js/features.js"></script>
 
-<!-- ⬇⬇⬇ اسکریپت ناوبری صفحات A4 — افزوده‌شده ⬇⬇⬇ -->
 <script>
 (function(){
   const nav = document.getElementById('pageNav');
@@ -241,16 +242,13 @@
 
   function updateNav(){
     const info = window.__a4PageInfo || { current: 1, total: 1 };
-    const isA4 = (typeof window.templateMode !== 'undefined' && window.templateMode === 'a4notes');
-    // در برخی مرورگرها `templateMode` به‌صورت مستقیم در window نیست (متغیر let)،
-    // پس از TEMPLATES و selector هم کمک می‌گیریم:
-    const isA4Fallback = (function(){
+    const isMulti = (function(){
       try {
         const sel = document.getElementById('templateSelect');
-        return sel && sel.value === 'a4notes';
+        return sel && (sel.value === 'a4notes' || sel.value === 'announcement');
       } catch(_) { return false; }
     })();
-    const show = (isA4 || isA4Fallback) && info.total > 1;
+    const show = isMulti && info.total > 1;
     nav.hidden = !show;
     if (show) {
       ind.textContent = 'صفحهٔ ' + fa(info.current) + ' از ' + fa(info.total);
@@ -275,18 +273,32 @@
     }
   };
 
-  // این تابع از داخل app.js پس از هر رندر صدا زده می‌شود
   window.__onAfterRender = updateNav;
-  // یک‌بار هم بعد از بارگذاری چک کنیم (در صورت نبود render)
   setTimeout(updateNav, 800);
 })();
 </script>
-<!-- ⬆⬆⬆ اسکریپت ناوبری صفحات A4 ⬆⬆⬆ -->
 
 <script>
-if('serviceWorker' in navigator&&location.protocol.startsWith('http')){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+// ثبت Service Worker + پیام به‌روزرسانی
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      setInterval(() => reg.update().catch(()=>{}), 60000);
+      reg.addEventListener('updatefound', () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener('statechange', () => {
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            try {
+              window.__say && window.__say('نسخهٔ جدید در دسترس است. برای به‌روزرسانی صفحه را ببندید و باز کنید.', 'warn', 12000);
+            } catch(_) {}
+            try { nw.postMessage({ type: 'SKIP_WAITING' }); } catch(_) {}
+          }
+        });
+      });
+    }).catch(()=>{});
+  });
 }
 </script>
 </body>
-            </html>
+</html>
