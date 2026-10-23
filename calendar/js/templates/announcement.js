@@ -66,40 +66,54 @@ function drawHeaderBar(i) {
   rr(M + 6, hy + 6, hw - 12, hh - 12, 14);
   ctx.stroke();
 
-  // آیکون مگافون (راست)
-  const iCx = AW - M - 55;
+  // آیکون شیپور/مگافون (راست)
+  const iCx = AW - M - 60;
   const iCy = hy + hh / 2;
+
+  // دایره پس‌زمینهٔ طلایی
   ctx.fillStyle = '#d4a437';
   ctx.beginPath();
-  ctx.arc(iCx, iCy, 30, 0, Math.PI * 2);
+  ctx.arc(iCx, iCy, 36, 0, Math.PI * 2);
   ctx.fill();
 
+  // بدنهٔ مگافون
   ctx.fillStyle = '#063d35';
   ctx.beginPath();
-  ctx.moveTo(iCx - 14, iCy + 4);
-  ctx.lineTo(iCx + 2, iCy - 12);
-  ctx.lineTo(iCx + 2, iCy + 12);
+  ctx.moveTo(iCx - 18, iCy + 8);
+  ctx.lineTo(iCx - 18, iCy - 8);
+  ctx.lineTo(iCx + 8, iCy - 18);
+  ctx.lineTo(iCx + 8, iCy + 18);
   ctx.closePath();
   ctx.fill();
-  ctx.fillRect(iCx + 2, iCy + 2, 14, 8);
 
-  // عنوان «اطلاعیه رسمی»
+  // دستهٔ مگافون
+  ctx.fillRect(iCx - 20, iCy + 6, 18, 7);
+
+  // موج‌های صدا (سه خط)
+  ctx.strokeStyle = '#063d35';
+  ctx.lineWidth = 2.5;
+  ctx.lineCap = 'round';
+  [-10, 0, 10].forEach((dy, k) => {
+    ctx.beginPath();
+    ctx.moveTo(iCx + 16 + k * 5, iCy + dy);
+    ctx.lineTo(iCx + 26 + k * 5, iCy + dy);
+    ctx.stroke();
+  });
+
+  // عنوان «اطلاعیه + نام گروه»
+  const chName = (chEl.value || '').replace('@','').trim() || 'دیار قدمگاه';
+  const headerTitle = 'اطلاعیه ' + chName;
+  const maxTitleW = hw - 340;
+  const titleSize = fit(headerTitle, maxTitleW, 44, 900);
   ctx.fillStyle = '#f0c34f';
-  ctx.font = '900 42px Vazirmatn';
+  ctx.font = '900 ' + titleSize + 'px Vazirmatn';
   ctx.textAlign = 'right';
   ctx.textBaseline = 'middle';
-  ctx.fillText('اطلاعیه رسمی', iCx - 42, iCy);
-
-  // نام کانال (چپ)
-  const chName = (chEl.value || '').replace('@','').trim() || 'دیار قدمگاه';
-  ctx.fillStyle = '#fff';
-  ctx.font = '800 ' + fit(chName, 260, 26, 800) + 'px Vazirmatn';
-  ctx.textAlign = 'left';
-  ctx.fillText(chName, M + 100, iCy);
+  ctx.fillText(headerTitle, iCx - 50, iCy);
 
   // لوگو (چپ)
   if (typeof drawLogoBadge === 'function') {
-    drawLogoBadge(M + 55, iCy, 30, {
+    drawLogoBadge(M + 55, iCy, 32, {
       ringOuter: '#d4a437', ringInner: '#063d35', bg: '#fffdf8',
       placeholderColor: '#063d35', placeholderFont: 9
     });
@@ -301,8 +315,8 @@ function drawAnnouncement(i) {
 
 registerTemplate({
   id: 'announcement',
-  label: 'اطلاعیه رسمی 📢',
-  short: 'اطلاعیه',
+  label: 'اطلاعیه گروه 📢',
+  short: 'اطلاعیه گروه',
   group: 'عمومی',
   dims: { w: AW, h: AH },
   skipEventBadge: true,
