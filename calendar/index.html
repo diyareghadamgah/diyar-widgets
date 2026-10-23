@@ -56,6 +56,21 @@
 
         <label style="margin-top:10px">یادداشت / متن آزاد<textarea id="note" rows="5" maxlength="20000" placeholder="متن یادداشت (اختیاری). در قالب «یادداشت A4» و «اطلاعیه رسمی»، این متن در بدنهٔ اصلی و با فضای زیاد نمایش داده می‌شود..."></textarea></label>
         <div class="char-counter" id="noteCounter" aria-live="polite"></div>
+        <div class="subsec" style="margin-top:6px">
+          <div class="subsec-title">🔤 اندازه و فونت متن یادداشت</div>
+          <label class="mini-label">فونت متن
+            <select id="noteFontFamily">
+              <option value="Vazirmatn">وزیرمتن (پیش‌فرض)</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Arial">Arial</option>
+              <option value="system-ui">فونت سیستم</option>
+            </select>
+          </label>
+          <label class="mini-label">اندازه — <span id="noteFontSizeVal">۲۲</span>px
+            <input type="range" id="noteFontSize" min="14" max="40" step="1" value="22">
+          </label>
+          <div class="help" style="margin-top:4px">این تنظیم روی قالب‌های «یادداشت A4» و «اطلاعیه رسمی» اثر دارد.</div>
+        </div>
 
         <div class="subsec event-editor">
           <div class="subsec-title">📌 ثبت / اصلاح مناسبت روز</div>

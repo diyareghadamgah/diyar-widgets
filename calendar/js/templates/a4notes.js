@@ -9,11 +9,12 @@
 
 const A4W = 1240, A4H = 1754;
 const BODY_X = 80, BODY_TOP_P1 = 395, BODY_TOP_P2 = 220, BODY_BOTTOM = 1632;
-const FONT_SIZE = 22, LINE_HEIGHT = 34;
-const NOTE_FONT = '500 ' + FONT_SIZE + 'px Vazirmatn, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Noto Emoji", sans-serif';
+// v25d: FONT_SIZE و LINE_HEIGHT از getNoteStyle() خوانده می‌شوند (داینامیک).
 
 /* محاسبهٔ تمام صفحات (بدون رسم) — بر اساس متن یادداشت */
 function computeAllPages(i, noteText) {
+  const st = getNoteStyle();
+  const FONT_SIZE = st.size, LINE_HEIGHT = st.lineHeight, NOTE_FONT = st.fontString;
   const bodyW = A4W - 160;
   const textW = bodyW - 80;
   const events = (typeof getEvents === 'function') ? getEvents(i) : [];
@@ -167,6 +168,8 @@ function drawEventsOnPage1(i, startY) {
 }
 
 function drawA4Notes(i) {
+  const st = getNoteStyle();
+  const FONT_SIZE = st.size, LINE_HEIGHT = st.lineHeight, NOTE_FONT = st.fontString;
   const currentPage = Math.max(1, window.__a4PreviewPage || 1);
   const noteText = noteEl.value || '';
   const pages = computeAllPages(i, noteText);

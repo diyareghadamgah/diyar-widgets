@@ -352,3 +352,17 @@ function drawPhoneInline(x, y, opts) {
   ctx.restore();
   return totalW;
 }
+
+/* ==== v25d: تنظیمات اندازه و فونت متن یادداشت ==== */
+function getNoteStyle() {
+  const fsEl = document.getElementById('noteFontSize');
+  const ffEl = document.getElementById('noteFontFamily');
+  const size = fsEl ? (parseInt(fsEl.value, 10) || 22) : 22;
+  const family = ffEl ? ffEl.value : 'Vazirmatn';
+  return {
+    size: size,
+    lineHeight: Math.round(size * 1.55),
+    family: family,
+    fontString: '500 ' + size + 'px ' + family + ', "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Noto Emoji", sans-serif'
+  };
+}

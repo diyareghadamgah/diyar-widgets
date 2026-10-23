@@ -18,19 +18,20 @@ const FOOTER_H = 84;
 const PAD_X = 40;
 const PAD_Y = 30;
 const CONTENT_W = AW - M*2 - PAD_X*2 - 20;
-const LINE_H = 36;
-const FONT_SIZE = 22;
+// v25d: LINE_H و FONT_SIZE از getNoteStyle() داینامیک می‌شوند.
 const SIGN_H = 100;
 const NOTE_FONT = '500 ' + FONT_SIZE + 'px Vazirmatn, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Noto Emoji", sans-serif';
 
 function computeAllPages(text) {
+  const st = getNoteStyle();
+  const lineH = st.lineHeight, fontStr = st.fontString;
   const oldFont = ctx.font;
-  ctx.font = NOTE_FONT;
-  const lines = wrapText(String(text || ''), CONTENT_W, NOTE_FONT);
+  ctx.font = fontStr;
+  const lines = wrapText(String(text || ''), CONTENT_W, fontStr);
   ctx.font = oldFont;
 
-  const availP1 = Math.floor((BODY_BOTTOM - BODY_TOP - SIGN_H) / LINE_H);
-  const availMid = Math.floor((BODY_BOTTOM - BODY_TOP) / LINE_H);
+  const availP1 = Math.floor((BODY_BOTTOM - BODY_TOP - SIGN_H) / lineH);
+  const availMid = Math.floor((BODY_BOTTOM - BODY_TOP) / lineH);
 
   if (!lines.length) return [[]];
   if (lines.length <= availP1) return [lines];
@@ -153,6 +154,8 @@ function drawDateBar(i) {
 }
 
 function drawContentBox(lines, pageNum, totalPages) {
+  const st = getNoteStyle();
+  const LINE_H = st.lineHeight, NOTE_FONT = st.fontString;
   const bx = M + PAD_X - 10;
   const by = BODY_TOP;
   const bw = AW - M*2 - (PAD_X - 10) * 2;

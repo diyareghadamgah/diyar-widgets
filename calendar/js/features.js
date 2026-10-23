@@ -311,7 +311,7 @@ const SKEY='diyar-calendar-settings-v1';
 const COLOR_IDS=['frame','inner','panel','goldText','darkText','canvasBg'];
 const settingsMsg=$('settingsMsg');
 function collect(withEvents){
-  const _pl=document.getElementById('phoneLabel');const o={app:'diyar-calendar',v:1,template:templateMode,colors:{},channel:chEl.value,channelUrl:chUrlEl.value,phone:phEl.value,phoneLabel:_pl?_pl.value:'',
+  const _pl=document.getElementById('phoneLabel');const _nfs=document.getElementById('noteFontSize');const _nff=document.getElementById('noteFontFamily');const o={app:'diyar-calendar',v:1,template:templateMode,colors:{},channel:chEl.value,channelUrl:chUrlEl.value,phone:phEl.value,phoneLabel:_pl?_pl.value:'',noteFontSize:_nfs?parseInt(_nfs.value,10)||22:22,noteFontFamily:_nff?_nff.value:'Vazirmatn',
     showQR:showQREl.checked,note:noteEl.value,n:+nEl.value||7,scale:scaleValue(),off:+offEl.value||0,
     dhikr:DHIKR.map(v=>[v[0],v[1]]),dhikrSettings:dhikrSettings.map(x=>({arabicSize:x.arabicSize,translationSize:x.translationSize,titleSize:x.titleSize}))};
   COLOR_IDS.forEach(k=>o.colors[k]=S[k]);
@@ -334,6 +334,8 @@ function sanitize(o){
   if(o.note!==undefined){if(typeof o.note!=='string')throw new Error('مقدار «note» معتبر نیست.');c.note=o.note.length>20000?o.note.slice(0,20000):o.note;}
   if(o.phone!==undefined){if(!isStr(o.phone,24)||!/^[+\d\s()-]*$/.test(o.phone))throw new Error('شمارهٔ تماس معتبر نیست.');c.phone=o.phone;}
   if(o.phoneLabel!==undefined){if(!isStr(o.phoneLabel,60))throw new Error('عنوان شماره تماس معتبر نیست.');c.phoneLabel=o.phoneLabel;}
+  if(o.noteFontSize!==undefined){if(!isInt(o.noteFontSize,14,40))throw new Error('اندازه فونت یادداشت معتبر نیست.');c.noteFontSize=o.noteFontSize;}
+  if(o.noteFontFamily!==undefined){if(!isStr(o.noteFontFamily,40))throw new Error('فونت یادداشت معتبر نیست.');c.noteFontFamily=o.noteFontFamily;}
   if(o.showQR!==undefined){if(typeof o.showQR!=='boolean')throw new Error('گزینهٔ QR معتبر نیست.');c.showQR=o.showQR;}
   if(o.n!==undefined){if(!isInt(o.n,1,366))throw new Error('تعداد روز معتبر نیست.');c.n=o.n;}
   if(o.scale!==undefined){if(![1,2,3].includes(o.scale))throw new Error('مقیاس خروجی معتبر نیست.');c.scale=o.scale;}
@@ -365,6 +367,8 @@ function apply(c){
   if(c.channelUrl!==undefined){chUrlEl.value=c.channelUrl;chUrlEl.oninput();}
   if(c.phone!==undefined){phEl.value=c.phone;phEl.oninput();}
   if(c.phoneLabel!==undefined){const _pl=document.getElementById('phoneLabel');if(_pl)_pl.value=c.phoneLabel;}
+  if(c.noteFontSize!==undefined){const _nfs=document.getElementById('noteFontSize');if(_nfs)_nfs.value=c.noteFontSize;const _nfsv=document.getElementById('noteFontSizeVal');if(_nfsv)_nfsv.textContent=fa(c.noteFontSize);}
+  if(c.noteFontFamily!==undefined){const _nff=document.getElementById('noteFontFamily');if(_nff)_nff.value=c.noteFontFamily;}
   if(c.showQR!==undefined)showQREl.checked=c.showQR;
   if(c.note!==undefined)noteEl.value=c.note;
   if(c.n!==undefined)nEl.value=c.n;
@@ -415,6 +419,28 @@ $('resetSettings').onclick=()=>{
 /* ---------- دسترس‌پذیری ---------- */
 document.querySelectorAll('.color-row').forEach(r=>{const s=r.querySelector('span'),i=r.querySelector('input');if(s&&i&&!i.getAttribute('aria-label'))i.setAttribute('aria-label',s.textContent.trim());});
 document.querySelectorAll('.sidebar input[type=file]').forEach(i=>{if(!i.getAttribute('aria-label'))i.setAttribute('aria-label',(i.closest('label')&&i.closest('label').textContent||'انتخاب فایل').trim().slice(0,40));});
+
+// v25d: تغییر اندازه/فونت یادداشت
+(function(){
+  const nfs = document.getElementById('noteFontSize');
+  const nff = document.getElementById('noteFontFamily');
+  const nfsv = document.getElementById('noteFontSizeVal');
+  if (nfs) {
+    nfs.addEventListener('input', () => {
+      if (nfsv) nfsv.textContent = fa(nfs.value);
+      window.__a4PreviewPage = 1;
+      try { render(); } catch(_){}
+      try { persistSoon(); } catch(_){}
+    });
+  }
+  if (nff) {
+    nff.addEventListener('change', () => {
+      window.__a4PreviewPage = 1;
+      try { render(); } catch(_){}
+      try { persistSoon(); } catch(_){}
+    });
+  }
+})();
 
 updateUrlHint();
 render();

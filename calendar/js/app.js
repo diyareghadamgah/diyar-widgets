@@ -334,7 +334,9 @@ cv.addEventListener('pointerdown',e=>{
     pinchStart={distance:Math.hypot(dx,dy),midX,midY,zoom:photoZoom,x:photoX,y:photoY};
     moved=true;pointerDown=null;cv.style.cursor='grabbing';
   }
-  e.preventDefault();
+  if (isPhoto || activePointers.size >= 2) {
+    e.preventDefault();
+  }
 },{passive:false});
 
 window.addEventListener('pointermove',e=>{
@@ -458,24 +460,41 @@ noteEl.oninput=()=>{
 const blobUrls={logo:null,photo:null};
 (function restoreOffset(){let saved=null;try{saved=localStorage.getItem('calendar-lunar-offset');}catch(_){}if(saved!==null&&/^-?\d+$/.test(saved))offEl.value=Math.max(-2,Math.min(2,+saved));})();
 function fileInput(inputId,which,previewId){
-  document.getElementById(inputId).onchange=e=>{
-    const f=e.target.files&&e.target.files[0];if(!f)return;
-    const fail=m=>{e.target.value='';(window.__say?window.__say(m,'err',8000):alert(m));};
-    if(!/^image\/(png|jpe?g|webp|gif|bmp|avif)$/i.test(f.type)){fail('فقط فایل تصویر (PNG، JPG، WebP، GIF) پذیرفته می‌شود.');return;}
-    if(f.size>15*1024*1024){fail('حجم تصویر بیش از ۱۵ مگابایت است؛ لطفاً تصویر کوچک‌تری انتخاب کنید.');return;}
-    if(blobUrls[which])URL.revokeObjectURL(blobUrls[which]);
-    const url=URL.createObjectURL(f);blobUrls[which]=url;
-    const im=new Image();
-    im.onload=()=>{
-      if(which==='photo'&&(im.naturalWidth<400||im.naturalHeight<400)&&window.__say)window.__say('هشدار: وضوح تصویر پایین است ('+fa(im.naturalWidth)+'×'+fa(im.naturalHeight)+') و در خروجی ممکن است تار دیده شود.','warn',9000);
-      if(which==='logo')logo=im;
-      else{photo=im;photoZoom=1;photoX=0;photoY=0;updatePhotoUI();}
-      const box=document.getElementById(previewId);
-      box.hidden=false;box.querySelector('img').src=url;
-      requestAnimationFrame(render);
+  const inp = document.getElementById(inputId);
+  if (!inp) return;
+  inp.onchange = e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) { e.target.value = ''; return; }
+    const fail = m => { e.target.value = ''; (window.__say ? window.__say(m,'err',8000) : alert(m)); };
+    const mimeOk = !f.type || /^image\//i.test(f.type);
+    const extOk = /\.(png|jpe?g|webp|gif|bmp|avif|heic|heif|svg)$/i.test(f.name || '');
+    if (!mimeOk && !extOk) { fail('فقط فایل تصویر (PNG، JPG، WebP، GIF، HEIC) پذیرفته می‌شود.'); return; }
+    if (f.size > 20 * 1024 * 1024) { fail('حجم تصویر بیش از ۲۰ مگابایت است.'); return; }
+    if (blobUrls[which]) { try { URL.revokeObjectURL(blobUrls[which]); } catch(_) {} blobUrls[which] = null; }
+    const url = URL.createObjectURL(f);
+    blobUrls[which] = url;
+    const im = new Image();
+    im.onload = () => {
+      try {
+        if (which === 'photo' && (im.naturalWidth < 400 || im.naturalHeight < 400) && window.__say) {
+          window.__say('هشدار: وضوح تصویر پایین است (' + fa(im.naturalWidth) + '×' + fa(im.naturalHeight) + ').','warn',9000);
+        }
+        if (which === 'logo') logo = im;
+        else { photo = im; photoZoom = 1; photoX = 0; photoY = 0; updatePhotoUI(); }
+        const box = document.getElementById(previewId);
+        if (box) { box.hidden = false; const img = box.querySelector('img'); if (img) img.src = url; }
+        try { render(); } catch(_) {}
+        setTimeout(() => { try { render(); } catch(_) {} }, 120);
+        e.target.value = '';
+      } catch (err) { console.error(err); fail('بارگذاری تصویر انجام نشد.'); }
     };
-    im.onerror=()=>{URL.revokeObjectURL(url);blobUrls[which]=null;e.target.value='';const m='بارگذاری تصویر انجام نشد؛ فایل خراب یا پشتیبانی‌نشده است.';(window.__say?window.__say(m,'err',8000):alert(m));};
-    im.src=url;
+    im.onerror = () => {
+      try { URL.revokeObjectURL(url); } catch(_) {}
+      blobUrls[which] = null;
+      e.target.value = '';
+      fail('بارگذاری تصویر انجام نشد؛ فایل خراب یا پشتیبانی‌نشده است.');
+    };
+    im.src = url;
   };
 }
 fileInput('logo','logo','logoPreview');
