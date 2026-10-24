@@ -20,7 +20,6 @@ const PAD_Y = 30;
 const CONTENT_W = AW - M*2 - PAD_X*2 - 20;
 // v25d: LINE_H و FONT_SIZE از getNoteStyle() داینامیک می‌شوند.
 const SIGN_H = 100;
-const NOTE_FONT = '500 ' + FONT_SIZE + 'px Vazirmatn, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Noto Emoji", sans-serif';
 
 function computeAllPages(text) {
   const st = getNoteStyle();
