@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>عیب‌یابی</title></head>
+<body style="font-family:monospace;padding:12px;background:#111;color:#0f0;font-size:13px;line-height:1.6">
+<h2 style="color:#ff0">عیب‌یابی قالب‌ها</h2>
+<div id="out">در حال بارگذاری...</div>
+<script>
+const log = [];
+function add(msg) { log.push(msg); document.getElementById('out').innerHTML = '<pre style="white-space:pre-wrap;direction:ltr;text-align:left">' + log.join('\n') + '</pre>'; }
+window.addEventListener('error', e => {
+  add('✗ ERROR: ' + e.message + ' @ ' + (e.filename||'').split('/').pop() + ':' + e.lineno);
+});
+</script>
+<script src="js/registry.js"></script>
+<script src="js/hijri.js"></script>
+<script src="js/shared.js"></script>
+<script src="js/themed.js"></script>
+<script src="js/events.js"></script>
+<script>add('libs: TEMPLATE_LIST=' + (window.TEMPLATE_LIST ? TEMPLATE_LIST.length : 'undef') + ' | registerTemplate=' + (typeof registerTemplate) + ' | drawPhoneInline=' + (typeof drawPhoneInline) + ' | getNoteStyle=' + (typeof getNoteStyle));</script>
+
+<script src="js/templates/royal.js"></script>
+<script>add('royal: ' + (window.TEMPLATES && TEMPLATES.royal ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/nightsky.js"></script>
+<script>add('nightsky: ' + (window.TEMPLATES && TEMPLATES.nightsky ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/turquoise.js"></script>
+<script>add('turquoise: ' + (window.TEMPLATES && TEMPLATES.turquoise ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/rosegold.js"></script>
+<script>add('rosegold: ' + (window.TEMPLATES && TEMPLATES.rosegold ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/classic.js"></script>
+<script>add('classic: ' + (window.TEMPLATES && TEMPLATES.classic ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/light.js"></script>
+<script>add('light: ' + (window.TEMPLATES && TEMPLATES.light ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/blackgold.js"></script>
+<script>add('blackgold: ' + (window.TEMPLATES && TEMPLATES.blackgold ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/ribbon.js"></script>
+<script>add('ribbon: ' + (window.TEMPLATES && TEMPLATES.ribbon ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/dailyoccasion.js"></script>
+<script>add('dailyoccasion: ' + (window.TEMPLATES && TEMPLATES.dailyoccasion ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/a4notes.js"></script>
+<script>add('a4notes: ' + (window.TEMPLATES && TEMPLATES.a4notes ? '✓ OK' : '✗ FAILED'));</script>
+<script src="js/templates/announcement.js"></script>
+<script>add('announcement: ' + (window.TEMPLATES && TEMPLATES.announcement ? '✓ OK' : '✗ FAILED'));</script>
+
+<script>
+add('');
+add('=== نتیجه نهایی ===');
+add('ثبت‌شده: ' + (window.TEMPLATES ? Object.keys(TEMPLATES).length : 0) + ' قالب');
+add('لیست: ' + (window.TEMPLATES ? Object.keys(TEMPLATES).join(', ') : '—'));
+</script>
+</body>
+</html>
