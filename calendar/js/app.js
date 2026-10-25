@@ -527,3 +527,17 @@ const blobOf=(type,q)=>new Promise(res=>cv.toBlob(res,type||'image/png',q));
   applyCanvasDimensions();
   render();
 })();
+
+
+/* ==== v34: بارگذاری لوگوی پیش‌فرض ==== */
+(function loadDefaultLogo() {
+  const dl = new Image();
+  dl.onload = () => {
+    if (!logo) {
+      logo = dl;
+      if (typeof render === 'function') { try { render(); } catch(e) {} }
+    }
+  };
+  dl.onerror = () => console.warn('Default logo failed to load: assets/logo.png');
+  dl.src = 'assets/logo.png';
+})();
