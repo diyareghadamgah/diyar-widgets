@@ -52,53 +52,36 @@ function computeAllPages(text) {
 function drawHeaderBar(i) {
   const hy = M, hh = HEADER_BAR_H, hw = AW - M*2;
   const g = ctx.createLinearGradient(M, hy, M + hw, hy + hh);
-  g.addColorStop(0, '#04231c');
-  g.addColorStop(0.5, '#063d35');
-  g.addColorStop(1, '#04231c');
-  ctx.fillStyle = g;
-  rr(M, hy, hw, hh, 18);
-  ctx.fill();
-  ctx.strokeStyle = '#d4a437';
-  ctx.lineWidth = 2.5;
-  rr(M + 6, hy + 6, hw - 12, hh - 12, 14);
-  ctx.stroke();
+  g.addColorStop(0, '#04231c'); g.addColorStop(0.5, '#063d35'); g.addColorStop(1, '#04231c');
+  ctx.fillStyle = g; rr(M, hy, hw, hh, 18); ctx.fill();
+  ctx.strokeStyle = '#d4a437'; ctx.lineWidth = 2.5; rr(M + 6, hy + 6, hw - 12, hh - 12, 14); ctx.stroke();
 
-  // آیکون بلندگو
   const iCx = AW - M - 60;
   const iCy = hy + hh / 2;
   const iRadius = 38;
 
-  // دایره طلایی پس‌زمینه
   ctx.fillStyle = '#d4a437';
   ctx.beginPath(); ctx.arc(iCx, iCy, iRadius + 3, 0, Math.PI * 2); ctx.fill();
 
-  // رسم عکس داخل دایره (ایمن‌سازی شده)
   ctx.save();
-  try {
-    ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
-    if (typeof _megaphoneImg !== 'undefined' && _megaphoneReady && _megaphoneImg.naturalWidth > 0) {
-      const iw = _megaphoneImg.naturalWidth;
-      const ih = _megaphoneImg.naturalHeight;
-      const side = Math.min(iw, ih);
-      const sx = (iw - side) / 2;
-      const sy = (ih - side) / 2;
-      ctx.drawImage(_megaphoneImg, sx, sy, side, side, iCx - iRadius - 5, iCy - iRadius - 5, iRadius * 2 + 10, iRadius * 2 + 10);
-    } else {
-      // اگر عکس لود نشده بود، بلندگوی ساده رسم شود
-      ctx.fillStyle = '#063d35';
-      ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();
-    }
-  } catch(e) {
-    console.error('Megaphone drawing error:', e);
-  } finally {
-    ctx.restore(); // این خط تضمین می‌کند کلیپ حتماً برداشته شود
+  ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
+  if (typeof _megaphoneImg !== 'undefined' && _megaphoneReady && _megaphoneImg.naturalWidth > 0) {
+    const iw = _megaphoneImg.naturalWidth;
+    const ih = _megaphoneImg.naturalHeight;
+    // رسم کامل عکس با حفظ نسبت (بدون برش)
+    const scale = Math.min((iRadius * 2) / iw, (iRadius * 2) / ih);
+    const w = iw * scale;
+    const h = ih * scale;
+    ctx.drawImage(_megaphoneImg, iCx - w/2, iCy - h/2, w, h);
+  } else {
+    ctx.fillStyle = '#063d35';
+    ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();
   }
+  ctx.restore();
 
-  // قاب سبز تیره بیرونی
   ctx.strokeStyle = '#063d35'; ctx.lineWidth = 2;
   ctx.beginPath(); ctx.arc(iCx, iCy, iRadius + 3, 0, Math.PI * 2); ctx.stroke();
 
-  // عنوان «اطلاعیه + نام گروه»
   const chName = (chEl.value || '').replace('@','').trim() || 'دیار قدمگاه';
   const headerTitle = 'اطلاعیه ' + chName;
   const titleSize = fit(headerTitle, hw - 360, 44, 900);
@@ -107,7 +90,6 @@ function drawHeaderBar(i) {
   ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
   ctx.fillText(headerTitle, iCx - 55, iCy);
 
-  // لوگو (چپ)
   if (typeof drawLogoBadge === 'function') {
     drawLogoBadge(M + 55, iCy, 32, { ringOuter: '#d4a437', ringInner: '#063d35', bg: '#fffdf8', placeholderColor: '#063d35', placeholderFont: 9 });
   }
