@@ -48,10 +48,7 @@ function computeAllPages(text) {
 }
 
 function drawHeaderBar(i) {
-  const hy = M;
-  const hh = HEADER_BAR_H;
-  const hw = AW - M*2;
-
+  const hy = M, hh = HEADER_BAR_H, hw = AW - M*2;
   const g = ctx.createLinearGradient(M, hy, M + hw, hy + hh);
   g.addColorStop(0, '#04231c');
   g.addColorStop(0.5, '#063d35');
@@ -59,63 +56,53 @@ function drawHeaderBar(i) {
   ctx.fillStyle = g;
   rr(M, hy, hw, hh, 18);
   ctx.fill();
-
   ctx.strokeStyle = '#d4a437';
   ctx.lineWidth = 2.5;
   rr(M + 6, hy + 6, hw - 12, hh - 12, 14);
   ctx.stroke();
 
-  // آیکون شیپور/مگافون (راست)
+  // آیکون بلندگو
   const iCx = AW - M - 60;
   const iCy = hy + hh / 2;
+  const iRadius = 38;
 
-  // دایره پس‌زمینهٔ طلایی
+  // دایره طلایی پس‌زمینه
   ctx.fillStyle = '#d4a437';
-  ctx.beginPath();
-  ctx.arc(iCx, iCy, 36, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.beginPath(); ctx.arc(iCx, iCy, iRadius + 3, 0, Math.PI * 2); ctx.fill();
 
-  // بدنهٔ مگافون
-  ctx.fillStyle = '#063d35';
-  ctx.beginPath();
-  ctx.moveTo(iCx - 18, iCy + 8);
-  ctx.lineTo(iCx - 18, iCy - 8);
-  ctx.lineTo(iCx + 8, iCy - 18);
-  ctx.lineTo(iCx + 8, iCy + 18);
-  ctx.closePath();
-  ctx.fill();
+  // رسم عکس داخل دایره
+  ctx.save();
+  ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
+  if (_megaphoneReady) {
+    const iw = _megaphoneImg.naturalWidth;
+    const ih = _megaphoneImg.naturalHeight;
+    const side = Math.min(iw, ih);
+    const sx = (iw - side) / 2;
+    const sy = (ih - side) / 2;
+    // بزرگنمایی کمی برای پر کردن بهتر دایره
+    ctx.drawImage(_megaphoneImg, sx, sy, side, side, iCx - iRadius - 5, iCy - iRadius - 5, iRadius * 2 + 10, iRadius * 2 + 10);
+  } else {
+    ctx.fillStyle = '#063d35';
+    ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();
+  }
+  ctx.restore();
 
-  // دستهٔ مگافون
-  ctx.fillRect(iCx - 20, iCy + 6, 18, 7);
-
-  // موج‌های صدا (سه خط)
-  ctx.strokeStyle = '#063d35';
-  ctx.lineWidth = 2.5;
-  ctx.lineCap = 'round';
-  [-10, 0, 10].forEach((dy, k) => {
-    ctx.beginPath();
-    ctx.moveTo(iCx + 16 + k * 5, iCy + dy);
-    ctx.lineTo(iCx + 26 + k * 5, iCy + dy);
-    ctx.stroke();
-  });
+  // قاب سبز تیره بیرونی
+  ctx.strokeStyle = '#063d35'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(iCx, iCy, iRadius + 3, 0, Math.PI * 2); ctx.stroke();
 
   // عنوان «اطلاعیه + نام گروه»
   const chName = (chEl.value || '').replace('@','').trim() || 'دیار قدمگاه';
   const headerTitle = 'اطلاعیه ' + chName;
-  const maxTitleW = hw - 340;
-  const titleSize = fit(headerTitle, maxTitleW, 44, 900);
+  const titleSize = fit(headerTitle, hw - 360, 44, 900);
   ctx.fillStyle = '#f0c34f';
   ctx.font = '900 ' + titleSize + 'px Vazirmatn';
-  ctx.textAlign = 'right';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(headerTitle, iCx - 50, iCy);
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  ctx.fillText(headerTitle, iCx - 55, iCy);
 
   // لوگو (چپ)
   if (typeof drawLogoBadge === 'function') {
-    drawLogoBadge(M + 55, iCy, 32, {
-      ringOuter: '#d4a437', ringInner: '#063d35', bg: '#fffdf8',
-      placeholderColor: '#063d35', placeholderFont: 9
-    });
+    drawLogoBadge(M + 55, iCy, 32, { ringOuter: '#d4a437', ringInner: '#063d35', bg: '#fffdf8', placeholderColor: '#063d35', placeholderFont: 9 });
   }
 }
 
