@@ -70,22 +70,27 @@ function drawHeaderBar(i) {
   ctx.fillStyle = '#d4a437';
   ctx.beginPath(); ctx.arc(iCx, iCy, iRadius + 3, 0, Math.PI * 2); ctx.fill();
 
-  // رسم عکس داخل دایره
+  // رسم عکس داخل دایره (ایمن‌سازی شده)
   ctx.save();
-  ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
-  if (_megaphoneReady) {
-    const iw = _megaphoneImg.naturalWidth;
-    const ih = _megaphoneImg.naturalHeight;
-    const side = Math.min(iw, ih);
-    const sx = (iw - side) / 2;
-    const sy = (ih - side) / 2;
-    // بزرگنمایی کمی برای پر کردن بهتر دایره
-    ctx.drawImage(_megaphoneImg, sx, sy, side, side, iCx - iRadius - 5, iCy - iRadius - 5, iRadius * 2 + 10, iRadius * 2 + 10);
-  } else {
-    ctx.fillStyle = '#063d35';
-    ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();
+  try {
+    ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
+    if (typeof _megaphoneImg !== 'undefined' && _megaphoneReady && _megaphoneImg.naturalWidth > 0) {
+      const iw = _megaphoneImg.naturalWidth;
+      const ih = _megaphoneImg.naturalHeight;
+      const side = Math.min(iw, ih);
+      const sx = (iw - side) / 2;
+      const sy = (ih - side) / 2;
+      ctx.drawImage(_megaphoneImg, sx, sy, side, side, iCx - iRadius - 5, iCy - iRadius - 5, iRadius * 2 + 10, iRadius * 2 + 10);
+    } else {
+      // اگر عکس لود نشده بود، بلندگوی ساده رسم شود
+      ctx.fillStyle = '#063d35';
+      ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();
+    }
+  } catch(e) {
+    console.error('Megaphone drawing error:', e);
+  } finally {
+    ctx.restore(); // این خط تضمین می‌کند کلیپ حتماً برداشته شود
   }
-  ctx.restore();
 
   // قاب سبز تیره بیرونی
   ctx.strokeStyle = '#063d35'; ctx.lineWidth = 2;
