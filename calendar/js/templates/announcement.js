@@ -29,10 +29,12 @@ function computeAllPages(text) {
   const lines = wrapText(String(text || ''), CONTENT_W, fontStr);
   ctx.font = oldFont;
 
+  // اگر متن کاملاً خالی بود، یک صفحه کاملاً خالی برگردان
+  if (!lines.length || lines.every(l => !l.trim())) return [[]];
+
   const availP1 = Math.floor((BODY_BOTTOM - BODY_TOP - SIGN_H) / lineH);
   const availMid = Math.floor((BODY_BOTTOM - BODY_TOP) / lineH);
 
-  if (!lines.length) return [[]];
   if (lines.length <= availP1) return [lines];
 
   const pages = [];
@@ -161,46 +163,45 @@ function drawDateBar(i) {
 function drawContentBox(lines, pageNum, totalPages) {
   const st = getNoteStyle();
   const LINE_H = st.lineHeight, NOTE_FONT = st.fontString;
-  const bx = M + PAD_X - 10;
-  const by = BODY_TOP;
-  const bw = AW - M*2 - (PAD_X - 10) * 2;
-  const bh = BODY_BOTTOM - BODY_TOP;
+  const bx = M + PAD_X - 10, by = BODY_TOP;
+  const bw = AW - M*2 - (PAD_X - 10)*2, bh = BODY_BOTTOM - BODY_TOP;
 
-  ctx.fillStyle = '#fffdf8';
-  rr(bx, by, bw, bh, 16);
-  ctx.fill();
+  ctx.fillStyle = '#fffdf8'; rr(bx, by, bw, bh, 16); ctx.fill();
+  ctx.strokeStyle = '#063d35'; ctx.lineWidth = 3; rr(bx, by, bw, bh, 16); ctx.stroke();
+  ctx.strokeStyle = '#d4a437'; ctx.lineWidth = 1.2;
+  rr(bx + 8, by + 8, bw - 16, bh - 16, 10); ctx.stroke();
 
-  ctx.strokeStyle = '#063d35';
-  ctx.lineWidth = 3;
-  rr(bx, by, bw, bh, 16);
-  ctx.stroke();
-
-  ctx.strokeStyle = '#d4a437';
-  ctx.lineWidth = 1.2;
-  rr(bx + 8, by + 8, bw - 16, bh - 16, 10);
-  ctx.stroke();
-
-  [[bx+15, by+15], [bx+bw-15, by+15], [bx+15, by+bh-15], [bx+bw-15, by+bh-15]].forEach(([cx, cy]) => {
-    ctx.fillStyle = '#d4a437';
-    ctx.beginPath();
-    ctx.arc(cx, cy, 4, 0, Math.PI * 2);
-    ctx.fill();
+  [[bx+15,by+15],[bx+bw-15,by+15],[bx+15,by+bh-15],[bx+bw-15,by+bh-15]].forEach(([cx, cy]) => {
+    ctx.fillStyle = '#d4a437'; ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI*2); ctx.fill();
   });
+
+  const hasText = lines.some(l => l && l.trim().length > 0);
+
+  // اگر هیچ متنی وجود ندارد، یک راهنمای زیبا چاپ کن
+  if (!hasText) {
+    ctx.fillStyle = '#a89878';
+    ctx.font = '500 22px Vazirmatn';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('متن اطلاعیه خود را در فیلد «یادداشت / متن آزاد» در منوی کنار بنویسید.', AW/2, BODY_TOP + 100);
+    return;
+  }
 
   ctx.fillStyle = '#10201c';
   ctx.textAlign = 'right';
   ctx.textBaseline = 'middle';
   ctx.font = NOTE_FONT;
 
-  const textX = bx + bw - 30;
-  const textTop = by + PAD_Y;
-
+  const textX = bx + bw - 30, textTop = by + PAD_Y;
   lines.forEach((line, k) => {
-    ctx.fillText(line, textX, textTop + k * LINE_H + LINE_H / 2);
+    if (line && line.trim()) {
+      ctx.fillText(line, textX, textTop + k*LINE_H + LINE_H/2);
+    }
   });
 
-  if (pageNum === totalPages && lines.length > 0) {
-    const signY = BODY_BOTTOM - SIGN_H / 2 - 10;
+  // امضا فقط در صفحه آخر و وقتی متنی هست رسم شود
+  if (pageNum === totalPages) {
+    const signY = BODY_BOTTOM - SIGN_H/2 - 10;
     ctx.strokeStyle = '#d4a437';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
