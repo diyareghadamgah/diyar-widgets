@@ -541,3 +541,19 @@ const blobOf=(type,q)=>new Promise(res=>cv.toBlob(res,type||'image/png',q));
   dl.onerror = () => console.warn('Default logo failed to load: assets/logo.png');
   dl.src = 'assets/logo.png';
 })();
+
+
+/* ==== v42: بارگذاری عکس بلندگو ==== */
+let megaphoneImg = null;
+let megaphoneReady = false;
+(function loadMegaphone() {
+  const m = new Image();
+  m.onload = () => {
+    megaphoneImg = m;
+    megaphoneReady = true;
+    console.log('[megaphone] loaded successfully');
+    try { if (typeof render === 'function') render(); } catch(_) {}
+  };
+  m.onerror = () => console.warn('[megaphone] failed to load assets/megaphone.png');
+  m.src = 'assets/megaphone.png';
+})();

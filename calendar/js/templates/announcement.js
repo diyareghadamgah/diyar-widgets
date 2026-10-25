@@ -65,14 +65,14 @@ function drawHeaderBar(i) {
 
   ctx.save();
   ctx.beginPath(); ctx.arc(iCx, iCy, iRadius, 0, Math.PI * 2); ctx.clip();
-  if (typeof _megaphoneImg !== 'undefined' && _megaphoneReady && _megaphoneImg.naturalWidth > 0) {
-    const iw = _megaphoneImg.naturalWidth;
-    const ih = _megaphoneImg.naturalHeight;
+  if (typeof megaphoneReady !== 'undefined' && megaphoneReady && megaphoneImg && megaphoneImg.naturalWidth > 0) {
+    const iw = megaphoneImg.naturalWidth;
+    const ih = megaphoneImg.naturalHeight;
     // رسم کامل عکس با حفظ نسبت (بدون برش)
     const scale = Math.min((iRadius * 2) / iw, (iRadius * 2) / ih);
     const w = iw * scale;
     const h = ih * scale;
-    ctx.drawImage(_megaphoneImg, iCx - w/2, iCy - h/2, w, h);
+    ctx.drawImage(megaphoneImg, iCx - w/2, iCy - h/2, w, h);
   } else {
     ctx.fillStyle = '#063d35';
     ctx.beginPath(); ctx.moveTo(iCx - 16, iCy + 6); ctx.lineTo(iCx - 16, iCy - 6); ctx.lineTo(iCx + 2, iCy - 16); ctx.lineTo(iCx + 2, iCy + 16); ctx.closePath(); ctx.fill();

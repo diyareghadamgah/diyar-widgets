@@ -1,5 +1,5 @@
 // نسخه را با هر تغییر مهم بالا ببرید تا کش قدیمی پاک شود
-const CACHE = 'diyar-calendar-v41';
+const CACHE = 'diyar-calendar-v42';
 const CORE = [
   './', './index.html', './manifest.json', './css/style.css',
   './js/registry.js', './js/hijri.js', './js/events.js', './js/vendor/jszip.min.js', './js/vendor/qrcode.js', './js/shared.js', './js/themed.js', './js/app.js', './js/accordion.js', './js/features.js',
@@ -10,7 +10,13 @@ const CORE = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE)
+      .then(c => Promise.allSettled(
+        CORE.map(url => c.add(url).catch(err => console.warn('Cache add failed:', url, err)))
+      ))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {
