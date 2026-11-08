@@ -7,7 +7,24 @@ const cfg=JSON.parse(fs.readFileSync(path.join(root,'capacitor.config.json'),'ut
 const pkg=cfg.appId,android=path.join(root,'android'),warn=[];
 if(!fs.existsSync(android)){console.error('پوشه‌ی android/ وجود ندارد. ابتدا: npx cap add android');process.exit(1)}
 const rd=p=>fs.readFileSync(p,'utf8'),wr=(p,t)=>fs.writeFileSync(p,t);
-/* ۱) جاوا */
+
+/* ۴) کپی آیکون دیار قدمگاه به پوشه‌های mipmap اندروید */
+const iconSrc = path.join(root, 'icon-512.png');
+const resDir = path.join(android, 'app/src/main/res');
+const densities = ['mipmap-mdpi', 'mipmap-hdpi', 'mipmap-xhdpi', 'mipmap-xxhdpi', 'mipmap-xxxhdpi'];
+if (fs.existsSync(iconSrc)) {
+  for (const d of densities) {
+    const dir = path.join(resDir, d);
+    if (fs.existsSync(dir)) {
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher.png'));
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_round.png'));
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_foreground.png'));
+      console.log('✓ آیکون کپی شد به ' + d);
+    }
+  }
+} else {
+  console.warn('⚠ فایل icon-512.png پیدا نشد؛ آیکون پیش‌فرض استفاده می‌شود');
+}/* ۱) جاوا */
 const jdir=path.join(android,'app/src/main/java',...pkg.split('.'));fs.mkdirSync(jdir,{recursive:true});
 const nat=path.join(root,'native/android');
 wr(path.join(jdir,'NaghmeStoragePlugin.java'),rd(path.join(nat,'NaghmeStoragePlugin.java')).replace(/^package [^;]+;/m,'package '+pkg+';'));
@@ -34,3 +51,24 @@ if(fs.existsSync(vp)){let v=rd(vp);
 else warn.push('variables.gradle پیدا نشد؛ minSdk/targetSdk را دستی تنظیم کنید');
 for(const w of warn)console.warn('⚠ '+w);
 console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android && ./gradlew assembleDebug');
+
+/* ۴) کپی آیکون دیار قدمگاه به پوشه‌های mipmap اندروید */
+const iconSrc = path.join(root, 'icon-512.png');
+const resDir = path.join(android, 'app/src/main/res');
+const densities = ['mipmap-mdpi', 'mipmap-hdpi', 'mipmap-xhdpi', 'mipmap-xxhdpi', 'mipmap-xxxhdpi'];
+if (fs.existsSync(iconSrc)) {
+  for (const d of densities) {
+    const dir = path.join(resDir, d);
+    if (fs.existsSync(dir)) {
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher.png'));
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_round.png'));
+      fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_foreground.png'));
+      console.log('✓ آیکون کپی شد به ' + d);
+    }
+  }
+} else {
+  console.warn('⚠ فایل icon-512.png پیدا نشد؛ آیکون پیش‌فرض استفاده می‌شود');
+}
+
+
+
