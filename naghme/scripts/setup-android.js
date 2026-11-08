@@ -14,16 +14,29 @@ if (!fs.existsSync(android)) {
 
 const rd = p => fs.readFileSync(p, 'utf8'), wr = (p, t) => fs.writeFileSync(p, t);
 
-/* ۱) جاوا */
+/* ۱) جاوا و MainActivity */
 const jdir = path.join(android, 'app/src/main/java', ...pkg.split('.'));
 fs.mkdirSync(jdir, { recursive: true });
 const nat = path.join(root, 'native/android');
 
 wr(path.join(jdir, 'NaghmeStoragePlugin.java'), rd(path.join(nat, 'NaghmeStoragePlugin.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';'));
-wr(path.join(jdir, 'MainActivity.java'), rd(path.join(nat, 'MainActivity.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';'));
-console.log('✓ پلاگین بومی و MainActivity در ' + path.relative(root, jdir));
 
-/* اگر قالب کاپاسیتور MainActivity را در بسته‌ای دیگر ساخته باشد، آن را حذف می‌کنیم تا دو MainActivity نداشته باشیم */
+// اصلاح MainActivity برای ثبت هر دو پلاگین (نغمه + انتخاب فایل)
+let mainActivityCode = rd(path.join(nat, 'MainActivity.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';');
+const nativePluginName = 'NaghmeStoragePlugin'; 
+const capawesomePluginName = 'FilePickerPlugin'; 
+
+// اضافه کردن ثبت پلاگین‌ها در onCreate (اگر وجود ندارد)
+if (!mainActivityCode.includes(capawesomePluginName)) {
+  mainActivityCode = mainActivityCode.replace(
+    'super.onCreate(savedInstanceState);',
+    `super.onCreate(savedInstanceState);\n        registerPlugin(${nativePluginName}.class);\n        registerPlugin(com.capawesome.capacitorjs.plugins.filepicker.FilePickerPlugin.class);`
+  );
+}
+wr(path.join(jdir, 'MainActivity.java'), mainActivityCode);
+console.log('✓ پلاگین بومی، MainActivity و FilePicker در ' + path.relative(root, jdir));
+
+// حذف MainActivity اضافی
 const base = path.join(android, 'app/src/main/java');
 (function walk(d) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
@@ -60,7 +73,7 @@ if (!/android:largeHeap=/.test(m)) {
   else warn.push('تگ application پیدا نشد (largeHeap اعمال نشد)');
 }
 wr(mp, m);
-console.log('✓ مجوزهای مانیفست (INTERNET، READ_EXTERNAL_STORAGE≤۳۲، READ_MEDIA_AUDIO) + largeHeap');
+console.log('✓ مجوزهای مانیفست + largeHeap');
 
 /* ۳) Gradle */
 const vp = path.join(android, 'variables.gradle');
@@ -78,16 +91,15 @@ if (fs.existsSync(vp)) {
   setv('targetSdkVersion', 34, false);
   setv('compileSdkVersion', 34, true);
   wr(vp, v);
-  console.log('✓ variables.gradle: minSdk=23، targetSdk=34، compileSdk≥34');
+  console.log('✓ variables.gradle تنظیم شد');
 } else {
-  warn.push('variables.gradle پیدا نشد؛ minSdk/targetSdk را دستی تنظیم کنید');
+  warn.push('variables.gradle پیدا نشد');
 }
 
-/* ۴) کپی آیکون دیار قدمگاه به پوشه‌های mipmap اندروید */
+/* ۴) کپی آیکون */
 const iconSrc = path.join(root, 'icon-512.png');
 const resDir = path.join(android, 'app/src/main/res');
 const densities = ['mipmap-mdpi', 'mipmap-hdpi', 'mipmap-xhdpi', 'mipmap-xxhdpi', 'mipmap-xxxhdpi'];
-
 if (fs.existsSync(iconSrc)) {
   for (const d of densities) {
     const dir = path.join(resDir, d);
@@ -95,12 +107,12 @@ if (fs.existsSync(iconSrc)) {
       fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher.png'));
       fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_round.png'));
       fs.copyFileSync(iconSrc, path.join(dir, 'ic_launcher_foreground.png'));
-      console.log('✓ آیکون کپی شد به ' + d);
     }
   }
+  console.log('✓ آیکون کپی شد');
 } else {
-  warn.push('فایل icon-512.png پیدا نشد؛ آیکون پیش‌فرض استفاده می‌شود');
+  warn.push('فایل icon-512.png پیدا نشد');
 }
 
 for (const w of warn) console.warn('⚠ ' + w);
-console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android && ./gradlew assembleDebug');
+console.log('انجام شد.');
