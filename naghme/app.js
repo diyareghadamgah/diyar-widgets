@@ -1,21 +1,22 @@
 'use strict';
-const $=s=>document.querySelector(s),au=$('#au');
+const $=s=>document.querySelector(s);let au=$('#au');   // عنصر فعال پخش (محلی یا لینک آنلاین)
 const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=s=>{s=Math.max(0,s|0);return fa(Math.floor(s/60)+':'+String(s%60).padStart(2,'0'))};
 const MB=b=>fa((b/1048576).toFixed(b>1e9?0:1))+' مگابایت';
 const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2600)};
 /* ---------- IndexedDB ---------- */
-const db=new Promise((res,rej)=>{const r=indexedDB.open('naghme',2);r.onupgradeneeded=()=>{const d=r.result;for(const n of ['songs','covers'])if(!d.objectStoreNames.contains(n))d.createObjectStore(n,{keyPath:'id'});if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv')};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);r.onblocked=()=>rej(new Error('blocked'))});
+const db=new Promise((res,rej)=>{const r=indexedDB.open('naghme',3);r.onupgradeneeded=()=>{const d=r.result;for(const n of ['songs','covers','files'])if(!d.objectStoreNames.contains(n))d.createObjectStore(n,{keyPath:'id'});if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv')};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);r.onblocked=()=>rej(new Error('blocked'))});
 const tx=async(st,m,f)=>{const d=await db;return new Promise((res,rej)=>{const t=d.transaction(st,m);let q;try{q=f(t.objectStore(st))}catch(e){t.abort();return rej(e)}t.oncomplete=()=>res(q&&q.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error||new Error('abort'))})};
 const kvGet=k=>tx('kv','readonly',s=>s.get(k)),kvSet=(k,v)=>tx('kv','readwrite',s=>s.put(v,k)).catch(e=>console.warn('kvSet',k,e));
 const putMany=a=>tx('songs','readwrite',s=>{a.forEach(x=>s.put(x))}),delSong=id=>tx('songs','readwrite',s=>s.delete(id)),putCovers=a=>tx('covers','readwrite',s=>{a.forEach(x=>s.put(x))});
 const replaceSongs=a=>tx('songs','readwrite',s=>{s.clear();a.forEach(x=>s.put(x))});
 const delCovers=ids=>tx('covers','readwrite',s=>{ids.forEach(i=>s.delete(i))});
+const putFile=o=>tx('files','readwrite',s=>s.put(o)),delFile=id=>tx('files','readwrite',s=>s.delete(id)),getStored=id=>tx('files','readonly',s=>s.get(id)),storedIds=()=>tx('files','readonly',s=>s.getAllKeys()),clearFiles=()=>tx('files','readwrite',s=>s.clear());
 
 /* ---------- State ---------- */
 const DEF_PATS='حلیه,حلیة,المتقین,halyat,quran,قرآن,voice,recorder,recording,ضبط,پیام صوتی,PTT';
-const S={songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],imgs:{},hist:[],listen:0,q:[],qi:-1,shuffle:false,rep:0,view:{t:'home'},filter:'all',sort:'title',lim:100,dups:new Set(),eq:{on:true,p:'Normal',g:[0,0,0,0,0],pre:1,bal:0},cfg:{conc:3,skip:true,pats:DEF_PATS,min:0},scan:null,counted:false,pos:null,resume:null,loadedId:null};
+const S={songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],imgs:{},hist:[],listen:0,q:[],qi:-1,shuffle:false,rep:0,view:{t:'home'},filter:'all',sort:'title',lim:100,dups:new Set(),eq:{on:true,p:'Normal',g:[0,0,0,0,0],pre:1,bal:0},cfg:{conc:3,skip:true,pats:DEF_PATS,min:0,copy:true},scan:null,counted:false,pos:null,resume:null,loadedId:null,tok:0,cache:new Map()};
 const ctx={main:[],pop:[]};
 const reidx=()=>S.map=new Map(S.songs.map(s=>[s.id,s]));
 const cu=new Map();
@@ -29,7 +30,7 @@ const anyCov=a=>a.find(s=>s.cid&&S.covers.has(s.cid))||a[0];
 const hash53=u=>{let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<u.length;i++){const c=u[i];h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return (4294967296*(2097151&h2)+(h1>>>0)).toString(36)};
 const coverId=async b=>b.size.toString(36)+'-'+hash53(new Uint8Array(await b.arrayBuffer()));   // کاورهای یکسان فقط یک‌بار ذخیره می‌شوند
 async function thumb(b){try{if(!window.createImageBitmap)return b.size<6e5?b:null;const bm=await createImageBitmap(b);const w=Math.min(300,bm.width),h=Math.max(1,Math.round(bm.height*w/bm.width));const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#1c1c1c';x.fillRect(0,0,w,h);x.drawImage(bm,0,0,w,h);bm.close&&bm.close();return await new Promise(r=>c.toBlob(r,'image/jpeg',.85))}catch{return null}}
-const probe=f=>new Promise(r=>{const a=new Audio(),u=URL.createObjectURL(f);const done=v=>{clearTimeout(tm);a.onloadedmetadata=a.onerror=null;a.removeAttribute('src');a.load();URL.revokeObjectURL(u);r(v)};const tm=setTimeout(()=>done(null),8000);a.preload='metadata';a.onloadedmetadata=()=>done(isFinite(a.duration)?a.duration:0);a.onerror=()=>done(null);a.src=u});
+const probe=(f,ms=8000)=>new Promise(r=>{const isU=typeof f==='string',a=new Audio(),u=isU?f:URL.createObjectURL(f);const done=v=>{clearTimeout(tm);a.onloadedmetadata=a.onerror=null;a.removeAttribute('src');a.load();if(!isU)URL.revokeObjectURL(u);r(v)};const tm=setTimeout(()=>done(null),isU?12000:ms);a.preload='metadata';a.onloadedmetadata=()=>done(isFinite(a.duration)?a.duration:0);a.onerror=()=>done(null);a.src=u});
 /* ---------- Scan ---------- */
 const EXT=/\.(mp3|m4a|aac|flac|ogg|opus|wav|wma)$/i;
 const pats=()=>S.cfg.skip?S.cfg.pats.split(/[,،\n]/).map(x=>x.trim().toLowerCase()).filter(Boolean):[];
@@ -37,27 +38,30 @@ function prepare(list){const P=pats(),q=[];let skipped=0,noext=0;
  for(const f of list){if(!EXT.test(f.name)){noext++;continue}const p=(f.webkitRelativePath||f.name).toLowerCase();if(P.some(x=>p.includes(x))){skipped++;continue}q.push(f)}
  const roots=new Set([...list].map(f=>(f.webkitRelativePath||'').split('/')[0]).filter(Boolean));
  return {q,skipped,noext,root:[...roots].join('، ')}}
-function start(list){list=[...list];if(!list.length)return;
+async function start(list){list=[...list];if(!list.length)return;
  if(S.scan&&S.scan.running)return toast('اسکن در حال اجراست');
  const sig=list.length+'|'+list.slice(0,20).map(f=>f.name+f.size).join('|'),now=Date.now();if(S.lastSig===sig&&now-S.lastSigT<1500)return;S.lastSig=sig;S.lastSigT=now;   // جلوگیری از اجرای دوباره‌ی یک انتخاب
  const p=prepare(list);if(!p.q.length)return toast('فایل صوتی پشتیبانی‌شده‌ای پیدا نشد'+(p.skipped?' ('+fa(p.skipped)+' فایل با فیلتر محافظ رد شد)':''));
- const dl=/^(download|downloads|دانلود|دانلودها)$/i.test(p.root.trim());
- sheet('تأیید افزودن به کتابخانه',[['افزودن '+fa(p.q.length)+' فایل',()=>runScan(p)],['لغو',()=>{}]],
-  `پوشه: ${p.root||'فایل‌های انتخاب‌شده'}\nفایل صوتی: ${fa(p.q.length)}\nردشده با فیلتر محافظ (قرآن/ضبط/گفتاری): ${fa(p.skipped)}\nفایل غیرصوتی: ${fa(p.noext)}`+(dl?'\n\n⚠ این پوشه‌ی دانلود است و ممکن است فایل غیرموسیقی داشته باشد.':'')+'\nهیچ فایلی تغییر نمی‌کند.')}
-const scanStats=s=>`جدید: ${fa(s.ok)} • خراب: ${fa(s.bad)} • قبلاً در کتابخانه: ${fa(s.dup)} • ردشده: ${fa(s.skip+s.short)} • خطا: ${fa(s.err)}`;
-async function runScan(p,resume){
- if(!resume)S.scan={q:p.q,i:0,n:0,ok:0,bad:0,dup:0,skip:p.skipped,short:0,err:0,t:p.q.length};
+ const dl=/^(download|downloads|دانلود|دانلودها)$/i.test(p.root.trim());const tot=p.q.reduce((a,f)=>a+f.size,0);let free=null;try{const e=await navigator.storage.estimate();free=e.quota-e.usage}catch{}
+ const warn=free!==null&&tot>free*0.9?'\n⚠ فضای خالی مرورگر ('+MB(free)+') ممکن است برای کپی کافی نباشد؛ در این صورت «بدون کپی» را بزنید.':'';
+ const A=[['افزودن و کپی داخل برنامه (دیگر نیازی به انتخاب دوباره نیست؛ حدود '+MB(tot)+' فضا)',()=>runScan(p,false,true)],['افزودن بدون کپی (کم‌حجم؛ بعد از بستن مرورگر باید دوباره انتخاب کنید)',()=>runScan(p,false,false)],['لغو',()=>{}]];
+ if(!S.cfg.copy)A.unshift(A.splice(1,1)[0]);
+ sheet('تأیید افزودن به کتابخانه',A,`پوشه: ${p.root||'فایل‌های انتخاب‌شده'}\nفایل صوتی: ${fa(p.q.length)} — حجم: ${MB(tot)}\nردشده با فیلتر محافظ (قرآن/ضبط/گفتاری): ${fa(p.skipped)}\nفایل غیرصوتی: ${fa(p.noext)}`+(dl?'\n\n⚠ این پوشه‌ی دانلود است و ممکن است فایل غیرموسیقی داشته باشد.':'')+warn+'\nفایل‌های اصلی هرگز تغییر نمی‌کنند.')}
+const scanStats=s=>`جدید: ${fa(s.ok)} • خراب: ${fa(s.bad)} • قبلاً در کتابخانه: ${fa(s.dup)} • ردشده: ${fa(s.skip+s.short)} • خطا: ${fa(s.err)}${s.copy?' • کپی‌شده: '+fa(s.copied):''}`;
+async function runScan(p,resume,copy){
+ if(!resume)S.scan={q:p.q,i:0,n:0,ok:0,bad:0,dup:0,skip:p.skipped,short:0,err:0,copied:0,copy:!!copy,t:p.q.length};
  const sc=S.scan;sc.running=true;sc.stop=false;sc.quota=sc.mem=false;S.view={t:'scan'};render();
  try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch{}
  let buf=[],cbuf=[],last=0;
  const flush=async()=>{const b=buf,c=cbuf;buf=[];cbuf=[];if(c.length)await putCovers(c);if(b.length)await putMany(b)};
  const upd=(force)=>{const n=Date.now();if(!force&&n-last<150)return;last=n;const e=$('#sp');if(!e)return;e.value=sc.n;$('#sn').textContent=fa(Math.floor(sc.n/sc.t*100))+'٪ — '+fa(sc.n)+' از '+fa(sc.t);$('#sc').textContent=scanStats(sc)};
  const one=async f=>{const path=f.webkitRelativePath||f.name,id=path+'|'+f.size;S.files.set(id,f);
-  if(S.map.has(id)){sc.dup++;return}
+  if(S.map.has(id)){const o=S.map.get(id);if(sc.copy&&!o.stored){await putFile({id,blob:f});o.stored=true;await putMany([o]);sc.copied++}sc.dup++;return}
   const parts=path.split('/'),dir=parts.slice(0,-1),tg=await window.NaghmeTags.readTags(f),dur=await probe(f);
   if(dur!==null&&dur>0&&dur<S.cfg.min){sc.short++;return}
+  if(sc.copy&&dur!==null){await putFile({id,blob:f});sc.copied++}                      // کپی داخل برنامه (IndexedDB)
   let cid='';if(tg.cover){const th=await thumb(tg.cover);if(th){cid=await coverId(th);if(!S.covers.has(cid)){S.covers.set(cid,th);cbuf.push({id:cid,blob:th})}}}
-  const s={id,name:f.name,path,dir:dir.join('/'),size:f.size,fmt:f.name.split('.').pop().toLowerCase(),title:tg.title||f.name.replace(/\.[^.]+$/,''),artist:tg.artist||dir[dir.length-1]||'نامشخص',album:tg.album||'',year:tg.year||'',track:tg.track||0,genre:tg.genre||'',composer:tg.composer||'',lyricist:tg.lyricist||'',cid,tagged:!!(tg.title||tg.artist),dur:dur||0,bad:dur===null,added:Date.now(),fav:false,plays:0,last:0};
+  const s={id,name:f.name,path,dir:dir.join('/'),size:f.size,fmt:f.name.split('.').pop().toLowerCase(),title:tg.title||f.name.replace(/\.[^.]+$/,''),artist:tg.artist||dir[dir.length-1]||'نامشخص',album:tg.album||'',year:tg.year||'',track:tg.track||0,genre:tg.genre||'',composer:tg.composer||'',lyricist:tg.lyricist||'',cid,tagged:!!(tg.title||tg.artist),dur:dur||0,bad:dur===null,added:Date.now(),fav:false,plays:0,last:0,stored:!!(sc.copy&&dur!==null)};
   S.songs.push(s);S.map.set(id,s);buf.push(s);dur===null?sc.bad++:sc.ok++;if(buf.length>=25)await flush()};
  const work=async()=>{while(sc.i<sc.q.length&&!sc.stop){const f=sc.q[sc.i++];
   try{await one(f)}catch(e){sc.err++;if(e&&e.name==='QuotaExceededError'){sc.stop=true;sc.quota=true}else if(e instanceof RangeError){sc.stop=true;sc.mem=true}}   // خطای یک فایل اسکن بقیه را متوقف نمی‌کند
@@ -71,18 +75,28 @@ async function runScan(p,resume){
  else render()}
 /* ---------- Audio / EQ ---------- */
 const BANDS=[60,230,910,3600,14000],PRE={Normal:[0,0,0,0,0],Pop:[-1,2,4,2,-1],Rock:[4,2,-1,3,4],Classical:[4,3,-2,3,4],Jazz:[3,2,-2,2,4],Vocal:[-2,0,4,3,0],'Bass Boost':[7,5,1,0,0],Acoustic:[4,3,2,3,2]};
-function ensureAudio(){if(S.ctx){S.ctx.resume();return}const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=S.ctx=new C(),src=c.createMediaElementSource(au);
+function ensureAudio(){if(S.ctx){S.ctx.resume();return}const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=S.ctx=new C(),src=c.createMediaElementSource(AU[0]);
  S.f=BANDS.map((f,i)=>{const n=c.createBiquadFilter();n.type=i===0?'lowshelf':i===4?'highshelf':'peaking';n.frequency.value=f;n.Q.value=1;return n});
  S.gain=c.createGain();S.pan=c.createStereoPanner?c.createStereoPanner():null;const lim=c.createDynamicsCompressor();
  let n=src;[...S.f,S.gain,...(S.pan?[S.pan]:[]),lim].forEach(x=>{n.connect(x);n=x});n.connect(c.destination);applyEQ()}
 function applyEQ(){if(!S.ctx)return;const e=S.eq;S.f.forEach((n,i)=>n.gain.value=e.on?e.g[i]:0);S.gain.gain.value=e.on?e.pre:1;if(S.pan)S.pan.pan.value=e.on?e.bal:0;kvSet('eq',e)}
 /* ---------- Player ---------- */
 const cur=()=>S.map.get(S.q[S.qi]);
+const AU=[au,Object.assign(new Audio(),{preload:'metadata'})];     // AU[0]: فایل محلی (با اکولایزر) — AU[1]: لینک آنلاین (بدون Web Audio، چون CORS صدا را بی‌صدا می‌کند)
+function useEl(el){if(au===el)return;const o=au;el.volume=o.volume;el.muted=o.muted;au=el;o.pause();if(o!==AU[0]){o.removeAttribute('src');o.load()}}
+async function getFile(s){let f=S.files.get(s.id)||S.cache.get(s.id);if(f)return f;
+ if(s.stored){try{const r=await getStored(s.id);if(r&&r.blob){S.cache.set(s.id,r.blob);return r.blob}}catch{}s.stored=false;putMany([s])}return null}
 function play(ids,i=0){S.q=ids.slice();S.qi=i;S.resume=null;load(true)}
-function load(go){const s=cur();if(!s)return;const f=S.files.get(s.id);
- if(!f){au.pause();au.removeAttribute('src');S.loadedId=null;ui();toast('فایل این آهنگ در دسترس نیست؛ از «＋ افزودن» همان پوشه را دوباره انتخاب کنید');return}
+let lastT=0,sv=0,warnedEQ=false;
+async function load(go){const s=cur();if(!s)return;const tok=++S.tok,isU=!!s.url;let f=null;
+ if(isU){if(location.protocol==='https:'&&/^http:/i.test(s.url)){au.pause();S.loadedId=null;ui();return toast('این لینک http است و روی صفحه‌ی https مسدود می‌شود؛ لینک https لازم است')}}
+ else{f=await getFile(s);if(tok!==S.tok)return;
+  if(!f){au.pause();au.removeAttribute('src');S.loadedId=null;ui();return toast('فایل این آهنگ در دسترس نیست؛ از «＋ افزودن» همان پوشه را دوباره انتخاب کنید')}}
  if(S.resume&&S.resume.id!==s.id)S.resume=null;                       // زمان ذخیره‌شده‌ی آهنگ دیگر روی این آهنگ اعمال نمی‌شود
- if(S.url)URL.revokeObjectURL(S.url);S.url=URL.createObjectURL(f);S.loadedId=s.id;S.pos=null;lastT=0;au.src=S.url;S.counted=false;ensureAudio();
+ useEl(AU[isU?1:0]);if(S.url){URL.revokeObjectURL(S.url);S.url=''}
+ let src=s.url;if(!isU){S.url=URL.createObjectURL(f);src=S.url}
+ S.loadedId=s.id;S.pos=null;lastT=0;au.src=src;S.counted=false;if(!isU)ensureAudio();
+ if(isU&&!warnedEQ&&S.eq.on){warnedEQ=true;toast('اکولایزر روی لینک‌های آنلاین اعمال نمی‌شود')}
  if(go)au.play().catch(()=>{});ui();media(s);saveLast()}
 function next(auto){if(!S.q.length)return;if(S.rep===2&&auto){au.currentTime=0;au.play();return}let i;
  if(S.shuffle&&S.q.length>1){do i=Math.floor(Math.random()*S.q.length);while(i===S.qi)}else i=S.qi+1;
@@ -96,22 +110,24 @@ function media(s){if(!('mediaSession'in navigator)||!s)return;try{const art=(s.c
 function ui(){const s=cur();$('#mt').textContent=s?s.title:'—';$('#ma').textContent=s?s.artist:'';$('#mc').innerHTML=cov(s);$('#nc').innerHTML=cov(s);$('#nt').textContent=s?s.title:'';$('#na').textContent=s?[s.artist,s.album].filter(Boolean).join(' • '):'';
  document.querySelectorAll('.pt').forEach(b=>b.textContent=au.paused?'▶':'⏸');$('#bs').classList.toggle('act',S.shuffle);$('#br').classList.toggle('act',S.rep>0);$('#br').textContent=S.rep===2?'⟳¹':'⟳';
  $('#qu').innerHTML=S.q.map((id,i)=>{const x=S.map.get(id);return x?`<div class="row ${i===S.qi?'cur':''}"><div class="m" data-a="qplay" data-i="${i}"><b>${esc(x.title)}</b><span>${esc(x.artist)}</span></div><button class="ib" data-a="qup" data-i="${i}" aria-label="بالا">▲</button><button class="ib" data-a="qdn" data-i="${i}" aria-label="پایین">▼</button><button class="ib" data-a="qrm" data-i="${i}" aria-label="حذف از صف">✕</button></div>`:''}).join('')}
-let lastT=0,sv=0;
-au.onplay=au.onpause=ui;au.onended=()=>next(true);
-au.onerror=()=>{if(!au.getAttribute('src'))return;toast('خطا در پخش این فایل');const s=S.map.get(S.loadedId);if(s){s.bad=true;putMany([s])}};
-au.onloadedmetadata=()=>{const r=S.resume,s=cur();                      // اعمال زمان فقط وقتی شناسه‌ی آهنگ، متادیتا و مدت معتبرند
- if(r&&s&&r.id===s.id&&S.loadedId===s.id&&isFinite(au.duration)&&r.t>0&&r.t<au.duration-1)au.currentTime=r.t;
- if(r&&s&&r.id===S.loadedId)S.resume=null};
-au.ontimeupdate=()=>{const d=au.duration||0,t=au.currentTime,s=cur();if(d&&isFinite(d)){$('#seek').value=t/d*1000;$('#mp').style.width=t/d*100+'%'}$('#te').textContent=fmt(t);$('#tr').textContent='-'+fmt((isFinite(d)?d:0)-t);
- if(!s||S.loadedId!==s.id)return;if(!S.resume)S.pos={id:s.id,t};
- const dt=t-lastT;if(dt>0&&dt<2)S.listen+=dt;lastT=t;
- if(!S.counted&&t>=Math.min(30,(d||60)/2)){S.counted=true;s.plays++;s.last=Date.now();putMany([s]);S.hist.push({id:s.id,t:s.last});S.hist=S.hist.slice(-500);kvSet('hist',S.hist)}
- if(Date.now()-sv>5000){sv=Date.now();saveLast();kvSet('listen',S.listen)}
- if('mediaSession'in navigator&&navigator.mediaSession.setPositionState&&d&&isFinite(d)){try{navigator.mediaSession.setPositionState({duration:d,position:Math.min(t,d),playbackRate:au.playbackRate})}catch{}}};
-au.onvolumechange=()=>saveLast();
+function wire(a){   // رویدادها فقط از عنصر فعال پذیرفته می‌شوند
+ a.onplay=a.onpause=()=>{if(a===au)ui()};a.onended=()=>{if(a===au)next(true)};
+ a.onerror=()=>{if(a!==au||!a.getAttribute('src'))return;const s=S.map.get(S.loadedId);toast(s&&s.url?'پخش لینک ناموفق بود؛ اتصال اینترنت یا لینک را بررسی کنید':'خطا در پخش این فایل');if(s&&!s.url){s.bad=true;putMany([s])}};
+ a.onloadedmetadata=()=>{if(a!==au)return;const r=S.resume,s=cur();                      // اعمال زمان فقط وقتی شناسه، metadata و مدت معتبرند
+  if(r&&s&&r.id===s.id&&S.loadedId===s.id&&isFinite(a.duration)&&r.t>0&&r.t<a.duration-1)a.currentTime=r.t;
+  if(r&&s&&r.id===S.loadedId)S.resume=null};
+ a.ontimeupdate=()=>{if(a!==au)return;const d=a.duration||0,t=a.currentTime,s=cur();if(d&&isFinite(d)){$('#seek').value=t/d*1000;$('#mp').style.width=t/d*100+'%'}$('#te').textContent=fmt(t);$('#tr').textContent='-'+fmt((isFinite(d)?d:0)-t);
+  if(!s||S.loadedId!==s.id)return;if(!S.resume)S.pos={id:s.id,t};
+  const dt=t-lastT;if(dt>0&&dt<2)S.listen+=dt;lastT=t;
+  if(!S.counted&&t>=Math.min(30,(d&&isFinite(d)?d:60)/2)){S.counted=true;s.plays++;s.last=Date.now();putMany([s]);S.hist.push({id:s.id,t:s.last});S.hist=S.hist.slice(-500);kvSet('hist',S.hist)}
+  if(Date.now()-sv>5000){sv=Date.now();saveLast();kvSet('listen',S.listen)}
+  if('mediaSession'in navigator&&navigator.mediaSession.setPositionState&&d&&isFinite(d)){try{navigator.mediaSession.setPositionState({duration:d,position:Math.min(t,d),playbackRate:a.playbackRate})}catch{}}};
+ a.onvolumechange=()=>{if(a===au)saveLast()}}
+AU.forEach(wire);
 $('#seek').oninput=e=>{if(au.duration&&isFinite(au.duration))au.currentTime=e.target.value/1000*au.duration};$('#vol').oninput=e=>{au.volume=+e.target.value;au.muted=false};
 addEventListener('pagehide',()=>{saveLast();kvSet('listen',S.listen)});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){saveLast();kvSet('listen',S.listen)}});
+
 /* ---------- Views ---------- */
 const row=(s)=>`<div class="row ${cur()&&cur().id===s.id?'cur':''}" data-a="play" data-id="${esc(s.id)}">${cov(s)}<div class="m"><b>${esc(s.title)}</b><span>${esc(s.artist)}${s.album?' • '+esc(s.album):''}</span></div><span class="d">${s.dur?fmt(s.dur):''}</span><button class="ib" data-a="fav" data-id="${esc(s.id)}" aria-label="موردعلاقه">${s.fav?'♥':'♡'}</button><button class="ib" data-a="menu" data-id="${esc(s.id)}" aria-label="گزینه‌ها">⋮</button></div>`;
 const list=(a,c='main',bar=true)=>{ctx[c]=a.map(s=>s.id);return (bar?`<div class="bar"><button class="pri" data-a="playall" data-c="${c}">▶ پخش همه</button><button data-a="shufall" data-c="${c}">⤮ تصادفی</button><span class="d">${fa(a.length)} آهنگ</span></div>`:'')+`<div data-ctx="${c}">`+a.slice(0,S.lim).map(row).join('')+'</div>'+(a.length>S.lim?'<button class="more" data-a="more">نمایش بیشتر</button>':'')};
@@ -119,10 +135,10 @@ const card=(img,t,sub,ty,v,c='')=>`<div class="card ${c}" data-a="open" data-t="
 const group=(k)=>{const g=new Map();S.songs.forEach(s=>{const key=k(s);if(key)(g.get(key)||g.set(key,[]).get(key)).push(s)});return g};
 const albKey=s=>s.album?s.artist+'\u0001'+s.album:'';
 function filtered(){let a=S.songs;const q=$('#q').value.trim().toLowerCase();if(q)a=a.filter(s=>[s.title,s.artist,s.album,s.dir,s.year,s.genre,s.fmt,s.name].join('\u0001').toLowerCase().includes(q));
- const F={fav:s=>s.fav,new:s=>Date.now()-s.added<7*864e5,recent:s=>s.last,top:s=>s.plays>0,nocover:s=>!s.cover,notag:s=>!s.tagged,dup:s=>S.dups.has(s.id),bad:s=>s.bad}[S.filter];if(F)a=a.filter(F);
+ const F={fav:s=>s.fav,new:s=>Date.now()-s.added<7*864e5,recent:s=>s.last,top:s=>s.plays>0,nocover:s=>!s.cover,notag:s=>!s.tagged,dup:s=>S.dups.has(s.id),bad:s=>s.bad,online:s=>!!s.url}[S.filter];if(F)a=a.filter(F);
  const l=(x,y,k)=>String(x[k]).localeCompare(String(y[k]),'fa');const C={title:(x,y)=>l(x,y,'title'),artist:(x,y)=>l(x,y,'artist'),album:(x,y)=>l(x,y,'album'),year:(x,y)=>(+x.year||0)-(+y.year||0),dur:(x,y)=>x.dur-y.dur,added:(x,y)=>y.added-x.added,plays:(x,y)=>y.plays-x.plays};
  return [...a].sort(S.filter==='recent'?(x,y)=>y.last-x.last:S.filter==='top'?C.plays:C[S.sort])}
-const CH=[['all','همه'],['fav','♥ موردعلاقه'],['new','تازه‌ها'],['recent','اخیراً پخش‌شده'],['top','پرپخش'],['nocover','بدون کاور'],['notag','بدون اطلاعات'],['dup','تکراری'],['bad','خراب']];
+const CH=[['all','همه'],['fav','♥ موردعلاقه'],['new','تازه‌ها'],['recent','اخیراً پخش‌شده'],['top','پرپخش'],['nocover','بدون کاور'],['notag','بدون اطلاعات'],['dup','تکراری'],['bad','خراب'],['online','آنلاین']];
 const empty=()=>`<div style="text-align:center;margin-top:12vh"><h2>کتابخانه خالی است</h2><p class="d">پوشه یا فایل‌های موسیقی را اضافه کنید. فایل‌ها هرگز آپلود نمی‌شوند.</p><div class="bar" style="justify-content:center"><button class="pri" data-a="add">＋ افزودن موسیقی</button></div></div>`;
 const V={
  home(){if(!S.songs.length)return empty();const h=new Date().getHours(),g=h<12?'صبح بخیر':h<18?'روز بخیر':'شب بخیر';
@@ -154,6 +170,7 @@ const V={
   <h2>کتابخانه و اسکن</h2><div class="bar"><button class="pri" data-a="add">＋ افزودن موسیقی</button><button data-a="dups">یافتن تکراری‌ها (SHA-256)</button><button data-a="clear">پاک‌کردن کتابخانه</button></div>
   <div class="bar"><label>هم‌زمانی اسکن <select id="cfgconc">${[1,2,3,4,6].map(n=>`<option ${c.conc===n?'selected':''}>${n}</option>`).join('')}</select></label><label>حداقل مدت (ثانیه) <input type="number" id="cfgmin" min="0" max="600" value="${c.min}" style="width:80px"></label><label><input type="checkbox" id="cfgskip" ${c.skip?'checked':''}> فیلتر محافظ فایل‌های غیرموسیقی</label></div>
   <textarea id="cfgpats" rows="2" style="width:100%" aria-label="الگوهای ردشده">${esc(c.pats)}</textarea><p class="d">فایلی که مسیرش شامل یکی از این عبارت‌ها (با کاما جدا) باشد وارد کتابخانه نمی‌شود. فقط فایل‌هایی که خودتان انتخاب می‌کنید بررسی می‌شوند؛ پوشه‌ی Download هرگز خودکار اسکن نمی‌شود.</p>
+  <h2>ذخیره‌سازی و کپی آهنگ‌ها</h2><p id="stg" class="d">…</p><div class="bar"><label><input type="checkbox" id="cfgcopy" ${c.copy?'checked':''}> پیشنهاد پیش‌فرض: کپی آهنگ‌ها داخل برنامه</label><button data-a="freecopy">حذف فایل‌های کپی‌شده (آزادسازی فضا)</button></div><p class="d">آهنگ‌های کپی‌شده بعد از بستن مرورگر بدون انتخاب دوباره پخش می‌شوند؛ فایل‌های اصلی دست‌نخورده می‌مانند. اکولایزر روی لینک‌های آنلاین اعمال نمی‌شود.</p>
   <h2>پشتیبان‌گیری</h2><div class="bar"><button class="pri" data-a="bk">خروجی JSON</button><button data-a="rs">بازیابی</button><select id="rem" aria-label="یادآوری"><option value="0">بدون یادآوری</option><option value="7">یادآوری هفتگی</option><option value="30">یادآوری ماهانه</option></select></div><p class="d">پشتیبان شامل اطلاعات آهنگ‌ها، هنرمندان و آلبوم‌ها (که از اطلاعات آهنگ‌ها ساخته می‌شوند)، فهرست‌ها، علاقه‌مندی‌ها، تصویر هنرمندان، کاورها (با کنترل حجم) و تنظیمات است. <b>فایل‌های صوتی اصلی در پشتیبان نیستند.</b></p>
   <h2>وضعیت پشتیبانی این مرورگر</h2><ul class="d">${yn(cp.dir,'انتخاب پوشه','انتخاب پوشه پشتیبانی نمی‌شود؛ از «انتخاب چند فایل» استفاده کنید')}${yn(cp.audio,'اکولایزر (Web Audio)','اکولایزر پشتیبانی نمی‌شود')}${yn(cp.ms,'کنترل از اعلان/صفحه‌ی قفل (Media Session)','کنترل از صفحه‌ی قفل پشتیبانی نمی‌شود')}${yn(cp.sw,'حالت آفلاین/نصب PWA','سرویس‌ورکر در دسترس نیست (نیاز به HTTPS یا localhost)')}${yn(cp.persist,'درخواست ذخیره‌سازی پایدار','ذخیره‌سازی پایدار پشتیبانی نمی‌شود')}</ul><div class="bar"><button data-a="inst">نصب برنامه</button></div>`},
  scan(){const s=S.scan;if(!s)return V.songs();return `<h2>${s.running?'در حال اسکن…':'اسکن متوقف شد'}</h2><progress id="sp" max="${s.t}" value="${s.n}" style="width:100%"></progress><p id="sn">${fa(Math.floor(s.n/s.t*100))}٪ — ${fa(s.n)} از ${fa(s.t)}</p><p id="sc" class="d">${scanStats(s)}</p><div class="bar">${s.running?'<button data-a="stop">⏹ توقف</button>':'<button class="pri" data-a="scont">▶ ادامه</button><button data-a="srestart">شروع مجدد از اول</button><button data-a="sclose">بستن</button>'}</div>`}
@@ -161,7 +178,7 @@ const V={
 const NAV=[['home','خانه'],['songs','آهنگ‌ها'],['artists','هنرمندان'],['albums','آلبوم‌ها'],['folders','پوشه‌ها'],['playlists','فهرست‌ها'],['stats','آمار'],['settings','تنظیمات']];
 $('#nav').innerHTML=NAV.map(([k,n])=>`<button data-a="nav" data-v="${k}">${n}</button>`).join('');
 const CAPS=()=>({dir:'webkitdirectory' in document.createElement('input'),audio:!!(window.AudioContext||window.webkitAudioContext),ms:'mediaSession' in navigator,sw:'serviceWorker' in navigator,persist:!!(navigator.storage&&navigator.storage.persist)});
-let vsT;function render(){const t=S.view.t,c=cur();freeURLs(new Set(c&&c.cid?['c:'+c.cid]:[]));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===t||(t==='artist'&&b.dataset.v==='artists')||(t==='album'&&b.dataset.v==='albums')||(t==='pl'&&b.dataset.v==='playlists')));$('#view').innerHTML=(V[t]||V.home)();
+let vsT;function render(){const t=S.view.t,c=cur();freeURLs(new Set(c&&c.cid?['c:'+c.cid]:[]));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===t||(t==='artist'&&b.dataset.v==='artists')||(t==='album'&&b.dataset.v==='albums')||(t==='pl'&&b.dataset.v==='playlists')));$('#view').innerHTML=(V[t]||V.home)();if(t==='settings')updateStorage();
  if(t!=='scan'){clearTimeout(vsT);vsT=setTimeout(()=>kvSet('view',{v:S.view,filter:S.filter,sort:S.sort}),300)}}
 /* ---------- Dialogs & helpers ---------- */
 const dlg=$('#dlg');
@@ -175,12 +192,30 @@ const d2b=async d=>(await fetch(d)).blob();
 const pick=s=>{const i=$(s);i.value='';i.click()};
 function openAdd(){if(dlg.open)return;const b=[];const cp=CAPS();
  if(cp.dir)b.push(['انتخاب پوشه (همراه زیرپوشه‌ها)',()=>pick('#fDir')]);
- b.push(['انتخاب چند فایل',()=>pick('#fFiles')]);
+ b.push(['انتخاب چند فایل',()=>pick('#fFiles')]);b.push(['افزودن از لینک آنلاین…',linkDialog]);
  sheet('افزودن موسیقی',b,cp.dir?'اگر انتخاب پوشه در مرورگر شما کار نکرد، «انتخاب چند فایل» را بزنید و همه‌ی آهنگ‌ها را انتخاب کنید.':'این مرورگر انتخاب پوشه را پشتیبانی نمی‌کند؛ چند فایل را هم‌زمان انتخاب کنید.')}
 const addToPl=id=>sheet('افزودن به فهرست',[...S.pl.map(p=>[p.name,()=>{if(!p.ids.includes(id))p.ids.push(id);savePl();toast('اضافه شد')}]),['＋ فهرست جدید',()=>{const n=prompt('نام فهرست:');if(n){S.pl.push({id:uid(),name:n,desc:'',ids:[id]});savePl();toast('فهرست ساخته شد')}}]]);
+/* ---------- آهنگ آنلاین (لینک مستقیم) ---------- */
+function linkDialog(){if(dlg.open)dlg.close();dlg._t=Date.now();dlg.innerHTML='<h3>افزودن از لینک آنلاین</h3><p class="d">آدرس مستقیم فایل صوتی (https://…/song.mp3) — هر لینک در یک خط. سرویس‌هایی مثل یوتیوب/اسپاتیفای پشتیبانی نمی‌شوند.</p><textarea id="lnk" rows="5" style="width:100%;direction:ltr" placeholder="https://example.com/song.mp3"></textarea><button data-k="0" class="pri">افزودن</button><button data-k="1" class="ghost">لغو</button>';dlg._b=[['',()=>addLinks($('#lnk').value)],['',()=>{}]];dlg.showModal()}
+async function remoteTags(url){try{const r0=await fetch(url,{headers:{Range:'bytes=0-9'}});if(r0.status!==206){r0.body&&r0.body.cancel&&r0.body.cancel();return {}}
+ const total=+((r0.headers.get('content-range')||'').split('/')[1])||0;await r0.arrayBuffer();if(!total)return {};
+ const rf=async(a,b)=>{const r=await fetch(url,{headers:{Range:`bytes=${a}-${b-1}`}});if(r.status!==206){r.body&&r.body.cancel&&r.body.cancel();throw 0}return r.arrayBuffer()};   // اگر سرور Range را نپذیرد، فایل کامل دانلود نمی‌شود
+ return await window.NaghmeTags.readTags({name:new URL(url).pathname,size:total,slice:(a,b)=>({arrayBuffer:()=>rf(a,b==null?total:Math.min(b,total))})})}catch{return {}}}
+async function addLinks(text){const urls=[...new Set(text.split(/[\s,،]+/).filter(Boolean))];if(!urls.length)return;let ok=0,dup=0,fail=0;const cb=[],nw=[];toast('در حال بررسی '+fa(urls.length)+' لینک…');
+ for(const u of urls){let U;try{U=new URL(u);if(!/^https?:$/.test(U.protocol))throw 0}catch{fail++;continue}
+  const id='url:'+U.href;if(S.map.has(id)){dup++;continue}if(location.protocol==='https:'&&U.protocol==='http:'){fail++;continue}
+  const dur=await probe(U.href);if(dur===null){fail++;continue}
+  const tg=await remoteTags(U.href);let cid='';if(tg.cover){const th=await thumb(tg.cover);if(th){cid=await coverId(th);if(!S.covers.has(cid)){S.covers.set(cid,th);cb.push({id:cid,blob:th})}}}
+  let name=U.pathname.split('/').pop()||U.hostname;try{name=decodeURIComponent(name)}catch{}
+  const s={id,url:U.href,name,path:U.href,dir:'',size:0,fmt:((name.match(/\.(\w{2,5})$/)||[])[1]||'link').toLowerCase(),title:tg.title||name.replace(/\.[^.]+$/,''),artist:tg.artist||U.hostname,album:tg.album||'',year:tg.year||'',track:tg.track||0,genre:tg.genre||'',composer:tg.composer||'',lyricist:tg.lyricist||'',cid,tagged:!!(tg.title||tg.artist),dur:dur||0,bad:false,added:Date.now(),fav:false,plays:0,last:0,stored:false};
+  S.songs.push(s);S.map.set(id,s);nw.push(s);ok++}
+ try{if(cb.length)await putCovers(cb);if(nw.length)await putMany(nw)}catch{toast('ذخیره‌سازی ناموفق بود')}
+ S.filter='online';S.view={t:'songs'};S.lim=100;render();toast(`لینک: ${fa(ok)} افزوده • ${fa(dup)} تکراری • ${fa(fail)} ناموفق (در دسترس نبود یا فایل صوتی نیست)`)}
+async function updateStorage(){const e=$('#stg');if(!e)return;const st=S.songs.filter(s=>s.stored);let u='',p='';try{const m=await navigator.storage.estimate();u=` • فضای مرورگر: ${MB(m.usage)} از ${MB(m.quota)}`}catch{}try{p=' • ذخیره‌سازی پایدار: '+(await navigator.storage.persisted()?'فعال':'غیرفعال (مرورگر ممکن است در کمبود فضا پاک کند)')}catch{}
+ const e2=$('#stg');if(e2)e2.textContent=`${fa(st.length)} آهنگ کپی‌شده (${MB(st.reduce((a,x)=>a+x.size,0))})${u}${p}`}
 async function gcCovers(){const used=new Set(S.songs.map(s=>s.cid).filter(Boolean)),dead=[...S.covers.keys()].filter(k=>!used.has(k));if(dead.length){dead.forEach(k=>S.covers.delete(k));try{await delCovers(dead)}catch{}}}
 function menu(id){const s=S.map.get(id);if(!s)return;const inPl=S.view.t==='pl';sheet(s.title,[['پخش',()=>play([id])],['پخش بعدی',()=>{S.q.splice(S.qi+1,0,id);if(S.qi<0)S.qi=0;ui();toast('به‌عنوان بعدی اضافه شد')}],['افزودن به صف',()=>{S.q.push(id);if(S.qi<0)S.qi=0;ui();toast('به صف اضافه شد')}],[s.fav?'حذف از موردعلاقه‌ها':'افزودن به موردعلاقه‌ها',()=>fav(id)],['افزودن به فهرست…',()=>addToPl(id)],
- ...(inPl?[['حذف از این فهرست',()=>{const p=S.pl.find(x=>x.id===S.view.v);p.ids=p.ids.filter(x=>x!==id);savePl();render()}]]:[]),['اطلاعات',()=>alert(`${s.title}\n${s.artist} — ${s.album}\n${s.year} ${s.genre}\n${s.path}\n${s.fmt} • ${MB(s.size)} • ${fmt(s.dur)}`)],['حذف از کتابخانه (فایل حذف نمی‌شود)',async()=>{if(confirm('فقط از کتابخانه‌ی نغمه حذف شود؟ فایل روی گوشی دست‌نخورده می‌ماند.')){S.songs=S.songs.filter(x=>x.id!==id);reidx();await delSong(id);await gcCovers();render()}}]])}
+ ...(inPl?[['حذف از این فهرست',()=>{const p=S.pl.find(x=>x.id===S.view.v);p.ids=p.ids.filter(x=>x!==id);savePl();render()}]]:[]),['اطلاعات',()=>alert(`${s.title}\n${s.artist} — ${s.album}\n${s.year} ${s.genre}\n${s.path}\n${s.fmt} • ${MB(s.size)} • ${fmt(s.dur)}`)],['حذف از کتابخانه (فایل حذف نمی‌شود)',async()=>{if(confirm('فقط از کتابخانه‌ی نغمه حذف شود؟ فایل روی گوشی دست‌نخورده می‌ماند.')){S.songs=S.songs.filter(x=>x.id!==id);reidx();await delSong(id);await delFile(id).catch(()=>{});S.cache.delete(id);await gcCovers();render()}}]])}
 const fav=id=>{const s=S.map.get(id);s.fav=!s.fav;putMany([s]);render()};
 async function sha(f){const h=await crypto.subtle.digest('SHA-256',await f.arrayBuffer());return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function findDups(){if(!(window.crypto&&crypto.subtle))return toast('SHA-256 در این مرورگر در دسترس نیست (نیاز به HTTPS یا localhost)');
@@ -203,7 +238,7 @@ async function restore(file){let o;try{o=JSON.parse(await file.text())}catch{ret
 async function applyRestore(o,mode){try{
  const cv=new Map(),im={};for(const k in o.covers||{})cv.set(k,await d2b(o.covers[k]));for(const k in o.imgs||{})im[k]=await d2b(o.imgs[k]);
  const pl=[];for(const p of o.pl||[])pl.push({...p,img:p.img?await d2b(p.img):null});
- const songs=o.songs.map(s=>{const x={...s};delete x.cover;return x});            // کاورِ نسخه‌ی ۱ در پشتیبان وجود ندارد؛ با اسکن دوباره بازسازی می‌شود
+ const have=new Set(await storedIds());const songs=o.songs.map(s=>{const x={...s};delete x.cover;x.stored=have.has(x.id);return x});            // کاورِ نسخه‌ی ۱ در پشتیبان وجود ندارد؛ با اسکن دوباره بازسازی می‌شود
  if(mode==='replace'){await replaceSongs(songs);S.songs=songs;S.map=new Map(songs.map(s=>[s.id,s]));S.pl=pl;S.imgs=im;S.hist=o.hist||[];S.listen=o.listen||0;if(o.eq)Object.assign(S.eq,o.eq);if(o.cfg)Object.assign(S.cfg,o.cfg);
   const add=[];for(const [k,b] of cv)if(!S.covers.has(k)){S.covers.set(k,b);add.push({id:k,blob:b})}if(add.length)await putCovers(add)}
  else{const add=[],ac=[];for(const s of songs){const old=S.map.get(s.id);if(!old){S.songs.push(s);S.map.set(s.id,s);add.push(s)}else{old.fav=old.fav||s.fav;old.plays=Math.max(old.plays||0,s.plays||0);if(!old.cid&&s.cid)old.cid=s.cid;add.push(old)}}
@@ -221,6 +256,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  playall(){const l=ctx[d.c||'main'];if(l.length)play(l,0)},shufall(){const l=ctx[d.c||'main'];if(l.length){S.shuffle=true;play(l,Math.floor(Math.random()*l.length))}},chip(){S.filter=d.f;S.lim=100;render()},
  open(){if(d.t==='play')return play([d.v]);if(d.t==='smart'){S.filter=d.v;S.view={t:'songs'}}else S.view={t:d.t,v:d.v};S.lim=100;render();$('#view').scrollTop=0},fopen(){S.view={t:'folders',v:d.v};S.lim=100;render()},
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
+ freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
@@ -233,11 +269,11 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  plexp(){const p=S.pl.find(x=>x.id===S.view.v);dl({naghme:1,type:'playlist',name:p.name,desc:p.desc,items:p.ids.map(i=>{const s=S.map.get(i);return s&&{id:s.id,title:s.title,artist:s.artist}}).filter(Boolean)},'playlist-'+p.name+'.json')},
  pldel(){if(confirm('این فهرست حذف شود؟ (آهنگ‌ها حذف نمی‌شوند)')){S.pl=S.pl.filter(x=>x.id!==S.view.v);savePl();S.view={t:'playlists'};render()}},
  eqsave(){S.eq.p='Custom';applyEQ();render()},dups(){findDups()},bk(){backup()},rs(){S.imp='bk';$('#fJson').click()},
- clear(){if(confirm('اطلاعات کتابخانه‌ی نغمه پاک شود؟ فایل‌های موسیقی دست‌نخورده می‌مانند.')){replaceSongs([]).then(()=>{S.songs=[];S.files.clear();reidx();return gcCovers()}).then(render)}}};
+ clear(){if(confirm('اطلاعات کتابخانه‌ی نغمه پاک شود؟ فایل‌های موسیقی دست‌نخورده می‌مانند.')){replaceSongs([]).then(()=>clearFiles()).then(()=>{S.songs=[];S.files.clear();S.cache.clear();reidx();return gcCovers()}).then(render)}}};
  A[a]&&A[a]()});
 document.addEventListener('change',e=>{const t=e.target,E=S.eq;
  if(t.id==='sort'){S.sort=t.value;render()}else if(t.id==='eqon'){E.on=t.checked;applyEQ()}else if(t.id==='eqp'){if(PRE[t.value])E.g=[...PRE[t.value]];E.p=t.value;applyEQ();render()}else if(t.id==='rem')kvSet('rem',+t.value);
- else if(t.id==='cfgconc'){S.cfg.conc=+t.value;kvSet('cfg',S.cfg)}else if(t.id==='cfgmin'){S.cfg.min=Math.max(0,+t.value||0);kvSet('cfg',S.cfg)}else if(t.id==='cfgskip'){S.cfg.skip=t.checked;kvSet('cfg',S.cfg)}else if(t.id==='cfgpats'){S.cfg.pats=t.value;kvSet('cfg',S.cfg)}});
+ else if(t.id==='cfgconc'){S.cfg.conc=+t.value;kvSet('cfg',S.cfg)}else if(t.id==='cfgmin'){S.cfg.min=Math.max(0,+t.value||0);kvSet('cfg',S.cfg)}else if(t.id==='cfgcopy'){S.cfg.copy=t.checked;kvSet('cfg',S.cfg)}else if(t.id==='cfgskip'){S.cfg.skip=t.checked;kvSet('cfg',S.cfg)}else if(t.id==='cfgpats'){S.cfg.pats=t.value;kvSet('cfg',S.cfg)}});
 document.addEventListener('input',e=>{const t=e.target,E=S.eq;if(t.dataset.eq!==undefined){E.g[+t.dataset.eq]=+t.value;E.p='Custom';applyEQ()}else if(t.id==='eqpre'){E.pre=+t.value;applyEQ()}else if(t.id==='eqbal'){E.bal=+t.value;applyEQ()}});
 const onPick=e=>{const l=[...e.target.files];e.target.value='';if(l.length)start(l)};$('#fDir').onchange=onPick;$('#fFiles').onchange=onPick;   // لغو پنجره‌ی انتخاب = بدون رویداد و بدون خطا
 $('#fImg').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;const b=(await thumb(f))||(f.type.startsWith('image/')&&f.size<4e6?f:null);if(!b)return toast('این تصویر خوانده نشد');
@@ -267,7 +303,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  const v=await kvGet('view');
  if(v&&v.v&&V[v.v.t]&&v.v.t!=='scan'){const t=v.v;const ok=t.t==='artist'?S.songs.some(s=>s.artist===t.v):t.t==='album'?S.songs.some(s=>albKey(s)===t.v):t.t==='pl'?S.pl.some(p=>p.id===t.v):true;if(ok){S.view=t;S.filter=v.filter||'all';S.sort=v.sort||'title'}}
  const r=await kvGet('rem'),lb=await kvGet('lastBackup')||0;if(r&&S.songs.length&&Date.now()-lb>r*864e5)setTimeout(()=>toast('زمان پشتیبان‌گیری رسیده است (تنظیمات ← پشتیبان‌گیری)'),1500);
- if(S.songs.length&&!S.files.size)setTimeout(()=>toast('برای پخش، پوشه‌ی موسیقی را دوباره با «＋ افزودن» انتخاب کنید (اطلاعات شما حفظ شده است)'),2500);
+ if(S.songs.some(s=>!s.stored&&!s.url&&!s.bad)&&!S.files.size)setTimeout(()=>toast('برای پخش، پوشه‌ی موسیقی را دوباره با «＋ افزودن» انتخاب کنید (اطلاعات شما حفظ شده است)'),2500);
 }catch(e){console.error(e);toast('خطا در خواندن پایگاه داده')}
  render();ui();
  if('serviceWorker'in navigator&&location.protocol!=='file:'){const had=!!navigator.serviceWorker.controller;

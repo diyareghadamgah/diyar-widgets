@@ -11,7 +11,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
  const page=await mk();await page.goto(BASE);await page.waitForSelector('#nav button');
  const done=async(p=page)=>p.waitForFunction(()=>!S.scan&&S.view.t!=='scan',null,{timeout:300000});
  const addVia=async(p,sel,paths,optIndex)=>{let n=0;p.on('filechooser',()=>n++);await p.click('#add');await p.waitForSelector('dialog[open]');const [fc]=await Promise.all([p.waitForEvent('filechooser'),p.click(`dialog button[data-k="${optIndex}"]`)]);await sleep(700);if(paths){await fc.setFiles(paths)}return n};
- const confirmAdd=async(p=page)=>{await p.waitForSelector('dialog[open] button[data-k="0"]');await p.click('dialog[open] button[data-k="0"]')};
+ const confirmAdd=async(p=page,copy=false)=>{const b=`dialog[open] button:has-text("${copy?'و کپی داخل برنامه':'بدون کپی'}")`;await p.waitForSelector(b);await p.click(b)};
  const nav=(v,p=page)=>p.click(`#nav [data-v=${v}]`);
  const lib=FIX+'/lib';
  // شبیه‌سازی خروجی انتخاب پوشه: ابزار Playwright برای input پوشه فایل‌هایی با اندازه‌ی ۰ می‌دهد، پس فایل‌های واقعی را با مسیر نسبی (webkitRelativePath) می‌سازیم و همان تابع start() را صدا می‌زنیم
@@ -74,7 +74,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   const [fc]=await Promise.all([page.waitForEvent('filechooser'),page.click('[data-a=rs]')]);await fc.setFiles('/tmp/backup.json');await page.waitForSelector('dialog[open] button[data-k="0"]');const sm=await page.textContent('dialog[open]');await page.click('dialog[open] button[data-k="0"]');await page.waitForFunction(()=>S.songs.length===11,null,{timeout:15000});
   const r=await page.evaluate(()=>({c:S.covers.size,pl:S.pl.length,img:!!S.imgs['علی رضایی'],db:0}));r.db=(await page.evaluate(()=>tx('songs','readonly',s=>s.getAll()))).length;return {ok:z===0&&r.c===3&&r.pl===1&&r.img&&r.db===11&&sm.includes('۱۱'),d:JSON.stringify(r)+' cleared covers='+z}});
  await T('۱۶-ب: PWA — سرویس‌ورکر فعال، manifest معتبر، آیکون‌ها 192/512 (PNG واقعی)',async()=>{await page.reload();await page.waitForFunction(()=>navigator.serviceWorker.controller,null,{timeout:15000}).catch(()=>{});const r=await page.evaluate(async()=>{const m=await (await fetch('manifest.json')).json();const keys=await caches.keys();const reg=await navigator.serviceWorker.getRegistration();const sizes=[];for(const i of m.icons){const b=await (await fetch(i.src)).blob();const im=await createImageBitmap(b);sizes.push(im.width+'x'+im.height+':'+i.purpose)}return {m:m.display,lang:m.lang,dir:m.dir,start:m.start_url,sizes,keys,active:!!(reg&&reg.active),ctl:!!navigator.serviceWorker.controller,link:!!document.querySelector('link[rel=manifest]')}});
-  return {ok:r.m==='standalone'&&r.dir==='rtl'&&r.sizes.join()==='192x192:any,512x512:any,512x512:maskable'&&r.keys.includes('naghme-v2.0.0')&&r.active&&r.ctl&&r.link,d:JSON.stringify(r)}});
+  return {ok:r.m==='standalone'&&r.dir==='rtl'&&r.sizes.join()==='192x192:any,512x512:any,512x512:maskable'&&r.keys.includes('naghme-v2.1.0')&&r.active&&r.ctl&&r.link,d:JSON.stringify(r)}});
  await T('۱۶: اجرای کامل بدون اینترنت (آفلاین + بازخوانی از IndexedDB)',async()=>{await ctx.setOffline(true);await page.reload();await page.waitForSelector('#nav button',{timeout:10000});await sleep(600);const r=await page.evaluate(()=>({n:S.songs.length,css:getComputedStyle(document.body).display}));await nav('songs');const rows=await page.locator('.row[data-id]').count();await ctx.setOffline(false);return {ok:r.n===11&&r.css==='grid'&&rows>0,d:JSON.stringify(r)+' rows='+rows}});
  await T('۱۵: نبود Media Session API — بدون خطا و پخش عادی',async()=>{const c2=await br.newContext();const p=await mk(c2,()=>{delete Navigator.prototype.mediaSession});await p.goto(BASE);await p.waitForSelector('#nav button');const n0=errs.length;await addVia(p,'#fFiles',[FIX+'/moon.mp3'],1,1);await confirmAdd(p);await done(p);await p.click('.row[data-id]');await sleep(1200);const r=await p.evaluate(()=>({ms:'mediaSession' in navigator,t:au.currentTime,pl:!au.paused}));await c2.close();return {ok:!r.ms&&r.t>0.3&&r.pl&&errs.length===n0,d:JSON.stringify(r)}});
  await T('۱۵-ب: وجود Media Session — metadata و کنترل‌ها ثبت می‌شوند',async()=>{await injectDir();await confirmAdd();await done();await page.evaluate(()=>{play([S.songs.find(s=>s.title==='Moon').id],0)});await sleep(700);const m=await page.evaluate(()=>({has:'mediaSession' in navigator,t:navigator.mediaSession.metadata&&navigator.mediaSession.metadata.title,art:navigator.mediaSession.metadata&&navigator.mediaSession.metadata.artwork.length}));return {ok:m.has&&m.t==='Moon'&&m.art===1,d:JSON.stringify(m)}});
@@ -89,6 +89,38 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
  await T('۱۷-ب: توقف و ادامه‌ی اسکن (۶۰۰ فایل آزمایشی)',async()=>{const c4=await br.newContext();const p=await mk(c4);await p.goto(BASE);await p.waitForSelector('#nav button');await p.evaluate(()=>{S.cfg.conc=1});
   const files=fs.readdirSync(FIX+'/big').slice(0,600).map(f=>FIX+'/big/'+f);await addVia(p,'#fFiles',files,1);await confirmAdd(p);await p.waitForFunction(()=>S.scan&&S.scan.n>40);await p.click('[data-a=stop]');await p.waitForSelector('[data-a=scont]');const mid=await p.evaluate(()=>({n:S.scan.n,songs:S.songs.length,t:S.scan.t}));
   await p.click('[data-a=scont]');await done(p);const end=await p.evaluate(()=>S.songs.length);await c4.close();return {ok:mid.n<600&&mid.songs>0&&end===600,d:`توقف در ${mid.n}/${mid.t} → پایان ${end}`}});
+
+ // ===== v2.1: کپی داخل برنامه + لینک آنلاین =====
+ const c5=await br.newContext({serviceWorkers:'allow'});
+ await c5.route('**/__fx/**',r=>{const rel=decodeURIComponent(new URL(r.request().url()).pathname.replace('/__fx/',''));r.fulfill({path:FIX+'/'+rel})});
+ const serve=(file,cors)=>async r=>{const b=fs.readFileSync(file);const h={'content-type':'audio/mpeg','accept-ranges':'bytes'};if(cors){h['access-control-allow-origin']='*';h['access-control-expose-headers']='content-range,accept-ranges,content-length'}
+  const rg=r.request().headers()['range'];if(rg){const m=/bytes=(\d+)-(\d*)/.exec(rg);const a=+m[1],e=m[2]?Math.min(+m[2],b.length-1):b.length-1;return r.fulfill({status:206,headers:{...h,'content-range':`bytes ${a}-${e}/${b.length}`},body:b.subarray(a,e+1)})}
+  return r.fulfill({status:200,headers:h,body:b})};
+ await c5.route('http://media.test/cors/moon.mp3',serve(FIX+'/moon.mp3',true));
+ await c5.route('http://media.test/nocors/plain.mp3',serve(FIX+'/moon.mp3',false));
+ await c5.route('http://media.test/dead.mp3',r=>r.fulfill({status:404}));
+ const p5=await mk(c5);await p5.goto(BASE);await p5.waitForSelector('#nav button');
+ await T('کپی داخل برنامه: اسکن با «کپی» — همه‌ی فایل‌ها در IndexedDB ذخیره می‌شوند و اصلی‌ها دست‌نخورده‌اند',async()=>{await injectDir(p5);await confirmAdd(p5,true);await done(p5);const r=await p5.evaluate(async()=>({st:S.songs.filter(s=>s.stored).length,idb:(await storedIds()).length,bad:S.songs.filter(s=>s.bad).length,n:S.songs.length}));return {ok:r.st===9&&r.idb===9&&r.n===11&&r.bad===2,d:JSON.stringify(r)}});
+ await T('کپی داخل برنامه: بعد از بستن/بازکردن، بدون انتخاب دوباره پخش می‌شود (و بدون پیام «انتخاب دوباره»)',async()=>{await p5.reload();await p5.waitForSelector('#nav button');await sleep(2800);const toast0=await p5.textContent('#toast');const files0=await p5.evaluate(()=>S.files.size);
+  await nav('songs',p5);await p5.fill('#q','Moon');await sleep(200);await p5.locator('.row[data-id]').first().click();await sleep(1800);const r=await p5.evaluate(()=>({t:au.currentTime,p:au.paused,title:$('#mt').textContent}));await p5.fill('#q','');
+  return {ok:files0===0&&r.t>0.8&&!r.p&&r.title==='Moon',d:JSON.stringify(r)+' files='+files0+' toast='+toast0.slice(0,30)}});
+ await T('لینک آنلاین: افزودن (با CORS: تگ و کاور از راه دور؛ بدون CORS: فقط نام؛ لینک خراب: ردشده)',async()=>{await p5.click('#add');await p5.click('dialog button:has-text("لینک آنلاین")');await p5.fill('#lnk','http://media.test/cors/moon.mp3\nhttp://media.test/nocors/plain.mp3\nhttp://media.test/dead.mp3\nnot a url');await p5.click('dialog button:has-text("افزودن")');await p5.waitForFunction(()=>S.songs.filter(s=>s.url).length===2,null,{timeout:30000});await sleep(300);
+  const r=await p5.evaluate(()=>S.songs.filter(s=>s.url).map(s=>[s.title,s.artist,!!s.cid,s.dur>30,s.tagged]));r.sort();return {ok:JSON.stringify(r)==='[["Moon","Maryam",true,true,true],["plain","media.test",false,true,false]]',d:JSON.stringify(r)+' | '+(await p5.textContent('#toast'))}});
+ await T('لینک آنلاین: پخش واقعی، سوییچ بین لینک و فایل محلی (دو عنصر صوتی جدا)، توقف عنصر قبلی',async()=>{const r=await p5.evaluate(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const o={};
+   const u=S.songs.find(s=>s.url&&s.title==='plain'),l=S.songs.find(s=>s.title==='Sun');
+   play([u.id],0);await w(1800);o.u=[au===AU[1],au.currentTime>0.6,!au.paused];
+   play([l.id],0);await w(1800);o.l=[au===AU[0],au.currentTime>0.6,!au.paused,AU[1].paused];
+   play([u.id],0);await w(1500);o.u2=[au===AU[1],au.currentTime>0.5,AU[0].paused];return o});
+  return {ok:Object.values(r).every(a=>a.every(Boolean)),d:JSON.stringify(r)}});
+ await T('لینک آنلاین + پشتیبان: لینک‌ها در JSON ذخیره می‌شوند و بعد از پاک‌سازی بازیابی می‌شوند',async()=>{await nav('settings',p5);const [d]=await Promise.all([p5.waitForEvent('download'),p5.click('[data-a=bk]')]);const o=JSON.parse(fs.readFileSync(await d.path(),'utf8'));fs.writeFileSync('/tmp/backup2.json',JSON.stringify(o));
+  return {ok:o.songs.filter(s=>s.url).length===2&&o.songs.length===13,d:`songs=${o.songs.length} urls=${o.songs.filter(s=>s.url).length}`}});
+ await T('آفلاین: فایل کپی‌شده پخش می‌شود؛ لینک آنلاین پیام خطا می‌دهد و برنامه خراب نمی‌شود',async()=>{const n0=errs.length;await c5.route('http://media.test/nocors/plain.mp3',r=>r.abort('internetdisconnected'));await c5.setOffline(true);const r=await p5.evaluate(async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));const o={};play([S.songs.find(s=>s.title==='Sun').id],0);await w(1800);o.local=au.currentTime>0.6&&!au.paused;
+   AU[1].src='';play([S.songs.find(s=>s.url&&s.title==='plain').id],0);await w(2500);o.urlMsg=document.querySelector('#toast').textContent;return o});await c5.setOffline(false);
+  return {ok:r.local&&r.urlMsg.includes('لینک')&&errs.length===n0,d:JSON.stringify(r)}});
+ await T('حذف فایل‌های کپی‌شده: فضا آزاد می‌شود، اطلاعات می‌ماند، پخش نیاز به انتخاب دوباره را اعلام می‌کند',async()=>{await p5.evaluate(()=>{window.confirm=()=>true});await nav('settings',p5);await p5.click('[data-a=freecopy]');await p5.waitForFunction(()=>S.songs.every(s=>!s.stored),null,{timeout:8000});await sleep(300);
+  const r=await p5.evaluate(async()=>{play([S.songs.find(s=>s.title==='Sun').id],0);await new Promise(r=>setTimeout(r,500));return {idb:(await storedIds()).length,n:S.songs.length,toast:document.querySelector('#toast').textContent}});
+  return {ok:r.idb===0&&r.n===13&&r.toast.includes('در دسترس نیست'),d:JSON.stringify(r)}});
+ await c5.close();
  await T('بدون خطای JavaScript در تمام اجرا',async()=>({ok:errs.length===0,d:errs.slice(0,3).join(' | ')}));
  const p=results.filter(r=>r.ok).length;console.log(`\n${p} PASS / ${results.length-p} FAIL`);fs.writeFileSync('/tmp/browser-results.json',JSON.stringify(results,null,1));await br.close();process.exit(p===results.length?0:1);
 })();

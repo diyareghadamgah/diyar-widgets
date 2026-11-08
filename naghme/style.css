@@ -35,3 +35,5 @@ header{background:var(--bg);z-index:3}textarea{font:inherit;color:inherit;backgr
 dialog{max-height:88dvh;overflow:auto}
 @media(max-width:760px){header{padding-top:max(12px,env(safe-area-inset-top))}.hero{flex-direction:column;text-align:center}}
 #np>.ib{position:absolute;top:8px;left:8px;z-index:2}
+
+#side h1 .logo{display:block;width:72px;height:72px;margin:0 auto 8px;border-radius:50%}#side h1{text-align:center}
