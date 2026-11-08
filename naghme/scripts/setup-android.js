@@ -23,8 +23,8 @@ wr(path.join(jdir, 'NaghmeStoragePlugin.java'), rd(path.join(nat, 'NaghmeStorage
 
 // اصلاح MainActivity برای ثبت هر دو پلاگین (نغمه + انتخاب فایل)
 let mainActivityCode = rd(path.join(nat, 'MainActivity.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';');
-const nativePluginName = 'NaghmeStoragePlugin'; 
-const capawesomePluginName = 'FilePickerPlugin'; 
+const nativePluginName = 'NaghmeStoragePlugin'; // نام پلاگین سفارشی
+const capawesomePluginName = 'FilePickerPlugin'; // نام پلاگین انتخاب فایل
 
 // اضافه کردن ثبت پلاگین‌ها در onCreate (اگر وجود ندارد)
 if (!mainActivityCode.includes(capawesomePluginName)) {
