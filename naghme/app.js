@@ -16,9 +16,9 @@ const putFile=o=>tx('files','readwrite',s=>s.put(o)),delFile=id=>tx('files','rea
 
 /* ---------- State ---------- */
 const DEF_PATS='حلیه,حلیة,المتقین,halyat,quran,قرآن,voice,recorder,recording,ضبط,پیام صوتی,PTT';
-const S={songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],imgs:{},hist:[],listen:0,q:[],qi:-1,shuffle:false,rep:0,view:{t:'home'},filter:'all',sort:'title',lim:100,dups:new Set(),eq:{on:true,p:'Normal',g:[0,0,0,0,0],pre:1,bal:0},cfg:{conc:3,skip:true,pats:DEF_PATS,min:0,copy:true},scan:null,counted:false,pos:null,resume:null,loadedId:null,tok:0,cache:new Map()};
+const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],imgs:{},hist:[],listen:0,q:[],qi:-1,shuffle:false,rep:0,view:{t:'home'},filter:'all',sort:'title',lim:100,dups:new Set(),eq:{on:true,p:'Normal',g:[0,0,0,0,0],pre:1,bal:0},cfg:{conc:3,skip:true,pats:DEF_PATS,min:0,copy:true},scan:null,counted:false,pos:null,resume:null,loadedId:null,tok:0,cache:new Map()};
 const ctx={main:[],pop:[]};
-const reidx=()=>S.map=new Map(S.songs.map(s=>[s.id,s]));
+const reidx=()=>{S.map=new Map(S.songs.map(s=>[s.id,s]));if(NaghmePlatform.isNative)for(const s of S.songs)if(s.uri&&!S.files.has(s.id)){const f=NaghmePlatform.fromSong(s);f&&S.files.set(s.id,f)}};   // اندروید: بعد از هر بازگشایی، آهنگ‌ها خودکار به فایل وصل می‌شوند
 const cu=new Map();
 const blobURL=(k,b)=>{let u=cu.get(k);if(!u){u=URL.createObjectURL(b);cu.set(k,u)}return u};
 const freeURLs=keep=>{for(const [k,u] of [...cu]){if(!keep.has(k)){URL.revokeObjectURL(u);cu.delete(k)}}};   // آزادسازی URLهای موقت در هر رندر
@@ -30,13 +30,14 @@ const anyCov=a=>a.find(s=>s.cid&&S.covers.has(s.cid))||a[0];
 const hash53=u=>{let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<u.length;i++){const c=u[i];h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return (4294967296*(2097151&h2)+(h1>>>0)).toString(36)};
 const coverId=async b=>b.size.toString(36)+'-'+hash53(new Uint8Array(await b.arrayBuffer()));   // کاورهای یکسان فقط یک‌بار ذخیره می‌شوند
 async function thumb(b){try{if(!window.createImageBitmap)return b.size<6e5?b:null;const bm=await createImageBitmap(b);const w=Math.min(300,bm.width),h=Math.max(1,Math.round(bm.height*w/bm.width));const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#1c1c1c';x.fillRect(0,0,w,h);x.drawImage(bm,0,0,w,h);bm.close&&bm.close();return await new Promise(r=>c.toBlob(r,'image/jpeg',.85))}catch{return null}}
-const probe=(f,ms=8000)=>new Promise(r=>{const isU=typeof f==='string',a=new Audio(),u=isU?f:URL.createObjectURL(f);const done=v=>{clearTimeout(tm);a.onloadedmetadata=a.onerror=null;a.removeAttribute('src');a.load();if(!isU)URL.revokeObjectURL(u);r(v)};const tm=setTimeout(()=>done(null),isU?12000:ms);a.preload='metadata';a.onloadedmetadata=()=>done(isFinite(a.duration)?a.duration:0);a.onerror=()=>done(null);a.src=u});
+const asBlob=f=>f&&f.native?f.toBlob():f;
+const probe=(f,ms=8000)=>(f&&f.native)?NaghmePlatform.duration(f):new Promise(r=>{const isU=typeof f==='string',a=new Audio(),u=isU?f:URL.createObjectURL(f);const done=v=>{clearTimeout(tm);a.onloadedmetadata=a.onerror=null;a.removeAttribute('src');a.load();if(!isU)URL.revokeObjectURL(u);r(v)};const tm=setTimeout(()=>done(null),isU?12000:ms);a.preload='metadata';a.onloadedmetadata=()=>done(isFinite(a.duration)?a.duration:0);a.onerror=()=>done(null);a.src=u});
 /* ---------- Scan ---------- */
 const EXT=/\.(mp3|m4a|aac|flac|ogg|opus|wav|wma)$/i;
 const pats=()=>S.cfg.skip?S.cfg.pats.split(/[,،\n]/).map(x=>x.trim().toLowerCase()).filter(Boolean):[];
 function prepare(list){const P=pats(),q=[];let skipped=0,noext=0;
  for(const f of list){if(!EXT.test(f.name)){noext++;continue}const p=(f.webkitRelativePath||f.name).toLowerCase();if(P.some(x=>p.includes(x))){skipped++;continue}q.push(f)}
- const roots=new Set([...list].map(f=>(f.webkitRelativePath||'').split('/')[0]).filter(Boolean));
+ const roots=new Set([...list].map(f=>{const p=f.webkitRelativePath||'';return p.includes('/')?p.split('/')[0]:''}).filter(Boolean));
  return {q,skipped,noext,root:[...roots].join('، ')}}
 async function start(list){list=[...list];if(!list.length)return;
  if(S.scan&&S.scan.running)return toast('اسکن در حال اجراست');
@@ -56,12 +57,13 @@ async function runScan(p,resume,copy){
  const flush=async()=>{const b=buf,c=cbuf;buf=[];cbuf=[];if(c.length)await putCovers(c);if(b.length)await putMany(b)};
  const upd=(force)=>{const n=Date.now();if(!force&&n-last<150)return;last=n;const e=$('#sp');if(!e)return;e.value=sc.n;$('#sn').textContent=fa(Math.floor(sc.n/sc.t*100))+'٪ — '+fa(sc.n)+' از '+fa(sc.t);$('#sc').textContent=scanStats(sc)};
  const one=async f=>{const path=f.webkitRelativePath||f.name,id=path+'|'+f.size;S.files.set(id,f);
-  if(S.map.has(id)){const o=S.map.get(id);if(sc.copy&&!o.stored){await putFile({id,blob:f});o.stored=true;await putMany([o]);sc.copied++}sc.dup++;return}
+  if(S.map.has(id)){const o=S.map.get(id);if(f.native&&o.uri!==f.uri){o.uri=f.uri;o.tree=f.tree;await putMany([o])}   // مهاجرت: آهنگ‌های افزوده‌شده در نسخه‌ی وب به فایل بومی وصل می‌شوند
+   if(sc.copy&&!o.stored){await putFile({id,blob:await asBlob(f)});o.stored=true;await putMany([o]);sc.copied++}sc.dup++;return}
   const parts=path.split('/'),dir=parts.slice(0,-1),tg=await window.NaghmeTags.readTags(f),dur=await probe(f);
   if(dur!==null&&dur>0&&dur<S.cfg.min){sc.short++;return}
-  if(sc.copy&&dur!==null){await putFile({id,blob:f});sc.copied++}                      // کپی داخل برنامه (IndexedDB)
+  if(sc.copy&&dur!==null){await putFile({id,blob:await asBlob(f)});sc.copied++}                      // کپی داخل برنامه (IndexedDB)
   let cid='';if(tg.cover){const th=await thumb(tg.cover);if(th){cid=await coverId(th);if(!S.covers.has(cid)){S.covers.set(cid,th);cbuf.push({id:cid,blob:th})}}}
-  const s={id,name:f.name,path,dir:dir.join('/'),size:f.size,fmt:f.name.split('.').pop().toLowerCase(),title:tg.title||f.name.replace(/\.[^.]+$/,''),artist:tg.artist||dir[dir.length-1]||'نامشخص',album:tg.album||'',year:tg.year||'',track:tg.track||0,genre:tg.genre||'',composer:tg.composer||'',lyricist:tg.lyricist||'',cid,tagged:!!(tg.title||tg.artist),dur:dur||0,bad:dur===null,added:Date.now(),fav:false,plays:0,last:0,stored:!!(sc.copy&&dur!==null)};
+  const s={id,...(f.native?{uri:f.uri,tree:f.tree}:{}),name:f.name,path,dir:dir.join('/'),size:f.size,fmt:f.name.split('.').pop().toLowerCase(),title:tg.title||f.name.replace(/\.[^.]+$/,''),artist:tg.artist||dir[dir.length-1]||'نامشخص',album:tg.album||'',year:tg.year||'',track:tg.track||0,genre:tg.genre||'',composer:tg.composer||'',lyricist:tg.lyricist||'',cid,tagged:!!(tg.title||tg.artist),dur:dur||0,bad:dur===null,added:Date.now(),fav:false,plays:0,last:0,stored:!!(sc.copy&&dur!==null)};
   S.songs.push(s);S.map.set(id,s);buf.push(s);dur===null?sc.bad++:sc.ok++;if(buf.length>=25)await flush()};
  const work=async()=>{while(sc.i<sc.q.length&&!sc.stop){const f=sc.q[sc.i++];
   try{await one(f)}catch(e){sc.err++;if(e&&e.name==='QuotaExceededError'){sc.stop=true;sc.quota=true}else if(e instanceof RangeError){sc.stop=true;sc.mem=true}}   // خطای یک فایل اسکن بقیه را متوقف نمی‌کند
@@ -84,7 +86,8 @@ function applyEQ(){if(!S.ctx)return;const e=S.eq;S.f.forEach((n,i)=>n.gain.value
 const cur=()=>S.map.get(S.q[S.qi]);
 const AU=[au,Object.assign(new Audio(),{preload:'metadata'})];     // AU[0]: فایل محلی (با اکولایزر) — AU[1]: لینک آنلاین (بدون Web Audio، چون CORS صدا را بی‌صدا می‌کند)
 function useEl(el){if(au===el)return;const o=au;el.volume=o.volume;el.muted=o.muted;au=el;o.pause();if(o!==AU[0]){o.removeAttribute('src');o.load()}}
-async function getFile(s){let f=S.files.get(s.id)||S.cache.get(s.id);if(f)return f;
+async function getFile(s){let f=S.files.get(s.id)||S.cache.get(s.id);
+ if(f&&f.native){try{if(f.size>3e7)toast('در حال بارگذاری فایل…');return await f.toBlob()}catch(e){console.warn('native read',e);S.files.delete(s.id);f=null}}else if(f)return f;
  if(s.stored){try{const r=await getStored(s.id);if(r&&r.blob){S.cache.set(s.id,r.blob);return r.blob}}catch{}s.stored=false;putMany([s])}return null}
 function play(ids,i=0){S.q=ids.slice();S.qi=i;S.resume=null;load(true)}
 let lastT=0,sv=0,warnedEQ=false;
@@ -171,7 +174,7 @@ const V={
   <div class="bar"><label>هم‌زمانی اسکن <select id="cfgconc">${[1,2,3,4,6].map(n=>`<option ${c.conc===n?'selected':''}>${n}</option>`).join('')}</select></label><label>حداقل مدت (ثانیه) <input type="number" id="cfgmin" min="0" max="600" value="${c.min}" style="width:80px"></label><label><input type="checkbox" id="cfgskip" ${c.skip?'checked':''}> فیلتر محافظ فایل‌های غیرموسیقی</label></div>
   <textarea id="cfgpats" rows="2" style="width:100%" aria-label="الگوهای ردشده">${esc(c.pats)}</textarea><p class="d">فایلی که مسیرش شامل یکی از این عبارت‌ها (با کاما جدا) باشد وارد کتابخانه نمی‌شود. فقط فایل‌هایی که خودتان انتخاب می‌کنید بررسی می‌شوند؛ پوشه‌ی Download هرگز خودکار اسکن نمی‌شود.</p>
   <h2>ذخیره‌سازی و کپی آهنگ‌ها</h2><p id="stg" class="d">…</p><div class="bar"><label><input type="checkbox" id="cfgcopy" ${c.copy?'checked':''}> پیشنهاد پیش‌فرض: کپی آهنگ‌ها داخل برنامه</label><button data-a="freecopy">حذف فایل‌های کپی‌شده (آزادسازی فضا)</button></div><p class="d">آهنگ‌های کپی‌شده بعد از بستن مرورگر بدون انتخاب دوباره پخش می‌شوند؛ فایل‌های اصلی دست‌نخورده می‌مانند. اکولایزر روی لینک‌های آنلاین اعمال نمی‌شود.</p>
-  <h2>پشتیبان‌گیری</h2><div class="bar"><button class="pri" data-a="bk">خروجی JSON</button><button data-a="rs">بازیابی</button><select id="rem" aria-label="یادآوری"><option value="0">بدون یادآوری</option><option value="7">یادآوری هفتگی</option><option value="30">یادآوری ماهانه</option></select></div><p class="d">پشتیبان شامل اطلاعات آهنگ‌ها، هنرمندان و آلبوم‌ها (که از اطلاعات آهنگ‌ها ساخته می‌شوند)، فهرست‌ها، علاقه‌مندی‌ها، تصویر هنرمندان، کاورها (با کنترل حجم) و تنظیمات است. <b>فایل‌های صوتی اصلی در پشتیبان نیستند.</b></p>
+  ${nativeSettings()}<h2>پشتیبان‌گیری</h2><div class="bar"><button class="pri" data-a="bk">خروجی JSON</button><button data-a="rs">بازیابی</button><select id="rem" aria-label="یادآوری"><option value="0">بدون یادآوری</option><option value="7">یادآوری هفتگی</option><option value="30">یادآوری ماهانه</option></select></div><p class="d">پشتیبان شامل اطلاعات آهنگ‌ها، هنرمندان و آلبوم‌ها (که از اطلاعات آهنگ‌ها ساخته می‌شوند)، فهرست‌ها، علاقه‌مندی‌ها، تصویر هنرمندان، کاورها (با کنترل حجم) و تنظیمات است. <b>فایل‌های صوتی اصلی در پشتیبان نیستند.</b></p>
   <h2>وضعیت پشتیبانی این مرورگر</h2><ul class="d">${yn(cp.dir,'انتخاب پوشه','انتخاب پوشه پشتیبانی نمی‌شود؛ از «انتخاب چند فایل» استفاده کنید')}${yn(cp.audio,'اکولایزر (Web Audio)','اکولایزر پشتیبانی نمی‌شود')}${yn(cp.ms,'کنترل از اعلان/صفحه‌ی قفل (Media Session)','کنترل از صفحه‌ی قفل پشتیبانی نمی‌شود')}${yn(cp.sw,'حالت آفلاین/نصب PWA','سرویس‌ورکر در دسترس نیست (نیاز به HTTPS یا localhost)')}${yn(cp.persist,'درخواست ذخیره‌سازی پایدار','ذخیره‌سازی پایدار پشتیبانی نمی‌شود')}</ul><div class="bar"><button data-a="inst">نصب برنامه</button></div>`},
  scan(){const s=S.scan;if(!s)return V.songs();return `<h2>${s.running?'در حال اسکن…':'اسکن متوقف شد'}</h2><progress id="sp" max="${s.t}" value="${s.n}" style="width:100%"></progress><p id="sn">${fa(Math.floor(s.n/s.t*100))}٪ — ${fa(s.n)} از ${fa(s.t)}</p><p id="sc" class="d">${scanStats(s)}</p><div class="bar">${s.running?'<button data-a="stop">⏹ توقف</button>':'<button class="pri" data-a="scont">▶ ادامه</button><button data-a="srestart">شروع مجدد از اول</button><button data-a="sclose">بستن</button>'}</div>`}
 };
@@ -191,9 +194,10 @@ const b2d=b=>new Promise((r,j)=>{const f=new FileReader();f.onload=()=>r(f.resul
 const d2b=async d=>(await fetch(d)).blob();
 const pick=s=>{const i=$(s);i.value='';i.click()};
 function openAdd(){if(dlg.open)return;const b=[];const cp=CAPS();
- if(cp.dir)b.push(['انتخاب پوشه (همراه زیرپوشه‌ها)',()=>pick('#fDir')]);
- b.push(['انتخاب چند فایل',()=>pick('#fFiles')]);b.push(['افزودن از لینک آنلاین…',linkDialog]);
- sheet('افزودن موسیقی',b,cp.dir?'اگر انتخاب پوشه در مرورگر شما کار نکرد، «انتخاب چند فایل» را بزنید و همه‌ی آهنگ‌ها را انتخاب کنید.':'این مرورگر انتخاب پوشه را پشتیبانی نمی‌کند؛ چند فایل را هم‌زمان انتخاب کنید.')}
+ if(NaghmePlatform.isNative){b.push(['انتخاب پوشه (دسترسی دائمی)',nativeFolder]);b.push(['انتخاب چند فایل (دسترسی دائمی)',nativeFiles])}
+ else{if(cp.dir)b.push(['انتخاب پوشه (همراه زیرپوشه‌ها)',()=>pick('#fDir')]);
+ b.push(['انتخاب چند فایل',()=>pick('#fFiles')])}b.push(['افزودن از لینک آنلاین…',linkDialog]);
+ sheet('افزودن موسیقی',b,NaghmePlatform.isNative?'دسترسی به پوشه یا فایل‌های انتخاب‌شده دائمی می‌شود؛ بعد از بستن برنامه نیازی به انتخاب دوباره نیست.':cp.dir?'اگر انتخاب پوشه در مرورگر شما کار نکرد، «انتخاب چند فایل» را بزنید و همه‌ی آهنگ‌ها را انتخاب کنید.':'این مرورگر انتخاب پوشه را پشتیبانی نمی‌کند؛ چند فایل را هم‌زمان انتخاب کنید.')}
 const addToPl=id=>sheet('افزودن به فهرست',[...S.pl.map(p=>[p.name,()=>{if(!p.ids.includes(id))p.ids.push(id);savePl();toast('اضافه شد')}]),['＋ فهرست جدید',()=>{const n=prompt('نام فهرست:');if(n){S.pl.push({id:uid(),name:n,desc:'',ids:[id]});savePl();toast('فهرست ساخته شد')}}]]);
 /* ---------- آهنگ آنلاین (لینک مستقیم) ---------- */
 function linkDialog(){if(dlg.open)dlg.close();dlg._t=Date.now();dlg.innerHTML='<h3>افزودن از لینک آنلاین</h3><p class="d">آدرس مستقیم فایل صوتی (https://…/song.mp3) — هر لینک در یک خط. سرویس‌هایی مثل یوتیوب/اسپاتیفای پشتیبانی نمی‌شوند.</p><textarea id="lnk" rows="5" style="width:100%;direction:ltr" placeholder="https://example.com/song.mp3"></textarea><button data-k="0" class="pri">افزودن</button><button data-k="1" class="ghost">لغو</button>';dlg._b=[['',()=>addLinks($('#lnk').value)],['',()=>{}]];dlg.showModal()}
@@ -247,6 +251,17 @@ async function applyRestore(o,mode){try{
   const seen=new Set(S.hist.map(h=>h.id+'@'+h.t));for(const h of o.hist||[])if(!seen.has(h.id+'@'+h.t))S.hist.push(h);S.hist.sort((a,b)=>a.t-b.t);S.listen=Math.max(S.listen,o.listen||0)}
  S.songs=[...S.map.values()];S.hist=S.hist.slice(-500);savePl();kvSet('imgs',S.imgs);kvSet('hist',S.hist);kvSet('listen',S.listen);kvSet('eq',S.eq);kvSet('cfg',S.cfg);reidx();await gcCovers();S.view={t:'songs'};render();toast('بازیابی انجام شد؛ برای پخش، پوشه‌ی موسیقی را دوباره اضافه کنید')}
  catch(e){console.error(e);toast('بازیابی ناموفق بود؛ اطلاعات پیشین حفظ شد')}}
+/* ---------- Native (Capacitor) ---------- */
+const nativeErr=e=>/permission|persist/i.test(String(e&&e.message||e))?'مجوز دسترسی به پوشه داده نشد یا از دست رفته است؛ دوباره انتخاب کنید':'خطا در دسترسی به حافظه‌ی گوشی: '+String(e&&e.message||e).slice(0,80);
+const addTree=(l,t)=>[...(l||[]).filter(x=>x.uri!==t.uri),t];
+async function nativeFolder(){try{const r=await NaghmePlatform.pickFolder();if(!r)return;S.trees=addTree(S.trees,r.tree);kvSet('trees',S.trees);start(r.files)}catch(e){toast(nativeErr(e))}}
+async function nativeFiles(){try{const l=await NaghmePlatform.pickFiles();if(l&&l.length)start(l)}catch(e){toast(nativeErr(e))}}
+async function rescanTrees(){if(!S.trees.length)return toast('پوشه‌ی ذخیره‌شده‌ای نیست');
+ try{const all=[],lost=[];for(const t of S.trees){try{all.push(...await NaghmePlatform.rescan(t))}catch(e){lost.push(t.name)}}
+  if(lost.length)toast('دسترسی این پوشه‌ها از دست رفته است: '+lost.join('، '));if(all.length)start(all)}catch(e){toast(nativeErr(e))}}
+async function untree(uri){try{await NaghmePlatform.releaseTree(uri)}catch{}S.trees=S.trees.filter(t=>t.uri!==uri);kvSet('trees',S.trees);render();toast('دسترسی پوشه حذف شد (آهنگ‌های کتابخانه می‌مانند ولی پخششان نیاز به انتخاب دوباره دارد)')}
+function nativeSettings(){if(!NaghmePlatform.isNative)return '';
+ return `<h2>پوشه‌های دائمی (اندروید)</h2><p class="d">دسترسی این پوشه‌ها بعد از بستن برنامه هم حفظ می‌شود.</p>${(S.trees||[]).map(t=>`<div class="bar"><b>${esc(t.name)}</b><button data-a="untree" data-v="${esc(t.uri)}">حذف دسترسی</button></div>`).join('')||'<p class="d">هنوز پوشه‌ای انتخاب نشده است.</p>'}<div class="bar"><button class="pri" data-a="rescan">اسکن مجدد پوشه‌های ذخیره‌شده</button></div>`}
 /* ---------- Events ---------- */
 const guard={};const once=(k,ms=300)=>{const n=Date.now();if(guard[k]&&n-guard[k]<ms)return false;guard[k]=n;return true};   // جلوگیری از دوبار کلیک ناخواسته
 let dip;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e});
@@ -257,6 +272,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  open(){if(d.t==='play')return play([d.v]);if(d.t==='smart'){S.filter=d.v;S.view={t:'songs'}}else S.view={t:d.t,v:d.v};S.lim=100;render();$('#view').scrollTop=0},fopen(){S.view={t:'folders',v:d.v};S.lim=100;render()},
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
+ rescan(){rescanTrees()},untree(){untree(d.v)},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
@@ -294,7 +310,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  const mig=[],cb=[];                                    // مهاجرت از نسخه‌ی ۱: کاورِ داخل رکورد آهنگ ← مخزن کاورهای یکتا
  for(const s of S.songs){if('cover' in s){try{if(s.cover instanceof Blob){const cid=await coverId(s.cover);if(!S.covers.has(cid)){S.covers.set(cid,s.cover);cb.push({id:cid,blob:s.cover})}s.cid=cid}else s.cid=s.cid||''}catch{s.cid=''}delete s.cover;mig.push(s)}}
  if(cb.length)await putCovers(cb);if(mig.length)await putMany(mig);reidx();
- S.pl=await kvGet('pl')||[];Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
+ S.pl=await kvGet('pl')||[];S.trees=await kvGet('trees')||[];Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
  document.documentElement.dataset.theme=await kvGet('theme')||'dark';
  const l=await kvGet('last');
  if(l&&Array.isArray(l.q)){S.q=l.q.filter(i=>S.map.has(i));const ci=l.id?S.q.indexOf(l.id):-1;S.shuffle=!!l.shuffle;S.rep=[0,1,2].includes(l.rep)?l.rep:0;
@@ -306,7 +322,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  if(S.songs.some(s=>!s.stored&&!s.url&&!s.bad)&&!S.files.size)setTimeout(()=>toast('برای پخش، پوشه‌ی موسیقی را دوباره با «＋ افزودن» انتخاب کنید (اطلاعات شما حفظ شده است)'),2500);
 }catch(e){console.error(e);toast('خطا در خواندن پایگاه داده')}
  render();ui();
- if('serviceWorker'in navigator&&location.protocol!=='file:'){const had=!!navigator.serviceWorker.controller;
+ if('serviceWorker'in navigator&&location.protocol!=='file:'&&!NaghmePlatform.isNative){const had=!!navigator.serviceWorker.controller;
   navigator.serviceWorker.register('sw.js').then(reg=>{
    const ask=w=>sheet('نسخه‌ی جدید برنامه آماده است',[['به‌روزرسانی اکنون',()=>w.postMessage('skip')],['بعداً',()=>{}]],'پس از به‌روزرسانی، صفحه دوباره بارگذاری می‌شود.');
    if(reg.waiting&&navigator.serviceWorker.controller)ask(reg.waiting);

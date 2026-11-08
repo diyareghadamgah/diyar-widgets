@@ -1,0 +1,20 @@
+{
+  "name": "naghme",
+  "version": "2.2.0",
+  "description": "نغمه | NAGHME MUSIC STUDIO — پخش‌کننده و مدیر آرشیو موسیقی (PWA + اندروید با Capacitor)",
+  "private": true,
+  "scripts": {
+    "web": "node scripts/build-web.js",
+    "android:add": "node scripts/build-web.js && npx cap add android && node scripts/setup-android.js && npx cap sync android",
+    "android:sync": "node scripts/build-web.js && node scripts/setup-android.js && npx cap sync android",
+    "android:debug": "cd android && ./gradlew assembleDebug",
+    "test": "cd tests && node tags.test.js && node scripts.test.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}

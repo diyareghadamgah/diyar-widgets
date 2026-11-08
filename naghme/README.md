@@ -2,7 +2,7 @@
 «تمام موسیقی‌های تو، در یک خانه» — پخش‌کننده و مدیر آرشیو موسیقی، آفلاین، بدون سرور، بدون حساب کاربری؛ HTML/CSS/JS خالص بدون CDN.
 
 ## فایل‌ها
-`index.html` · `style.css` · `app.js` (برنامه) · `tags.js` (خواندن تگ/کاور ID3) · `sw.js` · `manifest.json` · `icon-*.png` · `tests/` · `docs/`
+`index.html` · `style.css` · `app.js` (برنامه) · `tags.js` (تگ/کاور ID3) · `platform.js` (لایه‌ی وب/اندروید) · `sw.js` · `manifest.json` · `icon-*.png` · `capacitor.config.json` · `package.json` · `native/android/` (پلاگین بومی) · `scripts/` · `tests/` · `docs/`
 
 ## اجرا
 نیاز به build یا npm نیست. پوشه را روی **HTTPS** یا **localhost** بگذارید (برای سرویس‌ورکر، نصب PWA و SHA-256 لازم است):
@@ -46,4 +46,50 @@ Chrome ← آدرس برنامه ← منوی ⋮ ← «Install app / افزود
 مقدار `VERSION` در `sw.js` را تغییر دهید؛ کاربران پنجره‌ی «نسخه‌ی جدید آماده است» را می‌بینند.
 
 ## آزمون‌ها
-`cd tests && python3 make-fixtures.py /tmp/t && FIX=/tmp/t node tags.test.js && FIX=/tmp/t node browser.test.js` (نیازمند ffmpeg، Node 22، playwright+Chromium و سرور روی پورت ۸۷۶۵ برای پوشه‌ی پروژه).
+`cd tests && python3 make-fixtures.py /tmp/t && FIX=/tmp/t node tags.test.js && node scripts.test.js && FIX=/tmp/t node browser.test.js && FIX=/tmp/t node native.test.js` (نیازمند ffmpeg، Node 22، playwright+Chromium و سرور روی پورت ۸۷۶۵ برای پوشه‌ی پروژه).
+
+
+---
+# نسخه‌ی اندروید (APK با Capacitor) — v2.2
+
+**هدف:** حل مشکل «بعد از بستن برنامه باید آهنگ‌ها را دوباره معرفی کنم». در APK، دسترسی به پوشه با Storage Access Framework گرفته و با `takePersistableUriPermission()` **دائمی** می‌شود؛ بعد از بستن برنامه و حتی ریستارت گوشی، آهنگ‌ها خودکار وصل می‌مانند.
+
+> ⚠ **وضعیت آزمون:** در محیطی که این نسخه ساخته شد Android SDK، Gradle و اینترنت (npm) نبود. پس **APK ساخته و روی گوشی آزمایش نشده است**. جاوااسکریپت و اسکریپت‌ها با Node/Chromium و یک پلاگین ساختگی آزمایش شده‌اند؛ کد جاوا فقط در برابر stubهای دست‌نویس کامپایل شده، نه Android SDK واقعی. جزئیات: `docs/گزارش-آزمون.md`.
+
+## پیش‌نیازها
+Node 18+ ، JDK 17 ، Android SDK 34 (Android Studio یا فقط command-line tools). `ANDROID_HOME` تنظیم باشد.
+
+## ساخت APK (دیباگ)
+```
+npm install
+npm run android:add          # فقط بار اول: web → cap add android → پلاگین/مجوزها/Gradle → sync
+cd android && ./gradlew assembleDebug      # ویندوز: gradlew.bat assembleDebug
+```
+APK خروجی: `android/app/build/outputs/apk/debug/app-debug.apk`
+
+دفعه‌های بعد (پس از تغییر فایل‌های وب): `npm run android:sync` سپس `cd android && ./gradlew assembleDebug`.
+اگر `^6.2.0` در npm پیدا نشد، نسخه‌ی ۶ موجود را در `package.json` بگذارید (نسخه‌ها آنجا آزمایش نشدند).
+
+### بدون کامپیوتر: ساخت روی GitHub Actions
+فایل `.github-template/naghme-android.yml` را به مسیر `.github/workflows/naghme-android.yml` در **ریشه‌ی مخزن** ببرید و از تب Actions اجرایش کنید؛ APK به‌صورت artifact دانلود می‌شود. (آزمایش نشده.)
+
+## نصب روی گوشی
+فایل APK را روی گوشی بریزید و باز کنید (اجازه‌ی «نصب از منبع ناشناس») یا با `adb install app-debug.apk`.
+
+## انتخاب آرشیو در APK
+«＋ افزودن» ← **«انتخاب پوشه (دسترسی دائمی)»** ← پوشه‌ی `Music/آرشیو موسیقی` ← «استفاده از این پوشه/اجازه». یک‌بار کافی است. در تنظیمات بخش «پوشه‌های دائمی» هست: «اسکن مجدد» آهنگ‌های جدید را می‌گیرد و «حذف دسترسی» مجوز را پس می‌دهد.
+- از اندروید ۱۱ به بعد خودِ پوشه‌ی **Download** یا ریشه‌ی حافظه قابل انتخاب نیست؛ یک **زیرپوشه** (مثل Music/…) انتخاب کنید.
+- «کپی داخل برنامه» و «افزودن از لینک» بدون تغییر کار می‌کنند.
+
+## انتقال از نسخه‌ی PWA به APK
+داده‌های PWA (IndexedDB) با APK مشترک نیستند (مبدأ متفاوت). در PWA: تنظیمات ← «خروجی JSON»؛ در APK: «بازیابی» ← «ادغام»؛ سپس **همان پوشه** را انتخاب کنید. آهنگ‌ها (با همان نام پوشه‌ی ریشه) بدون تکرار به فایل وصل می‌شوند و علاقه‌مندی‌ها/فهرست‌ها می‌مانند.
+
+## نحوه‌ی کار
+`platform.js` تشخیص می‌دهد داخل Capacitor هست یا نه. در وب هیچ‌چیز عوض نمی‌شود. در اندروید پلاگین `NaghmeStorage` (`native/android/NaghmeStoragePlugin.java`) پوشه را می‌گیرد، فایل‌ها را فهرست می‌کند و تکه‌تکه (۱ مگابایت، Base64) می‌خواند؛ `tags.js` همان تگ/کاور را می‌خواند و مدت آهنگ با `MediaMetadataRetriever` می‌آید. برای پخش، فایل به Blob تبدیل و با `blob:` URL پخش می‌شود. هیچ فایلی نوشته/حذف/جابه‌جا نمی‌شود.
+
+## محدودیت‌های شناخته‌شده APK
+- **پخش در پس‌زمینه و کنترل صفحه‌ی قفل: تضمین نمی‌شود.** WebView برخلاف Chrome اعلان رسانه نمی‌دهد و ممکن است با رفتن برنامه به پس‌زمینه صدا را قطع کند. در `MainActivity` یک راه‌حل آزمایشی هست؛ روی گوشی واقعی بررسی کنید. راه‌حل کامل (Foreground Service + MediaSession) ساخته نشده است.
+- **مجوز زمان اجرا:** SAF به `READ_EXTERNAL_STORAGE`/`READ_MEDIA_AUDIO` نیاز ندارد. این دو در مانیفست هستند (طبق درخواست) ولی استفاده نمی‌شوند و عمداً پنجره‌ی درخواست مجوز زمان اجرا نساخته‌ام تا پیام اضافه نیاید.
+- هر آهنگ هنگام پخش کامل در حافظه بارگذاری می‌شود؛ فایل‌های خیلی بزرگ (مثلاً FLAC صدمگابایتی) کند یا سنگین‌اند.
+- تگ و کاور فقط برای MP3 (ID3). فقط APK **دیباگ**؛ نسخه‌ی release/امضا و Play Store ساخته نشده است.
+- مجوزهای دائمی Android محدودیت تعداد دارند (برای انتخاب پوشه مشکلی نیست؛ انتخاب «چند فایل» جداگانه هر فایل یک مجوز مصرف می‌کند).

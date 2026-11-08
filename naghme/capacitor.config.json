@@ -1,0 +1,7 @@
+{
+  "appId": "ir.diyareghadamgah.naghme",
+  "appName": "نغمه",
+  "webDir": "www",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": false }
+}
