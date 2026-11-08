@@ -38,4 +38,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: naghme-debug-apk
-          path: naghme/android/app/build/outputs/apk/debug/app-debug.apk
+       
+        path: naghme/android/app/build/outputs/apk/debug/app-debug.apk
