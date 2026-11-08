@@ -21,20 +21,18 @@ const nat = path.join(root, 'native/android');
 
 wr(path.join(jdir, 'NaghmeStoragePlugin.java'), rd(path.join(nat, 'NaghmeStoragePlugin.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';'));
 
-// اصلاح MainActivity برای ثبت هر دو پلاگین (نغمه + انتخاب فایل)
+// اصلاح MainActivity برای ثبت فقط پلاگین سفارشی نغمه
 let mainActivityCode = rd(path.join(nat, 'MainActivity.java')).replace(/^package [^;]+;/m, 'package ' + pkg + ';');
-const nativePluginName = 'NaghmeStoragePlugin'; // نام پلاگین سفارشی
-const capawesomePluginName = 'FilePickerPlugin'; // نام پلاگین انتخاب فایل
 
-// اضافه کردن ثبت پلاگین‌ها در onCreate (اگر وجود ندارد)
-if (!mainActivityCode.includes(capawesomePluginName)) {
+// اضافه کردن ثبت پلاگین در onCreate
+if (!mainActivityCode.includes('NaghmeStoragePlugin')) {
   mainActivityCode = mainActivityCode.replace(
     'super.onCreate(savedInstanceState);',
-    `super.onCreate(savedInstanceState);\n        registerPlugin(${nativePluginName}.class);\n        registerPlugin(com.capawesome.capacitorjs.plugins.filepicker.FilePickerPlugin.class);`
+    `super.onCreate(savedInstanceState);\n        registerPlugin(NaghmeStoragePlugin.class);`
   );
 }
 wr(path.join(jdir, 'MainActivity.java'), mainActivityCode);
-console.log('✓ پلاگین بومی، MainActivity و FilePicker در ' + path.relative(root, jdir));
+console.log('✓ پلاگین بومی نغمه و MainActivity در ' + path.relative(root, jdir));
 
 // حذف MainActivity اضافی
 const base = path.join(android, 'app/src/main/java');
