@@ -9,7 +9,7 @@ on:
 jobs:
   apk:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     defaults:
       run:
         working-directory: naghme
@@ -27,16 +27,16 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-        
+          
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 8.2.1
           cache-disabled: true
-          
+
       - name: Clean stale build leftovers
         run: rm -rf android www node_modules package-lock.json
-        
+
       - name: Install dependencies
         run: npm install
         
@@ -57,12 +57,20 @@ jobs:
           cd android
           gradle assembleDebug --stacktrace --no-daemon
           
-      - name: Verify APK
+      - name: Verify APK contains the plugin and current web assets
         run: |
-          cd android/app/build/outputs/apk/debug
-          unzip -l app-debug.apk | grep -q "assets/public/platform.js" || (echo "::error::platform.js not found in APK" && exit 1)
-          unzip -l app-debug.apk | grep -q "classes.dex" || (echo "::error::Java classes not found in APK" && exit 1)
-          echo "✅ APK verification passed. Files are in place."
+          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          rm -rf /tmp/apk
+          mkdir /tmp/apk
+          unzip -q "$APK" -d /tmp/apk
+          echo "== web assets inside APK =="
+          ls /tmp/apk/assets/public
+          cat /tmp/apk/assets/public/build-info.json; echo
+          grep -q "NaghmeStorage_not_registered" /tmp/apk/assets/public/platform.js
+          grep -q "nativePromise" /tmp/apk/assets/public/platform.js
+          echo "== dex contains plugin + MainActivity =="
+          grep -l -a "ir/diyareghadamgah/naghme/NaghmeStoragePlugin" /tmp/apk/classes*.dex
+          grep -l -a "ir/diyareghadamgah/naghme/MainActivity" /tmp/apk/classes*.dex
           
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -70,3 +78,11 @@ jobs:
           name: naghme-debug-apk
           path: naghme/android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+          
+      - name: Upload build reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: naghme-build-reports
+          path: naghme/android/app/build/reports
+          if-no-files-found: ignore
