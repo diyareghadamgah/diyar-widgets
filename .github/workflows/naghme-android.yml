@@ -9,7 +9,7 @@ on:
 jobs:
   apk:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: naghme
@@ -27,6 +27,9 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+        
+      - name: Setup Gradle (with caching)
+        uses: gradle/actions/setup-gradle@v3
         
       - name: Clean stale build leftovers
         run: rm -rf android www node_modules package-lock.json
@@ -50,7 +53,7 @@ jobs:
         run: |
           chmod +x android/gradlew
           cd android
-          ./gradlew assembleDebug --stacktrace --no-daemon
+          ./gradlew assembleDebug --stacktrace --no-daemon -Dorg.gradle.internal.http.connectionTimeout=120000 -Dorg.gradle.internal.http.socketTimeout=120000
           
       - name: Upload APK
         uses: actions/upload-artifact@v4
