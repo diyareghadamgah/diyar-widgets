@@ -71,7 +71,7 @@ APK خروجی: `android/app/build/outputs/apk/debug/app-debug.apk`
 اگر `^6.2.0` در npm پیدا نشد، نسخه‌ی ۶ موجود را در `package.json` بگذارید (نسخه‌ها آنجا آزمایش نشدند).
 
 ### بدون کامپیوتر: ساخت روی GitHub Actions
-فایل `.github-template/naghme-android.yml` را به مسیر `.github/workflows/naghme-android.yml` در **ریشه‌ی مخزن** ببرید و از تب Actions اجرایش کنید؛ APK به‌صورت artifact دانلود می‌شود. (آزمایش نشده.)
+فایل workflow در ZIP از قبل در مسیر درست `.github/workflows/naghme-android.yml` (کنار پوشه‌ی `naghme/`، در ریشه‌ی مخزن) قرار دارد. از تب Actions اجرایش کنید؛ APK به‌صورت artifact دانلود می‌شود.
 
 ## نصب روی گوشی
 فایل APK را روی گوشی بریزید و باز کنید (اجازه‌ی «نصب از منبع ناشناس») یا با `adb install app-debug.apk`.
@@ -100,15 +100,15 @@ APK خروجی: `android/app/build/outputs/apk/debug/app-debug.apk`
 |---|---|---|
 | `Cannot read properties of null (reading 'pickDirectory')` | دو علت جدا: (۱) **سمت جاوااسکریپت:** در WebView بدون bundler ممکن است `Capacitor.registerPlugin` اصلاً تعریف نشده باشد (آن تابع از جاوااسکریپت `@capacitor/core` می‌آید) و کدی که فقط با آن پلاگین را بگیرد `null` می‌ماند؛ (۲) **سمت جاوا:** پلاگین در `MainActivity` ثبت نشده یا `registerPlugin` بعد از `super.onCreate` است یا APK قدیمی نصب شده | `platform.js` (v2.2.2) پلاگین را به سه روش پیدا می‌کند: `Capacitor.Plugins.NaghmeStorage` ← `registerPlugin` ← `Capacitor.nativePromise`، و `null` نمی‌ماند. اگر هیچ‌کدام نبود، خودکار صفحه‌ی **«تشخیص پلاگین بومی»** باز می‌شود (همچنین از تنظیمات). `MainActivity` پلاگین را قبل از `super.onCreate` ثبت می‌کند و `setup-android.js` ترتیب و `namespace` را کنترل می‌کند |
 | `cannot find symbol FilePickerPlugin` | باقی‌مانده‌ی تلاش‌های قبلی (پوشه‌ی `android/` یا `package.json` قدیمی) هنوز به `@capawesome/capacitor-file-picker` اشاره می‌کند | این پروژه به آن وابسته نیست. پوشه‌ی `android/` قدیمی را پاک کنید (`rm -rf android`)؛ workflow هر بار آن را پاک و از نو می‌سازد، و `setup-android.js` هر باقی‌مانده‌ی FilePicker را پیدا و متوقف می‌کند |
-| `Invalid workflow file: Unexpected value 'path'` | `path:` در جای نادرست (باید فقط زیر `with:` یا `paths:` زیر `push:` باشد) یا تورفتگی اشتباه | از فایل `.github-template/naghme-android.yml` بدون ویرایش استفاده کنید؛ ساختارش با `tests/workflow.test.py` بررسی شده |
+| `Invalid workflow file: Unexpected value 'path'` | `path:` در جای نادرست (باید فقط زیر `with:` یا `paths:` زیر `push:` باشد) یا تورفتگی اشتباه | از فایل `.github/workflows/naghme-android.yml` همین ZIP بدون ویرایش استفاده کنید؛ ساختارش با `tests/workflow.test.py` بررسی شده |
 
-### نصب workflow از Termux
+### نصب از Termux (یک دستور)
+ZIP را باز کنید (پوشه‌ی `naghme-final` شامل `.github/` و `naghme/` است) و:
 ```
-mkdir -p ~/diyar-widgets/.github/workflows
-cp .github-template/naghme-android.yml ~/diyar-widgets/.github/workflows/naghme-android.yml
-cd ~/diyar-widgets && git rm -r --cached naghme/android 2>/dev/null; rm -rf naghme/android
-git add -A && git commit -m "naghme v2.2.1 + workflow" && git push
+cd ~/diyar-widgets/diyar-widgets && rm -rf naghme && cp -r /مسیر/naghme-final/. .
+git add -A && git commit -m "naghme v2.2.3" && git push
 ```
+اگر توکن شما دسترسی `workflow` ندارد، پوش فایل `.yml` رد می‌شود؛ در این حالت فقط `naghme-android.yml` را یک‌بار از طریق وب گیت‌هاب در `.github/workflows/` آپلود کنید (اگر محتوای فایل با نسخه‌ی موجود در مخزن یکی باشد، گیت آن را تغییر‌یافته نمی‌بیند و پوش مشکلی ندارد).
 سپس در گیت‌هاب: Actions ← naghme-android ← Run workflow. خروجی: artifact با نام `naghme-debug-apk`. (پوشه‌ی `naghme/` در مخزن باید کاملاً با محتوای این ZIP جایگزین شده باشد.)
 
 ### خواندن صفحه‌ی «تشخیص پلاگین بومی»
