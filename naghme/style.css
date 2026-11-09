@@ -85,50 +85,62 @@ dialog{max-height:88dvh;overflow:auto}
 
 
 
-/* --- Naghme v2.2.8 FIXED TV LAYOUT (Aggressive) --- */
-#view, .view-container, main { 
-    overflow: hidden !important; 
-    height: 100% !important; 
-    display: flex;
-    flex-direction: column;
+
+    padding-bottom: 100px !important; /* فاصله برای اینکه آخرین کانال زیر مینی‌پلیر نرود */
+}
+
+/* --- Naghme v2.2.8 ULTIMATE IPTV FIX --- */
+/* جلوگیری از اسکرول شدن کل صفحه */
+body, html, #app, #view, main {
+    height: 100% !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #iptv-container {
     display: flex !important;
     flex-direction: column !important;
-    height: calc(100vh - 160px) !important; /* 160px برای هدر، مینی‌پلیر و نوار پایین */
-    max-height: calc(100vh - 160px) !important;
+    height: 100% !important;
+    width: 100% !important;
     overflow: hidden !important;
-    margin-bottom: 0 !important;
+    position: relative !important;
 }
 
+/* بخش پلیر: ثابت در بالا، بدون اینکه کل صفحه را بگیرد */
 #iptv-player-area {
-    flex-shrink: 0 !important;
+    flex: 0 0 auto !important; /* نه بزرگ میشه نه کوچیک */
     width: 100% !important;
+    max-height: 40vh !important; /* حداکثر 40 درصد ارتفاع صفحه برای ویدیو */
     background: #000 !important;
     position: relative !important;
+    z-index: 1 !important;
 }
 
 #iptv-player-area video {
     width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
+    height: 100% !important;
     object-fit: contain !important;
     display: block !important;
 }
 
+/* بخش جستجو و فیلترها: دقیقاً زیر پلیر ثابت میشه */
 #iptv-filters {
-    flex-shrink: 0 !important;
+    flex: 0 0 auto !important;
     background: var(--bg-color, #111) !important;
     padding: 10px !important;
-    z-index: 10 !important;
-    border-bottom: 1px solid #333 !important;
+    z-index: 5 !important;
+    position: relative !important; /* جلوگیری از روی هم افتادن */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important; /* سایه برای جدا شدن از لیست */
 }
 
+/* لیست کانال‌ها: تنها بخشی که اسکرول میشه */
 #iptvResults {
-    flex-grow: 1 !important;
+    flex: 1 1 auto !important; /* بقیه فضا رو پر میکنه */
     overflow-y: auto !important;
     min-height: 0 !important;
     padding: 10px !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding-bottom: 100px !important; /* فاصله برای اینکه آخرین کانال زیر مینی‌پلیر نرود */
+    padding-bottom: 120px !important; /* فاصله برای مینی پلیر */
+    position: relative !important;
+    z-index: 1 !important;
 }
