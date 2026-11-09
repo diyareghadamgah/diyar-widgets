@@ -522,3 +522,68 @@ document.addEventListener('click', function(e) {
         status.innerHTML = 'Hls.js لود نشده است! (کتابخانه پیدا نشد)';
     }
 }, true);
+
+// --- NAGHME_BULLETPROOF_INTERCEPTOR ---
+setInterval(() => {
+    const video = document.getElementById('iptv-video');
+    if (video && !video.hasAttribute('data-hls-patched')) {
+        video.setAttribute('data-hls-patched', 'true');
+        console.log('IPTV Video patched successfully.');
+
+        // ذخیره تنظیمات اصلی مرورگر
+        const originalSrcDescriptor = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, 'src');
+        const originalSetAttribute = video.setAttribute;
+
+        // ۱. شکار کردن video.src = "http://..."
+        Object.defineProperty(video, 'src', {
+            set: function(newSrc) {
+                if (newSrc && newSrc.includes('.m3u8')) {
+                    console.log('Intercepted m3u8 via src setter!');
+                    playHLS(newSrc, this);
+                } else {
+                    originalSrcDescriptor.set.call(this, newSrc);
+                }
+            },
+            get: function() {
+                return originalSrcDescriptor.get.call(this);
+            }
+        });
+
+        // ۲. شکار کردن video.setAttribute('src', "http://...")
+        video.setAttribute = function(name, value) {
+            if (name === 'src' && value && value.includes('.m3u8')) {
+                console.log('Intercepted m3u8 via setAttribute!');
+                playHLS(value, video);
+            } else {
+                originalSetAttribute.call(this, name, value);
+            }
+        };
+    }
+}, 1000);
+
+function playHLS(url, videoElement) {
+    const status = document.getElementById('iptv-status');
+    if (status) status.innerHTML = 'در حال اتصال به HLS...';
+    
+    if (window.Hls && Hls.isSupported()) {
+        if (window.naghmeHls) { window.naghmeHls.destroy(); }
+        window.naghmeHls = new Hls();
+        window.naghmeHls.loadSource(url);
+        window.naghmeHls.attachMedia(videoElement);
+        
+        window.naghmeHls.on(Hls.Events.MANIFEST_PARSED, function() {
+            if (status) status.innerHTML = 'در حال پخش (HLS)...';
+            videoElement.play().catch(err => {
+                if (status) status.innerHTML = 'خطای پخش: ' + err.message;
+            });
+        });
+        
+        window.naghmeHls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.fatal) {
+                if (status) status.innerHTML = 'خطای HLS: ' + data.type;
+            }
+        });
+    } else {
+        if (status) status.innerHTML = 'Hls.js لود نشده است!';
+    }
+}
