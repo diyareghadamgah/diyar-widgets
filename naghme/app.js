@@ -372,3 +372,50 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
    let rf=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!had||rf)return;rf=true;location.reload()});
    reg.update().catch(()=>{})}).catch(()=>{})}
 })();
+
+
+// --- Naghme v2.2.8 IPTV Events ---
+setInterval(() => {
+  const container = document.getElementById('iptv-container');
+  if (!container) return;
+  const searchInput = document.getElementById('iptvSearch');
+  const resultsDiv = document.getElementById('iptvResults');
+  const video = document.getElementById('iptv-video');
+
+  if (searchInput && !searchInput.dataset.bound) {
+    searchInput.dataset.bound = 'true';
+    searchInput.addEventListener('input', () => {
+      const term = searchInput.value.toLowerCase();
+      const cards = resultsDiv.querySelectorAll('.iptv-channel-card');
+      cards.forEach(c => {
+        if(c.dataset.name && c.dataset.name.toLowerCase().includes(term)) c.style.display = 'flex';
+        else c.style.display = 'none';
+      });
+    });
+  }
+
+  if (resultsDiv && !resultsDiv.dataset.bound) {
+    resultsDiv.dataset.bound = 'true';
+    resultsDiv.addEventListener('click', (e) => {
+      const card = e.target.closest('.iptv-channel-card');
+      if (!card) return;
+      const url = card.dataset.url;
+      const name = card.dataset.name;
+      const status = document.getElementById('iptv-status');
+      if(status) status.textContent = 'در حال پخش: ' + name;
+      
+      if (video) {
+        if (video.hlsPlayer) { video.hlsPlayer.destroy(); }
+        if (window.Hls && Hls.isSupported()) {
+          video.hlsPlayer = new Hls();
+          video.hlsPlayer.loadSource(url);
+          video.hlsPlayer.attachMedia(video);
+          video.play().catch(()=>{});
+        } else {
+          video.src = url;
+          video.play().catch(()=>{});
+        }
+      }
+    });
+  }
+}, 1000);

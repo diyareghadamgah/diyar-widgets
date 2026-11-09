@@ -45,3 +45,42 @@ dialog{max-height:88dvh;overflow:auto}
 
 /* جست‌وجوی مستقل شبکه‌های IPTV */
 .iptv-search-wrap{display:block;width:100%;margin:12px 0 10px;padding:0}.iptv-search{display:block!important;box-sizing:border-box;width:100%!important;min-height:48px;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;padding:12px 14px!important;font-size:15px!important;direction:rtl;user-select:text!important}.iptv-search::placeholder{color:var(--mu);opacity:1}
+/* --- Naghme v2.2.8 IPTV Sticky Layout --- */
+#iptv-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 130px);
+  overflow: hidden;
+}
+
+#iptv-player-area {
+  flex-shrink: 0;
+  width: 100%;
+  background: #000;
+  position: relative;
+}
+
+#iptv-player-area video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  display: block;
+}
+
+#iptv-filters {
+  flex-shrink: 0;
+  background: var(--bg-color, #111);
+  padding: 10px;
+  z-index: 10;
+}
+
+#iptvResults {
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+
