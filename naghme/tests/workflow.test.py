@@ -1,6 +1,6 @@
 # اعتبارسنجی ساختاری فایل workflow (بدون اجرا روی GitHub). نیازمند PyYAML.
 import sys,yaml,re
-p=sys.argv[1] if len(sys.argv)>1 else '../.github-template/naghme-android.yml'
+p=sys.argv[1] if len(sys.argv)>1 else '../../.github/workflows/naghme-android.yml'
 raw=open(p,encoding='utf8').read();ok=True
 def chk(n,c,d=''):
     global ok;ok&=bool(c);print(('PASS ' if c else 'FAIL ')+n+((' — '+d) if d else ''))
