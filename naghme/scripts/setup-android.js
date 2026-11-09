@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* پس از «npx cap add android» اجرا می‌شود (و بی‌خطر می‌تواند دوباره اجرا شود):
-   ۱) پلاگین بومی و MainActivity  ۲) مجوزهای مانیفست  ۳) minSdk=23 و targetSdk=34 */
+   ۱) پلاگین بومی و MainActivity  ۲) مجوزهای مانیفست  ۳) minSdk=23 و targetSdk=34  ۴) آیکون برنامه (حذف mipmap-anydpi-v26 و نوشتن PNGها) */
 const fs=require('fs'),path=require('path');
 const root=path.resolve(process.argv[2]||path.join(__dirname,'..'));
 const cfg=JSON.parse(fs.readFileSync(path.join(root,'capacitor.config.json'),'utf8'));
@@ -44,5 +44,31 @@ if(fs.existsSync(vp)){let v=rd(vp);
  setv('minSdkVersion',23,false);setv('targetSdkVersion',34,false);setv('compileSdkVersion',34,true);wr(vp,v);
  console.log('✓ variables.gradle: minSdk=23، targetSdk=34، compileSdk≥34')}
 else warn.push('variables.gradle پیدا نشد؛ minSdk/targetSdk را دستی تنظیم کنید');
+/* ۴) آیکون برنامه
+   Capacitor برای اندروید ۸+ آیکون تطبیقی (Adaptive) می‌سازد: res/mipmap-anydpi-v26/ic_launcher.xml و ic_launcher_round.xml.
+   اندروید ۸+ همیشه آن XML را به PNGهای mipmap-* ترجیح می‌دهد، پس تا حذف نشود آیکون پیش‌فرض Capacitor دیده می‌شود.
+   پس: ۱) پوشه‌ی mipmap-anydpi-v26 حذف می‌شود  ۲) فایل‌های قدیمی ic_launcher*.webp پاک می‌شوند (وگرنه «Duplicate resources»)
+   ۳) icon-512.png در هر تراکم با اندازه‌ی درست به‌صورت ic_launcher.png و ic_launcher_round.png نوشته می‌شود
+   (اگر ImageMagick در دسترس باشد تغییر اندازه می‌دهد، وگرنه همان فایل ۵۱۲ را کپی می‌کند). */
+{const res=path.join(android,'app/src/main/res'),src=path.join(root,'icon-512.png');
+ if(!fs.existsSync(res))warn.push('پوشه‌ی res پیدا نشد؛ آیکون اعمال نشد');
+ else if(!fs.existsSync(src))warn.push('icon-512.png پیدا نشد؛ آیکون پیش‌فرض می‌ماند');
+ else{
+  const any=path.join(res,'mipmap-anydpi-v26');
+  if(fs.existsSync(any)){fs.rmSync(any,{recursive:true,force:true});console.log('✓ mipmap-anydpi-v26 حذف شد (آیکون تطبیقی پیش‌فرض Capacitor)')}
+  const cp=require('child_process');let im=null;
+  for(const c of ['magick','convert']){try{if(cp.spawnSync(c,['-version'],{encoding:'utf8'}).status===0){im=c;break}}catch{}}
+  const D={mdpi:48,hdpi:72,xhdpi:96,xxhdpi:144,xxxhdpi:192};let resized=0,copied=0;
+  for(const [d,px] of Object.entries(D)){
+   const dir=path.join(res,'mipmap-'+d);fs.mkdirSync(dir,{recursive:true});
+   for(const n of ['ic_launcher','ic_launcher_round']){
+    for(const e of ['.webp','.png','.jpg'])fs.rmSync(path.join(dir,n+e),{force:true});
+    const out=path.join(dir,n+'.png');let done=false;
+    if(im){const r=cp.spawnSync(im,[src,'-resize',px+'x'+px,out],{encoding:'utf8'});done=r.status===0&&fs.existsSync(out);if(done)resized++}
+    if(!done){fs.copyFileSync(src,out);copied++}}}
+  // آیکون‌های بدون پسوند تراکم (mipmap/ یا mipmap-anydpi) که ممکن است قالب ساخته باشد
+  for(const e of fs.readdirSync(res)){if(/^mipmap(-|$)/.test(e)&&!/^mipmap-(m|h|xh|xxh|xxxh)dpi$/.test(e)){const dd=path.join(res,e);for(const f of fs.readdirSync(dd))if(/^ic_launcher(_round)?\.(xml|webp|png)$/.test(f)){fs.rmSync(path.join(dd,f),{force:true});warn.push('آیکون اضافی حذف شد: '+e+'/'+f)}}}
+  console.log('✓ آیکون برنامه: '+Object.keys(D).length*2+' فایل PNG ('+(im?'تغییر اندازه با '+im+': '+resized:'کپی بدون تغییر اندازه (ImageMagick نبود): '+copied)+')');
+ }}
 for(const w of warn)console.warn('⚠ '+w);
 console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android && ./gradlew assembleDebug');
