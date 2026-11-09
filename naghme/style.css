@@ -89,14 +89,9 @@ dialog{max-height:88dvh;overflow:auto}
     padding-bottom: 100px !important; /* فاصله برای اینکه آخرین کانال زیر مینی‌پلیر نرود */
 }
 
-/* --- Naghme v2.2.8 ULTIMATE IPTV FIX --- */
+
 /* جلوگیری از اسکرول شدن کل صفحه */
-body, html, #app, #view, main {
-    height: 100% !important;
-    overflow: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+
 
 #iptv-container {
     display: flex !important;
@@ -143,4 +138,47 @@ body, html, #app, #view, main {
     padding-bottom: 120px !important; /* فاصله برای مینی پلیر */
     position: relative !important;
     z-index: 1 !important;
+}
+
+/* --- Naghme v2.2.8 FINAL STABLE LAYOUT --- */
+#iptv-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    max-height: calc(100vh - 130px) !important; /* تنظیم ارتفاع دقیق برای جلوگیری از بیرون‌زدگی */
+    overflow: hidden !important;
+}
+
+#iptv-player-area {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    background: #000 !important;
+    aspect-ratio: 16 / 9 !important; /* این خط جادویی است: ارتفاع را بر اساس عرض محاسبه می‌کند */
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+#iptv-player-area video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+#iptv-filters {
+    flex: 0 0 auto !important;
+    background: #111 !important;
+    padding: 10px !important;
+    z-index: 5 !important;
+    position: relative !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+
+#iptvResults {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+    padding: 10px !important;
+    padding-bottom: 100px !important; /* برای مینی پلیر */
+    -webkit-overflow-scrolling: touch !important;
 }
