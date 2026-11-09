@@ -35,7 +35,7 @@ const PERMS=[
  ['android.permission.READ_EXTERNAL_STORAGE','<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />'],
  ['android.permission.READ_MEDIA_AUDIO','<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />']];
 for(const [n,line] of PERMS){if(!m.includes(n)){if(!m.includes('</manifest>')){warn.push('مانیفست قابل‌ویرایش نبود: '+n);continue}m=m.replace('</manifest>','    '+line+'\n</manifest>')}}
-if(!/android:largeHeap=/.test(m)){if(/<application\b/.test(m))m=m.replace(/<application\b/,'<application\n        android:largeHeap="true"');else warn.push('تگ application پیدا نشد (largeHeap اعمال نشد)')}
+if(!/android:largeHeap=/.test(m)){if(/<application\b/.test(m))m=m.replace(/<application\b/,'<application\n        android:largeHeap="true" android:usesCleartextTraffic="true"');else warn.push('تگ application پیدا نشد (largeHeap اعمال نشد)')}
 wr(mp,m);console.log('✓ مجوزهای مانیفست (INTERNET، READ_EXTERNAL_STORAGE≤۳۲، READ_MEDIA_AUDIO) + largeHeap');
 /* ۳) Gradle */
 const vp=path.join(android,'variables.gradle');

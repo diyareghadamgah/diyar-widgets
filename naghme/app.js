@@ -477,3 +477,48 @@ document.addEventListener('click', function(e) {
         if (status) status.textContent = 'مرورگر شما از HLS پشتیبانی نمی‌کند.';
     }
 }, true); // true یعنی Capture Phase (شکار کلیک قبل از کدهای اصلی)
+
+// --- NAGHME_HLS_PLAYER_FIX ---
+document.addEventListener('click', function(e) {
+    const results = document.getElementById('iptvResults');
+    if (!results || !results.contains(e.target)) return;
+
+    let card = e.target.closest('[data-url]') || e.target.closest('.iptv-channel-card') || e.target.closest('.card');
+    if (!card) return;
+
+    let url = card.dataset.url || card.getAttribute('data-url');
+    let name = card.dataset.name || card.getAttribute('data-name') || 'ناشناخته';
+
+    if (!url) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    const video = document.getElementById('iptv-video');
+    const status = document.getElementById('iptv-status');
+    
+    if (!video || !status) return;
+
+    status.innerHTML = 'در حال اتصال: ' + name + '<br><small style="font-size:10px; color:#aaa;">' + url.substring(0, 60) + '...</small>';
+    
+    if (window.Hls && Hls.isSupported()) {
+        if (window.naghmeHls) { window.naghmeHls.destroy(); }
+        window.naghmeHls = new Hls();
+        window.naghmeHls.loadSource(url);
+        window.naghmeHls.attachMedia(video);
+        
+        window.naghmeHls.on(Hls.Events.MANIFEST_PARSED, function() {
+            status.innerHTML = 'در حال پخش: ' + name;
+            video.play().catch(err => { status.innerHTML = 'خطای پخش: ' + err.message; });
+        });
+        
+        window.naghmeHls.on(Hls.Events.ERROR, function (event, data) {
+            if (data.fatal) {
+                status.innerHTML = 'خطای HLS: ' + data.type + '<br><small>' + url.substring(0, 60) + '...</small>';
+            }
+        });
+    } else {
+        status.innerHTML = 'Hls.js لود نشده است! (کتابخانه پیدا نشد)';
+    }
+}, true);
