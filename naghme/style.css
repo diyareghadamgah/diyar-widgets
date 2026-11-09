@@ -40,3 +40,8 @@ dialog{max-height:88dvh;overflow:auto}
 
 /* تلویزیون اینترنتی */
 .tvbox{background:#000;border-radius:14px;overflow:hidden;margin:12px 0}.tvbox video{display:block;width:100%;max-height:55vh;aspect-ratio:16/9;background:#000}.tvnow{display:flex;justify-content:space-between;gap:10px;padding:9px 12px}.tvnow span{color:var(--mu);font-size:12px}.tvplaceholder{display:grid;place-content:center;text-align:center;min-height:180px;background:var(--s1);border-radius:14px;color:var(--mu);margin:12px 0}.tvlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:5px}.tvrow{display:flex;align-items:center;gap:9px;padding:7px;border-radius:10px;background:var(--s1);min-width:0}.tvrow.on{outline:1px solid var(--ac)}.tvrow img,.tvlogo{width:42px;height:42px;object-fit:contain;border-radius:7px;background:var(--s2);flex:none}.tvlogo{display:grid;place-items:center}.tvrow .m b{font-size:13px}.tverror{color:#ef7777;background:var(--s1);padding:10px;border-radius:10px}
+.tvstatus{margin:0;padding:8px 12px;color:var(--mu);font-size:12px;min-height:18px}
+#iptvSearch{display:block;width:100%;margin:10px 0 8px;border:1px solid var(--s2);border-radius:12px;padding:12px 14px;direction:rtl}#iptvSearch:focus{outline:2px solid var(--ac)}
+
+/* جست‌وجوی مستقل شبکه‌های IPTV */
+.iptv-search-wrap{display:block;width:100%;margin:12px 0 10px;padding:0}.iptv-search{display:block!important;box-sizing:border-box;width:100%!important;min-height:48px;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;padding:12px 14px!important;font-size:15px!important;direction:rtl;user-select:text!important}.iptv-search::placeholder{color:var(--mu);opacity:1}

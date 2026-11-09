@@ -1,6 +1,6 @@
 {
   "name": "naghme",
-  "version": "2.2.3",
+  "version": "2.2.6",
   "description": "نغمه | NAGHME MUSIC STUDIO — پخش‌کننده و مدیر آرشیو موسیقی (PWA + اندروید با Capacitor)",
   "private": true,
   "scripts": {
