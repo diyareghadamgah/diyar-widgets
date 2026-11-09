@@ -38,7 +38,18 @@ ok('MainActivity قدیمیِ قالب حذف شد (فقط یکی می‌مان�
 ok('MainActivity پلاگین را ثبت می‌کند',/registerPlugin\(NaghmeStoragePlugin\.class\)/.test(fs.readFileSync(jd+'/MainActivity.java','utf8')));
 const m=man();ok('مجوزها: INTERNET یک‌بار، READ_EXTERNAL_STORAGE با maxSdk 32، READ_MEDIA_AUDIO',(m.match(/permission\.INTERNET/g)||[]).length===1&&/READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/.test(m)&&/READ_MEDIA_AUDIO/.test(m)&&/largeHeap="true"/.test(m));
 const v=vg();ok('Gradle: minSdk=23، targetSdk=34، compileSdk=34',/minSdkVersion = 23/.test(v)&&/targetSdkVersion = 34/.test(v)&&/compileSdkVersion = 34/.test(v));
+{const bg=path.join(A,'app/build.gradle');fs.writeFileSync(bg,'android {\n    namespace "ir.diyareghadamgah.naghme"\n    compileSdk rootProject.ext.compileSdkVersion\n}\n');
+ r=run();ok('namespace گریدل با appId یکی است → موفق',r.status===0&&/namespace = appId/.test(r.stdout));
+ fs.writeFileSync(bg,'android {\n    namespace "com.other.app"\n}\n');r=run();ok('namespace با appId فرق دارد → ساخت با خطای واضح متوقف می‌شود',r.status!==0&&/namespace/.test(r.stderr));fs.rmSync(bg)}
 const before=man()+vg();r=run();ok('اجرای دوم (idempotent): هیچ تغییر و تکراری ایجاد نمی‌شود',r.status===0&&before===man()+vg()&&(man().match(/READ_MEDIA_AUDIO/g)||[]).length===1&&(man().match(/largeHeap/g)||[]).length===1);
+{const ma=fs.readFileSync(jd+'/MainActivity.java','utf8').replace(/\/\/.*$/gm,'');ok('MainActivity: registerPlugin قبل از super.onCreate (ترتیب درست) و بدون هیچ ارجاعی به FilePicker',ma.indexOf('registerPlugin(NaghmeStoragePlugin.class)')>-1&&ma.indexOf('registerPlugin(NaghmeStoragePlugin.class)')<ma.indexOf('super.onCreate')&&!/FilePicker|capawesome/i.test(ma))}
+{const nm=path.join(tmp,'native/android/MainActivity.java'),good=fs.readFileSync(nm,'utf8');
+ fs.writeFileSync(nm,good.replace(/\s*registerPlugin\(NaghmeStoragePlugin\.class\);/,'').replace('super.onCreate(savedInstanceState);','super.onCreate(savedInstanceState);\n        registerPlugin(NaghmeStoragePlugin.class);'));
+ r=run();ok('اگر MainActivity پلاگین را بعد از super.onCreate ثبت کند، ساخت با خطای واضح متوقف می‌شود (علت خطای null)',r.status!==0&&/قبل از super\.onCreate/.test(r.stderr));fs.writeFileSync(nm,good)}
+{const old=path.join(jd,'Legacy.java');fs.writeFileSync(old,'package ir.diyareghadamgah.naghme;\nimport io.capawesome.capacitorjs.plugins.filepicker.FilePickerPlugin;\nclass Legacy { Class<?> c = FilePickerPlugin.class; }\n');
+ r=run();ok('باقی‌مانده‌ی FilePickerPlugin در android/ شناسایی و ساخت متوقف می‌شود',r.status!==0&&/FilePicker|capawesome/i.test(r.stderr)&&/rm -rf android/.test(r.stderr));fs.rmSync(old);r=run();ok('بعد از پاک‌کردن باقی‌مانده، دوباره موفق',r.status===0)}
+{const pj=path.join(tmp,'package.json');fs.writeFileSync(pj,JSON.stringify({dependencies:{'@capawesome/capacitor-file-picker':'^6.0.0'}}));r=run();ok('وابستگی @capawesome/capacitor-file-picker در package.json شناسایی می‌شود',r.status!==0&&/capawesome|file-picker/i.test(r.stderr));fs.rmSync(pj)}
+{const wf=cp.spawnSync('python3',[path.join(proj,'tests/workflow.test.py'),path.join(proj,'.github-template/naghme-android.yml')],{encoding:'utf8'});ok('فایل workflow: ساختار YAML معتبر (paths/with/path، ترتیب مراحل)',wf.status===0,(wf.stdout.match(/FAIL.*/)||[''])[0]||'ok')}
 fs.rmSync(path.join(tmp,'android'),{recursive:true});r=run();ok('بدون پوشه‌ی android: خطای واضح',r.status!==0&&/npx cap add android/.test(r.stderr));
 // build-web
 const w=path.join(os.tmpdir(),'nagw-'+Date.now());fs.mkdirSync(w);for(const f of fs.readdirSync(proj))if(/\.(html|js|json|png|css)$/.test(f)&&!['package.json'].includes(f)||f==='fonts')fs.cpSync(path.join(proj,f),path.join(w,f),{recursive:true});

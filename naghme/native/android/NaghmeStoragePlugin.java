@@ -41,6 +41,16 @@ public class NaghmeStoragePlugin extends Plugin {
     private static final int MAX_CHUNK = 4 * 1024 * 1024;
     private static final String[] AUDIO_EXT = {".mp3", ".m4a", ".aac", ".flac", ".ogg", ".opus", ".wav", ".wma"};
 
+    /* ---------- بررسی سلامت پل (برای تشخیص در برنامه) ---------- */
+    @PluginMethod
+    public void ping(PluginCall call) {
+        JSObject r = new JSObject();
+        r.put("ok", true);
+        r.put("plugin", "NaghmeStorage");
+        r.put("sdk", android.os.Build.VERSION.SDK_INT);
+        call.resolve(r);
+    }
+
     /* ---------- انتخاب پوشه ---------- */
     @PluginMethod
     public void pickDirectory(PluginCall call) {

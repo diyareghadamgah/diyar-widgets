@@ -13,19 +13,28 @@ function mockInit(a){
  const find=u=>{const rel=decodeURIComponent(u.replace('content://mock/doc/',''));return [...window.__manifest,...window.__pickFiles].find(m=>m.rel===rel)};
  const bytes=async u=>{const m=find(u);let b=cache.get(m.rel);if(!b){b=new Uint8Array(await (await fetch(enc(src(m)))).arrayBuffer());cache.set(m.rel,b)}return b};
  const item=m=>({uri:'content://mock/doc/'+encodeURIComponent(m.rel),name:m.rel.split('/').pop(),size:m.size,lastModified:1,rel:m.rel});
- window.Capacitor={isNativePlatform:()=>true,registerPlugin:()=>({
+ const impl=({
   async pickDirectory(){__calls.push('pickDirectory');return {uri:'content://mock/tree/lib',name:'lib'}},
   async listAudio(){__calls.push('listAudio');if(window.__treeLost)throw new Error('permission denied');return {files:window.__manifest.map(item)}},
   async pickFiles(){__calls.push('pickFiles');return {files:window.__pickFiles.map(item)}},
   async readChunk({uri,offset,length}){__calls.push('readChunk');if(window.__revoked)throw new Error('permission denied');const s=(await bytes(uri)).subarray(offset,offset+length);let bin='';for(let i=0;i<s.length;i+=8192)bin+=String.fromCharCode.apply(null,s.subarray(i,i+8192));return {data:btoa(bin),length:s.length}},
   async duration({uri}){const b=await bytes(uri);return new Promise((res,rej)=>{const au=new Audio(),u=URL.createObjectURL(new Blob([b],{type:'audio/mpeg'}));au.onloadedmetadata=()=>res({duration:au.duration});au.onerror=()=>rej(new Error('bad'));setTimeout(()=>rej(new Error('timeout')),8000);au.src=u})},
-  async getPersisted(){return {trees:[]}},async releaseTree(){}})};
+  async ping(){return {ok:true,sdk:34,plugin:'NaghmeStorage'}},
+  async getPersisted(){return {trees:[]}},async releaseTree(){}});
+ const base={isNativePlatform:()=>true,getPlatform:()=>'android',convertFileSrc:u=>u.replace('content://','https://localhost/_capacitor_content_/')};let tries=0;
+ const mode=a.mode||'register';
+ if(mode==='register')window.Capacitor={...base,registerPlugin:()=>impl};
+ else if(mode==='plugins')window.Capacitor={...base,Plugins:{NaghmeStorage:impl}};          // فقط روش قدیمی Capacitor.Plugins
+ else if(mode==='late')window.Capacitor={...base,registerPlugin:()=>{if(++tries<2)throw new Error('bridge not ready');return impl}};   // بار اول آماده نیست
+ else if(mode==='np')window.Capacitor={...base,nativePromise:(n,m,o)=>impl[m]?impl[m](o||{}):Promise.reject(new Error('"'+n+'" plugin is not implemented on android'))};   // فقط nativePromise (بدون registerPlugin و بدون Plugins)
+ else window.Capacitor={...base,Plugins:{}};                                                        // پلاگین اصلاً ثبت نشده
+ window.Capacitor.PluginHeaders=mode==='none'?[]:[{name:'NaghmeStorage'}];
 }
 (async()=>{
  const br=await chromium.launch({args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
  const errs=[];
- const mk=async(extra=[])=>{const ctx=await br.newContext({acceptDownloads:true});await ctx.route('**/__fx/**',r=>{const rel=decodeURIComponent(new URL(r.request().url()).pathname.replace('/__fx/',''));r.fulfill({path:FIX+'/'+rel})});
-  const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));p.on('dialog',d=>d.accept());await p.addInitScript(mockInit,{manifest:manifest.concat(extra)});await p.goto(BASE);await p.waitForSelector('#nav button');p._ctx=ctx;return p};
+ const mk=async(extra=[],mode='register')=>{const ctx=await br.newContext({acceptDownloads:true});await ctx.route('**/__fx/**',r=>{const rel=decodeURIComponent(new URL(r.request().url()).pathname.replace('/__fx/',''));r.fulfill({path:FIX+'/'+rel})});
+  const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));p.on('dialog',d=>d.accept());await p.addInitScript(mockInit,{manifest:manifest.concat(extra),mode});await p.goto(BASE);await p.waitForSelector('#nav button');p._ctx=ctx;return p};
  const done=p=>p.waitForFunction(()=>!S.scan&&S.view.t!=='scan',null,{timeout:120000});
  const btn=(p,txt)=>p.click(`dialog[open] button:has-text("${txt}")`);
  const confirm=async(p,copy=false)=>{const s=`dialog[open] button:has-text("${copy?'و کپی داخل برنامه':'بدون کپی'}")`;await p.waitForSelector(s);await p.click(s)};
@@ -63,6 +72,25 @@ function mockInit(a){
  const f=await mk([]);
  await T('اندروید: انتخاب چند فایل — مسیر بدون پوشه، نام ریشه در پنجره‌ی تأیید نمی‌آید',async()=>{const sz=fs.statSync(FIX+'/moon.mp3').size;await f.evaluate(s=>{window.__pickFiles=[{rel:'03 Moon.mp3',src:'lib/آرشیو موسیقی/خوانندگان/Maryam/Night/03 Moon.mp3',size:s},{rel:'05 Star.mp3',src:'lib/آرشیو موسیقی/خوانندگان/Maryam/Night/05 Star.mp3',size:s}]},sz);
   await f.click('#add');await f.waitForSelector('dialog[open]');await btn(f,'انتخاب چند فایل (دسترسی دائمی)');await f.waitForSelector('dialog[open] p');const t=await f.textContent('dialog[open]');await confirm(f);await done(f);const r=await f.evaluate(()=>({n:S.songs.length,paths:S.songs.map(s=>s.path).sort().join('|')}));return {ok:r.n===2&&r.paths==='03 Moon.mp3|05 Star.mp3'&&!/پوشه: 03/.test(t),d:JSON.stringify(r)+' | '+t.replace(/\s+/g,' ').slice(0,90)}});
+
+ const pl=await mk([],'plugins');
+ await T('پلاگین فقط از مسیر Capacitor.Plugins.NaghmeStorage (بدون registerPlugin) پیدا می‌شود و اسکن کار می‌کند',async()=>{await folder(pl);const r=await pl.evaluate(()=>({n:S.songs.length,d:NaghmePlatform.diagnose()}));return {ok:r.n===11&&r.d.pluginsEntry&&!r.d.registerPlugin&&r.d.ready,d:JSON.stringify(r)}});
+ await pl._ctx.close();
+ const nn=await mk([],'none');
+ await T('پلاگین ثبت‌نشده: پیام فارسی «ثبت نشده است»، بدون خطای null و بدون خرابی برنامه',async()=>{const n0=errs.length;await nn.click('#add');await nn.waitForSelector('dialog[open]');await btn(nn,'انتخاب پوشه (دسترسی دائمی)');await sleep(700);const t=await nn.textContent('#toast');const r=await nn.evaluate(()=>({n:S.songs.length,d:NaghmePlatform.diagnose(),dlg:document.querySelector('dialog[open]')&&document.querySelector('dialog[open]').textContent}));await nn.evaluate(()=>document.querySelector('dialog[open]')&&document.querySelector('dialog').close());return {ok:/ثبت نشده/.test(t)&&errs.length===n0&&r.n===0&&!r.d.ready&&!!r.dlg&&/PluginHeaders/.test(r.dlg)&&/سمت جاوا ثبت نشده/.test(r.dlg)&&/NaghmeStorage در PluginHeaders: ✗/.test(r.dlg),d:t+' | '+JSON.stringify(r.d)}});
+ await nn._ctx.close();
+ const lt=await mk([],'late');
+ await T('پلاگین بار اول آماده نیست ولی بار دوم آماده است: null کش نمی‌شود و انتخاب بعدی موفق است',async()=>{await lt.click('#add');await lt.waitForSelector('dialog[open]');await btn(lt,'انتخاب پوشه (دسترسی دائمی)');await sleep(500);const t1=await lt.textContent('#toast');await lt.evaluate(()=>document.querySelector('dialog[open]')&&document.querySelector('dialog').close());await sleep(300);await folder(lt);const n=await lt.evaluate(()=>S.songs.length);return {ok:/ثبت نشده/.test(t1)&&n===11,d:t1+' | songs='+n}});
+ await T('NaghmePlatform.fileUrl (convertFileSrc) آدرس WebView برای uri بومی می‌دهد',async()=>{const u=await lt.evaluate(()=>NaghmePlatform.fileUrl('content://com.android.externalstorage.documents/tree/x/document/y'));return {ok:/_capacitor_content_/.test(u),d:u}});
+ await lt._ctx.close();
+
+ const np=await mk([],'np');
+ await T('فقط Capacitor.nativePromise (بدون registerPlugin و بدون Plugins) هم کار می‌کند',async()=>{await folder(np);const r=await np.evaluate(()=>({n:S.songs.length,d:NaghmePlatform.diagnose()}));return {ok:r.n===11&&r.d.nativePromise&&!r.d.registerPlugin&&!r.d.pluginsEntry&&r.d.ready,d:JSON.stringify(r.d)}});
+ await np._ctx.close();
+ const hl=await mk([],'plugins');
+ await T('سناریوی واقعی WebView بدون bundler: registerPlugin تعریف‌نشده + Plugins.NaghmeStorage — بدون هیچ خطای null',async()=>{const n0=errs.length;const r=await hl.evaluate(async()=>({reg:typeof Capacitor.registerPlugin,p:await NaghmePlatform.getPlugin().pickDirectory()}));await hl.click('#add');await hl.waitForSelector('dialog[open]');await btn(hl,'انتخاب پوشه (دسترسی دائمی)');await confirm(hl);await done(hl);const n=await hl.evaluate(()=>S.songs.length);return {ok:r.reg==='undefined'&&r.p.uri&&n===11&&errs.length===n0,d:JSON.stringify(r)+' songs='+n}});
+ await T('صفحه‌ی «تشخیص پلاگین بومی» در تنظیمات: PluginHeaders، ping و نسخه‌ی وب',async()=>{await hl.click('#nav [data-v=settings]');await hl.click('[data-a=diag]');await hl.waitForSelector('dialog[open]');await sleep(400);const t=await hl.textContent('dialog[open]');return {ok:/PluginHeaders: NaghmeStorage/.test(t)&&/NaghmeStorage در PluginHeaders: ✓/.test(t)&&/ping: ok \(SDK 34\)/.test(t)&&/پلاگین بومی سالم است/.test(t),d:t.replace(/\s+/g,' ').slice(0,260)}});
+ await hl._ctx.close();
  await T('بدون خطای JavaScript در تمام اجرا',async()=>({ok:errs.length===0,d:errs.slice(0,3).join(' | ')}));
  const pass=results.filter(r=>r.ok).length;console.log(`\n${pass} PASS / ${results.length-pass} FAIL`);await br.close();process.exit(pass===results.length?0:1);
 })();

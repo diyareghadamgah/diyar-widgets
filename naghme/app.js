@@ -252,16 +252,22 @@ async function applyRestore(o,mode){try{
  S.songs=[...S.map.values()];S.hist=S.hist.slice(-500);savePl();kvSet('imgs',S.imgs);kvSet('hist',S.hist);kvSet('listen',S.listen);kvSet('eq',S.eq);kvSet('cfg',S.cfg);reidx();await gcCovers();S.view={t:'songs'};render();toast('بازیابی انجام شد؛ برای پخش، پوشه‌ی موسیقی را دوباره اضافه کنید')}
  catch(e){console.error(e);toast('بازیابی ناموفق بود؛ اطلاعات پیشین حفظ شد')}}
 /* ---------- Native (Capacitor) ---------- */
-const nativeErr=e=>/permission|persist/i.test(String(e&&e.message||e))?'مجوز دسترسی به پوشه داده نشد یا از دست رفته است؛ دوباره انتخاب کنید':'خطا در دسترسی به حافظه‌ی گوشی: '+String(e&&e.message||e).slice(0,80);
+const nativeErr=e=>/not_registered|not implemented|not available/i.test(String(e&&e.message||e))?'پلاگین بومی نغمه (NaghmeStorage) ثبت نشده است؛ APK را با نسخه‌ی درست MainActivity دوباره بسازید':/permission|persist/i.test(String(e&&e.message||e))?'مجوز دسترسی به پوشه داده نشد یا از دست رفته است؛ دوباره انتخاب کنید':'خطا در دسترسی به حافظه‌ی گوشی: '+String(e&&e.message||e).slice(0,80);
 const addTree=(l,t)=>[...(l||[]).filter(x=>x.uri!==t.uri),t];
-async function nativeFolder(){try{const r=await NaghmePlatform.pickFolder();if(!r)return;S.trees=addTree(S.trees,r.tree);kvSet('trees',S.trees);start(r.files)}catch(e){toast(nativeErr(e))}}
-async function nativeFiles(){try{const l=await NaghmePlatform.pickFiles();if(l&&l.length)start(l)}catch(e){toast(nativeErr(e))}}
+const isNotReg=e=>/not_registered|not implemented|not available/i.test(String(e&&e.message||e));
+function nativeFail(e){toast(nativeErr(e));if(isNotReg(e))showDiag()}
+async function showDiag(){const d=NaghmePlatform.diagnose(),pg=await NaghmePlatform.ping();let bi='—';try{const r=await fetch('build-info.json',{cache:'no-store'});if(r.ok){const j=await r.json();bi=j.version+' @ '+j.built}}catch{}
+ const y=v=>v?'✓':'✗';
+ const hint=!d.native?'برنامه در حالت وب است (Capacitor بومی شناسایی نشد).':!d.inHeaders&&!d.pluginsEntry?'تفسیر: پلاگین سمت جاوا ثبت نشده است (MainActivity، ترتیب registerPlugin قبل از super.onCreate، یا APK قدیمی).':pg&&pg.error?'تفسیر: پلاگین در لیست هست ولی صدا زدن آن خطا داد: '+pg.error:'تفسیر: پلاگین بومی سالم است.';
+ sheet('تشخیص پلاگین بومی',[],[`native=${d.native} platform=${d.platform}`,`registerPlugin ${y(d.registerPlugin)} | nativePromise ${y(d.nativePromise)}`,`Capacitor.Plugins: ${d.pluginsKeys.join(', ')||'—'}`,`PluginHeaders: ${d.headerNames.join(', ')||'—'}`,`NaghmeStorage در PluginHeaders: ${y(d.inHeaders)} | در Plugins: ${y(d.pluginsEntry)}`,`ping: ${pg&&pg.ok?'ok (SDK '+pg.sdk+')':'خطا: '+(pg&&pg.error)}`,`نسخه‌ی وب داخل APK: ${bi}`,'',hint].join('\n'))}
+async function nativeFolder(){try{const r=await NaghmePlatform.pickFolder();if(!r)return;S.trees=addTree(S.trees,r.tree);kvSet('trees',S.trees);start(r.files)}catch(e){nativeFail(e)}}
+async function nativeFiles(){try{const l=await NaghmePlatform.pickFiles();if(l&&l.length)start(l)}catch(e){nativeFail(e)}}
 async function rescanTrees(){if(!S.trees.length)return toast('پوشه‌ی ذخیره‌شده‌ای نیست');
  try{const all=[],lost=[];for(const t of S.trees){try{all.push(...await NaghmePlatform.rescan(t))}catch(e){lost.push(t.name)}}
-  if(lost.length)toast('دسترسی این پوشه‌ها از دست رفته است: '+lost.join('، '));if(all.length)start(all)}catch(e){toast(nativeErr(e))}}
+  if(lost.length)toast('دسترسی این پوشه‌ها از دست رفته است: '+lost.join('، '));if(all.length)start(all)}catch(e){nativeFail(e)}}
 async function untree(uri){try{await NaghmePlatform.releaseTree(uri)}catch{}S.trees=S.trees.filter(t=>t.uri!==uri);kvSet('trees',S.trees);render();toast('دسترسی پوشه حذف شد (آهنگ‌های کتابخانه می‌مانند ولی پخششان نیاز به انتخاب دوباره دارد)')}
 function nativeSettings(){if(!NaghmePlatform.isNative)return '';
- return `<h2>پوشه‌های دائمی (اندروید)</h2><p class="d">دسترسی این پوشه‌ها بعد از بستن برنامه هم حفظ می‌شود.</p>${(S.trees||[]).map(t=>`<div class="bar"><b>${esc(t.name)}</b><button data-a="untree" data-v="${esc(t.uri)}">حذف دسترسی</button></div>`).join('')||'<p class="d">هنوز پوشه‌ای انتخاب نشده است.</p>'}<div class="bar"><button class="pri" data-a="rescan">اسکن مجدد پوشه‌های ذخیره‌شده</button></div>`}
+ return `<h2>پوشه‌های دائمی (اندروید)</h2><div class="bar"><button data-a="diag">تشخیص پلاگین بومی</button></div><p class="d">دسترسی این پوشه‌ها بعد از بستن برنامه هم حفظ می‌شود.</p>${(S.trees||[]).map(t=>`<div class="bar"><b>${esc(t.name)}</b><button data-a="untree" data-v="${esc(t.uri)}">حذف دسترسی</button></div>`).join('')||'<p class="d">هنوز پوشه‌ای انتخاب نشده است.</p>'}<div class="bar"><button class="pri" data-a="rescan">اسکن مجدد پوشه‌های ذخیره‌شده</button></div>`}
 /* ---------- Events ---------- */
 const guard={};const once=(k,ms=300)=>{const n=Date.now();if(guard[k]&&n-guard[k]<ms)return false;guard[k]=n;return true};   // جلوگیری از دوبار کلیک ناخواسته
 let dip;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e});
@@ -272,7 +278,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  open(){if(d.t==='play')return play([d.v]);if(d.t==='smart'){S.filter=d.v;S.view={t:'songs'}}else S.view={t:d.t,v:d.v};S.lim=100;render();$('#view').scrollTop=0},fopen(){S.view={t:'folders',v:d.v};S.lim=100;render()},
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
- rescan(){rescanTrees()},untree(){untree(d.v)},
+ diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},

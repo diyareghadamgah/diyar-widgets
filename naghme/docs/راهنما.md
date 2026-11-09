@@ -88,8 +88,33 @@ APK خروجی: `android/app/build/outputs/apk/debug/app-debug.apk`
 `platform.js` تشخیص می‌دهد داخل Capacitor هست یا نه. در وب هیچ‌چیز عوض نمی‌شود. در اندروید پلاگین `NaghmeStorage` (`native/android/NaghmeStoragePlugin.java`) پوشه را می‌گیرد، فایل‌ها را فهرست می‌کند و تکه‌تکه (۱ مگابایت، Base64) می‌خواند؛ `tags.js` همان تگ/کاور را می‌خواند و مدت آهنگ با `MediaMetadataRetriever` می‌آید. برای پخش، فایل به Blob تبدیل و با `blob:` URL پخش می‌شود. هیچ فایلی نوشته/حذف/جابه‌جا نمی‌شود.
 
 ## محدودیت‌های شناخته‌شده APK
-- **پخش در پس‌زمینه و کنترل صفحه‌ی قفل: تضمین نمی‌شود.** WebView برخلاف Chrome اعلان رسانه نمی‌دهد و ممکن است با رفتن برنامه به پس‌زمینه صدا را قطع کند. در `MainActivity` یک راه‌حل آزمایشی هست؛ روی گوشی واقعی بررسی کنید. راه‌حل کامل (Foreground Service + MediaSession) ساخته نشده است.
+- **پخش در پس‌زمینه و کنترل صفحه‌ی قفل: تضمین نمی‌شود.** WebView برخلاف Chrome اعلان رسانه نمی‌دهد و ممکن است با رفتن برنامه به پس‌زمینه صدا را قطع کند. `MainActivity` عمداً حداقلی است (فقط ثبت پلاگین). راه‌حل کامل (Foreground Service + MediaSession) ساخته نشده است؛ روی گوشی واقعی بررسی کنید.
 - **مجوز زمان اجرا:** SAF به `READ_EXTERNAL_STORAGE`/`READ_MEDIA_AUDIO` نیاز ندارد. این دو در مانیفست هستند (طبق درخواست) ولی استفاده نمی‌شوند و عمداً پنجره‌ی درخواست مجوز زمان اجرا نساخته‌ام تا پیام اضافه نیاید.
 - هر آهنگ هنگام پخش کامل در حافظه بارگذاری می‌شود؛ فایل‌های خیلی بزرگ (مثلاً FLAC صدمگابایتی) کند یا سنگین‌اند.
 - تگ و کاور فقط برای MP3 (ID3). فقط APK **دیباگ**؛ نسخه‌ی release/امضا و Play Store ساخته نشده است.
 - مجوزهای دائمی Android محدودیت تعداد دارند (برای انتخاب پوشه مشکلی نیست؛ انتخاب «چند فایل» جداگانه هر فایل یک مجوز مصرف می‌کند).
+
+
+## عیب‌یابی خطاهای رایج بیلد
+| خطا | علت | رفع |
+|---|---|---|
+| `Cannot read properties of null (reading 'pickDirectory')` | دو علت جدا: (۱) **سمت جاوااسکریپت:** در WebView بدون bundler ممکن است `Capacitor.registerPlugin` اصلاً تعریف نشده باشد (آن تابع از جاوااسکریپت `@capacitor/core` می‌آید) و کدی که فقط با آن پلاگین را بگیرد `null` می‌ماند؛ (۲) **سمت جاوا:** پلاگین در `MainActivity` ثبت نشده یا `registerPlugin` بعد از `super.onCreate` است یا APK قدیمی نصب شده | `platform.js` (v2.2.2) پلاگین را به سه روش پیدا می‌کند: `Capacitor.Plugins.NaghmeStorage` ← `registerPlugin` ← `Capacitor.nativePromise`، و `null` نمی‌ماند. اگر هیچ‌کدام نبود، خودکار صفحه‌ی **«تشخیص پلاگین بومی»** باز می‌شود (همچنین از تنظیمات). `MainActivity` پلاگین را قبل از `super.onCreate` ثبت می‌کند و `setup-android.js` ترتیب و `namespace` را کنترل می‌کند |
+| `cannot find symbol FilePickerPlugin` | باقی‌مانده‌ی تلاش‌های قبلی (پوشه‌ی `android/` یا `package.json` قدیمی) هنوز به `@capawesome/capacitor-file-picker` اشاره می‌کند | این پروژه به آن وابسته نیست. پوشه‌ی `android/` قدیمی را پاک کنید (`rm -rf android`)؛ workflow هر بار آن را پاک و از نو می‌سازد، و `setup-android.js` هر باقی‌مانده‌ی FilePicker را پیدا و متوقف می‌کند |
+| `Invalid workflow file: Unexpected value 'path'` | `path:` در جای نادرست (باید فقط زیر `with:` یا `paths:` زیر `push:` باشد) یا تورفتگی اشتباه | از فایل `.github-template/naghme-android.yml` بدون ویرایش استفاده کنید؛ ساختارش با `tests/workflow.test.py` بررسی شده |
+
+### نصب workflow از Termux
+```
+mkdir -p ~/diyar-widgets/.github/workflows
+cp .github-template/naghme-android.yml ~/diyar-widgets/.github/workflows/naghme-android.yml
+cd ~/diyar-widgets && git rm -r --cached naghme/android 2>/dev/null; rm -rf naghme/android
+git add -A && git commit -m "naghme v2.2.1 + workflow" && git push
+```
+سپس در گیت‌هاب: Actions ← naghme-android ← Run workflow. خروجی: artifact با نام `naghme-debug-apk`. (پوشه‌ی `naghme/` در مخزن باید کاملاً با محتوای این ZIP جایگزین شده باشد.)
+
+### خواندن صفحه‌ی «تشخیص پلاگین بومی»
+تنظیمات ← «تشخیص پلاگین بومی» (یا خودکار هنگام خطا). از آن اسکرین‌شات بفرستید:
+- **«NaghmeStorage در PluginHeaders: ✗»** یعنی سمت جاوا ثبت نشده: `MainActivity` اشتباه است یا APK قدیمی نصب شده (نسخه‌ی وب داخل APK را با `package.json` مقایسه کنید).
+- **✓ ولی ping خطا دارد** یعنی پلاگین ثبت شده ولی اجرای متد خطا می‌دهد؛ متن خطا همان‌جا نوشته می‌شود.
+- **همه ✓** یعنی پلاگین سالم است و مشکل جای دیگری است.
+
+workflow پیش از آپلود APK بررسی می‌کند که `NaghmeStoragePlugin` و `MainActivity` واقعاً داخل `classes*.dex` و `platform.js` و `build-info.json` جدید داخل `assets/public` باشند؛ اگر نباشند، بیلد با خطا متوقف می‌شود.
