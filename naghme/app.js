@@ -419,3 +419,61 @@ setInterval(() => {
     });
   }
 }, 1000);
+
+// --- NAGHME_FORCE_HLS_PLAYER (Capture Phase) ---
+document.addEventListener('click', function(e) {
+    // پیدا کردن کارت کانال کلیک شده
+    const card = e.target.closest('.iptv-channel-card');
+    if (!card) return;
+
+    // جلوگیری از اجرای کدهای قدیمی برنامه که باعث خطا می‌شوند
+    e.preventDefault();
+    e.stopPropagation();
+
+    const url = card.dataset.url;
+    const name = card.dataset.name;
+    const video = document.getElementById('iptv-video');
+    const status = document.getElementById('iptv-status');
+    
+    if (!video) return;
+
+    if (status) status.textContent = 'در حال اتصال: ' + name;
+
+    // اگر از قبل پلیری باز بود، آن را ببند
+    if (window.naghmeHls) {
+        window.naghmeHls.destroy();
+        window.naghmeHls = null;
+    }
+
+    // بررسی پشتیبانی از HLS
+    if (window.Hls && Hls.isSupported()) {
+        window.naghmeHls = new Hls({
+            maxBufferLength: 30,
+            maxMaxBufferLength: 60
+        });
+        window.naghmeHls.loadSource(url);
+        window.naghmeHls.attachMedia(video);
+        
+        window.naghmeHls.on(Hls.Events.MANIFEST_PARSED, function() {
+            if (status) status.textContent = 'در حال پخش: ' + name;
+            video.play().catch(err => console.log('Play error:', err));
+        });
+
+        window.naghmeHls.on(Hls.Events.ERROR, function(event, data) {
+            if (data.fatal) {
+                if (status) status.textContent = 'خطا در پخش کانال: ' + name;
+                console.error('HLS Error:', data);
+            }
+        });
+    } 
+    // اگر مرورگر مستقیماً از HLS پشتیبانی می‌کند (مثل سافاری)
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.addEventListener('loadedmetadata', function() {
+            if (status) status.textContent = 'در حال پخش: ' + name;
+            video.play().catch(err => console.log('Play error:', err));
+        });
+    } else {
+        if (status) status.textContent = 'مرورگر شما از HLS پشتیبانی نمی‌کند.';
+    }
+}, true); // true یعنی Capture Phase (شکار کلیک قبل از کدهای اصلی)
