@@ -37,3 +37,6 @@ dialog{max-height:88dvh;overflow:auto}
 #np>.ib{position:absolute;top:8px;left:8px;z-index:2}
 
 #side h1 .logo{display:block;width:72px;height:72px;margin:0 auto 8px;border-radius:50%}#side h1{text-align:center}
+
+/* تلویزیون اینترنتی */
+.tvbox{background:#000;border-radius:14px;overflow:hidden;margin:12px 0}.tvbox video{display:block;width:100%;max-height:55vh;aspect-ratio:16/9;background:#000}.tvnow{display:flex;justify-content:space-between;gap:10px;padding:9px 12px}.tvnow span{color:var(--mu);font-size:12px}.tvplaceholder{display:grid;place-content:center;text-align:center;min-height:180px;background:var(--s1);border-radius:14px;color:var(--mu);margin:12px 0}.tvlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:5px}.tvrow{display:flex;align-items:center;gap:9px;padding:7px;border-radius:10px;background:var(--s1);min-width:0}.tvrow.on{outline:1px solid var(--ac)}.tvrow img,.tvlogo{width:42px;height:42px;object-fit:contain;border-radius:7px;background:var(--s2);flex:none}.tvlogo{display:grid;place-items:center}.tvrow .m b{font-size:13px}.tverror{color:#ef7777;background:var(--s1);padding:10px;border-radius:10px}

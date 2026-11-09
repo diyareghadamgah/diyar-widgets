@@ -17,6 +17,24 @@ const putFile=o=>tx('files','readwrite',s=>s.put(o)),delFile=id=>tx('files','rea
 /* ---------- State ---------- */
 const DEF_PATS='حلیه,حلیة,المتقین,halyat,quran,قرآن,voice,recorder,recording,ضبط,پیام صوتی,PTT';
 const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],imgs:{},hist:[],listen:0,q:[],qi:-1,shuffle:false,rep:0,view:{t:'home'},filter:'all',sort:'title',lim:100,dups:new Set(),eq:{on:true,p:'Normal',g:[0,0,0,0,0],pre:1,bal:0},cfg:{conc:3,skip:true,pats:DEF_PATS,min:0,copy:true},scan:null,counted:false,pos:null,resume:null,loadedId:null,tok:0,cache:new Map()};
+const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',channels:[],loading:false,error:'',loadedAt:0,active:'',category:'همه',favorites:[]};
+function parseM3U(text){
+ const out=[];let meta=null;
+ for(const line0 of String(text).split(/\r?\n/)){
+  const line=line0.trim();if(!line)continue;
+  if(line.startsWith('#EXTINF')){
+   const comma=line.indexOf(','),attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
+   const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'="([^"]*)"','i'));return m?m[1]:''};
+   meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:get('group-title')||'سایر',country:get('tvg-country'),language:get('tvg-language'),id:get('tvg-id')};
+  }else if(!line.startsWith('#')&&/^https?:\/\//i.test(line)){
+   const m=meta||{name:line,group:'سایر'};out.push({...m,url:line,key:(m.id||m.name)+'|'+line});meta=null;
+  }
+ }
+ return out;
+}
+async function loadIPTV(force=false){if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;IPTV.loading=true;IPTV.error='';render();try{const r=await fetch(IPTV.url,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const a=parseM3U(await r.text());if(!a.length)throw new Error('فهرست شبکه‌ای نداشت');IPTV.channels=a;IPTV.loadedAt=Date.now();IPTV.favorites=await kvGet('iptvFav')||[]}catch(e){IPTV.error='دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — ممکن است دسترسی CORS یا اینترنت محدود باشد.'}finally{IPTV.loading=false;render()}}
+function playIPTV(key){if(IPTV.channels.some(x=>x.key===key)){IPTV.active=key;render()}}
+function toggleIPTVFav(key){IPTV.favorites=IPTV.favorites.includes(key)?IPTV.favorites.filter(x=>x!==key):[...IPTV.favorites,key];kvSet('iptvFav',IPTV.favorites);render()}
 const ctx={main:[],pop:[]};
 const reidx=()=>{S.map=new Map(S.songs.map(s=>[s.id,s]));if(NaghmePlatform.isNative)for(const s of S.songs)if(s.uri&&!S.files.has(s.id)){const f=NaghmePlatform.fromSong(s);f&&S.files.set(s.id,f)}};   // اندروید: بعد از هر بازگشایی، آهنگ‌ها خودکار به فایل وصل می‌شوند
 const cu=new Map();
@@ -176,12 +194,20 @@ const V={
   <h2>ذخیره‌سازی و کپی آهنگ‌ها</h2><p id="stg" class="d">…</p><div class="bar"><label><input type="checkbox" id="cfgcopy" ${c.copy?'checked':''}> پیشنهاد پیش‌فرض: کپی آهنگ‌ها داخل برنامه</label><button data-a="freecopy">حذف فایل‌های کپی‌شده (آزادسازی فضا)</button></div><p class="d">آهنگ‌های کپی‌شده بعد از بستن مرورگر بدون انتخاب دوباره پخش می‌شوند؛ فایل‌های اصلی دست‌نخورده می‌مانند. اکولایزر روی لینک‌های آنلاین اعمال نمی‌شود.</p>
   ${nativeSettings()}<h2>پشتیبان‌گیری</h2><div class="bar"><button class="pri" data-a="bk">خروجی JSON</button><button data-a="rs">بازیابی</button><select id="rem" aria-label="یادآوری"><option value="0">بدون یادآوری</option><option value="7">یادآوری هفتگی</option><option value="30">یادآوری ماهانه</option></select></div><p class="d">پشتیبان شامل اطلاعات آهنگ‌ها، هنرمندان و آلبوم‌ها (که از اطلاعات آهنگ‌ها ساخته می‌شوند)، فهرست‌ها، علاقه‌مندی‌ها، تصویر هنرمندان، کاورها (با کنترل حجم) و تنظیمات است. <b>فایل‌های صوتی اصلی در پشتیبان نیستند.</b></p>
   <h2>وضعیت پشتیبانی این مرورگر</h2><ul class="d">${yn(cp.dir,'انتخاب پوشه','انتخاب پوشه پشتیبانی نمی‌شود؛ از «انتخاب چند فایل» استفاده کنید')}${yn(cp.audio,'اکولایزر (Web Audio)','اکولایزر پشتیبانی نمی‌شود')}${yn(cp.ms,'کنترل از اعلان/صفحه‌ی قفل (Media Session)','کنترل از صفحه‌ی قفل پشتیبانی نمی‌شود')}${yn(cp.sw,'حالت آفلاین/نصب PWA','سرویس‌ورکر در دسترس نیست (نیاز به HTTPS یا localhost)')}${yn(cp.persist,'درخواست ذخیره‌سازی پایدار','ذخیره‌سازی پایدار پشتیبانی نمی‌شود')}</ul><div class="bar"><button data-a="inst">نصب برنامه</button></div>`},
+ iptv(){
+  const q=$('#q').value.trim().toLowerCase(),all=IPTV.channels,cats=['همه',...new Set(all.map(c=>c.group||'سایر'))].slice(0,80);
+  let a=all.filter(c=>(IPTV.category==='همه'||c.group===IPTV.category)&&(!q||[c.name,c.group,c.country,c.language,c.id].join(' ').toLowerCase().includes(q)));
+  if(IPTV.category==='موردعلاقه‌ها')a=all.filter(c=>IPTV.favorites.includes(c.key)&&(!q||[c.name,c.group,c.country,c.language].join(' ').toLowerCase().includes(q)));
+  const active=all.find(c=>c.key===IPTV.active),video=active?`<section class="tvbox"><video controls autoplay playsinline webkit-playsinline src="${esc(active.url)}"></video><div class="tvnow"><b>${esc(active.name)}</b><span>${esc(active.group||'سایر')}</span></div></section>`:'<div class="tvplaceholder">📺<br>برای شروع، یک شبکه را انتخاب کنید</div>';
+  const chips=['همه','موردعلاقه‌ها',...cats.filter(x=>x!=='همه')].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('');
+  return `<div class="bar"><h2>تلویزیون اینترنتی</h2><button class="pri" data-a="iptvload">↻ دریافت فهرست</button><button data-a="iptvurl">تغییر آدرس فهرست</button><span class="d">${fa(all.length)} شبکه</span></div><p class="d">منبع: IPTV-org • فهرست آنلاین M3U • آخرین دریافت: ${IPTV.loadedAt?new Date(IPTV.loadedAt).toLocaleString('fa-IR'):'هنوز دریافت نشده'}</p>${IPTV.loading?'<p class="d">در حال دریافت فهرست شبکه‌ها…</p>':''}${IPTV.error?`<p class="tverror">${esc(IPTV.error)}</p>`:''}${video}<div class="chips">${chips}</div><div class="tvlist">${a.slice(0,500).map(c=>`<div class="tvrow ${c.key===IPTV.active?'on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button></div>`).join('')||'<p class="d">شبکه‌ای برای نمایش پیدا نشد.</p>'}</div><p class="d">توجه: پخش زنده به فعال‌بودن سرور شبکه و پشتیبانی دستگاه از فرمت آن بستگی دارد. برخی جریان‌های HLS ممکن است در Android WebView پخش نشوند.</p>`;
+  },
  scan(){const s=S.scan;if(!s)return V.songs();return `<h2>${s.running?'در حال اسکن…':'اسکن متوقف شد'}</h2><progress id="sp" max="${s.t}" value="${s.n}" style="width:100%"></progress><p id="sn">${fa(Math.floor(s.n/s.t*100))}٪ — ${fa(s.n)} از ${fa(s.t)}</p><p id="sc" class="d">${scanStats(s)}</p><div class="bar">${s.running?'<button data-a="stop">⏹ توقف</button>':'<button class="pri" data-a="scont">▶ ادامه</button><button data-a="srestart">شروع مجدد از اول</button><button data-a="sclose">بستن</button>'}</div>`}
 };
-const NAV=[['home','خانه'],['songs','آهنگ‌ها'],['artists','هنرمندان'],['albums','آلبوم‌ها'],['folders','پوشه‌ها'],['playlists','فهرست‌ها'],['stats','آمار'],['settings','تنظیمات']];
+const NAV=[['home','خانه'],['songs','آهنگ‌ها'],['artists','هنرمندان'],['albums','آلبوم‌ها'],['folders','پوشه‌ها'],['playlists','فهرست‌ها'],['stats','آمار'],['iptv','تلویزیون'],['settings','تنظیمات']];
 $('#nav').innerHTML=NAV.map(([k,n])=>`<button data-a="nav" data-v="${k}">${n}</button>`).join('');
 const CAPS=()=>({dir:'webkitdirectory' in document.createElement('input'),audio:!!(window.AudioContext||window.webkitAudioContext),ms:'mediaSession' in navigator,sw:'serviceWorker' in navigator,persist:!!(navigator.storage&&navigator.storage.persist)});
-let vsT;function render(){const t=S.view.t,c=cur();freeURLs(new Set(c&&c.cid?['c:'+c.cid]:[]));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===t||(t==='artist'&&b.dataset.v==='artists')||(t==='album'&&b.dataset.v==='albums')||(t==='pl'&&b.dataset.v==='playlists')));$('#view').innerHTML=(V[t]||V.home)();if(t==='settings')updateStorage();
+let vsT;function render(){const t=S.view.t,c=cur();freeURLs(new Set(c&&c.cid?['c:'+c.cid]:[]));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===t||(t==='artist'&&b.dataset.v==='artists')||(t==='album'&&b.dataset.v==='albums')||(t==='pl'&&b.dataset.v==='playlists')));$('#view').innerHTML=(V[t]||V.home)();if(t==='settings')updateStorage();if(t==='iptv'&&!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV();
  if(t!=='scan'){clearTimeout(vsT);vsT=setTimeout(()=>kvSet('view',{v:S.view,filter:S.filter,sort:S.sort}),300)}}
 /* ---------- Dialogs & helpers ---------- */
 const dlg=$('#dlg');
@@ -279,6 +305,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
+ iptvload(){loadIPTV(true)},iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvcat(){IPTV.category=d.v;render()},iptvurl(){const u=prompt('آدرس فایل M3U:',IPTV.url);if(u){try{const x=new URL(u);if(!/^https?:$/.test(x.protocol))throw 0;IPTV.url=x.href;IPTV.channels=[];IPTV.error='';IPTV.category='همه';loadIPTV(true)}catch{toast('آدرس معتبر نیست')}}},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
@@ -303,7 +330,7 @@ $('#fImg').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)
 $('#fJson').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;if(S.imp==='bk')return restore(f);
  try{const o=JSON.parse(await f.text());if(o.type!=='playlist')throw 0;const ids=[];let miss=0;o.items.forEach(it=>{const s=S.map.get(it.id)||S.songs.find(x=>x.title===it.title&&x.artist===it.artist);s?ids.push(s.id):miss++});S.pl.push({id:uid(),name:o.name,desc:o.desc||'',ids});savePl();render();toast(miss?fa(miss)+' آهنگ در کتابخانه پیدا نشد':'وارد شد')}catch{toast('فایل فهرست نامعتبر است')}};
 $('#add').onclick=openAdd;
-$('#q').oninput=()=>{if(!['songs'].includes(S.view.t))S.view={t:'songs'};S.lim=100;render()};
+$('#q').oninput=()=>{if(S.view.t==='iptv'){render();return}if(!['songs'].includes(S.view.t))S.view={t:'songs'};S.lim=100;render()};
 $('#theme').onclick=()=>{const l=document.documentElement.dataset.theme!=='light';document.documentElement.dataset.theme=l?'light':'dark';kvSet('theme',l?'light':'dark')};
 addEventListener('keydown',e=>{if(e.target.matches('input,select'))return;if(e.code==='Space'){e.preventDefault();tog()}});
 
