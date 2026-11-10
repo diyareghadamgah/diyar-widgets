@@ -79,7 +79,7 @@
                 plugin.play('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8').then(function() {
                     // وقتی دکمه تست زده شد، پلیر را روی کادر IPTV قرار بده
                     setTimeout(function() {
-                        plugin.fitToVideoElement('iptv-video');
+                        plugin.fitToVideoElement('iptvVideo');
                     }, 500);
                 }).catch(function (e) {
                     btn.textContent = 'ERR ' + ((e && e.message) || 'fail').substring(0, 22);

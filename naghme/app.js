@@ -519,57 +519,100 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
 
 
 
-// --- NAGHME_IPTV_NATIVE_BRIDGE ---
-document.addEventListener('click', function(e) {
-    var results = document.getElementById('iptvResults');
-    if (!results || !results.contains(e.target)) return;
 
-    var card = e.target.closest('[data-url]') || e.target.closest('.iptv-channel-card') || e.target.closest('.card');
+
+// --- NAGHME_IPTV_NATIVE_BRIDGE (FIXED) ---
+(function() {
+  'use strict';
+  if (!window.NaghmeVideoPlayer || !window.NaghmeVideoPlayer.isNative) return;
+  
+  function getStatusBarOffset() {
+    // تخمین ارتفاع نوار وضعیت بر اساس density
+    var dpr = window.devicePixelRatio || 1;
+    return Math.round(24 * dpr);
+  }
+  
+  function getVideoBounds() {
+    var video = document.getElementById('iptvVideo');
+    if (!video) {
+      console.warn('[Native] iptvVideo not found');
+      return null;
+    }
+    var rect = video.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    var sbh = getStatusBarOffset();
+    return {
+      x: Math.round(rect.left * dpr),
+      y: Math.round(rect.top * dpr) - sbh,
+      width: Math.round(rect.width * dpr),
+      height: Math.round(rect.height * dpr)
+    };
+  }
+  
+  document.addEventListener('click', function(e) {
+    // ۱. آیا روی کارت کانال کلیک شده؟
+    var card = e.target.closest('[data-a="iptvplay"]');
     if (!card) return;
     
-    var url = card.dataset.url || card.getAttribute('data-url');
-    if (!url) return;
-
-    // آیا در محیط Native هستیم و پلاگین Native آماده است؟
-    if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        
-        var video = document.getElementById('iptv-video');
-        var status = document.getElementById('iptv-status');
-        if (status) status.innerHTML = 'در حال اتصال به پلیر بومی...';
-        
-        // مخفی کردن تگ HTML video (چون پلیر Native روی آن قرار می‌گیرد)
-        if (video) video.style.opacity = '0';
-        
-        // فراخوانی پلیر Native
-        window.NaghmeVideoPlayer.play(url).then(function() {
-            // قرار دادن پلیر روی کادر HTML
-            setTimeout(function() {
-                window.NaghmeVideoPlayer.fitToVideoElement('iptv-video');
-                if (status) status.innerHTML = 'در حال پخش (Native)...';
-            }, 300);
-        }).catch(function(err) {
-            console.warn('Native play failed:', err);
-            if (status) status.innerHTML = 'خطا در پلیر بومی: ' + err.message;
-            if (video) video.style.opacity = '1';
-        });
+    var channelKey = card.getAttribute('data-v');
+    if (!channelKey) return;
+    
+    // ۲. پیدا کردن URL کانال از IPTV
+    if (!window.IPTV || !IPTV.channels) return;
+    var channel = IPTV.channels.find(function(c) { return c.key === channelKey; });
+    if (!channel || !channel.url) {
+      console.warn('[Native] channel URL not found for:', channelKey);
+      return;
     }
-    // اگر Native نبود، کدهای قبلی (HLS.js) اجرا می‌شوند
-}, true);
-
-// به‌روزرسانی مختصات هنگام اسکرول و تغییر اندازه صفحه
-var resizeTimer;
-function updateNativeBounds() {
-    if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
-        window.NaghmeVideoPlayer.fitToVideoElement('iptv-video');
+    
+    // ۳. جلوگیری از اجرای کدهای قدیمی
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    
+    var bounds = getVideoBounds();
+    if (!bounds) return;
+    
+    console.log('[Native] Playing:', channel.name, 'URL:', channel.url);
+    console.log('[Native] Bounds:', bounds);
+    
+    // ۴. پخش با Native
+    var p = window.NaghmeVideoPlayer.get();
+    if (p && p.play) {
+      p.play({ url: channel.url }).then(function() {
+        return p.setBounds(bounds);
+      }).then(function() {
+        setTimeout(function() {
+          document.body.classList.add('native-player-active');
+          var status = document.getElementById('iptvStatus');
+          if (status) status.textContent = 'در حال پخش (Native): ' + channel.name;
+        }, 200);
+      }).catch(function(err) {
+        console.warn('[Native] Play failed:', err);
+        document.body.classList.remove('native-player-active');
+        var status = document.getElementById('iptvStatus');
+        if (status) {
+          status.style.opacity = '1';
+          status.textContent = 'خطا در پلیر بومی: ' + (err.message || 'نامشخص');
+        }
+      });
     }
-}
-window.addEventListener('resize', function() {
+  }, true); // Capture phase - قبل از کدهای اصلی
+  
+  // به‌روزرسانی مختصات هنگام تغییر اندازه
+  var resizeTimer;
+  window.addEventListener('resize', function() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(updateNativeBounds, 200);
-});
-window.addEventListener('scroll', function() {
-    updateNativeBounds();
-}, { passive: true });
+    resizeTimer = setTimeout(function() {
+      if (document.body.classList.contains('native-player-active')) {
+        var bounds = getVideoBounds();
+        var p = window.NaghmeVideoPlayer.get();
+        if (bounds && p && p.setBounds) {
+          p.setBounds(bounds);
+        }
+      }
+    }, 250);
+  });
+  
+  console.log('[Native] IPTV Native Bridge loaded');
+})();
