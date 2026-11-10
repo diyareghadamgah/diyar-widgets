@@ -95,7 +95,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         }
         val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
         val extension = fileName.substringAfterLast('.', "").lowercase()
-        val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","ts","mpg","mpeg","wmv","flv")
+        val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
         if (extension !in known && !(resolver.getType(uri) ?: "").startsWith("video/")) return null
         return JSObject().put("uri", uri.toString())
             .put("name", fileName)
@@ -113,7 +113,8 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     fun pickVideoFiles(call: PluginCall) {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            type = "video/*"
+            type = "*/*"
+            putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("video/*", "video/x-matroska", "application/x-matroska", "application/octet-stream"))
             putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
         }
