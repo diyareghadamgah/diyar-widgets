@@ -136,6 +136,14 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             call.resolve()
         } ?: call.reject("activity_unavailable")
     }
+    @PluginMethod fun getStatus(call: PluginCall) {
+        val p = player
+        val out = JSObject()
+        out.put("positionMs", p?.currentPosition ?: 0L)
+        out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
+        out.put("isPlaying", p?.isPlaying ?: false)
+        call.resolve(out)
+    }
     @PluginMethod fun release(call: PluginCall) {
         activity?.runOnUiThread {
             try {
