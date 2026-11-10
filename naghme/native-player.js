@@ -23,6 +23,7 @@
             }
             return this._p;
         },
+        fetchText: function (url) { var p = this.get(); if (!p || !p.fetchText) return Promise.reject(new Error("native playlist fetch unavailable")); return p.fetchText({ url: url }); },
         play: function (url) {
             var p = this.get();
             if (!p) return Promise.reject(new Error('NaghmeVideoPlayer plugin not available'));
