@@ -46,3 +46,46 @@ if(fs.existsSync(vp)){let v=rd(vp);
 else warn.push('variables.gradle پیدا نشد؛ minSdk/targetSdk را دستی تنظیم کنید');
 for(const w of warn)console.warn('⚠ '+w);
 console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android && ./gradlew assembleDebug');
+
+/* ═══ Native Video Player Setup (Phase 1 Prototype) ═══ */
+(function setupNativePlayer(){
+  try {
+    const ktSource = path.join(nat, 'NaghmeVideoPlayerPlugin.kt');
+    if (!fs.existsSync(ktSource)) {
+      console.log('ℹ NaghmeVideoPlayerPlugin.kt not found, skipping');
+      return;
+    }
+    let kt = rd(ktSource).replace(/^package [^\n]+/m, 'package ' + pkg);
+    wr(path.join(jdir, 'NaghmeVideoPlayerPlugin.kt'), kt);
+    console.log('✓ NaghmeVideoPlayerPlugin.kt copied to ' + path.relative(root, jdir));
+
+    const projectGradle = path.join(android, 'build.gradle');
+    if (fs.existsSync(projectGradle)) {
+      let pg = rd(projectGradle);
+      if (!pg.includes('kotlin-gradle-plugin')) {
+        pg = pg.replace(/(classpath\s+['\"]com\.android\.tools\.build:gradle:[^'\"]+['\"])/, '\$1\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20\"');
+        wr(projectGradle, pg);
+        console.log('✓ Kotlin Gradle plugin added');
+      }
+    }
+
+    const appGradle = path.join(android, 'app/build.gradle');
+    if (fs.existsSync(appGradle)) {
+      let ag = rd(appGradle);
+      if (!ag.includes('kotlin-android')) {
+        ag = ag.replace(/(apply plugin:\s*['\"]com\.android\.application['\"])/, '\$1\napply plugin: \"kotlin-android\"');
+      }
+      if (!ag.includes('kotlin-stdlib')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib:1.9.20\"');
+      }
+      if (!ag.includes('media3-exoplayer')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation \"androidx.media3:media3-exoplayer:1.2.1\"\n    implementation \"androidx.media3:media3-exoplayer-hls:1.2.1\"\n    implementation \"androidx.media3:media3-ui:1.2.1\"');
+      }
+      wr(appGradle, ag);
+      console.log('✓ Kotlin + Media3 added to app/build.gradle');
+    }
+  } catch (e) {
+    console.error('✗ Native player setup failed: ' + e.message);
+    process.exit(1);
+  }
+})();
