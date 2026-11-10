@@ -38,147 +38,30 @@ dialog{max-height:88dvh;overflow:auto}
 
 #side h1 .logo{display:block;width:72px;height:72px;margin:0 auto 8px;border-radius:50%}#side h1{text-align:center}
 
-/* تلویزیون اینترنتی */
-.tvbox{background:#000;border-radius:14px;overflow:hidden;margin:12px 0}.tvbox video{display:block;width:100%;max-height:55vh;aspect-ratio:16/9;background:#000}.tvnow{display:flex;justify-content:space-between;gap:10px;padding:9px 12px}.tvnow span{color:var(--mu);font-size:12px}.tvplaceholder{display:grid;place-content:center;text-align:center;min-height:180px;background:var(--s1);border-radius:14px;color:var(--mu);margin:12px 0}.tvlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:5px}.tvrow{display:flex;align-items:center;gap:9px;padding:7px;border-radius:10px;background:var(--s1);min-width:0}.tvrow.on{outline:1px solid var(--ac)}.tvrow img,.tvlogo{width:42px;height:42px;object-fit:contain;border-radius:7px;background:var(--s2);flex:none}.tvlogo{display:grid;place-items:center}.tvrow .m b{font-size:13px}.tverror{color:#ef7777;background:var(--s1);padding:10px;border-radius:10px}
-.tvstatus{margin:0;padding:8px 12px;color:var(--mu);font-size:12px;min-height:18px}
-#iptvSearch{display:block;width:100%;margin:10px 0 8px;border:1px solid var(--s2);border-radius:12px;padding:12px 14px;direction:rtl}#iptvSearch:focus{outline:2px solid var(--ac)}
-
-/* جست‌وجوی مستقل شبکه‌های IPTV */
-.iptv-search-wrap{display:block;width:100%;margin:12px 0 10px;padding:0}.iptv-search{display:block!important;box-sizing:border-box;width:100%!important;min-height:48px;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;padding:12px 14px!important;font-size:15px!important;direction:rtl;user-select:text!important}.iptv-search::placeholder{color:var(--mu);opacity:1}
-/* --- Naghme v2.2.8 IPTV Sticky Layout --- */
-#iptv-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-height: calc(100vh - 130px);
-  overflow: hidden;
-}
-
-#iptv-player-area {
-  flex-shrink: 0;
-  width: 100%;
-  background: #000;
-  position: relative;
-}
-
-#iptv-player-area video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  display: block;
-}
-
-#iptv-filters {
-  flex-shrink: 0;
-  background: var(--bg-color, #111);
-  padding: 10px;
-  z-index: 10;
-}
-
-#iptvResults {
-  flex-grow: 1;
-  overflow-y: auto;
-  min-height: 0;
-  padding: 10px;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-
-
-    padding-bottom: 100px !important; /* فاصله برای اینکه آخرین کانال زیر مینی‌پلیر نرود */
-}
-
-
-/* جلوگیری از اسکرول شدن کل صفحه */
-
-
-#iptv-container {
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    width: 100% !important;
-    overflow: hidden !important;
-    position: relative !important;
-}
-
-/* بخش پلیر: ثابت در بالا، بدون اینکه کل صفحه را بگیرد */
-#iptv-player-area {
-    flex: 0 0 auto !important; /* نه بزرگ میشه نه کوچیک */
-    width: 100% !important;
-    max-height: 40vh !important; /* حداکثر 40 درصد ارتفاع صفحه برای ویدیو */
-    background: #000 !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-#iptv-player-area video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    display: block !important;
-}
-
-/* بخش جستجو و فیلترها: دقیقاً زیر پلیر ثابت میشه */
-#iptv-filters {
-    flex: 0 0 auto !important;
-    background: var(--bg-color, #111) !important;
-    padding: 10px !important;
-    z-index: 5 !important;
-    position: relative !important; /* جلوگیری از روی هم افتادن */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important; /* سایه برای جدا شدن از لیست */
-}
-
-/* لیست کانال‌ها: تنها بخشی که اسکرول میشه */
-#iptvResults {
-    flex: 1 1 auto !important; /* بقیه فضا رو پر میکنه */
-    overflow-y: auto !important;
-    min-height: 0 !important;
-    padding: 10px !important;
-    padding-bottom: 120px !important; /* فاصله برای مینی پلیر */
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* --- Naghme v2.2.8 FINAL STABLE LAYOUT --- */
-#iptv-container {
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    max-height: calc(100vh - 130px) !important; /* تنظیم ارتفاع دقیق برای جلوگیری از بیرون‌زدگی */
-    overflow: hidden !important;
-}
-
-#iptv-player-area {
-    flex: 0 0 auto !important;
-    width: 100% !important;
-    background: #000 !important;
-    aspect-ratio: 16 / 9 !important; /* این خط جادویی است: ارتفاع را بر اساس عرض محاسبه می‌کند */
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-#iptv-player-area video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    display: block !important;
-}
-
-#iptv-filters {
-    flex: 0 0 auto !important;
-    background: #111 !important;
-    padding: 10px !important;
-    z-index: 5 !important;
-    position: relative !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
-}
-
-#iptvResults {
-    flex: 1 1 auto !important;
-    overflow-y: auto !important;
-    min-height: 0 !important;
-    padding: 10px !important;
-    padding-bottom: 100px !important; /* برای مینی پلیر */
-    -webkit-overflow-scrolling: touch !important;
-}
+/* تلویزیون اینترنتی v2.2.8 — سه بخش مستقل: پخش (ثابت) / جست‌وجو و دسته‌ها (ثابت) / فهرست (تنها بخش اسکرول‌شونده) */
+#tvpage{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:0 14px calc(66px + env(safe-area-inset-bottom))}
+#tvpage[hidden]{display:none}body.tvmode #view{display:none}
+.tvplayer{flex:none}
+.tvbox{position:relative;background:#000;border-radius:14px;overflow:hidden}
+.tvbox video{display:block;width:100%;aspect-ratio:16/9;max-height:30dvh;background:#000;object-fit:contain}.tvbox video[hidden]{display:none}
+.tvph{display:grid;place-content:center;gap:4px;text-align:center;aspect-ratio:16/9;max-height:30dvh;background:var(--s1);color:var(--mu);padding:8px}.tvph[hidden]{display:none}.tvph small{font-size:11px}
+.tvnow{display:flex;align-items:center;gap:6px;padding:6px 2px 2px}.tvnow .m b{font-size:14px}.tvnow button{min-width:44px;padding:6px 10px}.tvnow button:disabled{opacity:.4}
+.tvstatus{margin:0;padding:0 2px 4px;color:var(--mu);font-size:12px}.tvstatus:empty{display:none}
+.tvbrowse{flex:1;min-height:0;display:flex;flex-direction:column}
+.tvhead{flex:none;display:flex;align-items:center;gap:8px;padding:2px 0 6px}.tvhead b{font-size:15px}.tvhead .d{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tvhead button{padding:6px 12px;min-height:36px}
+.tvmsg{flex:none;margin:0 0 6px;font-size:12px}.tvmsg[hidden]{display:none}.tverror{color:#ef7777;background:var(--s1);padding:8px 10px;border-radius:10px}
+.iptv-search-wrap{flex:none;margin:0 0 8px}
+.iptv-search{display:block!important;box-sizing:border-box;width:100%!important;min-height:42px;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;padding:10px 14px!important;font-size:16px!important;direction:rtl;user-select:text!important}.iptv-search::placeholder{color:var(--mu);opacity:1}.iptv-search:focus{outline:2px solid var(--ac)}
+.tvbrowse .chips button{min-height:34px;padding:5px 12px}.tvbrowse .chips{flex:none;padding:0 0 8px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.tvlist{position:relative;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));grid-auto-rows:min-content;align-content:start;gap:5px}
+.tvrow{display:flex;align-items:center;gap:9px;padding:7px;min-height:58px;border-radius:10px;background:var(--s1);min-width:0;cursor:pointer;content-visibility:auto;contain-intrinsic-size:auto 58px}
+.tvrow.on{background:var(--s2);outline:2px solid var(--ac)}.tvrow.on b{color:var(--ac2)}
+.tvrow img,.tvlogo{width:42px;height:42px;object-fit:contain;border-radius:7px;background:var(--s2);flex:none}.tvlogo{display:grid;place-items:center}.tvrow .m b{font-size:13px}.tvempty{grid-column:1/-1;padding:14px 4px}
+.tvbox.tvfull{position:fixed;inset:0;z-index:20;border-radius:0}.tvbox.tvfull video{width:100%;height:100dvh;max-height:none;aspect-ratio:auto}
+.tvbox:fullscreen{border-radius:0}.tvbox:fullscreen video{width:100%;height:100%;max-height:none;aspect-ratio:auto}.tvbox:-webkit-full-screen video{width:100%;height:100%;max-height:none;aspect-ratio:auto}
+.tvfsx{position:absolute;top:max(8px,env(safe-area-inset-top));left:8px;z-index:2;background:#000a;color:#fff;min-width:44px}.tvfsx[hidden]{display:none}
+@media(max-width:760px){#tvpage{padding-bottom:calc(112px + env(safe-area-inset-bottom));padding-top:max(8px,env(safe-area-inset-top))}body.tvmode header{display:none}}
+/* دسکتاپ/تبلت و گوشی افقی: پخش کنار فهرست (دو ستون)، فهرست تمام ارتفاع */
+@media(min-width:900px),(orientation:landscape) and (max-height:520px){#tvpage{flex-direction:row;gap:14px;padding-bottom:calc(66px + env(safe-area-inset-bottom))}.tvplayer{flex:0 0 46%;min-width:0;overflow:hidden}.tvbox video,.tvph{max-height:60dvh}.tvbrowse{min-width:0}.tvlist{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}}
+@media(orientation:landscape) and (max-height:520px){body.tvmode header{display:none}.tvbox video,.tvph{max-height:52dvh}.tvlist{grid-template-columns:1fr}}
+@media(orientation:landscape) and (max-height:520px) and (max-width:760px){#tvpage{padding-bottom:calc(112px + env(safe-area-inset-bottom))}}

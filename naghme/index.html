@@ -1,12 +1,21 @@
 <!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>نغمه | NAGHME MUSIC STUDIO</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0b0b0b"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="icon-192.png"><link rel="stylesheet" href="style.css"></head><body>
 <aside id="side"><h1><img src="icon-192.png" alt="دیار قدمگاه" class="logo">نغمه<small>NAGHME MUSIC STUDIO</small></h1><nav id="nav"></nav></aside>
-<main><header><input id="q" type="search" placeholder="جست‌وجو: آهنگ، خواننده، آلبوم، پوشه، سال، سبک، فرمت…"><button id="add" class="pri">＋ افزودن</button><button id="theme" title="تم" aria-label="تغییر تم">◐</button></header><div id="view"></div></main>
+<main><header><input id="q" type="search" placeholder="جست‌وجو: آهنگ، خواننده، آلبوم، پوشه، سال، سبک، فرمت…"><button id="add" class="pri">＋ افزودن</button><button id="theme" title="تم" aria-label="تغییر تم">◐</button></header><div id="view"></div>
+<section id="tvpage" hidden aria-label="تلویزیون اینترنتی">
+<div class="tvplayer"><div class="tvbox" id="tvbox"><video id="iptvVideo" controls playsinline webkit-playsinline preload="none" hidden></video><div class="tvph" id="tvph">📺<br>برای شروع، یک شبکه را انتخاب کنید<small>پخش زنده به فعال‌بودن سرور شبکه و پشتیبانی دستگاه از فرمت آن بستگی دارد</small></div><button id="tvfsx" class="tvfsx" data-a="iptvfsx" aria-label="خروج از تمام‌صفحه" hidden>✕</button></div>
+<div class="tvnow"><div class="m"><b id="tvName">شبکه‌ای انتخاب نشده</b><span id="tvGroup"></span></div><button id="tvRetry" data-a="iptvretry" aria-label="اتصال دوباره" disabled>↻</button><button id="tvFs" data-a="iptvfs" aria-label="تمام‌صفحه" disabled>⛶</button></div>
+<p id="iptvStatus" class="tvstatus" aria-live="polite"></p></div>
+<div class="tvbrowse"><div class="tvhead"><b>تلویزیون اینترنتی</b><span id="tvCount" class="d"></span><button class="pri" data-a="iptvload">↻ دریافت</button><button data-a="iptvurl" aria-label="تغییر آدرس فهرست" title="تغییر آدرس فهرست">⚙</button></div>
+<p id="tvMsg" class="tvmsg d" hidden></p>
+<div class="iptv-search-wrap"><input id="iptvSearch" class="iptv-search" type="search" placeholder="🔎 جست‌وجوی نام شبکه، کشور یا زبان…" autocomplete="off" enterkeyhint="search" aria-label="جست‌وجوی شبکه‌های تلویزیونی"></div>
+<div class="chips" id="tvChips"></div>
+<div id="iptvResults" class="tvlist"></div></div>
+</section></main>
 <div id="mini"><div id="mc" data-a="np"></div><div class="m" data-a="np"><b id="mt">—</b><span id="ma"></span></div><button data-a="prev" aria-label="قبلی">⏮</button><button data-a="tog" class="pt pri" aria-label="پخش/توقف">▶</button><button data-a="next" aria-label="بعدی">⏭</button><i id="mp"></i></div>
 <section id="np" hidden><button class="ib" data-a="npx" aria-label="بستن">✕</button><div id="nc"></div><h2 id="nt"></h2><p id="na"></p><input id="seek" type="range" min="0" max="1000" value="0"><div class="tm"><span id="te">۰:۰۰</span><span id="tr">۰:۰۰</span></div>
 <div class="ctl"><button data-a="shuf" id="bs">⤮</button><button data-a="prev">⏮</button><button data-a="tog" class="pt pri big">▶</button><button data-a="next">⏭</button><button data-a="rep" id="br">⟳</button></div>
 <div class="ctl"><button data-a="b10">⏪ ۱۰</button><button data-a="mute" id="bm">🔊</button><input id="vol" type="range" min="0" max="1" step="0.01" value="1"><button data-a="f10">۱۰ ⏩</button></div><h3>صف پخش</h3><div id="qu"></div></section>
 <dialog id="dlg"></dialog><div id="toast"></div>
 <input type="file" id="fDir" webkitdirectory multiple hidden><input type="file" id="fFiles" accept="audio/*,.mp3,.m4a,.flac,.ogg,.opus,.wav,.aac,.wma" multiple hidden><input type="file" id="fImg" accept="image/*" hidden><input type="file" id="fJson" accept=".json" hidden>
-<audio id="au" preload="metadata"></audio><noscript>برای اجرای نغمه جاوااسکریپت باید فعال باشد.</noscript><script src="platform.js"></script><script src="tags.js"></script><script src="app.js"></script>    
-    <script src="hls.min.js"></script>
+<audio id="au" preload="metadata"></audio><noscript>برای اجرای نغمه جاوااسکریپت باید فعال باشد.</noscript><script src="platform.js"></script><script src="tags.js"></script><script src="app.js"></script>    <script src="hls.min.js"></script>
 </body></html>

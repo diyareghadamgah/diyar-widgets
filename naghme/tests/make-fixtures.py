@@ -28,3 +28,6 @@ def fr(i,t):b=bytes([3])+t.encode();return i+struct.pack('>I',len(b))+b'\x00\x00
 for n in range(5000):
     body=fr(b'TIT2',f'Track {n:05d}')+fr(b'TPE1',f'Artist {n%60:02d}')+fr(b'TALB',f'Album {n%300:03d}')+fr(b'TRCK',str(n%12+1))
     open(f'big/t{n:05d}.mp3','wb').write(b'ID3\x03\x00\x00'+ss(len(body))+body+frame*(4+n%9))
+# ویدئوی آزمایشی برای tests/iptv.test.js (WebM/VP8 + Vorbis)
+os.makedirs('tv',exist_ok=True)
+sh('ffmpeg','-y','-loglevel','error','-f','lavfi','-i','testsrc=size=320x180:rate=15:duration=40','-f','lavfi','-i','sine=frequency=440:duration=40','-c:v','libvpx','-b:v','150k','-c:a','libvorbis','-shortest','tv/red.webm')
