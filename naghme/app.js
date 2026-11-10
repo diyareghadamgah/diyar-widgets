@@ -23,6 +23,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
 const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const iptvNorm=s=>String(s||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک');
 function loadHlsLibrary(){if(window.Hls)return Promise.resolve(window.Hls);if(!iptvHlsLoader){iptvHlsLoader=new Promise((resolve,reject)=>{const urls=['https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js','https://unpkg.com/hls.js@1.5.20/dist/hls.min.js'];let i=0;const next=()=>{if(i>=urls.length){iptvHlsLoader=null;reject(new Error('کتابخانه پخش HLS بارگیری نشد؛ اتصال اینترنت یا دسترسی به CDN را بررسی کنید.'));return}const sc=document.createElement('script');sc.src=urls[i++];sc.async=true;sc.onload=()=>window.Hls?resolve(window.Hls):next();sc.onerror=()=>next();document.head.appendChild(sc)};next()})}return iptvHlsLoader}
@@ -190,11 +191,15 @@ function enterIPTV(){
   iptvOn=true;$('#tvpage').hidden=false;document.body.classList.add('tvmode');
   renderIPTV();
   const box=$('#iptvResults'),on=box.querySelector('.tvrow.on');if(on)box.scrollTop=Math.max(0,on.offsetTop-box.clientHeight/2);
-  if(IPTV.current)attachIPTVPlayer(false);
+  if(IPTV.current){
+   if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.play(IPTV.current);
+   else attachIPTVPlayer(false);
+  }
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
-function leaveIPTV(){   // خروج از صفحه‌ی IPTV: تمام منابع پخش آزاد می‌شود (HLS destroy + حذف src)
+function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
  if(!iptvOn)return;iptvOn=false;
+ if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvFullscreen(false);$('#tvpage').hidden=true;document.body.classList.remove('tvmode');iptvRelease()}
 const ctx={main:[],pop:[]};
 const reidx=()=>{S.map=new Map(S.songs.map(s=>[s.id,s]));if(NaghmePlatform.isNative)for(const s of S.songs)if(s.uri&&!S.files.has(s.id)){const f=NaghmePlatform.fromSong(s);f&&S.files.set(s.id,f)}};   // اندروید: بعد از هر بازگشایی، آهنگ‌ها خودکار به فایل وصل می‌شوند
@@ -522,52 +527,77 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
 
 
 
-// --- NAGHME_IPTV_NATIVE_BRIDGE (SAFE) ---
-(function() {
-  'use strict';
-  if (!window.NaghmeVideoPlayer || !window.NaghmeVideoPlayer.isNative) return;
-  
-  function getVideoBounds() {
-    var video = document.getElementById('iptvVideo');
-    if (!video) return null;
-    var rect = video.getBoundingClientRect();
-    var dpr = window.devicePixelRatio || 1;
-    var sbh = Math.round(24 * dpr);
-    return {
-      x: Math.round(rect.left * dpr),
-      y: Math.round(rect.top * dpr) - sbh,
-      width: Math.round(rect.width * dpr),
-      height: Math.round(rect.height * dpr)
-    };
-  }
-  
-  document.addEventListener('click', function(e) {
-    var card = e.target.closest('[data-a="iptvplay"]');
-    if (!card) return;
-    var channelKey = card.getAttribute('data-v');
-    if (!channelKey || !window.IPTV || !IPTV.channels) return;
-    
-    var channel = IPTV.channels.find(function(c) { return c.key === channelKey; });
-    if (!channel || !channel.url) return;
-    
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    
-    var bounds = getVideoBounds();
-    if (!bounds) return;
-    
-    var p = window.NaghmeVideoPlayer.get();
-    if (p && p.play) {
-      p.play({ url: channel.url }).then(function() {
-        return p.setBounds(bounds);
-      }).then(function() {
-        setTimeout(function() {
-          document.body.classList.add('native-player-active');
-        }, 200);
-      }).catch(function(err) {
-        console.warn('[Native] Play failed:', err);
-      });
-    }
-  }, true);
+// --- NAGHME_IPTV_NATIVE_BRIDGE (v2: lifecycle, bounds, status) ---
+(function(){
+ 'use strict';
+ var native=window.NaghmeVideoPlayer;
+ if(!native||!native.isNative||typeof native.get!=='function')return;
+ var resizeTimer=0,active=false,playingKey='';
+ function video(){return document.getElementById('iptvVideo')}
+ function bounds(){
+  var el=video();if(!el)return null;
+  var r=el.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
+  if(!r.width||!r.height)return null;
+  // WebView مختصات را از ابتدای محتوای اپ می‌دهد؛ آفست نوار وضعیت مانند نسخه‌ی آزمایش‌شده حفظ می‌شود.
+  return {x:Math.round(r.left*dpr),y:Math.round(r.top*dpr)-Math.round(24*dpr),width:Math.round(r.width*dpr),height:Math.round(r.height*dpr)};
+ }
+ function status(message){var el=document.getElementById('iptvStatus');if(el)el.textContent=message||''}
+ function plugin(){return native.get()}
+ function syncBounds(){
+  if(!active)return Promise.resolve();
+  var b=bounds(),p=plugin();if(!b||!p||!p.setBounds)return Promise.resolve();
+  return p.setBounds(b).catch(function(err){console.warn('[Naghme IPTV] setBounds:',err)});
+ }
+ function showFailure(err){
+  active=false;playingKey='';document.body.classList.remove('native-player-active');
+  var message=(err&&err.message)||String(err||'خطای ناشناخته');
+  status('پخش بومی ناموفق بود: '+message+' — تلاش با پلیر جایگزین…');
+  if(window.IPTV&&window.IPTV.current&&typeof attachIPTVPlayer==='function')attachIPTVPlayer(true);
+ }
+ function playChannel(channel){
+  if(!channel||!channel.url)return Promise.resolve();
+  var p=plugin(),b=bounds();
+  if(!p||!p.play||!b){status('پلیر بومی آماده نیست؛ در حال استفاده از پلیر جایگزین…');attachIPTVPlayer(true);return Promise.resolve()}
+  active=true;playingKey=channel.key||'';window.IPTV.active=playingKey;window.IPTV.current=channel;window.IPTV.playError='';
+  if(typeof updateIPTVNow==='function')updateIPTVNow();
+  status('در حال اتصال به '+(channel.name||'شبکه')+'…');
+  document.body.classList.remove('native-player-active');
+  return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
+   .then(function(){return p.play({url:channel.url})})
+   .then(function(){return p.setBounds(b)})
+   .then(function(){document.body.classList.add('native-player-active');status('')})
+   .catch(function(err){showFailure(err)});
+ }
+ function hidePlayer(){
+  active=false;playingKey='';document.body.classList.remove('native-player-active');
+  var p=plugin();if(!p)return Promise.resolve();
+  return Promise.resolve(p.stop?p.stop():null)
+   .catch(function(err){console.warn('[Naghme IPTV] stop:',err)})
+   .then(function(){return p.setVisible?p.setVisible({visible:false}):null})
+   .catch(function(err){console.warn('[Naghme IPTV] hide:',err)});
+ }
+ function onLayoutChange(){
+  if(!active)return;
+  clearTimeout(resizeTimer);
+  resizeTimer=setTimeout(function(){syncBounds()},100);
+ }
+ window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds};
+ document.addEventListener('click',function(e){
+  var fav=e.target&&e.target.closest&&e.target.closest('[data-a="iptvfav"]');
+  if(fav)return;
+  var card=e.target&&e.target.closest&&e.target.closest('[data-a="iptvplay"]');
+  if(!card)return;
+  var key=card.getAttribute('data-v');
+  var list=window.IPTV&&window.IPTV.channels;
+  if(!key||!list)return;
+  var channel=list.find(function(c){return c.key===key});
+  if(!channel||!channel.url)return;
+  e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+  playChannel(channel);
+ },true);
+ window.addEventListener('resize',onLayoutChange,{passive:true});
+ window.addEventListener('orientationchange',function(){setTimeout(onLayoutChange,250)},{passive:true});
+ document.addEventListener('fullscreenchange',onLayoutChange);
+ document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')onLayoutChange()});
+ console.log('[Naghme IPTV] native bridge ready');
 })();
