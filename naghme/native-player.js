@@ -59,6 +59,45 @@
         }
     };
 
+
+    // پلیر مستقل کتابخانه؛ با پلیر IPTV اشتراک وضعیت ندارد.
+    var libraryPlugin = null;
+    var libraryVideo = {
+        isNative: isNative,
+        get: function () {
+            if (!isNative) return null;
+            if (libraryPlugin) return libraryPlugin;
+            try {
+                if (window.Capacitor.Plugins && window.Capacitor.Plugins.NaghmeLibraryVideoPlayer) {
+                    libraryPlugin = window.Capacitor.Plugins.NaghmeLibraryVideoPlayer;
+                } else if (typeof window.Capacitor.registerPlugin === 'function') {
+                    libraryPlugin = window.Capacitor.registerPlugin('NaghmeLibraryVideoPlayer');
+                }
+            } catch (e) { console.warn('[NaghmeLibraryVideoPlayer] registration failed', e); }
+            return libraryPlugin;
+        },
+        call: function (method, args) {
+            var p = this.get();
+            if (!p || typeof p[method] !== 'function') return Promise.reject(new Error('پلیر بومی کتابخانه در دسترس نیست'));
+            return p[method](args || {});
+        },
+        play: function (url) { return this.call('play', {url:url}); },
+        stop: function () { return this.call('stop'); },
+        pause: function () { return this.call('pause'); },
+        resume: function () { return this.call('resume'); },
+        seekTo: function (positionMs) { return this.call('seekTo', {positionMs:positionMs}); },
+        setSpeed: function (speed) { return this.call('setSpeed', {speed:speed}); },
+        status: function () { return this.call('getStatus'); },
+        visible: function (visible) { return this.call('setVisible', {visible:visible}); },
+        bounds: function (element) {
+            if (!element) return Promise.resolve();
+            var r = element.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+            return this.call('setBounds', {x:r.left*d,y:r.top*d,width:r.width*d,height:r.height*d});
+        },
+        release: function () { return this.call('release'); }
+    };
+    window.NaghmeLibraryVideo = libraryVideo;
+
     window.NaghmeVideoPlayer = plugin;
 
     // Test button removed
