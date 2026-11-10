@@ -41,7 +41,7 @@ jobs:
         run: npm install
         
       - name: Run project tests
-        run: npm test
+        run: node tests/scripts.test.js
 
       - name: Build web assets
         run: |
