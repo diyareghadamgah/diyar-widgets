@@ -42,12 +42,9 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                         resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
                         setBackgroundColor(Color.BLACK)
                     }
-                    val metrics = act.resources.displayMetrics
-                    val w = metrics.widthPixels
-                    val h = (w * 9 / 16)
-                    val params = FrameLayout.LayoutParams(w, h).apply {
-                        gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
-                        topMargin = 140 // مقدار پیش‌فرض
+                    // پارامترهای پیش‌فرض (اگر setBounds صدا زده نشد)
+                    val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400).apply {
+                        gravity = Gravity.TOP or Gravity.LEFT
                     }
                     act.addContentView(playerView, params)
                 }
@@ -67,20 +64,27 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     @PluginMethod
     fun setBounds(call: PluginCall) {
-        val x = call.getFloat("x")?.toInt() ?: 0
-        val y = call.getFloat("y")?.toInt() ?: 0
-        val width = call.getFloat("width")?.toInt() ?: 0
-        val height = call.getFloat("height")?.toInt() ?: 0
+        val x = call.getFloat("x") ?: 0f
+        val y = call.getFloat("y") ?: 0f
+        val width = call.getFloat("width") ?: 0f
+        val height = call.getFloat("height") ?: 0f
 
         activity?.runOnUiThread {
             try {
+                val webView = bridge.webView
+                val loc = IntArray(2)
+                webView.getLocationOnScreen(loc)
+                val webViewX = loc[0]
+                val webViewY = loc[1]
+
                 playerView?.let { pv ->
                     val params = pv.layoutParams as FrameLayout.LayoutParams
                     params.gravity = Gravity.TOP or Gravity.LEFT
-                    params.leftMargin = x
-                    params.topMargin = y
-                    params.width = width
-                    params.height = height
+                    // مختصات دقیق: موقعیت WebView در صفحه + موقعیت عنصر در WebView
+                    params.leftMargin = webViewX + x.toInt()
+                    params.topMargin = webViewY + y.toInt()
+                    params.width = width.toInt()
+                    params.height = height.toInt()
                     pv.layoutParams = params
                     pv.requestLayout()
                 }
