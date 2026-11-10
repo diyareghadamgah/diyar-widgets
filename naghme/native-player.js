@@ -39,17 +39,16 @@
         },
         fitToVideoElement: function (elementId) {
             var el = document.getElementById(elementId);
+            if (!el || !this.isNative) return;
             var rect = el.getBoundingClientRect();
-            // تبدیل دقیق CSS Pixel به Android Pixel
-            var density = window.devicePixelRatio || 1;
+            var dpr = window.devicePixelRatio || 1;
             var p = this.get();
             if (p && p.setBounds) {
-                // مختصات را بدون ضرب در dpr می‌فرستیم چون اندروید خودش با density تنظیم می‌کند
                 p.setBounds({
-                    x: rect.left,
-                    y: rect.top,
-                    width: rect.width,
-                    height: rect.height
+                    x: rect.left * dpr,
+                    y: rect.top * dpr,
+                    width: rect.width * dpr,
+                    height: rect.height * dpr
                 }).catch(function (e) { console.warn('setBounds failed', e); });
             }
         },

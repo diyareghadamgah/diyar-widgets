@@ -73,7 +73,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             try {
                 val webView = bridge.webView
                 val loc = IntArray(2)
-                webView.getLocationOnScreen(loc)
+                webView.getLocationInWindow(loc)
                 val webViewX = loc[0]
                 val webViewY = loc[1]
 
