@@ -18,7 +18,7 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
-import com.getcapacitor.ActivityResult
+import androidx.activity.result.ActivityResult
 import com.getcapacitor.JSArray
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
@@ -83,7 +83,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     }
 
     private fun videoFile(uri: Uri): JSObject? {
-        val resolver = context.contentResolver
+        val resolver = getContext().contentResolver
         val metadata = resolver.query(uri, arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE), null, null, null)?.use { cursor ->
             if (cursor.moveToFirst()) {
                 val ni = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
@@ -105,7 +105,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     private fun persistReadPermission(uri: Uri, flags: Int) {
         val grant = flags and Intent.FLAG_GRANT_READ_URI_PERMISSION
-        try { context.contentResolver.takePersistableUriPermission(uri, grant) }
+        try { getContext().contentResolver.takePersistableUriPermission(uri, grant) }
         catch (_: Exception) { /* Provider may not offer persistable grants. */ }
     }
 
@@ -121,7 +121,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     }
 
     @ActivityCallback
-    private fun videoFilesPicked(result: ActivityResult, call: PluginCall) {
+    private fun videoFilesPicked(call: PluginCall, result: ActivityResult) {
         if (result.resultCode != Activity.RESULT_OK || result.data == null) {
             call.resolve(JSObject().put("files", JSArray()))
             return
@@ -147,7 +147,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     }
 
     @ActivityCallback
-    private fun videoFolderPicked(result: ActivityResult, call: PluginCall) {
+    private fun videoFolderPicked(call: PluginCall, result: ActivityResult) {
         if (result.resultCode != Activity.RESULT_OK || result.data?.data == null) {
             call.resolve(JSObject().put("files", JSArray()).put("folder", ""))
             return
@@ -155,7 +155,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val data = result.data!!
         val treeUri = data.data!!
         persistReadPermission(treeUri, data.flags)
-        val root = DocumentFile.fromTreeUri(context, treeUri)
+        val root = DocumentFile.fromTreeUri(getContext(), treeUri)
         val files = JSArray()
         var count = 0
         fun scan(folder: DocumentFile) {
