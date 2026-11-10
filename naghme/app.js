@@ -126,7 +126,11 @@ function playIPTV(key){
  box.querySelectorAll('.tvrow.on').forEach(r=>r.classList.remove('on'));
  [...box.querySelectorAll('.tvrow')].forEach(r=>{if(r.dataset.v===key)r.classList.add('on')});
  IPTV.active=key;IPTV.current=ch;IPTV.playError='';
- updateIPTVNow();attachIPTVPlayer(true);   // بدون render و بدون دست‌زدن به فهرست/اسکرول
+ updateIPTVNow();
+ // Android: انتخاب شبکه مستقیماً به پلیر بومی سپرده شود؛ مرورگر فقط در نسخه غیر native.
+ if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV){
+  window.NaghmeNativeIPTV.play(ch);
+ }else attachIPTVPlayer(true);   // بدون render و بدون دست‌زدن به فهرست/اسکرول
 }
 const retryIPTV=()=>{if(IPTV.current)attachIPTVPlayer(true)};
 function toggleIPTVFav(key){
