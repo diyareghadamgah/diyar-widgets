@@ -3,6 +3,9 @@ package ir.diyareghadamgah.naghme
 import android.graphics.Color
 import android.util.Log
 import android.view.Gravity
+import java.net.HttpURLConnection
+import java.net.URL
+import java.io.ByteArrayOutputStream
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.media3.common.MediaItem
@@ -23,6 +26,52 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
+
+    /** دریافت فهرست M3U در اندروید؛ WebView ممکن است به‌دلیل CORS نتواند آن را بخواند. */
+    @PluginMethod
+    fun fetchText(call: PluginCall) {
+        val raw = call.getString("url")
+        if (raw.isNullOrBlank() || !(raw.startsWith("https://") || raw.startsWith("http://"))) {
+            call.reject("invalid_http_url")
+            return
+        }
+        Thread {
+            var connection: HttpURLConnection? = null
+            try {
+                connection = (URL(raw).openConnection() as HttpURLConnection).apply {
+                    requestMethod = "GET"
+                    connectTimeout = 20000
+                    readTimeout = 30000
+                    instanceFollowRedirects = true
+                    setRequestProperty("User-Agent", "VLC/3.0.20 LibVLC/3.0.20")
+                    setRequestProperty("Accept", "application/vnd.apple.mpegurl, audio/x-mpegurl, */*")
+                    setRequestProperty("Cache-Control", "no-cache")
+                }
+                val status = connection.responseCode
+                if (status !in 200..299) throw IllegalStateException("HTTP $status")
+                val input = connection.inputStream
+                val out = ByteArrayOutputStream()
+                val buffer = ByteArray(16384)
+                var total = 0
+                input.use { stream ->
+                    while (true) {
+                        val n = stream.read(buffer)
+                        if (n < 0) break
+                        total += n
+                        if (total > 20 * 1024 * 1024) throw IllegalStateException("playlist_too_large")
+                        out.write(buffer, 0, n)
+                    }
+                }
+                val body = out.toString("UTF-8")
+                if (!body.trimStart().startsWith("#EXTM3U")) throw IllegalStateException("invalid_m3u_response")
+                call.resolve(JSObject().put("text", body).put("status", status).put("url", connection.url.toString()))
+            } catch (e: Exception) {
+                call.reject("playlist_fetch_failed: " + (e.message ?: e.javaClass.simpleName))
+            } finally {
+                connection?.disconnect()
+            }
+        }.start()
+    }
 
     @PluginMethod
     fun play(call: PluginCall) {
