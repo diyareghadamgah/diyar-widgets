@@ -8,7 +8,9 @@ import android.widget.FrameLayout
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import com.getcapacitor.JSObject
@@ -33,7 +35,15 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         act.runOnUiThread {
             try {
                 if (player == null) {
-                    player = ExoPlayer.Builder(act).build()
+                    val httpFactory = DefaultHttpDataSource.Factory()
+                        .setUserAgent("VLC/3.0.20 LibVLC/3.0.20")
+                        .setAllowCrossProtocolRedirects(true)
+
+                    val mediaSourceFactory = DefaultMediaSourceFactory(httpFactory)
+
+                    player = ExoPlayer.Builder(act)
+                        .setMediaSourceFactory(mediaSourceFactory)
+                        .build()
                     setupListeners()
                 }
                 if (playerView == null) {
@@ -42,7 +52,6 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                         resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
                         setBackgroundColor(Color.BLACK)
                     }
-                    // پارامترهای پیش‌فرض (اگر setBounds صدا زده نشد)
                     val params = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400).apply {
                         gravity = Gravity.TOP or Gravity.LEFT
                     }
@@ -71,18 +80,11 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
         activity?.runOnUiThread {
             try {
-                val webView = bridge.webView
-                val loc = IntArray(2)
-                webView.getLocationInWindow(loc)
-                val webViewX = loc[0]
-                val webViewY = loc[1]
-
                 playerView?.let { pv ->
                     val params = pv.layoutParams as FrameLayout.LayoutParams
                     params.gravity = Gravity.TOP or Gravity.LEFT
-                    // مختصات دقیق: موقعیت WebView در صفحه + موقعیت عنصر در WebView
-                    params.leftMargin = webViewX + x.toInt()
-                    params.topMargin = webViewY + y.toInt()
+                    params.leftMargin = x.toInt()
+                    params.topMargin = y.toInt()
                     params.width = width.toInt()
                     params.height = height.toInt()
                     pv.layoutParams = params
