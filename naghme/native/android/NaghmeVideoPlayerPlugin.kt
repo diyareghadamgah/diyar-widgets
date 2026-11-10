@@ -58,6 +58,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                     act.addContentView(playerView, params)
                 }
                 playerView?.player = player
+                playerView?.visibility = android.view.View.VISIBLE
                 player?.setMediaItem(MediaItem.fromUri(url))
                 player?.prepare()
                 player?.playWhenReady = true
