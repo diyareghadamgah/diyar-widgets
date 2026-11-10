@@ -60,7 +60,7 @@ console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android
     console.log('✓ NaghmeVideoPlayerPlugin.kt copied to ' + path.relative(root, jdir));
     const libraryKt = path.join(nat, 'NaghmeLibraryVideoPlayerPlugin.kt');
     if (fs.existsSync(libraryKt)) {
-      const librarySource = rd(libraryKt).replace(/^package [^\\n]+/m, 'package ' + pkg);
+      const librarySource = rd(libraryKt).replace(/^package [^\n]+/m, 'package ' + pkg);
       wr(path.join(jdir, 'NaghmeLibraryVideoPlayerPlugin.kt'), librarySource);
       console.log('✓ NaghmeLibraryVideoPlayerPlugin.kt copied to ' + path.relative(root, jdir));
     }
