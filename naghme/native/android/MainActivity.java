@@ -10,6 +10,7 @@ public class MainActivity extends BridgeActivity {
         // و پلاگینی که بعد از آن ثبت شود هرگز به Bridge نمی‌رسد (نتیجه: «plugin is not implemented» یا null در جاوااسکریپت).
         registerPlugin(NaghmeStoragePlugin.class);
         registerPlugin(NaghmeVideoPlayerPlugin.class);
+        registerPlugin(NaghmeLibraryVideoPlayerPlugin.class);
         super.onCreate(savedInstanceState);
     }
 }
