@@ -41,7 +41,9 @@ jobs:
         run: npm install
         
       - name: Build web assets
-        run: node scripts/build-web.js
+        run: |
+          node --check video.js
+          node scripts/build-web.js
         
       - name: Add Android platform
         run: npx cap add android
@@ -65,6 +67,8 @@ jobs:
           unzip -q "$APK" -d /tmp/apk
           echo "== web assets inside APK =="
           ls /tmp/apk/assets/public
+          test -f /tmp/apk/assets/public/video.js
+          grep -q "کتابخانهٔ ویدئو" /tmp/apk/assets/public/video.js
           cat /tmp/apk/assets/public/build-info.json; echo
           grep -q "NaghmeStorage_not_registered" /tmp/apk/assets/public/platform.js
           grep -q "nativePromise" /tmp/apk/assets/public/platform.js
