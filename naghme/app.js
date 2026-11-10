@@ -582,14 +582,14 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
   active=false;playingKey='';document.body.classList.remove('native-player-active');
   var message=(err&&err.message)||String(err||'خطای ناشناخته');
   window.IPTV.nativePlayError=message;
-  status('پخش بومی ناموفق بود: '+message+' — تلاش با پلیر جایگزین…');
-  if(window.IPTV&&window.IPTV.current&&typeof attachIPTVPlayer==='function')attachIPTVPlayer(true);
+  status('خطای پلیر بومی: '+message);
+  console.error('[Naghme IPTV] native play failed; browser fallback disabled',err);
  }
  function playChannel(channel){
   if(!channel||!channel.url)return Promise.resolve();
   var p=plugin(),b=bounds();
   bindPlayerEvents(p);
-  if(!p||!p.play||!b){status('پلیر بومی آماده نیست؛ در حال استفاده از پلیر جایگزین…');attachIPTVPlayer(true);return Promise.resolve()}
+  if(!p||!p.play){status('خطای راه‌اندازی: افزونهٔ بومی NaghmeVideoPlayer در دسترس نیست؛ نسخه APK یا ثبت افزونه را بررسی کنید.');console.error('[Naghme IPTV] native plugin unavailable');return Promise.resolve()}if(!b){status('خطای چیدمان: کادر ویدئوی IPTV اندازه معتبر ندارد؛ صفحه را کمی جابه‌جا کنید و دوباره بزنید.');console.error('[Naghme IPTV] invalid video bounds');return Promise.resolve()}
   active=true;playingKey=channel.key||'';window.IPTV.active=playingKey;window.IPTV.current=channel;window.IPTV.playError='';window.IPTV.nativePlayError='';
   if(typeof updateIPTVNow==='function')updateIPTVNow();
   status('در حال اتصال به '+(channel.name||'شبکه')+'…');
