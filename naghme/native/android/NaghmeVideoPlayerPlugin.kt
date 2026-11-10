@@ -124,10 +124,16 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             }
             override fun onPlayerError(error: PlaybackException) {
                 val d = JSObject()
-                d.put("message", error.message ?: "Unknown")
+                val details = generateSequence(error as Throwable?) { it.cause }
+                    .take(5)
+                    .joinToString(" <- ") { cause ->
+                        cause.javaClass.simpleName + (cause.message?.let { ": $it" } ?: "")
+                    }
+                d.put("message", details.ifBlank { error.message ?: "Unknown playback error" })
                 d.put("code", error.errorCode)
                 d.put("name", error.errorCodeName)
                 notifyListeners("error", d)
+                Log.e("NaghmeVideoPlayer", "Playback error [" + error.errorCodeName + "]: " + details, error)
             }
         })
     }
