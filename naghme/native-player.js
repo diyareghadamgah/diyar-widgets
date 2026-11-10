@@ -61,32 +61,6 @@
 
     window.NaghmeVideoPlayer = plugin;
 
-    // Prototype test button (will be removed after IPTV integration)
-    if (isNative) {
-        setTimeout(function () {
-            var btn = document.createElement('button');
-            btn.id = 'ngtvp-test-btn';
-            btn.textContent = 'Test Native';
-            btn.style.cssText = 'position:fixed;top:60px;left:10px;z-index:99999;padding:8px 12px;background:#0a8;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:bold;box-shadow:0 2px 6px rgba(0,0,0,0.5);cursor:pointer;';
-            btn.onclick = function () {
-                btn.textContent = 'loading...';
-                plugin.on('ready', function () { btn.textContent = 'ready OK'; });
-                plugin.on('playing', function () { btn.textContent = 'playing'; });
-                plugin.on('error', function (e) {
-                    btn.textContent = 'ERR ' + ((e && e.message) || 'err').substring(0, 22);
-                });
-                plugin.on('ended', function () { btn.textContent = 'ended'; });
-                plugin.play('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8').then(function() {
-                    // وقتی دکمه تست زده شد، پلیر را روی کادر IPTV قرار بده
-                    setTimeout(function() {
-                        plugin.fitToVideoElement('iptvVideo');
-                    }, 500);
-                }).catch(function (e) {
-                    btn.textContent = 'ERR ' + ((e && e.message) || 'fail').substring(0, 22);
-                });
-            };
-            document.body.appendChild(btn);
-        }, 2500);
-    }
+    // Test button removed
     console.log('[NaghmeVideoPlayer] loaded, isNative=', isNative);
 })();

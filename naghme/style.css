@@ -66,16 +66,15 @@ dialog{max-height:88dvh;overflow:auto}
 @media(orientation:landscape) and (max-height:520px){body.tvmode header{display:none}.tvbox video,.tvph{max-height:52dvh}.tvlist{grid-template-columns:1fr}}
 @media(orientation:landscape) and (max-height:520px) and (max-width:760px){#tvpage{padding-bottom:calc(112px + env(safe-area-inset-bottom))}}
 
-/* --- Naghme Native Player Overlay --- */
-body.native-player-active #iptv-video,
-body.native-player-active #iptv-status {
-    display: none !important;
-}
 
 
-/* --- Naghme Native Player Overlay --- */
+/* --- Naghme Native Player Overlay (Final) --- */
 body.native-player-active #iptvVideo,
 body.native-player-active #iptvStatus {
     opacity: 0 !important;
     pointer-events: none !important;
+}
+body.native-player-active #iptvResults {
+    /* وقتی Native پلیر باز است، لیست زیر آن اسکرول شود */
+    margin-top: 0 !important;
 }
