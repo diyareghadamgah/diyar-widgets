@@ -88,7 +88,7 @@ console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android
         ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation \"androidx.media3:media3-exoplayer:1.2.1\"\n    implementation \"androidx.media3:media3-exoplayer-hls:1.2.1\"\n    implementation \"androidx.media3:media3-ui:1.2.1\"');
       }
       if (!ag.includes('androidx.documentfile:documentfile')) {
-        ag = ag.replace(/(dependencies\\s*\\{)/, '\\$1\\n    implementation "androidx.documentfile:documentfile:1.0.1"');
+        ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.documentfile:documentfile:1.0.1"');
       }
       wr(appGradle, ag);
       console.log('✓ Kotlin + Media3 added to app/build.gradle');
