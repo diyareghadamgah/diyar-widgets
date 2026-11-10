@@ -518,3 +518,58 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
 })();
 
 
+
+// --- NAGHME_IPTV_NATIVE_BRIDGE ---
+document.addEventListener('click', function(e) {
+    var results = document.getElementById('iptvResults');
+    if (!results || !results.contains(e.target)) return;
+
+    var card = e.target.closest('[data-url]') || e.target.closest('.iptv-channel-card') || e.target.closest('.card');
+    if (!card) return;
+    
+    var url = card.dataset.url || card.getAttribute('data-url');
+    if (!url) return;
+
+    // آیا در محیط Native هستیم و پلاگین Native آماده است؟
+    if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        
+        var video = document.getElementById('iptv-video');
+        var status = document.getElementById('iptv-status');
+        if (status) status.innerHTML = 'در حال اتصال به پلیر بومی...';
+        
+        // مخفی کردن تگ HTML video (چون پلیر Native روی آن قرار می‌گیرد)
+        if (video) video.style.opacity = '0';
+        
+        // فراخوانی پلیر Native
+        window.NaghmeVideoPlayer.play(url).then(function() {
+            // قرار دادن پلیر روی کادر HTML
+            setTimeout(function() {
+                window.NaghmeVideoPlayer.fitToVideoElement('iptv-video');
+                if (status) status.innerHTML = 'در حال پخش (Native)...';
+            }, 300);
+        }).catch(function(err) {
+            console.warn('Native play failed:', err);
+            if (status) status.innerHTML = 'خطا در پلیر بومی: ' + err.message;
+            if (video) video.style.opacity = '1';
+        });
+    }
+    // اگر Native نبود، کدهای قبلی (HLS.js) اجرا می‌شوند
+}, true);
+
+// به‌روزرسانی مختصات هنگام اسکرول و تغییر اندازه صفحه
+var resizeTimer;
+function updateNativeBounds() {
+    if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
+        window.NaghmeVideoPlayer.fitToVideoElement('iptv-video');
+    }
+}
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateNativeBounds, 200);
+});
+window.addEventListener('scroll', function() {
+    updateNativeBounds();
+}, { passive: true });

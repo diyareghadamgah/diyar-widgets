@@ -1,4 +1,4 @@
-// Naghme Native Video Player - Capacitor bridge (Phase 1 Prototype)
+// Naghme Native Video Player - Capacitor bridge (Phase 2: Overlay)
 (function () {
     'use strict';
 
@@ -32,6 +32,26 @@
         pause: function () { var p = this.get(); return p ? p.pause() : Promise.resolve(); },
         resume: function () { var p = this.get(); return p ? p.resume() : Promise.resolve(); },
         release: function () { var p = this.get(); return p ? p.release() : Promise.resolve(); },
+        setVisible: function (visible) {
+            var p = this.get();
+            if (p && p.setVisible) return p.setVisible({ visible: visible });
+            return Promise.resolve();
+        },
+        fitToVideoElement: function (elementId) {
+            var el = document.getElementById(elementId);
+            if (!el || !this.isNative) return;
+            var rect = el.getBoundingClientRect();
+            var dpr = window.devicePixelRatio || 1;
+            var p = this.get();
+            if (p && p.setBounds) {
+                p.setBounds({
+                    x: rect.left * dpr,
+                    y: rect.top * dpr,
+                    width: rect.width * dpr,
+                    height: rect.height * dpr
+                }).catch(function (e) { console.warn('setBounds failed', e); });
+            }
+        },
         on: function (event, cb) {
             var p = this.get();
             if (p && typeof p.addListener === 'function') return p.addListener(event, cb);
@@ -41,6 +61,7 @@
 
     window.NaghmeVideoPlayer = plugin;
 
+    // Prototype test button (will be removed after IPTV integration)
     if (isNative) {
         setTimeout(function () {
             var btn = document.createElement('button');
@@ -55,7 +76,12 @@
                     btn.textContent = 'ERR ' + ((e && e.message) || 'err').substring(0, 22);
                 });
                 plugin.on('ended', function () { btn.textContent = 'ended'; });
-                plugin.play('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8').catch(function (e) {
+                plugin.play('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8').then(function() {
+                    // وقتی دکمه تست زده شد، پلیر را روی کادر IPTV قرار بده
+                    setTimeout(function() {
+                        plugin.fitToVideoElement('iptv-video');
+                    }, 500);
+                }).catch(function (e) {
                     btn.textContent = 'ERR ' + ((e && e.message) || 'fail').substring(0, 22);
                 });
             };
