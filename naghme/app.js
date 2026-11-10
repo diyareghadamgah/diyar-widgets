@@ -543,6 +543,23 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  }
  function status(message){var el=document.getElementById('iptvStatus');if(el)el.textContent=message||''}
  function plugin(){return native.get()}
+ var eventsBound=false;
+ function bindPlayerEvents(p){
+  if(eventsBound||!p||typeof p.addListener!=='function')return;
+  eventsBound=true;
+  try{
+   p.addListener('error',function(data){
+    if(!active)return;
+    var code=data&&data.name?data.name:(data&&data.code!==undefined?'کد '+data.code:'');
+    var message=data&&data.message?data.message:'خطای نامشخص در دریافت یا رمزگشایی جریان';
+    status('خطای پلیر بومی'+(code?' ['+code+']':'')+': '+message);
+    console.error('[Naghme IPTV] ExoPlayer error',data);
+   });
+   p.addListener('ready',function(){if(active)status('جریان دریافت شد؛ آمادهٔ پخش…')});
+   p.addListener('playing',function(){if(active)status('')});
+   p.addListener('buffering',function(){if(active)status('در حال دریافت و بافر شبکه…')});
+  }catch(err){console.warn('[Naghme IPTV] event listeners:',err)}
+ }
  function syncBounds(){
   if(!active)return Promise.resolve();
   var b=bounds(),p=plugin();if(!b||!p||!p.setBounds)return Promise.resolve();
@@ -557,6 +574,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  function playChannel(channel){
   if(!channel||!channel.url)return Promise.resolve();
   var p=plugin(),b=bounds();
+  bindPlayerEvents(p);
   if(!p||!p.play||!b){status('پلیر بومی آماده نیست؛ در حال استفاده از پلیر جایگزین…');attachIPTVPlayer(true);return Promise.resolve()}
   active=true;playingKey=channel.key||'';window.IPTV.active=playingKey;window.IPTV.current=channel;window.IPTV.playError='';
   if(typeof updateIPTVNow==='function')updateIPTVNow();
