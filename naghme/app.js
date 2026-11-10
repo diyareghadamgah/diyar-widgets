@@ -522,64 +522,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
 
 
 
-    if (!channel || !channel.url) {
-      console.warn('[Native] channel URL not found for:', channelKey);
-      return;
-    }
-    
-    // ۳. جلوگیری از اجرای کدهای قدیمی
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    
-    var bounds = getVideoBounds();
-    if (!bounds) return;
-    
-    console.log('[Native] Playing:', channel.name, 'URL:', channel.url);
-    console.log('[Native] Bounds:', bounds);
-    
-    // ۴. پخش با Native
-    var p = window.NaghmeVideoPlayer.get();
-    if (p && p.play) {
-      p.play({ url: channel.url }).then(function() {
-        return p.setBounds(bounds);
-      }).then(function() {
-        setTimeout(function() {
-          document.body.classList.add('native-player-active');
-          var status = document.getElementById('iptvStatus');
-          if (status) status.textContent = 'در حال پخش (Native): ' + channel.name;
-        }, 200);
-      }).catch(function(err) {
-        console.warn('[Native] Play failed:', err);
-        document.body.classList.remove('native-player-active');
-        var status = document.getElementById('iptvStatus');
-        if (status) {
-          status.style.opacity = '1';
-          status.textContent = 'خطا در پلیر بومی: ' + (err.message || 'نامشخص');
-        }
-      });
-    }
-  }, true); // Capture phase - قبل از کدهای اصلی
-  
-  // به‌روزرسانی مختصات هنگام تغییر اندازه
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      if (document.body.classList.contains('native-player-active')) {
-        var bounds = getVideoBounds();
-        var p = window.NaghmeVideoPlayer.get();
-        if (bounds && p && p.setBounds) {
-          p.setBounds(bounds);
-        }
-      }
-    }, 250);
-  });
-  
-  console.log('[Native] IPTV Native Bridge loaded');
-})();
-
-// --- NAGHME_IPTV_NATIVE_BRIDGE (FINAL) ---
+// --- NAGHME_IPTV_NATIVE_BRIDGE (SAFE) ---
 (function() {
   'use strict';
   if (!window.NaghmeVideoPlayer || !window.NaghmeVideoPlayer.isNative) return;
@@ -589,11 +532,10 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
     if (!video) return null;
     var rect = video.getBoundingClientRect();
     var dpr = window.devicePixelRatio || 1;
-    // ارتفاع نوار وضعیت (تخمین 24dp * dpr)
     var sbh = Math.round(24 * dpr);
     return {
       x: Math.round(rect.left * dpr),
-      y: Math.round(rect.top * dpr) - sbh,  // کم کردن نوار وضعیت
+      y: Math.round(rect.top * dpr) - sbh,
       width: Math.round(rect.width * dpr),
       height: Math.round(rect.height * dpr)
     };
@@ -602,11 +544,9 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
   document.addEventListener('click', function(e) {
     var card = e.target.closest('[data-a="iptvplay"]');
     if (!card) return;
-    
     var channelKey = card.getAttribute('data-v');
-    if (!channelKey) return;
+    if (!channelKey || !window.IPTV || !IPTV.channels) return;
     
-    if (!window.IPTV || !IPTV.channels) return;
     var channel = IPTV.channels.find(function(c) { return c.key === channelKey; });
     if (!channel || !channel.url) return;
     
@@ -615,12 +555,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
     e.stopImmediatePropagation();
     
     var bounds = getVideoBounds();
-    if (!bounds) {
-      console.warn('[Native] iptvVideo not found');
-      return;
-    }
-    
-    console.log('[Native] Playing:', channel.name, 'Bounds:', bounds);
+    if (!bounds) return;
     
     var p = window.NaghmeVideoPlayer.get();
     if (p && p.play) {
@@ -629,28 +564,10 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
       }).then(function() {
         setTimeout(function() {
           document.body.classList.add('native-player-active');
-          var status = document.getElementById('iptvStatus');
-          if (status) status.textContent = 'در حال پخش: ' + channel.name;
         }, 200);
       }).catch(function(err) {
         console.warn('[Native] Play failed:', err);
-        document.body.classList.remove('native-player-active');
       });
     }
   }, true);
-  
-  // به‌روزرسانی bounds هنگام تغییر اندازه صفحه
-  var resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      if (document.body.classList.contains('native-player-active')) {
-        var bounds = getVideoBounds();
-        var p = window.NaghmeVideoPlayer.get();
-        if (bounds && p && p.setBounds) p.setBounds(bounds);
-      }
-    }, 250);
-  });
-  
-  console.log('[Native] Bridge loaded');
 })();
