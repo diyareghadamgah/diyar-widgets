@@ -22,7 +22,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    render() در این صفحه innerHTML را بازنویسی نمی‌کند؛ فقط بخش‌های تغییرکرده (فهرست/دسته‌ها/نام شبکه) به‌روز می‌شوند.
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
-const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const iptvNorm=s=>String(s||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک');
@@ -65,13 +65,18 @@ async function loadIPTV(force=false){
  IPTV.loading=true;IPTV.error='';iptvRefresh();
  try{
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
-  let playlistText;
-  if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-   const nativeResult=await window.NaghmeVideoPlayer.fetchText(IPTV.url);playlistText=nativeResult.text;
-  }else{
-   const r=await fetch(IPTV.url,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);playlistText=await r.text();
-  }
-  const a=parseM3U(playlistText);if(!a.length)throw new Error('فهرست شبکه‌ای نداشت');
+  const fetchPlaylistText=async url=>{
+   if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+    const result=await window.NaghmeVideoPlayer.fetchText(url);return result.text;
+   }
+   const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.text();
+  };
+  const urls=[IPTV.url];
+  if(IPTV.url==='https://iptv-org.github.io/iptv/index.m3u')urls.push(IPTV.iranUrl);
+  const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url))));
+  const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
+  const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
+  if(!a.length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=a;IPTV.loadedAt=Date.now();
  }catch(e){IPTV.error='دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — ممکن است دسترسی CORS یا اینترنت محدود باشد.'}
  finally{IPTV.loading=false;iptvRefresh()}
