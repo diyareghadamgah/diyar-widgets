@@ -89,8 +89,15 @@ async function attachIPTVPlayer(force){
  v.removeAttribute('src');v.load();
  setIPTVStatus('در حال اتصال به جریان زنده…');
  const fail=m=>{if(stale())return;IPTV.playError=m;setIPTVStatus(m)};
- const hint=e=>{if(stale()||IPTV.playError)return;if(e&&e.name==='NotAllowedError')setIPTVStatus('برای شروع پخش، دکمهٔ ▶ را روی ویدئو بزنید.')};   // خطای دیگر play() (مثل لینک خراب) پیام خطای واقعی را بازنویسی نکند
- v.onerror=()=>{if(stale()||!v.getAttribute('src'))return;fail('مرورگر نتوانست این جریان را باز کند؛ احتمالاً لینک خراب، کُدک ناسازگار یا محدودیت سرور است.')};
+ const mediaError=()=>{
+  const e=v.error,code=e?e.code:0;
+  const names={1:'پخش لغو شد',2:'خطای شبکه/دریافت',3:'خطای رمزگشایی یا کُدک',4:'منبع یا قالب رسانه پشتیبانی نمی‌شود'};
+  const detail=e&&e.message?e.message:'';
+  const host=(()=>{try{return new URL(v.currentSrc||v.src).host}catch{return ''}})();
+  return 'خطای مرورگر '+(code?'MEDIA_ERR_'+code:'نامشخص')+(names[code]?' ('+names[code]+')':'')+(detail?' — '+detail:'')+(host?' — سرور: '+host:'')+' — networkState='+v.networkState+'، readyState='+v.readyState;
+ };
+ const hint=e=>{if(stale()||IPTV.playError)return;if(e&&e.name==='NotAllowedError')setIPTVStatus('برای شروع پخش، دکمهٔ ▶ را روی ویدئو بزنید.')};
+ v.onerror=()=>{if(stale()||!v.getAttribute('src'))return;const nativeInfo=IPTV.nativePlayError?' | خطای پلیر بومی: '+IPTV.nativePlayError:'';fail(mediaError()+nativeInfo)};
  v.onplaying=()=>{if(!stale())setIPTVStatus('')};
  v.onwaiting=()=>{if(!stale()&&!IPTV.playError)setIPTVStatus('در حال بافر…')};
  const url=ch.url;
@@ -103,7 +110,9 @@ async function attachIPTVPlayer(force){
    h.on(Hls.Events.ERROR,(_,d)=>{if(stale()||iptvHls!==h||!d.fatal)return;
     if(d.type===Hls.ErrorTypes.NETWORK_ERROR&&tries++<3){setIPTVStatus('خطای دریافت جریان؛ تلاش دوباره…');try{h.startLoad()}catch{}return}
     if(d.type===Hls.ErrorTypes.MEDIA_ERROR&&tries++<3){try{h.recoverMediaError()}catch{}return}
-    fail(d.type===Hls.ErrorTypes.NETWORK_ERROR?'خطای دریافت جریان؛ ممکن است سرور شبکه قطع یا دسترسی منطقه‌ای محدود باشد.':d.type===Hls.ErrorTypes.MEDIA_ERROR?'خطای رمزگشایی/کُدک ویدئو؛ این شبکه با پلیر سازگار نیست.':'پخش این جریان با خطای غیرقابل‌بازیابی متوقف شد.');
+    const response=d.response&&d.response.code?' HTTP '+d.response.code:'';
+    const detail=d.details||d.reason||d.error&&d.error.message||'';
+    fail((d.type===Hls.ErrorTypes.NETWORK_ERROR?'خطای شبکه در دریافت HLS':d.type===Hls.ErrorTypes.MEDIA_ERROR?'خطای رمزگشایی/کُدک HLS':'خطای غیرقابل‌بازیابی HLS')+response+(detail?' — '+detail:'')+' — '+(d.type||''));
     try{h.destroy()}catch{}if(iptvHls===h)iptvHls=null});
    h.on(Hls.Events.MANIFEST_PARSED,()=>{if(!stale())v.play().catch(hint)});
    h.loadSource(url);h.attachMedia(v);
@@ -568,6 +577,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  function showFailure(err){
   active=false;playingKey='';document.body.classList.remove('native-player-active');
   var message=(err&&err.message)||String(err||'خطای ناشناخته');
+  window.IPTV.nativePlayError=message;
   status('پخش بومی ناموفق بود: '+message+' — تلاش با پلیر جایگزین…');
   if(window.IPTV&&window.IPTV.current&&typeof attachIPTVPlayer==='function')attachIPTVPlayer(true);
  }
@@ -576,7 +586,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
   var p=plugin(),b=bounds();
   bindPlayerEvents(p);
   if(!p||!p.play||!b){status('پلیر بومی آماده نیست؛ در حال استفاده از پلیر جایگزین…');attachIPTVPlayer(true);return Promise.resolve()}
-  active=true;playingKey=channel.key||'';window.IPTV.active=playingKey;window.IPTV.current=channel;window.IPTV.playError='';
+  active=true;playingKey=channel.key||'';window.IPTV.active=playingKey;window.IPTV.current=channel;window.IPTV.playError='';window.IPTV.nativePlayError='';
   if(typeof updateIPTVNow==='function')updateIPTVNow();
   status('در حال اتصال به '+(channel.name||'شبکه')+'…');
   document.body.classList.remove('native-player-active');
