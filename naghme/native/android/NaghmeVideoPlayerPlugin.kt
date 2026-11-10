@@ -47,7 +47,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                     val h = (w * 9 / 16)
                     val params = FrameLayout.LayoutParams(w, h).apply {
                         gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
-                        topMargin = 140
+                        topMargin = 140 // مقدار پیش‌فرض
                     }
                     act.addContentView(playerView, params)
                 }
@@ -63,6 +63,41 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 call.reject("Play failed: " + e.message)
             }
         }
+    }
+
+    @PluginMethod
+    fun setBounds(call: PluginCall) {
+        val x = call.getFloat("x")?.toInt() ?: 0
+        val y = call.getFloat("y")?.toInt() ?: 0
+        val width = call.getFloat("width")?.toInt() ?: 0
+        val height = call.getFloat("height")?.toInt() ?: 0
+
+        activity?.runOnUiThread {
+            try {
+                playerView?.let { pv ->
+                    val params = pv.layoutParams as FrameLayout.LayoutParams
+                    params.gravity = Gravity.TOP or Gravity.LEFT
+                    params.leftMargin = x
+                    params.topMargin = y
+                    params.width = width
+                    params.height = height
+                    pv.layoutParams = params
+                    pv.requestLayout()
+                }
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("setBounds failed: " + e.message)
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setVisible(call: PluginCall) {
+        val visible = call.getBoolean("visible") ?: true
+        activity?.runOnUiThread {
+            playerView?.visibility = if (visible) android.view.View.VISIBLE else android.view.View.GONE
+            call.resolve()
+        } ?: call.reject("Activity not available")
     }
 
     private fun setupListeners() {

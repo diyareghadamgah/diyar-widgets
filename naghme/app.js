@@ -517,20 +517,4 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
    reg.update().catch(()=>{})}).catch(()=>{})}
 })();
 
-// --- NAGHME_CORS_PROXY_TEST ---
-setInterval(() => {
-    if (window.Hls && !window.NaghmeProxyApplied) {
-        window.NaghmeProxyApplied = true;
-        const originalLoadSource = window.Hls.prototype.loadSource;
-        
-        window.Hls.prototype.loadSource = function(url) {
-            let finalUrl = url;
-            // اگر لینک http یا https بود و از قبل پروکسی نشده بود
-            if (url && (url.startsWith('http') || url.startsWith('//')) && !url.includes('corsproxy.io')) {
-                finalUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
-                console.log('IPTV Stream Proxied:', finalUrl);
-            }
-            return originalLoadSource.call(this, finalUrl);
-        };
-    }
-}, 1000);
+
