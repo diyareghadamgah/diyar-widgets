@@ -65,8 +65,13 @@ async function loadIPTV(force=false){
  IPTV.loading=true;IPTV.error='';iptvRefresh();
  try{
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
-  const r=await fetch(IPTV.url,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);
-  const a=parseM3U(await r.text());if(!a.length)throw new Error('فهرست شبکه‌ای نداشت');
+  let playlistText;
+  if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+   const nativeResult=await window.NaghmeVideoPlayer.fetchText(IPTV.url);playlistText=nativeResult.text;
+  }else{
+   const r=await fetch(IPTV.url,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);playlistText=await r.text();
+  }
+  const a=parseM3U(playlistText);if(!a.length)throw new Error('فهرست شبکه‌ای نداشت');
   IPTV.channels=a;IPTV.loadedAt=Date.now();
  }catch(e){IPTV.error='دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — ممکن است دسترسی CORS یا اینترنت محدود باشد.'}
  finally{IPTV.loading=false;iptvRefresh()}
