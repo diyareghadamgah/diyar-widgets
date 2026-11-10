@@ -52,9 +52,10 @@ const before=man()+vg();r=run();ok('اجرای دوم (idempotent): هیچ تغ�
 {const wf=cp.spawnSync('python3',[path.join(proj,'tests/workflow.test.py'),path.join(proj,'..','.github','workflows','naghme-android.yml')],{encoding:'utf8'});ok('فایل workflow: ساختار YAML معتبر (paths/with/path، ترتیب مراحل)',wf.status===0,(wf.stdout.match(/FAIL.*/)||[''])[0]||'ok')}
 fs.rmSync(path.join(tmp,'android'),{recursive:true});r=run();ok('بدون پوشه‌ی android: خطای واضح',r.status!==0&&/npx cap add android/.test(r.stderr));
 // build-web
+const syntax=cp.spawnSync('node',['--check',path.join(proj,'video.js')],{encoding:'utf8'});ok('video.js: دستور زبان JavaScript معتبر',syntax.status===0,syntax.stderr.trim().slice(0,180));
 const w=path.join(os.tmpdir(),'nagw-'+Date.now());fs.mkdirSync(w);for(const f of fs.readdirSync(proj))if(/\.(html|js|json|png|css)$/.test(f)&&!['package.json'].includes(f)||f==='fonts')fs.cpSync(path.join(proj,f),path.join(w,f),{recursive:true});
 r=cp.spawnSync('node',[path.join(proj,'scripts/build-web.js'),w],{encoding:'utf8'});const L=fs.existsSync(w+'/www')?fs.readdirSync(w+'/www'):[];
-ok('build-web: همه‌ی ۱۱ فایل لازم در www',r.status===0&&['index.html','app.js','tags.js','platform.js','style.css','manifest.json','sw.js','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png'].every(f=>L.includes(f)),L.length+' files');
+ok('build-web: همه‌ی ۱۱ فایل لازم در www',r.status===0&&['index.html','app.js','tags.js','platform.js','style.css','manifest.json','sw.js','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png','video.js'].every(f=>L.includes(f)),L.length+' files');
 fs.rmSync(w+'/www/platform.js');fs.rmSync(w+'/platform.js');r=cp.spawnSync('node',[path.join(proj,'scripts/build-web.js'),w],{encoding:'utf8'});ok('build-web: فایل ناموجود گزارش می‌شود',r.status!==0&&/platform\.js/.test(r.stderr));
 const cc=JSON.parse(fs.readFileSync(path.join(proj,'capacitor.config.json'),'utf8'));ok('capacitor.config.json: appId، نام، webDir',cc.appId==='ir.diyareghadamgah.naghme'&&cc.appName==='نغمه'&&cc.webDir==='www');
 const pk=JSON.parse(fs.readFileSync(path.join(proj,'package.json'),'utf8'));ok('package.json: وابستگی‌های Capacitor',!!pk.dependencies['@capacitor/core']&&!!pk.dependencies['@capacitor/android']&&!!pk.devDependencies['@capacitor/cli']);
