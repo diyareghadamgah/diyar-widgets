@@ -5,6 +5,9 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.view.Gravity
+import android.util.Log
+import java.io.File
+import java.io.FileOutputStream
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -35,10 +38,29 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var view: PlayerView? = null
+    private val diagnosticLock = Any()
+    private var lastBoundsSignature = ""
+
+    // گزارش فقط در حافظه خصوصی برنامه ذخیره می‌شود و به کتابخانه دست نمی‌زند.
+    private fun diagnostic(message: String, error: Throwable? = null) {
+        val line = System.currentTimeMillis().toString() + " " + message + "\n" +
+            (if (error != null) Log.getStackTraceString(error) + "\n" else "")
+        try {
+            synchronized(diagnosticLock) {
+                val file = File(getContext().filesDir, "naghme-video-diagnostics.log")
+                if (file.exists() && file.length() > 262144) {
+                    file.writeText(file.readText(Charsets.UTF_8).takeLast(131072), Charsets.UTF_8)
+                }
+                FileOutputStream(file, true).use { it.write(line.toByteArray(Charsets.UTF_8)) }
+            }
+        } catch (writeError: Exception) { Log.e("NaghmeLibraryVideo", "diagnostic_write_failed", writeError) }
+        if (error != null) Log.e("NaghmeLibraryVideo", message, error) else Log.i("NaghmeLibraryVideo", message)
+    }
 
     private fun ensurePlayer() {
         if (player != null) return
         val ctx = activity ?: throw IllegalStateException("Activity not available")
+        diagnostic("player_initializing")
         val http = DefaultHttpDataSource.Factory()
             .setUserAgent("Naghme/2.3 Android")
             .setAllowCrossProtocolRedirects(true)
@@ -48,6 +70,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             .build().also { p ->
                 p.addListener(object : Player.Listener {
                     override fun onPlaybackStateChanged(state: Int) {
+                        diagnostic("playback_state=" + state)
                         val data = JSObject()
                         data.put("state", when (state) {
                             Player.STATE_READY -> "ready"
@@ -58,11 +81,15 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                         notifyListeners("state", data)
                     }
                     override fun onIsPlayingChanged(isPlaying: Boolean) {
+                        diagnostic("is_playing=" + isPlaying)
                         val data = JSObject()
                         data.put("isPlaying", isPlaying)
                         notifyListeners("playingChanged", data)
                     }
                     override fun onPlayerError(error: PlaybackException) {
+                        val causes = generateSequence(error as Throwable?) { it.cause }.take(6)
+                            .joinToString(" <- ") { it.javaClass.simpleName + (it.message?.let { m -> ": " + m } ?: "") }
+                        diagnostic("player_error code=" + error.errorCode + " name=" + error.errorCodeName + " causes=" + causes, error)
                         val data = JSObject()
                         data.put("code", error.errorCode)
                         data.put("name", error.errorCodeName)
@@ -70,6 +97,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                         notifyListeners("error", data)
                     }
                 })
+                diagnostic("player_initialized")
             }
         view = PlayerView(ctx).apply {
             useController = false
@@ -179,6 +207,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     fun play(call: PluginCall) {
         val url = call.getString("url")
         if (url.isNullOrBlank()) { call.reject("url_required"); return }
+        diagnostic("play_requested scheme=" + (Uri.parse(url).scheme ?: "unknown"))
         val act = activity ?: run { call.reject("activity_unavailable"); return }
         act.runOnUiThread {
             try {
@@ -187,8 +216,12 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 player?.setMediaItem(MediaItem.fromUri(url))
                 player?.prepare()
                 player?.playWhenReady = true
+                diagnostic("play_command_accepted")
                 call.resolve(JSObject().put("accepted", true))
-            } catch (e: Exception) { call.reject("play_failed: " + e.message) }
+            } catch (e: Exception) {
+                diagnostic("play_command_failed", e)
+                call.reject("play_failed: " + e.message)
+            }
         }
     }
 
@@ -206,6 +239,8 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 p.leftMargin = x.toInt(); p.topMargin = y.toInt()
                 p.width = w.toInt().coerceAtLeast(1); p.height = h.toInt().coerceAtLeast(1)
                 v.layoutParams = p
+                val signature = p.leftMargin.toString() + "," + p.topMargin + "," + p.width + "," + p.height
+                if (signature != lastBoundsSignature) { lastBoundsSignature = signature; diagnostic("player_view_bounds=" + signature) }
                 call.resolve()
             } catch (e: Exception) { call.reject("bounds_failed: " + e.message) }
         } ?: call.reject("activity_unavailable")
@@ -238,6 +273,15 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             call.resolve()
         } ?: call.reject("activity_unavailable")
     }
+    @PluginMethod
+    fun getDiagnostics(call: PluginCall) {
+        try {
+            val file = File(getContext().filesDir, "naghme-video-diagnostics.log")
+            val report = if (file.exists()) file.readText(Charsets.UTF_8).takeLast(80000) else "هنوز گزارشی ثبت نشده است."
+            call.resolve(JSObject().put("text", report).put("exists", file.exists()))
+        } catch (e: Exception) { call.reject("diagnostics_read_failed: " + (e.message ?: e.javaClass.simpleName)) }
+    }
+
     @PluginMethod fun getStatus(call: PluginCall) {
         val p = player
         val out = JSObject()
@@ -257,6 +301,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     }
 
     override fun handleOnDestroy() {
+        diagnostic("plugin_handle_on_destroy")
         try {
             view?.let { (it.parent as? ViewGroup)?.removeView(it) }
             view = null; player?.release(); player = null
