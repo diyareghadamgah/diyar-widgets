@@ -3,6 +3,15 @@ package ir.diyareghadamgah.naghme
 import android.graphics.Color
 import android.util.Log
 import android.view.Gravity
+import android.view.View
+import android.webkit.CookieManager
+import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import java.net.HttpURLConnection
 import java.net.URL
 import java.io.ByteArrayOutputStream
@@ -26,6 +35,8 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
+    private var famContainer: LinearLayout? = null
+    private var famWebView: WebView? = null
 
     /** دریافت فهرست M3U در اندروید؛ WebView ممکن است به‌دلیل CORS نتواند آن را بخواند. */
     @PluginMethod
@@ -71,6 +82,101 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 connection?.disconnect()
             }
         }.start()
+    }
+
+
+    /** نمایش صفحه رسمی فام در WebView داخلی؛ تبلیغات و کنترل‌های خود سایت حفظ می‌شوند. */
+    @PluginMethod
+    fun openOfficialPage(call: PluginCall) {
+        val raw = call.getString("url") ?: "https://www.fam.ir/channels"
+        val parsed = try { URL(raw) } catch (_: Exception) {
+            call.reject("invalid_official_url")
+            return
+        }
+        if (parsed.protocol != "https" || !(parsed.host == "www.fam.ir" || parsed.host == "fam.ir")) {
+            call.reject("only_official_fam_https_urls_allowed")
+            return
+        }
+        val act = activity ?: return call.reject("Activity not available")
+        act.runOnUiThread {
+            try {
+                closeFamPageInternal()
+                player?.pause()
+                playerView?.visibility = View.GONE
+
+                val root = LinearLayout(act).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setBackgroundColor(Color.BLACK)
+                    layoutDirection = View.LAYOUT_DIRECTION_RTL
+                }
+                val toolbar = LinearLayout(act).apply {
+                    orientation = LinearLayout.HORIZONTAL
+                    gravity = Gravity.CENTER_VERTICAL
+                    setPadding(8, 8, 8, 8)
+                    setBackgroundColor(Color.rgb(20, 20, 20))
+                }
+                val back = Button(act).apply { text = "بازگشت" }
+                val close = Button(act).apply { text = "بستن" }
+                val title = TextView(act).apply {
+                    text = "تلویزیون فام"
+                    setTextColor(Color.WHITE)
+                    textSize = 16f
+                    gravity = Gravity.CENTER
+                    layoutParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f)
+                }
+                val web = WebView(act).apply {
+                    settings.javaScriptEnabled = true
+                    settings.domStorageEnabled = true
+                    settings.mediaPlaybackRequiresUserGesture = false
+                    settings.loadsImagesAutomatically = true
+                    settings.javaScriptCanOpenWindowsAutomatically = true
+                    settings.mixedContentMode = android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW
+                    CookieManager.getInstance().setAcceptCookie(true)
+                    CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
+                    webChromeClient = WebChromeClient()
+                    webViewClient = object : WebViewClient() {
+                        override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+                            return request.url.scheme != "https"
+                        }
+                    }
+                }
+                back.setOnClickListener {
+                    if (web.canGoBack()) web.goBack() else closeFamPageInternal()
+                }
+                close.setOnClickListener { closeFamPageInternal() }
+                toolbar.addView(back)
+                toolbar.addView(title)
+                toolbar.addView(close)
+                root.addView(toolbar, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+                root.addView(web, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
+                act.addContentView(root, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+                famContainer = root
+                famWebView = web
+                web.loadUrl(parsed.toString())
+                call.resolve(JSObject().put("status", "opening"))
+            } catch (e: Exception) {
+                closeFamPageInternal()
+                call.reject("official_page_open_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        }
+    }
+
+    @PluginMethod
+    fun closeOfficialPage(call: PluginCall) {
+        activity?.runOnUiThread {
+            closeFamPageInternal()
+            playerView?.visibility = View.VISIBLE
+            call.resolve()
+        } ?: call.reject("Activity not available")
+    }
+
+    private fun closeFamPageInternal() {
+        try {
+            famWebView?.let { it.stopLoading(); it.loadUrl("about:blank"); it.destroy() }
+            famContainer?.let { (it.parent as? ViewGroup)?.removeView(it) }
+        } catch (_: Exception) {}
+        famWebView = null
+        famContainer = null
     }
 
     @PluginMethod
@@ -223,6 +329,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     override fun handleOnDestroy() {
         try {
+            closeFamPageInternal()
             activity?.runOnUiThread {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }
                 playerView = null
