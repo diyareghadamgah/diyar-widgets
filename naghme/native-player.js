@@ -98,6 +98,7 @@
             return this.call('setBounds', {x:r.left*d,y:r.top*d,width:r.width*d,height:r.height*d});
         },
         release: function () { return this.call('release'); },
+        diagnostics: function () { return this.call('getDiagnostics'); },
         pickFiles: function () { return this.call('pickVideoFiles'); },
         pickFolder: function () { return this.call('pickVideoFolder'); }
     };
