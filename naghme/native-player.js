@@ -24,6 +24,8 @@
             return this._p;
         },
         fetchText: function (url) { var p = this.get(); if (!p || !p.fetchText) return Promise.reject(new Error("native playlist fetch unavailable")); return p.fetchText({ url: url }); },
+        openOfficialPage: function (url) { var p = this.get(); if (!p || !p.openOfficialPage) return Promise.reject(new Error('official page viewer unavailable')); return p.openOfficialPage({ url: url || 'https://www.fam.ir/channels' }); },
+        closeOfficialPage: function () { var p = this.get(); return p && p.closeOfficialPage ? p.closeOfficialPage() : Promise.resolve(); },
         play: function (url) {
             var p = this.get();
             if (!p) return Promise.reject(new Error('NaghmeVideoPlayer plugin not available'));
