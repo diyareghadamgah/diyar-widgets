@@ -246,7 +246,7 @@ function prepare(list){const P=pats(),q=[];let skipped=0,noext=0;
  for(const f of list){if(!EXT.test(f.name)){noext++;continue}const p=(f.webkitRelativePath||f.name).toLowerCase();if(P.some(x=>p.includes(x))){skipped++;continue}q.push(f)}
  const roots=new Set([...list].map(f=>{const p=f.webkitRelativePath||'';return p.includes('/')?p.split('/')[0]:''}).filter(Boolean));
  return {q,skipped,noext,root:[...roots].join('، ')}}
-async function start(list){list=[...list];if(!list.length)return;
+async function start(list){list=[...list];if(!list.length)return toast('در این پوشه هیچ فایل صوتی قابل‌شناسایی پیدا نشد؛ دسترسی پوشه ذخیره شد. پوشه‌ای را انتخاب کنید که فایل‌های MP3، M4A، AAC، FLAC، OGG، OPUS، WAV یا WMA در آن یا زیرپوشه‌هایش باشد.');
  if(S.scan&&S.scan.running)return toast('اسکن در حال اجراست');
  const sig=list.length+'|'+list.slice(0,20).map(f=>f.name+f.size).join('|'),now=Date.now();if(S.lastSig===sig&&now-S.lastSigT<1500)return;S.lastSig=sig;S.lastSigT=now;   // جلوگیری از اجرای دوباره‌ی یک انتخاب
  const p=prepare(list);if(!p.q.length)return toast('فایل صوتی پشتیبانی‌شده‌ای پیدا نشد'+(p.skipped?' ('+fa(p.skipped)+' فایل با فیلتر محافظ رد شد)':''));
