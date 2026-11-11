@@ -94,8 +94,10 @@
         visible: function (visible) { return this.call('setVisible', {visible:visible}); },
         bounds: function (element) {
             if (!element) return Promise.resolve();
-            var r = element.getBoundingClientRect(), d = window.devicePixelRatio || 1;
-            return this.call('setBounds', {x:r.left*d,y:r.top*d,width:r.width*d,height:r.height*d});
+            // getBoundingClientRect() is in CSS pixels relative to the WebView viewport.
+            // Native code converts it to the Activity content-view coordinates.
+            var r = element.getBoundingClientRect();
+            return this.call('setBounds', {x:r.left,y:r.top,width:r.width,height:r.height});
         },
         release: function () { return this.call('release'); },
         diagnostics: function () { return this.call('getDiagnostics'); },
