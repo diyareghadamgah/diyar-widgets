@@ -227,22 +227,48 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     @PluginMethod
     fun setBounds(call: PluginCall) {
-        val x = call.getFloat("x") ?: 0f
-        val y = call.getFloat("y") ?: 0f
-        val w = call.getFloat("width") ?: 1f
-        val h = call.getFloat("height") ?: 1f
+        // JavaScript sends CSS pixels relative to the WebView viewport.
+        // PlayerView is attached to android.R.id.content, so translate both origins
+        // into the same screen coordinate space before applying layout margins.
+        val cssX = call.getFloat("x") ?: 0f
+        val cssY = call.getFloat("y") ?: 0f
+        val cssW = call.getFloat("width") ?: 1f
+        val cssH = call.getFloat("height") ?: 1f
         activity?.runOnUiThread {
             try {
                 val v = view ?: run { call.resolve(); return@runOnUiThread }
+                val act = activity ?: run { call.reject("activity_unavailable"); return@runOnUiThread }
+                val content = act.findViewById<View>(android.R.id.content)
+                    ?: run { call.reject("content_view_unavailable"); return@runOnUiThread }
+                val web = getBridge().getWebView()
+                val webLocation = IntArray(2)
+                val contentLocation = IntArray(2)
+                web.getLocationOnScreen(webLocation)
+                content.getLocationOnScreen(contentLocation)
+                val density = act.resources.displayMetrics.density
+                val x = webLocation[0] - contentLocation[0] + cssX * density
+                val y = webLocation[1] - contentLocation[1] + cssY * density
+                val w = cssW * density
+                val h = cssH * density
                 val p = v.layoutParams as FrameLayout.LayoutParams
                 p.gravity = Gravity.TOP or Gravity.START
-                p.leftMargin = x.toInt(); p.topMargin = y.toInt()
-                p.width = w.toInt().coerceAtLeast(1); p.height = h.toInt().coerceAtLeast(1)
+                p.leftMargin = x.toInt()
+                p.topMargin = y.toInt()
+                p.width = w.toInt().coerceAtLeast(1)
+                p.height = h.toInt().coerceAtLeast(1)
                 v.layoutParams = p
                 val signature = p.leftMargin.toString() + "," + p.topMargin + "," + p.width + "," + p.height
-                if (signature != lastBoundsSignature) { lastBoundsSignature = signature; diagnostic("player_view_bounds=" + signature) }
+                if (signature != lastBoundsSignature) {
+                    lastBoundsSignature = signature
+                    diagnostic("player_view_bounds=" + signature + " css=" + cssX + "," + cssY + "," + cssW + "," + cssH +
+                        " web=" + webLocation.joinToString(",") + " content=" + contentLocation.joinToString(",") +
+                        " density=" + density)
+                }
                 call.resolve()
-            } catch (e: Exception) { call.reject("bounds_failed: " + e.message) }
+            } catch (e: Exception) {
+                diagnostic("bounds_failed", e)
+                call.reject("bounds_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
         } ?: call.reject("activity_unavailable")
     }
 
