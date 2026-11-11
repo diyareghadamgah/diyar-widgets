@@ -237,6 +237,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         } catch (_: Exception) {}
         famWebView = null
         famContainer = null
+        playerView?.visibility = View.VISIBLE
     }
 
     @PluginMethod
