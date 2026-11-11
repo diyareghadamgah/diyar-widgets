@@ -5,6 +5,22 @@ const db=new Promise((ok,no)=>{const r=indexedDB.open('naghme-video-library',1);
 const tx=(mode,fn)=>db.then(d=>new Promise((ok,no)=>{const t=d.transaction('videos',mode),s=t.objectStore('videos');let q;try{q=fn(s)}catch(e){no(e);return}t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)})),all=()=>tx('readonly',s=>s.getAll()),put=x=>tx('readwrite',s=>s.put(x)),del=id=>tx('readwrite',s=>s.delete(id));
 const st={items:[],q:'',id:null,url:'',sub:'',active:false,timer:0,native:false},v=()=>$('#naghmeVideo');
 function msg(t){const e=$('#toast');if(e){e.textContent=t;e.classList.add('on');clearTimeout(msg.t);msg.t=setTimeout(()=>e.classList.remove('on'),2600)}}
+function showDiagnosticReport(report){
+ const old=document.getElementById('naghmeDiagnosticPanel');if(old)old.remove();
+ const panel=document.createElement('div');panel.id='naghmeDiagnosticPanel';
+ Object.assign(panel.style,{position:'fixed',inset:'0',zIndex:'2147483000',background:'rgba(0,0,0,.82)',display:'flex',alignItems:'center',justifyContent:'center',padding:'16px',direction:'rtl'});
+ const card=document.createElement('div');Object.assign(card.style,{width:'100%',maxWidth:'640px',maxHeight:'90vh',background:'#171717',color:'#fff',border:'1px solid #555',borderRadius:'14px',padding:'16px',display:'flex',flexDirection:'column',gap:'12px',boxSizing:'border-box'});
+ const title=document.createElement('strong');title.textContent='گزارش فنی نغمه';
+ const hint=document.createElement('div');hint.textContent='متن زیر را انتخاب و کپی کن و همین‌جا برای بررسی بفرست.';hint.style.fontSize='13px';
+ const area=document.createElement('textarea');area.value=report||'گزارشی ثبت نشده است.';area.readOnly=true;area.dir='auto';Object.assign(area.style,{width:'100%',height:'min(52vh,420px)',resize:'vertical',background:'#090909',color:'#eee',border:'1px solid #666',borderRadius:'8px',padding:'10px',boxSizing:'border-box',fontSize:'12px',textAlign:'left'});
+ const actions=document.createElement('div');Object.assign(actions.style,{display:'flex',gap:'8px',justifyContent:'flex-start',flexWrap:'wrap'});
+ const copy=document.createElement('button');copy.type='button';copy.textContent='کپی گزارش';Object.assign(copy.style,{padding:'10px 16px',borderRadius:'8px',border:'0',background:'#d9b34b',color:'#111'});
+ const close=document.createElement('button');close.type='button';close.textContent='بستن';Object.assign(close.style,{padding:'10px 16px',borderRadius:'8px',border:'1px solid #777',background:'#292929',color:'#fff'});
+ const status=document.createElement('span');status.style.fontSize='12px';
+ copy.addEventListener('click',()=>{area.focus();area.select();try{const ok=document.execCommand('copy');status.textContent=ok?'گزارش کپی شد.':'متن انتخاب شد؛ گزینهٔ کپی گوشی را بزن.'}catch(_){status.textContent='متن انتخاب شد؛ گزینهٔ کپی گوشی را بزن.'}});
+ close.addEventListener('click',()=>panel.remove());
+ actions.append(copy,close,status);card.append(title,hint,area,actions);panel.append(card);document.body.append(panel);area.focus();area.select();
+}
 function fmt(n){if(!Number.isFinite(n)||n<0)return'۰:۰۰';n=Math.floor(n);return fa(Math.floor(n/60)+':'+String(n%60).padStart(2,'0'))}
 function release(){clearInterval(st.timer);st.timer=0;if(st.native&&window.NaghmeLibraryVideo){window.NaghmeLibraryVideo.visible(false).catch(()=>{});window.NaghmeLibraryVideo.stop().catch(()=>{})}st.native=false;if(v()){v().style.opacity='1';v().controls=true;v().pause();v().removeAttribute('src');v().load()}if(st.url)URL.revokeObjectURL(st.url);if(st.sub)URL.revokeObjectURL(st.sub);st.url=st.sub='';st.id=null}
 function filtered(){return st.items.filter(x=>(x.name+' '+(x.url||'')).toLowerCase().includes(st.q.toLowerCase())).sort((a,b)=>b.added-a.added)}
@@ -31,7 +47,7 @@ if(a==='pick'){if(window.NaghmeLibraryVideo?.isNative)await chooseNative('pickFi
 else if(a==='open')play(id);else if(a==='remove'){if(confirm('از کتابخانه حذف شود؟ فایل اصلی گوشی حذف نمی‌شود.')){if(st.id===id)release();st.items=st.items.filter(x=>x.id!==id);await del(id);draw()}}
 else if(a==='toggle'){if(st.native){window.NaghmeLibraryVideo.status().then(s=>s.isPlaying?window.NaghmeLibraryVideo.pause():window.NaghmeLibraryVideo.resume()).catch(()=>{})}else if(v().paused)v().play().catch(()=>{});else v().pause()}else if(a==='back'){if(st.native)window.NaghmeLibraryVideo.status().then(s=>window.NaghmeLibraryVideo.seekTo(Math.max(0,(s.positionMs||0)-10000))).catch(()=>{});else v().currentTime=Math.max(0,v().currentTime-10)}else if(a==='forward'){if(st.native)window.NaghmeLibraryVideo.status().then(s=>window.NaghmeLibraryVideo.seekTo(Math.min(s.durationMs||Infinity,(s.positionMs||0)+10000))).catch(()=>{});else v().currentTime=Math.min(v().duration||Infinity,v().currentTime+10)}
 else if(a==='full'){if(st.native){msg('تمام‌صفحهٔ بومی در مرحلهٔ بعد اضافه می‌شود')}else{const x=v();if(document.fullscreenElement)document.exitFullscreen?.();else (x.requestFullscreen||x.webkitEnterFullscreen||x.webkitRequestFullscreen)?.call(x)}}else if(a==='subtitle'){if(st.native)msg('زیرنویس خارجی در پلیر بومی هنوز متصل نشده؛ برای این فایل از پخش وب استفاده کنید.');else $('#subtitleFile').click()}
-else if(a==='diagnostics'){try{if(!window.NaghmeLibraryVideo?.isNative){msg('گزارش تشخیصی فقط در نسخه اندروید در دسترس است');return}const r=await window.NaghmeLibraryVideo.diagnostics();const report=(r?.text||'').trim();prompt('گزارش فنی نغمه را کپی کن و برای بررسی بفرست:',report||'گزارشی ثبت نشده است.')}catch(err){msg('دریافت گزارش ناموفق بود: '+(err.message||err))}}
+else if(a==='diagnostics'){try{if(!window.NaghmeLibraryVideo?.isNative){msg('گزارش تشخیصی فقط در نسخه اندروید در دسترس است');return}const r=await window.NaghmeLibraryVideo.diagnostics();const report=(r?.text||'').trim();showDiagnosticReport(report||'گزارشی ثبت نشده است.')}catch(err){msg('دریافت گزارش ناموفق بود: '+(err.message||err))}}
 },true);
 document.addEventListener('input',e=>{if(e.target.id==='videoSearch'&&st.active){st.q=e.target.value;draw();$('#videoSearch').focus()}},true);
 document.addEventListener('change',e=>{if(e.target.id==='videoSpeed'&&st.active){if(st.native)window.NaghmeLibraryVideo?.setSpeed(+e.target.value).catch(()=>{});else v().playbackRate=+e.target.value}},true);
