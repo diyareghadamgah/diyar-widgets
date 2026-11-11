@@ -1,3 +1,23 @@
+// __FORCE_WEB_SAFE__ - تست: مخفی کردن Native برای بررسی کرش
+(function() {
+    var tries = 0;
+    var iv = setInterval(function() {
+        tries++;
+        if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
+            window.NaghmeVideoPlayer.isNative = false;
+            console.log('[TEST] Native video player disabled (safe mode)');
+        }
+        if (window.NaghmeNativeIPTV && window.NaghmeNativeIPTV.isNative) {
+            window.NaghmeNativeIPTV.isNative = false;
+            console.log('[TEST] NaghmeNativeIPTV disabled');
+        }
+        if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) {
+            window.NaghmeLibraryVideo.isNative = false;
+            console.log('[TEST] Library video player disabled');
+        }
+        if (tries > 20) clearInterval(iv);
+    }, 500);
+})();
 'use strict';
 const $=s=>document.querySelector(s);let au=$('#au');   // عنصر فعال پخش (محلی یا لینک آنلاین)
 const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
