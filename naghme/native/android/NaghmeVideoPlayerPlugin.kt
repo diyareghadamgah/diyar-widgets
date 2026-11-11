@@ -1,5 +1,6 @@
 package ir.diyareghadamgah.naghme
 
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.util.Log
 import android.view.Gravity
@@ -37,6 +38,10 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     private var playerView: PlayerView? = null
     private var famContainer: LinearLayout? = null
     private var famWebView: WebView? = null
+    private var famCustomView: View? = null
+    private var famCustomViewCallback: WebChromeClient.CustomViewCallback? = null
+    private var famOriginalSystemUi: Int? = null
+    private var famOriginalOrientation: Int? = null
 
     /** دریافت فهرست M3U در اندروید؛ WebView ممکن است به‌دلیل CORS نتواند آن را بخواند. */
     @PluginMethod
@@ -101,6 +106,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         act.runOnUiThread {
             try {
                 closeFamPageInternal()
+                famOriginalOrientation = act.requestedOrientation
+                act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
                 player?.pause()
                 playerView?.visibility = View.GONE
 
@@ -133,7 +140,40 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                     settings.mixedContentMode = android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW
                     CookieManager.getInstance().setAcceptCookie(true)
                     CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
-                    webChromeClient = WebChromeClient()
+                    webChromeClient = object : WebChromeClient() {
+                        override fun onShowCustomView(view: View, callback: CustomViewCallback) {
+                            if (famCustomView != null) {
+                                callback.onCustomViewHidden()
+                                return
+                            }
+                            val decor = act.window.decorView as? ViewGroup ?: run {
+                                callback.onCustomViewHidden()
+                                return
+                            }
+                            famCustomView = view
+                            famCustomViewCallback = callback
+                            famOriginalSystemUi = decor.systemUiVisibility
+                            toolbar.visibility = View.GONE
+                            root.visibility = View.GONE
+                            decor.addView(view, ViewGroup.LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.MATCH_PARENT
+                            ))
+                            decor.systemUiVisibility = (
+                                View.SYSTEM_UI_FLAG_FULLSCREEN or
+                                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            )
+                            act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                        }
+
+                        override fun onHideCustomView() {
+                            exitFamFullscreen(act)
+                        }
+                    }
                     webViewClient = object : WebViewClient() {
                         override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
                             return request.url.scheme != "https"
@@ -170,8 +210,28 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         } ?: call.reject("Activity not available")
     }
 
+    private fun exitFamFullscreen(act: android.app.Activity) {
+        val view = famCustomView ?: return
+        try {
+            (view.parent as? ViewGroup)?.removeView(view)
+            famCustomViewCallback?.onCustomViewHidden()
+        } catch (_: Exception) {}
+        famCustomView = null
+        famCustomViewCallback = null
+        val decor = act.window.decorView
+        famOriginalSystemUi?.let { decor.systemUiVisibility = it }
+        famOriginalSystemUi = null
+        famContainer?.visibility = View.VISIBLE
+        famContainer?.getChildAt(0)?.visibility = View.VISIBLE
+    }
+
     private fun closeFamPageInternal() {
         try {
+            activity?.let { act ->
+                if (famCustomView != null) exitFamFullscreen(act)
+                famOriginalOrientation?.let { act.requestedOrientation = it }
+                famOriginalOrientation = null
+            }
             famWebView?.let { it.stopLoading(); it.loadUrl("about:blank"); it.destroy() }
             famContainer?.let { (it.parent as? ViewGroup)?.removeView(it) }
         } catch (_: Exception) {}
