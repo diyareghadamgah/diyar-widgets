@@ -34,10 +34,19 @@
         stop: function () { var p = this.get(); return p ? p.stop() : Promise.resolve(); },
         pause: function () { var p = this.get(); return p ? p.pause() : Promise.resolve(); },
         resume: function () { var p = this.get(); return p ? p.resume() : Promise.resolve(); },
+        seekTo: function (positionMs) { var p = this.get(); return p && p.seekTo ? p.seekTo({ positionMs: Math.max(0, Number(positionMs) || 0) }) : Promise.reject(new Error('پرش زمانی IPTV در دسترس نیست')); },
+        setSpeed: function (speed) { var p = this.get(); return p && p.setSpeed ? p.setSpeed({ speed: Math.max(0.25, Math.min(3, Number(speed) || 1)) }) : Promise.reject(new Error('تنظیم سرعت IPTV در دسترس نیست')); },
+        status: function () { var p = this.get(); return p && p.getStatus ? p.getStatus() : Promise.reject(new Error('وضعیت پلیر IPTV در دسترس نیست')); },
+        setLocked: function (locked) { var p = this.get(); return p && p.setLocked ? p.setLocked({ locked: !!locked }) : Promise.reject(new Error('قفل لمس IPTV در دسترس نیست')); },
         release: function () { var p = this.get(); return p ? p.release() : Promise.resolve(); },
         setVisible: function (visible) {
             var p = this.get();
             if (p && p.setVisible) return p.setVisible({ visible: visible });
+            return Promise.resolve();
+        },
+        setFullscreen: function (enabled) {
+            var p = this.get();
+            if (p && p.setFullscreen) return p.setFullscreen({ enabled: !!enabled });
             return Promise.resolve();
         },
         fitToVideoElement: function (elementId) {
@@ -90,6 +99,8 @@
         resume: function () { return this.call('resume'); },
         seekTo: function (positionMs) { return this.call('seekTo', {positionMs:positionMs}); },
         setSpeed: function (speed) { return this.call('setSpeed', {speed:speed}); },
+        setRepeatMode: function (mode) { return this.call('setRepeatMode', {mode:mode === 'one' ? 'one' : 'off'}); },
+        setLocked: function (locked) { return this.call('setLocked', {locked:!!locked}); },
         status: function () { return this.call('getStatus'); },
         visible: function (visible) { return this.call('setVisible', {visible:visible}); },
         bounds: function (element) {

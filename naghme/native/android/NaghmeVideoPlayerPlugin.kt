@@ -36,6 +36,11 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
+    private var lockOverlay: FrameLayout? = null
+    private var isPlayerLocked: Boolean = false
+    private var iptvFullscreenButton: Button? = null
+    private var iptvOriginalSystemUi: Int? = null
+    private var iptvOriginalOrientation: Int? = null
     private var famContainer: LinearLayout? = null
     private var famWebView: WebView? = null
     private var famCustomView: View? = null
@@ -272,6 +277,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                         gravity = Gravity.TOP or Gravity.LEFT
                     }
                     act.addContentView(playerView, params)
+                    installLockOverlay(playerView!!, act)
                 }
                 playerView?.player = player
                 playerView?.visibility = android.view.View.VISIBLE
@@ -286,6 +292,56 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 call.reject("Play failed: " + e.message)
             }
         }
+    }
+
+    private fun installLockOverlay(target: PlayerView, act: android.app.Activity) {
+        val overlay = FrameLayout(act).apply {
+            setBackgroundColor(Color.TRANSPARENT)
+            isClickable = true
+            isFocusable = true
+            visibility = View.GONE
+        }
+        val unlock = Button(act).apply {
+            text = "🔓 بازکردن قفل"
+            isAllCaps = false
+            setTextColor(Color.WHITE)
+            setBackgroundColor(Color.argb(220, 25, 25, 25))
+            setOnClickListener {
+                isPlayerLocked = false
+                overlay.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+        }
+        val buttonParams = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            Gravity.TOP or Gravity.CENTER_HORIZONTAL
+        ).apply { topMargin = (18 * act.resources.displayMetrics.density).toInt() }
+        overlay.addView(unlock, buttonParams)
+        target.addView(overlay, FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        ))
+        lockOverlay = overlay
+    }
+
+    @PluginMethod
+    fun setLocked(call: PluginCall) {
+        val locked = call.getBoolean("locked") ?: false
+        activity?.runOnUiThread {
+            try {
+                val overlay = lockOverlay
+                if (overlay == null) {
+                    call.reject("player_view_unavailable")
+                    return@runOnUiThread
+                }
+                isPlayerLocked = locked
+                overlay.visibility = if (locked) View.VISIBLE else View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", locked))
+                call.resolve(JSObject().put("locked", locked))
+            } catch (e: Exception) {
+                call.reject("set_locked_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
     }
 
     @PluginMethod
@@ -312,6 +368,73 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 call.reject("setBounds failed: " + e.message)
             }
         } ?: call.reject("Activity not available")
+    }
+
+    /** تمام‌صفحهٔ IPTV: دکمهٔ خروج بومی بالای PlayerView قرار می‌گیرد تا زیر لایهٔ ویدئو نماند. */
+    @PluginMethod
+    fun setFullscreen(call: PluginCall) {
+        val enabled = call.getBoolean("enabled") ?: false
+        val act = activity ?: return call.reject("Activity not available")
+        act.runOnUiThread {
+            try {
+                if (enabled) {
+                    val decor = act.window.decorView
+                    if (iptvOriginalSystemUi == null) iptvOriginalSystemUi = decor.systemUiVisibility
+                    if (iptvOriginalOrientation == null) iptvOriginalOrientation = act.requestedOrientation
+                    act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                    decor.systemUiVisibility = (
+                        View.SYSTEM_UI_FLAG_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    )
+                    if (iptvFullscreenButton == null) {
+                        val button = Button(act).apply {
+                            text = "×"
+                            contentDescription = "خروج از تمام‌صفحه"
+                            textSize = 25f
+                            isAllCaps = false
+                            setTextColor(Color.WHITE)
+                            setBackgroundColor(Color.argb(190, 25, 25, 25))
+                            setOnClickListener {
+                                notifyListeners("fullscreenExit", JSObject())
+                            }
+                        }
+                        val size = (48 * act.resources.displayMetrics.density).toInt()
+                        val margin = (10 * act.resources.displayMetrics.density).toInt()
+                        act.addContentView(button, FrameLayout.LayoutParams(size, size, Gravity.TOP or Gravity.START).apply {
+                            leftMargin = margin
+                            topMargin = margin
+                        })
+                        iptvFullscreenButton = button
+                    } else {
+                        iptvFullscreenButton?.visibility = View.VISIBLE
+                    }
+                } else {
+                    exitIptvFullscreen(act)
+                }
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("setFullscreen failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        }
+    }
+
+    private fun exitIptvFullscreen(act: android.app.Activity) {
+        try {
+            iptvFullscreenButton?.let { button ->
+                (button.parent as? ViewGroup)?.removeView(button)
+            }
+            iptvFullscreenButton = null
+            iptvOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
+            iptvOriginalSystemUi = null
+            iptvOriginalOrientation?.let { act.requestedOrientation = it }
+            iptvOriginalOrientation = null
+        } catch (e: Exception) {
+            Log.w("NaghmeVideoPlayer", "Could not restore IPTV fullscreen UI", e)
+        }
     }
 
     @PluginMethod
@@ -373,12 +496,58 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         activity?.runOnUiThread { player?.play(); call.resolve() } ?: call.reject("Activity not available")
     }
 
+    /** کنترل‌های پایه برای هماهنگی IPTV با رابط مشترک پلیر. */
+    @PluginMethod
+    fun seekTo(call: PluginCall) {
+        val positionMs = (call.getLong("positionMs") ?: 0L).coerceAtLeast(0L)
+        activity?.runOnUiThread {
+            try {
+                player?.seekTo(positionMs)
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("seek_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setSpeed(call: PluginCall) {
+        val speed = (call.getFloat("speed") ?: 1f).coerceIn(0.25f, 3f)
+        activity?.runOnUiThread {
+            try {
+                player?.setPlaybackSpeed(speed)
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("speed_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun getStatus(call: PluginCall) {
+        activity?.runOnUiThread {
+            try {
+                val p = player
+                val out = JSObject()
+                out.put("positionMs", p?.currentPosition ?: 0L)
+                out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
+                out.put("isPlaying", p?.isPlaying ?: false)
+                out.put("speed", p?.playbackParameters?.speed ?: 1f)
+                call.resolve(out)
+            } catch (e: Exception) {
+                call.reject("status_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
     @PluginMethod
     fun release(call: PluginCall) {
         activity?.runOnUiThread {
             try {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }
                 playerView = null
+                lockOverlay = null
+                isPlayerLocked = false
                 player?.release()
                 player = null
                 call.resolve()
@@ -390,6 +559,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     override fun handleOnDestroy() {
         try {
+            activity?.let { exitIptvFullscreen(it) }
             closeFamPageInternal()
             activity?.runOnUiThread {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }

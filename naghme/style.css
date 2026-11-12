@@ -79,6 +79,46 @@ body.native-player-active #iptvResults {
     margin-top: 0 !important;
 }
 
+/* Video library: fixed player area, independently scrollable library */
+#videoPage{display:flex;flex:1;min-height:0;height:100%;overflow:hidden}
+#videoContent{display:flex;flex:1;min-height:0;overflow:hidden}
+.video-page{display:flex;height:100%;min-height:0;flex:1;flex-direction:column;overflow:hidden;padding:4px 0 0}
+.video-top{flex:none}
+.video-stage{flex:none;max-height:30dvh;aspect-ratio:16/9}
+.video-tools{flex:none;max-height:none}
+.video-now{flex:none}
+.video-library-head{flex:none}
+.video-list{display:grid;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;align-content:start;padding-bottom:12px}
+.video-note{flex:none}
 /* Video library */
 .video-page{padding:4px 0 130px}.video-top,.video-library-head,.video-now{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.video-top .bar{margin:0}.video-stage{position:relative;background:#000;border-radius:16px;overflow:hidden;margin:12px 0 8px;aspect-ratio:16/9;max-height:58vh}.video-stage video{width:100%;height:100%;display:block;object-fit:contain;background:#000}.video-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#aaa;font-size:42px;pointer-events:none}.video-empty span{font-size:14px}.video-empty[hidden]{display:none}.video-tools{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;margin:10px 0}.video-tools button{font-size:13px}.video-tools label{display:flex;align-items:center;gap:6px;font-size:13px}.video-tools select{padding:7px}.video-now{padding:8px 2px;border-bottom:1px solid var(--s2)}.video-library-head{margin:14px 0 8px}.video-library-head input{flex:1;min-width:160px}.video-list{display:grid;gap:6px}.video-item{display:flex;align-items:center;gap:8px;padding:7px;background:var(--s1);border-radius:12px}.video-item.playing{outline:1px solid var(--ac)}.video-item-main{display:flex;align-items:center;gap:10px;text-align:right;flex:1;min-width:0;background:none;padding:2px}.video-item-main>span:last-child{display:flex;flex-direction:column;min-width:0}.video-item-main b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.video-item-main small{color:var(--mu);font-size:11px}.video-thumb{width:52px;height:42px;display:grid;place-items:center;border-radius:8px;background:#000;color:var(--ac2);flex:none}.video-empty-list{padding:24px;text-align:center}.video-note{margin:14px 0;line-height:1.9}
 @media(max-width:700px){body{grid-template-columns:1fr}#mini{left:0}header{padding:8px}#view{padding:6px 10px 130px}.video-stage{max-height:42vh}.video-tools{gap:5px}.video-tools button{padding:7px 10px}}
+
+/* Compact player controls: keep the area below the monitor for the video name and scrolling library */
+.video-page{padding:4px 0 0!important}
+.video-tools{display:none!important}
+.video-stage{margin:6px 0 4px!important;max-height:30dvh!important}
+.video-now{flex:none;min-height:48px;margin:0!important;padding:5px 2px!important;gap:8px}
+.video-now #videoNow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.video-gear{flex:none;min-width:44px;min-height:40px;border:1px solid var(--ac);border-radius:12px;font-size:19px;padding:5px 10px}
+.video-library-head{flex:none;margin:6px 0!important;gap:8px}
+.video-list{flex:1;min-height:0;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.video-note{display:none}
+
+/* ابزارهای ویدئو: دکمهٔ سه‌نقطهٔ واقعی و قابل لمس */
+.video-now .video-more{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:none!important;width:44px!important;min-width:44px!important;height:42px!important;min-height:42px!important;padding:0!important;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;font-size:28px!important;font-weight:700!important;line-height:1!important;letter-spacing:2px!important;z-index:5!important;position:relative!important}
+.video-now .video-gear{display:none!important}
+
+/* کنترل‌های مستقیم زیر مانیتور؛ بدون منوی شناور */
+.video-tools.video-tools-inline{display:flex!important;flex:none!important;justify-content:flex-start!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important;margin:5px 0 8px!important;padding:7px!important;background:var(--s1)!important;border:1px solid var(--s2)!important;border-radius:12px!important;max-height:none!important;overflow:visible!important}
+.video-tools-inline button{min-height:38px!important;padding:7px 11px!important;border-radius:10px!important;font-size:12px!important;white-space:nowrap}
+.video-tools-inline label{display:flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
+.video-tools-inline select{min-height:36px;padding:5px 8px;border-radius:9px}
+.video-now .video-gear{display:none!important}
+.video-tools-inline #videoLock{border:1px solid var(--ac)!important;font-weight:700!important}
+@media(max-width:700px){.video-tools.video-tools-inline{gap:5px!important;padding:6px!important}.video-tools-inline button{font-size:11px!important;padding:6px 9px!important}}
+
+/* Final visibility fix: keep floating menu and touch-lock control visible */
+.video-now .video-more{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+.video-tools.video-tools-inline #videoLock{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+.video-now .video-gear{display:none!important}

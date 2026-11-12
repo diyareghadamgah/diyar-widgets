@@ -13,6 +13,7 @@ import java.io.FileOutputStream
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Button
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
@@ -40,6 +41,8 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var view: PlayerView? = null
+    private var lockOverlay: FrameLayout? = null
+    private var isPlayerLocked: Boolean = false
     private val diagnosticLock = Any()
     private var lastBoundsSignature = ""
 
@@ -102,14 +105,60 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 diagnostic("player_initialized")
             }
         view = PlayerView(ctx).apply {
-            useController = false
+            useController = true
             resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
             setBackgroundColor(Color.BLACK)
             player = this@NaghmeLibraryVideoPlayerPlugin.player
         }
+        // دکمهٔ تنظیمات پیش‌فرض Media3 حذف می‌شود؛ ابزارها از منوی سه‌نقطهٔ خود نغمه باز می‌شوند.
+        view?.post {
+            view?.findViewById<View>(androidx.media3.ui.R.id.exo_settings)?.visibility = View.GONE
+        }
         val params = FrameLayout.LayoutParams(1, 1).apply { gravity = Gravity.TOP or Gravity.START }
         ctx.addContentView(view, params)
         view?.visibility = View.GONE
+        installLockOverlay(view!!, ctx)
+    }
+
+    private fun installLockOverlay(target: PlayerView, act: Activity) {
+        val overlay = FrameLayout(act).apply {
+            setBackgroundColor(Color.TRANSPARENT)
+            isClickable = true
+            isFocusable = true
+            visibility = View.GONE
+        }
+        val unlock = Button(act).apply {
+            text = "🔓 بازکردن قفل"
+            isAllCaps = false
+            setTextColor(Color.WHITE)
+            setBackgroundColor(Color.argb(220, 25, 25, 25))
+            setOnClickListener {
+                isPlayerLocked = false
+                overlay.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+        }
+        val buttonParams = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            Gravity.TOP or Gravity.CENTER_HORIZONTAL
+        ).apply { topMargin = (18 * act.resources.displayMetrics.density).toInt() }
+        overlay.addView(unlock, buttonParams)
+        target.addView(overlay, FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        ))
+        lockOverlay = overlay
+    }
+
+    // قفل فقط لمس‌های پلیر را می‌گیرد؛ دکمهٔ بازکردن قفل همیشه روی خود تصویر باقی می‌ماند.
+    @PluginMethod fun setLocked(call: PluginCall) {
+        val locked = call.getBoolean("locked") ?: false
+        activity?.runOnUiThread {
+            isPlayerLocked = locked
+            lockOverlay?.visibility = if (locked) View.VISIBLE else View.GONE
+            call.resolve(JSObject().put("locked", locked))
+            notifyListeners("lockChanged", JSObject().put("locked", locked))
+        } ?: call.reject("activity_unavailable")
     }
 
     private fun videoFile(uri: Uri): JSObject? {
@@ -277,8 +326,16 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     @PluginMethod fun setVisible(call: PluginCall) {
         val visible = call.getBoolean("visible") ?: true
-        activity?.runOnUiThread { view?.visibility = if (visible) View.VISIBLE else View.GONE; call.resolve() }
-            ?: call.reject("activity_unavailable")
+        activity?.runOnUiThread {
+            if (!visible) {
+                // هنگام پنهان‌شدن پلیر، قفل را هم حتماً آزاد کن تا لایهٔ لمس باقی نماند.
+                isPlayerLocked = false
+                lockOverlay?.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+            view?.visibility = if (visible) View.VISIBLE else View.GONE
+            call.resolve()
+        } ?: call.reject("activity_unavailable")
     }
     @PluginMethod fun pause(call: PluginCall) { activity?.runOnUiThread { player?.pause(); call.resolve() } ?: call.reject("activity_unavailable") }
     @PluginMethod fun resume(call: PluginCall) { activity?.runOnUiThread { player?.play(); call.resolve() } ?: call.reject("activity_unavailable") }
@@ -290,6 +347,14 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     @PluginMethod fun setSpeed(call: PluginCall) {
         val speed = (call.getFloat("speed") ?: 1f).coerceIn(0.25f, 3f)
         activity?.runOnUiThread { player?.setPlaybackSpeed(speed); call.resolve() } ?: call.reject("activity_unavailable")
+    }
+    @PluginMethod fun setRepeatMode(call: PluginCall) {
+        val mode = call.getString("mode") ?: "off"
+        if (mode != "off" && mode != "one") { call.reject("invalid_repeat_mode"); return }
+        activity?.runOnUiThread {
+            player?.repeatMode = if (mode == "one") Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
+            call.resolve(JSObject().put("mode", mode))
+        } ?: call.reject("activity_unavailable")
     }
     @PluginMethod fun setResizeMode(call: PluginCall) {
         val mode = call.getString("mode") ?: "fit"
@@ -349,6 +414,8 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             diagnostic("player_release_failed", e)
         }
         lastBoundsSignature = ""
+        lockOverlay = null
+        isPlayerLocked = false
         diagnostic("player_released")
     }
 

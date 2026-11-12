@@ -43,6 +43,8 @@ jobs:
       - name: Build web assets
         run: |
           node --check video.js
+          node --check iptv-native.js
+          node --check native-player.js
           node scripts/build-web.js
         
       - name: Add Android platform
@@ -80,6 +82,8 @@ jobs:
           echo "== verify native IPTV bridge in packaged app.js =="
           grep -q "window.IPTV=IPTV" /tmp/apk/assets/public/app.js
           grep -q "NaghmeNativeIPTV" /tmp/apk/assets/public/app.js
+          test -f /tmp/apk/assets/public/iptv-native.js
+          grep -q "native bridge ready" /tmp/apk/assets/public/iptv-native.js
           grep -q "NaghmeLibraryVideoPlayer" /tmp/apk/assets/public/native-player.js
           grep -q "پخش بومی Media3 فعال شد" /tmp/apk/assets/public/video.js
           

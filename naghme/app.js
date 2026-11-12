@@ -142,23 +142,37 @@ function playIPTV(key){
   window.NaghmeNativeIPTV.play(ch);
  }else attachIPTVPlayer(true);   // بدون render و بدون دست‌زدن به فهرست/اسکرول
 }
-const retryIPTV=()=>{if(IPTV.current)attachIPTVPlayer(true)};
+const retryIPTV=()=>{if(IPTV.current){if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.play(IPTV.current);else attachIPTVPlayer(true)}};
 function toggleIPTVFav(key){
  IPTV.favorites=IPTV.favorites.includes(key)?IPTV.favorites.filter(x=>x!==key):[...IPTV.favorites,key];kvSet('iptvFav',IPTV.favorites);
  if(IPTV.category==='موردعلاقه‌ها'){renderIPTVList(true);return}
  const on=IPTV.favorites.includes(key);
  document.querySelectorAll('#iptvResults [data-a="iptvfav"]').forEach(b=>{if(b.dataset.v===key)b.textContent=on?'♥':'♡'});
 }
-/* ----- تمام‌صفحه: API بومی (اگر باشد) + حالت CSS که در هر WebView کار می‌کند ----- */
+/* ----- تمام‌صفحه IPTV: دکمهٔ خروج بومی روی لایهٔ ExoPlayer و CSS برای تنظیم ابعاد ----- */
 function iptvFullscreen(on){
  const b=$('#tvbox'),fs=document.fullscreenElement||document.webkitFullscreenElement;
+ const native=!!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV);
+ if(!b)return;
  if(on===undefined)on=!(fs||b.classList.contains('tvfull'));
- if(!on){b.classList.remove('tvfull');$('#tvfsx').hidden=true;if(fs){try{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch{}}return}
- b.classList.add('tvfull');$('#tvfsx').hidden=false;
- const req=b.requestFullscreen||b.webkitRequestFullscreen;
- if(req){try{const r=req.call(b);if(r&&r.catch)r.catch(()=>{})}catch{}}
+ if(!on){
+  b.classList.remove('tvfull');$('#tvfsx').hidden=true;
+  if(native)window.NaghmeNativeIPTV.fullscreen(false);
+  if(fs){try{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch{}}
+  if(native)setTimeout(()=>window.NaghmeNativeIPTV.syncBounds(),80);
+  return;
+ }
+ b.classList.add('tvfull');
+ $('#tvfsx').hidden=native;
+ if(native){
+  window.NaghmeNativeIPTV.fullscreen(true).then(()=>window.NaghmeNativeIPTV.syncBounds());
+ }else{
+  const req=b.requestFullscreen||b.webkitRequestFullscreen;
+  if(req){try{const r=req.call(b);if(r&&r.catch)r.catch(()=>{})}catch{}}
+ }
 }
-function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)){const b=$('#tvbox');if(b){b.classList.remove('tvfull');$('#tvfsx').hidden=true}}}
+window.NaghmeIPTVFullscreen=iptvFullscreen;
+function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
 const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
 function iptvFiltered(){
