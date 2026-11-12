@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
+import android.os.Handler
+import android.os.Looper
 import android.view.Gravity
 import android.util.Log
 import java.io.File
@@ -220,7 +222,8 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 call.resolve(JSObject().put("accepted", true))
             } catch (e: Exception) {
                 diagnostic("play_command_failed", e)
-                call.reject("play_failed: " + e.message)
+                releasePlayerInternal()
+                call.reject("play_failed: " + (e.message ?: e.javaClass.simpleName))
             }
         }
     }
@@ -309,29 +312,58 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     }
 
     @PluginMethod fun getStatus(call: PluginCall) {
-        val p = player
-        val out = JSObject()
-        out.put("positionMs", p?.currentPosition ?: 0L)
-        out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
-        out.put("isPlaying", p?.isPlaying ?: false)
-        call.resolve(out)
-    }
-    @PluginMethod fun release(call: PluginCall) {
+        // ExoPlayer is single-threaded: read playback properties on the main looper.
         activity?.runOnUiThread {
             try {
-                view?.let { (it.parent as? ViewGroup)?.removeView(it) }
-                view = null; player?.release(); player = null
-                call.resolve()
-            } catch (e: Exception) { call.reject("release_failed: " + e.message) }
+                val p = player
+                val out = JSObject()
+                out.put("positionMs", p?.currentPosition ?: 0L)
+                out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
+                out.put("isPlaying", p?.isPlaying ?: false)
+                call.resolve(out)
+            } catch (e: Exception) {
+                call.reject("status_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("activity_unavailable")
+    }
+
+    /** Idempotent cleanup. Must only be called on Android's main thread. */
+    private fun releasePlayerInternal() {
+        val oldView = view
+        view = null
+        try {
+            oldView?.player = null
+            oldView?.visibility = View.GONE
+            (oldView?.parent as? ViewGroup)?.removeView(oldView)
+        } catch (e: Exception) {
+            diagnostic("player_view_detach_failed", e)
+        }
+
+        val oldPlayer = player
+        player = null
+        try {
+            oldPlayer?.stop()
+            oldPlayer?.clearMediaItems()
+            oldPlayer?.release()
+        } catch (e: Exception) {
+            diagnostic("player_release_failed", e)
+        }
+        lastBoundsSignature = ""
+        diagnostic("player_released")
+    }
+
+    @PluginMethod fun release(call: PluginCall) {
+        activity?.runOnUiThread {
+            releasePlayerInternal()
+            call.resolve()
         } ?: call.reject("activity_unavailable")
     }
 
     override fun handleOnDestroy() {
         diagnostic("plugin_handle_on_destroy")
-        try {
-            view?.let { (it.parent as? ViewGroup)?.removeView(it) }
-            view = null; player?.release(); player = null
-        } catch (_: Exception) {}
+        val cleanup = Runnable { releasePlayerInternal() }
+        if (Looper.myLooper() == Looper.getMainLooper()) cleanup.run()
+        else Handler(Looper.getMainLooper()).post(cleanup)
         super.handleOnDestroy()
     }
 }
