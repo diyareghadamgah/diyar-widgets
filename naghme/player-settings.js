@@ -34,8 +34,8 @@ function addButton(){
  var now=document.querySelector('.video-now');
  if(now){
   var b=now.querySelector('[data-player-settings]');
-  if(!b){b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';b.className='video-more';now.append(b)}
-  b.textContent='⋮';b.title='ابزارهای پخش';b.setAttribute('aria-label','بازکردن ابزارهای پخش');
+  if(!b){b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';now.append(b)}
+  b.className='video-more';b.textContent='⋮';b.title='ابزارهای پخش';b.setAttribute('aria-label','بازکردن ابزارهای پخش');
  }
 }
 addButton();new MutationObserver(function(){addButton()}).observe(document.body,{childList:true,subtree:true});
