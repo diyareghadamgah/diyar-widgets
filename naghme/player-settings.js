@@ -28,7 +28,7 @@ function open(anchor){
  var speed=card.querySelector('#videoSpeed');if(speed)speed.value=prefs.videoSpeed;
  document.body.append(d);d.addEventListener('click',function(e){if(e.target===d)close()});apply();
 }
-document.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('[data-player-settings]'):null;if(!b)return;e.preventDefault();e.stopImmediatePropagation();open(b)},true);
+// دکمهٔ سه‌نقطه با شنوندهٔ مستقیم خودش منو را باز می‌کند؛ شنوندهٔ سراسری حذف شد تا با رویدادهای پلیر تداخل نکند.
 function bindGear(b){if(!b)return;b.dataset.settingsBound='1'}
 function addButton(){
  var now=document.querySelector('.video-now');
