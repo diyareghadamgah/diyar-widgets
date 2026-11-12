@@ -124,10 +124,15 @@ async function proxySegment(request, url) {
   let upstream;
   try {
     upstream = await fetch(target, {
-      headers: range ? { Range: range } : {},
-      redirect: "error",
+      headers: {
+        "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
+        "Accept": "*/*",
+        ...(range ? { Range: range } : {}),
+      },
+      redirect: "follow",
     });
-  } catch {
+  } catch (error) {
+    console.error("Telewebion segment fetch failed", error);
     return new Response("segment unreachable\n", { status: 502 });
   }
   const headers = new Headers(CORS_HEADERS);
