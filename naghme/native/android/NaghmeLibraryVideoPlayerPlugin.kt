@@ -13,6 +13,7 @@ import java.io.FileOutputStream
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Button
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
@@ -40,6 +41,8 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var view: PlayerView? = null
+    private var lockOverlay: FrameLayout? = null
+    private var isPlayerLocked: Boolean = false
     private val diagnosticLock = Any()
     private var lastBoundsSignature = ""
 
@@ -109,7 +112,57 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         }
         val params = FrameLayout.LayoutParams(1, 1).apply { gravity = Gravity.TOP or Gravity.START }
         ctx.addContentView(view, params)
+        installLockOverlay(view!!, ctx)
         view?.visibility = View.GONE
+    }
+
+    private fun installLockOverlay(target: PlayerView, act: Activity) {
+        val overlay = FrameLayout(act).apply {
+            setBackgroundColor(Color.TRANSPARENT)
+            isClickable = true
+            isFocusable = true
+            visibility = View.GONE
+        }
+        val unlock = Button(act).apply {
+            text = "🔓 بازکردن قفل"
+            isAllCaps = false
+            setTextColor(Color.WHITE)
+            setBackgroundColor(Color.argb(220, 25, 25, 25))
+            setOnClickListener {
+                isPlayerLocked = false
+                overlay.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+        }
+        val buttonParams = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            Gravity.TOP or Gravity.CENTER_HORIZONTAL
+        ).apply { topMargin = (18 * act.resources.displayMetrics.density).toInt() }
+        overlay.addView(unlock, buttonParams)
+        target.addView(overlay, FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        ))
+        lockOverlay = overlay
+    }
+
+    @PluginMethod fun setLocked(call: PluginCall) {
+        val locked = call.getBoolean("locked") ?: false
+        activity?.runOnUiThread {
+            try {
+                val overlay = lockOverlay
+                if (overlay == null) {
+                    call.reject("player_view_unavailable")
+                    return@runOnUiThread
+                }
+                isPlayerLocked = locked
+                overlay.visibility = if (locked) View.VISIBLE else View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", locked))
+                call.resolve(JSObject().put("locked", locked))
+            } catch (e: Exception) {
+                call.reject("set_locked_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("activity_unavailable")
     }
 
     private fun videoFile(uri: Uri): JSObject? {
@@ -357,6 +410,8 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             diagnostic("player_release_failed", e)
         }
         lastBoundsSignature = ""
+        lockOverlay = null
+        isPlayerLocked = false
         diagnostic("player_released")
     }
 
