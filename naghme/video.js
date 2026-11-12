@@ -27,7 +27,7 @@ function filtered(){return st.items.filter(x=>(x.name+' '+(x.url||'')).toLowerCa
 function draw(){const list=filtered();$('#videoContent').innerHTML=`<section class="video-page" dir="rtl"><div class="video-top"><div><h2>کتابخانهٔ ویدئو</h2><p class="d">فایل اصلی گوشی دست‌نخورده می‌ماند؛ فایل یا پوشه را به کتابخانه اضافه کنید.</p></div><div class="bar"><button class="pri" data-vact="pick">＋ انتخاب فایل</button><button data-vact="folder">📁 انتخاب پوشه</button><button data-vact="url">↗ افزودن لینک</button></div></div>
 <div class="video-stage"><video id="naghmeVideo" controls playsinline webkit-playsinline preload="metadata"></video><div class="video-empty" id="videoEmpty">▶<span>برای تماشا، یک ویدئو انتخاب کنید</span></div></div>
 
-<div class="video-now"><b id="videoNow">ویدئویی انتخاب نشده</b><span id="videoTime" class="d">۰:۰۰ / ۰:۰۰</span></div>
+<div class="video-now"><b id="videoNow">ویدئویی انتخاب نشده</b><span id="videoTime" class="d">۰:۰۰ / ۰:۰۰</span><button type="button" class="video-more" data-player-settings="1" aria-label="بازکردن ابزارهای پخش" title="ابزارهای پخش">⋮</button></div>
 <div class="video-tools video-tools-inline" aria-label="کنترل‌های پخش">
 <button data-vact="lock" id="videoLock">🔒 قفل لمس</button><button data-vact="back">⏪ ۱۰ ثانیه</button><button data-vact="toggle">▶ / ⏸ پخش</button><button data-vact="forward">۱۰ ثانیه ⏩</button><button data-vact="full">⛶ تمام‌صفحه</button>
 <label>سرعت <select id="videoSpeed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label>
