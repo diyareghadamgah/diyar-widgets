@@ -2,7 +2,7 @@
  'use strict';
  var native=window.NaghmeVideoPlayer;
  if(!native||!native.isNative||typeof native.get!=='function')return;
- var resizeTimer=0,active=false,eventsBound=false;
+ var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false;
  function video(){return document.getElementById('tvbox')}
  function bounds(){
   var el=video();if(!el)return null;
@@ -27,6 +27,7 @@
    p.addListener('ready',function(){if(active)status('جریان دریافت شد؛ آمادهٔ پخش…')});
    p.addListener('playing',function(){if(active)status('')});
    p.addListener('buffering',function(){if(active)status('در حال دریافت و بافر شبکه…')});
+   p.addListener('fullscreenExit',function(){if(active&&window.NaghmeIPTVFullscreen)window.NaghmeIPTVFullscreen(false)});
   }catch(err){console.warn('[Naghme IPTV] event listeners:',err)}
  }
  function syncBounds(){
@@ -55,10 +56,15 @@
     console.error('[Naghme IPTV] native play failed; browser fallback disabled',err);
    });
  }
+ function setFullscreen(enabled){
+  fullscreenState=!!enabled;
+  var p=plugin();
+  return p&&p.setFullscreen?p.setFullscreen({enabled:fullscreenState}).catch(function(err){console.warn('[Naghme IPTV] fullscreen:',err)}):Promise.resolve();
+ }
  function hidePlayer(){
   active=false;document.body.classList.remove('native-player-active');
   var p=plugin();if(!p)return Promise.resolve();
-  return Promise.resolve(p.stop?p.stop():null)
+  return setFullscreen(false).then(function(){return p.stop?p.stop():null})
    .catch(function(err){console.warn('[Naghme IPTV] stop:',err)})
    .then(function(){return p.setVisible?p.setVisible({visible:false}):null})
    .catch(function(err){console.warn('[Naghme IPTV] hide:',err)});
@@ -68,9 +74,14 @@
   clearTimeout(resizeTimer);
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
- window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds};
+ window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen};
  window.addEventListener('resize',onLayoutChange,{passive:true});
- window.addEventListener('orientationchange',function(){setTimeout(onLayoutChange,250)},{passive:true});
+ window.addEventListener('orientationchange',function(){
+  setTimeout(function(){
+   if(active&&window.NaghmeIPTVFullscreen)window.NaghmeIPTVFullscreen(!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches));
+   onLayoutChange();
+  },300);
+ },{passive:true});
  document.addEventListener('fullscreenchange',onLayoutChange);
  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')onLayoutChange()});
  console.log('[Naghme IPTV] native bridge ready');
