@@ -2,7 +2,7 @@
  'use strict';
  var native=window.NaghmeVideoPlayer;
  if(!native||!native.isNative||typeof native.get!=='function')return;
- var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false;
+ var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false,sleepTimer=0,currentSpeed=1;
  function video(){return document.getElementById('tvbox')}
  function bounds(){
   var el=video();if(!el)return null;
@@ -64,7 +64,44 @@
   var p=plugin();
   return p&&p.setFullscreen?p.setFullscreen({enabled:fullscreenState}).catch(function(err){console.warn('[Naghme IPTV] fullscreen:',err)}):Promise.resolve();
  }
+ function setSpeed(speed){
+  currentSpeed=Math.max(0.25,Math.min(3,Number(speed)||1));
+  return native.setSpeed(currentSpeed);
+ }
+ function jumpToTime(){
+  native.status().then(function(s){
+   var duration=Number(s.durationMs)||0;
+   if(!duration){status('پرش زمانی برای پخش زنده قابل استفاده نیست.');return}
+   var current=Math.floor((Number(s.positionMs)||0)/1000);
+   var value=prompt('زمان مقصد را به ثانیه وارد کنید (مثلاً ۱۲۵):',String(current));
+   if(value===null)return;
+   var seconds=Number(value);
+   if(!Number.isFinite(seconds)||seconds<0){status('زمان واردشده معتبر نیست.');return}
+   return native.seekTo(Math.min(duration,Math.round(seconds*1000)));
+  }).catch(function(e){status('دریافت زمان پخش ناموفق بود: '+(e.message||e))});
+ }
+ function setSleepTimer(){
+  var value=prompt('چند دقیقهٔ دیگر پخش متوقف شود؟ (۰ برای لغو)', '۳۰');
+  if(value===null)return;
+  var minutes=Number(value);
+  if(!Number.isFinite(minutes)||minutes<0){status('زمان واردشده معتبر نیست.');return}
+  clearTimeout(sleepTimer);sleepTimer=0;
+  if(minutes===0){status('زمان‌سنج خواب لغو شد.');return}
+  sleepTimer=setTimeout(function(){sleepTimer=0;native.pause().then(function(){status('زمان‌سنج خواب: پخش متوقف شد.')})},minutes*60000);
+  status('زمان‌سنج خواب برای '+minutes+' دقیقه تنظیم شد.');
+ }
+ function addControls(){
+  var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
+  var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
+  Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
+  tools.innerHTML='<button type="button" data-iptv-tool="jump">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep">🌙 زمان‌سنج خواب</button>';
+  tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
+  host.insertAdjacentElement('afterend',tools);
+  tools.addEventListener('click',function(e){var b=e.target.closest('[data-iptv-tool]');if(!b)return;if(b.dataset.iptvTool==='jump')jumpToTime();if(b.dataset.iptvTool==='sleep')setSleepTimer()});
+  tools.addEventListener('change',function(e){if(e.target.dataset.iptvTool==='speed')setSpeed(e.target.value).catch(function(err){status('تغییر سرعت ناموفق بود: '+(err.message||err))})});
+ }
  function hidePlayer(){
+  clearTimeout(sleepTimer);sleepTimer=0;
   active=false;document.body.classList.remove('native-player-active');
   var p=plugin();if(!p)return Promise.resolve();
   return setFullscreen(false).then(function(){return p.stop?p.stop():null})
@@ -77,7 +114,7 @@
   clearTimeout(resizeTimer);
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
- window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen};
+ addControls();\n window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
  window.addEventListener('resize',onLayoutChange,{passive:true});
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
