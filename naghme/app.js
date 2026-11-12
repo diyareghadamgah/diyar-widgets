@@ -95,9 +95,9 @@ function iptvWebStreamUrl(raw){
  try{
   const u=new URL(raw);
   if(u.hostname.toLowerCase()!=='ncdn.telewebion.ir')return raw;
-  const m=u.pathname.match(/^\/([a-z0-9_-]{1,40})\/live\/(\d{3,4}p)\/index\.m3u8$/i);
+  const m=u.pathname.match(/^\/([a-z0-9_-]{1,40})\/live\/playlist\.m3u8$/i);
   if(!m)return raw;
-  return IPTV_WORKER_ORIGIN+'/'+m[1]+'/'+m[2];
+  return IPTV_WORKER_ORIGIN+'/'+m[1]+'/1080p';
  }catch{return raw}
 }
 async function attachIPTVPlayer(force){
