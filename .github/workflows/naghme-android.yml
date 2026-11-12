@@ -43,6 +43,8 @@ jobs:
       - name: Build web assets
         run: |
           node --check video.js
+          node --check iptv-native.js
+          node --check native-player.js
           node scripts/build-web.js
         
       - name: Add Android platform
