@@ -94,10 +94,12 @@
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
-  tools.innerHTML='<button type="button" data-iptv-tool="jump">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep">🌙 زمان‌سنج خواب</button>';
+  tools.innerHTML='<button type="button" data-iptv-tool="jump">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock">🔒 قفل لمس</button>';
   tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
   host.insertAdjacentElement('afterend',tools);
-  tools.addEventListener('click',function(e){var b=e.target.closest('[data-iptv-tool]');if(!b)return;if(b.dataset.iptvTool==='jump')jumpToTime();if(b.dataset.iptvTool==='sleep')setSleepTimer()});
+  var locked=false;
+  tools.addEventListener('click',function(e){var b=e.target.closest('[data-iptv-tool]');if(!b)return;if(b.dataset.iptvTool==='jump')jumpToTime();if(b.dataset.iptvTool==='sleep')setSleepTimer();if(b.dataset.iptvTool==='lock'){locked=!locked;native.setLocked(locked).then(function(){b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس';status(locked?'لمس تصویر قفل شد.':'قفل لمس برداشته شد.')}).catch(function(err){locked=!locked;status('قفل لمس فعال نشد: '+(err.message||err))})}});
+  native.on('lockChanged',function(e){locked=!!(e&&e.locked);var b=tools.querySelector('[data-iptv-tool="lock"]');if(b)b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس'});
   tools.addEventListener('change',function(e){if(e.target.dataset.iptvTool==='speed')setSpeed(e.target.value).catch(function(err){status('تغییر سرعت ناموفق بود: '+(err.message||err))})});
  }
  function hidePlayer(){
