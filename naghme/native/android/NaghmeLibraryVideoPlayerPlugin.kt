@@ -105,14 +105,13 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 diagnostic("player_initialized")
             }
         view = PlayerView(ctx).apply {
-            useController = false
+            useController = true
             resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
             setBackgroundColor(Color.BLACK)
             player = this@NaghmeLibraryVideoPlayerPlugin.player
         }
         val params = FrameLayout.LayoutParams(1, 1).apply { gravity = Gravity.TOP or Gravity.START }
         ctx.addContentView(view, params)
-        installLockOverlay(view!!, ctx)
         view?.visibility = View.GONE
     }
 
@@ -146,23 +145,11 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         lockOverlay = overlay
     }
 
+    // قفل لمس عمداً غیرفعال است؛ کنترل‌های خود Media3 روی تصویر در دسترس‌اند.
     @PluginMethod fun setLocked(call: PluginCall) {
-        val locked = call.getBoolean("locked") ?: false
-        activity?.runOnUiThread {
-            try {
-                val overlay = lockOverlay
-                if (overlay == null) {
-                    call.reject("player_view_unavailable")
-                    return@runOnUiThread
-                }
-                isPlayerLocked = locked
-                overlay.visibility = if (locked) View.VISIBLE else View.GONE
-                notifyListeners("lockChanged", JSObject().put("locked", locked))
-                call.resolve(JSObject().put("locked", locked))
-            } catch (e: Exception) {
-                call.reject("set_locked_failed: " + (e.message ?: e.javaClass.simpleName))
-            }
-        } ?: call.reject("activity_unavailable")
+        isPlayerLocked = false
+        lockOverlay?.visibility = View.GONE
+        call.resolve(JSObject().put("locked", false))
     }
 
     private fun videoFile(uri: Uri): JSObject? {
