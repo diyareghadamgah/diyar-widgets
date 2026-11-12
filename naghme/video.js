@@ -3,7 +3,7 @@
 const $=s=>document.querySelector(s),fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const db=new Promise((ok,no)=>{const r=indexedDB.open('naghme-video-library',1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('videos'))r.result.createObjectStore('videos',{keyPath:'id'})};r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)});
 const tx=(mode,fn)=>db.then(d=>new Promise((ok,no)=>{const t=d.transaction('videos',mode),s=t.objectStore('videos');let q;try{q=fn(s)}catch(e){no(e);return}t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)})),all=()=>tx('readonly',s=>s.getAll()),put=x=>tx('readwrite',s=>s.put(x)),del=id=>tx('readwrite',s=>s.delete(id));
-const st={items:[],q:'',id:null,url:'',sub:'',active:false,timer:0,native:false,sleepTimer:0,repeatMode:'off'},v=()=>$('#naghmeVideo');
+const st={items:[],q:'',id:null,url:'',sub:'',active:false,timer:0,native:false,sleepTimer:0,locked:false,repeatMode:'off'},v=()=>$('#naghmeVideo');
 function msg(t){const e=$('#toast');if(e){e.textContent=t;e.classList.add('on');clearTimeout(msg.t);msg.t=setTimeout(()=>e.classList.remove('on'),2600)}}
 function showDiagnosticReport(report){
  const old=document.getElementById('naghmeDiagnosticPanel');if(old)old.remove();
