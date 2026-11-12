@@ -148,11 +148,7 @@ export default {
       return new Response("usage: /<channel>/<rendition>, e.g. /tv1/1080p\n", { status: 400 });
     }
     const quality = RENDITION.test(rendition || "") ? rendition : "1080p";
-    const source = `${ORIGIN}/${slug}/live/${quality}/index.m3u8`;
-
-    if (isNativeMediaRequest(request)) {
-      return Response.redirect(source, 302);
-    }
+    const source = `${ORIGIN}/${slug}/live/playlist.m3u8`;
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
