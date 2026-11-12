@@ -36,9 +36,20 @@
   if(!b||!p||!p.setBounds)return Promise.resolve();
   return p.setBounds(b).catch(function(err){console.warn('[Naghme IPTV] setBounds:',err)});
  }
+ function streamUrl(channel){
+  var raw=channel&&channel.url||'';
+  try{
+   var u=new URL(raw);
+   if(u.hostname.toLowerCase()==='ncdn.telewebion.ir'){
+    var m=u.pathname.match(/^\/([a-z0-9_-]{1,40})\/live\/(?:playlist\.m3u8|\d{3,4}p\/index\.m3u8)$/i);
+    if(m)return 'https://diyar-widgets.diyareghadamgah.workers.dev/'+m[1]+'/1080p';
+   }
+  }catch(e){}
+  return raw;
+ }
  function playChannel(channel){
   if(!channel||!channel.url)return Promise.resolve();
-  var p=plugin(),b=bounds();
+  var stream=streamUrl(channel),p=plugin(),b=bounds();
   bindPlayerEvents(p);
   if(!p||!p.play){status('خطای راه‌اندازی: افزونهٔ بومی NaghmeVideoPlayer در دسترس نیست؛ APK را بررسی کنید.');return Promise.resolve()}
   if(!b){status('کادر پخش IPTV هنوز آماده نیست؛ دوباره شبکه را انتخاب کنید.');return Promise.resolve()}
@@ -49,7 +60,7 @@
    setTimeout(function(){if(active)window.NaghmeIPTVFullscreen(true)},180);
   }
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
-   .then(function(){return p.play({url:channel.url})})
+   .then(function(){return p.play({url:stream})})
    .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
    .then(function(){document.body.classList.add('native-player-active');status('')})
