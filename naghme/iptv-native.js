@@ -50,6 +50,7 @@
   }
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url})})
+   .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
    .then(function(){document.body.classList.add('native-player-active');status('')})
    .catch(function(err){
