@@ -257,7 +257,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             try {
                 if (player == null) {
                     val httpFactory = DefaultHttpDataSource.Factory()
-                        .setUserAgent("NaghmeAndroid/1.0")
+                        .setUserAgent("VLC/3.0.20 LibVLC/3.0.20")
                         .setAllowCrossProtocolRedirects(true)
 
                     val mediaSourceFactory = DefaultMediaSourceFactory(httpFactory)
