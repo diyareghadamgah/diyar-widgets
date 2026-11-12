@@ -4,6 +4,8 @@ var KEY='naghme-player-settings-v1';
 var defaults={videoSpeed:'1',iptvSpeed:'1',videoRepeat:'off',showJump:true,showSleep:true,showLock:true,showInfo:true,showDiagnostics:true};
 function read(){try{return Object.assign({},defaults,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(_){return Object.assign({},defaults)}}
 var prefs=read();
+// قفل لمس موقتاً غیرفعال است؛ لایهٔ بومی ممکن است روی کنترل‌های WebView بیفتد.
+prefs.showLock=false;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(prefs))}catch(_){}apply();document.dispatchEvent(new CustomEvent('naghme:player-settings',{detail:Object.assign({},prefs)}))}
 function apply(){
  document.querySelectorAll('[data-vact]').forEach(function(el){var a=el.dataset.vact,map={jump:'showJump',sleep:'showSleep',lock:'showLock',info:'showInfo',diagnostics:'showDiagnostics'};if(map[a])el.hidden=!prefs[map[a]]});
