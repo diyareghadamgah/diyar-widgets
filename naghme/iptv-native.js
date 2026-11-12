@@ -45,6 +45,9 @@
   active=true;
   if(window.IPTV)window.IPTV.nativePlayError='';
   status('در حال اتصال به '+(channel.name||'شبکه')+'…');
+  if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.NaghmeIPTVFullscreen){
+   setTimeout(function(){if(active)window.NaghmeIPTVFullscreen(true)},180);
+  }
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url})})
    .then(function(){return p.setBounds?p.setBounds(b):null})
