@@ -122,3 +122,44 @@ body.native-player-active #iptvResults {
 .video-now .video-more{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
 .video-tools.video-tools-inline #videoLock{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
 .video-now .video-gear{display:none!important}
+
+
+/* Naghme: isolated mode selector and section layouts */
+#modeBar{flex:none;display:flex;align-items:center;gap:12px;padding:8px 12px;background:var(--s1);border-bottom:1px solid var(--s2);min-height:52px}
+#modeBar[hidden],#modeHome[hidden],#side[hidden],#mini[hidden],#tvpage[hidden],#videoPage[hidden],header[hidden]{display:none!important}
+#modeBar button{border-radius:10px;min-height:38px}
+#modeTitle{font-size:15px}
+#modeHome{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px;overflow:auto}
+.mode-welcome{text-align:center}
+.mode-welcome img{width:88px;height:88px;border-radius:24px;object-fit:cover}
+.mode-welcome h1{font-size:30px;color:var(--ac2);margin:8px 0 2px}
+.mode-welcome p{color:var(--mu);font-size:14px}
+.mode-cards{width:min(100%,760px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mode-cards button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:170px;padding:18px 10px;border:1px solid var(--s2);border-radius:18px;background:var(--s1)}
+.mode-cards button:active{border-color:var(--ac);transform:scale(.99)}
+.mode-cards button>span{font-size:38px;line-height:1.2}
+.mode-cards button>b{font-size:18px}
+.mode-cards button>small{font-size:11px;color:var(--mu);font-weight:400}
+body.mode-home{display:block}
+body.mode-home main{height:100dvh}
+body.mode-home #side,body.mode-home main>header,body.mode-home #view,body.mode-home #tvpage,body.mode-home #videoPage,body.mode-home #mini,body.mode-home #np{display:none!important}
+body.mode-music{grid-template-columns:220px 1fr}
+body.mode-music #tvpage,body.mode-music #videoPage{display:none!important}
+body.mode-music #nav [data-v="iptv"],body.mode-music #nav [data-v="video"]{display:none!important}
+body.mode-video,body.mode-tv{display:block}
+body.mode-video #side,body.mode-tv #side{display:none!important}
+body.mode-video main,body.mode-tv main{height:100dvh}
+body.mode-video main>header,body.mode-tv main>header{display:none!important}
+body.mode-video #view,body.mode-tv #view{display:none!important}
+body.mode-video #mini,body.mode-tv #mini,body.mode-video #np,body.mode-tv #np{display:none!important}
+body.mode-video #videoPage,body.mode-tv #tvpage{flex:1;min-height:0}
+body.mode-tv #tvpage{padding-top:8px}
+@media(max-width:760px){
+ .mode-cards{grid-template-columns:1fr;max-width:420px;gap:10px}
+ .mode-cards button{min-height:104px;display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto auto;justify-items:start;text-align:right;padding:14px 18px;column-gap:12px}
+ .mode-cards button>span{grid-row:1/3;font-size:34px;align-self:center}
+ .mode-cards button>b{align-self:end}
+ .mode-cards button>small{align-self:start}
+ #modeHome{gap:18px;padding:18px}
+ body.mode-music{grid-template-columns:1fr}
+}
