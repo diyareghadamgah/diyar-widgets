@@ -89,6 +89,17 @@ function iptvRelease(){   // آزادسازی کامل منابع پخش (خرو
  const v=$('#iptvVideo');
  if(v){v.onerror=v.onplaying=v.onwaiting=null;try{v.pause()}catch{}v.removeAttribute('src');try{v.load()}catch{}}
  iptvAttached='';setIPTVStatus('')}
+// فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
+const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
+function iptvWebStreamUrl(raw){
+ try{
+  const u=new URL(raw);
+  if(u.hostname.toLowerCase()!=='ncdn.telewebion.ir')return raw;
+  const m=u.pathname.match(/^\/([a-z0-9_-]{1,40})\/live\/(\d{3,4}p)\/index\.m3u8$/i);
+  if(!m)return raw;
+  return IPTV_WORKER_ORIGIN+'/'+m[1]+'/'+m[2];
+ }catch{return raw}
+}
 async function attachIPTVPlayer(force){
  const ch=IPTV.current,v=$('#iptvVideo');
  if(!ch||!v||(!force&&iptvAttached===ch.key))return;
@@ -110,7 +121,7 @@ async function attachIPTVPlayer(force){
  v.onerror=()=>{if(stale()||!v.getAttribute('src'))return;const nativeInfo=IPTV.nativePlayError?' | خطای پلیر بومی: '+IPTV.nativePlayError:'';fail(mediaError()+nativeInfo)};
  v.onplaying=()=>{if(!stale())setIPTVStatus('')};
  v.onwaiting=()=>{if(!stale()&&!IPTV.playError)setIPTVStatus('در حال بافر…')};
- const url=ch.url;
+ const url=iptvWebStreamUrl(ch.url);
  try{
   if(/\.m3u8(?:$|[?#])/i.test(url)){
    if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=url;await v.play().catch(hint);return}
