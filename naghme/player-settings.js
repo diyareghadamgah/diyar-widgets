@@ -26,9 +26,11 @@ function open(){
  document.body.append(d);apply();
 }
 document.addEventListener('click',function(e){if(e.target.closest('[data-player-settings]'))open()});
+function bindGear(b){if(!b||b.dataset.settingsBound==='1')return;b.dataset.settingsBound='1';b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open()})}
 function addButton(){
  var h=document.querySelector('main>header');if(h&&!h.querySelector('[data-player-settings]')){var b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';b.title='تنظیمات پلیر';b.setAttribute('aria-label','تنظیمات پلیر');b.textContent='⚙️';h.append(b)}
  var now=document.querySelector('.video-now');if(now&&!now.querySelector('[data-player-settings]')){var b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';b.className='video-gear';b.title='همه ابزارهای پلیر';b.setAttribute('aria-label','ابزارهای پلیر');b.textContent='⚙️';now.append(b)}
+ document.querySelectorAll('[data-player-settings]').forEach(bindGear);
 }
 addButton();new MutationObserver(function(){addButton()}).observe(document.body,{childList:true,subtree:true});
 window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply};
