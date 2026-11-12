@@ -114,7 +114,8 @@
   clearTimeout(resizeTimer);
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
- addControls();\n window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
+ addControls();
+ window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
  window.addEventListener('resize',onLayoutChange,{passive:true});
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
