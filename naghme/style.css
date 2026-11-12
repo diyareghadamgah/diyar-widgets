@@ -117,3 +117,8 @@ body.native-player-active #iptvResults {
 .video-now .video-gear{display:none!important}
 .video-tools-inline #videoLock{border:1px solid var(--ac)!important;font-weight:700!important}
 @media(max-width:700px){.video-tools.video-tools-inline{gap:5px!important;padding:6px!important}.video-tools-inline button{font-size:11px!important;padding:6px 9px!important}}
+
+/* Final visibility fix: keep floating menu and touch-lock control visible */
+.video-now .video-more{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+.video-tools.video-tools-inline #videoLock{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+.video-now .video-gear{display:none!important}
