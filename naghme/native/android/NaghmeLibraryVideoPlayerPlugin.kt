@@ -291,6 +291,14 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val speed = (call.getFloat("speed") ?: 1f).coerceIn(0.25f, 3f)
         activity?.runOnUiThread { player?.setPlaybackSpeed(speed); call.resolve() } ?: call.reject("activity_unavailable")
     }
+    @PluginMethod fun setRepeatMode(call: PluginCall) {
+        val mode = call.getString("mode") ?: "off"
+        if (mode != "off" && mode != "one") { call.reject("invalid_repeat_mode"); return }
+        activity?.runOnUiThread {
+            player?.repeatMode = if (mode == "one") Player.REPEAT_MODE_ONE else Player.REPEAT_MODE_OFF
+            call.resolve(JSObject().put("mode", mode))
+        } ?: call.reject("activity_unavailable")
+    }
     @PluginMethod fun setResizeMode(call: PluginCall) {
         val mode = call.getString("mode") ?: "fit"
         activity?.runOnUiThread {
