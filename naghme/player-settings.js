@@ -39,7 +39,9 @@ function addButton(){
   if(!b.dataset.directSettingsBound){b.dataset.directSettingsBound='1';b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open(b)})}
  }
 }
-// کنترل‌ها اکنون مستقیماً زیر مانیتور نمایش داده می‌شوند؛ منوی شناور/چرخ‌دنده موقتاً غیرفعال است.
+// منوی شناور سه‌نقطه در کنار نام ویدئو؛ پس از هر بار ساخته‌شدن بخش ویدئو دوباره متصل می‌شود.
+function watchVideoHeader(){addButton();var root=document.getElementById('videoContent')||document.body;new MutationObserver(function(){addButton()}).observe(root,{childList:true,subtree:true})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watchVideoHeader,{once:true});else watchVideoHeader();
 window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply};
 document.addEventListener('change',function(e){if(e.target.id==='videoSpeed')e.target.dataset.userChanged='1'});
 document.addEventListener('naghme:player-settings',apply);apply();
