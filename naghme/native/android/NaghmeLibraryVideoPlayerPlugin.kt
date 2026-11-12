@@ -330,8 +330,16 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     @PluginMethod fun setVisible(call: PluginCall) {
         val visible = call.getBoolean("visible") ?: true
-        activity?.runOnUiThread { view?.visibility = if (visible) View.VISIBLE else View.GONE; call.resolve() }
-            ?: call.reject("activity_unavailable")
+        activity?.runOnUiThread {
+            if (!visible) {
+                // هنگام پنهان‌شدن پلیر، قفل را هم حتماً آزاد کن تا لایهٔ لمس باقی نماند.
+                isPlayerLocked = false
+                lockOverlay?.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+            view?.visibility = if (visible) View.VISIBLE else View.GONE
+            call.resolve()
+        } ?: call.reject("activity_unavailable")
     }
     @PluginMethod fun pause(call: PluginCall) { activity?.runOnUiThread { player?.pause(); call.resolve() } ?: call.reject("activity_unavailable") }
     @PluginMethod fun resume(call: PluginCall) { activity?.runOnUiThread { player?.play(); call.resolve() } ?: call.reject("activity_unavailable") }
