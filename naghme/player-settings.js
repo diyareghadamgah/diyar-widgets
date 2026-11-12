@@ -2,12 +2,12 @@
 'use strict';
 var KEY='naghme-player-settings-v1';
 var defaults={videoSpeed:'1',iptvSpeed:'1',videoRepeat:'off',showJump:true,showSleep:true,showInfo:true,showDiagnostics:true};
-function read(){try{return Object.assign({},defaults,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(_){return Object.assign({},defaults)}}
+function read(){var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(_){}if(saved.settingsVersion!==2){saved.videoSpeed='1';saved.settingsVersion=2;try{localStorage.setItem(KEY,JSON.stringify(Object.assign({},defaults,saved)))}catch(_){}}return Object.assign({},defaults,saved)}
 var prefs=read();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(prefs))}catch(_){}apply();document.dispatchEvent(new CustomEvent('naghme:player-settings',{detail:Object.assign({},prefs)}))}
 function apply(){
  document.querySelectorAll('[data-vact]').forEach(function(el){var a=el.dataset.vact,map={jump:'showJump',sleep:'showSleep',info:'showInfo',diagnostics:'showDiagnostics'};if(map[a])el.hidden=!prefs[map[a]]});
- var vs=document.getElementById('videoSpeed');if(vs&&!vs.dataset.userChanged)vs.value=prefs.videoSpeed;
+ var vs=document.getElementById('videoSpeed');if(vs&&!vs.dataset.userChanged)vs.value=prefs.videoSpeed||'1';
 }
 function close(){var d=document.getElementById('naghmePlayerSettings');if(d)d.remove()}
 function open(anchor){
@@ -37,6 +37,7 @@ function addButton(){
   if(!b){b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';now.append(b)}
   b.className='video-more';b.textContent='⋮';b.title='ابزارهای پخش';b.setAttribute('aria-label','بازکردن ابزارهای پخش');
   if(!b.dataset.directSettingsBound){b.dataset.directSettingsBound='1';b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open(b)})}
+  apply();
  }
 }
 // منوی شناور سه‌نقطه در کنار نام ویدئو؛ پس از هر بار ساخته‌شدن بخش ویدئو دوباره متصل می‌شود.
