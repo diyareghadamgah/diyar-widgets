@@ -443,6 +443,50 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         activity?.runOnUiThread { player?.play(); call.resolve() } ?: call.reject("Activity not available")
     }
 
+    /** کنترل‌های پایه برای هماهنگی IPTV با رابط مشترک پلیر. */
+    @PluginMethod
+    fun seekTo(call: PluginCall) {
+        val positionMs = (call.getLong("positionMs") ?: 0L).coerceAtLeast(0L)
+        activity?.runOnUiThread {
+            try {
+                player?.seekTo(positionMs)
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("seek_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setSpeed(call: PluginCall) {
+        val speed = (call.getFloat("speed") ?: 1f).coerceIn(0.25f, 3f)
+        activity?.runOnUiThread {
+            try {
+                player?.setPlaybackSpeed(speed)
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("speed_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun getStatus(call: PluginCall) {
+        activity?.runOnUiThread {
+            try {
+                val p = player
+                val out = JSObject()
+                out.put("positionMs", p?.currentPosition ?: 0L)
+                out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
+                out.put("isPlaying", p?.isPlaying ?: false)
+                out.put("speed", p?.playbackParameters?.speed ?: 1f)
+                call.resolve(out)
+            } catch (e: Exception) {
+                call.reject("status_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
     @PluginMethod
     fun release(call: PluginCall) {
         activity?.runOnUiThread {
