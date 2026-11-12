@@ -3,12 +3,12 @@
  var native=window.NaghmeVideoPlayer;
  if(!native||!native.isNative||typeof native.get!=='function')return;
  var resizeTimer=0,active=false,eventsBound=false;
- function video(){return document.getElementById('iptvVideo')}
+ function video(){return document.getElementById('tvbox')}
  function bounds(){
   var el=video();if(!el)return null;
   var r=el.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
   if(!r.width||!r.height||el.hidden)return null;
-  return {x:Math.round(r.left*dpr),y:Math.round(r.top*dpr)-Math.round(24*dpr),width:Math.round(r.width*dpr),height:Math.round(r.height*dpr)};
+  return {x:Math.round(r.left*dpr),y:Math.round(r.top*dpr),width:Math.round(r.width*dpr),height:Math.round(r.height*dpr)};
  }
  function status(message){var el=document.getElementById('iptvStatus');if(el)el.textContent=message||''}
  function plugin(){return native.get()}
