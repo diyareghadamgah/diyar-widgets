@@ -27,8 +27,8 @@ function open(){
  var speed=card.querySelector('#videoSpeed');if(speed)speed.value=prefs.videoSpeed;
  document.body.append(d);apply();
 }
-document.addEventListener('click',function(e){if(e.target.closest('[data-player-settings]'))open()});
-function bindGear(b){if(!b||b.dataset.settingsBound==='1')return;b.dataset.settingsBound='1';b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open()})}
+document.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('[data-player-settings]'):null;if(!b)return;e.preventDefault();e.stopPropagation();open()},true);
+function bindGear(b){if(!b)return;b.dataset.settingsBound='1'}
 function addButton(){
  var h=document.querySelector('main>header');if(h&&!h.querySelector('[data-player-settings]')){var b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';b.title='تنظیمات پلیر';b.setAttribute('aria-label','تنظیمات پلیر');b.textContent='⚙️';h.append(b)}
  var now=document.querySelector('.video-now');if(now&&!now.querySelector('[data-player-settings]')){var b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';b.className='video-gear';b.title='همه ابزارهای پلیر';b.setAttribute('aria-label','ابزارهای پلیر');b.textContent='⚙️';now.append(b)}
