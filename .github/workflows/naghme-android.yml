@@ -42,6 +42,7 @@ jobs:
         
       - name: Build web assets
         run: |
+          node --check mode-shell.js
           node --check video.js
           node --check iptv-native.js
           node --check native-player.js
@@ -69,6 +70,10 @@ jobs:
           unzip -q "$APK" -d /tmp/apk
           echo "== web assets inside APK =="
           ls /tmp/apk/assets/public
+          test -f /tmp/apk/assets/public/mode-shell.js
+          grep -q 'data-mode="music"' /tmp/apk/assets/public/index.html
+          grep -q 'data-mode="video"' /tmp/apk/assets/public/index.html
+          grep -q 'data-mode="tv"' /tmp/apk/assets/public/index.html
           test -f /tmp/apk/assets/public/video.js
           grep -q "کتابخانهٔ ویدئو" /tmp/apk/assets/public/video.js
           cat /tmp/apk/assets/public/build-info.json; echo
