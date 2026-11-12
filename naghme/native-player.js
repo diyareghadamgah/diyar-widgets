@@ -98,6 +98,7 @@
         resume: function () { return this.call('resume'); },
         seekTo: function (positionMs) { return this.call('seekTo', {positionMs:positionMs}); },
         setSpeed: function (speed) { return this.call('setSpeed', {speed:speed}); },
+        setRepeatMode: function (mode) { return this.call('setRepeatMode', {mode:mode === 'one' ? 'one' : 'off'}); },
         status: function () { return this.call('getStatus'); },
         visible: function (visible) { return this.call('setVisible', {visible:visible}); },
         bounds: function (element) {
