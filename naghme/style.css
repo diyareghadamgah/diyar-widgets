@@ -108,3 +108,11 @@ body.native-player-active #iptvResults {
 /* ابزارهای ویدئو: دکمهٔ سه‌نقطهٔ واقعی و قابل لمس */
 .video-now .video-more{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:none!important;width:44px!important;min-width:44px!important;height:42px!important;min-height:42px!important;padding:0!important;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;font-size:28px!important;font-weight:700!important;line-height:1!important;letter-spacing:2px!important;z-index:5!important;position:relative!important}
 .video-now .video-gear{display:none!important}
+
+/* کنترل‌های مستقیم زیر مانیتور؛ بدون منوی شناور */
+.video-tools.video-tools-inline{display:flex!important;flex:none!important;justify-content:flex-start!important;align-items:center!important;gap:7px!important;flex-wrap:wrap!important;margin:5px 0 8px!important;padding:7px!important;background:var(--s1)!important;border:1px solid var(--s2)!important;border-radius:12px!important;max-height:none!important;overflow:visible!important}
+.video-tools-inline button{min-height:38px!important;padding:7px 11px!important;border-radius:10px!important;font-size:12px!important;white-space:nowrap}
+.video-tools-inline label{display:flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
+.video-tools-inline select{min-height:36px;padding:5px 8px;border-radius:9px}
+.video-now .video-more,.video-now .video-gear{display:none!important}
+@media(max-width:700px){.video-tools.video-tools-inline{gap:5px!important;padding:6px!important}.video-tools-inline button{font-size:11px!important;padding:6px 9px!important}}
