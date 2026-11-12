@@ -36,6 +36,9 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
+    private var iptvFullscreenButton: Button? = null
+    private var iptvOriginalSystemUi: Int? = null
+    private var iptvOriginalOrientation: Int? = null
     private var famContainer: LinearLayout? = null
     private var famWebView: WebView? = null
     private var famCustomView: View? = null
@@ -314,6 +317,73 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         } ?: call.reject("Activity not available")
     }
 
+    /** تمام‌صفحهٔ IPTV: دکمهٔ خروج بومی بالای PlayerView قرار می‌گیرد تا زیر لایهٔ ویدئو نماند. */
+    @PluginMethod
+    fun setFullscreen(call: PluginCall) {
+        val enabled = call.getBoolean("enabled") ?: false
+        val act = activity ?: return call.reject("Activity not available")
+        act.runOnUiThread {
+            try {
+                if (enabled) {
+                    val decor = act.window.decorView
+                    if (iptvOriginalSystemUi == null) iptvOriginalSystemUi = decor.systemUiVisibility
+                    if (iptvOriginalOrientation == null) iptvOriginalOrientation = act.requestedOrientation
+                    act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                    decor.systemUiVisibility = (
+                        View.SYSTEM_UI_FLAG_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    )
+                    if (iptvFullscreenButton == null) {
+                        val button = Button(act).apply {
+                            text = "×"
+                            contentDescription = "خروج از تمام‌صفحه"
+                            textSize = 25f
+                            isAllCaps = false
+                            setTextColor(Color.WHITE)
+                            setBackgroundColor(Color.argb(190, 25, 25, 25))
+                            setOnClickListener {
+                                notifyListeners("fullscreenExit", JSObject())
+                            }
+                        }
+                        val size = (48 * act.resources.displayMetrics.density).toInt()
+                        val margin = (10 * act.resources.displayMetrics.density).toInt()
+                        act.addContentView(button, FrameLayout.LayoutParams(size, size, Gravity.TOP or Gravity.START).apply {
+                            leftMargin = margin
+                            topMargin = margin
+                        })
+                        iptvFullscreenButton = button
+                    } else {
+                        iptvFullscreenButton?.visibility = View.VISIBLE
+                    }
+                } else {
+                    exitIptvFullscreen(act)
+                }
+                call.resolve()
+            } catch (e: Exception) {
+                call.reject("setFullscreen failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        }
+    }
+
+    private fun exitIptvFullscreen(act: android.app.Activity) {
+        try {
+            iptvFullscreenButton?.let { button ->
+                (button.parent as? ViewGroup)?.removeView(button)
+            }
+            iptvFullscreenButton = null
+            iptvOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
+            iptvOriginalSystemUi = null
+            iptvOriginalOrientation?.let { act.requestedOrientation = it }
+            iptvOriginalOrientation = null
+        } catch (e: Exception) {
+            Log.w("NaghmeVideoPlayer", "Could not restore IPTV fullscreen UI", e)
+        }
+    }
+
     @PluginMethod
     fun setVisible(call: PluginCall) {
         val visible = call.getBoolean("visible") ?: true
@@ -390,6 +460,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     override fun handleOnDestroy() {
         try {
+            activity?.let { exitIptvFullscreen(it) }
             closeFamPageInternal()
             activity?.runOnUiThread {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }
