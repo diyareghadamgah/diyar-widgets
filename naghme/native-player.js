@@ -40,6 +40,11 @@
             if (p && p.setVisible) return p.setVisible({ visible: visible });
             return Promise.resolve();
         },
+        setFullscreen: function (enabled) {
+            var p = this.get();
+            if (p && p.setFullscreen) return p.setFullscreen({ enabled: !!enabled });
+            return Promise.resolve();
+        },
         fitToVideoElement: function (elementId) {
             var el = document.getElementById(elementId);
             if (!el || !this.isNative) return;
