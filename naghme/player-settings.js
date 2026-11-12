@@ -36,6 +36,7 @@ function addButton(){
   var b=now.querySelector('[data-player-settings]');
   if(!b){b=document.createElement('button');b.type='button';b.dataset.playerSettings='1';now.append(b)}
   b.className='video-more';b.textContent='⋮';b.title='ابزارهای پخش';b.setAttribute('aria-label','بازکردن ابزارهای پخش');
+  if(!b.dataset.directSettingsBound){b.dataset.directSettingsBound='1';b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();open(b)})}
  }
 }
 addButton();new MutationObserver(function(){addButton()}).observe(document.body,{childList:true,subtree:true});
