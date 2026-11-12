@@ -29,7 +29,7 @@ function draw(){const list=filtered();$('#videoContent').innerHTML=`<section cla
 
 <div class="video-now"><b id="videoNow">ویدئویی انتخاب نشده</b><span id="videoTime" class="d">۰:۰۰ / ۰:۰۰</span></div>
 <div class="video-tools video-tools-inline" aria-label="کنترل‌های پخش">
-<button data-vact="back">⏪ ۱۰ ثانیه</button><button data-vact="toggle">▶ / ⏸ پخش</button><button data-vact="forward">۱۰ ثانیه ⏩</button><button data-vact="full">⛶ تمام‌صفحه</button>
+<button data-vact="lock" id="videoLock">🔒 قفل لمس</button><button data-vact="back">⏪ ۱۰ ثانیه</button><button data-vact="toggle">▶ / ⏸ پخش</button><button data-vact="forward">۱۰ ثانیه ⏩</button><button data-vact="full">⛶ تمام‌صفحه</button>
 <label>سرعت <select id="videoSpeed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label>
 <button data-vact="jump">⏱ رفتن به زمان</button><button data-vact="sleep">🌙 زمان‌سنج خواب</button><button data-vact="repeat" id="videoRepeat">🔁 تکرار: خاموش</button><button data-vact="info">ℹ️ اطلاعات ویدئو</button><button data-vact="subtitle">زیرنویس</button><button data-vact="diagnostics">گزارش فنی</button></div>
 <div class="video-library-head"><input id="videoSearch" type="search" placeholder="جست‌وجوی نام ویدئو…"><span class="d">${fa(st.items.length)} ویدئو</span></div>
