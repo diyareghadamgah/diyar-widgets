@@ -40,7 +40,7 @@ dialog{max-height:88dvh;overflow:auto}
 
 /* تلویزیون اینترنتی v2.2.8 — سه بخش مستقل: پخش (ثابت) / جست‌وجو و دسته‌ها (ثابت) / فهرست (تنها بخش اسکرول‌شونده) */
 #tvpage{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding:0 14px calc(66px + env(safe-area-inset-bottom))}
-#tvpage[hidden]{display:none}body.tvmode #view{display:none}
+#tvpage[hidden],#videoPage[hidden]{display:none}body.tvmode #view{display:none}
 .tvplayer{flex:none}
 .tvbox{position:relative;background:#000;border-radius:14px;overflow:hidden}
 .tvbox video{display:block;width:100%;aspect-ratio:16/9;max-height:30dvh;background:#000;object-fit:contain}.tvbox video[hidden]{display:none}
