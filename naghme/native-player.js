@@ -34,6 +34,9 @@
         stop: function () { var p = this.get(); return p ? p.stop() : Promise.resolve(); },
         pause: function () { var p = this.get(); return p ? p.pause() : Promise.resolve(); },
         resume: function () { var p = this.get(); return p ? p.resume() : Promise.resolve(); },
+        seekTo: function (positionMs) { var p = this.get(); return p && p.seekTo ? p.seekTo({ positionMs: Math.max(0, Number(positionMs) || 0) }) : Promise.reject(new Error('پرش زمانی IPTV در دسترس نیست')); },
+        setSpeed: function (speed) { var p = this.get(); return p && p.setSpeed ? p.setSpeed({ speed: Math.max(0.25, Math.min(3, Number(speed) || 1)) }) : Promise.reject(new Error('تنظیم سرعت IPTV در دسترس نیست')); },
+        status: function () { var p = this.get(); return p && p.getStatus ? p.getStatus() : Promise.reject(new Error('وضعیت پلیر IPTV در دسترس نیست')); },
         release: function () { var p = this.get(); return p ? p.release() : Promise.resolve(); },
         setVisible: function (visible) {
             var p = this.get();
