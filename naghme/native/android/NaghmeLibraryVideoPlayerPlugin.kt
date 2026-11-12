@@ -110,6 +110,10 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             setBackgroundColor(Color.BLACK)
             player = this@NaghmeLibraryVideoPlayerPlugin.player
         }
+        // دکمهٔ تنظیمات پیش‌فرض Media3 حذف می‌شود؛ ابزارها از منوی سه‌نقطهٔ خود نغمه باز می‌شوند.
+        view?.post {
+            view?.findViewById<View>(androidx.media3.ui.R.id.exo_settings)?.visibility = View.GONE
+        }
         val params = FrameLayout.LayoutParams(1, 1).apply { gravity = Gravity.TOP or Gravity.START }
         ctx.addContentView(view, params)
         view?.visibility = View.GONE
