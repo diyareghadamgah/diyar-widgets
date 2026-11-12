@@ -224,6 +224,7 @@ function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و م�
  if(!iptvOn)return;iptvOn=false;
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvFullscreen(false);$('#tvpage').hidden=true;document.body.classList.remove('tvmode');iptvRelease()}
+window.NaghmeLeaveIPTV=leaveIPTV;
 const ctx={main:[],pop:[]};
 const reidx=()=>{S.map=new Map(S.songs.map(s=>[s.id,s]));if(NaghmePlatform.isNative)for(const s of S.songs)if(s.uri&&!S.files.has(s.id)){const f=NaghmePlatform.fromSong(s);f&&S.files.set(s.id,f)}};   // اندروید: بعد از هر بازگشایی، آهنگ‌ها خودکار به فایل وصل می‌شوند
 const cu=new Map();
