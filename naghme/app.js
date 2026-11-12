@@ -142,7 +142,7 @@ function playIPTV(key){
   window.NaghmeNativeIPTV.play(ch);
  }else attachIPTVPlayer(true);   // بدون render و بدون دست‌زدن به فهرست/اسکرول
 }
-const retryIPTV=()=>{if(IPTV.current)attachIPTVPlayer(true)};
+const retryIPTV=()=>{if(IPTV.current){if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.play(IPTV.current);else attachIPTVPlayer(true)}};
 function toggleIPTVFav(key){
  IPTV.favorites=IPTV.favorites.includes(key)?IPTV.favorites.filter(x=>x!==key):[...IPTV.favorites,key];kvSet('iptvFav',IPTV.favorites);
  if(IPTV.category==='موردعلاقه‌ها'){renderIPTVList(true);return}
