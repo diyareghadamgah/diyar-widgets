@@ -36,6 +36,8 @@ import com.getcapacitor.annotation.CapacitorPlugin
 class NaghmeVideoPlayerPlugin : Plugin() {
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
+    private var lockOverlay: FrameLayout? = null
+    private var isPlayerLocked: Boolean = false
     private var iptvFullscreenButton: Button? = null
     private var iptvOriginalSystemUi: Int? = null
     private var iptvOriginalOrientation: Int? = null
@@ -275,6 +277,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                         gravity = Gravity.TOP or Gravity.LEFT
                     }
                     act.addContentView(playerView, params)
+                    installLockOverlay(playerView!!, act)
                 }
                 playerView?.player = player
                 playerView?.visibility = android.view.View.VISIBLE
@@ -289,6 +292,56 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 call.reject("Play failed: " + e.message)
             }
         }
+    }
+
+    private fun installLockOverlay(target: PlayerView, act: android.app.Activity) {
+        val overlay = FrameLayout(act).apply {
+            setBackgroundColor(Color.TRANSPARENT)
+            isClickable = true
+            isFocusable = true
+            visibility = View.GONE
+        }
+        val unlock = Button(act).apply {
+            text = "🔓 بازکردن قفل"
+            isAllCaps = false
+            setTextColor(Color.WHITE)
+            setBackgroundColor(Color.argb(220, 25, 25, 25))
+            setOnClickListener {
+                isPlayerLocked = false
+                overlay.visibility = View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", false))
+            }
+        }
+        val buttonParams = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            Gravity.TOP or Gravity.CENTER_HORIZONTAL
+        ).apply { topMargin = (18 * act.resources.displayMetrics.density).toInt() }
+        overlay.addView(unlock, buttonParams)
+        target.addView(overlay, FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
+        ))
+        lockOverlay = overlay
+    }
+
+    @PluginMethod
+    fun setLocked(call: PluginCall) {
+        val locked = call.getBoolean("locked") ?: false
+        activity?.runOnUiThread {
+            try {
+                val overlay = lockOverlay
+                if (overlay == null) {
+                    call.reject("player_view_unavailable")
+                    return@runOnUiThread
+                }
+                isPlayerLocked = locked
+                overlay.visibility = if (locked) View.VISIBLE else View.GONE
+                notifyListeners("lockChanged", JSObject().put("locked", locked))
+                call.resolve(JSObject().put("locked", locked))
+            } catch (e: Exception) {
+                call.reject("set_locked_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
     }
 
     @PluginMethod
@@ -493,6 +546,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             try {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }
                 playerView = null
+                lockOverlay = null
+                isPlayerLocked = false
                 player?.release()
                 player = null
                 call.resolve()
