@@ -104,3 +104,7 @@ body.native-player-active #iptvResults {
 .video-library-head{flex:none;margin:6px 0!important;gap:8px}
 .video-list{flex:1;min-height:0;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .video-note{display:none}
+
+/* ابزارهای ویدئو: دکمهٔ سه‌نقطهٔ واقعی و قابل لمس */
+.video-now .video-more{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:none!important;width:44px!important;min-width:44px!important;height:42px!important;min-height:42px!important;padding:0!important;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;font-size:28px!important;font-weight:700!important;line-height:1!important;letter-spacing:2px!important;z-index:5!important;position:relative!important}
+.video-now .video-gear{display:none!important}
