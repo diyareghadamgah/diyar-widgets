@@ -487,3 +487,34 @@ body.mode-video .video-note{display:none!important}
 @media(max-height:700px){
  #naghmePlayerSettings>section{height:52dvh!important;max-height:52dvh!important}
 }
+
+
+/* Unified player fullscreen behavior: rotation-driven TV and video */
+body.tv-fullscreen #modeBar,
+body.tv-fullscreen .tv-topbar,
+body.tv-fullscreen .tvbrowse,
+body.tv-fullscreen .tvnow,
+body.tv-fullscreen #iptvStatus,
+body.tv-fullscreen #mini{display:none!important}
+body.tv-fullscreen #tvpage{padding:0!important;overflow:visible!important}
+body.tv-fullscreen .tvplayer{display:block!important;position:static!important;overflow:visible!important}
+body.tv-fullscreen .tvbox,
+body.tv-fullscreen .tvbox.tvfull{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;margin:0!important;border-radius:0!important}
+body.tv-fullscreen .tvbox video,
+body.tv-fullscreen .tvbox video[hidden]{width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+body.tv-fullscreen .tvfsx{z-index:10002!important}
+.video-fullscreen-exit{display:none;position:absolute;top:max(10px,env(safe-area-inset-top));left:10px;z-index:10003;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;background:#000b;color:#fff;font-size:22px;border:1px solid #ffffff55}
+body.video-fullscreen #modeBar,
+body.video-fullscreen .video-top,
+body.video-fullscreen .video-now,
+body.video-fullscreen .video-tools,
+body.video-fullscreen .video-library-head,
+body.video-fullscreen .video-list,
+body.video-fullscreen .video-note,
+body.video-fullscreen #mini{display:none!important}
+body.video-fullscreen #videoPage,
+body.video-fullscreen #videoContent,
+body.video-fullscreen .video-page{position:static!important;display:block!important;width:100%!important;height:100dvh!important;min-height:0!important;max-height:100dvh!important;overflow:visible!important;padding:0!important;margin:0!important}
+body.video-fullscreen .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
+body.video-fullscreen .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+body.video-fullscreen .video-fullscreen-exit{display:block!important}
