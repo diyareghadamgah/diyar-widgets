@@ -23,7 +23,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
 const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u';
-const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',countryQuery:'',countrySig:'',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
@@ -271,10 +271,26 @@ window.addEventListener('orientationchange',()=>setTimeout(syncIPTVOrientation,2
 window.addEventListener('resize',syncIPTVOrientation,{passive:true});
 function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
-const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
+const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
+function iptvCountryLabels(c){
+ const raw=String(c.country||'').split(/[;,|]+/).map(x=>x.trim()).filter(Boolean);
+ if(!raw.length){const m=String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i);if(m)raw.push(m[1])}
+ const aliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه'};
+ return [...new Set(raw.map(v=>{const code=v.toUpperCase();if(aliases[code])return aliases[code];if(/^[A-Z]{2}$/.test(code)){const n=iptvCountryName(code).fa;return n||v}return v}).filter(Boolean))];
+}
+function iptvCountryEntries(){const counts=new Map();IPTV.channels.forEach(c=>iptvCountryLabels(c).forEach(name=>counts.set(name,(counts.get(name)||0)+1)));return [...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fa'))}
+function renderIPTVCountries(){
+ const entries=iptvCountryEntries(),total=IPTV.channels.length,summary=$('#iptvCountryTotals');
+ if(summary)summary.textContent=fa(entries.length)+' کشور • '+fa(total)+' شبکه';
+ const chosen=IPTV.country;if(chosen!=='همه'&&!entries.some(x=>x[0]===chosen))IPTV.country='همه';
+ const q=iptvNorm(IPTV.countryQuery).trim(),visible=entries.filter(([name])=>!q||iptvNorm(name).includes(q)||(name==='آمریکا'&&q.includes('امریکا')));
+ const box=$('#iptvCountries');
+ if(box)box.innerHTML=[`<button data-a="iptvcountry" data-v="همه" class="${IPTV.country==='همه'?'on':''}">همه کشورها <small>${fa(total)}</small></button>`,...visible.map(([name,count])=>`<button data-a="iptvcountry" data-v="${esc(name)}" class="${IPTV.country===name?'on':''}">${esc(name)} <small>${fa(count)}</small></button>`)].join('');
+ const count=$('#iptvCountrySelectionCount');if(count){const n=IPTV.country==='همه'?total:(entries.find(x=>x[0]===IPTV.country)?.[1]||0);count.textContent=IPTV.country==='همه'?'نمایش همه کشورها':IPTV.country+' • '+fa(n)+' شبکه'}
+}
 function iptvFiltered(){
- const q=iptvNorm(IPTV.query).trim(),cat=IPTV.category,fav=cat==='موردعلاقه‌ها',all=cat==='همه'||fav;
- return IPTV.channels.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(!q||c.search.includes(q)))}
+ const q=iptvNorm(IPTV.query).trim(),cat=IPTV.category,fav=cat==='موردعلاقه‌ها',all=cat==='همه'||fav,country=IPTV.country;
+ return IPTV.channels.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))}
 function iptvRowHtml(c){
  return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button>${String(c.key||'').startsWith('direct|')?`<button class="ib" data-a="iptvremove" data-v="${esc(c.key)}" aria-label="حذف شبکه" title="حذف شبکه">✕</button>`:''}</div>`}
 function iptvMore(){
@@ -302,6 +318,8 @@ function renderIPTVChips(){
  $('#tvChips').innerHTML=['همه','موردعلاقه‌ها',...groups].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('')}
 function setIPTVCat(v){
  IPTV.category=v;document.querySelectorAll('#tvChips button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));renderIPTVList(false)}
+function setIPTVCountry(v){IPTV.country=v;renderIPTVCountries();renderIPTVList(false)}
+function setIPTVCountryQuery(v){IPTV.countryQuery=v;renderIPTVCountries()}
 function setIPTVQuery(val){
  IPTV.query=val;const inp=$('#iptvSearch');if(inp&&inp.value!==val)inp.value=val;
  clearTimeout(iptvQT);iptvQT=setTimeout(()=>renderIPTVList(false),90)}
@@ -314,13 +332,14 @@ function updateIPTVNow(){
 function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ فهرست فقط وقتی داده/فیلتر عوض شده بازسازی می‌شود
  const m=$('#tvMsg'),txt=IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':(IPTV.error||'');
  if(m.textContent!==txt)m.textContent=txt;m.hidden=!txt;m.classList.toggle('tverror',!!IPTV.error&&!IPTV.loading);
- const cs=IPTV.channels.length+'|'+IPTV.loadedAt;if(cs!==IPTV.chipSig){IPTV.chipSig=cs;renderIPTVChips()}
+ const cs=IPTV.channels.length+'|'+IPTV.loadedAt;if(cs!==IPTV.chipSig){IPTV.chipSig=cs;renderIPTVChips();IPTV.countrySig=cs+'|'+IPTV.countryQuery;renderIPTVCountries()}else if(IPTV.countrySig!==cs+'|'+IPTV.countryQuery){IPTV.countrySig=cs+'|'+IPTV.countryQuery;renderIPTVCountries()}
  if(iptvSig()!==IPTV.sig)renderIPTVList(false);
  updateIPTVNow()}
 function buildIPTV(){
  syncIPTVFileButton();
  if(iptvBuilt)return;iptvBuilt=true;
- const box=$('#iptvResults'),inp=$('#iptvSearch');
+ const box=$('#iptvResults'),inp=$('#iptvSearch'),countryInp=$('#iptvCountrySearch');
+ if(countryInp)countryInp.addEventListener('input',()=>setIPTVCountryQuery(countryInp.value));
  box.addEventListener('scroll',()=>{if(box.scrollTop+box.clientHeight>=box.scrollHeight-600)iptvMore()},{passive:true});
  inp.addEventListener('input',()=>setIPTVQuery(inp.value));
  inp.addEventListener('keydown',e=>{if(e.key==='Enter')inp.blur()});
@@ -643,7 +662,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
- iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVDirectChannel(d.v)},iptvcat(){setIPTVCat(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){manageIPTVPlaylist()},
+ iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVDirectChannel(d.v)},iptvcat(){setIPTVCat(d.v)},iptvcountry(){setIPTVCountry(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){manageIPTVPlaylist()},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
