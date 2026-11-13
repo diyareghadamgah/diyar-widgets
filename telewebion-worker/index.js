@@ -112,8 +112,13 @@ async function proxySegment(request, url) {
   } catch {
     return new Response("invalid segment\n", { status: 400 });
   }
+  // Telewebion may append query parameters to segment URLs and may use
+  // fragmented MP4/audio assets as well as MPEG-TS. Validate the pathname
+  // (not the full URL) and keep the host allow-list as the SSRF boundary.
+  const assetPath = target.pathname.toLowerCase();
+  const allowedAsset = /\\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
   if (target.protocol !== "https:" || !TELEWEBION_HOST.test(target.hostname)
-      || !target.pathname.endsWith(".ts")) {
+      || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
   }
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
