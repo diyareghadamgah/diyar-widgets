@@ -93,7 +93,15 @@ async function loadIPTV(force=false){
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
     const result=await window.NaghmeVideoPlayer.fetchText(url);return result.text;
    }
-   const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.text();
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+   try{
+    const response=await fetch(url,{cache:'no-store',signal:controller.signal});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    return await response.text();
+   }catch(e){
+    if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۱۵ ثانیه تمام شد؛ اتصال به منبع فهرست برقرار نشد.');
+    throw e;
+   }finally{clearTimeout(timer)}
   };
   const urls=[IPTV.url];
   if(IPTV.url==='https://iptv-org.github.io/iptv/index.m3u')urls.push(IPTV.iranUrl);
