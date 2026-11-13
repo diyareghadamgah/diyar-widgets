@@ -183,28 +183,56 @@ export default {
     if (cached) return cached;
 
     let upstream;
+    let body;
     try {
       upstream = await fetch(source, {
         headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
-        // Four seconds rather than two. A player now returns every nine seconds or so, and
-        // two segments of staleness against a 150 second window is nothing, so this halves
-        // the origin fetches for a channel with several viewers.
         cf: { cacheTtl: 4, cacheEverything: true },
       });
-    } catch {
-      return new Response("upstream unreachable\n", { status: 502 });
-    }
-    if (!upstream.ok) {
-      return new Response(`upstream ${upstream.status}\n`, { status: 502 });
+      if (!upstream.ok) return new Response(`upstream ${upstream.status}\\n`, { status: 502 });
+      body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+
+      // Resolve a master playlist to its media playlist before rewriting segments.
+      if (body.includes("#EXT-X-STREAM-INF")) {
+        const variants = [];
+        const lines = body.split(/\\r?\\n/);
+        for (let i = 0; i < lines.length; i++) {
+          if (!lines[i].startsWith("#EXT-X-STREAM-INF:")) continue;
+          const resolution = lines[i].match(/RESOLUTION=\\d+x(\\d+)/i);
+          const height = resolution ? Number(resolution[1]) : 0;
+          for (let j = i + 1; j < lines.length; j++) {
+            const candidate = lines[j].trim();
+            if (candidate && !candidate.startsWith("#")) {
+              variants.push({ height, url: new URL(candidate, upstream.url).href });
+              break;
+            }
+          }
+        }
+        if (variants.length) {
+          const requestedHeight = Number(quality.slice(0, -1));
+          variants.sort((x, y) => x.height - y.height);
+          const selected = variants.filter(v => !v.height || v.height <= requestedHeight).at(-1) || variants[0];
+          upstream = await fetch(selected.url, {
+            headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
+            cf: { cacheTtl: 4, cacheEverything: true },
+          });
+          if (!upstream.ok) return new Response(`rendition upstream ${upstream.status}\\n`, { status: 502 });
+          body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+        }
+      }
+    } catch (error) {
+      console.error("Telewebion manifest fetch failed", error);
+      return new Response("upstream unreachable\\n", { status: 502 });
     }
 
-    // fetch() follows redirects, and upstream.url is where the manifest actually came
-    // from. Relative segment paths must resolve against that, not against `source`:
-    // ncdn only serves manifests and refuses segments, which is the other reason strict
-    // players fail on the original URL.
-    const body = await upstream.text();
     const playlist = rewrite(body, upstream.url, proxyOrigin);
-    if (!playlist) return new Response("unexpected upstream format\n", { status: 502 });
+    if (!playlist) {
+      const preview = body.slice(0, 240).replace(/[\\r\\n\\t]+/g, " ");
+      return new Response(
+        `unexpected upstream format\\ncontent-type=${upstream.headers.get("content-type") || "unknown"}\\nurl=${upstream.url}\\npreview=${preview}\\n`,
+        { status: 502, headers: { "Content-Type": "text/plain; charset=utf-8", ...CORS_HEADERS } },
+      );
+    }
 
     const response = new Response(playlist, {
       headers: {
