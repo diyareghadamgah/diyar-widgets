@@ -25,7 +25,7 @@ const IPTV_PAGE=150;
 const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u';
 const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
-let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
+let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
 function mergeIPTVChannels(remote){return [...new Map([...(remote||[]),...allImportedIPTV()].map(c=>[c.key,c])).values()]}
@@ -86,6 +86,7 @@ function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=!isIPTVNat
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
+ const generation=++iptvLoadGeneration;
  IPTV.loading=true;IPTV.error='';iptvRefresh();
  try{
   await restoreImportedIPTV();
@@ -109,15 +110,17 @@ async function loadIPTV(force=false){
   const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
+  if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
+  if(generation!==iptvLoadGeneration)return;
   try{await restoreImportedIPTV()}catch{}
   IPTV.channels=mergeIPTVChannels(IPTV.channels);
   IPTV.error=!IPTV.url?'آدرس فهرست تنظیم نشده است؛ از «مدیریت فهرست» آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.':'دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
  }
- finally{IPTV.loading=false;iptvRefresh()}
+ finally{if(generation===iptvLoadGeneration){IPTV.loading=false;iptvRefresh()}}
 }
 /* ----- پخش: یک عنصر <video> ثابت و حداکثر یک نمونه‌ی HLS ----- */
 function setIPTVStatus(m){const s=$('#iptvStatus');if(s)s.textContent=m||''}
@@ -128,10 +131,11 @@ function iptvRelease(){   // آزادسازی کامل منابع پخش (خرو
  if(v){v.onerror=v.onplaying=v.onwaiting=null;try{v.pause()}catch{}v.removeAttribute('src');try{v.load()}catch{}}
  iptvAttached='';setIPTVStatus('')}
 async function setIPTVPlaylistUrl(raw){
+ await restoreImportedIPTV();
  const value=String(raw==null?'':raw).trim();
  if(value){try{const parsed=new URL(value);if(!/^https?:$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}}
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
- iptvRelease();IPTV.url=value;await kvSet('iptvUrl',value);
+ iptvLoadGeneration++;IPTV.loading=false;iptvRelease();IPTV.url=value;await kvSet('iptvUrl',value);
  IPTV.channels=mergeIPTVChannels([]);IPTV.current=null;IPTV.active='';IPTV.playError='';IPTV.loadedAt=0;
  IPTV.error=value?'':'آدرس اینترنتی فهرست حذف شده است؛ می‌توانید آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.';
  IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';renderIPTV();
