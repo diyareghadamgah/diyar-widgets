@@ -242,3 +242,42 @@ body.mode-tv #mini button{width:36px;height:36px;min-width:36px;min-height:36px;
 @media(orientation:landscape) and (max-height:600px){
  body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9));max-height:25dvh}
 }
+
+
+/* IPTV follow-up: compact native toolbar + reliable narrow-screen list sizing */
+body.mode-tv #tvpage{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
+body.mode-tv main{display:flex!important;flex-direction:column!important;min-height:0!important}
+body.mode-tv .tvplayer{display:flex!important;flex:0 0 auto!important;flex-direction:column!important;min-height:0!important;overflow:visible!important}
+body.mode-tv .tvbox{flex:0 0 auto!important;width:min(100%,calc(35dvh * 16 / 9))!important;aspect-ratio:16/9!important;height:auto!important;max-height:35dvh!important;margin-inline:auto!important}
+body.mode-tv .tvnow{order:3!important;flex:0 0 40px!important;min-height:40px!important;height:40px!important;padding:2px 0!important}
+body.mode-tv #naghmeIptvTools{display:flex!important;order:2!important;flex:0 0 38px!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;gap:6px!important;width:100%!important;max-width:100%!important;min-width:0!important;height:38px!important;min-height:38px!important;margin:0!important;padding:1px 0!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;scrollbar-width:none!important;direction:rtl!important}
+body.mode-tv #naghmeIptvTools>*{display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;white-space:nowrap!important;max-width:none!important}
+body.mode-tv #naghmeIptvTools button{height:32px!important;min-height:32px!important;padding:0 8px!important;font-size:11px!important;line-height:1!important;border-radius:8px!important}
+body.mode-tv #naghmeIptvTools label{height:32px!important;min-height:32px!important;gap:3px!important;font-size:11px!important}
+body.mode-tv #naghmeIptvTools select{width:auto!important;max-width:64px!important;height:30px!important;min-height:30px!important;padding:0 4px!important;font-size:11px!important}
+body.mode-tv .tvbrowse{display:flex!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important}
+body.mode-tv .tvhead{flex-wrap:nowrap!important;flex:0 0 40px!important;min-height:40px!important;height:40px!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;gap:6px!important}
+body.mode-tv .tvhead .d{display:none!important}
+body.mode-tv .tvhead .btn-sm{flex:1 1 0!important;min-width:0!important;justify-content:center!important;padding:0 5px!important;font-size:11px!important}
+body.mode-tv .tvhead #iptvFileBtn[hidden]{display:none!important}
+body.mode-tv .iptv-search-wrap{flex:0 0 40px!important;min-height:40px!important;height:40px!important;margin:0!important}
+body.mode-tv .tvbrowse .chips{flex:0 0 40px!important;min-height:40px!important;height:40px!important;flex-wrap:nowrap!important}
+body.mode-tv .tvbrowse .chips button{height:32px!important;min-height:32px!important;padding:0 10px!important;flex:0 0 auto!important}
+body.mode-tv #iptvResults{display:flex!important;flex:1 1 0!important;flex-direction:column!important;min-height:0!important;height:auto!important;overflow-y:auto!important;overflow-x:hidden!important;gap:6px!important;padding:2px 0 80px!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
+body.mode-tv #iptvResults .tvrow{flex:0 0 64px!important;height:64px!important;min-height:64px!important}
+body.mode-tv #iptvResults .tvempty{flex:0 0 auto!important}
+body.mode-tv #mini[hidden]{display:none!important}
+body.mode-tv #mini:not([hidden]){display:flex!important;position:fixed!important;inset:auto 0 0 0!important;z-index:100!important;height:calc(64px + env(safe-area-inset-bottom))!important;min-height:64px!important;padding:6px 10px calc(6px + env(safe-area-inset-bottom))!important}
+@media(max-width:360px){
+ body.mode-tv .tvbox{width:min(100%,calc(32dvh * 16 / 9))!important;max-height:32dvh!important}
+ body.mode-tv #naghmeIptvTools{gap:4px!important}
+ body.mode-tv #naghmeIptvTools button{padding:0 6px!important;font-size:10px!important}
+ body.mode-tv .tvhead .btn-sm{font-size:10px!important}
+}
+@media(max-height:600px){body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9))!important;max-height:25dvh!important}}
+@media(orientation:landscape){
+ body.mode-tv #tvpage{display:grid!important;grid-template-columns:minmax(0,44%) minmax(0,56%)!important;grid-template-rows:48px minmax(0,1fr)!important;gap:6px 10px!important;direction:ltr!important}
+ body.mode-tv .tv-topbar{grid-column:1/-1!important;grid-row:1!important}
+ body.mode-tv .tvplayer{grid-column:1!important;grid-row:2!important;width:100%!important}
+ body.mode-tv .tvbrowse{grid-column:2!important;grid-row:2!important}
+}
