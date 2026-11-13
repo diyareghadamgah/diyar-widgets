@@ -276,9 +276,9 @@ async function onIPTVFileSelected(e){
    const map=new Map(IPTV_IMPORTED.channels.map(c=>[c.key,c]));
    let added=0;for(const c of parsed){if(!map.has(c.key))added++;map.set(c.key,{...c,importedFile:name})}
    IPTV_IMPORTED.channels=[...map.values()];
-   await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);
+   await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.channels,'iptvImportedChannels'));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
-   IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';
+   IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
    renderIPTV();toast(fa(added)+' کانال از فایل «'+name+'» اضافه شد');
   }else{
    const key='local-m3u8|'+name+'|'+file.size+'|'+(file.lastModified||0);
@@ -289,9 +289,9 @@ async function onIPTVFileSelected(e){
    const record={key,name,blob,size:file.size,lastModified:file.lastModified||0};
    const channel=iptvDecorate({name:name.replace(/\.m3u8$/i,'')||'فایل M3U8',group:'فایل‌های محلی',url,key,localBlob:true});
    IPTV_IMPORTED.localFiles=[...old,{...record,url,channel}];
-   await kvSet('iptvLocalM3U8',IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item));
+   await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item),'iptvLocalM3U8'));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
-   IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';
+   IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
    renderIPTV();toast('فایل M3U8 به‌عنوان یک کانال اضافه شد');
   }
  }catch(err){const msg=err&&err.message?err.message:'خطای نامشخص';toast('بارگذاری ناموفق بود: '+msg);setIPTVStatus('بارگذاری فایل ناموفق بود: '+msg)}
