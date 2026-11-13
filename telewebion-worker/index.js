@@ -116,7 +116,7 @@ async function proxySegment(request, url) {
   // fragmented MP4/audio assets as well as MPEG-TS. Validate the pathname
   // (not the full URL) and keep the host allow-list as the SSRF boundary.
   const assetPath = target.pathname.toLowerCase();
-  const allowedAsset = /\\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
+  const allowedAsset = /\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
   if (target.protocol !== "https:" || !TELEWEBION_HOST.test(target.hostname)
       || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
