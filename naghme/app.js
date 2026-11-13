@@ -240,7 +240,7 @@ function renderIPTVChips(){
    .map(g=>String(g==null?'':g).trim()).filter(g=>!invalidGroup(g));
   (groups.length?groups:['سایر']).forEach(g=>cnt.set(g,(cnt.get(g)||0)+1));
  });
- const groups=[...cnt.entries()].sort((a,b)=>b[1]-a[1]).slice(0,120).map(x=>x[0]);
+ const groups=[...cnt.entries()].filter(([g])=>!invalidGroup(g)).sort((a,b)=>b[1]-a[1]).slice(0,120).map(x=>x[0]);
  if(IPTV.category!=='همه'&&IPTV.category!=='موردعلاقه‌ها'&&!cnt.has(IPTV.category))IPTV.category='همه';
  $('#tvChips').innerHTML=['همه','موردعلاقه‌ها',...groups].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('')}
 function setIPTVCat(v){
