@@ -510,6 +510,24 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         } ?: call.reject("Activity not available")
     }
 
+    /** محدودکردن وضوح ویدئو برای اینترنت ضعیف؛ صفر یعنی انتخاب تطبیقی خودکار. */
+    @PluginMethod
+    fun setVideoQuality(call: PluginCall) {
+        val maxHeight = (call.getInt("maxHeight") ?: 0).coerceIn(0, 2160)
+        activity?.runOnUiThread {
+            try {
+                val p = player ?: throw IllegalStateException("player_not_ready")
+                val builder = p.trackSelectionParameters.buildUpon()
+                if (maxHeight <= 0) builder.setMaxVideoSize(Int.MAX_VALUE, Int.MAX_VALUE)
+                else builder.setMaxVideoSize(Int.MAX_VALUE, maxHeight)
+                p.trackSelectionParameters = builder.build()
+                call.resolve(JSObject().put("maxHeight", maxHeight))
+            } catch (e: Exception) {
+                call.reject("video_quality_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
     @PluginMethod
     fun setSpeed(call: PluginCall) {
         val speed = (call.getFloat("speed") ?: 1f).coerceIn(0.25f, 3f)
