@@ -22,7 +22,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    render() در این صفحه innerHTML را بازنویسی نمی‌کند؛ فقط بخش‌های تغییرکرده (فهرست/دسته‌ها/نام شبکه) به‌روز می‌شوند.
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
-const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u',iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
