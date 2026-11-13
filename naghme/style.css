@@ -163,3 +163,8 @@ body.mode-tv #tvpage{padding-top:8px}
  #modeHome{gap:18px;padding:18px}
  body.mode-music{grid-template-columns:1fr}
 }
+
+/* Native IPTV: local playlist import button */
+.tvhead{flex-wrap:wrap}
+.tvhead #iptvFileBtn{max-width:100%;min-height:36px;padding:5px 9px;border:1px solid var(--ac);background:var(--s1);color:var(--tx);font-size:11px;line-height:1.5;white-space:nowrap}
+.tvhead #iptvFileBtn[hidden]{display:none!important}
