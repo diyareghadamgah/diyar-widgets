@@ -222,7 +222,7 @@ function updateIPTVQualityOptions(levels){
  const sel=$('#iptvQuality');if(!sel)return;const current=sel.value;const heights=[...new Set((levels||[]).map(x=>Number(x.height)||0).filter(x=>x>0))].sort((a,b)=>a-b);
  if(!heights.length)return;sel.innerHTML='<option value="0">خودکار</option>'+heights.map(h=>'<option value="'+h+'">'+h+'p</option>').join('');if([...sel.options].some(o=>o.value===current))sel.value=current;else sel.value='0';
 }
-function applyIPTVWebQuality(hls){const sel=$('#iptvQuality');if(!hls||!sel)return;const max=Number(sel.value)||0;if(!max){hls.currentLevel=-1;return}let idx=-1;(hls.levels||[]).forEach((l,i)=>{if(Number(l.height)<=max)idx=i});hls.currentLevel=idx>=0?idx:-1;}
+function applyIPTVWebQuality(hls){const sel=$('#iptvQuality');if(!hls||!sel)return;const max=Number(sel.value)||0;if(!max){hls.currentLevel=-1;return}let idx=0;(hls.levels||[]).forEach((l,i)=>{if(Number(l.height)<=max)idx=i});hls.currentLevel=idx;}
 function playIPTV(key){
  const ch=IPTV.channels.find(x=>x.key===key);if(!ch)return;
  if(IPTV.current&&IPTV.current.key===key&&iptvAttached===key&&!IPTV.playError)return;   // کلیک دوباره روی شبکه‌ی در حال پخش، پخش را ریست نمی‌کند
