@@ -115,7 +115,7 @@ async function loadIPTV(force=false){
  }catch(e){
   try{await restoreImportedIPTV()}catch{}
   IPTV.channels=mergeIPTVChannels(IPTV.channels);
-  IPTV.error='دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
+  IPTV.error=!IPTV.url?'آدرس فهرست تنظیم نشده است؛ از «مدیریت فهرست» آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.':'دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
  }
  finally{IPTV.loading=false;iptvRefresh()}
 }
