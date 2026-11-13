@@ -242,3 +242,248 @@ body.mode-tv #mini button{width:36px;height:36px;min-width:36px;min-height:36px;
 @media(orientation:landscape) and (max-height:600px){
  body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9));max-height:25dvh}
 }
+
+
+/* IPTV follow-up: compact native toolbar + reliable narrow-screen list sizing */
+body.mode-tv #tvpage{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
+body.mode-tv main{display:flex!important;flex-direction:column!important;min-height:0!important}
+body.mode-tv .tvplayer{display:flex!important;flex:0 0 auto!important;flex-direction:column!important;min-height:0!important;overflow:visible!important}
+body.mode-tv .tvbox{flex:0 0 auto!important;width:min(100%,calc(35dvh * 16 / 9))!important;aspect-ratio:16/9!important;height:auto!important;max-height:35dvh!important;margin-inline:auto!important}
+body.mode-tv .tvnow{order:3!important;flex:0 0 40px!important;min-height:40px!important;height:40px!important;padding:2px 0!important}
+body.mode-tv #naghmeIptvTools{display:flex!important;order:2!important;flex:0 0 38px!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;gap:6px!important;width:100%!important;max-width:100%!important;min-width:0!important;height:38px!important;min-height:38px!important;margin:0!important;padding:1px 0!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;scrollbar-width:none!important;direction:rtl!important}
+body.mode-tv #naghmeIptvTools>*{display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;white-space:nowrap!important;max-width:none!important}
+body.mode-tv #naghmeIptvTools button{height:32px!important;min-height:32px!important;padding:0 8px!important;font-size:11px!important;line-height:1!important;border-radius:8px!important}
+body.mode-tv #naghmeIptvTools label{height:32px!important;min-height:32px!important;gap:3px!important;font-size:11px!important}
+body.mode-tv #naghmeIptvTools select{width:auto!important;max-width:64px!important;height:30px!important;min-height:30px!important;padding:0 4px!important;font-size:11px!important}
+body.mode-tv .tvbrowse{display:flex!important;flex:1 1 0!important;min-height:0!important;overflow:hidden!important}
+body.mode-tv .tvhead{flex-wrap:nowrap!important;flex:0 0 40px!important;min-height:40px!important;height:40px!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;gap:6px!important}
+body.mode-tv .tvhead .d{display:none!important}
+body.mode-tv .tvhead .btn-sm{flex:1 1 0!important;min-width:0!important;justify-content:center!important;padding:0 5px!important;font-size:11px!important}
+body.mode-tv .tvhead #iptvFileBtn[hidden]{display:none!important}
+body.mode-tv .iptv-search-wrap{flex:0 0 40px!important;min-height:40px!important;height:40px!important;margin:0!important}
+body.mode-tv .tvbrowse .chips{flex:0 0 40px!important;min-height:40px!important;height:40px!important;flex-wrap:nowrap!important}
+body.mode-tv .tvbrowse .chips button{height:32px!important;min-height:32px!important;padding:0 10px!important;flex:0 0 auto!important}
+body.mode-tv #iptvResults{display:flex!important;flex:1 1 0!important;flex-direction:column!important;min-height:0!important;height:auto!important;overflow-y:auto!important;overflow-x:hidden!important;gap:6px!important;padding:2px 0 80px!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
+body.mode-tv #iptvResults .tvrow{flex:0 0 64px!important;height:64px!important;min-height:64px!important}
+body.mode-tv #iptvResults .tvempty{flex:0 0 auto!important}
+body.mode-tv #mini[hidden]{display:none!important}
+body.mode-tv #mini:not([hidden]){display:flex!important;position:fixed!important;inset:auto 0 0 0!important;z-index:100!important;height:calc(64px + env(safe-area-inset-bottom))!important;min-height:64px!important;padding:6px 10px calc(6px + env(safe-area-inset-bottom))!important}
+@media(max-width:360px){
+ body.mode-tv .tvbox{width:min(100%,calc(32dvh * 16 / 9))!important;max-height:32dvh!important}
+ body.mode-tv #naghmeIptvTools{gap:4px!important}
+ body.mode-tv #naghmeIptvTools button{padding:0 6px!important;font-size:10px!important}
+ body.mode-tv .tvhead .btn-sm{font-size:10px!important}
+}
+@media(max-height:600px){body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9))!important;max-height:25dvh!important}}
+@media(orientation:landscape){
+ body.mode-tv #tvpage{display:grid!important;grid-template-columns:minmax(0,44%) minmax(0,56%)!important;grid-template-rows:48px minmax(0,1fr)!important;gap:6px 10px!important;direction:ltr!important}
+ body.mode-tv .tv-topbar{grid-column:1/-1!important;grid-row:1!important}
+ body.mode-tv .tvplayer{grid-column:1!important;grid-row:2!important;width:100%!important}
+ body.mode-tv .tvbrowse{grid-column:2!important;grid-row:2!important}
+}
+
+
+/* Global mode navigation: reachable from music, video and IPTV at all times */
+.mode-switchbar{display:flex;flex:0 0 46px;min-height:46px;height:46px;align-items:center;gap:8px;padding:4px 10px;background:var(--s1);border-bottom:1px solid var(--s2);box-shadow:0 2px 8px #0005;z-index:30;direction:rtl}
+.mode-switchbar[hidden]{display:none!important}
+.mode-switchbar>strong{flex:1;min-width:0;text-align:center;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mode-switchbar .mode-home-btn{height:36px;min-height:36px;padding:0 10px;font-size:12px}
+.mode-switch-actions{display:flex;flex:0 0 auto;gap:5px;align-items:center}
+.mode-switch-actions .btn-sm{width:36px;height:36px;min-width:36px;min-height:36px;padding:0;font-size:17px}
+.mode-switch-actions .btn-sm.active{background:#10b981;color:#fff;border-color:#10b981}
+body.mode-music main,body.mode-video main,body.mode-tv main{display:flex!important;flex-direction:column!important;min-height:0!important;height:100dvh!important;overflow:hidden!important}
+body.mode-music #modeBar,body.mode-video #modeBar,body.mode-tv #modeBar{display:flex!important}
+body.mode-music #modeHome,body.mode-video #modeHome,body.mode-tv #modeHome{display:none!important}
+body.mode-music #view{flex:1 1 auto;min-height:0;overflow:auto}
+body.mode-video #videoPage{display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;overflow:auto!important}
+body.mode-tv #tvpage{display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;max-height:none!important;overflow:hidden!important;padding-top:0!important}
+body.mode-tv .tv-topbar{display:none!important}
+body.mode-tv #tvpage[hidden],body.mode-video #videoPage[hidden]{display:none!important}
+@media(max-width:360px){
+ .mode-switchbar{gap:5px;padding-inline:7px}
+ .mode-switchbar>strong{font-size:12px}
+ .mode-switchbar .mode-home-btn{padding:0 7px;font-size:11px}
+ .mode-switch-actions{gap:3px}
+ .mode-switch-actions .btn-sm{width:32px;height:32px;min-width:32px;min-height:32px}
+}
+
+
+/* --- Video player: clean mobile-first layout (2026-11-13) --- */
+body.mode-video #videoPage{
+ display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;
+ overflow:hidden!important;padding:0!important;
+}
+body.mode-video #videoContent{display:flex!important;flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;width:100%}
+body.mode-video .video-page{
+ display:flex!important;flex:1 1 auto!important;flex-direction:column!important;
+ width:100%;height:100%!important;min-height:0!important;overflow:hidden!important;
+ gap:0!important;padding:8px 12px 8px!important;
+}
+body.mode-video .video-top{
+ flex:none!important;display:flex!important;align-items:center!important;
+ justify-content:space-between!important;gap:8px!important;flex-wrap:wrap!important;
+ margin:0!important;padding:0 0 6px!important;
+}
+body.mode-video .video-top h2{font-size:17px!important;line-height:1.4!important;margin:0!important}
+body.mode-video .video-top p{display:none!important}
+body.mode-video .video-top .bar{
+ display:flex!important;flex:1 1 100%!important;gap:7px!important;
+ flex-wrap:nowrap!important;margin:0!important;
+}
+body.mode-video .video-top .bar button{
+ flex:1 1 0!important;min-width:0!important;min-height:38px!important;
+ height:38px!important;padding:0 8px!important;border-radius:10px!important;
+ font-size:12px!important;white-space:nowrap!important;
+}
+body.mode-video .video-stage{
+ position:relative!important;flex:none!important;align-self:center!important;
+ width:100%!important;max-width:min(100%,calc(31dvh * 16 / 9))!important;
+ aspect-ratio:16/9!important;height:auto!important;max-height:31dvh!important;
+ margin:5px auto 4px!important;border-radius:12px!important;background:#000!important;
+}
+body.mode-video .video-stage video{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;
+}
+body.mode-video .video-empty{font-size:32px!important;gap:7px!important}
+body.mode-video .video-empty span{font-size:13px!important}
+body.mode-video .video-now{
+ display:flex!important;flex:none!important;align-items:center!important;
+ min-height:42px!important;margin:0!important;padding:4px 2px!important;
+ gap:8px!important;flex-wrap:nowrap!important;border-bottom:1px solid var(--s2)!important;
+}
+body.mode-video .video-now #videoNow{
+ flex:1 1 auto!important;min-width:0!important;font-size:13px!important;
+ overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+body.mode-video .video-now #videoTime{flex:none!important;font-size:11px!important}
+body.mode-video .video-now .video-more{
+ flex:none!important;width:40px!important;min-width:40px!important;
+ height:38px!important;min-height:38px!important;padding:0!important;
+ border-radius:10px!important;font-size:25px!important;
+}
+body.mode-video .video-tools.video-tools-inline{display:none!important}
+body.mode-video .video-library-head{
+ display:flex!important;flex:none!important;align-items:center!important;
+ gap:8px!important;margin:6px 0!important;padding:0!important;
+}
+body.mode-video .video-library-head input{
+ flex:1 1 auto!important;min-width:0!important;width:100%!important;
+ min-height:40px!important;height:40px!important;border-radius:10px!important;
+}
+body.mode-video .video-list{
+ display:grid!important;grid-template-columns:1fr!important;grid-auto-rows:min-content!important;
+ flex:1 1 auto!important;min-height:0!important;max-height:none!important;
+ overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;
+ gap:6px!important;padding:2px 1px 16px!important;
+ -webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;
+}
+body.mode-video .video-item{
+ min-height:62px!important;padding:6px 8px!important;border-radius:11px!important;
+}
+body.mode-video .video-thumb{width:44px!important;height:44px!important;flex:none!important}
+body.mode-video .video-item-main{min-height:48px!important;padding:2px!important}
+body.mode-video .video-item-main b{font-size:13px!important}
+body.mode-video .video-item-main small{font-size:11px!important}
+body.mode-video .video-note{display:none!important}
+
+/* Player tools popup: consistent spacing, readable two-column controls */
+#naghmePlayerSettings{direction:rtl!important}
+#naghmePlayerSettings>section{
+ position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;
+ max-width:520px!important;max-height:none!important;height:auto!important;
+ overflow:visible!important;padding:14px!important;border-radius:16px!important;
+ box-shadow:0 14px 40px #000c!important;
+}
+#naghmePlayerSettings>section>div:first-child{gap:10px!important;margin-bottom:4px!important}
+#naghmePlayerSettings>section>div:first-child h2{font-size:17px!important}
+#naghmePlayerSettings #naghmeVideoToolGrid{
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;
+}
+#naghmePlayerSettings #naghmeVideoToolGrid button{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ min-width:0!important;min-height:42px!important;height:auto!important;
+ padding:8px 7px!important;border:1px solid var(--s2)!important;
+ border-radius:10px!important;background:var(--s2)!important;
+ color:var(--tx)!important;font-size:12px!important;line-height:1.5!important;
+ white-space:normal!important;text-align:center!important;
+}
+#naghmePlayerSettings #naghmeVideoToolGrid label{
+ min-height:42px!important;padding:4px 8px!important;
+ border:1px solid var(--s2)!important;border-radius:10px!important;
+ background:var(--s2)!important;font-size:12px!important;
+}
+#naghmePlayerSettings #naghmeVideoToolGrid select,
+#naghmePlayerSettings>section>label select{
+ min-height:36px!important;padding:5px 8px!important;
+ border-radius:8px!important;background:var(--bg)!important;
+}
+#naghmePlayerSettings>section>div:last-child{gap:8px!important}
+#naghmePlayerSettings>section>div:last-child button{min-height:40px!important;border-radius:10px!important}
+
+@media(max-width:380px){
+ body.mode-video .video-page{padding-inline:8px!important}
+ body.mode-video .video-top .bar{gap:5px!important}
+ body.mode-video .video-top .bar button{font-size:11px!important;padding-inline:5px!important}
+ body.mode-video .video-now #videoTime{font-size:10px!important}
+ #naghmePlayerSettings #naghmeVideoToolGrid{gap:6px!important}
+ #naghmePlayerSettings #naghmeVideoToolGrid button{font-size:11px!important;padding:7px 5px!important}
+}
+@media(orientation:landscape) and (max-height:520px){
+ body.mode-video .video-page{
+  display:grid!important;grid-template-columns:minmax(0,46%) minmax(0,54%)!important;
+  grid-template-rows:auto auto auto minmax(0,1fr)!important;
+  gap:5px 10px!important;align-content:stretch!important;
+ }
+ body.mode-video .video-top{grid-column:1/-1!important;grid-row:1!important}
+ body.mode-video .video-top .bar{flex:0 0 auto!important}
+ body.mode-video .video-stage{
+  grid-column:1!important;grid-row:2!important;width:100%!important;
+  max-width:100%!important;max-height:48dvh!important;margin:0!important;
+ }
+ body.mode-video .video-now{grid-column:1!important;grid-row:3!important}
+ body.mode-video .video-library-head{grid-column:2!important;grid-row:2!important;margin:0!important}
+ body.mode-video .video-list{grid-column:2!important;grid-row:3/5!important}
+}
+
+/* Video tools: compact bottom sheet with a dedicated, reliable scroll region */
+#naghmePlayerSettings{display:flex!important;align-items:flex-end!important;justify-content:center!important;background:rgba(0,0,0,.58)!important;padding:12px 10px calc(10px + env(safe-area-inset-bottom))!important;overflow:hidden!important;box-sizing:border-box!important;touch-action:auto!important}
+#naghmePlayerSettings>section{position:relative!important;inset:auto!important;display:flex!important;flex-direction:column!important;width:min(460px,100%)!important;max-width:460px!important;max-height:78dvh!important;height:auto!important;min-height:0!important;padding:0!important;overflow:hidden!important;border-radius:20px!important}
+#naghmePlayerSettings .naghme-tools-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 10px;border-bottom:1px solid var(--s2);flex:0 0 auto}
+#naghmePlayerSettings .naghme-tools-head h2{margin:0;font-size:16px}
+#naghmePlayerSettings .naghme-tools-head p{margin:4px 0 0;color:var(--mu);font-size:11px}
+#naghmePlayerSettings .naghme-tools-head button{width:34px;height:34px;border-radius:50%;background:var(--s2);color:var(--tx);font-size:18px}
+#naghmePlayerSettings .naghme-tools-scroll{min-height:0;flex:1 1 auto;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px;overscroll-behavior:contain;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important}
+#naghmePlayerSettings .naghme-tools-group{margin:0 0 14px}
+#naghmePlayerSettings .naghme-tools-group h3{font-size:12px;color:var(--mu);font-weight:600;margin:0 0 8px}
+#naghmePlayerSettings #naghmeVideoToolGrid,#naghmePlayerSettings #naghmeVideoExtraGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#naghmePlayerSettings #naghmeVideoToolGrid button,#naghmePlayerSettings #naghmeVideoExtraGrid button{min-width:0;min-height:42px;padding:8px 6px;border:1px solid var(--s2);border-radius:11px;background:var(--s2);color:var(--tx);font-size:12px;line-height:1.35;white-space:normal}
+#naghmePlayerSettings .naghme-tools-speed{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px;padding:8px 10px;border-radius:11px;background:var(--s2);font-size:12px}
+#naghmePlayerSettings select{min-height:34px;padding:4px 9px;border-radius:8px;background:var(--bg);color:var(--tx);border:1px solid var(--s2)}
+#naghmePlayerSettings .naghme-tools-prefs{border:1px solid var(--s2);border-radius:12px;padding:10px;margin:0 0 4px}
+#naghmePlayerSettings .naghme-tools-prefs summary{font-size:12px;font-weight:600;cursor:pointer;padding:2px}
+#naghmePlayerSettings .naghme-tools-prefs>label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12px}
+#naghmePlayerSettings .naghme-tools-checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;font-size:11px}
+#naghmePlayerSettings .naghme-tools-foot{display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--s2);background:var(--s1);flex:0 0 auto}
+#naghmePlayerSettings .naghme-tools-foot button{min-height:40px;border-radius:10px;padding:8px 14px;background:var(--s2);color:var(--tx)}
+#naghmePlayerSettings .naghme-tools-foot button:last-child{flex:1;background:var(--ac,#10b981);color:#07140e;font-weight:700}
+@media(max-width:380px){#naghmePlayerSettings>section{max-height:76dvh!important}#naghmePlayerSettings .naghme-tools-scroll{padding:10px 12px}}
+
+/* Compact video tools sheet: keep the player visible and scroll only the controls */
+#naghmePlayerSettings>section{
+ height:54dvh!important;
+ max-height:54dvh!important;
+ min-height:0!important;
+}
+#naghmePlayerSettings .naghme-tools-scroll{
+ flex:1 1 0!important;
+ min-height:0!important;
+ max-height:none!important;
+ overflow-y:auto!important;
+ overscroll-behavior:contain!important;
+ touch-action:pan-y!important;
+ -webkit-overflow-scrolling:touch!important;
+}
+@media(max-height:700px){
+ #naghmePlayerSettings>section{height:52dvh!important;max-height:52dvh!important}
+}
