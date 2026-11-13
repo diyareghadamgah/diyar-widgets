@@ -141,12 +141,29 @@ async function setIPTVPlaylistUrl(raw){
  IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';renderIPTV();
  if(value)loadIPTV(true);
 }
+async function addIPTVDirectChannel(nameValue='GEM TV',urlValue='https://d2e40kvaojifd6.cloudfront.net/stream/gem_tv/playlist.m3u8'){
+ await restoreImportedIPTV();
+ const name=String(prompt('نام شبکه:',nameValue)||'').trim();
+ if(!name)return;
+ const raw=String(prompt('آدرس مستقیم پخش (M3U8 یا لینک ویدئو):',urlValue)||'').trim();
+ if(!raw)return;
+ let parsed;try{parsed=new URL(raw);if(!/^https?:$/.test(parsed.protocol))throw new Error()}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}
+ const key='direct|'+iptvNorm(name)+'|'+raw;
+ const channel=iptvDecorate({name,group:'شبکه‌های افزوده‌شده',url:raw,key});
+ const map=new Map(IPTV_IMPORTED.channels.map(c=>[c.key,c]));map.set(key,channel);
+ IPTV_IMPORTED.channels=[...map.values()];
+ await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);
+ IPTV.channels=mergeIPTVChannels(IPTV.channels);
+ IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';IPTV.error='';
+ renderIPTV();toast('شبکهٔ «'+name+'» اضافه شد؛ برای پخش آن را از فهرست انتخاب کن.');
+}
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست شبکه‌ها',[
+  ['افزودن شبکه با آدرس مستقیم (مثل GEM TV)',()=>addIPTVDirectChannel()],
   ['افزودن یا تغییر آدرس M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['حذف آدرس فعلی',()=>{if(!IPTV.url)return toast('آدرسی برای حذف وجود ندارد.');if(confirm('آدرس فهرست اینترنتی حذف شود؟ فهرست‌های واردشده از فایل گوشی باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['بازگشت به فهرست پیش‌فرض',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
- ],'آدرس فعلی:\n'+(IPTV.url||'تنظیم نشده')+'\n\nپس از ثبت آدرس جدید، فهرست به‌صورت خودکار دریافت می‌شود. فایل محلی M3U/M3U8 نیز از دکمهٔ بارگذاری فایل قابل افزودن است.')}
+ ],'آدرس فعلی:\n'+(IPTV.url||'تنظیم نشده')+'\n\nمی‌توانی لینک مستقیم یک شبکه را هم جداگانه اضافه کنی. شبکه‌های افزوده‌شده در برنامه ذخیره می‌شوند. فایل محلی M3U/M3U8 نیز از دکمهٔ بارگذاری فایل قابل افزودن است.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
