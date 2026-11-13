@@ -103,6 +103,7 @@
         setLocked: function (locked) { return this.call('setLocked', {locked:!!locked}); },
         status: function () { return this.call('getStatus'); },
         visible: function (visible) { return this.call('setVisible', {visible:visible}); },
+        fullscreen: function (enabled) { return this.call('setFullscreen', {enabled:!!enabled}); },
         bounds: function (element) {
             if (!element) return Promise.resolve();
             // getBoundingClientRect() is in CSS pixels relative to the WebView viewport.

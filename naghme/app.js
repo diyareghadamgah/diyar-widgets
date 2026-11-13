@@ -22,9 +22,10 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    render() در این صفحه innerHTML را بازنویسی نمی‌کند؛ فقط بخش‌های تغییرکرده (فهرست/دسته‌ها/نام شبکه) به‌روز می‌شوند.
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
-const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u';
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
-let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
+let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
 function mergeIPTVChannels(remote){return [...new Map([...(remote||[]),...allImportedIPTV()].map(c=>[c.key,c])).values()]}
@@ -85,6 +86,7 @@ function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=!isIPTVNat
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
+ const generation=++iptvLoadGeneration;
  IPTV.loading=true;IPTV.error='';iptvRefresh();
  try{
   await restoreImportedIPTV();
@@ -103,20 +105,22 @@ async function loadIPTV(force=false){
     throw e;
    }finally{clearTimeout(timer)}
   };
-  const urls=[IPTV.url];
-  if(IPTV.url==='https://iptv-org.github.io/iptv/index.m3u')urls.push(IPTV.iranUrl);
+  const urls=IPTV.url?[IPTV.url]:[];
+  if(IPTV.url===IPTV_DEFAULT_URL)urls.push(IPTV.iranUrl);
   const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
+  if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
+  if(generation!==iptvLoadGeneration)return;
   try{await restoreImportedIPTV()}catch{}
   IPTV.channels=mergeIPTVChannels(IPTV.channels);
-  IPTV.error='دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
+  IPTV.error=!IPTV.url?'آدرس فهرست تنظیم نشده است؛ از «مدیریت فهرست» آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.':'دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
  }
- finally{IPTV.loading=false;iptvRefresh()}
+ finally{if(generation===iptvLoadGeneration){IPTV.loading=false;iptvRefresh()}}
 }
 /* ----- پخش: یک عنصر <video> ثابت و حداکثر یک نمونه‌ی HLS ----- */
 function setIPTVStatus(m){const s=$('#iptvStatus');if(s)s.textContent=m||''}
@@ -126,6 +130,23 @@ function iptvRelease(){   // آزادسازی کامل منابع پخش (خرو
  const v=$('#iptvVideo');
  if(v){v.onerror=v.onplaying=v.onwaiting=null;try{v.pause()}catch{}v.removeAttribute('src');try{v.load()}catch{}}
  iptvAttached='';setIPTVStatus('')}
+async function setIPTVPlaylistUrl(raw){
+ await restoreImportedIPTV();
+ const value=String(raw==null?'':raw).trim();
+ if(value){try{const parsed=new URL(value);if(!/^https?:$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}}
+ if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
+ iptvLoadGeneration++;IPTV.loading=false;iptvRelease();IPTV.url=value;await kvSet('iptvUrl',value);
+ IPTV.channels=mergeIPTVChannels([]);IPTV.current=null;IPTV.active='';IPTV.playError='';IPTV.loadedAt=0;
+ IPTV.error=value?'':'آدرس اینترنتی فهرست حذف شده است؛ می‌توانید آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.';
+ IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';renderIPTV();
+ if(value)loadIPTV(true);
+}
+function manageIPTVPlaylist(){
+ sheet('مدیریت فهرست شبکه‌ها',[
+  ['افزودن یا تغییر آدرس M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
+  ['حذف آدرس فعلی',()=>{if(!IPTV.url)return toast('آدرسی برای حذف وجود ندارد.');if(confirm('آدرس فهرست اینترنتی حذف شود؟ فهرست‌های واردشده از فایل گوشی باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
+  ['بازگشت به فهرست پیش‌فرض',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
+ ],'آدرس فعلی:\n'+(IPTV.url||'تنظیم نشده')+'\n\nپس از ثبت آدرس جدید، فهرست به‌صورت خودکار دریافت می‌شود. فایل محلی M3U/M3U8 نیز از دکمهٔ بارگذاری فایل قابل افزودن است.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
@@ -193,7 +214,7 @@ function playIPTV(key){
  // فایل M3U8 محلی با blob: در WebView پخش می‌شود؛ آدرس‌های شبکه در Android به پلیر بومی می‌روند.
  const native=!!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!ch.localBlob);
  if(native){iptvRelease();window.NaghmeNativeIPTV.play(ch)}
- else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true)}   // بدون render و بدون دست‌زدن به فهرست/اسکرول
+ else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true);if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches)iptvFullscreen(true)}   // بدون render و بدون دست‌زدن به فهرست/اسکرول
 }
 const retryIPTV=()=>{if(IPTV.current){if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!IPTV.current.localBlob){iptvRelease();window.NaghmeNativeIPTV.play(IPTV.current)}else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true)}}};
 function toggleIPTVFav(key){
@@ -209,13 +230,13 @@ function iptvFullscreen(on){
  if(!b)return;
  if(on===undefined)on=!(fs||b.classList.contains('tvfull'));
  if(!on){
-  b.classList.remove('tvfull');$('#tvfsx').hidden=true;
+  b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true;
   if(native)window.NaghmeNativeIPTV.fullscreen(false);
   if(fs){try{(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch{}}
   if(native)setTimeout(()=>window.NaghmeNativeIPTV.syncBounds(),80);
   return;
  }
- b.classList.add('tvfull');
+ b.classList.add('tvfull');document.body.classList.add('tv-fullscreen');
  $('#tvfsx').hidden=native;
  if(native){
   window.NaghmeNativeIPTV.fullscreen(true).then(()=>window.NaghmeNativeIPTV.syncBounds());
@@ -225,7 +246,16 @@ function iptvFullscreen(on){
  }
 }
 window.NaghmeIPTVFullscreen=iptvFullscreen;
-function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');$('#tvfsx').hidden=true}}}
+let iptvOrientationLandscape=null;
+function syncIPTVOrientation(){
+ if(!iptvOn||!IPTV.current||isIPTVNative())return;
+ const landscape=!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.innerWidth>window.innerHeight);
+ if(iptvOrientationLandscape===landscape)return;
+ iptvOrientationLandscape=landscape;iptvFullscreen(landscape);
+}
+window.addEventListener('orientationchange',()=>setTimeout(syncIPTVOrientation,250),{passive:true});
+window.addEventListener('resize',syncIPTVOrientation,{passive:true});
+function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
 const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
 function iptvFiltered(){
@@ -328,12 +358,12 @@ function enterIPTV(){
   const box=$('#iptvResults'),on=box.querySelector('.tvrow.on');if(on)box.scrollTop=Math.max(0,on.offsetTop-box.clientHeight/2);
   if(IPTV.current){
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!IPTV.current.localBlob)window.NaghmeNativeIPTV.play(IPTV.current);
-   else attachIPTVPlayer(false);
+   else{attachIPTVPlayer(false);if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches)iptvFullscreen(true)}
   }
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
 function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
- if(!iptvOn)return;iptvOn=false;
+ if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvFullscreen(false);$('#tvpage').hidden=true;document.body.classList.remove('tvmode');iptvRelease()}
 window.NaghmeLeaveIPTV=leaveIPTV;
@@ -599,7 +629,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
- iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvcat(){setIPTVCat(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){const u=prompt('آدرس فایل M3U:',IPTV.url);if(u){try{const x=new URL(u);if(!/^https?:$/.test(x.protocol))throw 0;IPTV.url=x.href;iptvRelease();IPTV.channels=[];IPTV.current=null;IPTV.active='';IPTV.error='';IPTV.category='همه';IPTV.sig='';renderIPTV();loadIPTV(true)}catch{toast('آدرس معتبر نیست')}}},
+ iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvcat(){setIPTVCat(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){manageIPTVPlaylist()},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
@@ -637,7 +667,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  const mig=[],cb=[];                                    // مهاجرت از نسخه‌ی ۱: کاورِ داخل رکورد آهنگ ← مخزن کاورهای یکتا
  for(const s of S.songs){if('cover' in s){try{if(s.cover instanceof Blob){const cid=await coverId(s.cover);if(!S.covers.has(cid)){S.covers.set(cid,s.cover);cb.push({id:cid,blob:s.cover})}s.cid=cid}else s.cid=s.cid||''}catch{s.cid=''}delete s.cover;mig.push(s)}}
  if(cb.length)await putCovers(cb);if(mig.length)await putMany(mig);reidx();
- S.pl=await kvGet('pl')||[];S.trees=await kvGet('trees')||[];Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
+ S.pl=await kvGet('pl')||[];S.trees=await kvGet('trees')||[];IPTV.url=(await kvGet('iptvUrl'))??IPTV_DEFAULT_URL;Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
  document.documentElement.dataset.theme=await kvGet('theme')||'dark';
  const l=await kvGet('last');
  if(l&&Array.isArray(l.q)){S.q=l.q.filter(i=>S.map.has(i));const ci=l.id?S.q.indexOf(l.id):-1;S.shuffle=!!l.shuffle;S.rep=[0,1,2].includes(l.rep)?l.rep:0;
