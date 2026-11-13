@@ -518,3 +518,13 @@ body.video-fullscreen .video-page{position:static!important;display:block!import
 body.video-fullscreen .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
 body.video-fullscreen .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
 body.video-fullscreen .video-fullscreen-exit{display:block!important}
+
+/* IPTV country browser */
+.iptv-country-panel{flex:none;background:var(--s1);border:1px solid var(--s2);border-radius:12px;padding:8px;margin:0 0 8px;min-height:0}
+.iptv-country-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;margin-bottom:6px}
+.iptv-country-head strong{font-weight:700;color:var(--ac)}.iptv-country-head span{margin-inline-start:auto;color:var(--mu);font-size:11px}
+.iptv-country-search{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--s2);border-radius:9px;padding:8px 10px;color:var(--tx);font:inherit;font-size:13px;margin-bottom:6px}
+.iptv-countries{display:flex;gap:6px;flex-wrap:wrap;max-height:82px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:1px}
+.iptv-countries button{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:11px;padding:5px 8px;border:1px solid var(--s2);border-radius:8px;background:var(--bg);color:var(--tx)}
+.iptv-countries button.on{background:var(--ac);color:#04130d;border-color:var(--ac)}.iptv-countries button small{font-size:10px;opacity:.8}
+@media(max-width:420px){.iptv-country-head{gap:5px}.iptv-country-head span{width:100%;margin:0}.iptv-countries{max-height:76px}}
