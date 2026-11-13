@@ -164,7 +164,7 @@ async function attachIPTVPlayer(force){
    // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
    v.src=url;await v.play().catch(hint);return;
   }
-  if(/\.m3u8(?:$|[?#])/i.test(url)){
+  if(/\.m3u8(?:$|[?#])/i.test(ch.url)||url.startsWith(IPTV_WORKER_ORIGIN+'/')){
    // در وب، حتی اگر canPlayType مقدار truthy بدهد، HLS را با hls.js بگیر
    // تا manifest از Worker بازنویسی شود و segmentها از مسیر مجاز دریافت شوند.
    const Hls=await loadHlsLibrary();if(stale())return;
