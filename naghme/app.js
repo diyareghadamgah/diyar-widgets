@@ -25,21 +25,24 @@ const IPTV_PAGE=150;
 const IPTV={url:'https://iptv-org.github.io/iptv/index.m3u',iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
-const IPTV_IMPORTED={channels:[],localFiles:[],restored:false};
+const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
 function mergeIPTVChannels(remote){return [...new Map([...(remote||[]),...allImportedIPTV()].map(c=>[c.key,c])).values()]}
 async function restoreImportedIPTV(){
  if(IPTV_IMPORTED.restored)return;
- IPTV_IMPORTED.restored=true;
- try{IPTV_IMPORTED.channels=await kvGet('iptvImportedChannels')||[]}catch(e){console.warn('iptvImportedChannels',e)}
- let files=[];try{files=await kvGet('iptvLocalM3U8')||[]}catch(e){console.warn('iptvLocalM3U8',e)}
- for(const item of files){
-  try{if(!item||!item.blob||typeof URL.createObjectURL!=='function')continue;
-   const url=URL.createObjectURL(item.blob);
-   const channel=iptvDecorate({name:item.name||'فایل M3U8 محلی',group:'فایل‌های محلی',url,key:item.key||('local-m3u8|'+(item.name||'')),localBlob:true});
-   IPTV_IMPORTED.localFiles.push({...item,url,channel});
-  }catch(e){console.warn('restore local M3U8',e)}
- }
+ if(IPTV_IMPORTED.restoring)return IPTV_IMPORTED.restoring;
+ IPTV_IMPORTED.restoring=(async()=>{
+  try{IPTV_IMPORTED.channels=await kvGet('iptvImportedChannels')||[]}catch(e){console.warn('iptvImportedChannels',e)}
+  let files=[];try{files=await kvGet('iptvLocalM3U8')||[]}catch(e){console.warn('iptvLocalM3U8',e)}
+  for(const item of files){
+   try{if(!item||!item.blob||typeof URL.createObjectURL!=='function')continue;
+    const url=URL.createObjectURL(item.blob);
+    const channel=iptvDecorate({name:item.name||'فایل M3U8 محلی',group:'فایل‌های محلی',url,key:item.key||('local-m3u8|'+(item.name||'')),localBlob:true});
+    IPTV_IMPORTED.localFiles.push({...item,url,channel});
+   }catch(e){console.warn('restore local M3U8',e)}
+  }
+ })();
+ try{await IPTV_IMPORTED.restoring}finally{IPTV_IMPORTED.restored=true;IPTV_IMPORTED.restoring=null}
 }
 const iptvNorm=s=>String(s||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک');
 function loadHlsLibrary(){if(window.Hls)return Promise.resolve(window.Hls);if(!iptvHlsLoader){iptvHlsLoader=new Promise((resolve,reject)=>{const urls=['https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js','https://unpkg.com/hls.js@1.5.20/dist/hls.min.js'];let i=0;const next=()=>{if(i>=urls.length){iptvHlsLoader=null;reject(new Error('کتابخانه پخش HLS بارگیری نشد؛ اتصال اینترنت یا دسترسی به CDN را بررسی کنید.'));return}const sc=document.createElement('script');sc.src=urls[i++];sc.async=true;sc.onload=()=>window.Hls?resolve(window.Hls):next();sc.onerror=()=>next();document.head.appendChild(sc)};next()})}return iptvHlsLoader}
