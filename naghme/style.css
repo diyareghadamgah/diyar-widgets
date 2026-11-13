@@ -445,3 +445,26 @@ body.mode-video .video-note{display:none!important}
  body.mode-video .video-library-head{grid-column:2!important;grid-row:2!important;margin:0!important}
  body.mode-video .video-list{grid-column:2!important;grid-row:3/5!important}
 }
+
+/* Video tools: compact bottom sheet with a dedicated, reliable scroll region */
+#naghmePlayerSettings{display:flex!important;align-items:flex-end!important;justify-content:center!important;background:rgba(0,0,0,.58)!important;padding:12px 10px calc(10px + env(safe-area-inset-bottom))!important;overflow:hidden!important;box-sizing:border-box!important;touch-action:auto!important}
+#naghmePlayerSettings>section{position:relative!important;inset:auto!important;display:flex!important;flex-direction:column!important;width:min(460px,100%)!important;max-width:460px!important;max-height:78dvh!important;height:auto!important;min-height:0!important;padding:0!important;overflow:hidden!important;border-radius:20px!important}
+#naghmePlayerSettings .naghme-tools-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 10px;border-bottom:1px solid var(--s2);flex:0 0 auto}
+#naghmePlayerSettings .naghme-tools-head h2{margin:0;font-size:16px}
+#naghmePlayerSettings .naghme-tools-head p{margin:4px 0 0;color:var(--mu);font-size:11px}
+#naghmePlayerSettings .naghme-tools-head button{width:34px;height:34px;border-radius:50%;background:var(--s2);color:var(--tx);font-size:18px}
+#naghmePlayerSettings .naghme-tools-scroll{min-height:0;flex:1 1 auto;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px;overscroll-behavior:contain;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important}
+#naghmePlayerSettings .naghme-tools-group{margin:0 0 14px}
+#naghmePlayerSettings .naghme-tools-group h3{font-size:12px;color:var(--mu);font-weight:600;margin:0 0 8px}
+#naghmePlayerSettings #naghmeVideoToolGrid,#naghmePlayerSettings #naghmeVideoExtraGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#naghmePlayerSettings #naghmeVideoToolGrid button,#naghmePlayerSettings #naghmeVideoExtraGrid button{min-width:0;min-height:42px;padding:8px 6px;border:1px solid var(--s2);border-radius:11px;background:var(--s2);color:var(--tx);font-size:12px;line-height:1.35;white-space:normal}
+#naghmePlayerSettings .naghme-tools-speed{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:9px;padding:8px 10px;border-radius:11px;background:var(--s2);font-size:12px}
+#naghmePlayerSettings select{min-height:34px;padding:4px 9px;border-radius:8px;background:var(--bg);color:var(--tx);border:1px solid var(--s2)}
+#naghmePlayerSettings .naghme-tools-prefs{border:1px solid var(--s2);border-radius:12px;padding:10px;margin:0 0 4px}
+#naghmePlayerSettings .naghme-tools-prefs summary{font-size:12px;font-weight:600;cursor:pointer;padding:2px}
+#naghmePlayerSettings .naghme-tools-prefs>label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12px}
+#naghmePlayerSettings .naghme-tools-checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;font-size:11px}
+#naghmePlayerSettings .naghme-tools-foot{display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--s2);background:var(--s1);flex:0 0 auto}
+#naghmePlayerSettings .naghme-tools-foot button{min-height:40px;border-radius:10px;padding:8px 14px;background:var(--s2);color:var(--tx)}
+#naghmePlayerSettings .naghme-tools-foot button:last-child{flex:1;background:var(--ac,#10b981);color:#07140e;font-weight:700}
+@media(max-width:380px){#naghmePlayerSettings>section{max-height:76dvh!important}#naghmePlayerSettings .naghme-tools-scroll{padding:10px 12px}}
