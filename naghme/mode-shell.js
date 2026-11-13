@@ -18,7 +18,8 @@ function setMode(mode){
  if(mini)mini.hidden=mode!=='music';
  if(np&&mode!=='music')np.hidden=true;
  const title=$('#modeTitle');
- if(title)title.textContent=mode==='music'?'🎵 موزیک':mode==='video'?'🎬 ویدئو':mode==='tv'?'📺 تلویزیون':'نغمه';
+ if(title)title.textContent=mode==='music'?'موزیک':mode==='video'?'ویدئو':mode==='tv'?'تلویزیون اینترنتی':'نغمه';
+ document.querySelectorAll('.mode-switch-actions [data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',b.dataset.mode===mode?'true':'false')});
 }
 function clickNav(value){
  const b=$('#nav [data-a="nav"][data-v="'+value+'"]');
