@@ -15,7 +15,7 @@
 <div class="tv-topbar"><strong>📺 تلویزیون اینترنتی</strong><button id="tvHeaderRefresh" type="button" class="btn-sm" data-a="iptvload" aria-label="دریافت دوباره فهرست" title="دریافت دوباره فهرست">↻</button></div>
 <div class="tvplayer">
  <div class="tvbox" id="tvbox"><video id="iptvVideo" controls playsinline webkit-playsinline preload="none" hidden></video><div class="tvph" id="tvph">📺<br>برای شروع، یک شبکه را انتخاب کنید<small>پخش زنده به فعال‌بودن سرور شبکه و پشتیبانی دستگاه از فرمت آن بستگی دارد</small></div><button id="tvfsx" class="tvfsx" data-a="iptvfsx" aria-label="خروج از تمام‌صفحه" hidden>✕</button></div>
- <div class="tvnow"><div class="m"><b id="tvName">شبکه‌ای انتخاب نشده</b><span id="tvGroup"></span></div><button id="tvRetry" class="btn-sm" data-a="iptvretry" aria-label="اتصال دوباره" disabled>↻</button><button id="tvFs" class="btn-sm" data-a="iptvfs" aria-label="تمام‌صفحه" disabled>⛶</button></div>
+ <div class="tvnow"><div class="m"><b id="tvName">شبکه‌ای انتخاب نشده</b><span id="tvGroup"></span></div><button id="tvRetry" class="btn-sm" data-a="iptvretry" aria-label="اتصال دوباره" disabled>↻</button><label class="iptv-quality-label" for="iptvQuality">کیفیت <select id="iptvQuality" aria-label="انتخاب کیفیت پخش"><option value="0">خودکار</option><option value="240">۲۴۰p</option><option value="360">۳۶۰p</option><option value="480">۴۸۰p</option><option value="720">۷۲۰p</option><option value="1080">۱۰۸۰p</option></select></label><button id="tvFs" class="btn-sm" data-a="iptvfs" aria-label="تمام‌صفحه" disabled>⛶</button></div>
  <p id="iptvStatus" class="tvstatus" aria-live="polite"></p>
 </div>
 <div class="tvbrowse">
