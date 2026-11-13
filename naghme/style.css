@@ -468,3 +468,22 @@ body.mode-video .video-note{display:none!important}
 #naghmePlayerSettings .naghme-tools-foot button{min-height:40px;border-radius:10px;padding:8px 14px;background:var(--s2);color:var(--tx)}
 #naghmePlayerSettings .naghme-tools-foot button:last-child{flex:1;background:var(--ac,#10b981);color:#07140e;font-weight:700}
 @media(max-width:380px){#naghmePlayerSettings>section{max-height:76dvh!important}#naghmePlayerSettings .naghme-tools-scroll{padding:10px 12px}}
+
+/* Compact video tools sheet: keep the player visible and scroll only the controls */
+#naghmePlayerSettings>section{
+ height:54dvh!important;
+ max-height:54dvh!important;
+ min-height:0!important;
+}
+#naghmePlayerSettings .naghme-tools-scroll{
+ flex:1 1 0!important;
+ min-height:0!important;
+ max-height:none!important;
+ overflow-y:auto!important;
+ overscroll-behavior:contain!important;
+ touch-action:pan-y!important;
+ -webkit-overflow-scrolling:touch!important;
+}
+@media(max-height:700px){
+ #naghmePlayerSettings>section{height:52dvh!important;max-height:52dvh!important}
+}
