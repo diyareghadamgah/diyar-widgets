@@ -43,6 +43,7 @@ jobs:
       - name: Build web assets
         run: |
           node --check mode-shell.js
+          node --check app.js
           node --check video.js
           node --check iptv-native.js
           node --check native-player.js
@@ -92,6 +93,21 @@ jobs:
           grep -q "NaghmeLibraryVideoPlayer" /tmp/apk/assets/public/native-player.js
           grep -q "پخش بومی Media3 فعال شد" /tmp/apk/assets/public/video.js
           
+      - name: Package source ZIP
+        run: |
+          rm -rf /tmp/naghme-final
+          mkdir -p /tmp/naghme-final/naghme-final
+          cp app.js index.html style.css /tmp/naghme-final/naghme-final/
+          cd /tmp/naghme-final
+          zip -qr "$GITHUB_WORKSPACE/naghme-final.zip" naghme-final
+
+      - name: Upload source ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: naghme-final-source
+          path: naghme-final.zip
+          if-no-files-found: error
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
