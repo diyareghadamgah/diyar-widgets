@@ -93,8 +93,6 @@
   status('زمان‌سنج خواب برای '+minutes+' دقیقه تنظیم شد.');
  }
  function addControls(){
-  var quality=document.getElementById('iptvQuality');
-  if(quality&&!quality.dataset.bound){quality.dataset.bound='1';quality.addEventListener('change',function(){var h=Number(quality.value)||0;native.setVideoQuality(h).then(function(){status(h?'کیفیت حداکثر '+h+'p تنظیم شد.':'کیفیت روی حالت خودکار قرار گرفت.')}).catch(function(err){status('تغییر کیفیت ناموفق بود: '+(err.message||err))})})}
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
