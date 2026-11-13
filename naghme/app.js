@@ -160,8 +160,13 @@ async function attachIPTVPlayer(force){
  v.onwaiting=()=>{if(!stale()&&!IPTV.playError)setIPTVStatus('در حال بافر…')};
  const url=iptvWebStreamUrl(ch.url);
  try{
-  if(ch.localBlob||/\.m3u8(?:$|[?#])/i.test(url)){
-   if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=url;await v.play().catch(hint);return}
+  if(ch.localBlob){
+   // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
+   v.src=url;await v.play().catch(hint);return;
+  }
+  if(/\.m3u8(?:$|[?#])/i.test(url)){
+   // در وب، حتی اگر canPlayType مقدار truthy بدهد، HLS را با hls.js بگیر
+   // تا manifest از Worker بازنویسی شود و segmentها از مسیر مجاز دریافت شوند.
    const Hls=await loadHlsLibrary();if(stale())return;
    if(!Hls.isSupported())throw new Error('این دستگاه از پخش HLS پشتیبانی نمی‌کند.');
    const h=new Hls({enableWorker:true,lowLatencyMode:false,manifestLoadingTimeOut:20000,levelLoadingTimeOut:20000,maxBufferLength:30,backBufferLength:30});iptvHls=h;let tries=0;
