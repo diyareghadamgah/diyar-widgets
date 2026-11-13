@@ -95,7 +95,7 @@
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
-  tools.innerHTML='<button type="button" data-iptv-tool="jump">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock">🔒 قفل لمس</button>';
+  tools.innerHTML='<button type="button" data-iptv-tool="jump" aria-label="رفتن به زمان">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت پخش <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep" aria-label="زمان‌سنج خواب">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock" aria-label="قفل لمس">🔒 قفل لمس</button>';
   tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
   host.insertAdjacentElement('afterend',tools);
   var locked=false;
