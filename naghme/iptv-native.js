@@ -50,6 +50,7 @@
   }
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url})})
+   .then(function(){var q=document.getElementById('iptvQuality');return native.setVideoQuality(q?Number(q.value)||0:0).catch(function(){})})
    .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
    .then(function(){document.body.classList.add('native-player-active');status('')})
@@ -92,6 +93,8 @@
   status('زمان‌سنج خواب برای '+minutes+' دقیقه تنظیم شد.');
  }
  function addControls(){
+  var quality=document.getElementById('iptvQuality');
+  if(quality&&!quality.dataset.bound){quality.dataset.bound='1';quality.addEventListener('change',function(){var h=Number(quality.value)||0;native.setVideoQuality(h).then(function(){status(h?'کیفیت حداکثر '+h+'p تنظیم شد.':'کیفیت روی حالت خودکار قرار گرفت.')}).catch(function(err){status('تغییر کیفیت ناموفق بود: '+(err.message||err))})})}
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
@@ -118,7 +121,7 @@
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
  addControls();
- window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
+ window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,setQuality:function(h){return native.setVideoQuality(Number(h)||0)},jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
  window.addEventListener('resize',onLayoutChange,{passive:true});
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
