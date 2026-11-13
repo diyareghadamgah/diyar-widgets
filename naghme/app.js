@@ -269,7 +269,7 @@ async function onIPTVFileSelected(e){
   const limit=ext==='m3u'?20*1024*1024:32*1024*1024;
   if(file.size>limit)throw new Error('حجم فایل بیش از حد مجاز است.');
   const text=await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
-  if(!/^#EXTM3U(?:\\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
+  if(!/^#EXTM3U(?:\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
   if(ext==='m3u'){
    const parsed=parseM3U(clean);
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
@@ -287,7 +287,7 @@ async function onIPTVFileSelected(e){
    const old=IPTV_IMPORTED.localFiles.filter(x=>x.name!==name);
    old.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
    const record={key,name,blob,size:file.size,lastModified:file.lastModified||0};
-   const channel=iptvDecorate({name:name.replace(/\\.m3u8$/i,'')||'فایل M3U8',group:'فایل‌های محلی',url,key,localBlob:true});
+   const channel=iptvDecorate({name:name.replace(/\.m3u8$/i,'')||'فایل M3U8',group:'فایل‌های محلی',url,key,localBlob:true});
    IPTV_IMPORTED.localFiles=[...old,{...record,url,channel}];
    await kvSet('iptvLocalM3U8',IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
