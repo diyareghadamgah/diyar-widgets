@@ -2,6 +2,7 @@ package ir.diyareghadamgah.naghme
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.net.Uri
 import android.os.Handler
@@ -43,6 +44,10 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     private var view: PlayerView? = null
     private var lockOverlay: FrameLayout? = null
     private var isPlayerLocked: Boolean = false
+    private var fullscreenButton: Button? = null
+    private var fullscreenOriginalSystemUi: Int? = null
+    private var fullscreenOriginalOrientation: Int? = null
+    private var isFullscreen: Boolean = false
     private val diagnosticLock = Any()
     private var lastBoundsSignature = ""
 
@@ -290,6 +295,13 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             try {
                 val v = view ?: run { call.resolve(); return@runOnUiThread }
                 val act = activity ?: run { call.reject("activity_unavailable"); return@runOnUiThread }
+                if (isFullscreen) {
+                    val full = v.layoutParams as? FrameLayout.LayoutParams ?: FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+                    full.gravity = Gravity.TOP or Gravity.START
+                    full.leftMargin = 0; full.topMargin = 0
+                    full.width = ViewGroup.LayoutParams.MATCH_PARENT; full.height = ViewGroup.LayoutParams.MATCH_PARENT
+                    v.layoutParams = full; v.requestLayout(); call.resolve(); return@runOnUiThread
+                }
                 val content = act.findViewById<View>(android.R.id.content)
                     ?: run { call.reject("content_view_unavailable"); return@runOnUiThread }
                 val web = getBridge().getWebView()
@@ -324,10 +336,81 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         } ?: call.reject("activity_unavailable")
     }
 
+    @PluginMethod
+    fun setFullscreen(call: PluginCall) {
+        val enabled = call.getBoolean("enabled") ?: false
+        val act = activity ?: run { call.reject("activity_unavailable"); return }
+        act.runOnUiThread {
+            try {
+                if (enabled) enterFullscreen(act) else exitFullscreen(act)
+                call.resolve(JSObject().put("enabled", isFullscreen))
+            } catch (e: Exception) {
+                call.reject("fullscreen_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        }
+    }
+
+    private fun enterFullscreen(act: Activity) {
+        if (isFullscreen) return
+        val target = view ?: throw IllegalStateException("player_view_unavailable")
+        val decor = act.window.decorView
+        if (fullscreenOriginalSystemUi == null) fullscreenOriginalSystemUi = decor.systemUiVisibility
+        if (fullscreenOriginalOrientation == null) fullscreenOriginalOrientation = act.requestedOrientation
+        act.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+        decor.systemUiVisibility = (
+            View.SYSTEM_UI_FLAG_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        )
+        target.layoutParams = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        ).apply { gravity = Gravity.TOP or Gravity.START }
+        target.requestLayout()
+        val button = Button(act).apply {
+            text = "×"
+            contentDescription = "خروج از تمام‌صفحه"
+            textSize = 25f
+            isAllCaps = false
+            setTextColor(Color.WHITE)
+            setBackgroundColor(Color.argb(190, 25, 25, 25))
+            setOnClickListener { notifyListeners("fullscreenExit", JSObject()) }
+        }
+        val size = (48 * act.resources.displayMetrics.density).toInt()
+        val margin = (10 * act.resources.displayMetrics.density).toInt()
+        act.addContentView(button, FrameLayout.LayoutParams(size, size, Gravity.TOP or Gravity.START).apply {
+            leftMargin = margin
+            topMargin = margin
+        })
+        fullscreenButton = button
+        isFullscreen = true
+    }
+
+    private fun exitFullscreen(act: Activity) {
+        if (!isFullscreen && fullscreenOriginalSystemUi == null && fullscreenOriginalOrientation == null) return
+        fullscreenButton?.let { button ->
+            (button.parent as? ViewGroup)?.removeView(button)
+        }
+        fullscreenButton = null
+        fullscreenOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
+        fullscreenOriginalSystemUi = null
+        fullscreenOriginalOrientation?.let { act.requestedOrientation = it }
+        fullscreenOriginalOrientation = null
+        isFullscreen = false
+        view?.let { target ->
+            target.layoutParams = FrameLayout.LayoutParams(1, 1).apply { gravity = Gravity.TOP or Gravity.START }
+            target.requestLayout()
+        }
+    }
+
     @PluginMethod fun setVisible(call: PluginCall) {
         val visible = call.getBoolean("visible") ?: true
         activity?.runOnUiThread {
             if (!visible) {
+                activity?.let { exitFullscreen(it) }
                 // هنگام پنهان‌شدن پلیر، قفل را هم حتماً آزاد کن تا لایهٔ لمس باقی نماند.
                 isPlayerLocked = false
                 lockOverlay?.visibility = View.GONE
@@ -394,6 +477,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     /** Idempotent cleanup. Must only be called on Android's main thread. */
     private fun releasePlayerInternal() {
+        activity?.let { exitFullscreen(it) }
         val oldView = view
         view = null
         try {
