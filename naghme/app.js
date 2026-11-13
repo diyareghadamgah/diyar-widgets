@@ -354,7 +354,7 @@ function enterIPTV(){
   const box=$('#iptvResults'),on=box.querySelector('.tvrow.on');if(on)box.scrollTop=Math.max(0,on.offsetTop-box.clientHeight/2);
   if(IPTV.current){
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!IPTV.current.localBlob)window.NaghmeNativeIPTV.play(IPTV.current);
-   else attachIPTVPlayer(false);
+   else{attachIPTVPlayer(false);if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches)iptvFullscreen(true)}
   }
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
