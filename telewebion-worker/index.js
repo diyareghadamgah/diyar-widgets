@@ -109,7 +109,7 @@ function manifestError(stage, details = {}) {
   const lines = [`stage=${stage}`];
   for (const [key, value] of Object.entries(details)) {
     if (value !== undefined && value !== null && value !== "") {
-      lines.push(`${key}=${String(value).replace(/[\\r\\n]+/g, " ").slice(0, 500)}`);
+      lines.push(`${key}=${String(value).replace(/[\r\n]+/g, " ").slice(0, 500)}`);
     }
   }
   return new Response(lines.join("\n") + "\n", {
@@ -215,12 +215,12 @@ export default {
           content_type: upstream.headers.get("content-type"),
         });
       }
-      body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+      body = (await upstream.text()).replace(/^\uFEFF/, "").trim();
 
       // Resolve a master playlist to its media playlist before rewriting segments.
       if (body.includes("#EXT-X-STREAM-INF")) {
         const variants = [];
-        const lines = body.split(/\\r?\\n/);
+        const lines = body.split(/\r?\n/);
         for (let i = 0; i < lines.length; i++) {
           if (!lines[i].startsWith("#EXT-X-STREAM-INF:")) continue;
           const resolution = lines[i].match(/RESOLUTION=\\d+x(\\d+)/i);
@@ -250,7 +250,7 @@ export default {
               content_type: upstream.headers.get("content-type"),
             });
           }
-          body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+          body = (await upstream.text()).replace(/^\uFEFF/, "").trim();
         }
       }
     } catch (error) {
@@ -263,7 +263,7 @@ export default {
 
     const playlist = rewrite(body, upstream.url, proxyOrigin);
     if (!playlist) {
-      const preview = body.slice(0, 240).replace(/[\\r\\n\\t]+/g, " ");
+      const preview = body.slice(0, 240).replace(/[\r\n\t]+/g, " ");
       return manifestError("unexpected_playlist_format", {
         content_type: upstream.headers.get("content-type") || "unknown",
         url: upstream.url,
