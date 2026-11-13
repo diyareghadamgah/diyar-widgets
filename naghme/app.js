@@ -329,7 +329,6 @@ function renderIPTVChips(){
 function setIPTVCat(v){
  IPTV.category=v;document.querySelectorAll('#tvChips button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));renderIPTVList(false)}
 function setIPTVCountry(v){IPTV.country=v;renderIPTVCountries();renderIPTVList(false)}
-function setIPTVCountry(v){IPTV.country=v;renderIPTVCountries();renderIPTVList(false)}
 function setIPTVQuery(val){
  IPTV.query=val;const inp=$('#iptvSearch');if(inp&&inp.value!==val)inp.value=val;
  clearTimeout(iptvQT);iptvQT=setTimeout(()=>renderIPTVList(false),90)}
