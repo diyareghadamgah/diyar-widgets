@@ -528,3 +528,5 @@ body.video-fullscreen .video-fullscreen-exit{display:block!important}
 .iptv-countries button{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:11px;padding:5px 8px;border:1px solid var(--s2);border-radius:8px;background:var(--bg);color:var(--tx)}
 .iptv-countries button.on{background:var(--ac);color:#04130d;border-color:var(--ac)}.iptv-countries button small{font-size:10px;opacity:.8}
 @media(max-width:420px){.iptv-country-head{gap:5px}.iptv-country-head span{width:100%;margin:0}.iptv-countries{max-height:76px}}
+
+.iptv-quality-label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-size:11px;color:var(--mu)}.iptv-quality-label select{max-width:88px;padding:6px 5px;border-radius:8px;border:1px solid var(--s2);background:var(--s1);color:var(--tx);font:inherit;font-size:12px}
