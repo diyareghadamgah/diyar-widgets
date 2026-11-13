@@ -212,11 +212,17 @@ async function attachIPTVPlayer(force){
     const detail=d.details||d.reason||d.error&&d.error.message||'';
     fail((d.type===Hls.ErrorTypes.NETWORK_ERROR?'خطای شبکه در دریافت HLS':d.type===Hls.ErrorTypes.MEDIA_ERROR?'خطای رمزگشایی/کُدک HLS':'خطای غیرقابل‌بازیابی HLS')+response+(detail?' — '+detail:'')+' — '+(d.type||''));
     try{h.destroy()}catch{}if(iptvHls===h)iptvHls=null});
-   h.on(Hls.Events.MANIFEST_PARSED,()=>{if(!stale())v.play().catch(hint)});
+   h.on(Hls.Events.MANIFEST_PARSED,()=>{if(!stale()){updateIPTVQualityOptions(h.levels||[]);applyIPTVWebQuality(h);v.play().catch(hint)}});
+   h.on(Hls.Events.LEVELS_UPDATED,()=>{if(!stale())updateIPTVQualityOptions(h.levels||[])});
    h.loadSource(url);h.attachMedia(v);
   }else{v.src=url;await v.play().catch(hint)}
  }catch(e){if(stale())return;iptvAttached='';fail(e.message||'پخش این شبکه ممکن نشد.')}
 }
+function updateIPTVQualityOptions(levels){
+ const sel=$('#iptvQuality');if(!sel)return;const current=sel.value;const heights=[...new Set((levels||[]).map(x=>Number(x.height)||0).filter(x=>x>0))].sort((a,b)=>a-b);
+ if(!heights.length)return;sel.innerHTML='<option value="0">خودکار</option>'+heights.map(h=>'<option value="'+h+'">'+h+'p</option>').join('');if([...sel.options].some(o=>o.value===current))sel.value=current;else sel.value='0';
+}
+function applyIPTVWebQuality(hls){const sel=$('#iptvQuality');if(!hls||!sel)return;const max=Number(sel.value)||0;if(!max){hls.currentLevel=-1;return}let idx=-1;(hls.levels||[]).forEach((l,i)=>{if(Number(l.height)<=max)idx=i});hls.currentLevel=idx>=0?idx:-1;}
 function playIPTV(key){
  const ch=IPTV.channels.find(x=>x.key===key);if(!ch)return;
  if(IPTV.current&&IPTV.current.key===key&&iptvAttached===key&&!IPTV.playError)return;   // کلیک دوباره روی شبکه‌ی در حال پخش، پخش را ریست نمی‌کند
@@ -338,7 +344,8 @@ function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ ف�
 function buildIPTV(){
  syncIPTVFileButton();
  if(iptvBuilt)return;iptvBuilt=true;
- const box=$('#iptvResults'),inp=$('#iptvSearch'),countryInp=$('#iptvCountrySearch');
+ const box=$('#iptvResults'),inp=$('#iptvSearch'),countryInp=$('#iptvCountrySearch'),quality=$('#iptvQuality');
+ if(quality&&!quality.dataset.bound){quality.dataset.bound='1';quality.addEventListener('change',()=>{if(iptvHls)applyIPTVWebQuality(iptvHls);else if(window.NaghmeNativeIPTV&&IPTV.current)window.NaghmeNativeIPTV.setQuality(Number(quality.value)||0).catch(()=>{})})}
  if(countryInp)countryInp.addEventListener('input',()=>setIPTVCountryQuery(countryInp.value));
  box.addEventListener('scroll',()=>{if(box.scrollTop+box.clientHeight>=box.scrollHeight-600)iptvMore()},{passive:true});
  inp.addEventListener('input',()=>setIPTVQuery(inp.value));
