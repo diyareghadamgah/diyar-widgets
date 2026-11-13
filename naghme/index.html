@@ -1,9 +1,18 @@
 <!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>نغمه | NAGHME MUSIC STUDIO</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0b0b0b"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="icon-192.png"><link rel="stylesheet" href="style.css"></head><body>
 <aside id="side"><h1><img src="icon-192.png" alt="دیار قدمگاه" class="logo">نغمه<small>NAGHME MUSIC STUDIO</small></h1><nav id="nav"></nav></aside>
 <main>
+<div id="modeBar" class="mode-switchbar" hidden>
+ <button id="modeBack" type="button" class="btn-sm mode-home-btn">☰ بخش‌ها</button>
+ <strong id="modeTitle">نغمه</strong>
+ <div class="mode-switch-actions">
+  <button type="button" class="btn-sm" data-mode="music" aria-label="رفتن به موزیک">🎵</button>
+  <button type="button" class="btn-sm" data-mode="video" aria-label="رفتن به ویدئو">🎬</button>
+  <button type="button" class="btn-sm" data-mode="tv" aria-label="رفتن به تلویزیون">📺</button>
+ </div>
+</div>
 <section id="modeHome" aria-label="انتخاب بخش"><div class="mode-welcome"><img src="icon-192.png" alt=""><h1>نغمه</h1><p>از کدام بخش می‌خواهید استفاده کنید؟</p></div><div class="mode-cards"><button type="button" data-mode="music"><span>🎵</span><b>موزیک</b><small>کتابخانه و پخش آهنگ‌ها</small></button><button type="button" data-mode="video"><span>🎬</span><b>ویدئو</b><small>کتابخانه و پخش ویدئوها</small></button><button type="button" data-mode="tv"><span>📺</span><b>تلویزیون</b><small>شبکه‌های تلویزیونی اینترنتی</small></button></div></section><header><<input id="q" type="search" placeholder="جست‌وجو: آهنگ، خواننده، آلبوم، پوشه، سال، سبک، فرمت…"><button id="add" class="pri">＋ افزودن</button><button id="theme" title="تم" aria-label="تغییر تم">◐</button></header><div id="view"></div>
 <section id="tvpage" hidden aria-label="تلویزیون اینترنتی">
-<div id="modeBar" class="tv-topbar" hidden><button id="modeBack" type="button" class="btn-sm">☰ بخش‌ها</button><strong id="modeTitle">📺 تلویزیون اینترنتی</strong><button id="tvHeaderRefresh" type="button" class="btn-sm" data-a="iptvload" aria-label="دریافت دوباره فهرست" title="دریافت دوباره فهرست">↻</button></div>
+<div class="tv-topbar"><strong>📺 تلویزیون اینترنتی</strong><button id="tvHeaderRefresh" type="button" class="btn-sm" data-a="iptvload" aria-label="دریافت دوباره فهرست" title="دریافت دوباره فهرست">↻</button></div>
 <div class="tvplayer">
  <div class="tvbox" id="tvbox"><video id="iptvVideo" controls playsinline webkit-playsinline preload="none" hidden></video><div class="tvph" id="tvph">📺<br>برای شروع، یک شبکه را انتخاب کنید<small>پخش زنده به فعال‌بودن سرور شبکه و پشتیبانی دستگاه از فرمت آن بستگی دارد</small></div><button id="tvfsx" class="tvfsx" data-a="iptvfsx" aria-label="خروج از تمام‌صفحه" hidden>✕</button></div>
  <div class="tvnow"><div class="m"><b id="tvName">شبکه‌ای انتخاب نشده</b><span id="tvGroup"></span></div><button id="tvRetry" class="btn-sm" data-a="iptvretry" aria-label="اتصال دوباره" disabled>↻</button><button id="tvFs" class="btn-sm" data-a="iptvfs" aria-label="تمام‌صفحه" disabled>⛶</button></div>
