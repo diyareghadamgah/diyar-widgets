@@ -281,3 +281,28 @@ body.mode-tv #mini:not([hidden]){display:flex!important;position:fixed!important
  body.mode-tv .tvplayer{grid-column:1!important;grid-row:2!important;width:100%!important}
  body.mode-tv .tvbrowse{grid-column:2!important;grid-row:2!important}
 }
+
+
+/* Global mode navigation: reachable from music, video and IPTV at all times */
+.mode-switchbar{display:flex;flex:0 0 46px;min-height:46px;height:46px;align-items:center;gap:8px;padding:4px 10px;background:var(--s1);border-bottom:1px solid var(--s2);box-shadow:0 2px 8px #0005;z-index:30;direction:rtl}
+.mode-switchbar[hidden]{display:none!important}
+.mode-switchbar>strong{flex:1;min-width:0;text-align:center;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mode-switchbar .mode-home-btn{height:36px;min-height:36px;padding:0 10px;font-size:12px}
+.mode-switch-actions{display:flex;flex:0 0 auto;gap:5px;align-items:center}
+.mode-switch-actions .btn-sm{width:36px;height:36px;min-width:36px;min-height:36px;padding:0;font-size:17px}
+.mode-switch-actions .btn-sm.active{background:#10b981;color:#fff;border-color:#10b981}
+body.mode-music main,body.mode-video main,body.mode-tv main{display:flex!important;flex-direction:column!important;min-height:0!important;height:100dvh!important;overflow:hidden!important}
+body.mode-music #modeBar,body.mode-video #modeBar,body.mode-tv #modeBar{display:flex!important}
+body.mode-music #modeHome,body.mode-video #modeHome,body.mode-tv #modeHome{display:none!important}
+body.mode-music #view{flex:1 1 auto;min-height:0;overflow:auto}
+body.mode-video #videoPage{display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;overflow:auto!important}
+body.mode-tv #tvpage{display:flex!important;flex:1 1 auto!important;min-height:0!important;height:auto!important;max-height:none!important;overflow:hidden!important;padding-top:0!important}
+body.mode-tv .tv-topbar{display:none!important}
+body.mode-tv #tvpage[hidden],body.mode-video #videoPage[hidden]{display:none!important}
+@media(max-width:360px){
+ .mode-switchbar{gap:5px;padding-inline:7px}
+ .mode-switchbar>strong{font-size:12px}
+ .mode-switchbar .mode-home-btn{padding:0 7px;font-size:11px}
+ .mode-switch-actions{gap:3px}
+ .mode-switch-actions .btn-sm{width:32px;height:32px;min-width:32px;min-height:32px}
+}
