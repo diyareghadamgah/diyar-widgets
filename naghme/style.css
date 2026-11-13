@@ -168,3 +168,77 @@ body.mode-tv #tvpage{padding-top:8px}
 .tvhead{flex-wrap:wrap}
 .tvhead #iptvFileBtn{max-width:100%;min-height:36px;padding:5px 9px;border:1px solid var(--ac);background:var(--s1);color:var(--tx);font-size:11px;line-height:1.5;white-space:nowrap}
 .tvhead #iptvFileBtn[hidden]{display:none!important}
+
+
+/* IPTV UI refresh — flex-first responsive layout; no playback logic changes */
+.btn-sm{height:36px;min-height:36px;padding:0 10px;font-size:13px;border-radius:8px;background:#1a1a1a;border:1px solid #333;color:#ddd;display:inline-flex;align-items:center;justify-content:center;gap:4px;flex-shrink:0;white-space:nowrap}
+.btn-sm.active{background:#10b981;color:#fff}
+body.mode-tv{grid-template-columns:minmax(0,1fr);height:100vh;height:100dvh;overflow:hidden}
+body.mode-tv main{grid-column:1/-1;width:100%;height:100vh;height:100dvh;max-height:100dvh;min-height:0;overflow:hidden}
+body.mode-tv header{display:none!important}
+body.mode-tv #tvpage{display:flex;flex:1 1 auto;flex-direction:column;width:100%;height:100vh;height:100dvh;max-height:100vh;max-height:100dvh;min-height:0;overflow:hidden;gap:0;padding:env(safe-area-inset-top) 12px calc(64px + env(safe-area-inset-bottom));direction:rtl}
+body.mode-tv #tvpage[hidden]{display:none!important}
+body.mode-tv .tv-topbar{height:48px;min-height:48px;flex:0 0 48px;display:flex;align-items:center;gap:12px;padding:4px 2px;margin:0 0 6px;border-bottom:1px solid #262626;box-shadow:0 3px 9px #0008;background:var(--bg);z-index:4}
+body.mode-tv .tv-topbar strong{flex:1;min-width:0;text-align:center;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.mode-tv .tv-topbar button{min-width:36px}
+body.mode-tv .tvplayer{display:flex;flex:0 0 auto;flex-direction:column;min-width:0;min-height:0;gap:0;overflow:visible}
+body.mode-tv .tvbox{position:relative;display:block;width:min(100%,calc(35dvh * 16 / 9));height:auto;max-height:35dvh;aspect-ratio:16/9;flex:none;margin:0 auto;background:#000;border-radius:10px;overflow:hidden;order:1}
+body.mode-tv .tvbox video,body.mode-tv .tvph{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain}
+body.mode-tv .tvbox video[hidden],body.mode-tv .tvph[hidden]{display:none!important}
+body.mode-tv .tvph{display:grid;place-content:center;text-align:center;gap:4px;padding:8px;background:#000;color:#aaa}
+body.mode-tv .tvph small{font-size:11px}
+body.mode-tv #naghmeIptvTools{order:2;display:flex!important;flex:0 0 36px;flex-wrap:nowrap!important;align-items:center;gap:8px;width:100%;max-width:100%;margin:0!important;padding:2px 0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+body.mode-tv #naghmeIptvTools::-webkit-scrollbar,body.mode-tv .tvbrowse .chips::-webkit-scrollbar{display:none}
+body.mode-tv #naghmeIptvTools>*{flex:0 0 auto;white-space:nowrap}
+body.mode-tv #naghmeIptvTools button,body.mode-tv #naghmeIptvTools select{height:36px!important;min-height:36px!important;padding:0 10px!important;border:1px solid #333!important;border-radius:8px!important;background:#1a1a1a!important;color:#ddd!important;font:13px Vazirmatn,Tahoma,sans-serif!important}
+body.mode-tv #naghmeIptvTools label{display:inline-flex!important;align-items:center;gap:5px;flex:0 0 auto;white-space:nowrap}
+body.mode-tv .tvnow{order:3;display:flex;flex:0 0 40px;align-items:center;gap:6px;height:40px;min-height:40px;padding:2px 0;margin:0;border-bottom:1px solid #252525;overflow:hidden}
+body.mode-tv .tvnow .m{display:flex;flex:1;min-width:0;flex-direction:row;align-items:center;gap:8px;white-space:nowrap}
+body.mode-tv .tvnow .m b{max-width:58%;font-size:13px;font-weight:600}
+body.mode-tv .tvnow .m span{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:11px;color:var(--mu)}
+body.mode-tv .tvnow button{width:32px;height:32px;min-width:32px;min-height:32px;padding:0}
+body.mode-tv #iptvStatus{order:4;flex:0 0 auto;max-height:20px;margin:0;padding:0 2px;overflow:hidden;font-size:11px;line-height:18px}
+body.mode-tv #iptvStatus:empty{display:none}
+body.mode-tv .tvbrowse{display:flex;flex:1 1 0;flex-direction:column;min-width:0;min-height:0;overflow:hidden;gap:0;padding:0}
+body.mode-tv .tvhead{display:flex;flex:0 0 40px;align-items:center;gap:8px;height:40px;min-height:40px;padding:2px 0;margin:0;overflow-x:auto;overflow-y:hidden}
+body.mode-tv .tvhead .d{flex:1 1 auto;min-width:0;white-space:nowrap;font-size:11px}
+body.mode-tv .tvhead .btn-sm{height:36px;min-height:36px}
+body.mode-tv .tvmsg{flex:0 0 auto;max-height:34px;margin:0;padding:2px 0;font-size:11px;overflow:hidden}
+body.mode-tv .tvmsg[hidden]{display:none!important}
+body.mode-tv .iptv-search-wrap{flex:0 0 40px;height:40px;min-height:40px;margin:0;padding:2px 0}
+body.mode-tv .iptv-search{width:100%!important;height:36px;min-height:36px!important;padding:5px 12px!important;border:1px solid #333!important;border-radius:9px!important;background:var(--s1)!important;font-size:14px!important}
+body.mode-tv .tvbrowse .chips{display:flex;flex:0 0 40px;align-items:center;gap:8px;width:100%;height:40px;min-height:40px;padding:2px 0 4px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+body.mode-tv .tvbrowse .chips button{height:36px;min-height:36px;padding:0 12px;border-radius:9px;flex:0 0 auto;white-space:nowrap;background:#1a1a1a;color:#ddd;border:1px solid #333}
+body.mode-tv .tvbrowse .chips button.on{background:#10b981;color:#fff;border-color:#10b981}
+body.mode-tv #iptvResults{position:relative;display:grid;flex:1 1 auto;min-width:0;min-height:0;width:100%;grid-template-columns:1fr;grid-auto-rows:min-content;align-content:start;gap:6px;overflow-y:auto;overflow-x:hidden;padding:2px 0 80px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+body.mode-tv .tvrow{display:flex;align-items:center;gap:9px;width:100%;height:64px;min-height:64px;padding:7px 9px;border-radius:10px;background:var(--s1);contain:content}
+body.mode-tv .tvrow img,body.mode-tv .tvrow .tvlogo{width:40px;height:40px;min-width:40px;flex:0 0 40px;object-fit:contain;border-radius:8px}
+body.mode-tv .tvrow .m{display:flex;flex:1;min-width:0;flex-direction:column;justify-content:center;gap:2px}
+body.mode-tv .tvrow .m b{font-size:14px;font-weight:600;line-height:1.35}
+body.mode-tv .tvrow .m span{font-size:12px;line-height:1.3;color:var(--mu)}
+body.mode-tv .tvrow .ib{width:32px;height:32px;min-width:32px;min-height:32px;flex:0 0 32px;padding:0;border-radius:8px}
+body.mode-tv #mini,body.mode-tv #mini[hidden]{display:flex!important;position:fixed;inset:auto 0 0 0;z-index:100;width:100%;height:calc(64px + env(safe-area-inset-bottom));min-height:64px;align-items:center;gap:7px;padding:6px 10px calc(6px + env(safe-area-inset-bottom));border-top:1px solid #333;background:var(--s1)}
+body.mode-tv #mini #mc .cv{width:42px;height:42px}
+body.mode-tv #mini .m{min-width:0}
+body.mode-tv #mini button{width:36px;height:36px;min-width:36px;min-height:36px;padding:0}
+@media(max-height:600px){
+ body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9));max-height:25dvh}
+ body.mode-tv #naghmeIptvTools{flex-basis:34px}
+}
+@media(max-width:360px){
+ body.mode-tv{font-size:13px}
+ body.mode-tv .btn-sm,body.mode-tv .tvnow button,body.mode-tv #naghmeIptvTools button,body.mode-tv #naghmeIptvTools select{height:32px!important;min-height:32px!important;padding:0 8px!important;font-size:12px!important}
+ body.mode-tv .tvhead{gap:5px}
+ body.mode-tv .tvbrowse .chips button{height:32px;min-height:32px;padding:0 10px}
+}
+@media(orientation:landscape){
+ body.mode-tv #tvpage{display:grid;grid-template-columns:minmax(0,44%) minmax(0,56%);grid-template-rows:48px minmax(0,1fr);column-gap:10px;row-gap:6px;direction:ltr;padding:env(safe-area-inset-top) 12px calc(64px + env(safe-area-inset-bottom))}
+ body.mode-tv .tv-topbar{grid-column:1/-1;grid-row:1;direction:rtl;margin:0}
+ body.mode-tv .tvplayer{grid-column:1;grid-row:2;direction:rtl;align-self:start;width:100%;min-width:0}
+ body.mode-tv .tvbrowse{grid-column:2;grid-row:2;direction:rtl}
+ body.mode-tv .tvbox{width:min(100%,calc(35dvh * 16 / 9));max-height:35dvh}
+ body.mode-tv #iptvResults{grid-template-columns:1fr}
+}
+@media(orientation:landscape) and (max-height:600px){
+ body.mode-tv .tvbox{width:min(100%,calc(25dvh * 16 / 9));max-height:25dvh}
+}

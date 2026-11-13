@@ -56,10 +56,12 @@ function iptvCountryName(code){
  iptvRegion.cache.set(code,r);return r}
 /* گروه‌ها (group-title با «;» جدا می‌شود) و متن جست‌وجو: نام، گروه، کشور (کد + نام فارسی/انگلیسی؛ اگر فهرست tvg-country نداشت از پسوند tvg-id مثل .uk)، زبان، شناسه */
 function iptvDecorate(c){
- c.group=c.group||'سایر';c.country=c.country||'';c.language=c.language||'';c.id=c.id||'';
- c.groups=[...new Set(String(c.group).split(';').map(x=>x.trim()).filter(Boolean))];if(!c.groups.length)c.groups=['سایر'];
- const codes=String(c.country).split(/[;,\s]+/).filter(Boolean);
- if(!codes.length){const m=c.id.match(/\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
+ const invalidGroup=v=>!String(v==null?'':v).trim()||/^(undefined|null|unknown)$/i.test(String(v).trim());
+ const rawGroups=String(c.group==null?'':c.group).split(';').map(x=>x.trim()).filter(x=>!invalidGroup(x));
+ c.groups=[...new Set(rawGroups.length?rawGroups:['سایر'])];
+ c.group=c.groups.join('; ');c.country=c.country||'';c.language=c.language||'';c.id=c.id||'';
+ const codes=String(c.country).split(/[;,\\s]+/).filter(Boolean);
+ if(!codes.length){const m=c.id.match(/\\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
  const names=codes.map(iptvCountryName);
  if(!c.country&&names[0]&&names[0].fa)c.country=names[0].fa;
  c.search=iptvNorm([c.name,c.group,c.country,...codes,...names.flatMap(n=>[n.fa,n.en]),c.language,c.id].join(' '));
@@ -231,7 +233,13 @@ function renderIPTVList(keep){
  box.scrollTop=top;
  const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url}
 function renderIPTVChips(){
- const cnt=new Map();IPTV.channels.forEach(c=>c.groups.forEach(g=>cnt.set(g,(cnt.get(g)||0)+1)));
+ const invalidGroup=v=>!String(v==null?'':v).trim()||/^(undefined|null|unknown)$/i.test(String(v).trim());
+ const cnt=new Map();
+ IPTV.channels.forEach(c=>{
+  const groups=(Array.isArray(c.groups)?c.groups:String(c.group==null?'':c.group).split(';'))
+   .map(g=>String(g==null?'':g).trim()).filter(g=>!invalidGroup(g));
+  (groups.length?groups:['سایر']).forEach(g=>cnt.set(g,(cnt.get(g)||0)+1));
+ });
  const groups=[...cnt.entries()].sort((a,b)=>b[1]-a[1]).slice(0,120).map(x=>x[0]);
  if(IPTV.category!=='همه'&&IPTV.category!=='موردعلاقه‌ها'&&!cnt.has(IPTV.category))IPTV.category='همه';
  $('#tvChips').innerHTML=['همه','موردعلاقه‌ها',...groups].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('')}
