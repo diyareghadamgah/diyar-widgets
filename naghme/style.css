@@ -390,9 +390,9 @@ body.mode-video .video-note{display:none!important}
 /* Player tools popup: consistent spacing, readable two-column controls */
 #naghmePlayerSettings{direction:rtl!important}
 #naghmePlayerSettings>section{
- left:10px!important;right:10px!important;width:auto!important;
- max-width:520px!important;height:auto!important;
- overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important;padding:14px!important;border-radius:16px!important;
+ position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;
+ max-width:520px!important;max-height:none!important;height:auto!important;
+ overflow:visible!important;padding:14px!important;border-radius:16px!important;
  box-shadow:0 14px 40px #000c!important;
 }
 #naghmePlayerSettings>section>div:first-child{gap:10px!important;margin-bottom:4px!important}
