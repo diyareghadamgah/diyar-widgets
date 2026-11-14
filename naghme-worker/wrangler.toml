@@ -1,0 +1,10 @@
+name = "naghme-web"
+main = "index.js"
+compatibility_date = "2026-11-14"
+workers_dev = true
+
+[assets]
+directory = "../naghme"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = true
