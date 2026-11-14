@@ -86,7 +86,7 @@ const SEQUENCE_MODULUS = 1_000_000_000;
 
 const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
-const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net)$/i;
+const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
