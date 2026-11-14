@@ -87,7 +87,7 @@ const SEQUENCE_MODULUS = 1_000_000_000;
 const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
-const RADIO_JAVAN_HOST = "rjtvhls.wns.live";
+const RADIO_JAVAN_HOST = "radio.sr-api.ir";
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -199,8 +199,9 @@ export default {
       return new Response("usage: /<channel>/<rendition>, e.g. /tv1/1080p\n", { status: 400 });
     }
     const quality = RENDITION.test(rendition || "") ? rendition : "1080p";
-    const source = slug === "radiojavan"
-      ? "https://rjtvhls.wns.live/hls/stream.m3u8"
+    const isRadioJavan = slug === "radiojavan";
+    const source = isRadioJavan
+      ? "https://radio.sr-api.ir/hls/stream.m3u8"
       : `${slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
 
     /*
@@ -222,7 +223,7 @@ export default {
       `${url.origin}/${slug}/${quality}${proxyOrigin ? "?cors=1" : ""}`,
       { method: "GET" },
     );
-    const cached = await cache.match(cacheKey);
+    const cached = isRadioJavan ? null : await cache.match(cacheKey);
     if (cached) return cached;
 
     let upstream;
@@ -232,7 +233,7 @@ export default {
     try {
       upstream = await fetch(source, {
         headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
-        cf: { cacheTtl: 4, cacheEverything: true },
+        cf: { cacheTtl: isRadioJavan ? 1 : 4, cacheEverything: true },
       });
       if (!upstream.ok) {
         return manifestError("origin_manifest_http", {
@@ -287,7 +288,7 @@ export default {
       });
     }
 
-    const playlist = rewrite(body, upstream.url, proxyOrigin);
+    const playlist = rewrite(body, upstream.url, proxyOrigin, isRadioJavan);
     if (!playlist) {
       const preview = body.slice(0, 240).replace(/[\r\n\t]+/g, " ");
       return manifestError("unexpected_playlist_format", {
@@ -300,16 +301,16 @@ export default {
     const response = new Response(playlist, {
       headers: {
         "Content-Type": "application/vnd.apple.mpegurl",
-        "Cache-Control": `public, max-age=${EDGE_CACHE_SECONDS}`,
+        "Cache-Control": `public, max-age=${isRadioJavan ? 1 : EDGE_CACHE_SECONDS}`,
         "Access-Control-Allow-Origin": "*",
       },
     });
-    ctx.waitUntil(cache.put(cacheKey, response.clone()));
+    if (!isRadioJavan) ctx.waitUntil(cache.put(cacheKey, response.clone()));
     return response;
   },
 };
 
-export function rewrite(body, finalUrl, proxyOrigin = null) {
+export function rewrite(body, finalUrl, proxyOrigin = null, preserveTargetDuration = false) {
   /*
    * Upstream lists two hours of segments and we publish two and a half minutes of them, so
    * the hot path must stay cheap: count in a single pass, keep only the tail in a ring
@@ -352,7 +353,7 @@ export function rewrite(body, finalUrl, proxyOrigin = null) {
 
   const segment = longest || 2;
   const keep = Math.min(count, Math.max(3, Math.ceil(WINDOW_SECONDS / segment)));
-  const target = Math.max(TARGET_DURATION, Math.ceil(longest));
+  const target = preserveTargetDuration ? Math.max(1, Math.ceil(longest)) : Math.max(TARGET_DURATION, Math.ceil(longest));
 
   const out = [
     "#EXTM3U",
