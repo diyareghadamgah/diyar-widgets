@@ -87,6 +87,7 @@ const SEQUENCE_MODULUS = 1_000_000_000;
 const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
+const RADIO_JAVAN_HOST = "rjtvhls.wns.live";
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -134,7 +135,7 @@ async function proxySegment(request, url) {
   // (not the full URL) and keep the host allow-list as the SSRF boundary.
   const assetPath = target.pathname.toLowerCase();
   const allowedAsset = /\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
-  if (target.protocol !== "https:" || !TELEWEBION_HOST.test(target.hostname)
+  if (target.protocol !== "https:" || !(TELEWEBION_HOST.test(target.hostname) || target.hostname.toLowerCase() === RADIO_JAVAN_HOST)
       || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
   }
@@ -198,8 +199,9 @@ export default {
       return new Response("usage: /<channel>/<rendition>, e.g. /tv1/1080p\n", { status: 400 });
     }
     const quality = RENDITION.test(rendition || "") ? rendition : "1080p";
-    const streamOrigin = slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN;
-    const source = `${streamOrigin}/${slug}/live/playlist.m3u8`;
+    const source = slug === "radiojavan"
+      ? "https://rjtvhls.wns.live/hls/stream.m3u8"
+      : `${slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
