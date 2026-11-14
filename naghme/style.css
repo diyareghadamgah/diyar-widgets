@@ -537,3 +537,119 @@ body.video-fullscreen .video-fullscreen-exit{display:block!important}
 .iptv-country-head strong{margin-inline-start:auto;white-space:nowrap;font-size:11px}
 .iptv-country-head select{min-width:0;max-width:58%;padding:5px 9px;border:1px solid var(--s2);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit;font-size:12px;flex:1}
 @media(max-width:420px){.iptv-country-head{gap:5px}.iptv-country-head strong{font-size:10px}.iptv-country-head select{max-width:52%;font-size:11px}}
+
+
+/* NAGHME 2.3.6 — premium dark gold / violet brand refresh */
+:root{--bg:#08070d;--s1:#12101b;--s2:#211c30;--tx:#f8f5ff;--mu:#aaa2bb;--ac:#d7a84a;--ac2:#f5d47a}
+body{background:var(--bg)}
+button{transition:transform .18s ease,border-color .18s ease,filter .18s ease}
+.pri{background:linear-gradient(135deg,#f5d47a,#bd8126);color:#211300}
+#modeBar{background:linear-gradient(100deg,#100d1c,#1b1230);border-bottom:1px solid #d7a84a55}
+#modeBar button{background:#211a32;border:1px solid #ffffff18}
+#modeTitle{color:#f5d47a}
+body.mode-home{background:radial-gradient(ellipse at 50% 22%,#28134b 0%,#100b1c 38%,#07060c 78%);color:#f8f5ff}
+body.mode-home main{position:relative;isolation:isolate}
+body.mode-home main:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.32;background:radial-gradient(ellipse at 12% 85%,#4c168c 0,transparent 38%),radial-gradient(ellipse at 92% 18%,#174b9c 0,transparent 32%)}
+#modeHome{width:100%;max-width:1100px;margin:auto;gap:0;padding:clamp(18px,4vw,42px);justify-content:center}
+.home-topline{width:min(100%,900px);display:flex;align-items:center;gap:9px;margin:0 auto 22px;color:#b9b1ca;font-size:11px}
+.home-live-dot{width:7px;height:7px;border-radius:50%;background:#46d6a0;box-shadow:0 0 12px #46d6a0}
+.home-version{margin-inline-start:auto;color:#d7a84a;letter-spacing:2px;font-size:9px}
+.mode-welcome{position:relative;text-align:center;margin:0 auto 28px}
+.home-logo-wrap{position:relative;width:104px;height:104px;margin:0 auto 10px;padding:4px;border-radius:30px;background:linear-gradient(140deg,#ffe6a0,#b8751d 45%,#7b32d0 78%,#20a8ff);box-shadow:0 0 34px #9b4dff42,0 0 22px #d7a84a38}
+.home-logo-wrap img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:26px;border:2px solid #100b1c}
+.home-logo-glow{position:absolute;inset:-9px;border:1px solid #d7a84a66;border-radius:36px;transform:rotate(8deg)}
+.mode-welcome h1{font-size:clamp(34px,6vw,48px);font-weight:900;letter-spacing:-1px;color:#ffe2a0;margin:2px 0 0;text-shadow:0 4px 24px #d7a84a44}
+.home-en{display:block;color:#f5d47a;font-size:12px;letter-spacing:4px;font-weight:800;margin-top:2px}
+.home-en i{font-style:normal;color:#d8d0e6;font-size:9px;letter-spacing:3px}
+.mode-welcome p{margin-top:10px;color:#bdb4ce;font-size:13px}
+.home-section-title{width:min(100%,900px);display:flex;align-items:baseline;gap:10px;margin:0 auto 12px}
+.home-section-title span{font-size:15px;font-weight:800;color:#f8f5ff}
+.home-section-title small{font-size:10px;color:#9389a9}
+.mode-cards{display:grid;width:min(100%,900px);grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 auto}
+.mode-cards button.home-card{position:relative;overflow:hidden;min-height:178px;align-items:flex-start;justify-content:flex-end;text-align:right;gap:7px;padding:17px 15px;border:1px solid #ffffff20;border-radius:19px;background:linear-gradient(155deg,#211a32,#100d19 72%);box-shadow:0 12px 30px #0005}
+.mode-cards button.home-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--card-accent,#d7a84a);box-shadow:0 0 18px var(--card-accent,#d7a84a)}
+.mode-cards button.home-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-46px;top:-48px;background:var(--card-glow,#d7a84a);opacity:.13;filter:blur(22px);pointer-events:none}
+.mode-cards button.home-card:active{transform:translateY(1px) scale(.985)}
+.mode-cards button.home-card:hover{border-color:var(--card-accent,#d7a84a);filter:brightness(1.15)}
+.home-card-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:color-mix(in srgb,var(--card-accent) 17%,#171222);border:1px solid color-mix(in srgb,var(--card-accent) 48%,transparent);color:var(--card-accent);font-size:30px;line-height:1;box-shadow:0 0 22px color-mix(in srgb,var(--card-accent) 18%,transparent)}
+.mode-cards button.home-card>b{font-size:17px;color:#fff}
+.mode-cards button.home-card>small{font-size:10px;color:#aaa1bd}
+.mode-cards button.home-card>em{font-style:normal;font-size:10px;color:var(--card-accent);margin-top:5px}
+.mode-cards button.home-card>em span{display:inline-block;margin-inline-start:4px}
+.home-tv{--card-accent:#43b9ff;--card-glow:#147dff}
+.home-music{--card-accent:#f5c75e;--card-glow:#d78b20}
+.home-video{--card-accent:#c47aff;--card-glow:#8b2bff}
+.home-radio{--card-accent:#48d9b0;--card-glow:#08a77e}
+.mode-cards button.home-radio:disabled{opacity:.58;cursor:not-allowed;filter:saturate(.65)}
+.home-footer{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px auto 0;color:#c7bfd4}
+.home-footer span{color:#f5d47a;font-weight:800}
+.home-footer i{width:55px;height:1px;background:linear-gradient(90deg,transparent,#d7a84a)}
+.home-footer small{font-size:10px;color:#9389a9}
+@media(max-width:760px){
+ #modeHome{justify-content:flex-start;gap:0;padding:calc(18px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom))}
+ .home-topline{margin-bottom:18px}
+ .mode-welcome{margin-bottom:24px}
+ .home-logo-wrap{width:82px;height:82px;border-radius:24px}
+ .home-logo-wrap img{border-radius:20px}
+ .home-logo-glow{border-radius:29px}
+ .mode-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .mode-cards button.home-card{min-height:150px;padding:13px 12px;border-radius:16px;display:flex;align-items:flex-start}
+ .home-card-icon{width:44px;height:44px;border-radius:13px;font-size:25px}
+ .mode-cards button.home-card>b{font-size:15px}
+ .mode-cards button.home-card>small{font-size:9px;white-space:normal}
+ .home-footer{margin-top:22px}
+}
+@media(max-width:360px){
+ .mode-cards{gap:8px}
+ .mode-cards button.home-card{min-height:140px;padding:11px 9px}
+ .home-topline{font-size:10px}
+}
+
+/* Naghme illustrated home cards */
+#modeHome{background:radial-gradient(ellipse at 50% 0%,#261a36 0%,#100d18 42%,#08070d 100%);color:#f7f0ff}
+.home-topline{display:flex;align-items:center;gap:9px;color:#b8a9c9;font-size:12px}
+.home-live-dot{width:7px;height:7px;border-radius:50%;background:#d6ad55;box-shadow:0 0 12px #d6ad55}
+.home-version{margin-right:auto;font-size:10px;letter-spacing:1.5px;color:#8f7eaa}
+.home-logo-wrap{position:relative;display:inline-grid;place-items:center}
+.home-logo-wrap img{position:relative;z-index:1;width:82px;height:82px;border:2px solid #d6ad55;border-radius:25px;box-shadow:0 0 35px #b37b3c55}
+.home-logo-glow{position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle,#c99a4d44,transparent 68%);filter:blur(4px)}
+.mode-welcome h1{color:#f3d28b;font-size:32px;letter-spacing:1px}
+.home-en{display:block;color:#e6c27a;font-size:11px;letter-spacing:3px}
+.home-en i{font-style:normal;color:#b8a8ce}
+.mode-welcome p{color:#b9adc8;margin-top:7px}
+.home-section-title{width:min(100%,760px);display:flex;align-items:end;justify-content:space-between;color:#f4e8d1}
+.home-section-title small{color:#9588a7;font-size:11px}
+.mode-cards{width:min(100%,760px);gap:16px}
+.mode-cards button.home-card{position:relative;isolation:isolate;overflow:hidden;min-height:196px;justify-content:flex-end;align-items:flex-start;text-align:right;padding:15px 17px 16px;border:1px solid #ffffff20;border-radius:23px;background:linear-gradient(145deg,#292033,#15121d 68%);box-shadow:0 12px 28px #0005;transition:transform .2s,border-color .2s,box-shadow .2s}
+.mode-cards button.home-card:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 78% 22%,var(--card-glow,#d9a74b44),transparent 53%)}
+.mode-cards button.home-card:after{content:"";position:absolute;z-index:-1;width:140px;height:140px;left:-48px;top:-62px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 18px #ffffff08,0 0 0 38px #ffffff05}
+.mode-cards button.home-card:active{transform:translateY(2px) scale(.985);border-color:var(--card-accent);box-shadow:0 4px 14px #0007}
+.home-card-art{position:absolute;top:4px;left:0;width:100%;height:116px;display:grid;place-items:center;pointer-events:none}
+.home-card-art svg{width:100%;height:100%;max-width:180px;overflow:visible;filter:drop-shadow(0 8px 10px #0007)}
+.mode-cards button.home-card>b{font-size:18px;color:#fff;position:relative;margin-top:94px}
+.mode-cards button.home-card>small{font-size:11px;color:#c3b8d0;position:relative}
+.mode-cards button.home-card>em{font-size:10px;font-style:normal;color:var(--card-accent);margin-top:5px;position:relative}
+.mode-cards button.home-card>em span{font-size:15px}
+.home-tv{--card-accent:#f3c66c;--card-glow:#c78a3b55!important}
+.home-music{--card-accent:#d7adff;--card-glow:#9252d455!important}
+.home-video{--card-accent:#7bdfff;--card-glow:#2876d655!important}
+.home-radio{--card-accent:#83e8bd;--card-glow:#238b7055!important}
+.home-radio:disabled{opacity:.72;filter:saturate(.7)}
+.home-footer{display:flex;align-items:center;gap:10px;color:#9a8aa9;font-size:11px}
+.home-footer span{color:#d8b66f}.home-footer i{width:28px;height:1px;background:#8c7047}
+@media(max-width:760px){
+ #modeHome{justify-content:flex-start;gap:15px;padding:17px 16px 22px}
+ .mode-welcome img{width:70px;height:70px}
+ .home-logo-wrap img{width:70px;height:70px}
+ .mode-welcome h1{font-size:26px;margin-top:5px}
+ .mode-welcome p{font-size:12px}
+ .mode-cards{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px;gap:11px}
+ .mode-cards button.home-card{display:flex;min-height:174px;padding:10px 12px 12px;border-radius:19px;align-items:flex-start;justify-content:flex-end}
+ .home-card-art{height:100px;top:1px}
+ .home-card-art svg{max-width:155px}
+ .mode-cards button.home-card>b{margin-top:82px;font-size:16px}
+ .mode-cards button.home-card>small{font-size:10px;white-space:normal;text-align:right;min-height:28px}
+ .mode-cards button.home-card>em{font-size:10px}
+ .home-section-title{font-size:14px}
+ .home-footer{margin-top:auto}
+}
