@@ -21,7 +21,7 @@ jobs:
         run: |
           rm -rf /tmp/naghme-final
           mkdir -p /tmp/naghme-final/naghme-final
-          cp app.js index.html style.css /tmp/naghme-final/naghme-final/
+          cp app.js index.html style.css radio.js mode-shell.js /tmp/naghme-final/naghme-final/
           cd /tmp/naghme-final
           zip -qr "$GITHUB_WORKSPACE/naghme-final.zip" naghme-final
 
@@ -58,6 +58,7 @@ jobs:
       - name: Build web assets
         run: |
           node --check mode-shell.js
+          node --check radio.js
           node --check app.js
           node --check video.js
           node --check iptv-native.js
@@ -90,6 +91,8 @@ jobs:
           grep -q 'data-mode="music"' /tmp/apk/assets/public/index.html
           grep -q 'data-mode="video"' /tmp/apk/assets/public/index.html
           grep -q 'data-mode="tv"' /tmp/apk/assets/public/index.html
+          grep -q 'data-mode="radio"' /tmp/apk/assets/public/index.html
+          test -f /tmp/apk/assets/public/radio.js
           test -f /tmp/apk/assets/public/video.js
           grep -q "کتابخانهٔ ویدئو" /tmp/apk/assets/public/video.js
           cat /tmp/apk/assets/public/build-info.json; echo
