@@ -17,7 +17,7 @@ function unique(list){const m=new Map();(list||[]).forEach(s=>{if(s&&s.stationuu
 async function load(){
  if(state.loading)return;state.loading=true;status('در حال دریافت فهرست ایستگاه‌ها…');render();
  try{
-  const qs=['/stations/search?language=persian&hidebroken=true&order=votes&reverse=true&limit=80','/stations/search?countrycode=IR&hidebroken=true&order=votes&reverse=true&limit=80','/stations/topvote?limit=80'];
+  const qs=['/stations/search?language=persian&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/search?countrycode=IR&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/topvote?is_https=true&limit=80'];
   const data=await Promise.all(qs.map(p=>request(p).catch(()=>[])));
   state.items=unique(data.flat()).sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
   status(state.items.length?'ایستگاه‌ها آماده‌اند؛ برای پخش یکی را انتخاب کن.':'ایستگاهی پیدا نشد؛ دوباره تلاش کن.');
