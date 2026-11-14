@@ -22,7 +22,7 @@ async function load(){
   const data=await Promise.all(qs.map(p=>request(p).catch(()=>[])));
   state.items=[...IRIB,...unique(data.flat()).filter(s=>!IRIB.some(i=>i.name===s.name)),...state.custom].sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
   status(state.items.length?'ایستگاه‌ها آماده‌اند؛ برای پخش یکی را انتخاب کن.':'ایستگاهی پیدا نشد؛ دوباره تلاش کن.');
- }catch(e){status('دریافت ایستگاه‌ها ناموفق بود. اتصال اینترنت را بررسی و دوباره تلاش کن.')}
+ }catch(e){state.items=[...IRIB,...state.custom];status('دریافت فهرست جهانی ناموفق بود؛ ایستگاه‌های ذخیره‌شده همچنان در دسترس‌اند.')}
  finally{state.loading=false;render()}
 }
 function filtered(){
