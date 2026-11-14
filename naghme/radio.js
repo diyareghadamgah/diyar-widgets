@@ -2,6 +2,7 @@
 'use strict';
 const $=s=>document.querySelector(s);
 const API=['https://de1.api.radio-browser.info/json','https://nl1.api.radio-browser.info/json','https://at1.api.radio-browser.info/json'];
+const IRIB=[['radioiran','رادیو ایران','radioiran'],['radiojavan','رادیو جوان','radiojavan'],['radiopayam','رادیو پیام','radiopayam'],['radiotehran','رادیو تهران','radiotehran'],['radiovarzesh','رادیو ورزش','radiovarzesh'],['radioava','رادیو آوا','radioava'],['radioquran','رادیو قرآن','radioquran'],['radiofarhang','رادیو فرهنگ','radiofarhang'],['radiosalamat','رادیو سلامت','radiosalamat'],['radioeghtesad','رادیو اقتصاد','radioeghtesad'],['radiomaaref','رادیو معارف','radiomaaref'],['radiogoftogo','رادیو گفت‌وگو','radiogoftogo'],['radionamayesh','رادیو نمایش','radionamayesh'],['radiosaba','رادیو صبا','radiosaba'],['radioziarat','رادیو زیارت','radioziarat'],['radiotelavat','رادیو تلاوت','radiotelavat'],['radiotartil','رادیو ترتیل','radiotartil'],['radiomonasebati','رادیو مناسبتی','radiomonasebati']].map(([id,name,slug])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url:'https://cdnw.telewebion.com/'+slug+'/live/playlist.m3u8',url_resolved:'https://cdnw.telewebion.com/'+slug+'/live/playlist.m3u8',codec:'HLS',bitrate:0,votes:999999,irib:true}));
 const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],api:0};
 const audio=()=>$('#radioAudio');
 const norm=s=>String(s||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک');
@@ -19,13 +20,14 @@ async function load(){
  try{
   const qs=['/stations/search?language=persian&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/search?countrycode=IR&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/topvote?is_https=true&limit=80'];
   const data=await Promise.all(qs.map(p=>request(p).catch(()=>[])));
-  state.items=unique(data.flat()).sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
+  state.items=[...IRIB,...unique(data.flat()).filter(s=>!IRIB.some(i=>i.name===s.name))].sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
   status(state.items.length?'ایستگاه‌ها آماده‌اند؛ برای پخش یکی را انتخاب کن.':'ایستگاهی پیدا نشد؛ دوباره تلاش کن.');
  }catch(e){status('دریافت ایستگاه‌ها ناموفق بود. اتصال اینترنت را بررسی و دوباره تلاش کن.')}
  finally{state.loading=false;render()}
 }
 function filtered(){
  let a=state.items;
+ if(state.filter==='irib')a=a.filter(s=>s.irib===true);
  if(state.filter==='iran')a=a.filter(s=>s.countrycode==='IR'||norm(s.country).includes('iran')||norm(s.country).includes('ایران'));
  if(state.filter==='persian')a=a.filter(s=>norm(s.language).includes('persian')||norm(s.language).includes('farsi')||norm(s.name).match(/فارسی|ایران|persian|farsi/));
  if(state.filter==='world')a=a.filter(s=>s.countrycode!=='IR');
@@ -44,7 +46,7 @@ async function play(id){
  const a=audio();if(!a)return;
  if(state.current&&state.current.stationuuid===id&&!a.paused){a.pause();$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.');return}
  state.current=s;$('#radioNowTitle').textContent=s.name;$('#radioNowMeta').textContent=[s.country,s.language].filter(Boolean).join(' • ')||'رادیو اینترنتی';
- const url=s.url_resolved||s.url;status('در حال اتصال به '+s.name+'…');a.pause();a.src=url;a.load();
+ const url=s.url_resolved||s.url;status('در حال اتصال به '+s.name+'…');a.pause();if(window.__naghmeRadioHls){window.__naghmeRadioHls.destroy();window.__naghmeRadioHls=null}if(window.Hls&&Hls.isSupported()&&/\.m3u8(?:$|\?)/i.test(url)){const h=new Hls({enableWorker:true,lowLatencyMode:false});window.__naghmeRadioHls=h;h.loadSource(url);h.attachMedia(a);await new Promise((resolve,reject)=>{const timeout=setTimeout(()=>reject(Error('timeout')),12000);h.on(Hls.Events.MANIFEST_PARSED,()=>{clearTimeout(timeout);resolve()});h.on(Hls.Events.ERROR,(_,d)=>{if(d.fatal){clearTimeout(timeout);reject(Error(d.details||'HLS error'))}})})}else{a.src=url;a.load()}
  try{await a.play();$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده');}
  catch(e){status('پخش این ایستگاه شروع نشد؛ ممکن است جریان آن مسدود یا غیرفعال باشد. ایستگاه دیگری را امتحان کن.');$('#radioPlayToggle').textContent='▶'}
  render();
