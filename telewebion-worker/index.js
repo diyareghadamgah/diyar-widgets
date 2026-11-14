@@ -198,7 +198,8 @@ export default {
       return new Response("usage: /<channel>/<rendition>, e.g. /tv1/1080p\n", { status: 400 });
     }
     const quality = RENDITION.test(rendition || "") ? rendition : "1080p";
-    const source = `${ORIGIN}/${slug}/live/playlist.m3u8`;
+    const streamOrigin = slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN;
+    const source = `${streamOrigin}/${slug}/live/playlist.m3u8`;
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
@@ -246,7 +247,7 @@ export default {
         const lines = body.split(/\r?\n/);
         for (let i = 0; i < lines.length; i++) {
           if (!lines[i].startsWith("#EXT-X-STREAM-INF:")) continue;
-          const resolution = lines[i].match(/RESOLUTION=\\d+x(\\d+)/i);
+          const resolution = lines[i].match(/RESOLUTION=\d+x(\d+)/i);
           const height = resolution ? Number(resolution[1]) : 0;
           for (let j = i + 1; j < lines.length; j++) {
             const candidate = lines[j].trim();
