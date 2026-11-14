@@ -10,7 +10,22 @@
   <button type="button" class="btn-sm" data-mode="tv" aria-label="رفتن به تلویزیون">📺</button>
  </div>
 </div>
-<section id="modeHome" aria-label="انتخاب بخش"><div class="mode-welcome"><img src="icon-192.png" alt=""><h1>نغمه</h1><p>از کدام بخش می‌خواهید استفاده کنید؟</p></div><div class="mode-cards"><button type="button" data-mode="music"><span>🎵</span><b>موزیک</b><small>کتابخانه و پخش آهنگ‌ها</small></button><button type="button" data-mode="video"><span>🎬</span><b>ویدئو</b><small>کتابخانه و پخش ویدئوها</small></button><button type="button" data-mode="tv"><span>📺</span><b>تلویزیون</b><small>شبکه‌های تلویزیونی اینترنتی</small></button></div></section><header><<input id="q" type="search" placeholder="جست‌وجو: آهنگ، خواننده، آلبوم، پوشه، سال، سبک، فرمت…"><button id="add" class="pri">＋ افزودن</button><button id="theme" title="تم" aria-label="تغییر تم">◐</button></header><div id="view"></div>
+<section id="modeHome" aria-label="انتخاب بخش">
+ <div class="home-topline"><span class="home-live-dot"></span><span>همراه همیشگی موسیقی و سرگرمی</span><span class="home-version">NAGHME STUDIO</span></div>
+ <div class="mode-welcome">
+  <div class="home-logo-wrap"><img src="icon-192.png" alt="نشان نغمه"><span class="home-logo-glow"></span></div>
+  <h1>نغمه</h1><strong class="home-en">NAGHME <i> MUSIC STUDIO</i></strong>
+  <p>تمام موسیقی‌ها و سرگرمی‌های تو، در یک خانه</p>
+ </div>
+ <div class="home-section-title"><span>از کجا شروع کنیم؟</span><small>یک بخش را انتخاب کن</small></div>
+ <div class="mode-cards">
+  <button type="button" data-mode="tv" class="home-card home-tv"><span class="home-card-icon">▣</span><b>تلویزیون</b><small>شبکه‌های زنده و آرشیو</small><em>ورود به بخش <span>←</span></em></button>
+  <button type="button" data-mode="music" class="home-card home-music"><span class="home-card-icon">♫</span><b>موزیک</b><small>کتابخانه و آهنگ‌های محبوب</small><em>ورود به بخش <span>←</span></em></button>
+  <button type="button" data-mode="video" class="home-card home-video"><span class="home-card-icon">▶</span><b>ویدئو</b><small>فیلم‌ها و ویدئوهای شخصی</small><em>ورود به بخش <span>←</span></em></button>
+  <button type="button" class="home-card home-radio" disabled aria-disabled="true"><span class="home-card-icon">◖))</span><b>رادیو</b><small>ایستگاه‌های رادیویی</small><em>به‌زودی</em></button>
+ </div>
+ <footer class="home-footer"><span>نغمه</span><i></i><small>موسیقی، تصویر، خاطره</small></footer>
+</section><header><input id="q" type="search" placeholder="جست‌وجو: آهنگ، خواننده، آلبوم، پوشه، سال، سبک، فرمت…"><button id="add" class="pri">＋ افزودن</button><button id="theme" title="تم" aria-label="تغییر تم">◐</button></header><div id="view"></div>
 <section id="tvpage" hidden aria-label="تلویزیون اینترنتی">
 <div class="tv-topbar"><strong>📺 تلویزیون اینترنتی</strong><button id="tvHeaderRefresh" type="button" class="btn-sm" data-a="iptvload" aria-label="دریافت دوباره فهرست" title="دریافت دوباره فهرست">↻</button></div>
 <div class="tvplayer">
