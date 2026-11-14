@@ -19,7 +19,6 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     name: Deploy Naghme radio and IPTV proxy
     runs-on: ubuntu-latest
     steps:
