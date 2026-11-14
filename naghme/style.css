@@ -589,3 +589,10 @@ body.mode-home #modeHome{justify-content:center;gap:20px;padding:22px 18px;overf
  #modeHome .mode-cards{grid-template-columns:1fr;max-width:300px}
  #modeHome .mode-cards button.home-card{min-height:165px}
 }
+
+/* Restore the original four-card Naghme home design */
+#modeHome .mode-cards{grid-template-columns:repeat(4,minmax(0,1fr));}
+#modeHome .home-radio{--card-accent:#83e8bd;--card-glow:#238b7055;}
+#modeHome .home-radio:disabled{opacity:.72;filter:saturate(.7);cursor:not-allowed;}
+@media(max-width:760px){#modeHome .mode-cards{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:360px){#modeHome .mode-cards{grid-template-columns:1fr;max-width:300px;}}
