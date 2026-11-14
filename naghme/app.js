@@ -62,7 +62,7 @@ function iptvDecorate(c){
  c.groups=[...new Set(rawGroups.length?rawGroups:['سایر'])];
  c.group=c.groups.join('; ');c.country=c.country||'';c.language=c.language||'';c.id=c.id||'';
  const codes=String(c.country).split(/[;,|\s]+/).map(x=>x.trim()).filter(Boolean);
- if(!codes.length){const m=c.id.match(/\\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
+ if(!codes.length){const m=c.id.match(/\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
  const names=codes.map(iptvCountryName);
  if(!c.country&&names[0]&&names[0].fa)c.country=names[0].fa;
  c.search=iptvNorm([c.name,c.group,c.country,...codes,...names.flatMap(n=>[n.fa,n.en]),c.language,c.id].join(' '));
