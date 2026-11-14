@@ -61,8 +61,8 @@ function iptvDecorate(c){
  const rawGroups=String(c.group==null?'':c.group).split(';').map(x=>x.trim()).filter(x=>!invalidGroup(x));
  c.groups=[...new Set(rawGroups.length?rawGroups:['سایر'])];
  c.group=c.groups.join('; ');c.country=c.country||'';c.language=c.language||'';c.id=c.id||'';
- const codes=String(c.country).split(/[;,\\s]+/).filter(Boolean);
- if(!codes.length){const m=c.id.match(/\\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
+ const codes=String(c.country).split(/[;,|\s]+/).map(x=>x.trim()).filter(Boolean);
+ if(!codes.length){const m=c.id.match(/\.([a-z]{2})(?:@|$)/i);if(m)codes.push(m[1])}
  const names=codes.map(iptvCountryName);
  if(!c.country&&names[0]&&names[0].fa)c.country=names[0].fa;
  c.search=iptvNorm([c.name,c.group,c.country,...codes,...names.flatMap(n=>[n.fa,n.en]),c.language,c.id].join(' '));
@@ -279,7 +279,7 @@ function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreen
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
 const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
 function iptvCountryLabels(c){
- const raw=String(c.country||'').split(/[;,|]+/).map(x=>x.trim()).filter(Boolean);
+ const raw=String(c.country||'').split(/[;,|\s]+/).map(x=>x.trim()).filter(Boolean);
  if(!raw.length){const m=String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i);if(m)raw.push(m[1])}
  const aliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه'};
  return [...new Set(raw.map(v=>{const code=v.toUpperCase();if(aliases[code])return aliases[code];if(/^[A-Z]{2}$/.test(code)){const n=iptvCountryName(code).fa;return n||v}return v}).filter(Boolean))];
