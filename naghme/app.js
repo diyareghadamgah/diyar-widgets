@@ -82,7 +82,7 @@ function parseM3U(text){
  return out;
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
-function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=false}
+function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=!isIPTVNative()}
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
@@ -367,8 +367,7 @@ async function onIPTVFileSelected(e){
   if(file.size>limit)throw new Error('حجم فایل بیش از حد مجاز است.');
   const text=await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
   if(!/^#EXTM3U(?:\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
-  const isChannelList=ext==='m3u'||(!/#EXT-X-/i.test(clean)&&/^#EXTINF:/im.test(clean));
-  if(isChannelList){
+  if(ext==='m3u'){
    const parsed=parseM3U(clean);
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
    const map=new Map(IPTV_IMPORTED.channels.map(c=>[c.key,c]));
@@ -406,7 +405,6 @@ function enterIPTV(){
   }
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
-window.NaghmeEnterIPTV=enterIPTV;
 function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
  if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();

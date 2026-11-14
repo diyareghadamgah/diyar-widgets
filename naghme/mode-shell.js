@@ -25,15 +25,11 @@ function clickNav(value){
  const b=$('#nav [data-a="nav"][data-v="'+value+'"]');
  if(b)b.click();
 }
-function closeOtherPages(mode){
- if(mode!=='tv'&&window.NaghmeLeaveIPTV)window.NaghmeLeaveIPTV();
- if(mode!=='video'&&window.NaghmeLeaveVideo)window.NaghmeLeaveVideo();
-}
 function showHomeView(){clickNav('home')}
-function home(){closeOtherPages('home');showHomeView();setMode('home')}
-function music(){closeOtherPages('music');showHomeView();setMode('music')}
-function video(){closeOtherPages('video');setMode('video');if(window.NaghmeEnterVideo)window.NaghmeEnterVideo()}
-function tv(){closeOtherPages('tv');setMode('tv');if(window.NaghmeEnterIPTV)window.NaghmeEnterIPTV()}
+function home(){showHomeView();setMode('home')}
+function music(){showHomeView();setMode('music')}
+function video(){showHomeView();setMode('video');clickNav('video')}
+function tv(){showHomeView();setMode('tv');clickNav('iptv')}
 document.addEventListener('click',function(e){
  const pick=e.target.closest('[data-mode]');
  if(pick){const mode=pick.dataset.mode;if(mode==='music')music();else if(mode==='video')video();else if(mode==='tv')tv();return}
