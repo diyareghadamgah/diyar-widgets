@@ -405,6 +405,7 @@ function enterIPTV(){
   }
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
+window.NaghmeEnterIPTV=enterIPTV;
 function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
  if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
