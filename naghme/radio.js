@@ -53,11 +53,11 @@ async function play(id){
 }
 function toggle(){const a=audio();if(!a)return;if(!state.current){const s=filtered()[0];if(s)play(s.stationuuid);else status('ابتدا یک ایستگاه انتخاب کن.');return}if(a.paused)a.play().then(()=>{$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')}).catch(()=>status('پخش ادامه پیدا نکرد.'));else{a.pause();$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}}
 document.addEventListener('click',e=>{
- const f=e.target.closest('[data-radio-filter]');if(f){state.filter=f.dataset.radioFilter;render();return}
- const fav=e.target.closest('[data-radio-fav]');if(fav){e.stopPropagation();const id=fav.dataset.radioFav;state.favs=state.favs.includes(id)?state.favs.filter(x=>x!==id):[...state.favs,id];localStorage.setItem('naghmeRadioFavs',JSON.stringify(state.favs));render();return}
- const row=e.target.closest('[data-radio-play]');if(row){play(row.dataset.radioPlay);return}
- const act=e.target.closest('[data-radio]');if(act){if(act.dataset.radio==='refresh')load();if(act.dataset.radio==='toggle')toggle()}
-});
+ const f=e.target.closest('[data-radio-filter]');if(f){e.preventDefault();e.stopPropagation();state.filter=f.dataset.radioFilter;render();return}
+ const fav=e.target.closest('[data-radio-fav]');if(fav){e.preventDefault();e.stopPropagation();const id=fav.dataset.radioFav;state.favs=state.favs.includes(id)?state.favs.filter(x=>x!==id):[...state.favs,id];localStorage.setItem('naghmeRadioFavs',JSON.stringify(state.favs));render();return}
+ const row=e.target.closest('[data-radio-play]');if(row){e.preventDefault();e.stopPropagation();play(row.dataset.radioPlay);return}
+ const act=e.target.closest('[data-radio]');if(act){e.preventDefault();e.stopPropagation();if(act.dataset.radio==='refresh')load();if(act.dataset.radio==='toggle')toggle()}
+},true);
 $('#radioSearch')?.addEventListener('input',e=>{state.query=e.target.value;render()});
 audio()?.addEventListener('playing',()=>{$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')});
 audio()?.addEventListener('pause',()=>{$('#radioPlayToggle').textContent='▶'});
