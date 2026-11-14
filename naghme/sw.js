@@ -5,7 +5,7 @@
    - skipWaiting خودکار (به‌روزرسانی فوری)
    - حفظ نام نسخه قبلی برای سازگاری
 */
-const VERSION = 'naghme-v2.3.9-illustrated-home-preserve-web';
+const VERSION = 'naghme-v2.3.8-web-m3u-import';
 
 const SHELL = [
   './',
