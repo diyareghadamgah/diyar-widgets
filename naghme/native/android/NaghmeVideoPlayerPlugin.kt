@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.util.Log
 import android.view.Gravity
+import android.view.KeyEvent
 import android.view.View
 import android.webkit.CookieManager
 import android.webkit.WebChromeClient
@@ -43,6 +44,24 @@ import com.getcapacitor.annotation.CapacitorPlugin
 
 @CapacitorPlugin(name = "NaghmeVideoPlayer")
 class NaghmeVideoPlayerPlugin : Plugin() {
+    companion object {
+        @Volatile private var activePlugin: NaghmeVideoPlayerPlugin? = null
+
+        @JvmStatic
+        fun handleHardwareVolumeKey(keyCode: Int): Boolean {
+            val plugin = activePlugin ?: return false
+            val p = plugin.player ?: return false
+            if (plugin.playerView?.visibility != View.VISIBLE) return false
+            if (keyCode != KeyEvent.KEYCODE_VOLUME_UP && keyCode != KeyEvent.KEYCODE_VOLUME_DOWN) return false
+            val delta = if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) 0.05f else -0.05f
+            val next = (p.volume + delta).coerceIn(0f, 1f)
+            p.volume = next
+            plugin.notifyListeners("volumeChanged", JSObject().put("volume", next))
+            return true
+        }
+    }
+
+    init { activePlugin = this }
     private var player: ExoPlayer? = null
     private var playerView: PlayerView? = null
     private var lockOverlay: FrameLayout? = null
