@@ -95,7 +95,7 @@ function parseM3U(text){
  return out;
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
-function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=false}
+function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=true}
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
@@ -203,33 +203,42 @@ async function manageImportedIPTVFiles(){
  for(const g of groups)g.keys=IPTV_IMPORTED.channels.filter(c=>c.importedFile===g.name).map(c=>c.key);
  const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'فایل M3U8 محلی',keys:[x.key],local:true}));
  const files=[...groups,...locals];
- if(!files.length)return toast('فایل واردشده‌ای برای حذف وجود ندارد.');
- const actions=files.map(file=>[ 'حذف فایل «'+file.name+'» ('+fa(file.keys.length)+' شبکه)',async()=>{await removeIPTVImportedItem(file.keys[0]);manageImportedIPTVFiles()} ]);
- actions.push(['حذف همهٔ فایل‌های واردشده ('+fa(files.length)+' فایل)',async()=>{
-  const keys=new Set([...groups.flatMap(g=>g.keys),...locals.flatMap(g=>g.keys)]);
-  if(!keys.size)return;
-  if(!confirm('همهٔ '+fa(files.length)+' فایل واردشده و تمام شبکه‌های داخل آن‌ها حذف شوند؟ شبکه‌های دستی و فهرست اینترنتی حذف نمی‌شوند.'))return;
-  if(IPTV.current&&keys.has(IPTV.current.key)){if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}iptvRelease();IPTV.current=null;IPTV.active='';}
-  IPTV_IMPORTED.channels=IPTV_IMPORTED.channels.filter(c=>!c.importedFile);
-  IPTV_IMPORTED.localFiles.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
-  IPTV_IMPORTED.localFiles=[];
-  IPTV.favorites=IPTV.favorites.filter(k=>!keys.has(k));
-  await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);
-  await kvSet('iptvLocalM3U8',[]);
-  await kvSet('iptvFav',IPTV.favorites);
-  IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>!keys.has(c.key)));
-  IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('همهٔ فایل‌های واردشده و شبکه‌هایشان حذف شدند.');
- }]);
- sheet('حذف فایل‌های واردشده',actions,'هر فایل M3U همراه با همهٔ شبکه‌های داخل آن حذف می‌شود. فایل‌های M3U8 محلی نیز در این فهرست هستند. شبکه‌هایی که جداگانه با لینک مستقیم اضافه کرده‌ای و فهرست اینترنتی حذف نمی‌شوند.');
+ const actions=[
+  ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
+  ['📄 فهرست پیش‌فرض نغمه (آنلاین)',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
+ ];
+ if(files.length){
+  actions.push(...files.map(file=>[
+   '🗑 حذف «'+file.name+'» ('+fa(file.keys.length)+' شبکه)',
+   async()=>{await removeIPTVImportedItem(file.keys[0]);await manageImportedIPTVFiles()}
+  ]));
+  actions.push(['حذف همهٔ فایل‌های واردشده ('+fa(files.length)+' فایل)',async()=>{
+   const keys=new Set([...groups.flatMap(g=>g.keys),...locals.flatMap(g=>g.keys)]);
+   if(!keys.size)return;
+   if(!confirm('همهٔ '+fa(files.length)+' فایل واردشده و تمام شبکه‌های داخل آن‌ها حذف شوند؟ فهرست پیش‌فرض و شبکه‌های دستی حذف نمی‌شوند.'))return;
+   if(IPTV.current&&keys.has(IPTV.current.key)){if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}iptvRelease();IPTV.current=null;IPTV.active='';}
+   IPTV_IMPORTED.channels=IPTV_IMPORTED.channels.filter(c=>!c.importedFile);
+   IPTV_IMPORTED.localFiles.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
+   IPTV_IMPORTED.localFiles=[];
+   IPTV.favorites=IPTV.favorites.filter(k=>!keys.has(k));
+   await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);
+   await kvSet('iptvLocalM3U8',[]);
+   await kvSet('iptvFav',IPTV.favorites);
+   IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>!keys.has(c.key)));
+   IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('همهٔ فایل‌های واردشده و شبکه‌هایشان حذف شدند.');
+   await manageImportedIPTVFiles();
+  }]);
+ }else actions.push(['هنوز فایلی وارد نشده است',()=>toast('برای شروع، گزینهٔ افزودن فایل M3U / M3U8 را بزنید.')]);
+ sheet('مدیریت فایل‌های تلویزیون',actions,'فایل M3U همهٔ شبکه‌های داخل خودش را اضافه می‌کند و با حذف همان فایل، تمام شبکه‌هایش حذف می‌شوند. فایل M3U8 تکی هم از همین بخش قابل افزودن و حذف است. فهرست پیش‌فرض نغمه همیشه در دسترس می‌ماند و حذف نمی‌شود.');
 }
 function manageIPTVPlaylist(){
- sheet('مدیریت فهرست شبکه‌ها',[
-  ['افزودن شبکه با آدرس مستقیم (مثل GEM TV)',()=>addIPTVDirectChannel()],
-  ['حذف فایل‌های واردشده (M3U / M3U8)',()=>manageImportedIPTVFiles()],
-  ['افزودن یا تغییر آدرس M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
-  ['حذف آدرس فعلی',()=>{if(!IPTV.url)return toast('آدرسی برای حذف وجود ندارد.');if(confirm('آدرس فهرست اینترنتی حذف شود؟ فهرست‌های واردشده از فایل گوشی باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
-  ['بازگشت به فهرست پیش‌فرض',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
- ],'آدرس فعلی:\n'+(IPTV.url||'تنظیم نشده')+'\n\nمی‌توانی لینک مستقیم یک شبکه را هم جداگانه اضافه کنی. شبکه‌های افزوده‌شده در برنامه ذخیره می‌شوند. فایل محلی M3U/M3U8 نیز از دکمهٔ بارگذاری فایل قابل افزودن است.')}
+ sheet('مدیریت فهرست‌ها',[
+  ['📡 فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
+  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
+  ['🗑 حذف فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(IPTV.url===IPTV_DEFAULT_URL)return toast('فهرست پیش‌فرض حذف نمی‌شود؛ برای جایگزینی، آدرس فهرست دیگری وارد کن.');if(confirm('فهرست اینترنتی فعلی حذف شود؟ فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
+  ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
+  ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
+ ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'هیچ فهرستی انتخاب نشده')+'\n\nفهرست پیش‌فرض همیشه قابل بازگشت است. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» نمایش داده و حذف می‌شوند.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
@@ -373,7 +382,7 @@ function iptvFiltered(){
  return IPTV.channels.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
 }
 function iptvRowHtml(c){
- return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button>${(String(c.key||'').startsWith('direct|')||c.importedFile||c.localBlob)?`<button class="ib" data-a="iptvremove" data-v="${esc(c.key)}" aria-label="حذف فایل یا شبکه" title="${c.importedFile?'حذف فایل M3U و همهٔ شبکه‌های آن':c.localBlob?'حذف فایل M3U8':'حذف شبکه'}">✕</button>`:''}</div>`}
+ return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button></div>`}
 function iptvMore(){
  const box=$('#iptvResults');if(!box||IPTV.shown>=IPTV.filtered.length)return;
  const n=Math.min(IPTV.filtered.length,IPTV.shown+IPTV_PAGE);
