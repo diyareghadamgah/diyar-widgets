@@ -61,15 +61,16 @@
   if(window.IPTV)window.IPTV.nativePlayError='';
   updateChannelMenu();
   status('در حال اتصال به '+(channel.name||'شبکه')+'…');
-  if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.NaghmeIPTVFullscreen){
-   setTimeout(function(){if(active)window.NaghmeIPTVFullscreen(true)},180);
-  }
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url})})
    .then(function(){var q=document.getElementById('iptvQuality');return native.setVideoQuality(q?Number(q.value)||0:0).catch(function(){})})
    .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
-   .then(function(){document.body.classList.add('native-player-active');status('')})
+   .then(function(){
+    document.body.classList.add('native-player-active');
+    if(window.NaghmeIPTVFullscreen)return window.NaghmeIPTVFullscreen(true);
+   })
+   .then(function(){status('')})
    .catch(function(err){
     var message=(err&&err.message)||String(err||'خطای ناشناخته');
     if(window.IPTV)window.IPTV.nativePlayError=message;
