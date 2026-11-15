@@ -88,25 +88,6 @@ const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const RADIO_JAVAN_HOST = "radio.sr-api.ir";
-const IRANSEDA_HOST = /(^|\.)cdn[13]\.iranseda\.ir$/i;
-const IRANSEDA_RADIO = {
-  radioiran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8",
-  radiopayam: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-payam/playlist.m3u8",
-  radiotehran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tehran/playlist.m3u8",
-  radiovarzesh: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-varzesh/playlist.m3u8",
-  radioava: "http://s2.cdn1.iranseda.ir:1935/liveedge/radio-avaa/chunklist_w903692364.m3u8",
-  radioquran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-quran/playlist.m3u8",
-  radiofarhang: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-farhang/playlist.m3u8",
-  radiosalamat: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-salamat/playlist.m3u8",
-  radioeghtesad: "http://s2.cdn1.iranseda.ir:1935/liveedge/radio-eghtesad/playlist.m3u8",
-  radiomaaref: "http://s4.cdn3.iranseda.ir:1935/liveedge/radio-maaref/playlist.m3u8",
-  radiogoftogo: "http://s2.cdn3.iranseda.ir:1935/liveedge/radio-goftego/playlist.m3u8",
-  radionamayesh: "http://s1.cdn3.iranseda.ir:1935/liveedge/radio-namayesh/playlist.m3u8",
-  radiosaba: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-saba/playlist.m3u8",
-  radioziarat: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8",
-  radiotelavat: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8",
-  radiotartil: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8"
-};
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -155,7 +136,6 @@ async function proxySegment(request, url) {
   const assetPath = target.pathname.toLowerCase();
   const allowedAsset = /\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
   const allowedHost = TELEWEBION_HOST.test(target.hostname)
-    || IRANSEDA_HOST.test(target.hostname)
     || target.hostname.toLowerCase() === RADIO_JAVAN_HOST;
   if (!["http:", "https:"].includes(target.protocol) || !allowedHost || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
@@ -171,7 +151,6 @@ async function proxySegment(request, url) {
       headers: {
         "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
         "Accept": "*/*",
-        ...(IRANSEDA_HOST.test(target.hostname) ? { Referer: "https://radio.iranseda.ir/" } : {}),
         ...(range ? { Range: range } : {}),
       },
       redirect: "follow",
@@ -221,11 +200,13 @@ export default {
       return new Response("usage: /<channel>/<rendition>, e.g. /tv1/1080p\n", { status: 400 });
     }
     const quality = RENDITION.test(rendition || "") ? rendition : "1080p";
+    const isRadio = slug.startsWith("radio");
     const isRadioJavan = slug === "radiojavan";
+    // Radio Javan uses its dedicated HTTPS HLS relay; other IRIB radio stations
+    // use Telewebion's HTTPS radio manifests (never the legacy :1935 endpoints).
     const source = isRadioJavan
       ? "https://radio.sr-api.ir/hls/stream.m3u8"
-      : IRANSEDA_RADIO[slug]
-        || `${slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
+      : `${isRadio ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
@@ -246,7 +227,7 @@ export default {
       `${url.origin}/${slug}/${quality}${proxyOrigin ? "?cors=1" : ""}`,
       { method: "GET" },
     );
-    const cached = isRadioJavan ? null : await cache.match(cacheKey);
+    const cached = isRadio ? null : await cache.match(cacheKey);
     if (cached) return cached;
 
     let upstream;
@@ -256,7 +237,7 @@ export default {
     try {
       upstream = await fetch(source, {
         headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
-        cf: { cacheTtl: isRadioJavan ? 1 : 4, cacheEverything: true },
+        cf: { cacheTtl: isRadio ? 1 : 4, cacheEverything: true },
       });
       if (!upstream.ok) {
         return manifestError("origin_manifest_http", {
@@ -311,7 +292,7 @@ export default {
       });
     }
 
-    const playlist = rewrite(body, upstream.url, proxyOrigin, isRadioJavan);
+    const playlist = rewrite(body, upstream.url, proxyOrigin, isRadio);
     if (!playlist) {
       const preview = body.slice(0, 240).replace(/[\r\n\t]+/g, " ");
       return manifestError("unexpected_playlist_format", {
@@ -324,11 +305,11 @@ export default {
     const response = new Response(playlist, {
       headers: {
         "Content-Type": "application/vnd.apple.mpegurl",
-        "Cache-Control": `public, max-age=${isRadioJavan ? 1 : EDGE_CACHE_SECONDS}`,
+        "Cache-Control": `public, max-age=${isRadio ? 1 : EDGE_CACHE_SECONDS}`,
         "Access-Control-Allow-Origin": "*",
       },
     });
-    if (!isRadioJavan) ctx.waitUntil(cache.put(cacheKey, response.clone()));
+    if (!isRadio) ctx.waitUntil(cache.put(cacheKey, response.clone()));
     return response;
   },
 };
