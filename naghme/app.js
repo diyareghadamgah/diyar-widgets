@@ -425,7 +425,8 @@ async function onIPTVFileSelected(e){
   if(file.size>limit)throw new Error('حجم فایل بیش از حد مجاز است.');
   const text=await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
   if(!/^#EXTM3U(?:\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
-  if(ext==='m3u'){
+  const isChannelList=/^#EXTINF(?::|\s)/im.test(clean)&&!/^#EXT-X-/im.test(clean)&&/^https?:\/\//im.test(clean);
+  if(ext==='m3u'||isChannelList){
    const parsed=parseM3U(clean);
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
    const map=new Map(IPTV_IMPORTED.channels.map(c=>[c.key,c]));
