@@ -2,7 +2,7 @@
  'use strict';
  var native=window.NaghmeVideoPlayer;
  if(!native||!native.isNative||typeof native.get!=='function')return;
- var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false,sleepTimer=0,currentSpeed=1;
+ var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false,sleepTimer=0,currentSpeed=1,lastMenuChannels=null,lastMenuSelected='';
  function video(){return document.getElementById('tvbox')}
  function bounds(){
   var el=video();if(!el)return null;
@@ -40,8 +40,16 @@
  function updateChannelMenu(){
   var p=plugin(),list=window.IPTV&&Array.isArray(window.IPTV.channels)?window.IPTV.channels:[];
   if(!p||!p.setChannelMenu)return Promise.resolve();
+  var selected=window.IPTV&&window.IPTV.current?String(window.IPTV.current.key||''):'';
+  if(list===lastMenuChannels){
+   if(selected===lastMenuSelected)return Promise.resolve();
+   lastMenuSelected=selected;
+   return p.setSelectedChannel?p.setSelectedChannel({key:selected}).catch(function(err){console.warn('[Naghme IPTV] selected channel:',err)}):Promise.resolve();
+  }
+  lastMenuChannels=list;
+  lastMenuSelected=selected;
   var compact=list.map(function(c){return {key:String(c.key||''),name:String(c.name||'شبکه'),group:String(c.group||'')};});
-  return p.setChannelMenu({channelsJson:JSON.stringify(compact),selectedKey:window.IPTV&&window.IPTV.current?window.IPTV.current.key:''}).catch(function(err){console.warn('[Naghme IPTV] channel menu:',err)});
+  return p.setChannelMenu({channelsJson:JSON.stringify(compact),selectedKey:selected}).catch(function(err){console.warn('[Naghme IPTV] channel menu:',err)});
  }
  function playChannel(channel){
   if(!channel||!channel.url)return Promise.resolve();
