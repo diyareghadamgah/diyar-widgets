@@ -88,7 +88,7 @@ const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const RADIO_JAVAN_HOST = "radio.sr-api.ir";
-const IRANSEDA_HOST = /(^|\\.)cdn[13]\\.iranseda\\.ir$/i;
+const IRANSEDA_HOST = /(^|\.)cdn[13]\.iranseda\.ir$/i;
 const IRANSEDA_RADIO = {
   radioiran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8",
   radiopayam: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-payam/playlist.m3u8",
