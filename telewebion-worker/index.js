@@ -73,6 +73,8 @@
  *   https://<your-worker>.workers.dev/irinn/720p
  */
 
+import { connect } from "cloudflare:sockets";
+
 const ORIGIN = "https://ncdn.telewebion.ir";
 const TARGET_DURATION = 20;   // what we advertise, halved is how often a player returns
 const WINDOW_SECONDS = 150;   // three targets of start latency, plus 90s of margin
@@ -88,10 +90,153 @@ const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const RADIO_JAVAN_HOST = "radio.sr-api.ir";
-const IRANSEDA_HOST = /(^|\\.)cdn[0-9]\\.iranseda\\.ir$/i;
+const IRANSEDA_HOST = /(^|\.)cdn[0-9]\.iranseda\.ir$/i;
 const IRAN_RADIO_SOURCES = {
   radioiran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8",
 };
+
+/**
+ * IranSeda serves its public HLS over plain HTTP on TCP/1935. Workers fetch()
+ * cannot reliably reach that non-standard HTTP port, so use the TCP socket API
+ * and speak a small, bounded HTTP/1.0 request. The body is buffered per HLS
+ * object (playlists and short audio segments), with a hard size limit.
+ */
+function joinBytes(parts, total) {
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const part of parts) {
+    out.set(part, offset);
+    offset += part.byteLength;
+  }
+  return out;
+}
+
+function findHeaderEnd(bytes) {
+  for (let i = 0; i <= bytes.length - 4; i++) {
+    if (bytes[i] === 13 && bytes[i + 1] === 10 && bytes[i + 2] === 13 && bytes[i + 3] === 10) return i;
+  }
+  return -1;
+}
+
+function decodeChunkedBody(bytes) {
+  const parts = [];
+  let total = 0;
+  let offset = 0;
+  while (offset < bytes.length) {
+    let end = -1;
+    for (let i = offset; i < bytes.length - 1; i++) {
+      if (bytes[i] === 13 && bytes[i + 1] === 10) { end = i; break; }
+    }
+    if (end < 0) return bytes;
+    const line = new TextDecoder().decode(bytes.subarray(offset, end));
+    const size = Number.parseInt(line.split(";")[0].trim(), 16);
+    if (!Number.isFinite(size) || size < 0) return bytes;
+    offset = end + 2;
+    if (size === 0) break;
+    if (offset + size > bytes.length) return bytes;
+    parts.push(bytes.subarray(offset, offset + size));
+    total += size;
+    offset += size;
+    if (bytes[offset] === 13 && bytes[offset + 1] === 10) offset += 2;
+  }
+  return joinBytes(parts, total);
+}
+
+async function iranSedaTcpFetch(target, extraHeaders = {}, maxBytes = 20_000_000, redirects = 0) {
+  if (target.protocol !== "http:" || !IRANSEDA_HOST.test(target.hostname)) {
+    throw new Error("IranSeda TCP proxy only accepts approved HTTP hosts");
+  }
+  const port = Number(target.port || 80);
+  const socket = connect({ hostname: target.hostname, port });
+  try {
+    await socket.opened;
+    const writer = socket.writable.getWriter();
+    const headers = {
+      "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
+      "Accept": "*/*",
+      "Accept-Encoding": "identity",
+      "Connection": "close",
+      ...extraHeaders,
+    };
+    const requestLines = [
+      `GET ${target.pathname}${target.search} HTTP/1.0`,
+      `Host: ${target.host}`,
+      ...Object.entries(headers).map(([key, value]) => `${key}: ${value}`),
+      "",
+      "",
+    ];
+    await writer.write(new TextEncoder().encode(requestLines.join("\r\n")));
+    await writer.close();
+
+    const reader = socket.readable.getReader();
+    const received = [];
+    let receivedBytes = 0;
+    let buffer = new Uint8Array(0);
+    let headerEnd = -1;
+    while (headerEnd < 0) {
+      const part = await reader.read();
+      if (part.done) throw new Error("IranSeda closed before sending HTTP headers");
+      receivedBytes += part.value.byteLength;
+      if (receivedBytes > 32_768) throw new Error("IranSeda HTTP headers are too large");
+      const merged = new Uint8Array(buffer.byteLength + part.value.byteLength);
+      merged.set(buffer);
+      merged.set(part.value, buffer.byteLength);
+      buffer = merged;
+      headerEnd = findHeaderEnd(buffer);
+    }
+
+    const headerText = new TextDecoder("latin1").decode(buffer.subarray(0, headerEnd));
+    const headerLines = headerText.split("\r\n");
+    const statusMatch = headerLines[0].match(/^HTTP\/\d(?:\.\d)?\s+(\d{3})/i);
+    if (!statusMatch) throw new Error("Invalid HTTP status from IranSeda");
+    const status = Number(statusMatch[1]);
+    const responseHeaders = new Headers();
+    for (const line of headerLines.slice(1)) {
+      const colon = line.indexOf(":");
+      if (colon > 0) responseHeaders.append(line.slice(0, colon).trim(), line.slice(colon + 1).trim());
+    }
+    const bodyStart = headerEnd + 4;
+    if ([301, 302, 303, 307, 308].includes(status)) {
+      const location = responseHeaders.get("location");
+      if (!location || redirects >= 3) throw new Error("IranSeda redirect could not be followed");
+      const next = new URL(location, target);
+      await socket.close();
+      if (next.protocol !== "http:" || !IRANSEDA_HOST.test(next.hostname)) {
+        throw new Error("IranSeda redirected outside the approved host list");
+      }
+      return iranSedaTcpFetch(next, extraHeaders, maxBytes, redirects + 1);
+    }
+
+    const bodyParts = [];
+    let bodySize = 0;
+    if (buffer.byteLength > bodyStart) {
+      const firstBody = buffer.subarray(bodyStart);
+      bodyParts.push(firstBody);
+      bodySize += firstBody.byteLength;
+    }
+    while (true) {
+      const part = await reader.read();
+      if (part.done) break;
+      bodySize += part.value.byteLength;
+      if (bodySize > maxBytes) throw new Error("IranSeda response exceeded the size limit");
+      bodyParts.push(part.value);
+    }
+    let body = joinBytes(bodyParts, bodySize);
+    const transferEncoding = responseHeaders.get("transfer-encoding") || "";
+    if (/chunked/i.test(transferEncoding)) {
+      body = decodeChunkedBody(body);
+      responseHeaders.delete("transfer-encoding");
+      responseHeaders.delete("content-length");
+    }
+    responseHeaders.set("X-Upstream-Final-Url", target.href);
+    await socket.close();
+    return new Response(body, { status, headers: responseHeaders });
+  } catch (error) {
+    try { await socket.close(); } catch {}
+    throw error;
+  }
+}
+
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -152,15 +297,15 @@ async function proxySegment(request, url) {
   const range = request.headers.get("range");
   let upstream;
   try {
-    upstream = await fetch(target, {
-      headers: {
-        "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
-        "Accept": "*/*",
-        ...(IRANSEDA_HOST.test(target.hostname) ? { Referer: "https://radio.iranseda.ir/" } : {}),
-        ...(range ? { Range: range } : {}),
-      },
-      redirect: "follow",
-    });
+    const segmentHeaders = {
+      "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
+      "Accept": "*/*",
+      ...(IRANSEDA_HOST.test(target.hostname) ? { Referer: "https://radio.iranseda.ir/" } : {}),
+      ...(range ? { Range: range } : {}),
+    };
+    upstream = IRANSEDA_HOST.test(target.hostname)
+      ? await iranSedaTcpFetch(target, segmentHeaders)
+      : await fetch(target, { headers: segmentHeaders, redirect: "follow" });
   } catch (error) {
     console.error("Telewebion segment fetch failed", error);
     return new Response("segment unreachable\n", { status: 502 });
@@ -241,10 +386,12 @@ export default {
     let stage = "origin_manifest_fetch";
     let requestedUrl = source;
     try {
-      upstream = await fetch(source, {
-        headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
-        cf: { cacheTtl: isRadio ? 1 : 4, cacheEverything: true },
-      });
+      upstream = IRANSEDA_HOST.test(new URL(source).hostname)
+        ? await iranSedaTcpFetch(new URL(source), { Referer: "https://radio.iranseda.ir/" }, 2_000_000)
+        : await fetch(source, {
+          headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
+          cf: { cacheTtl: isRadio ? 1 : 4, cacheEverything: true },
+        });
       if (!upstream.ok) {
         return manifestError("origin_manifest_http", {
           status: upstream.status,
@@ -265,7 +412,7 @@ export default {
           for (let j = i + 1; j < lines.length; j++) {
             const candidate = lines[j].trim();
             if (candidate && !candidate.startsWith("#")) {
-              variants.push({ height, url: new URL(candidate, upstream.url).href });
+              variants.push({ height, url: new URL(candidate, upstream.headers.get("X-Upstream-Final-Url") || upstream.url || requestedUrl).href });
               break;
             }
           }
@@ -276,10 +423,12 @@ export default {
           const selected = variants.filter(v => !v.height || v.height <= requestedHeight).at(-1) || variants[0];
           stage = "rendition_fetch";
           requestedUrl = selected.url;
-          upstream = await fetch(selected.url, {
-            headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
-            cf: { cacheTtl: 4, cacheEverything: true },
-          });
+          upstream = IRANSEDA_HOST.test(new URL(selected.url).hostname)
+            ? await iranSedaTcpFetch(new URL(selected.url), { Referer: "https://radio.iranseda.ir/" }, 2_000_000)
+            : await fetch(selected.url, {
+              headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", Accept: "*/*" },
+              cf: { cacheTtl: 4, cacheEverything: true },
+            });
           if (!upstream.ok) {
             return manifestError("rendition_http", {
               status: upstream.status,
@@ -298,7 +447,7 @@ export default {
       });
     }
 
-    const playlist = rewrite(body, upstream.url, proxyOrigin, isRadio);
+    const playlist = rewrite(body, upstream.headers.get("X-Upstream-Final-Url") || upstream.url || requestedUrl, proxyOrigin, isRadio);
     if (!playlist) {
       const preview = body.slice(0, 240).replace(/[\r\n\t]+/g, " ");
       return manifestError("unexpected_playlist_format", {
