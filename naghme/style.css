@@ -860,3 +860,40 @@ body.video-fullscreen.mode-video .video-fullscreen-exit{display:block!important}
  body.mode-music #np:not([hidden])>.ctl button{min-width:38px!important;min-height:38px!important}
  body.mode-music #np:not([hidden])>#vol{max-width:34%!important}
 }
+
+
+/* Radio landscape console: live player monitor on one side, station controls on the other */
+@media (orientation:landscape) and (min-width:600px){
+ body.mode-radio,body.mode-radio main{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
+ body.mode-radio main{display:flex!important;flex-direction:column!important}
+ body.mode-radio #radioPage:not([hidden]){
+  display:flex!important;flex:1 1 auto!important;flex-direction:row!important;align-items:stretch!important;
+  gap:12px!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;
+  overflow:hidden!important;padding:8px 12px calc(8px + env(safe-area-inset-bottom))!important;box-sizing:border-box!important
+ }
+ body.mode-radio .radio-workspace{display:flex!important;flex:1 1 auto!important;flex-direction:row!important;align-items:stretch!important;gap:12px!important;min-width:0!important;min-height:0!important;overflow:hidden!important}
+ body.mode-radio .radio-monitor{
+  display:flex!important;flex:0 0 43%!important;width:43%!important;min-width:0!important;min-height:0!important;
+  flex-direction:column!important;justify-content:center!important;gap:12px!important;overflow:hidden!important
+ }
+ body.mode-radio .radio-top{flex:0 0 auto!important;justify-content:center!important;text-align:center!important}
+ body.mode-radio .radio-player{
+  display:grid!important;grid-template-columns:76px minmax(0,1fr) 48px!important;
+  flex:0 0 auto!important;width:100%!important;min-width:0!important;gap:12px!important;padding:16px!important;
+  box-sizing:border-box!important;border-radius:18px!important
+ }
+ body.mode-radio .radio-disc{width:72px!important;height:72px!important;font-size:40px!important}
+ body.mode-radio #radioAudio{grid-column:1/-1!important;width:100%!important;height:42px!important}
+ body.mode-radio #radioStatus{grid-column:1/-1!important;min-height:24px!important;text-align:center!important}
+ body.mode-radio .radio-sidebar{
+  display:flex!important;flex:1 1 57%!important;flex-direction:column!important;min-width:0!important;min-height:0!important;
+  height:100%!important;gap:7px!important;overflow:hidden!important
+ }
+ body.mode-radio .radio-tools{flex:0 0 auto!important}
+ body.mode-radio .radio-custom-tools{flex:0 0 auto!important;max-height:32dvh!important;overflow-y:auto!important}
+ body.mode-radio .radio-filters{flex:0 0 auto!important}
+ body.mode-radio .radio-stations{
+  flex:1 1 0!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;
+  overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important
+ }
+}
