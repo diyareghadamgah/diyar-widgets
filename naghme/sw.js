@@ -1,5 +1,5 @@
 /* نغمه — سرویس‌ورکر. برای انتشار نسخه‌ی جدید، VERSION را تغییر دهید. */
-const VERSION='naghme-v2.3.22-touch-controls',SHELL=['./','index.html','style.css','app.js','tags.js','platform.js','hls.min.js','manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png','radio.js','iptv-web-controls.js'];
+const VERSION='naghme-v2.3.23-default-playlist-volume-keys',SHELL=['./','index.html','style.css','app.js','tags.js','platform.js','hls.min.js','manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png','radio.js','iptv-web-controls.js'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(VERSION).then(c=>c.addAll(SHELL))));   // عمداً skipWaiting خودکار نداریم: به‌روزرسانی با تأیید کاربر
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==VERSION).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 self.addEventListener('message',e=>{if(e.data==='skip')self.skipWaiting()});
