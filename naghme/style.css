@@ -770,3 +770,46 @@ body.video-split-landscape.mode-video .video-top{display:none!important}
 body.video-fullscreen.mode-video .video-page{display:block!important;padding:0!important}
 body.video-fullscreen.mode-video .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
 body.video-fullscreen.mode-video .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+
+
+/* Video workspace v2: dedicated monitor + scrollable control/library sidebar */
+body.mode-video,body.mode-video main{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
+body.mode-video main{display:flex!important;flex-direction:column!important}
+body.mode-video #videoPage{display:flex!important;flex:1 1 auto!important;width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important;padding:0!important;margin:0!important}
+body.mode-video #videoContent{display:flex!important;flex:1 1 auto!important;width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}
+body.mode-video .video-page{display:flex!important;flex:1 1 auto!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;overflow:hidden!important;padding:6px!important;margin:0!important;box-sizing:border-box!important}
+body.mode-video .video-workspace{display:flex!important;flex:1 1 auto!important;flex-direction:column!important;gap:8px!important;width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}
+body.mode-video .video-monitor{flex:0 0 auto!important;width:100%!important;min-width:0!important;display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:0!important}
+body.mode-video .video-monitor .video-stage{position:relative!important;flex:none!important;width:100%!important;height:auto!important;max-height:38dvh!important;min-height:120px!important;aspect-ratio:16/9!important;margin:0!important;border-radius:12px!important;overflow:hidden!important}
+body.mode-video .video-monitor .video-stage video{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important}
+body.mode-video .video-now{display:flex!important;flex:0 0 auto!important;align-items:center!important;gap:8px!important;margin:0!important;padding:6px 2px!important}
+body.mode-video .video-sidebar{display:flex!important;flex:1 1 auto!important;flex-direction:column!important;gap:6px!important;width:100%!important;min-width:0!important;min-height:0!important;overflow:hidden!important}
+body.mode-video .video-top{display:flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;flex-wrap:wrap!important;margin:0!important}
+body.mode-video .video-top h2{margin:0!important}
+body.mode-video .video-top .d,body.mode-video .video-note{display:none!important}
+body.mode-video .video-tools{display:flex!important;flex:0 0 auto!important;max-height:22dvh!important;overflow-y:auto!important;justify-content:flex-start!important;gap:5px!important;margin:0!important;padding:2px 0!important}
+body.mode-video .video-tools button{min-height:34px!important;padding:5px 8px!important;font-size:12px!important}
+body.mode-video .video-library-head{display:flex!important;flex:0 0 auto!important;align-items:center!important;gap:8px!important;margin:0!important}
+body.mode-video .video-list{display:grid!important;grid-template-columns:1fr!important;flex:1 1 0!important;width:100%!important;min-height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;align-content:start!important;padding:2px 0 8px!important}
+@media(orientation:landscape){
+ body.mode-video .video-page{padding:6px!important}
+ body.mode-video .video-workspace{flex-direction:row!important;align-items:stretch!important;gap:10px!important}
+ body.mode-video .video-monitor{flex:0 0 52%!important;width:52%!important;height:100%!important;justify-content:center!important}
+ body.mode-video .video-monitor .video-stage{width:100%!important;max-height:calc(100dvh - 82px)!important;min-height:0!important;aspect-ratio:16/9!important}
+ body.mode-video .video-now{min-height:34px!important}
+ body.mode-video .video-sidebar{flex:1 1 48%!important;width:48%!important;height:100%!important}
+ body.mode-video .video-tools{max-height:28dvh!important}
+ body.mode-video .video-list{flex:1 1 0!important}
+}
+body.video-split-landscape.mode-video .video-monitor{flex-basis:52%!important}
+body.video-fullscreen.mode-video .video-workspace{display:block!important}
+body.video-fullscreen.mode-video .video-monitor{display:block!important}
+body.video-fullscreen.mode-video .video-sidebar{display:none!important}
+body.video-fullscreen.mode-video .video-now,
+body.video-fullscreen.mode-video .video-top,
+body.video-fullscreen.mode-video .video-tools,
+body.video-fullscreen.mode-video .video-library-head,
+body.video-fullscreen.mode-video .video-list{display:none!important}
+body.video-fullscreen.mode-video .video-monitor .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
+body.video-fullscreen.mode-video .video-monitor .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+body.video-fullscreen.mode-video .video-fullscreen-exit{display:block!important}
