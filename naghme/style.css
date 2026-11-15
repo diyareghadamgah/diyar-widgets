@@ -742,3 +742,31 @@ body.mode-tv #tvpage .tvlist{flex:1 1 auto;min-height:0;overflow-y:auto;padding-
   flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;
  }
 }
+
+
+/* Video library: TV-like landscape full screen and resizable split workspace */
+body.mode-video{height:100dvh!important;overflow:hidden!important}
+body.mode-video main{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}
+body.mode-video #videoPage{display:flex!important;flex:1 1 auto!important;width:100%!important;height:100%!important;max-height:100%!important;min-height:0!important;overflow:hidden!important;padding:0!important;margin:0!important}
+body.mode-video #videoPage[hidden]{display:none!important}
+body.mode-video #videoContent{display:flex!important;flex:1 1 auto!important;min-height:0!important;overflow:hidden!important}
+body.mode-video .video-page{display:flex!important;flex:1 1 auto!important;flex-direction:column!important;gap:6px!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;overflow:hidden!important;padding:6px!important;box-sizing:border-box!important}
+body.mode-video .video-top{flex:0 0 auto!important;margin:0!important}
+body.mode-video .video-stage{flex:0 0 auto!important;width:100%!important;max-height:42dvh!important;min-height:120px!important;aspect-ratio:16/9!important;margin:0!important;position:relative!important}
+body.mode-video .video-stage video{width:100%!important;height:100%!important;object-fit:contain!important}
+body.mode-video .video-now,body.mode-video .video-tools{flex:0 0 auto!important;margin:0!important}
+body.mode-video .video-library-head{flex:0 0 auto!important;margin:0!important}
+body.mode-video .video-list{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;padding-bottom:8px!important}
+body.video-split-landscape.mode-video #modeBar,
+body.video-split-landscape.mode-video .video-top{display:none!important}
+@media(orientation:landscape){
+ body.mode-video .video-page{flex-direction:row!important;flex-wrap:wrap!important;align-content:stretch!important;gap:8px!important;padding:8px!important}
+ body.mode-video .video-top{width:100%!important}
+ body.mode-video .video-stage{flex:0 0 48%!important;width:48%!important;height:auto!important;max-height:calc(100dvh - 16px)!important;min-height:0!important;aspect-ratio:16/9!important;align-self:center!important}
+ body.mode-video .video-now,body.mode-video .video-tools,body.mode-video .video-library-head,body.mode-video .video-list{flex:1 1 calc(52% - 8px)!important;width:calc(52% - 8px)!important;min-width:0!important}
+ body.mode-video .video-tools{max-height:34dvh!important;overflow-y:auto!important}
+ body.mode-video .video-list{max-height:none!important}
+}
+body.video-fullscreen.mode-video .video-page{display:block!important;padding:0!important}
+body.video-fullscreen.mode-video .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
+body.video-fullscreen.mode-video .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
