@@ -241,7 +241,7 @@ function manageIPTVPlaylist(){
  sheet('مدیریت فهرست‌ها',[
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
-  ['🗑 حذف فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(IPTV.url===IPTV_DEFAULT_URL)return toast('فهرست پیش‌فرض حذف نمی‌شود؛ برای جایگزینی، آدرس فهرست دیگری وارد کن.');if(confirm('فهرست اینترنتی فعلی حذف شود؟ فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
+  ['🗑 حذف موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ هر زمان بخواهی می‌توانی با گزینهٔ «بازگشت به فهرست پیش‌فرض نغمه» آن را دوباره فعال کنی. فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
   ['🗑 مدیریت و حذف شبکه‌های دستی',()=>manageDirectIPTVChannels()],
   ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
