@@ -429,6 +429,11 @@ async function onIPTVFileSelected(e){
   if(ext==='m3u'||isChannelList){
    const parsed=parseM3U(clean);
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
+   if(isChannelList){
+    const stale=IPTV_IMPORTED.localFiles.filter(x=>x.name===name),staleKeys=new Set(stale.map(x=>x.key));
+    stale.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
+    if(stale.length){IPTV_IMPORTED.localFiles=IPTV_IMPORTED.localFiles.filter(x=>x.name!==name);await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item),'iptvLocalM3U8'));IPTV.favorites=IPTV.favorites.filter(k=>!staleKeys.has(k));await kvSet('iptvFav',IPTV.favorites)}
+   }
    const map=new Map(IPTV_IMPORTED.channels.map(c=>[c.key,c]));
    let added=0;for(const c of parsed){if(!map.has(c.key))added++;map.set(c.key,{...c,importedFile:name})}
    IPTV_IMPORTED.channels=[...map.values()];
