@@ -12,6 +12,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.ScrollView
+import org.json.JSONArray
 import android.widget.TextView
 import java.net.HttpURLConnection
 import java.net.URL
@@ -39,6 +41,10 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     private var lockOverlay: FrameLayout? = null
     private var isPlayerLocked: Boolean = false
     private var iptvFullscreenButton: Button? = null
+    private var iptvChannelMenuButton: Button? = null
+    private var iptvChannelMenuPanel: LinearLayout? = null
+    private var iptvChannelData: String = "[]"
+    private var iptvSelectedChannelKey: String = ""
     private var iptvOriginalSystemUi: Int? = null
     private var iptvOriginalOrientation: Int? = null
     private var famContainer: LinearLayout? = null
@@ -371,6 +377,107 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     }
 
     /** تمام‌صفحهٔ IPTV: دکمهٔ خروج بومی بالای PlayerView قرار می‌گیرد تا زیر لایهٔ ویدئو نماند. */
+
+    @PluginMethod
+    fun setChannelMenu(call: PluginCall) {
+        iptvChannelData = call.getString("channelsJson") ?: "[]"
+        iptvSelectedChannelKey = call.getString("selectedKey") ?: iptvSelectedChannelKey
+        activity?.runOnUiThread {
+            refreshIptvChannelMenu()
+            call.resolve()
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setSelectedChannel(call: PluginCall) {
+        iptvSelectedChannelKey = call.getString("key") ?: ""
+        activity?.runOnUiThread {
+            refreshIptvChannelMenu()
+            call.resolve()
+        } ?: call.reject("Activity not available")
+    }
+
+    private fun refreshIptvChannelMenu() {
+        val panel = iptvChannelMenuPanel ?: return
+        val rowsHost = panel.tag as? LinearLayout ?: return
+        val act = activity ?: return
+        rowsHost.removeAllViews()
+        val rows = JSONArray(iptvChannelData)
+        for (i in 0 until rows.length()) {
+            val item = rows.optJSONObject(i) ?: continue
+            val key = item.optString("key")
+            val name = item.optString("name", "شبکه")
+            val group = item.optString("group", "")
+            val row = TextView(act).apply {
+                text = (if (key == iptvSelectedChannelKey) "●  " else "○  ") + name + if (group.isNotBlank()) "\\n" + group else ""
+                textSize = 17f
+                setTextColor(Color.WHITE)
+                setPadding(18, 16, 14, 16)
+                isClickable = true
+                setBackgroundColor(if (key == iptvSelectedChannelKey) Color.rgb(35, 91, 72) else Color.rgb(39, 43, 45))
+                setOnClickListener {
+                    notifyListeners("channelSelected", JSObject().put("key", key))
+                    iptvChannelMenuPanel?.visibility = View.GONE
+                }
+            }
+            rowsHost.addView(row, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply { bottomMargin = 5 })
+        }
+    }
+
+    private fun showIptvChannelMenu(act: android.app.Activity) {
+        if (iptvChannelMenuButton == null) {
+            val button = Button(act).apply {
+                text = "☷"
+                contentDescription = "فهرست شبکه‌ها"
+                textSize = 23f
+                isAllCaps = false
+                setTextColor(Color.WHITE)
+                setBackgroundColor(Color.argb(220, 25, 25, 25))
+                setOnClickListener {
+                    val panel = iptvChannelMenuPanel ?: return@setOnClickListener
+                    panel.visibility = if (panel.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+                    if (panel.visibility == View.VISIBLE) refreshIptvChannelMenu()
+                }
+            }
+            val size = (54 * act.resources.displayMetrics.density).toInt()
+            val margin = (12 * act.resources.displayMetrics.density).toInt()
+            act.addContentView(button, FrameLayout.LayoutParams(size, size, Gravity.TOP or Gravity.END).apply {
+                rightMargin = margin
+                topMargin = margin
+            })
+            iptvChannelMenuButton = button
+        } else iptvChannelMenuButton?.visibility = View.VISIBLE
+
+        if (iptvChannelMenuPanel == null) {
+            val panel = LinearLayout(act).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(10, 10, 10, 10)
+                setBackgroundColor(Color.argb(238, 18, 22, 23))
+                visibility = View.GONE
+            }
+            val title = TextView(act).apply {
+                text = "انتخاب شبکه"
+                textSize = 19f
+                setTextColor(Color.WHITE)
+                setPadding(12, 12, 12, 18)
+            }
+            panel.addView(title)
+            val scroll = ScrollView(act)
+            val rowsHost = LinearLayout(act).apply { orientation = LinearLayout.VERTICAL }
+            scroll.addView(rowsHost)
+            panel.addView(scroll, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
+            panel.tag = rowsHost
+            val width = (act.resources.displayMetrics.widthPixels * 0.42f).toInt().coerceAtLeast(260)
+            val top = (74 * act.resources.displayMetrics.density).toInt()
+            act.addContentView(panel, FrameLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.END or Gravity.CENTER_VERTICAL).apply {
+                topMargin = top
+                bottomMargin = (12 * act.resources.displayMetrics.density).toInt()
+            })
+            iptvChannelMenuPanel = panel
+        }
+        refreshIptvChannelMenu()
+    }
+
     @PluginMethod
     fun setFullscreen(call: PluginCall) {
         val enabled = call.getBoolean("enabled") ?: false
@@ -412,6 +519,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                     } else {
                         iptvFullscreenButton?.visibility = View.VISIBLE
                     }
+                    showIptvChannelMenu(act)
                 } else {
                     exitIptvFullscreen(act)
                 }
@@ -428,6 +536,10 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 (button.parent as? ViewGroup)?.removeView(button)
             }
             iptvFullscreenButton = null
+            iptvChannelMenuButton?.let { (it.parent as? ViewGroup)?.removeView(it) }
+            iptvChannelMenuButton = null
+            iptvChannelMenuPanel?.let { (it.parent as? ViewGroup)?.removeView(it) }
+            iptvChannelMenuPanel = null
             iptvOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
             iptvOriginalSystemUi = null
             iptvOriginalOrientation?.let { act.requestedOrientation = it }
