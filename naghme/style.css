@@ -813,3 +813,62 @@ body.video-fullscreen.mode-video .video-list{display:none!important}
 body.video-fullscreen.mode-video .video-monitor .video-stage{position:fixed!important;inset:0!important;z-index:10000!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border-radius:0!important;background:#000!important}
 body.video-fullscreen.mode-video .video-monitor .video-stage video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important}
 body.video-fullscreen.mode-video .video-fullscreen-exit{display:block!important}
+
+
+/* Music player landscape console: artwork/now-playing monitor + controls/queue sidebar */
+@media (orientation:landscape) and (min-width:600px){
+ body.mode-music #np:not([hidden]){
+  position:fixed!important;inset:0!important;z-index:10020!important;
+  display:grid!important;grid-template-columns:minmax(0,1.02fr) minmax(300px,.98fr)!important;
+  grid-template-rows:auto minmax(0,1fr)!important;
+  grid-template-areas:"close close" "monitor controls"!important;
+  gap:10px 16px!important;align-items:stretch!important;
+  width:100vw!important;height:100dvh!important;max-height:100dvh!important;
+  overflow:hidden!important;padding:8px 14px calc(8px + env(safe-area-inset-bottom))!important;
+  box-sizing:border-box!important;text-align:center!important;
+ }
+ body.mode-music #np:not([hidden])>.ib{
+  grid-area:close!important;position:absolute!important;top:8px!important;inset-inline-start:8px!important;
+  z-index:2!important;width:36px!important;height:36px!important;
+ }
+ body.mode-music #np:not([hidden])>#nc{
+  grid-area:monitor!important;align-self:center!important;justify-self:center!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  width:min(100%,calc((100dvh - 90px)*1.55))!important;max-height:calc(100dvh - 90px)!important;
+  min-width:0!important;min-height:0!important;overflow:hidden!important;
+ }
+ body.mode-music #np:not([hidden])>#nc .cv{
+  width:auto!important;height:auto!important;max-width:100%!important;max-height:calc(100dvh - 150px)!important;
+  aspect-ratio:1!important;object-fit:cover!important;margin:auto!important;
+ }
+ body.mode-music #np:not([hidden])>h2,
+ body.mode-music #np:not([hidden])>p,
+ body.mode-music #np:not([hidden])>#seek,
+ body.mode-music #np:not([hidden])>.tm{
+  grid-column:1!important;justify-self:stretch!important;margin:0!important;min-width:0!important;
+ }
+ body.mode-music #np:not([hidden])>h2{grid-row:2!important;align-self:end!important;padding-top:4px!important}
+ body.mode-music #np:not([hidden])>p{grid-row:3!important;align-self:start!important}
+ body.mode-music #np:not([hidden])>#seek{grid-row:4!important;align-self:center!important}
+ body.mode-music #np:not([hidden])>.tm{grid-row:5!important;align-self:start!important}
+ body.mode-music #np:not([hidden])>.ctl,
+ body.mode-music #np:not([hidden])>h3,
+ body.mode-music #np:not([hidden])>#qu{grid-column:2!important;min-width:0!important}
+ body.mode-music #np:not([hidden])>.ctl:first-of-type{
+  grid-row:2!important;align-self:center!important;justify-content:center!important;flex-wrap:wrap!important;
+  margin:0!important;padding:8px!important;background:var(--s1)!important;border:1px solid var(--s2)!important;border-radius:14px!important;
+ }
+ body.mode-music #np:not([hidden])>.ctl:last-of-type{
+  grid-row:3!important;align-self:start!important;justify-content:center!important;flex-wrap:nowrap!important;
+  margin:0!important;padding:8px!important;background:var(--s1)!important;border:1px solid var(--s2)!important;border-radius:12px!important;
+ }
+ body.mode-music #np:not([hidden])>h3{grid-row:4!important;align-self:end!important;text-align:right!important;margin:0!important;padding:4px 2px!important}
+ body.mode-music #np:not([hidden])>#qu{
+  grid-row:5!important;align-self:stretch!important;overflow-y:auto!important;overflow-x:hidden!important;
+  min-height:0!important;max-height:none!important;padding:4px!important;
+  background:var(--s1)!important;border:1px solid var(--s2)!important;border-radius:12px!important;
+  overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;
+ }
+ body.mode-music #np:not([hidden])>.ctl button{min-width:38px!important;min-height:38px!important}
+ body.mode-music #np:not([hidden])>#vol{max-width:34%!important}
+}
