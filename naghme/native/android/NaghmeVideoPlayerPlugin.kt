@@ -485,6 +485,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 textSize = 15f
                 inputType = InputType.TYPE_CLASS_TEXT
                 imeOptions = EditorInfo.IME_ACTION_SEARCH
+                // Use the device standard IME (including its installed Persian/English layouts).
                 setSingleLine(true)
                 setTextColor(Color.WHITE)
                 setHintTextColor(Color.LTGRAY)
