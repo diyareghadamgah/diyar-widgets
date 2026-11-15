@@ -88,6 +88,25 @@ const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const RADIO_JAVAN_HOST = "radio.sr-api.ir";
+const IRANSEDA_HOST = /(^|\\.)cdn[13]\\.iranseda\\.ir$/i;
+const IRANSEDA_RADIO = {
+  radioiran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8",
+  radiopayam: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-payam/playlist.m3u8",
+  radiotehran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tehran/playlist.m3u8",
+  radiovarzesh: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-varzesh/playlist.m3u8",
+  radioava: "http://s2.cdn1.iranseda.ir:1935/liveedge/radio-avaa/chunklist_w903692364.m3u8",
+  radioquran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-quran/playlist.m3u8",
+  radiofarhang: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-farhang/playlist.m3u8",
+  radiosalamat: "http://s0.cdn1.iranseda.ir:1935/liveedge/radio-salamat/playlist.m3u8",
+  radioeghtesad: "http://s2.cdn1.iranseda.ir:1935/liveedge/radio-eghtesad/playlist.m3u8",
+  radiomaaref: "http://s4.cdn3.iranseda.ir:1935/liveedge/radio-maaref/playlist.m3u8",
+  radiogoftogo: "http://s2.cdn3.iranseda.ir:1935/liveedge/radio-goftego/playlist.m3u8",
+  radionamayesh: "http://s1.cdn3.iranseda.ir:1935/liveedge/radio-namayesh/playlist.m3u8",
+  radiosaba: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-saba/playlist.m3u8",
+  radioziarat: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8",
+  radiotelavat: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8",
+  radiotartil: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8"
+};
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -135,8 +154,10 @@ async function proxySegment(request, url) {
   // (not the full URL) and keep the host allow-list as the SSRF boundary.
   const assetPath = target.pathname.toLowerCase();
   const allowedAsset = /\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
-  if (target.protocol !== "https:" || !(TELEWEBION_HOST.test(target.hostname) || target.hostname.toLowerCase() === RADIO_JAVAN_HOST)
-      || !allowedAsset) {
+  const allowedHost = TELEWEBION_HOST.test(target.hostname)
+    || IRANSEDA_HOST.test(target.hostname)
+    || target.hostname.toLowerCase() === RADIO_JAVAN_HOST;
+  if (!["http:", "https:"].includes(target.protocol) || !allowedHost || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
   }
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
@@ -150,6 +171,7 @@ async function proxySegment(request, url) {
       headers: {
         "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
         "Accept": "*/*",
+        ...(IRANSEDA_HOST.test(target.hostname) ? { Referer: "https://radio.iranseda.ir/" } : {}),
         ...(range ? { Range: range } : {}),
       },
       redirect: "follow",
@@ -202,7 +224,8 @@ export default {
     const isRadioJavan = slug === "radiojavan";
     const source = isRadioJavan
       ? "https://radio.sr-api.ir/hls/stream.m3u8"
-      : `${slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
+      : IRANSEDA_RADIO[slug]
+        || `${slug.startsWith("radio") ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
