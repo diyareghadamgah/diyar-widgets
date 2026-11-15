@@ -12,7 +12,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.ScrollView
+import android.widget.ListView
+import android.widget.BaseAdapter
 import org.json.JSONArray
 import android.widget.TextView
 import java.net.HttpURLConnection
@@ -43,7 +44,9 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     private var iptvFullscreenButton: Button? = null
     private var iptvChannelMenuButton: Button? = null
     private var iptvChannelMenuPanel: LinearLayout? = null
-    private var iptvChannelData: String = "[]"
+    private var iptvChannelListView: ListView? = null
+    private var iptvChannelRows: JSONArray = JSONArray()
+    private var iptvChannelAdapter: BaseAdapter? = null
     private var iptvSelectedChannelKey: String = ""
     private var iptvOriginalSystemUi: Int? = null
     private var iptvOriginalOrientation: Int? = null
@@ -380,9 +383,17 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     @PluginMethod
     fun setChannelMenu(call: PluginCall) {
-        iptvChannelData = call.getString("channelsJson") ?: "[]"
-        iptvSelectedChannelKey = call.getString("selectedKey") ?: iptvSelectedChannelKey
+        // JSON را بیرون از UI thread بخوان؛ ساخت ردیف‌ها به‌صورت تنبل توسط ListView انجام می‌شود.
+        val parsed = try {
+            JSONArray(call.getString("channelsJson") ?: "[]")
+        } catch (e: Exception) {
+            call.reject("invalid_channel_list")
+            return
+        }
+        val selected = call.getString("selectedKey") ?: iptvSelectedChannelKey
         activity?.runOnUiThread {
+            iptvChannelRows = parsed
+            iptvSelectedChannelKey = selected
             refreshIptvChannelMenu()
             call.resolve()
         } ?: call.reject("Activity not available")
@@ -398,30 +409,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     }
 
     private fun refreshIptvChannelMenu() {
-        val panel = iptvChannelMenuPanel ?: return
-        val rowsHost = panel.tag as? LinearLayout ?: return
-        val act = activity ?: return
-        rowsHost.removeAllViews()
-        val rows = JSONArray(iptvChannelData)
-        for (i in 0 until rows.length()) {
-            val item = rows.optJSONObject(i) ?: continue
-            val key = item.optString("key")
-            val name = item.optString("name", "شبکه")
-            val group = item.optString("group", "")
-            val row = TextView(act).apply {
-                text = (if (key == iptvSelectedChannelKey) "●  " else "○  ") + name + if (group.isNotBlank()) "\\n" + group else ""
-                textSize = 17f
-                setTextColor(Color.WHITE)
-                setPadding(18, 16, 14, 16)
-                isClickable = true
-                setBackgroundColor(if (key == iptvSelectedChannelKey) Color.rgb(35, 91, 72) else Color.rgb(39, 43, 45))
-                setOnClickListener {
-                    notifyListeners("channelSelected", JSObject().put("key", key))
-                    iptvChannelMenuPanel?.visibility = View.GONE
-                }
-            }
-            rowsHost.addView(row, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply { bottomMargin = 5 })
-        }
+        // ListView فقط ردیف‌های قابل مشاهده را می‌سازد و برای اسکرول، viewها را بازیافت می‌کند.
+        iptvChannelAdapter?.notifyDataSetChanged()
     }
 
     private fun showIptvChannelMenu(act: android.app.Activity) {
@@ -436,7 +425,10 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 setOnClickListener {
                     val panel = iptvChannelMenuPanel ?: return@setOnClickListener
                     panel.visibility = if (panel.visibility == View.VISIBLE) View.GONE else View.VISIBLE
-                    if (panel.visibility == View.VISIBLE) refreshIptvChannelMenu()
+                    if (panel.visibility == View.VISIBLE) {
+                        refreshIptvChannelMenu()
+                        iptvChannelListView?.post { iptvChannelListView?.requestLayout() }
+                    }
                 }
             }
             val size = (54 * act.resources.displayMetrics.density).toInt()
@@ -461,18 +453,59 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 setTextColor(Color.WHITE)
                 setPadding(12, 12, 12, 18)
             }
-            panel.addView(title)
-            val scroll = ScrollView(act)
-            val rowsHost = LinearLayout(act).apply { orientation = LinearLayout.VERTICAL }
-            scroll.addView(rowsHost)
-            panel.addView(scroll, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
-            panel.tag = rowsHost
+            panel.addView(title, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+            ))
+            val list = ListView(act).apply {
+                divider = android.graphics.drawable.ColorDrawable(Color.argb(90, 255, 255, 255))
+                dividerHeight = (1 * act.resources.displayMetrics.density).toInt().coerceAtLeast(1)
+                setBackgroundColor(Color.TRANSPARENT)
+                isVerticalScrollBarEnabled = true
+                overScrollMode = View.OVER_SCROLL_IF_CONTENT_SCROLLS
+                setPadding(0, 0, 0, 8)
+                clipToPadding = false
+            }
+            iptvChannelAdapter = object : BaseAdapter() {
+                override fun getCount(): Int = iptvChannelRows.length()
+                override fun getItem(position: Int): Any? = iptvChannelRows.optJSONObject(position)
+                override fun getItemId(position: Int): Long = position.toLong()
+                override fun getView(position: Int, convertView: View?, parent: android.view.ViewGroup): View {
+                    val row = (convertView as? TextView) ?: TextView(act).apply {
+                        textSize = 17f
+                        setTextColor(Color.WHITE)
+                        setPadding(18, 16, 14, 16)
+                        isClickable = true
+                        isFocusable = true
+                        minHeight = (58 * act.resources.displayMetrics.density).toInt()
+                    }
+                    val item = iptvChannelRows.optJSONObject(position)
+                    val key = item?.optString("key") ?: ""
+                    val name = item?.optString("name", "شبکه") ?: "شبکه"
+                    val group = item?.optString("group", "") ?: ""
+                    row.text = (if (key == iptvSelectedChannelKey) "●  " else "○  ") +
+                        name + if (group.isNotBlank()) "\\n" + group else ""
+                    row.setBackgroundColor(
+                        if (key == iptvSelectedChannelKey) Color.rgb(35, 91, 72) else Color.rgb(39, 43, 45)
+                    )
+                    row.setOnClickListener {
+                        notifyListeners("channelSelected", JSObject().put("key", key))
+                        iptvChannelMenuPanel?.visibility = View.GONE
+                    }
+                    return row
+                }
+            }
+            list.adapter = iptvChannelAdapter
+            panel.addView(list, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f
+            ))
             val width = (act.resources.displayMetrics.widthPixels * 0.42f).toInt().coerceAtLeast(260)
             val top = (74 * act.resources.displayMetrics.density).toInt()
-            act.addContentView(panel, FrameLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.END or Gravity.CENTER_VERTICAL).apply {
+            act.addContentView(panel, FrameLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.END or Gravity.TOP).apply {
                 topMargin = top
                 bottomMargin = (12 * act.resources.displayMetrics.density).toInt()
+                rightMargin = (8 * act.resources.displayMetrics.density).toInt()
             })
+            iptvChannelListView = list
             iptvChannelMenuPanel = panel
         }
         refreshIptvChannelMenu()
