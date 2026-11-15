@@ -973,3 +973,20 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
  body.mode-home .home-footer{flex:0 0 auto!important;width:100%!important;margin:22px auto 0!important}
 }
 
+
+
+/* Home landscape artwork repair: keep the original 3:2 illustrations at a stable size */
+@media (orientation:landscape) and (min-width:600px){
+ body.mode-home .mode-cards button.home-card .home-card-art{
+  display:flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:center!important;
+  width:100%!important;height:clamp(58px,11vh,88px)!important;max-height:none!important;
+  min-height:0!important;overflow:visible!important
+ }
+ body.mode-home .mode-cards button.home-card .home-card-art svg{
+  display:block!important;flex:0 0 auto!important;width:auto!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;aspect-ratio:3/2!important;overflow:visible!important
+ }
+}
+@media (orientation:landscape) and (max-height:520px) and (min-width:600px){
+ body.mode-home .mode-cards button.home-card .home-card-art{height:42px!important}
+}
