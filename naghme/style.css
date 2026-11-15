@@ -862,6 +862,12 @@ body.video-fullscreen.mode-video .video-fullscreen-exit{display:block!important}
 }
 
 
+/* Radio workspace base: preserve stacked portrait layout */
+body.mode-radio #radioPage:not([hidden]){display:flex!important;flex-direction:column!important;min-height:0!important;overflow:hidden!important}
+body.mode-radio .radio-workspace{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;min-width:0;gap:10px;overflow:hidden}
+body.mode-radio .radio-monitor{display:flex;flex:0 0 auto;flex-direction:column;gap:8px;min-width:0}
+body.mode-radio .radio-sidebar{display:flex;flex:1 1 0;flex-direction:column;gap:7px;min-width:0;min-height:0;overflow:hidden}
+body.mode-radio .radio-stations{flex:1 1 0;min-height:0;overflow-y:auto}
 /* Radio landscape console: live player monitor on one side, station controls on the other */
 @media (orientation:landscape) and (min-width:600px){
  body.mode-radio,body.mode-radio main{height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
