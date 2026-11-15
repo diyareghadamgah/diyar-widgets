@@ -154,6 +154,36 @@ async function removeIPTVDirectChannel(key){
  IPTV_IMPORTED.channels=IPTV_IMPORTED.channels.filter(c=>c.key!==key);IPTV.favorites=IPTV.favorites.filter(k=>k!==key);await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);await kvSet('iptvFav',IPTV.favorites);
  IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>c.key!==key));IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('شبکه حذف شد.');
 }
+async function removeIPTVImportedItem(key){
+ await restoreImportedIPTV();
+ const direct=IPTV_IMPORTED.channels.find(c=>c.key===key&&String(c.key).startsWith('direct|'));
+ if(direct)return removeIPTVDirectChannel(key);
+ const local=IPTV_IMPORTED.localFiles.find(x=>x.key===key);
+ const channel=IPTV_IMPORTED.channels.find(c=>c.key===key);
+ if(!local&&!channel)return toast('فایل واردشده پیدا نشد.');
+ const fileName=local?local.name:channel.importedFile;
+ if(local){
+  if(!confirm('فایل «'+local.name+'» از فهرست نغمه حذف شود؟'))return;
+  if(IPTV.current&&IPTV.current.key===key){if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}iptvRelease();IPTV.current=null;IPTV.active='';}
+  if(local.url)try{URL.revokeObjectURL(local.url)}catch{}
+  IPTV_IMPORTED.localFiles=IPTV_IMPORTED.localFiles.filter(x=>x.key!==key);
+  await kvSet('iptvLocalM3U8',IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item));
+  IPTV.favorites=IPTV.favorites.filter(k=>k!==key);
+  await kvSet('iptvFav',IPTV.favorites);
+  IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>c.key!==key));
+  IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('فایل M3U8 حذف شد.');return;
+ }
+ if(!fileName)return toast('نام فایل واردشده مشخص نیست.');
+ const keys=IPTV_IMPORTED.channels.filter(c=>c.importedFile===fileName).map(c=>c.key);
+ if(!confirm('فایل «'+fileName+'» و '+fa(keys.length)+' شبکهٔ آن از فهرست حذف شوند؟'))return;
+ if(IPTV.current&&keys.includes(IPTV.current.key)){if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}iptvRelease();IPTV.current=null;IPTV.active='';}
+ const removed=new Set(keys);
+ IPTV_IMPORTED.channels=IPTV_IMPORTED.channels.filter(c=>c.importedFile!==fileName);
+ IPTV.favorites=IPTV.favorites.filter(k=>!removed.has(k));
+ await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);await kvSet('iptvFav',IPTV.favorites);
+ IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>!removed.has(c.key)));
+ IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('فایل M3U و شبکه‌های آن حذف شدند.');
+}
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست شبکه‌ها',[
   ['افزودن شبکه با آدرس مستقیم (مثل GEM TV)',()=>addIPTVDirectChannel()],
@@ -302,7 +332,7 @@ function iptvFiltered(){
  return IPTV.channels.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
 }
 function iptvRowHtml(c){
- return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button>${String(c.key||'').startsWith('direct|')?`<button class="ib" data-a="iptvremove" data-v="${esc(c.key)}" aria-label="حذف شبکه" title="حذف شبکه">✕</button>`:''}</div>`}
+ return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button>${(String(c.key||'').startsWith('direct|')||c.importedFile||c.localBlob)?`<button class="ib" data-a="iptvremove" data-v="${esc(c.key)}" aria-label="حذف فایل یا شبکه" title="${c.importedFile?'حذف فایل M3U و همهٔ شبکه‌های آن':c.localBlob?'حذف فایل M3U8':'حذف شبکه'}">✕</button>`:''}</div>`}
 function iptvMore(){
  const box=$('#iptvResults');if(!box||IPTV.shown>=IPTV.filtered.length)return;
  const n=Math.min(IPTV.filtered.length,IPTV.shown+IPTV_PAGE);
@@ -672,7 +702,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
- iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVDirectChannel(d.v)},iptvcat(){setIPTVCat(d.v)},iptvcountry(){setIPTVCountry(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){manageIPTVPlaylist()},
+ iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVImportedItem(d.v)},iptvcat(){setIPTVCat(d.v)},iptvcountry(){setIPTVCountry(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvurl(){manageIPTVPlaylist()},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
