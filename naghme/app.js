@@ -148,7 +148,7 @@ async function setIPTVPlaylistUrl(raw){
  const value=String(raw==null?'':raw).trim();
  if(value){try{const parsed=new URL(value);if(!/^https?:$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}}
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
- iptvLoadGeneration++;IPTV.loading=false;iptvRelease();IPTV.url=value;await kvSet('iptvUrl',value);
+ iptvLoadGeneration++;IPTV.loading=false;iptvRelease();IPTV.url=value;await kvSet('iptvUrl',value);await kvSet('iptvDefaultEnabled',value===IPTV_DEFAULT_URL);
  IPTV.channels=mergeIPTVChannels([]);IPTV.current=null;IPTV.active='';IPTV.playError='';IPTV.loadedAt=0;
  IPTV.error=value?'':'آدرس اینترنتی فهرست حذف شده است؛ می‌توانید آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.';
  IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';renderIPTV();
@@ -239,13 +239,13 @@ async function manageDirectIPTVChannels(){
  sheet('مدیریت شبکه‌های دستی',actions,'شبکه‌هایی که با لینک مستقیم اضافه کرده‌ای در این بخش مدیریت و حذف می‌شوند.')}
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست‌ها',[
-  ['📡 فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
+  ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 حذف فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(IPTV.url===IPTV_DEFAULT_URL)return toast('فهرست پیش‌فرض حذف نمی‌شود؛ برای جایگزینی، آدرس فهرست دیگری وارد کن.');if(confirm('فهرست اینترنتی فعلی حذف شود؟ فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
   ['🗑 مدیریت و حذف شبکه‌های دستی',()=>manageDirectIPTVChannels()],
   ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
- ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'هیچ فهرستی انتخاب نشده')+'\n\nفهرست پیش‌فرض همیشه قابل بازگشت است. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» نمایش داده و حذف می‌شوند.')}
+ ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست پیش‌فرض غیرفعال است')+'\n\nفهرست پیش‌فرض در شروع نمایش داده نمی‌شود. هر زمان خواستی با گزینهٔ «بازگشت به فهرست پیش‌فرض نغمه» آن را دوباره فعال کن. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» مدیریت می‌شوند.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
@@ -804,7 +804,7 @@ addEventListener('offline',()=>toast('آفلاین هستید؛ همه‌ی ام
  const mig=[],cb=[];                                    // مهاجرت از نسخه‌ی ۱: کاورِ داخل رکورد آهنگ ← مخزن کاورهای یکتا
  for(const s of S.songs){if('cover' in s){try{if(s.cover instanceof Blob){const cid=await coverId(s.cover);if(!S.covers.has(cid)){S.covers.set(cid,s.cover);cb.push({id:cid,blob:s.cover})}s.cid=cid}else s.cid=s.cid||''}catch{s.cid=''}delete s.cover;mig.push(s)}}
  if(cb.length)await putCovers(cb);if(mig.length)await putMany(mig);reidx();
- S.pl=await kvGet('pl')||[];S.trees=await kvGet('trees')||[];IPTV.url=(await kvGet('iptvUrl'))??IPTV_DEFAULT_URL;Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
+ S.pl=await kvGet('pl')||[];S.trees=await kvGet('trees')||[];{const savedIptvUrl=await kvGet('iptvUrl'),defaultEnabled=await kvGet('iptvDefaultEnabled');IPTV.url=savedIptvUrl===IPTV_DEFAULT_URL&&defaultEnabled!==true?'':(savedIptvUrl??'');if(!IPTV.url)IPTV.error='فهرست پیش‌فرض فعلاً نمایش داده نمی‌شود؛ برای بازگرداندن آن، از مدیریت فهرست‌ها گزینهٔ «بازگشت به فهرست پیش‌فرض» را بزنید.';}Object.assign(S.eq,await kvGet('eq')||{});Object.assign(S.cfg,await kvGet('cfg')||{});S.imgs=await kvGet('imgs')||{};S.hist=await kvGet('hist')||[];S.listen=await kvGet('listen')||0;
  document.documentElement.dataset.theme=await kvGet('theme')||'dark';
  const l=await kvGet('last');
  if(l&&Array.isArray(l.q)){S.q=l.q.filter(i=>S.map.has(i));const ci=l.id?S.q.indexOf(l.id):-1;S.shuffle=!!l.shuffle;S.rep=[0,1,2].includes(l.rep)?l.rep:0;
