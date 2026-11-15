@@ -134,18 +134,14 @@
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
-  tools.innerHTML='<button type="button" data-iptv-tool="jump" aria-label="رفتن به زمان">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت پخش <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep" aria-label="زمان‌سنج خواب">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock" aria-label="قفل لمس">🔒 قفل لمس</button><label class="iptv-range-control">🔊 صدا <input type="range" min="0" max="1" step="0.05" value="1" data-iptv-tool="volume"></label><label class="iptv-range-control">☀ روشنایی <input type="range" min="0.05" max="1" step="0.05" value="0.7" data-iptv-tool="brightness"></label>';
+  tools.innerHTML='<button type="button" data-iptv-tool="jump" aria-label="رفتن به زمان">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت پخش <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep" aria-label="زمان‌سنج خواب">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock" aria-label="قفل لمس">🔒 قفل لمس</button>';
   tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
   host.insertAdjacentElement('afterend',tools);
   var locked=false;
-  var volumeControl=tools.querySelector('[data-iptv-tool="volume"]');
-  native.on('volumeChanged',function(e){if(volumeControl&&e&&Number.isFinite(Number(e.volume)))volumeControl.value=String(e.volume)});
   tools.addEventListener('click',function(e){var b=e.target.closest('[data-iptv-tool]');if(!b)return;if(b.dataset.iptvTool==='jump')jumpToTime();if(b.dataset.iptvTool==='sleep')setSleepTimer();if(b.dataset.iptvTool==='lock'){locked=!locked;native.setLocked(locked).then(function(){b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس';status(locked?'لمس تصویر قفل شد.':'قفل لمس برداشته شد.')}).catch(function(err){locked=!locked;status('قفل لمس فعال نشد: '+(err.message||err))})}});
   native.on('lockChanged',function(e){locked=!!(e&&e.locked);var b=tools.querySelector('[data-iptv-tool="lock"]');if(b)b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس'});
   tools.addEventListener('input',function(e){
    var type=e.target.dataset.iptvTool,value=Number(e.target.value);
-   if(type==='volume')native.setVolume(value).catch(function(err){status('تنظیم صدا ناموفق بود: '+(err.message||err))});
-   if(type==='brightness')native.setBrightness(value).catch(function(err){status('تنظیم روشنایی ناموفق بود: '+(err.message||err))});
   });
   tools.addEventListener('change',function(e){if(e.target.dataset.iptvTool==='speed')setSpeed(e.target.value).catch(function(err){status('تغییر سرعت ناموفق بود: '+(err.message||err))})});
  }
