@@ -35,6 +35,8 @@
         pause: function () { var p = this.get(); return p ? p.pause() : Promise.resolve(); },
         resume: function () { var p = this.get(); return p ? p.resume() : Promise.resolve(); },
         seekTo: function (positionMs) { var p = this.get(); return p && p.seekTo ? p.seekTo({ positionMs: Math.max(0, Number(positionMs) || 0) }) : Promise.reject(new Error('پرش زمانی IPTV در دسترس نیست')); },
+        setVolume: function (volume) { var p = this.get(); return p && p.setVolume ? p.setVolume({ volume: Math.max(0, Math.min(1, Number(volume))) }) : Promise.reject(new Error('تنظیم صدا در دسترس نیست')); },
+        setBrightness: function (brightness) { var p = this.get(); return p && p.setBrightness ? p.setBrightness({ brightness: Math.max(0.05, Math.min(1, Number(brightness))) }) : Promise.reject(new Error('تنظیم روشنایی در دسترس نیست')); },
         setSpeed: function (speed) { var p = this.get(); return p && p.setSpeed ? p.setSpeed({ speed: Math.max(0.25, Math.min(3, Number(speed) || 1)) }) : Promise.reject(new Error('تنظیم سرعت IPTV در دسترس نیست')); },
         setVideoQuality: function (maxHeight) { var p = this.get(); return p && p.setVideoQuality ? p.setVideoQuality({ maxHeight: Math.max(0, Number(maxHeight) || 0) }) : Promise.reject(new Error('تنظیم کیفیت IPTV در دسترس نیست')); },
         status: function () { var p = this.get(); return p && p.getStatus ? p.getStatus() : Promise.reject(new Error('وضعیت پلیر IPTV در دسترس نیست')); },
