@@ -151,7 +151,7 @@ async function setIPTVPlaylistUrl(raw){
  iptvLoadGeneration++;IPTV.loading=false;iptvRelease();
  // حذف موقت فقط وضعیت نمایش را خاموش می‌کند؛ آدرس ذخیره‌شده دست‌نخورده می‌ماند.
  if(value){IPTV.url=value;await kvSet('iptvUrl',value);await kvSet('iptvDefaultEnabled',true)}
- else{await kvSet('iptvDefaultEnabled',false)}
+ else{IPTV.url='';await kvSet('iptvDefaultEnabled',false)}
  IPTV.channels=mergeIPTVChannels([]);IPTV.current=null;IPTV.active='';IPTV.playError='';IPTV.loadedAt=0;
  IPTV.error=value?'':'فهرست اینترنتی موقتاً پنهان شده است؛ برای بازگرداندن فهرست پیش‌فرض از گزینهٔ «بازگشت به فهرست پیش‌فرض نغمه» استفاده کن.';
  IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';renderIPTV();
