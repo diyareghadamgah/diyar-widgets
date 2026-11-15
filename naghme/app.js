@@ -222,7 +222,9 @@ const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
  try{
   const u=new URL(raw);
-  if(u.hostname.toLowerCase()!=='ncdn.telewebion.ir')return raw;
+  const host=u.hostname.toLowerCase();
+  if(host==='068382c8.kazaktelekom.com'&&u.pathname.startsWith('/iptv/'))return IPTV_WORKER_ORIGIN+'/edem?url='+encodeURIComponent(u.href);
+  if(host!=='ncdn.telewebion.ir')return raw;
   const m=u.pathname.match(/^\/([a-z0-9_-]{1,40})\/live\/playlist\.m3u8$/i);
   if(!m)return raw;
   return IPTV_WORKER_ORIGIN+'/'+m[1]+'/1080p';
