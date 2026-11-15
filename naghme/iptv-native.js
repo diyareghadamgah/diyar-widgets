@@ -138,6 +138,8 @@
   tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
   host.insertAdjacentElement('afterend',tools);
   var locked=false;
+  var volumeControl=tools.querySelector('[data-iptv-tool="volume"]');
+  native.on('volumeChanged',function(e){if(volumeControl&&e&&Number.isFinite(Number(e.volume)))volumeControl.value=String(e.volume)});
   tools.addEventListener('click',function(e){var b=e.target.closest('[data-iptv-tool]');if(!b)return;if(b.dataset.iptvTool==='jump')jumpToTime();if(b.dataset.iptvTool==='sleep')setSleepTimer();if(b.dataset.iptvTool==='lock'){locked=!locked;native.setLocked(locked).then(function(){b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس';status(locked?'لمس تصویر قفل شد.':'قفل لمس برداشته شد.')}).catch(function(err){locked=!locked;status('قفل لمس فعال نشد: '+(err.message||err))})}});
   native.on('lockChanged',function(e){locked=!!(e&&e.locked);var b=tools.querySelector('[data-iptv-tool="lock"]');if(b)b.textContent=locked?'🔓 بازکردن قفل':'🔒 قفل لمس'});
   tools.addEventListener('input',function(e){
