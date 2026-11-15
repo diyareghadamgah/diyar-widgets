@@ -82,7 +82,7 @@ function parseM3U(text){
  return out;
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
-function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=!isIPTVNative()}
+function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=false}
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
