@@ -24,17 +24,17 @@ function showDiagnosticReport(report){
 function fmt(n){if(!Number.isFinite(n)||n<0)return'۰:۰۰';n=Math.floor(n);return fa(Math.floor(n/60)+':'+String(n%60).padStart(2,'0'))}
 async function release(){clearInterval(st.timer);clearTimeout(st.sleepTimer);st.sleepTimer=0;st.timer=0;unbindNativeFit();document.body.classList.remove('video-fullscreen','video-split-landscape');st.fullscreen=false;st.orientationLandscape=null;if(st.native&&window.NaghmeLibraryVideo){try{await window.NaghmeLibraryVideo.fullscreen(false)}catch(_){}try{await window.NaghmeLibraryVideo.visible(false)}catch(_){}try{await window.NaghmeLibraryVideo.release()}catch(e){console.warn('[NaghmeVideo] native release failed',e)}}st.native=false;document.getElementById('naghmeWebVideoLock')?.remove();if(v()){v().style.opacity='1';v().controls=true;v().pause();v().removeAttribute('src');v().load()}if(st.url)URL.revokeObjectURL(st.url);if(st.sub)URL.revokeObjectURL(st.sub);st.url=st.sub='';st.id=null}
 function filtered(){return st.items.filter(x=>(x.name+' '+(x.url||'')).toLowerCase().includes(st.q.toLowerCase())).sort((a,b)=>b.added-a.added).slice(0,250)}
-function draw(){const list=filtered();$('#videoContent').innerHTML=`<section class="video-page" dir="rtl"><div class="video-top"><div><h2>کتابخانهٔ ویدئو</h2><p class="d">فایل اصلی گوشی دست‌نخورده می‌ماند؛ فایل یا پوشه را به کتابخانه اضافه کنید.</p></div><div class="bar"><button class="pri" data-vact="pick">＋ انتخاب فایل</button><button data-vact="folder">📁 انتخاب پوشه</button><button data-vact="url">↗ افزودن لینک</button></div></div>
-<div class="video-stage"><video id="naghmeVideo" controls playsinline webkit-playsinline preload="metadata"></video><div class="video-empty" id="videoEmpty">▶<span>برای تماشا، یک ویدئو انتخاب کنید</span></div><button type="button" class="video-fullscreen-exit" data-vact="full" aria-label="خروج از تمام‌صفحه" title="خروج از تمام‌صفحه">✕</button></div>
+function draw(){const list=filtered();$('#videoContent').innerHTML=`<section class="video-page" dir="rtl"><div class="video-workspace"><div class="video-monitor"><div class="video-stage"><video id="naghmeVideo" controls playsinline webkit-playsinline preload="metadata"></video><div class="video-empty" id="videoEmpty">▶<span>برای تماشا، یک ویدئو انتخاب کنید</span></div><button type="button" class="video-fullscreen-exit" data-vact="full" aria-label="خروج از تمام‌صفحه" title="خروج از تمام‌صفحه">✕</button></div>
 
-<div class="video-now"><b id="videoNow">ویدئویی انتخاب نشده</b><span id="videoTime" class="d">۰:۰۰ / ۰:۰۰</span><button type="button" class="video-more" data-player-settings="1" aria-label="بازکردن ابزارهای پخش" title="ابزارهای پخش">⋮</button></div>
+<div class="video-now"><b id="videoNow">ویدئویی انتخاب نشده</b><span id="videoTime" class="d">۰:۰۰ / ۰:۰۰</span><button type="button" class="video-more" data-player-settings="1" aria-label="بازکردن ابزارهای پخش" title="ابزارهای پخش">⋮</button></div></div><aside class="video-sidebar"><div class="video-top"><div><h2>کتابخانهٔ ویدئو</h2><p class="d">فایل اصلی گوشی دست‌نخورده می‌ماند؛ فایل یا پوشه را به کتابخانه اضافه کنید.</p></div><div class="bar"><button class="pri" data-vact="pick">＋ انتخاب فایل</button><button data-vact="folder">📁 انتخاب پوشه</button><button data-vact="url">↗ افزودن لینک</button></div></div>
+
 <div class="video-tools video-tools-inline" aria-label="کنترل‌های پخش">
 <button data-vact="lock" id="videoLock" aria-label="قفل لمس">🔒 قفل لمس</button><button data-vact="back" aria-label="۱۰ ثانیه عقب">⏪ ۱۰ ثانیه عقب</button><button data-vact="toggle" aria-label="پخش یا مکث">▶ پخش / مکث</button><button data-vact="forward" aria-label="۱۰ ثانیه جلو">۱۰ ثانیه جلو ⏩</button><button data-vact="full" aria-label="تمام‌صفحه">⛶ تمام‌صفحه</button>
 <label>سرعت پخش <select id="videoSpeed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label>
 <button data-vact="jump">⏱ رفتن به زمان</button><button data-vact="sleep">🌙 زمان‌سنج خواب</button><button data-vact="repeat" id="videoRepeat">🔁 تکرار: خاموش</button><button data-vact="info">ℹ️ اطلاعات ویدئو</button><button data-vact="subtitle">زیرنویس</button><button data-vact="diagnostics">گزارش فنی</button></div>
 <div class="video-library-head"><input id="videoSearch" type="search" placeholder="جست‌وجوی نام ویدئو…"><span class="d">${fa(st.items.length)} ویدئو</span></div>
 <div class="video-list">${list.length?list.map(x=>`<article class="video-item ${st.id===x.id?'playing':''}"><button class="video-item-main" data-vact="open" data-id="${esc(x.id)}"><span class="video-thumb">▶</span><span><b>${esc(x.name)}</b><small>${x.url?'لینک اینترنتی':(x.uri?'فایل گوشی':(x.size?fa((x.size/1048576).toFixed(1))+' مگابایت':'فایل محلی'))} • ${x.duration?fmt(x.duration):'مدت نامشخص'}</small></span></button><button data-vact="remove" data-id="${esc(x.id)}" aria-label="حذف از کتابخانه">✕</button></article>`).join(''):'<p class="d video-empty-list">هنوز ویدئویی اضافه نشده است.</p>'}</div>
-<p class="d video-note">پشتیبانی فرمت‌ها به کُدک‌های دستگاه بستگی دارد. زیرنویس خارجی SRT و VTT پشتیبانی می‌شود. انتخاب چندصدایی و فرمت‌های خاص در مرحلهٔ بعد به پلیر بومی افزوده می‌شود.</p></section>`;
+<p class="d video-note">پشتیبانی فرمت‌ها به کُدک‌های دستگاه بستگی دارد. زیرنویس خارجی SRT و VTT پشتیبانی می‌شود. انتخاب چندصدایی و فرمت‌های خاص در مرحلهٔ بعد به پلیر بومی افزوده می‌شود.</p></aside></div></section>`;
  $('#videoSearch').value=st.q;v().onloadedmetadata=()=>{const x=st.items.find(a=>a.id===st.id);if(x&&x.position>0&&x.position<v().duration-2)v().currentTime=x.position;$('#videoNow').textContent=x?.name||'ویدئو';time()};v().ontimeupdate=time;v().onended=()=>save(true);v().onerror=()=>{if(st.id)msg('این فرمت یا کُدک در دستگاه پشتیبانی نمی‌شود؛ MP4 با کُدک H.264 را امتحان کنید.')}}
 function time(){const e=$('#videoTime');if(!e)return;if(st.native&&window.NaghmeLibraryVideo){window.NaghmeLibraryVideo.status().then(s=>{if(e.isConnected)e.textContent=fmt((s.positionMs||0)/1000)+' / '+fmt((s.durationMs||0)/1000)}).catch(()=>{});return}e.textContent=fmt(v().currentTime)+' / '+fmt(v().duration)}
 async function save(done=false){const x=st.items.find(a=>a.id===st.id);if(!x)return;try{if(st.native&&window.NaghmeLibraryVideo){const s=await window.NaghmeLibraryVideo.status();x.position=done?0:(s.positionMs||0)/1000;x.duration=(s.durationMs||0)/1000}else{if(!Number.isFinite(v().currentTime))return;x.position=done?0:v().currentTime;if(Number.isFinite(v().duration))x.duration=v().duration}await put(x)}catch(e){console.warn(e)}}
@@ -48,10 +48,16 @@ let videoOrientationTimer=0;
 function syncVideoOrientation(){
  clearTimeout(videoOrientationTimer);
  videoOrientationTimer=setTimeout(()=>{
-  if(!st.active||!st.id)return;
+  if(!st.active)return;
   const landscape=!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.innerWidth>window.innerHeight);
   if(st.orientationLandscape===landscape)return;
-  st.orientationLandscape=landscape;setVideoFullscreen(landscape);
+  st.orientationLandscape=landscape;
+  if(st.id)setVideoFullscreen(landscape);
+  else{
+   st.fullscreen=false;
+   document.body.classList.remove('video-fullscreen');
+   document.body.classList.toggle('video-split-landscape',landscape);
+  }
  },180);
 }
 window.addEventListener('orientationchange',syncVideoOrientation,{passive:true});
