@@ -693,3 +693,52 @@ body.mode-radio main{height:100dvh}body.mode-radio #radioPage{display:flex!impor
 #naghmeIptvTools .iptv-range-control{display:flex;flex:1 1 150px;min-width:130px;align-items:center;gap:8px;justify-content:space-between;padding:8px 10px;border:1px solid var(--ac);border-radius:9px;background:var(--s2);color:var(--tx);font-size:13px;touch-action:pan-x;pointer-events:auto}
 #naghmeIptvTools .iptv-range-control input[type=range]{display:block;flex:1 1 90px;width:90px;min-width:65px;height:34px;margin:0;accent-color:var(--ac);touch-action:pan-x!important;pointer-events:auto;cursor:pointer}
 @media(orientation:landscape){body.mode-tv #tvpage.iptv-split-landscape #naghmeIptvTools{flex:none!important;display:flex!important;flex-wrap:wrap!important;gap:7px!important;margin:0 0 7px!important;padding:7px!important}}
+
+
+/* Naghme IPTV: clean full-screen responsive layout */
+body.mode-tv,body.mode-tv main{width:100%;height:100vh;height:100dvh;min-height:0;overflow:hidden}
+body.mode-tv main{padding:0!important;margin:0!important}
+body.mode-tv #tvpage{
+ width:100%;height:100%;min-height:0;flex:1 1 auto;
+ padding:0 8px env(safe-area-inset-bottom)!important;
+ margin:0!important;gap:0!important;overflow:hidden!important;
+}
+#naghmeIptvTools,.iptv-range-control{display:none!important}
+body.mode-tv #tvpage .tvplayer{flex:none;min-width:0;margin:0}
+body.mode-tv #tvpage .tvbox{width:100%;margin:0;border-radius:0 0 10px 10px}
+body.mode-tv #tvpage .tvbox video,
+body.mode-tv #tvpage .tvbox .tvph{
+ width:100%;max-height:42dvh;aspect-ratio:16/9;object-fit:contain;
+}
+body.mode-tv #tvpage .tvnow{flex:none;margin:0;padding:5px 2px}
+body.mode-tv #tvpage .tvbrowse{flex:1 1 auto;min-height:0;height:auto;overflow:hidden}
+body.mode-tv #tvpage .tvlist{flex:1 1 auto;min-height:0;overflow-y:auto;padding-bottom:8px}
+@media(max-width:760px) and (orientation:portrait){
+ body.mode-tv #tvpage{padding:0 6px env(safe-area-inset-bottom)!important}
+ body.mode-tv #tvpage .tvbox video,
+ body.mode-tv #tvpage .tvbox .tvph{max-height:42dvh}
+ body.mode-tv #tvpage .tvbrowse{min-height:0}
+ body.mode-tv #tvpage .tvlist{padding-bottom:10px}
+}
+@media(orientation:landscape){
+ body.mode-tv #tvpage.iptv-split-landscape{
+  height:100%!important;min-height:0!important;
+  padding:6px 8px env(safe-area-inset-bottom)!important;
+  gap:10px!important;overflow:hidden!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvplayer{
+  flex:0 0 48%!important;width:48%!important;height:100%!important;
+  justify-content:center!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvbox{
+  width:100%!important;max-height:calc(100dvh - 16px)!important;
+  aspect-ratio:16/9!important;border-radius:10px!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvbrowse{
+  flex:1 1 52%!important;width:52%!important;height:100%!important;
+  min-height:0!important;overflow:hidden!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvlist{
+  flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;
+ }
+}
