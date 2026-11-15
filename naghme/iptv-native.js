@@ -4,6 +4,26 @@
  if(!native||!native.isNative||typeof native.get!=='function')return;
  var resizeTimer=0,active=false,eventsBound=false,fullscreenState=false,sleepTimer=0,currentSpeed=1,lastMenuChannels=null,lastMenuSelected='';
  function video(){return document.getElementById('tvbox')}
+ function syncSplitLayout(){
+  var page=document.getElementById('tvpage');
+  var player=document.querySelector('#tvpage .tvplayer');
+  var browse=document.querySelector('#tvpage .tvbrowse');
+  var box=video(),now=document.querySelector('#tvpage .tvnow');
+  var stat=document.getElementById('iptvStatus'),tools=document.getElementById('naghmeIptvTools');
+  if(!page||!player||!browse||!box||!now)return;
+  var split=!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&!fullscreenState);
+  page.classList.toggle('iptv-split-landscape',split);
+  if(split){
+   if(now.parentElement!==browse)browse.insertBefore(now,browse.firstChild);
+   if(stat&&stat.parentElement!==browse)browse.insertBefore(stat,now.nextSibling);
+   if(tools&&tools.parentElement!==browse)browse.insertBefore(tools,stat?stat.nextSibling:now.nextSibling);
+  }else{
+   if(now.parentElement!==player)box.insertAdjacentElement('afterend',now);
+   if(stat&&stat.parentElement!==player)now.insertAdjacentElement('afterend',stat);
+   if(tools&&tools.parentElement!==player)(stat||now).insertAdjacentElement('afterend',tools);
+  }
+  onLayoutChange();
+ }
  function bounds(){
   var el=video();if(!el)return null;
   var r=el.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
@@ -80,8 +100,9 @@
  }
  function setFullscreen(enabled){
   fullscreenState=!!enabled;
+  syncSplitLayout();
   var p=plugin();
-  return p&&p.setFullscreen?p.setFullscreen({enabled:fullscreenState}).catch(function(err){console.warn('[Naghme IPTV] fullscreen:',err)}):Promise.resolve();
+  return (p&&p.setFullscreen?p.setFullscreen({enabled:fullscreenState}).catch(function(err){console.warn('[Naghme IPTV] fullscreen:',err)}):Promise.resolve()).then(function(){syncSplitLayout()});
  }
  function setSpeed(speed){
   currentSpeed=Math.max(0.25,Math.min(3,Number(speed)||1));
@@ -136,11 +157,13 @@
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
  addControls();
+ syncSplitLayout();
  window.NaghmeIPTVSelectChannel=function(key){if(typeof window.playIPTV==='function')window.playIPTV(key)};
  window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,setQuality:function(h){return native.setVideoQuality(Number(h)||0)},jumpToTime:jumpToTime,setSleepTimer:setSleepTimer,refreshChannelMenu:updateChannelMenu};
- window.addEventListener('resize',onLayoutChange,{passive:true});
+ window.addEventListener('resize',function(){syncSplitLayout();onLayoutChange()},{passive:true});
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
+   syncSplitLayout();
    if(active&&window.NaghmeIPTVFullscreen)window.NaghmeIPTVFullscreen(!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches));
    onLayoutChange();
   },300);
