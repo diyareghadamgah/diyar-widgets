@@ -88,6 +88,10 @@ const SLUG = /^[a-z0-9_-]{1,40}$/i;
 const RENDITION = /^(\d{3,4}p)$/;
 const TELEWEBION_HOST = /(^|\.)telewebion\.(ir|net|com)$/i;
 const RADIO_JAVAN_HOST = "radio.sr-api.ir";
+const IRANSEDA_HOST = /(^|\\.)cdn[0-9]\\.iranseda\\.ir$/i;
+const IRAN_RADIO_SOURCES = {
+  radioiran: "http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8",
+};
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS",
@@ -136,7 +140,8 @@ async function proxySegment(request, url) {
   const assetPath = target.pathname.toLowerCase();
   const allowedAsset = /\.(?:ts|m4s|mp4|m4a|aac|mp3|vtt|key)$/i.test(assetPath);
   const allowedHost = TELEWEBION_HOST.test(target.hostname)
-    || target.hostname.toLowerCase() === RADIO_JAVAN_HOST;
+    || target.hostname.toLowerCase() === RADIO_JAVAN_HOST
+    || IRANSEDA_HOST.test(target.hostname);
   if (!["http:", "https:"].includes(target.protocol) || !allowedHost || !allowedAsset) {
     return new Response("invalid segment\n", { status: 400 });
   }
@@ -151,6 +156,7 @@ async function proxySegment(request, url) {
       headers: {
         "User-Agent": "VLC/3.0.20 LibVLC/3.0.20",
         "Accept": "*/*",
+        ...(IRANSEDA_HOST.test(target.hostname) ? { Referer: "https://radio.iranseda.ir/" } : {}),
         ...(range ? { Range: range } : {}),
       },
       redirect: "follow",
@@ -204,9 +210,9 @@ export default {
     const isRadioJavan = slug === "radiojavan";
     // Radio Javan uses its dedicated HTTPS HLS relay; other IRIB radio stations
     // use Telewebion's HTTPS radio manifests (never the legacy :1935 endpoints).
-    const source = isRadioJavan
+    const source = IRAN_RADIO_SOURCES[slug] || (isRadioJavan
       ? "https://radio.sr-api.ir/hls/stream.m3u8"
-      : `${isRadio ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`;
+      : `${isRadio ? "https://cdnw.telewebion.com" : ORIGIN}/${slug}/live/playlist.m3u8`);
 
     /*
      * A player that can read the original is sent to it, and stops costing anything.
