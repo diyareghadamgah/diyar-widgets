@@ -963,21 +963,13 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
  body.mode-home .mode-welcome p{font-size:13px!important}
  body.mode-home .home-menu{display:flex!important;flex:0 0 auto!important;flex-direction:column!important;justify-content:flex-start!important;gap:12px!important;width:100%!important;min-width:0!important;min-height:0!important}
  body.mode-home .home-section-title{width:100%!important;margin:0!important}
- body.mode-home .mode-cards{display:grid!important;flex:0 0 auto!important;width:100%!important;max-width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:auto!important;gap:10px!important;margin:0!important}
- body.mode-home .mode-cards button.home-card{
-  display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-end!important;
-  width:100%!important;height:auto!important;min-height:142px!important;padding:12px!important;gap:6px!important;
-  border-radius:16px!important;text-align:right!important
- }
- body.mode-home .home-card-art{display:flex!important;width:100%!important;height:54px!important;max-height:54px!important;justify-content:flex-start!important;align-items:center!important}
- body.mode-home .home-card-art svg{height:100%!important;max-height:54px!important;width:auto!important;max-width:100%!important}
- body.mode-home .mode-cards button.home-card>b{font-size:15px!important;align-self:flex-start!important}
- body.mode-home .mode-cards button.home-card>small{font-size:10px!important;white-space:normal!important;align-self:flex-start!important}
- body.mode-home .mode-cards button.home-card>em{font-size:10px!important}
+
+
+
+
+
+
+
  body.mode-home .home-footer{flex:0 0 auto!important;width:100%!important;margin:22px auto 0!important}
 }
-@media (max-width:360px){
- body.mode-home #modeHome{padding-inline:12px!important}
- body.mode-home .mode-cards{gap:8px!important}
- body.mode-home .mode-cards button.home-card{min-height:132px!important;padding:10px!important}
-}
+
