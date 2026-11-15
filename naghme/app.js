@@ -26,6 +26,19 @@ const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/i
 const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',countrySig:'',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
+let iptvScreenWakeLock=null,iptvWakeBound=false;
+async function iptvKeepScreenAwake(on){
+ if(!on){if(iptvScreenWakeLock){try{await iptvScreenWakeLock.release()}catch{}iptvScreenWakeLock=null}return}
+ if(!iptvOn||document.visibilityState==='hidden'||!('wakeLock' in navigator)||iptvScreenWakeLock)return;
+ try{iptvScreenWakeLock=await navigator.wakeLock.request('screen');iptvScreenWakeLock.addEventListener('release',()=>{iptvScreenWakeLock=null;if(iptvOn&&document.visibilityState==='visible'){const v=$('#iptvVideo');if(v&&!v.paused&&!v.ended)iptvKeepScreenAwake(true)}})}catch(e){console.warn('[Naghme] Screen Wake Lock unavailable',e)}
+}
+function bindIPTVScreenWakeLock(){
+ if(iptvWakeBound)return;iptvWakeBound=true;
+ const v=$('#iptvVideo');if(!v)return;
+ ['playing'].forEach(n=>v.addEventListener(n,()=>iptvKeepScreenAwake(true)));
+ ['pause','ended','error','emptied'].forEach(n=>v.addEventListener(n,()=>iptvKeepScreenAwake(false)));
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){if(iptvOn&&v&&!v.paused&&!v.ended)iptvKeepScreenAwake(true)}else iptvKeepScreenAwake(false)});
+}
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
 function mergeIPTVChannels(remote){return [...new Map([...(remote||[]),...allImportedIPTV()].map(c=>[c.key,c])).values()]}
@@ -403,6 +416,7 @@ function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ ف�
  if(iptvSig()!==IPTV.sig)renderIPTVList(false);
  updateIPTVNow()}
 function buildIPTV(){
+ bindIPTVScreenWakeLock();
  syncIPTVFileButton();
  if(iptvBuilt)return;iptvBuilt=true;
  const box=$('#iptvResults'),inp=$('#iptvSearch'),countrySelect=$('#iptvCountrySelect'),quality=$('#iptvQuality');
@@ -470,7 +484,7 @@ function enterIPTV(){
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
 function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
- if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;
+ if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;iptvKeepScreenAwake(false);
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvFullscreen(false);$('#tvpage').hidden=true;document.body.classList.remove('tvmode');iptvRelease()}
 window.NaghmeLeaveIPTV=leaveIPTV;
