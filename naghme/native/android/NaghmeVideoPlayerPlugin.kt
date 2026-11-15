@@ -14,6 +14,10 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.BaseAdapter
+import android.widget.EditText
+import android.text.TextWatcher
+import android.text.Editable
+import java.util.Locale
 import org.json.JSONArray
 import android.widget.TextView
 import java.net.HttpURLConnection
@@ -45,7 +49,9 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     private var iptvChannelMenuButton: Button? = null
     private var iptvChannelMenuPanel: LinearLayout? = null
     private var iptvChannelListView: ListView? = null
+    private var iptvChannelSearch: EditText? = null
     private var iptvChannelRows: JSONArray = JSONArray()
+    private var iptvFilteredChannels: ArrayList<org.json.JSONObject> = arrayListOf()
     private var iptvChannelAdapter: BaseAdapter? = null
     private var iptvSelectedChannelKey: String = ""
     private var iptvOriginalSystemUi: Int? = null
@@ -394,6 +400,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         activity?.runOnUiThread {
             iptvChannelRows = parsed
             iptvSelectedChannelKey = selected
+            filterIptvChannels(iptvChannelSearch?.text?.toString().orEmpty())
             refreshIptvChannelMenu()
             call.resolve()
         } ?: call.reject("Activity not available")
@@ -406,6 +413,21 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             refreshIptvChannelMenu()
             call.resolve()
         } ?: call.reject("Activity not available")
+    }
+
+    private fun filterIptvChannels(query: String) {
+        val needle = query.trim().lowercase(Locale.ROOT)
+        iptvFilteredChannels.clear()
+        for (i in 0 until iptvChannelRows.length()) {
+            val item = iptvChannelRows.optJSONObject(i) ?: continue
+            val name = item.optString("name", "")
+            val group = item.optString("group", "")
+            if (needle.isEmpty() ||
+                name.lowercase(Locale.ROOT).contains(needle) ||
+                group.lowercase(Locale.ROOT).contains(needle)
+            ) iptvFilteredChannels.add(item)
+        }
+        iptvChannelAdapter?.notifyDataSetChanged()
     }
 
     private fun refreshIptvChannelMenu() {
@@ -456,6 +478,20 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             panel.addView(title, LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
             ))
+            val search = EditText(act).apply {
+                hint = "جست‌وجوی نام شبکه یا گروه..."
+                textSize = 15f
+                setSingleLine(true)
+                setTextColor(Color.WHITE)
+                setHintTextColor(Color.LTGRAY)
+                setPadding(16, 10, 16, 10)
+                setBackgroundColor(Color.rgb(48, 53, 55))
+            }
+            panel.addView(search, LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                bottomMargin = (8 * act.resources.displayMetrics.density).toInt()
+            })
             val list = ListView(act).apply {
                 divider = android.graphics.drawable.ColorDrawable(Color.argb(90, 255, 255, 255))
                 dividerHeight = (1 * act.resources.displayMetrics.density).toInt().coerceAtLeast(1)
@@ -466,8 +502,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 clipToPadding = false
             }
             iptvChannelAdapter = object : BaseAdapter() {
-                override fun getCount(): Int = iptvChannelRows.length()
-                override fun getItem(position: Int): Any? = iptvChannelRows.optJSONObject(position)
+                override fun getCount(): Int = iptvFilteredChannels.size
+                override fun getItem(position: Int): Any? = iptvFilteredChannels.getOrNull(position)
                 override fun getItemId(position: Int): Long = position.toLong()
                 override fun getView(position: Int, convertView: View?, parent: android.view.ViewGroup): View {
                     val row = (convertView as? TextView) ?: TextView(act).apply {
@@ -478,7 +514,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                         isFocusable = true
                         minHeight = (58 * act.resources.displayMetrics.density).toInt()
                     }
-                    val item = iptvChannelRows.optJSONObject(position)
+                    val item = iptvFilteredChannels.getOrNull(position)
                     val key = item?.optString("key") ?: ""
                     val name = item?.optString("name", "شبکه") ?: "شبکه"
                     val group = item?.optString("group", "") ?: ""
@@ -495,6 +531,15 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 }
             }
             list.adapter = iptvChannelAdapter
+            search.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    filterIptvChannels(s?.toString().orEmpty())
+                    list.setSelection(0)
+                }
+                override fun afterTextChanged(s: Editable?) {}
+            })
+            iptvChannelSearch = search
             panel.addView(list, LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f
             ))
@@ -573,6 +618,9 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             iptvChannelMenuButton = null
             iptvChannelMenuPanel?.let { (it.parent as? ViewGroup)?.removeView(it) }
             iptvChannelMenuPanel = null
+            iptvChannelSearch = null
+            iptvChannelListView = null
+            iptvFilteredChannels.clear()
             iptvOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
             iptvOriginalSystemUi = null
             iptvOriginalOrientation?.let { act.requestedOrientation = it }
