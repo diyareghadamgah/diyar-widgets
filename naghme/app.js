@@ -231,12 +231,19 @@ async function manageImportedIPTVFiles(){
  }else actions.push(['هنوز فایلی وارد نشده است',()=>toast('برای شروع، گزینهٔ افزودن فایل M3U / M3U8 را بزنید.')]);
  sheet('مدیریت فایل‌های تلویزیون',actions,'فایل M3U همهٔ شبکه‌های داخل خودش را اضافه می‌کند و با حذف همان فایل، تمام شبکه‌هایش حذف می‌شوند. فایل M3U8 تکی هم از همین بخش قابل افزودن و حذف است. فهرست پیش‌فرض نغمه همیشه در دسترس می‌ماند و حذف نمی‌شود.');
 }
+async function manageDirectIPTVChannels(){
+ await restoreImportedIPTV();
+ const channels=IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|'));
+ if(!channels.length)return toast('شبکهٔ دستی برای حذف وجود ندارد.');
+ const actions=channels.map(c=>['🗑 حذف شبکهٔ «'+c.name+'»',()=>removeIPTVDirectChannel(c.key)]);
+ sheet('مدیریت شبکه‌های دستی',actions,'شبکه‌هایی که با لینک مستقیم اضافه کرده‌ای در این بخش مدیریت و حذف می‌شوند.')}
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست‌ها',[
   ['📡 فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 حذف فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(IPTV.url===IPTV_DEFAULT_URL)return toast('فهرست پیش‌فرض حذف نمی‌شود؛ برای جایگزینی، آدرس فهرست دیگری وارد کن.');if(confirm('فهرست اینترنتی فعلی حذف شود؟ فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
+  ['🗑 مدیریت و حذف شبکه‌های دستی',()=>manageDirectIPTVChannels()],
   ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
  ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'هیچ فهرستی انتخاب نشده')+'\n\nفهرست پیش‌فرض همیشه قابل بازگشت است. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» نمایش داده و حذف می‌شوند.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
