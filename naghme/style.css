@@ -903,3 +903,43 @@ body.mode-radio .radio-stations{flex:1 1 0;min-height:0;overflow-y:auto}
   overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important
  }
 }
+
+
+/* Home dashboard: full-screen two-panel layout on landscape displays */
+body.mode-home{display:block!important;width:100vw!important;height:100dvh!important;overflow:hidden!important}
+body.mode-home main{display:flex!important;flex-direction:column!important;width:100vw!important;height:100dvh!important;max-height:100dvh!important;min-height:0!important;overflow:hidden!important}
+body.mode-home #modeBar{flex:0 0 auto!important}
+body.mode-home #modeHome{
+ display:grid!important;flex:1 1 auto!important;
+ grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr)!important;
+ grid-template-rows:auto minmax(0,1fr) auto!important;
+ grid-template-areas:"top top" "welcome menu" "footer footer"!important;
+ align-items:center!important;justify-items:stretch!important;
+ gap:12px 28px!important;width:100%!important;max-width:none!important;
+ height:100%!important;min-height:0!important;max-height:none!important;
+ margin:0!important;padding:clamp(14px,2.5vh,28px) clamp(18px,4vw,56px)!important;
+ overflow:hidden!important;box-sizing:border-box!important
+}
+body.mode-home .home-topline{grid-area:top!important;width:100%!important;max-width:none!important;margin:0!important}
+body.mode-home .mode-welcome{grid-area:welcome!important;align-self:center!important;justify-self:center!important;width:100%!important;margin:0!important}
+body.mode-home .home-logo-wrap{width:clamp(90px,18vh,150px)!important;height:clamp(90px,18vh,150px)!important;margin:0 auto 12px!important}
+body.mode-home .mode-welcome h1{font-size:clamp(34px,5vh,54px)!important}
+body.mode-home .mode-welcome p{font-size:clamp(11px,1.8vh,15px)!important}
+body.mode-home .home-menu{grid-area:menu!important;display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;min-height:0!important;width:100%!important;gap:12px!important}
+body.mode-home .home-section-title{width:100%!important;margin:0!important}
+body.mode-home .mode-cards{width:100%!important;max-width:none!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:12px!important;margin:0!important}
+body.mode-home .mode-cards button.home-card{min-height:0!important;height:clamp(130px,27vh,220px)!important;padding:clamp(12px,2vw,22px)!important;border-radius:20px!important}
+body.mode-home .home-card-art{width:100%!important;max-height:clamp(54px,11vh,92px)!important;display:flex!important;justify-content:flex-start!important}
+body.mode-home .home-card-art svg{height:100%!important;max-height:100%!important;width:auto!important;max-width:100%!important}
+body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:100%!important}
+@media (orientation:landscape) and (max-height:520px){
+ body.mode-home #modeHome{gap:6px 18px!important;padding:7px 18px!important}
+ body.mode-home .home-logo-wrap{width:74px!important;height:74px!important;margin-bottom:4px!important}
+ body.mode-home .mode-welcome h1{font-size:28px!important}
+ body.mode-home .mode-welcome p{margin-top:4px!important}
+ body.mode-home .home-menu{gap:5px!important}
+ body.mode-home .mode-cards{gap:7px!important}
+ body.mode-home .mode-cards button.home-card{height:clamp(92px,24vh,132px)!important;padding:8px 12px!important;gap:3px!important}
+ body.mode-home .home-card-art{max-height:42px!important}
+ body.mode-home .home-footer{font-size:10px!important}
+}
