@@ -17,6 +17,8 @@ import android.widget.BaseAdapter
 import android.widget.EditText
 import android.text.TextWatcher
 import android.text.Editable
+import android.text.InputType
+import android.view.inputmethod.EditorInfo
 import java.util.Locale
 import org.json.JSONArray
 import android.widget.TextView
@@ -481,6 +483,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             val search = EditText(act).apply {
                 hint = "جست‌وجوی نام شبکه یا گروه..."
                 textSize = 15f
+                inputType = InputType.TYPE_CLASS_TEXT
+                imeOptions = EditorInfo.IME_ACTION_SEARCH
                 setSingleLine(true)
                 setTextColor(Color.WHITE)
                 setHintTextColor(Color.LTGRAY)
