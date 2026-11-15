@@ -241,22 +241,36 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val treeUri = data.data!!
         persistReadPermission(treeUri, data.flags)
         val root = DocumentFile.fromTreeUri(getContext(), treeUri)
-        val files = JSArray()
-        var count = 0
-        fun scan(folder: DocumentFile) {
-            if (count >= 5000) return
-            folder.listFiles().forEach { item ->
-                if (count >= 5000) return
-                if (item.isDirectory) scan(item)
-                else if (item.isFile) videoFile(item.uri)?.let { files.put(it); count++ }
+        val act = activity ?: run { call.reject("activity_unavailable"); return }
+        // پوشه‌خوانی و متادیتا ممکن است روی حافظهٔ خارجی کند باشد؛ هرگز UI thread را مسدود نکن.
+        Thread {
+            val files = JSArray()
+            var count = 0
+            var visited = 0
+            fun scan(folder: DocumentFile, depth: Int) {
+                if (count >= 3000 || visited >= 30000 || depth > 12) return
+                folder.listFiles().forEach { item ->
+                    if (count >= 3000 || visited >= 30000) return
+                    visited++
+                    try {
+                        if (item.isDirectory) scan(item, depth + 1)
+                        else if (item.isFile) videoFile(item.uri)?.let { files.put(it); count++ }
+                    } catch (itemError: Exception) {
+                        diagnostic("folder_item_skipped name=" + (item.name ?: "unknown"), itemError)
+                    }
+                }
             }
-        }
-        try {
-            root?.let { scan(it) }
-            call.resolve(JSObject().put("files", files).put("folder", root?.name ?: ""))
-        } catch (e: Exception) {
-            call.reject("folder_scan_failed: " + (e.message ?: "unknown"))
-        }
+            try {
+                root?.let { scan(it, 0) }
+                diagnostic("folder_scan_complete files=" + count + " visited=" + visited)
+                act.runOnUiThread {
+                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", count >= 3000))
+                }
+            } catch (e: Exception) {
+                diagnostic("folder_scan_failed", e)
+                act.runOnUiThread { call.reject("folder_scan_failed: " + (e.message ?: "unknown")) }
+            }
+        }.start()
     }
 
     @PluginMethod
