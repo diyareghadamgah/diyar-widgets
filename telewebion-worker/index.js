@@ -272,6 +272,78 @@ function manifestError(stage, details = {}) {
   });
 }
 
+const EDEM_HOST = "068382c8.kazaktelekom.com";
+
+function edemProxyHref(target, origin) {
+  return origin + "/edem?url=" + encodeURIComponent(target.href);
+}
+
+async function proxyEdemHls(request, url) {
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    return new Response("method not allowed\n", { status: 405, headers: CORS_HEADERS });
+  }
+  let target;
+  try { target = new URL(url.searchParams.get("url")); }
+  catch { return new Response("invalid source URL\n", { status: 400, headers: CORS_HEADERS }); }
+  const valid = value => ["http:", "https:"].includes(value.protocol)
+    && value.hostname.toLowerCase() === EDEM_HOST
+    && value.pathname.startsWith("/iptv/")
+    && !value.username && !value.password;
+  if (!valid(target)) return new Response("source not allowed\n", { status: 403, headers: CORS_HEADERS });
+
+  let upstream;
+  try {
+    upstream = await fetch(target.href, {
+      method: request.method,
+      headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", "Accept": "*/*" },
+      redirect: "follow",
+    });
+  } catch (error) {
+    console.error("EDEM HLS fetch failed", error);
+    return new Response("source unreachable\n", { status: 502, headers: CORS_HEADERS });
+  }
+  let finalUrl;
+  try { finalUrl = new URL(upstream.url || target.href); }
+  catch { return new Response("invalid upstream URL\n", { status: 502, headers: CORS_HEADERS }); }
+  if (!valid(finalUrl)) return new Response("upstream redirect not allowed\n", { status: 502, headers: CORS_HEADERS });
+
+  const headers = new Headers(CORS_HEADERS);
+  headers.set("Cache-Control", "no-store");
+  const contentType = upstream.headers.get("content-type") || "";
+  headers.set("Content-Type", contentType || (/\.m3u8(?:$|[?#])/i.test(finalUrl.href)
+    ? "application/vnd.apple.mpegurl" : "application/octet-stream"));
+  if (request.method === "HEAD") return new Response(null, { status: upstream.status, headers });
+  if (!upstream.ok) return new Response("upstream HTTP " + upstream.status + "\n", { status: upstream.status, headers });
+
+  const isPlaylist = /mpegurl|vnd\.apple\.mpegurl/i.test(contentType) || /\.m3u8(?:$|[?#])/i.test(finalUrl.href);
+  if (!isPlaylist) return new Response(upstream.body, { status: upstream.status, headers });
+
+  const body = await upstream.text();
+  if (!body.trimStart().startsWith("#EXTM3U")) {
+    return new Response(body, { status: upstream.status, headers });
+  }
+  const rewriteRef = raw => {
+    try {
+      const resolved = new URL(raw, finalUrl);
+      if (resolved.hostname.toLowerCase() === EDEM_HOST && resolved.pathname.startsWith("/iptv/")) {
+        return edemProxyHref(resolved, url.origin);
+      }
+      return resolved.protocol === "https:" ? resolved.href : raw;
+    } catch { return raw; }
+  };
+  const rewritten = body.split(/\r?\n/).map(line => {
+    const trimmed = line.trim();
+    if (!trimmed) return line;
+    if (trimmed.startsWith("#")) {
+      return line.replace(/URI="([^"]+)"/g, (_, ref) => 'URI="' + rewriteRef(ref) + '"');
+    }
+    return rewriteRef(trimmed);
+  }).join("\n");
+  headers.set("Content-Type", "application/vnd.apple.mpegurl; charset=utf-8");
+  return new Response(rewritten, { status: upstream.status, headers });
+}
+
 async function proxySegment(request, url) {
   let target;
   try {
@@ -344,6 +416,7 @@ export default {
         return new Response("playlist upstream unavailable\\n", { status: 502, headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8" } });
       }
     }
+    if (url.pathname === "/edem") return proxyEdemHls(request, url);
     if (url.pathname === "/segment") return proxySegment(request, url);
     const [, slug, rendition] = url.pathname.split("/");
 
