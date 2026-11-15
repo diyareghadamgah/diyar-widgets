@@ -446,6 +446,13 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         } ?: call.reject("Activity not available")
     }
 
+    private fun updateScreenKeepOn(keepOn: Boolean) {
+        activity?.window?.let { window ->
+            if (keepOn) window.addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            else window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
+    }
+
     private fun setupListeners() {
         player?.addListener(object : Player.Listener {
             override fun onPlaybackStateChanged(state: Int) {
@@ -453,10 +460,11 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 when (state) {
                     Player.STATE_READY -> { d.put("state", "ready"); notifyListeners("ready", d) }
                     Player.STATE_BUFFERING -> { d.put("state", "buffering"); notifyListeners("buffering", d) }
-                    Player.STATE_ENDED -> { d.put("state", "ended"); notifyListeners("ended", d) }
+                    Player.STATE_ENDED -> { activity?.runOnUiThread { updateScreenKeepOn(false) }; d.put("state", "ended"); notifyListeners("ended", d) }
                 }
             }
             override fun onIsPlayingChanged(isPlaying: Boolean) {
+                activity?.runOnUiThread { updateScreenKeepOn(isPlaying) }
                 val d = JSObject()
                 d.put("isPlaying", isPlaying)
                 notifyListeners(if (isPlaying) "playing" else "paused", d)
@@ -482,18 +490,19 @@ class NaghmeVideoPlayerPlugin : Plugin() {
         activity?.runOnUiThread {
             player?.stop()
             player?.clearMediaItems()
+            updateScreenKeepOn(false)
             call.resolve()
         } ?: call.reject("Activity not available")
     }
 
     @PluginMethod
     fun pause(call: PluginCall) {
-        activity?.runOnUiThread { player?.pause(); call.resolve() } ?: call.reject("Activity not available")
+        activity?.runOnUiThread { player?.pause(); updateScreenKeepOn(false); call.resolve() } ?: call.reject("Activity not available")
     }
 
     @PluginMethod
     fun resume(call: PluginCall) {
-        activity?.runOnUiThread { player?.play(); call.resolve() } ?: call.reject("Activity not available")
+        activity?.runOnUiThread { player?.play(); updateScreenKeepOn(true); call.resolve() } ?: call.reject("Activity not available")
     }
 
     /** کنترل‌های پایه برای هماهنگی IPTV با رابط مشترک پلیر. */
@@ -568,6 +577,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 isPlayerLocked = false
                 player?.release()
                 player = null
+                updateScreenKeepOn(false)
                 call.resolve()
             } catch (e: Exception) {
                 call.reject("Release failed: " + e.message)
@@ -577,7 +587,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     override fun handleOnDestroy() {
         try {
-            activity?.let { exitIptvFullscreen(it) }
+            activity?.let { exitIptvFullscreen(it); updateScreenKeepOn(false) }
             closeFamPageInternal()
             activity?.runOnUiThread {
                 playerView?.let { pv -> (pv.parent as? ViewGroup)?.removeView(pv) }
