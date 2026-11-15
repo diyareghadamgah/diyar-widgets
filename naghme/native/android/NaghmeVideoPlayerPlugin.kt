@@ -58,6 +58,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     private var iptvSelectedChannelKey: String = ""
     private var iptvOriginalSystemUi: Int? = null
     private var iptvOriginalOrientation: Int? = null
+    private var iptvOriginalBrightness: Float? = null
     private var famContainer: LinearLayout? = null
     private var famWebView: WebView? = null
     private var famCustomView: View? = null
@@ -626,6 +627,12 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             iptvChannelSearch = null
             iptvChannelListView = null
             iptvFilteredChannels.clear()
+            iptvOriginalBrightness?.let { original ->
+                val attrs = act.window.attributes
+                attrs.screenBrightness = original
+                act.window.attributes = attrs
+            }
+            iptvOriginalBrightness = null
             iptvOriginalSystemUi?.let { act.window.decorView.systemUiVisibility = it }
             iptvOriginalSystemUi = null
             iptvOriginalOrientation?.let { act.requestedOrientation = it }
@@ -733,6 +740,36 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 call.reject("video_quality_failed: " + (e.message ?: e.javaClass.simpleName))
             }
         } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setVolume(call: PluginCall) {
+        val volume = (call.getFloat("volume") ?: 1f).coerceIn(0f, 1f)
+        activity?.runOnUiThread {
+            try {
+                player?.volume = volume
+                call.resolve(JSObject().put("volume", volume))
+            } catch (e: Exception) {
+                call.reject("volume_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        } ?: call.reject("Activity not available")
+    }
+
+    @PluginMethod
+    fun setBrightness(call: PluginCall) {
+        val brightness = (call.getFloat("brightness") ?: 0.7f).coerceIn(0.05f, 1f)
+        val act = activity ?: return call.reject("Activity not available")
+        act.runOnUiThread {
+            try {
+                val attrs = act.window.attributes
+                if (iptvOriginalBrightness == null) iptvOriginalBrightness = attrs.screenBrightness
+                attrs.screenBrightness = brightness
+                act.window.attributes = attrs
+                call.resolve(JSObject().put("brightness", brightness))
+            } catch (e: Exception) {
+                call.reject("brightness_failed: " + (e.message ?: e.javaClass.simpleName))
+            }
+        }
     }
 
     @PluginMethod
