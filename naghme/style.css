@@ -687,3 +687,9 @@ body.mode-radio main{height:100dvh}body.mode-radio #radioPage{display:flex!impor
 #naghmeIptvTools .iptv-range-control{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #777;border-radius:8px;background:#173c31;color:#fff;font-size:12px}
 #naghmeIptvTools .iptv-range-control input{width:92px;min-width:65px;accent-color:#f0c040}
 @media(orientation:landscape){body.mode-tv #tvpage.iptv-split-landscape #naghmeIptvTools .iptv-range-control{flex:1 1 140px;justify-content:space-between}}
+
+/* IPTV web controls: reliable touch dragging on Android/PWA */
+#naghmeIptvTools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0;padding:7px;background:var(--s1);border:1px solid var(--s2);border-radius:10px;position:relative;z-index:3;pointer-events:auto}
+#naghmeIptvTools .iptv-range-control{display:flex;flex:1 1 150px;min-width:130px;align-items:center;gap:8px;justify-content:space-between;padding:8px 10px;border:1px solid var(--ac);border-radius:9px;background:var(--s2);color:var(--tx);font-size:13px;touch-action:pan-x;pointer-events:auto}
+#naghmeIptvTools .iptv-range-control input[type=range]{display:block;flex:1 1 90px;width:90px;min-width:65px;height:34px;margin:0;accent-color:var(--ac);touch-action:pan-x!important;pointer-events:auto;cursor:pointer}
+@media(orientation:landscape){body.mode-tv #tvpage.iptv-split-landscape #naghmeIptvTools{flex:none!important;display:flex!important;flex-wrap:wrap!important;gap:7px!important;margin:0 0 7px!important;padding:7px!important}}
