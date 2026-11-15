@@ -28,6 +28,7 @@
    p.addListener('playing',function(){if(active)status('')});
    p.addListener('buffering',function(){if(active)status('در حال دریافت و بافر شبکه…')});
    p.addListener('fullscreenExit',function(){if(active&&window.NaghmeIPTVFullscreen)window.NaghmeIPTVFullscreen(false)});
+  p.addListener('channelSelected',function(data){if(data&&data.key&&window.NaghmeIPTVSelectChannel)window.NaghmeIPTVSelectChannel(data.key)});
   }catch(err){console.warn('[Naghme IPTV] event listeners:',err)}
  }
  function syncBounds(){
@@ -35,6 +36,12 @@
   var b=bounds(),p=plugin();
   if(!b||!p||!p.setBounds)return Promise.resolve();
   return p.setBounds(b).catch(function(err){console.warn('[Naghme IPTV] setBounds:',err)});
+ }
+ function updateChannelMenu(){
+  var p=plugin(),list=window.IPTV&&Array.isArray(window.IPTV.channels)?window.IPTV.channels:[];
+  if(!p||!p.setChannelMenu)return Promise.resolve();
+  var compact=list.map(function(c){return {key:String(c.key||''),name:String(c.name||'شبکه'),group:String(c.group||'')};});
+  return p.setChannelMenu({channelsJson:JSON.stringify(compact),selectedKey:window.IPTV&&window.IPTV.current?window.IPTV.current.key:''}).catch(function(err){console.warn('[Naghme IPTV] channel menu:',err)});
  }
  function playChannel(channel){
   if(!channel||!channel.url)return Promise.resolve();
@@ -44,6 +51,7 @@
   if(!b){status('کادر پخش IPTV هنوز آماده نیست؛ دوباره شبکه را انتخاب کنید.');return Promise.resolve()}
   active=true;
   if(window.IPTV)window.IPTV.nativePlayError='';
+  updateChannelMenu();
   status('در حال اتصال به '+(channel.name||'شبکه')+'…');
   if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.NaghmeIPTVFullscreen){
    setTimeout(function(){if(active)window.NaghmeIPTVFullscreen(true)},180);
@@ -119,7 +127,8 @@
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
  addControls();
- window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,setQuality:function(h){return native.setVideoQuality(Number(h)||0)},jumpToTime:jumpToTime,setSleepTimer:setSleepTimer};
+ window.NaghmeIPTVSelectChannel=function(key){if(typeof window.playIPTV==='function')window.playIPTV(key)};
+ window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,setQuality:function(h){return native.setVideoQuality(Number(h)||0)},jumpToTime:jumpToTime,setSleepTimer:setSleepTimer,refreshChannelMenu:updateChannelMenu};
  window.addEventListener('resize',onLayoutChange,{passive:true});
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
