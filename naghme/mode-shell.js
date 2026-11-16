@@ -31,7 +31,7 @@ function home(){showHomeView();setMode('home')}
 function music(){showHomeView();setMode('music')}
 function video(){showHomeView();setMode('video');clickNav('video')}
 function tv(){showHomeView();setMode('tv');clickNav('iptv')}
-function radio(){showHomeView();setMode('radio')}
+function radio(){showHomeView();setMode('radio');window.NaghmeRadio?.init()}
 document.addEventListener('click',function(e){
  const pick=e.target.closest('[data-mode]');
  if(pick){const mode=pick.dataset.mode;if(mode==='music')music();else if(mode==='video')video();else if(mode==='tv')tv();else if(mode==='radio')radio();return}
