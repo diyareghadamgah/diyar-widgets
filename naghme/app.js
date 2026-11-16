@@ -484,7 +484,7 @@ function updateIPTVNow(){
  v.hidden=!a;$('#tvph').hidden=!!a;
  $('#tvName').textContent=a?a.name:'شبکه‌ای انتخاب نشده';
  $('#tvGroup').textContent=a?(a.group||'سایر')+(a.country?' • '+a.country:''):'';
- $('#tvRetry').disabled=!a;$('#tvFs').disabled=!a}
+ $('#tvRetry').disabled=!a;$('#tvFs').disabled=!a;const overlay=$('#tvFsOverlay');if(overlay)overlay.disabled=!a}
 function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ فهرست فقط وقتی داده/فیلتر عوض شده بازسازی می‌شود
  const m=$('#tvMsg'),txt=IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':(IPTV.error||'');
  if(m.textContent!==txt)m.textContent=txt;m.hidden=!txt;m.classList.toggle('tverror',!!IPTV.error&&!IPTV.loading);
