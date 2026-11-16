@@ -1013,3 +1013,15 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
 /* app.js واقعی body را با tvmode علامت‌گذاری می‌کند؛ به کلاس‌های قدیمی mode-tv و iptv-split-landscape وابسته نباش */
 @media(orientation:landscape){body.tvmode #tvpage .tvfs-enter-overlay{display:flex!important}}
 @media(orientation:portrait){body.tvmode #tvpage .tvfs-enter-overlay{display:none!important}}
+
+/* IPTV landscape fullscreen button: anchor it to the visible video frame, not the clipped settings row */
+@media (orientation:landscape) and (max-height:700px){
+ #tvpage:not([hidden]) .tvplayer{overflow:visible!important;min-height:0!important}
+ #tvpage:not([hidden]) .tvbox{position:relative!important;overflow:hidden!important;isolation:isolate;flex:none!important}
+ #tvpage:not([hidden]) #tvFsOverlay.tvfs-enter-overlay{
+  display:flex!important;position:absolute!important;top:8px!important;right:8px!important;left:auto!important;bottom:auto!important;
+  z-index:30!important;width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;
+  padding:0!important;margin:0!important;align-items:center!important;justify-content:center!important;
+  visibility:visible!important;opacity:1!important;pointer-events:auto!important
+ }
+}
