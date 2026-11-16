@@ -136,6 +136,8 @@ async function loadIPTV(force=false){
   if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
+  const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=urls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
+  if(failedExtra.length)IPTV.error='دریافت فهرست اضافی '+failedExtra.map(x=>x.name||x.url).join('، ')+' ناموفق بود؛ فهرست پیش‌فرض و شبکه‌های قبلی حفظ شدند.';
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
   if(generation!==iptvLoadGeneration)return;
@@ -260,7 +262,8 @@ async function toggleIPTVExtraSource(){
  }
  IPTV.extraUrls=[...IPTV.extraUrls,{url:IPTV_EV_URL,name:'EVIPTV جهانی'}];await kvSet('iptvExtraUrls',IPTV.extraUrls);
  IPTV.loadedAt=0;await loadIPTV(true);
- if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد.');
+ if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد؛ فهرست قبلی هم حفظ شد.');
+ else{IPTV.error='فهرست EVIPTV دریافت نشد؛ ممکن است نشانی HTTPS یا دسترسی CORS منبع در دسترس نباشد. فهرست قبلی حفظ شده است.';iptvRefresh();toast('EVIPTV دریافت نشد؛ منبع قبلی حذف نشده است.')}
 }
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست‌ها',[
