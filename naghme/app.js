@@ -130,7 +130,7 @@ async function loadIPTV(force=false){
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL)urls.push(IPTV.iranUrl);
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
-  const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url))));
+  const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url)).map(channel=>({...channel,sourceUrl:url}))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
   if(generation!==iptvLoadGeneration)return;
