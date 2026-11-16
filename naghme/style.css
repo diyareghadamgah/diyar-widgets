@@ -1074,3 +1074,41 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   padding-bottom:12px!important;
  }
 }
+
+
+/* Video landscape: fixed monitor on the left, one fully scrollable tools/library column on the right */
+@media (orientation:landscape) and (max-height:700px){
+ body.mode-video #videoContent{overflow:hidden!important;min-height:0!important}
+ body.mode-video .video-page{display:flex!important;flex-direction:column!important;overflow:hidden!important;min-height:0!important}
+ body.mode-video .video-workspace{
+  display:grid!important;grid-template-columns:minmax(0,46%) minmax(0,54%)!important;
+  grid-template-rows:minmax(0,1fr)!important;direction:ltr!important;
+  gap:10px!important;min-height:0!important;height:100%!important;overflow:hidden!important;
+ }
+ body.mode-video .video-monitor{
+  grid-column:1!important;grid-row:1!important;direction:rtl!important;
+  width:100%!important;min-width:0!important;min-height:0!important;
+  justify-content:flex-start!important;overflow:hidden!important;
+ }
+ body.mode-video .video-monitor .video-stage{
+  width:100%!important;max-width:100%!important;max-height:48dvh!important;
+  min-height:0!important;margin:0!important;flex:0 0 auto!important;
+ }
+ body.mode-video .video-sidebar{
+  grid-column:2!important;grid-row:1!important;direction:rtl!important;
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;
+  flex:1 1 auto!important;overflow-y:auto!important;overflow-x:hidden!important;
+  overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important;
+  touch-action:pan-y!important;padding:0 2px 18px!important;
+ }
+ body.mode-video .video-top{flex:0 0 auto!important;position:static!important}
+ body.mode-video .video-top .bar{display:flex!important;flex:0 0 auto!important;flex-wrap:wrap!important;width:100%!important}
+ body.mode-video .video-top .bar button{flex:1 1 30%!important;min-width:0!important}
+ body.mode-video .video-library-head{flex:0 0 auto!important}
+ body.mode-video .video-list{
+  display:grid!important;flex:0 0 auto!important;min-height:0!important;height:auto!important;
+  max-height:none!important;overflow:visible!important;padding-bottom:8px!important;
+ }
+ body.mode-video .video-note{display:block!important;flex:0 0 auto!important;white-space:normal!important}
+}
