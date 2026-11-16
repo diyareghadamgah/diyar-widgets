@@ -416,7 +416,11 @@ function renderIPTVCountries(){
 }
 async function loadIPTVCountry(code){
  code=String(code||'').toLowerCase();if(!IPTV_COUNTRY_CODES.includes(code))return;
- if(iptvCountryCache.has(code))return iptvCountryCache.get(code);
+ if(iptvCountryCache.has(code)){
+  const cached=await iptvCountryCache.get(code);
+  const map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of cached)if(!map.has(c.key))map.set(c.key,c);
+  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return cached.length;
+ }
  const job=(async()=>{
   let text;
   if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
@@ -428,18 +432,19 @@ async function loadIPTVCountry(code){
   }
   const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase()}));
   if(!parsed.length)throw Error('فهرست این کشور خالی است یا ساختار M3U معتبر نیست.');
-  const map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of parsed)if(!map.has(c.key))map.set(c.key,c);
-  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.loadedAt=Date.now();IPTV.error='';
-  IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return parsed.length;
+  return parsed;
  })();
  iptvCountryCache.set(code,job);
- try{return await job}catch(e){iptvCountryCache.delete(code);throw e}
+ try{
+  const parsed=await job,map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of parsed)if(!map.has(c.key))map.set(c.key,c);
+  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.loadedAt=Date.now();IPTV.error='';
+  IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return parsed.length;
+ }catch(e){iptvCountryCache.delete(code);throw e}
 }
 async function setIPTVCountry(v){
  IPTV.country=v;renderIPTVCountries();renderIPTVList(false);
  const item=iptvCountryCatalog().find(x=>x.name===v);
  if(!item)return;
- if(iptvCountryCache.has(item.code))return;
  IPTV.error='در حال دریافت شبکه‌های '+v+'…';iptvRefresh();
  try{const n=await loadIPTVCountry(item.code);toast(fa(n)+' شبکه از '+v+' اضافه شد.')}
  catch(e){IPTV.error='دریافت فهرست '+v+' ناموفق بود: '+(e.message||'خطای شبکه')+'؛ فهرست قبلی و شبکه‌های واردشده حفظ شدند.';iptvRefresh();toast('دریافت فهرست '+v+' ناموفق بود.')}
