@@ -23,7 +23,15 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
 const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u';
-const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',countrySig:'',favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+// فهرست‌های کشوری iptv-org به‌صورت تنبل و فقط هنگام انتخاب کشور دریافت می‌شوند.
+const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr ge de gr hk hu is in id ir iq il it jp kw mo my mx mn ma nl nz no om pk ps pa pe ph pl pt qa ro ru sa rs sg sk'.split(' ');
+const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
+const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
+const iptvCountryCache=new Map();
+const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
+function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
+function iptvFlag(code){return [...String(code||'').toUpperCase()].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join('')}
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 let iptvScreenWakeLock=null,iptvWakeBound=false;
@@ -104,6 +112,7 @@ async function loadIPTV(force=false){
  try{
   await restoreImportedIPTV();
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
+  try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
   const fetchPlaylistText=async url=>{
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
     const result=await window.NaghmeVideoPlayer.fetchText(url);return result.text;
@@ -120,6 +129,7 @@ async function loadIPTV(force=false){
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL)urls.push(IPTV.iranUrl);
+  for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
@@ -240,6 +250,18 @@ async function manageDirectIPTVChannels(){
  if(!channels.length)return toast('شبکهٔ دستی برای حذف وجود ندارد.');
  const actions=channels.map(c=>['🗑 حذف شبکهٔ «'+c.name+'»',()=>removeIPTVDirectChannel(c.key)]);
  sheet('مدیریت شبکه‌های دستی',actions,'شبکه‌هایی که با لینک مستقیم اضافه کرده‌ای در این بخش مدیریت و حذف می‌شوند.')}
+async function toggleIPTVExtraSource(){
+ await restoreImportedIPTV();try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
+ const exists=IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL);
+ if(exists){
+  if(!confirm('فهرست EVIPTV غیرفعال شود؟ فهرست پیش‌فرض نغمه، فهرست‌های قبلی و شبکه‌های واردشده حفظ می‌شوند.'))return;
+  IPTV.extraUrls=IPTV.extraUrls.filter(x=>x.url!==IPTV_EV_URL);await kvSet('iptvExtraUrls',IPTV.extraUrls);
+  IPTV.channels=IPTV.channels.filter(c=>c.sourceUrl!==IPTV_EV_URL);IPTV.loadedAt=0;IPTV.sig='';renderIPTV();toast('فهرست EVIPTV غیرفعال شد؛ فهرست قبلی باقی است.');return;
+ }
+ IPTV.extraUrls=[...IPTV.extraUrls,{url:IPTV_EV_URL,name:'EVIPTV جهانی'}];await kvSet('iptvExtraUrls',IPTV.extraUrls);
+ IPTV.loadedAt=0;await loadIPTV(true);
+ if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد.');
+}
 function manageIPTVPlaylist(){
  sheet('مدیریت فهرست‌ها',[
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
@@ -247,6 +269,7 @@ function manageIPTVPlaylist(){
   ['🗑 حذف موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ هر زمان بخواهی می‌توانی با گزینهٔ «بازگشت به فهرست پیش‌فرض نغمه» آن را دوباره فعال کنی. فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
   ['🗑 مدیریت و حذف شبکه‌های دستی',()=>manageDirectIPTVChannels()],
+  ['🌍 '+((IPTV.extraUrls||[]).some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
   ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
  ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست پیش‌فرض غیرفعال است')+'\n\nفهرست پیش‌فرض نغمه در شروع برنامه به‌صورت خودکار نمایش داده می‌شود. «حذف موقت» فقط آن را پنهان می‌کند و آدرس و اطلاعاتش را پاک نمی‌کند؛ با «بازگشت به فهرست پیش‌فرض نغمه» دوباره فعال می‌شود. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» مدیریت می‌شوند.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
@@ -371,21 +394,55 @@ const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+I
 function iptvCountryLabels(c){
  const raw=String(c.country||'').split(/[;,|]+/).map(x=>x.trim()).filter(Boolean);
  if(!raw.length){const m=String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i);if(m)raw.push(m[1])}
- const aliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه'};
- return [...new Set(raw.map(v=>{const code=v.toUpperCase();if(aliases[code])return aliases[code];if(/^[A-Z]{2}$/.test(code)){const n=iptvCountryName(code).fa;return n||v}return v}).filter(Boolean))];
+ return [...new Set(raw.map(v=>{const code=v.toUpperCase();if(/^[A-Z]{2}$/.test(code))return iptvCountryLabel(code);return v}).filter(Boolean))];
 }
 function iptvCountryEntries(){const counts=new Map();IPTV.channels.forEach(c=>iptvCountryLabels(c).forEach(name=>counts.set(name,(counts.get(name)||0)+1)));return [...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fa'))}
+function iptvCountryCatalog(){
+ return IPTV_COUNTRY_CODES.map(code=>({code,name:iptvCountryLabel(code)})).filter(x=>x.name&&x.name!==x.code);
+}
 function renderIPTVCountries(){
- const entries=iptvCountryEntries(),total=IPTV.channels.length,summary=$('#iptvCountryTotals');
- if(summary)summary.textContent=fa(entries.length)+' کشور • '+fa(total)+' شبکه';
- if(IPTV.country!=='همه'&&!entries.some(x=>x[0]===IPTV.country))IPTV.country='همه';
+ const entries=iptvCountryEntries(),counts=new Map(entries),catalog=iptvCountryCatalog(),total=IPTV.channels.length,summary=$('#iptvCountryTotals');
+ if(summary)summary.textContent=fa(new Set([...entries.map(x=>x[0]),...catalog.map(x=>x.name)]).size)+' کشور • '+fa(total)+' شبکه';
+ const valid=new Set([...entries.map(x=>x[0]),...catalog.map(x=>x.name)]);
+ if(IPTV.country!=='همه'&&!valid.has(IPTV.country))IPTV.country='همه';
  const box=$('#iptvCountrySelect');
  if(box){
-  const options=[['همه','همه کشورها ('+fa(total)+')'],...entries.map(([name,count])=>[name,name+' ('+fa(count)+')'])];
+  const options=[['همه','🌍 همه کشورها ('+fa(total)+')'],...catalog.map(({code,name})=>[name,iptvFlag(code)+' '+name+' ('+(counts.has(name)?fa(counts.get(name))+' شبکه':'دریافت با انتخاب')+')'])];
+  for(const [name,count] of entries)if(!catalog.some(x=>x.name===name))options.push([name,name+' ('+fa(count)+' شبکه)']);
   const sig=options.map(x=>x.join(':')).join('|');
   if(box.dataset.optionsSig!==sig){box.innerHTML=options.map(([v,label])=>'<option value="'+esc(v)+'">'+esc(label)+'</option>').join('');box.dataset.optionsSig=sig}
   box.value=IPTV.country;
  }
+}
+async function loadIPTVCountry(code){
+ code=String(code||'').toLowerCase();if(!IPTV_COUNTRY_CODES.includes(code))return;
+ if(iptvCountryCache.has(code))return iptvCountryCache.get(code);
+ const job=(async()=>{
+  let text;
+  if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+   const result=await window.NaghmeVideoPlayer.fetchText(IPTV_COUNTRY_BASE+code+'.m3u');text=result.text;
+  }else{
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
+   try{const response=await fetch(IPTV_COUNTRY_BASE+code+'.m3u',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
+   finally{clearTimeout(timer)}
+  }
+  const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase()}));
+  if(!parsed.length)throw Error('فهرست این کشور خالی است یا ساختار M3U معتبر نیست.');
+  const map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of parsed)if(!map.has(c.key))map.set(c.key,c);
+  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.loadedAt=Date.now();IPTV.error='';
+  IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return parsed.length;
+ })();
+ iptvCountryCache.set(code,job);
+ try{return await job}catch(e){iptvCountryCache.delete(code);throw e}
+}
+async function setIPTVCountry(v){
+ IPTV.country=v;renderIPTVCountries();renderIPTVList(false);
+ const item=iptvCountryCatalog().find(x=>x.name===v);
+ if(!item)return;
+ if(iptvCountryCache.has(item.code))return;
+ IPTV.error='در حال دریافت شبکه‌های '+v+'…';iptvRefresh();
+ try{const n=await loadIPTVCountry(item.code);toast(fa(n)+' شبکه از '+v+' اضافه شد.')}
+ catch(e){IPTV.error='دریافت فهرست '+v+' ناموفق بود: '+(e.message||'خطای شبکه')+'؛ فهرست قبلی و شبکه‌های واردشده حفظ شدند.';iptvRefresh();toast('دریافت فهرست '+v+' ناموفق بود.')}
 }
 function iptvFiltered(){
  const q=iptvNorm(IPTV.query).trim(),cat=IPTV.category,fav=cat==='موردعلاقه‌ها',all=cat==='همه'||fav,country=IPTV.country;
@@ -418,7 +475,7 @@ function renderIPTVChips(){
  $('#tvChips').innerHTML=['همه','موردعلاقه‌ها',...groups].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('')}
 function setIPTVCat(v){
  IPTV.category=v;document.querySelectorAll('#tvChips button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));renderIPTVList(false)}
-function setIPTVCountry(v){IPTV.country=v;renderIPTVCountries();renderIPTVList(false)}
+
 function setIPTVQuery(val){
  IPTV.query=val;const inp=$('#iptvSearch');if(inp&&inp.value!==val)inp.value=val;
  clearTimeout(iptvQT);iptvQT=setTimeout(()=>renderIPTVList(false),90)}
