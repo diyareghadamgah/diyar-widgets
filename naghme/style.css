@@ -1047,3 +1047,30 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
  }
  body.mode-tv #tvpage.iptv-split-landscape #iptvStatus{flex:0 0 auto!important;white-space:normal!important}
 }
+
+
+/* IPTV landscape: scroll the entire right-side settings and channel workspace together */
+@media (orientation:landscape){
+ body.mode-tv #tvpage.iptv-split-landscape .tvbrowse{
+  flex:1 1 52%!important;width:52%!important;min-width:0!important;
+  min-height:0!important;height:100%!important;
+  display:block!important;overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  scrollbar-width:thin!important;padding:0 4px 18px!important;
+  box-sizing:border-box!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvhead,
+ body.mode-tv #tvpage.iptv-split-landscape .iptv-country-panel,
+ body.mode-tv #tvpage.iptv-split-landscape .iptv-search-wrap,
+ body.mode-tv #tvpage.iptv-split-landscape .chips{
+  flex:none!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvlist{
+  display:grid!important;flex:none!important;
+  min-height:max-content!important;height:auto!important;
+  overflow:visible!important;max-height:none!important;
+  align-content:start!important;grid-template-columns:1fr!important;
+  padding-bottom:12px!important;
+ }
+}
