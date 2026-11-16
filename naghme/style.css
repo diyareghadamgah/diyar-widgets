@@ -1025,3 +1025,25 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   visibility:visible!important;opacity:1!important;pointer-events:auto!important
  }
 }
+
+/* Android APK landscape: make the playback/settings column scrollable so lower controls remain reachable */
+@media (orientation:landscape) and (max-height:700px){
+ body.mode-tv #tvpage.iptv-split-landscape .tvplayer{
+  justify-content:flex-start!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  scrollbar-width:thin!important;
+  padding:2px 2px 14px!important;
+  box-sizing:border-box!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvbox{
+  flex:0 0 auto!important;margin:0 auto 6px!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvnow{
+  flex:0 0 auto!important;overflow:visible!important;
+  flex-wrap:wrap!important;min-height:max-content!important;
+  padding-bottom:10px!important;margin-bottom:8px!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape #iptvStatus{flex:0 0 auto!important;white-space:normal!important}
+}
