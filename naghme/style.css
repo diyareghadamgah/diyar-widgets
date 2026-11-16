@@ -1074,3 +1074,40 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   padding-bottom:12px!important;
  }
 }
+
+
+/* Video landscape: keep file/folder import actions visible at the top of the scrollable library panel */
+@media (orientation:landscape) and (max-height:800px){
+ body.mode-video .video-sidebar{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  min-width:0!important;min-height:0!important;height:100%!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;-webkit-overflow-scrolling:touch!important;
+  touch-action:pan-y!important;padding:2px 4px 18px!important;box-sizing:border-box!important;
+ }
+ body.mode-video .video-top{
+  display:flex!important;flex:0 0 auto!important;flex-direction:column!important;
+  align-items:stretch!important;justify-content:flex-start!important;
+  width:100%!important;min-width:0!important;overflow:visible!important;
+ }
+ body.mode-video .video-top>.bar{
+  display:flex!important;visibility:visible!important;opacity:1!important;
+  position:static!important;flex:0 0 auto!important;flex-wrap:wrap!important;
+  align-items:center!important;justify-content:flex-start!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  overflow:visible!important;gap:6px!important;margin:4px 0!important;
+ }
+ body.mode-video .video-top>.bar>button{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;
+  position:static!important;flex:1 1 44%!important;min-width:0!important;
+  min-height:38px!important;white-space:normal!important;
+ }
+ body.mode-video .video-tools{
+  flex:0 0 auto!important;max-height:none!important;overflow:visible!important;
+ }
+ body.mode-video .video-library-head{flex:0 0 auto!important}
+ body.mode-video .video-list{
+  flex:0 0 auto!important;height:auto!important;max-height:none!important;
+  min-height:0!important;overflow:visible!important;
+ }
+}
