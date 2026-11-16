@@ -88,7 +88,7 @@
    .then(function(){return p.setBounds?p.setBounds(b):null})
    .then(function(){
     document.body.classList.add('native-player-active');
-    if(window.NaghmeIPTVFullscreen)return window.NaghmeIPTVFullscreen(true);
+    // شروع پخش در حالت تعبیه‌شده می‌ماند؛ تمام‌صفحه فقط با دکمهٔ کاربر.
    })
    .then(function(){status('')})
    .catch(function(err){
@@ -167,7 +167,7 @@
  window.addEventListener('orientationchange',function(){
   setTimeout(function(){
    syncSplitLayout();
-   if(active&&window.NaghmeIPTVFullscreen)window.NaghmeIPTVFullscreen(!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches));
+   // چرخش صفحه فقط چیدمان را تغییر می‌دهد، نه وضعیت تمام‌صفحه را.
    onLayoutChange();
   },300);
  },{passive:true});
