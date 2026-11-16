@@ -1006,3 +1006,9 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   max-width:100%!important;max-height:100%!important;aspect-ratio:3/2!important;overflow:visible!important
  }
 }
+
+/* IPTV landscape: persistent fullscreen affordance over the video, independent of the browse toolbar */
+.tvfs-enter-overlay{display:none;position:absolute;top:max(8px,env(safe-area-inset-top));right:8px;z-index:5;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border:1px solid #ffffff66;border-radius:12px;background:#080808c9;color:#fff;font-size:25px;line-height:1;box-shadow:0 2px 12px #0008;touch-action:manipulation}
+.tvfs-enter-overlay:disabled{opacity:.4}
+@media(orientation:landscape){body.mode-tv #tvpage.iptv-split-landscape .tvfs-enter-overlay{display:grid;place-items:center}}
+@media(orientation:portrait){body.mode-tv .tvfs-enter-overlay{display:none!important}}
