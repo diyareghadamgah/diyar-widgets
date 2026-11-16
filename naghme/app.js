@@ -350,7 +350,7 @@ function playIPTV(key){
  // فایل M3U8 محلی با blob: در WebView پخش می‌شود؛ آدرس‌های شبکه در Android به پلیر بومی می‌روند.
  const native=!!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!ch.localBlob);
  if(native){iptvRelease();window.NaghmeNativeIPTV.play(ch)}
- else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true);if(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches)iptvFullscreen(true)}   // بدون render و بدون دست‌زدن به فهرست/اسکرول
+ else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true);}   // بدون render و بدون دست‌زدن به فهرست/اسکرول
 }
 const retryIPTV=()=>{if(IPTV.current){if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&window.NaghmeNativeIPTV&&!IPTV.current.localBlob){iptvRelease();window.NaghmeNativeIPTV.play(IPTV.current)}else{if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();document.body.classList.remove('native-player-active');attachIPTVPlayer(true)}}};
 function toggleIPTVFav(key){
@@ -382,16 +382,8 @@ function iptvFullscreen(on){
  }
 }
 window.NaghmeIPTVFullscreen=iptvFullscreen;
-let iptvOrientationLandscape=null;
-function syncIPTVOrientation(){
- if(!iptvOn||!IPTV.current||isIPTVNative())return;
- const landscape=!!(window.matchMedia&&window.matchMedia('(orientation: landscape)').matches&&window.innerWidth>window.innerHeight);
- if(iptvOrientationLandscape===landscape)return;
- iptvOrientationLandscape=landscape;iptvFullscreen(landscape);
-}
-window.addEventListener('orientationchange',()=>setTimeout(syncIPTVOrientation,250),{passive:true});
-window.addEventListener('resize',syncIPTVOrientation,{passive:true});
-function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
+// تغییر جهت صفحه فقط چیدمان را عوض می‌کند؛ تمام‌صفحه فقط با فرمان صریح کاربر فعال می‌شود.
+ function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
 const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
 function iptvCountryLabels(c){
@@ -568,7 +560,7 @@ function enterIPTV(){
  }else renderIPTV();
  if(!IPTV.channels.length&&!IPTV.loading&&!IPTV.error)loadIPTV()}
 function leaveIPTV(){   // خروج از IPTV: پلیر بومی مخفی و منابع HTML/HLS آزاد می‌شوند
- if(!iptvOn)return;iptvOn=false;iptvOrientationLandscape=null;iptvKeepScreenAwake(false);
+ if(!iptvOn)return;iptvOn=false;iptvKeepScreenAwake(false);
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvFullscreen(false);$('#tvpage').hidden=true;document.body.classList.remove('tvmode');iptvRelease()}
 window.NaghmeLeaveIPTV=leaveIPTV;
