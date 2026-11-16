@@ -166,7 +166,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         } ?: call.reject("activity_unavailable")
     }
 
-    private fun videoFile(uri: Uri): JSObject? {
+    private fun videoFile(uri: Uri, allowUnknownType: Boolean = false): JSObject? {
         val resolver = getContext().contentResolver
         val metadata = resolver.query(uri, arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE), null, null, null)?.use { cursor ->
             if (cursor.moveToFirst()) {
@@ -180,7 +180,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
         val extension = fileName.substringAfterLast('.', "").lowercase()
         val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
-        if (extension !in known && !(resolver.getType(uri) ?: "").startsWith("video/")) return null
+        if (!allowUnknownType && extension !in known && !(resolver.getType(uri) ?: "").startsWith("video/")) return null
         return JSObject().put("uri", uri.toString())
             .put("name", fileName)
             .put("size", metadata?.second ?: -1L)
@@ -218,7 +218,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val files = JSArray()
         uris.distinctBy { it.toString() }.forEach { uri ->
             persistReadPermission(uri, data.flags)
-            videoFile(uri)?.let { files.put(it) }
+            videoFile(uri, allowUnknownType = true)?.let { files.put(it) }
         }
         call.resolve(JSObject().put("files", files))
     }
