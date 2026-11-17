@@ -81,6 +81,7 @@ function toggle(){
     const a=audio();if(!a)return;
     if(!state.current){const s=filtered()[0];if(s)play(s.stationuuid);else status('ابتدا یک ایستگاه انتخاب کن.');return}
     const nativeHls = state.current && (state.current.irib === true || /\.m3u8/.test(state.current.url_resolved || state.current.url));
+    status('DIAG-START native=' + isNativeApp + ' hls=' + nativeHls + ' plugin=' + !!window.NaghmeLibraryVideo);
     if (isNativeApp && nativeHls && window.NaghmeLibraryVideo) {
         if ($('#radioPlayToggle').textContent === 'Ⅱ') {
             window.NaghmeLibraryVideo.pause().catch(()=>{});
