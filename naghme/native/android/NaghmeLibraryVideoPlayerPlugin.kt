@@ -249,12 +249,27 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             var visited = 0
             fun scan(folder: DocumentFile, depth: Int) {
                 if (count >= 3000 || visited >= 30000 || depth > 12) return
-                folder.listFiles().forEach { item ->
+                val children = try { folder.listFiles() } catch (listError: Exception) {
+                    diagnostic("folder_list_failed name=" + (folder.name ?: "unknown"), listError)
+                    emptyArray()
+                }
+                children.forEach { item ->
                     if (count >= 3000 || visited >= 30000) return
                     visited++
                     try {
-                        if (item.isDirectory) scan(item, depth + 1)
-                        else if (item.isFile) videoFile(item.uri)?.let { files.put(it); count++ }
+                        // بعضی ارائه‌دهنده‌های SAF مقدار isFile را نادرست/نامشخص برمی‌گردانند؛
+                        // پوشه را بازگشتی می‌خوانیم و تشخیص ویدئو را بر اساس نام و MIME انجام می‌دهیم.
+                        if (item.isDirectory) {
+                            scan(item, depth + 1)
+                        } else {
+                            val mime = getContext().contentResolver.getType(item.uri) ?: ""
+                            val name = item.name ?: ""
+                            val ext = name.substringAfterLast('.', "").lowercase()
+                            val knownVideo = ext in setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
+                            if (mime.startsWith("video/") || knownVideo) {
+                                videoFile(item.uri, allowUnknownType = true)?.let { files.put(it); count++ }
+                            }
+                        }
                     } catch (itemError: Exception) {
                         diagnostic("folder_item_skipped name=" + (item.name ?: "unknown"), itemError)
                     }
