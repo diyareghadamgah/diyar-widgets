@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const $=s=>document.querySelector(s);
-const API=['https://de1.api.radio-browser.info/json','https://nl1.api.radio-browser.info/json','https://at1.api.radio-browser.info/json'];
+const API=['https://de1.api.radio-browser.info/json','https://de2.api.radio-browser.info/json','https://all.api.radio-browser.info/json'];
 const IRIB=[['radioiran','رادیو ایران','radioiran'],['radiojavan','رادیو جوان','radiojavan'],['radiopayam','رادیو پیام','radiopayam'],['radiotehran','رادیو تهران','radiotehran'],['radiovarzesh','رادیو ورزش','radiovarzesh'],['radioava','رادیو آوا','radioava'],['radioquran','رادیو قرآن','radioquran'],['radiofarhang','رادیو فرهنگ','radiofarhang'],['radiosalamat','رادیو سلامت','radiosalamat'],['radioeghtesad','رادیو اقتصاد','radioeghtesad'],['radiomaaref','رادیو معارف','radiomaaref'],['radiogoftogo','رادیو گفت‌وگو','radiogoftogo'],['radionamayesh','رادیو نمایش','radionamayesh'],['radiosaba','رادیو صبا','radiosaba'],['radioziarat','رادیو زیارت','radioziarat'],['radiotelavat','رادیو تلاوت','radiotelavat'],['radiotartil','رادیو ترتیل','radiotartil'],['radiomonasebati','رادیو مناسبتی','radiomonasebati']].map(([id,name,slug])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',url_resolved:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',codec:'HLS',bitrate:0,votes:999999,irib:true}));
 const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false};
 
