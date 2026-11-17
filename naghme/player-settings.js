@@ -9,14 +9,64 @@ function apply(){
  document.querySelectorAll('[data-vact]').forEach(function(el){var a=el.dataset.vact,map={jump:'showJump',sleep:'showSleep',info:'showInfo',diagnostics:'showDiagnostics'};if(map[a])el.hidden=!prefs[map[a]]});
  document.querySelectorAll('#videoSpeed, #videoSpeedMenu').forEach(function(vs){if(!vs.dataset.userChanged)vs.value=prefs.videoSpeed||'1'});
 }
-function close(){var d=document.getElementById('naghmePlayerSettings');if(d)d.remove()}
+function close(){
+    var d = document.getElementById('naghmePlayerSettings');
+    if (d) d.remove();
+    if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) window.NaghmeLibraryVideo.visible(true).catch(function(){});
+}
+if (!document.getElementById('naghme-modal-fix-style')) {
+    var styleEl = document.createElement('style');
+    styleEl.id = 'naghme-modal-fix-style';
+    styleEl.textContent = `
+        #naghmePlayerSettings > section {
+            width: min(90vw, 800px) !important;
+            height: 85dvh !important;
+            max-height: 85dvh !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #171717 !important;
+        }
+        .naghme-tools-scroll {
+            flex: 1 1 auto !important;
+            overflow-y: auto !important;
+            min-height: 0 !important;
+            padding: 12px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+        }
+        @media (orientation: landscape) {
+            .naghme-tools-scroll {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                align-content: start !important;
+            }
+            .naghme-tools-scroll > .naghme-tools-prefs {
+                grid-column: 1 / -1 !important;
+            }
+        }
+        #naghmeVideoToolGrid, #naghmeVideoExtraGrid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+            gap: 8px !important;
+        }
+        .naghme-tools-head { flex-shrink: 0 !important; padding: 12px !important; border-bottom: 1px solid #333; }
+        .naghme-tools-foot { flex-shrink: 0 !important; padding: 12px !important; display: flex !important; gap: 8px !important; border-top: 1px solid #333; }
+        .naghme-tools-foot button { flex: 1 !important; padding: 12px !important; font-size: 16px !important; border-radius: 10px !important; background: #d9b34b !important; color: #111 !important; font-weight: bold; border: none; cursor: pointer; }
+        .naghme-tools-foot button[data-reset] { background: #292929 !important; color: #fff !important; }
+        .naghme-tools-scroll h3 { margin-top: 0; margin-bottom: 8px; font-size: 14px; color: #d9b34b; }
+        .naghme-tools-scroll button { padding: 10px; border-radius: 8px; background: #222; color: #fff; border: 1px solid #444; font-family: inherit; font-size: 14px; cursor: pointer; }
+    `;
+    document.head.appendChild(styleEl);
+}
 function open(anchor){
+    if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) window.NaghmeLibraryVideo.visible(false).catch(function(){});
  close();var d=document.createElement('div');d.id='naghmePlayerSettings';d.dir='rtl';
  var rect=anchor&&anchor.getBoundingClientRect?anchor.getBoundingClientRect():{bottom:56,left:12,right:56};
  var vv=window.visualViewport;var vh=vv&&vv.height?vv.height:window.innerHeight;
  Object.assign(d.style,{position:'fixed',inset:'0',zIndex:'2147482500',display:'flex',alignItems:'flex-end',justifyContent:'center',boxSizing:'border-box',padding:'12px 10px calc(10px + env(safe-area-inset-bottom))',background:'rgba(0,0,0,.58)',pointerEvents:'auto'});
  var card=document.createElement('section');Object.assign(card.style,{position:'relative',width:'min(460px,100%)',maxHeight:'min(78dvh,'+Math.max(300,vh-28)+'px)',display:'flex',flexDirection:'column',overflow:'hidden',background:'var(--s1,#171717)',color:'var(--tx,#fff)',border:'1px solid rgba(16,185,129,.65)',borderRadius:'20px',padding:'0',fontFamily:'inherit',boxShadow:'0 14px 42px #000c',pointerEvents:'auto'});
- card.innerHTML='<header class="naghme-tools-head"><div><h2>⚙️ ابزارهای پلیر</h2><p>کنترل‌های پخش و تنظیمات</p></div><button type="button" data-close aria-label="بستن">✕</button></header><div class="naghme-tools-scroll"><section class="naghme-tools-group"><h3>کنترل پخش</h3><div id="naghmeVideoToolGrid"><button data-vact="toggle">▶ / ⏸ پخش</button><button data-vact="lock">🔒 قفل لمس</button><button data-vact="back">⏪ ۱۰ ثانیه</button><button data-vact="forward">۱۰ ثانیه ⏩</button><button data-vact="full">⛶ تمام‌صفحه</button><button data-vact="repeat" id="videoRepeat">'+(prefs.videoRepeat==='one'?'🔂 تکرار: یک ویدئو':'🔁 تکرار: خاموش')+'</button></div><label class="naghme-tools-speed"><span>سرعت پخش</span><select id="videoSpeedMenu"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label></section><section class="naghme-tools-group"><h3>ابزارهای بیشتر</h3><div id="naghmeVideoExtraGrid"><button data-vact="jump">⏱ رفتن به زمان</button><button data-vact="sleep">🌙 زمان‌سنج خواب</button><button data-vact="info">ℹ️ اطلاعات ویدئو</button><button data-vact="diagnostics">🧾 گزارش فنی</button><button data-vact="subtitle">زیرنویس SRT/VTT</button></div></section><details class="naghme-tools-prefs"><summary>تنظیمات پیش‌فرض و نمایش</summary><label>سرعت پیش‌فرض ویدئو <select data-pref="videoSpeed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label><label>تکرار پیش‌فرض <select data-pref="videoRepeat"><option value="off">خاموش</option><option value="one">تکرار همین ویدئو</option></select></label><div class="naghme-tools-checks">'+[['showJump','نمایش رفتن به زمان'],['showSleep','نمایش زمان‌سنج'],['showInfo','نمایش اطلاعات'],['showDiagnostics','نمایش گزارش فنی']].map(function(x){return '<label><input type="checkbox" data-pref="'+x[0]+'"> '+x[1]+'</label>'}).join('')+'</div></details></div><footer class="naghme-tools-foot"><button type="button" data-reset>بازنشانی</button><button type="button" data-close>بستن</button></footer>';
+ card.innerHTML='<header class="naghme-tools-head"><div><h2>⚙️ ابزارهای پلیر</h2><p>کنترل‌های پخش و تنظیمات</p></div><button type="button" data-close aria-label="بستن">✕</button></header><div class="naghme-tools-scroll"><section class="naghme-tools-group"><h3>کنترل پخش</h3><div id="naghmeVideoToolGrid"><button data-vact="toggle">▶ / ⏸ پخش</button><button data-vact="lock">🔒 قفل لمس</button><button data-vact="back">⏪ ۱۰ ثانیه</button><button data-vact="forward">۱۰ ثانیه ⏩</button><button data-vact="full">⛶ تمام‌صفحه</button><button data-vact="repeat" id="videoRepeat">'+(prefs.videoRepeat==='one'?'🔂 تکرار: یک':(prefs.videoRepeat==='all'?'🔁 تکرار: همه':'🔁 تکرار: خاموش'))+'</button></div><label class="naghme-tools-speed"><span>سرعت پخش</span><select id="videoSpeedMenu"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label></section><section class="naghme-tools-group"><h3>ابزارهای بیشتر</h3><div id="naghmeVideoExtraGrid"><button data-vact="jump">⏱ رفتن به زمان</button><button data-vact="sleep">🌙 زمان‌سنج خواب</button><button data-vact="info">ℹ️ اطلاعات ویدئو</button><button data-vact="diagnostics">🧾 گزارش فنی</button><button data-vact="subtitle">زیرنویس SRT/VTT</button></div></section><details class="naghme-tools-prefs"><summary>تنظیمات پیش‌فرض و نمایش</summary><label>سرعت پیش‌فرض ویدئو <select data-pref="videoSpeed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1">۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="1.75">۱٫۷۵×</option><option value="2">۲×</option></select></label><label>تکرار پیش‌فرض <select data-pref="videoRepeat"><option value="off">خاموش</option><option value="one">تکرار همین ویدئو</option><option value="all">تکرار همه</option></select></label><div class="naghme-tools-checks">'+[['showJump','نمایش رفتن به زمان'],['showSleep','نمایش زمان‌سنج'],['showInfo','نمایش اطلاعات'],['showDiagnostics','نمایش گزارش فنی']].map(function(x){return '<label><input type="checkbox" data-pref="'+x[0]+'"> '+x[1]+'</label>'}).join('')+'</div></details></div><footer class="naghme-tools-foot"><button type="button" data-reset>بازنشانی</button><button type="button" data-close>بستن</button></footer>';
  d.append(card);d.addEventListener('click',function(e){
   if(e.target===d||e.target.closest('[data-close]')){close();return}
   if(e.target.closest('[data-reset]')){prefs=Object.assign({},defaults);save();open();return}
@@ -42,7 +92,7 @@ function addButton(){
 // منوی شناور سه‌نقطه در کنار نام ویدئو؛ پس از هر بار ساخته‌شدن بخش ویدئو دوباره متصل می‌شود.
 function watchVideoHeader(){addButton();var root=document.getElementById('videoContent')||document.body;new MutationObserver(function(){addButton()}).observe(root,{childList:true,subtree:true})}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watchVideoHeader,{once:true});else watchVideoHeader();
-window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply};
+window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply,set:function(k,val){prefs[k]=val;save()}};
 document.addEventListener('change',function(e){if(e.target.id==='videoSpeed'||e.target.id==='videoSpeedMenu'){e.target.dataset.userChanged='1';prefs.videoSpeed=e.target.value;save()}});
 document.addEventListener('naghme:player-settings',apply);apply();
 })();

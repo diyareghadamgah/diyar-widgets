@@ -1006,3 +1006,126 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   max-width:100%!important;max-height:100%!important;aspect-ratio:3/2!important;overflow:visible!important
  }
 }
+
+/* IPTV landscape: persistent fullscreen affordance over the video, independent of the browse toolbar */
+.tvfs-enter-overlay{display:none;position:absolute;top:max(8px,env(safe-area-inset-top));right:8px;z-index:5;width:48px;height:48px;min-width:48px;min-height:48px;padding:0;border:1px solid #ffffff88;border-radius:12px;background:#080808e8;color:#fff;font-size:27px;line-height:1;box-shadow:0 2px 12px #0008;touch-action:manipulation;align-items:center;justify-content:center}
+.tvfs-enter-overlay:disabled{opacity:.4}
+/* app.js واقعی body را با tvmode علامت‌گذاری می‌کند؛ به کلاس‌های قدیمی mode-tv و iptv-split-landscape وابسته نباش */
+@media(orientation:landscape){body.tvmode #tvpage .tvfs-enter-overlay{display:flex!important}}
+@media(orientation:portrait){body.tvmode #tvpage .tvfs-enter-overlay{display:none!important}}
+
+/* IPTV landscape fullscreen button: anchor it to the visible video frame, not the clipped settings row */
+@media (orientation:landscape) and (max-height:700px){
+ #tvpage:not([hidden]) .tvplayer{overflow:visible!important;min-height:0!important}
+ #tvpage:not([hidden]) .tvbox{position:relative!important;overflow:hidden!important;isolation:isolate;flex:none!important}
+ #tvpage:not([hidden]) #tvFsOverlay.tvfs-enter-overlay{
+  display:flex!important;position:absolute!important;top:8px!important;right:8px!important;left:auto!important;bottom:auto!important;
+  z-index:30!important;width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;
+  padding:0!important;margin:0!important;align-items:center!important;justify-content:center!important;
+  visibility:visible!important;opacity:1!important;pointer-events:auto!important
+ }
+}
+
+/* Android APK landscape: make the playback/settings column scrollable so lower controls remain reachable */
+@media (orientation:landscape) and (max-height:700px){
+ body.mode-tv #tvpage.iptv-split-landscape .tvplayer{
+  justify-content:flex-start!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  scrollbar-width:thin!important;
+  padding:2px 2px 14px!important;
+  box-sizing:border-box!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvbox{
+  flex:0 0 auto!important;margin:0 auto 6px!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvnow{
+  flex:0 0 auto!important;overflow:visible!important;
+  flex-wrap:wrap!important;min-height:max-content!important;
+  padding-bottom:10px!important;margin-bottom:8px!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape #iptvStatus{flex:0 0 auto!important;white-space:normal!important}
+}
+
+
+/* IPTV landscape: scroll the entire right-side settings and channel workspace together */
+@media (orientation:landscape){
+ body.mode-tv #tvpage.iptv-split-landscape .tvbrowse{
+  flex:1 1 52%!important;width:52%!important;min-width:0!important;
+  min-height:0!important;height:100%!important;
+  display:block!important;overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  scrollbar-width:thin!important;padding:0 4px 18px!important;
+  box-sizing:border-box!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvhead,
+ body.mode-tv #tvpage.iptv-split-landscape .iptv-country-panel,
+ body.mode-tv #tvpage.iptv-split-landscape .iptv-search-wrap,
+ body.mode-tv #tvpage.iptv-split-landscape .chips{
+  flex:none!important;
+ }
+ body.mode-tv #tvpage.iptv-split-landscape .tvlist{
+  display:grid!important;flex:none!important;
+  min-height:max-content!important;height:auto!important;
+  overflow:visible!important;max-height:none!important;
+  align-content:start!important;grid-template-columns:1fr!important;
+  padding-bottom:12px!important;
+ }
+}
+
+
+/* Video landscape: keep file/folder import actions visible at the top of the scrollable library panel */
+@media (orientation:landscape) and (max-height:800px){
+ body.mode-video .video-sidebar{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  min-width:0!important;min-height:0!important;height:100%!important;
+  overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain!important;-webkit-overflow-scrolling:touch!important;
+  touch-action:pan-y!important;padding:2px 4px 18px!important;box-sizing:border-box!important;
+ }
+ body.mode-video .video-top{
+  display:flex!important;flex:0 0 auto!important;flex-direction:column!important;
+  align-items:stretch!important;justify-content:flex-start!important;
+  width:100%!important;min-width:0!important;overflow:visible!important;
+ }
+ body.mode-video .video-top>.bar{
+  display:flex!important;visibility:visible!important;opacity:1!important;
+  position:static!important;flex:0 0 auto!important;flex-wrap:wrap!important;
+  align-items:center!important;justify-content:flex-start!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  overflow:visible!important;gap:6px!important;margin:4px 0!important;
+ }
+ body.mode-video .video-top>.bar>button{
+  display:inline-flex!important;visibility:visible!important;opacity:1!important;
+  position:static!important;flex:1 1 44%!important;min-width:0!important;
+  min-height:38px!important;white-space:normal!important;
+ }
+ body.mode-video .video-tools{
+  flex:0 0 auto!important;max-height:none!important;overflow:visible!important;
+ }
+ body.mode-video .video-library-head{flex:0 0 auto!important}
+ body.mode-video .video-list{
+  flex:0 0 auto!important;height:auto!important;max-height:none!important;
+  min-height:0!important;overflow:visible!important;
+ }
+}
+
+
+/* Override legacy split rule that was hiding the video library header and its import buttons */
+body.video-split-landscape.mode-video .video-top{
+ display:flex!important;visibility:visible!important;opacity:1!important;
+ position:static!important;grid-column:auto!important;grid-row:auto!important;
+ width:100%!important;max-width:100%!important;height:auto!important;
+ flex:0 0 auto!important;overflow:visible!important;
+}
+body.video-split-landscape.mode-video .video-top>.bar{
+ display:flex!important;visibility:visible!important;opacity:1!important;
+ position:static!important;flex:0 0 auto!important;flex-wrap:wrap!important;
+ width:100%!important;max-width:100%!important;overflow:visible!important;
+}
+body.video-split-landscape.mode-video .video-top>.bar>button{
+ display:inline-flex!important;visibility:visible!important;opacity:1!important;
+ flex:1 1 44%!important;min-width:0!important;min-height:40px!important;
+}

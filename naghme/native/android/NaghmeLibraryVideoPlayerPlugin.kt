@@ -166,25 +166,45 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         } ?: call.reject("activity_unavailable")
     }
 
-    private fun videoFile(uri: Uri): JSObject? {
+    private fun videoFile(uri: Uri, allowUnknownType: Boolean = false): JSObject? {
         val resolver = getContext().contentResolver
-        val metadata = resolver.query(uri, arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE), null, null, null)?.use { cursor ->
-            if (cursor.moveToFirst()) {
-                val ni = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
-                val si = cursor.getColumnIndex(android.provider.OpenableColumns.SIZE)
-                val fileName = if (ni >= 0) cursor.getString(ni) else null
-                val size = if (si >= 0 && !cursor.isNull(si)) cursor.getLong(si) else -1L
-                Pair(fileName, size)
-            } else null
+        return try {
+            val metadata = resolver.query(
+                uri,
+                arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE),
+                null, null, null
+            )?.use { cursor ->
+                if (cursor.moveToFirst()) {
+                    val ni = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+                    val si = cursor.getColumnIndex(android.provider.OpenableColumns.SIZE)
+                    val fileName = if (ni >= 0) cursor.getString(ni) else null
+                    val size = if (si >= 0 && !cursor.isNull(si)) cursor.getLong(si) else -1L
+                    Pair(fileName, size)
+                } else null
+            }
+            val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
+            val extension = fileName.substringAfterLast('.', "").lowercase()
+            val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
+            val mime = try { resolver.getType(uri) ?: "" } catch (_: Exception) { "" }
+            if (!allowUnknownType && extension !in known && !mime.startsWith("video/")) return null
+            JSObject()
+                .put("uri", uri.toString())
+                .put("name", fileName)
+                .put("size", metadata?.second ?: -1L)
+                .put("mimeType", mime.ifBlank { "video/*" })
+        } catch (e: Exception) {
+            // بعضی SAF providerها query کردن OpenableColumns را رد می‌کنند؛
+            // URI انتخاب‌شده را دور نمی‌اندازیم و با نام استخراج‌شده از خود URI ثبت می‌کنیم.
+            diagnostic("video_metadata_fallback uri=" + uri, e)
+            val rawName = Uri.decode(uri.lastPathSegment ?: "video")
+            val safeName = rawName.substringAfterLast('/').ifBlank { "video" }
+            val mime = try { resolver.getType(uri) ?: "" } catch (_: Exception) { "" }
+            JSObject()
+                .put("uri", uri.toString())
+                .put("name", safeName)
+                .put("size", -1L)
+                .put("mimeType", mime.ifBlank { "video/*" })
         }
-        val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
-        val extension = fileName.substringAfterLast('.', "").lowercase()
-        val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
-        if (extension !in known && !(resolver.getType(uri) ?: "").startsWith("video/")) return null
-        return JSObject().put("uri", uri.toString())
-            .put("name", fileName)
-            .put("size", metadata?.second ?: -1L)
-            .put("mimeType", resolver.getType(uri) ?: "video/*")
     }
 
     private fun persistReadPermission(uri: Uri, flags: Int) {
@@ -197,8 +217,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     fun pickVideoFiles(call: PluginCall) {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            type = "*/*"
-            putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("video/*", "video/x-matroska", "application/x-matroska", "application/octet-stream"))
+            type = "video/*"
             putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
         }
@@ -213,14 +232,26 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         }
         val data = result.data!!
         val uris = mutableListOf<Uri>()
-        data.clipData?.let { clip -> for (i in 0 until clip.itemCount) clip.getItemAt(i)?.uri?.let { uris.add(it) } }
-        if (uris.isEmpty()) data.data?.let { uris.add(it) }
-        val files = JSArray()
-        uris.distinctBy { it.toString() }.forEach { uri ->
-            persistReadPermission(uri, data.flags)
-            videoFile(uri)?.let { files.put(it) }
+        try {
+            data.clipData?.let { clip ->
+                for (i in 0 until clip.itemCount) clip.getItemAt(i)?.uri?.let { uris.add(it) }
+            }
+            if (uris.isEmpty()) data.data?.let { uris.add(it) }
+            val files = JSArray()
+            uris.distinctBy { it.toString() }.forEach { uri ->
+                try {
+                    persistReadPermission(uri, data.flags)
+                    videoFile(uri, allowUnknownType = true)?.let { files.put(it) }
+                } catch (itemError: Exception) {
+                    diagnostic("selected_video_failed uri=" + uri, itemError)
+                }
+            }
+            diagnostic("file_picker_complete selected=" + uris.size + " accepted=" + files.length())
+            call.resolve(JSObject().put("files", files))
+        } catch (e: Exception) {
+            diagnostic("file_picker_callback_failed", e)
+            call.reject("file_picker_failed: " + (e.message ?: "unknown"))
         }
-        call.resolve(JSObject().put("files", files))
     }
 
     @PluginMethod
@@ -242,19 +273,34 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         persistReadPermission(treeUri, data.flags)
         val root = DocumentFile.fromTreeUri(getContext(), treeUri)
         val act = activity ?: run { call.reject("activity_unavailable"); return }
-        // پوشه‌خوانی و متادیتا ممکن است روی حافظهٔ خارجی کند باشد؛ هرگز UI thread را مسدود نکن.
+        // اسکن در نخ پس‌زمینه انجام می‌شود؛ فقط داده‌های ساده جمع می‌شوند و JSArray روی UI ساخته می‌شود.
         Thread {
-            val files = JSArray()
-            var count = 0
+            val found = mutableListOf<JSObject>()
             var visited = 0
+            val knownVideo = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
             fun scan(folder: DocumentFile, depth: Int) {
-                if (count >= 3000 || visited >= 30000 || depth > 12) return
-                folder.listFiles().forEach { item ->
-                    if (count >= 3000 || visited >= 30000) return
+                if (found.size >= 1500 || visited >= 6000 || depth > 10) return
+                val children = try { folder.listFiles() } catch (e: Exception) {
+                    diagnostic("folder_list_failed name=" + (folder.name ?: "unknown"), e)
+                    emptyArray()
+                }
+                for (item in children) {
+                    if (found.size >= 1500 || visited >= 6000) break
                     visited++
                     try {
-                        if (item.isDirectory) scan(item, depth + 1)
-                        else if (item.isFile) videoFile(item.uri)?.let { files.put(it); count++ }
+                        if (item.isDirectory) {
+                            scan(item, depth + 1)
+                        } else {
+                            val name = item.name ?: ""
+                            val ext = name.substringAfterLast('.', "").lowercase()
+                            // برای سرعت، از پرس‌وجوی MIME برای تک‌تک فایل‌های غیر ویدئویی خودداری می‌کنیم.
+                            if (ext in knownVideo) {
+                                videoFile(item.uri, allowUnknownType = true)?.let { found.add(it) }
+                            } else if (ext.isBlank()) {
+                                val mime = try { getContext().contentResolver.getType(item.uri) ?: "" } catch (_: Exception) { "" }
+                                if (mime.startsWith("video/")) videoFile(item.uri, allowUnknownType = true)?.let { found.add(it) }
+                            }
+                        }
                     } catch (itemError: Exception) {
                         diagnostic("folder_item_skipped name=" + (item.name ?: "unknown"), itemError)
                     }
@@ -262,9 +308,11 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             }
             try {
                 root?.let { scan(it, 0) }
-                diagnostic("folder_scan_complete files=" + count + " visited=" + visited)
+                diagnostic("folder_scan_complete files=" + found.size + " visited=" + visited)
                 act.runOnUiThread {
-                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", count >= 3000))
+                    val files = JSArray()
+                    found.forEach { files.put(it) }
+                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", visited >= 6000 || found.size >= 1500))
                 }
             } catch (e: Exception) {
                 diagnostic("folder_scan_failed", e)
