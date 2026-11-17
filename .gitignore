@@ -141,3 +141,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+*.bak
+*.bak[0-9]
+*.bak[0-9][0-9]
