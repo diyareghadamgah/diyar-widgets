@@ -485,7 +485,7 @@ function syncIPTVIranButton(){
  const button=document.querySelector('.tvhead [data-a="iptviran"]');if(!button)return;
  button.classList.toggle('active',!!IPTV.iranMode);
  button.setAttribute('aria-pressed',IPTV.iranMode?'true':'false');
- button.textContent=IPTV.iranMode?'↩ بازگشت به همه شبکه‌ها':'🇮🇷 شبکه‌های سراسری و استانی';
+ button.textContent=IPTV.iranMode?'↩ همه شبکه‌ها':'🇮🇷 شبکه‌های ایران';
 }
 async function toggleIPTVIranMode(){
  if(IPTV.iranMode){
