@@ -113,7 +113,29 @@ async function addNativeFiles(files){
   msg(saved?'ذخیره انجام شد؛ '+fa(saved)+' فایل ثبت شد':'خطا در ذخیره یا بازخوانی کتابخانه: '+(storageError.message||storageError));
  }
 }
-async function chooseNative(method){try{const picker=window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo[method];if(typeof picker!=='function')throw new Error('انتخاب‌گر اندروید در دسترس نیست');const r=await picker();const files=r&&Array.isArray(r.files)?r.files:[];await addNativeFiles(files);if(method==='pickFolder'&&r.folder)msg('پوشهٔ «'+r.folder+'» بررسی شد. '+fa(files.length)+' ویدئو یافت شد.'+(r.truncated?'؛ برای جلوگیری از کندی، سقف ۳۰۰۰ فایل اعمال شد.':''));else if(!files.length)msg('فایلی انتخاب نشد یا پوشه ویدئویی با قالب پشتیبانی‌شده نداشت.')}catch(e){console.error('[NaghmeVideo] native picker failed',method,e);msg('انتخاب‌گر اندروید باز نشد: '+(e.message||e)+'؛ تلاش دوباره با انتخاب‌گر دستگاه');const fallback=method==='pickFolder'?$('#videoFolder'):$('#videoFiles');if(fallback){try{fallback.click()}catch(clickError){console.error('[NaghmeVideo] fallback picker failed',clickError)}}}}
+async function chooseNative(method){
+ try{
+  const picker=window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo[method];
+  if(typeof picker!=='function')throw new Error('انتخاب‌گر اندروید در دسترس نیست');
+  msg(method==='pickFolder'?'در حال خواندن پوشه…':'در حال دریافت فایل‌های انتخاب‌شده…');
+  const r=await picker();
+  const files=Array.isArray(r?.files)?r.files:[];
+  console.info('[NaghmeVideo] picker result',method,{folder:r?.folder,count:files.length,truncated:!!r?.truncated,keys:r?Object.keys(r):[]});
+  const before=st.items.length;
+  await addNativeFiles(files);
+  const after=st.items.length;
+  if(!files.length){
+   msg(method==='pickFolder'?'پوشه انتخاب شد، اما افزونه هیچ ویدئویی برنگرداند. گزارش فنی را باز کنید.':'فایل انتخاب شد، اما افزونه فهرست فایل را خالی برگرداند. گزارش فنی را باز کنید.');
+  }else if(after>before){
+   msg(fa(after-before)+' ویدئو به کتابخانه اضافه شد');
+  }else{
+   msg(fa(files.length)+' فایل دریافت شد، اما مورد تازه‌ای به کتابخانه اضافه نشد.');
+  }
+ }catch(e){
+  console.error('[NaghmeVideo] native picker failed',method,e);
+  msg('انتخاب‌گر اندروید ناموفق بود: '+(e.message||e));
+ }
+}
 async function add(files){let n=0;for(const f of files){if(!f.type.startsWith('video/')&&!/\.(mp4|m4v|mkv|webm|mov|avi|3gp|ts)$/i.test(f.name))continue;const id='v:'+f.name+':'+f.size+':'+f.lastModified;if(st.items.some(x=>x.id===id))continue;const x={id,name:f.name,blob:f,size:f.size,added:Date.now(),position:0,duration:0};st.items.push(x);await put(x);n++}draw();msg(n?fa(n)+' ویدئو اضافه شد':'فایل ویدئویی تازه‌ای انتخاب نشد')}
 function toVtt(s){return 'WEBVTT\n\n'+s.replace(/^\uFEFF/,'').replace(/(\d{2}:\d{2}:\d{2}),(\d{3})/g,'$1.$2')}
 async function enter(){const ps=window.NaghmePlayerSettings?.get?.();if(ps){st.repeatMode=ps.videoRepeat==='one'?'one':'off'}window.NaghmeLeaveIPTV?.();const tv=$('#tvpage');if(tv)tv.hidden=true;const _vp=$('#videoPage');if(_vp){_vp.hidden=false;_vp.style.overflow='hidden';_vp.style.minHeight='0'}const _main=$('#view');if(_main)_main.hidden=true;const _hdr=document.querySelector('main > header');if(_hdr)_hdr.style.display='none';st.active=true;st.orientationLandscape=null;try{st.items=await all()||[]}catch{msg('خطا در خواندن کتابخانه ویدئو')}draw();syncVideoOrientation()}
