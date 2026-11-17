@@ -1111,3 +1111,21 @@ body.mode-home .home-footer{grid-area:footer!important;margin:0!important;width:
   min-height:0!important;overflow:visible!important;
  }
 }
+
+
+/* Override legacy split rule that was hiding the video library header and its import buttons */
+body.video-split-landscape.mode-video .video-top{
+ display:flex!important;visibility:visible!important;opacity:1!important;
+ position:static!important;grid-column:auto!important;grid-row:auto!important;
+ width:100%!important;max-width:100%!important;height:auto!important;
+ flex:0 0 auto!important;overflow:visible!important;
+}
+body.video-split-landscape.mode-video .video-top>.bar{
+ display:flex!important;visibility:visible!important;opacity:1!important;
+ position:static!important;flex:0 0 auto!important;flex-wrap:wrap!important;
+ width:100%!important;max-width:100%!important;overflow:visible!important;
+}
+body.video-split-landscape.mode-video .video-top>.bar>button{
+ display:inline-flex!important;visibility:visible!important;opacity:1!important;
+ flex:1 1 44%!important;min-width:0!important;min-height:40px!important;
+}
