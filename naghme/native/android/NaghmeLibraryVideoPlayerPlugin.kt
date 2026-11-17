@@ -193,8 +193,17 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 .put("size", metadata?.second ?: -1L)
                 .put("mimeType", mime.ifBlank { "video/*" })
         } catch (e: Exception) {
-            diagnostic("video_metadata_failed uri=" + uri, e)
-            null
+            // بعضی SAF providerها query کردن OpenableColumns را رد می‌کنند؛
+            // URI انتخاب‌شده را دور نمی‌اندازیم و با نام استخراج‌شده از خود URI ثبت می‌کنیم.
+            diagnostic("video_metadata_fallback uri=" + uri, e)
+            val rawName = Uri.decode(uri.lastPathSegment ?: "video")
+            val safeName = rawName.substringAfterLast('/').ifBlank { "video" }
+            val mime = try { resolver.getType(uri) ?: "" } catch (_: Exception) { "" }
+            JSObject()
+                .put("uri", uri.toString())
+                .put("name", safeName)
+                .put("size", -1L)
+                .put("mimeType", mime.ifBlank { "video/*" })
         }
     }
 
