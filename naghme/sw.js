@@ -2,7 +2,7 @@
    Increase VERSION when publishing a later web release.
 */
 'use strict';
-const VERSION = 'naghme-v2.3.35-web-pwa-stable';
+const VERSION = 'naghme-v2.3.36-web-pwa-stable';
 const SHELL = [
   './','index.html','style.css','app.js','tags.js','platform.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
