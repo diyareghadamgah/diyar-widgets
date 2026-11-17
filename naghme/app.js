@@ -470,6 +470,12 @@ async function loadIPTVIranChannels(){
  })();
  try{return await iptvIranLoadPromise}finally{iptvIranLoadPromise=null}
 }
+function syncIPTVIranButton(){
+ const button=document.querySelector('.tvhead [data-a="iptviran"]');if(!button)return;
+ button.classList.toggle('active',!!IPTV.iranMode);
+ button.setAttribute('aria-pressed',IPTV.iranMode?'true':'false');
+ button.textContent=IPTV.iranMode?'↩ بازگشت به همه شبکه‌ها':'🇮🇷 شبکه‌های سراسری و استانی';
+}
 async function toggleIPTVIranMode(){
  if(IPTV.iranMode){
   IPTV.iranMode=false;IPTV.category='همه';IPTV.country='همه';IPTV.query='';
@@ -531,6 +537,7 @@ function updateIPTVNow(){
  $('#tvGroup').textContent=a?(a.group||'سایر')+(a.country?' • '+a.country:''):'';
  $('#tvRetry').disabled=!a;$('#tvFs').disabled=!a;const overlay=$('#tvFsOverlay');if(overlay)overlay.disabled=!a}
 function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ فهرست فقط وقتی داده/فیلتر عوض شده بازسازی می‌شود
+ syncIPTVIranButton();
  const m=$('#tvMsg'),txt=IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':(IPTV.error||'');
  if(m.textContent!==txt)m.textContent=txt;m.hidden=!txt;m.classList.toggle('tverror',!!IPTV.error&&!IPTV.loading);
  const cs=IPTV.channels.length+'|'+IPTV.loadedAt;if(cs!==IPTV.chipSig){IPTV.chipSig=cs;renderIPTVChips();IPTV.countrySig=cs;renderIPTVCountries()}else if(IPTV.countrySig!==cs){IPTV.countrySig=cs;renderIPTVCountries()}
