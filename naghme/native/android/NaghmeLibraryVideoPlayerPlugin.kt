@@ -217,8 +217,7 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
     fun pickVideoFiles(call: PluginCall) {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
-            type = "*/*"
-            putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("video/*", "video/x-matroska", "application/x-matroska", "application/octet-stream"))
+            type = "video/*"
             putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
         }
