@@ -9,19 +9,59 @@ function apply(){
  document.querySelectorAll('[data-vact]').forEach(function(el){var a=el.dataset.vact,map={jump:'showJump',sleep:'showSleep',info:'showInfo',diagnostics:'showDiagnostics'};if(map[a])el.hidden=!prefs[map[a]]});
  document.querySelectorAll('#videoSpeed, #videoSpeedMenu').forEach(function(vs){if(!vs.dataset.userChanged)vs.value=prefs.videoSpeed||'1'});
 }
-function close() {
+function close(){
     var d = document.getElementById('naghmePlayerSettings');
     if (d) d.remove();
     if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) window.NaghmeLibraryVideo.visible(true).catch(function(){});
-}}))}
-if(!document.getElementById('naghme-settings-style')){
-    var styleEl=document.createElement('style');styleEl.id='naghme-settings-style';
-    styleEl.textContent='.naghme-tools-scroll{flex:1 1 auto;overflow-y:auto;min-height:0;padding:4px 8px;-webkit-overflow-scrolling:touch}.naghme-tools-head{flex-shrink:0;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #333}.naghme-tools-head h2{margin:0;font-size:16px}.naghme-tools-head p{margin:0;font-size:12px;color:#aaa}.naghme-tools-foot{flex-shrink:0;display:flex;justify-content:space-between;padding:8px 12px;border-top:1px solid #333;gap:8px}.naghme-tools-group{margin-bottom:16px}.naghme-tools-group h3{margin:0 0 8px;font-size:14px;color:#ddd}#naghmeVideoToolGrid,#naghmeVideoExtraGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}#naghmeVideoToolGrid button,#naghmeVideoExtraGrid button{padding:10px 4px;border-radius:8px;background:#222;color:#fff;border:1px solid #444;font-family:inherit;font-size:13px;cursor:pointer}#naghmeVideoToolGrid button:active,#naghmeVideoExtraGrid button:active{background:#444}.naghme-tools-speed{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding:4px 0}.naghme-tools-prefs{margin-top:12px}.naghme-tools-prefs summary{cursor:pointer;font-weight:bold;margin-bottom:8px}.naghme-tools-prefs label{display:block;margin-bottom:8px;font-size:13px}.naghme-tools-prefs select{width:100%;padding:6px;border-radius:6px;background:#111;color:#fff;border:1px solid #555;margin-top:4px}.naghme-tools-checks{display:flex;flex-direction:column;gap:6px;margin-top:8px}@media(orientation:landscape){#naghmePlayerSettings>section{width:80vw!important;max-width:800px!important;max-height:85dvh!important}.naghme-tools-scroll{display:flex;flex-wrap:wrap;gap:12px}.naghme-tools-scroll>section{flex:1 1 45%}.naghme-tools-prefs{flex:1 1 100%}}';
+}
+if (!document.getElementById('naghme-modal-fix-style')) {
+    var styleEl = document.createElement('style');
+    styleEl.id = 'naghme-modal-fix-style';
+    styleEl.textContent = `
+        #naghmePlayerSettings > section {
+            width: min(90vw, 800px) !important;
+            height: 85dvh !important;
+            max-height: 85dvh !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #171717 !important;
+        }
+        .naghme-tools-scroll {
+            flex: 1 1 auto !important;
+            overflow-y: auto !important;
+            min-height: 0 !important;
+            padding: 12px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+        }
+        @media (orientation: landscape) {
+            .naghme-tools-scroll {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                align-content: start !important;
+            }
+            .naghme-tools-scroll > .naghme-tools-prefs {
+                grid-column: 1 / -1 !important;
+            }
+        }
+        #naghmeVideoToolGrid, #naghmeVideoExtraGrid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+            gap: 8px !important;
+        }
+        .naghme-tools-head { flex-shrink: 0 !important; padding: 12px !important; border-bottom: 1px solid #333; }
+        .naghme-tools-foot { flex-shrink: 0 !important; padding: 12px !important; display: flex !important; gap: 8px !important; border-top: 1px solid #333; }
+        .naghme-tools-foot button { flex: 1 !important; padding: 12px !important; font-size: 16px !important; border-radius: 10px !important; background: #d9b34b !important; color: #111 !important; font-weight: bold; border: none; cursor: pointer; }
+        .naghme-tools-foot button[data-reset] { background: #292929 !important; color: #fff !important; }
+        .naghme-tools-scroll h3 { margin-top: 0; margin-bottom: 8px; font-size: 14px; color: #d9b34b; }
+        .naghme-tools-scroll button { padding: 10px; border-radius: 8px; background: #222; color: #fff; border: 1px solid #444; font-family: inherit; font-size: 14px; cursor: pointer; }
+    `;
     document.head.appendChild(styleEl);
 }
-function open(anchor) {
-    close();
-    if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) window.NaghmeLibraryVideo.visible(false).catch(function(){});var d=document.createElement('div');d.id='naghmePlayerSettings';d.dir='rtl';
+function open(anchor){
+    if (window.NaghmeLibraryVideo && window.NaghmeLibraryVideo.isNative) window.NaghmeLibraryVideo.visible(false).catch(function(){});
+ close();var d=document.createElement('div');d.id='naghmePlayerSettings';d.dir='rtl';
  var rect=anchor&&anchor.getBoundingClientRect?anchor.getBoundingClientRect():{bottom:56,left:12,right:56};
  var vv=window.visualViewport;var vh=vv&&vv.height?vv.height:window.innerHeight;
  Object.assign(d.style,{position:'fixed',inset:'0',zIndex:'2147482500',display:'flex',alignItems:'flex-end',justifyContent:'center',boxSizing:'border-box',padding:'12px 10px calc(10px + env(safe-area-inset-bottom))',background:'rgba(0,0,0,.58)',pointerEvents:'auto'});
@@ -35,7 +75,7 @@ function open(anchor) {
  });
  card.querySelectorAll('[data-pref]').forEach(function(el){el.type==='checkbox'?el.checked=!!prefs[el.dataset.pref]:el.value=prefs[el.dataset.pref]});
  var speed=card.querySelector('#videoSpeedMenu');if(speed)speed.value=prefs.videoSpeed;
- document.body.append(d);d.addEventListener('click',function(e){if(e.target===d)close()});apply();document.dispatchEvent(new CustomEvent('naghme:settings-modal',{detail:{open:true}}));
+ document.body.append(d);d.addEventListener('click',function(e){if(e.target===d)close()});apply();
 }
 // دکمهٔ سه‌نقطه با شنوندهٔ مستقیم خودش منو را باز می‌کند؛ شنوندهٔ سراسری حذف شد تا با رویدادهای پلیر تداخل نکند.
 function bindGear(b){if(!b)return;b.dataset.settingsBound='1'}
