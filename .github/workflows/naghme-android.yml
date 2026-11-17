@@ -89,6 +89,8 @@ jobs:
           echo "== web assets inside APK =="
           ls /tmp/apk/assets/public
           test -f /tmp/apk/assets/public/mode-shell.js
+          grep -q 'home-artwork' /tmp/apk/assets/public/index.html
+          test -s /tmp/apk/assets/public/home-cards.webp
           grep -q 'data-mode="music"' /tmp/apk/assets/public/index.html
           grep -q 'data-mode="video"' /tmp/apk/assets/public/index.html
           grep -q 'data-mode="tv"' /tmp/apk/assets/public/index.html
