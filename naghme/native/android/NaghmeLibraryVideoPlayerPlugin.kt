@@ -168,23 +168,34 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     private fun videoFile(uri: Uri, allowUnknownType: Boolean = false): JSObject? {
         val resolver = getContext().contentResolver
-        val metadata = resolver.query(uri, arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE), null, null, null)?.use { cursor ->
-            if (cursor.moveToFirst()) {
-                val ni = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
-                val si = cursor.getColumnIndex(android.provider.OpenableColumns.SIZE)
-                val fileName = if (ni >= 0) cursor.getString(ni) else null
-                val size = if (si >= 0 && !cursor.isNull(si)) cursor.getLong(si) else -1L
-                Pair(fileName, size)
-            } else null
+        return try {
+            val metadata = resolver.query(
+                uri,
+                arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE),
+                null, null, null
+            )?.use { cursor ->
+                if (cursor.moveToFirst()) {
+                    val ni = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+                    val si = cursor.getColumnIndex(android.provider.OpenableColumns.SIZE)
+                    val fileName = if (ni >= 0) cursor.getString(ni) else null
+                    val size = if (si >= 0 && !cursor.isNull(si)) cursor.getLong(si) else -1L
+                    Pair(fileName, size)
+                } else null
+            }
+            val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
+            val extension = fileName.substringAfterLast('.', "").lowercase()
+            val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
+            val mime = try { resolver.getType(uri) ?: "" } catch (_: Exception) { "" }
+            if (!allowUnknownType && extension !in known && !mime.startsWith("video/")) return null
+            JSObject()
+                .put("uri", uri.toString())
+                .put("name", fileName)
+                .put("size", metadata?.second ?: -1L)
+                .put("mimeType", mime.ifBlank { "video/*" })
+        } catch (e: Exception) {
+            diagnostic("video_metadata_failed uri=" + uri, e)
+            null
         }
-        val fileName = metadata?.first ?: uri.lastPathSegment ?: "video"
-        val extension = fileName.substringAfterLast('.', "").lowercase()
-        val known = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
-        if (!allowUnknownType && extension !in known && !(resolver.getType(uri) ?: "").startsWith("video/")) return null
-        return JSObject().put("uri", uri.toString())
-            .put("name", fileName)
-            .put("size", metadata?.second ?: -1L)
-            .put("mimeType", resolver.getType(uri) ?: "video/*")
     }
 
     private fun persistReadPermission(uri: Uri, flags: Int) {
@@ -213,14 +224,26 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         }
         val data = result.data!!
         val uris = mutableListOf<Uri>()
-        data.clipData?.let { clip -> for (i in 0 until clip.itemCount) clip.getItemAt(i)?.uri?.let { uris.add(it) } }
-        if (uris.isEmpty()) data.data?.let { uris.add(it) }
-        val files = JSArray()
-        uris.distinctBy { it.toString() }.forEach { uri ->
-            persistReadPermission(uri, data.flags)
-            videoFile(uri, allowUnknownType = true)?.let { files.put(it) }
+        try {
+            data.clipData?.let { clip ->
+                for (i in 0 until clip.itemCount) clip.getItemAt(i)?.uri?.let { uris.add(it) }
+            }
+            if (uris.isEmpty()) data.data?.let { uris.add(it) }
+            val files = JSArray()
+            uris.distinctBy { it.toString() }.forEach { uri ->
+                try {
+                    persistReadPermission(uri, data.flags)
+                    videoFile(uri, allowUnknownType = true)?.let { files.put(it) }
+                } catch (itemError: Exception) {
+                    diagnostic("selected_video_failed uri=" + uri, itemError)
+                }
+            }
+            diagnostic("file_picker_complete selected=" + uris.size + " accepted=" + files.length())
+            call.resolve(JSObject().put("files", files))
+        } catch (e: Exception) {
+            diagnostic("file_picker_callback_failed", e)
+            call.reject("file_picker_failed: " + (e.message ?: "unknown"))
         }
-        call.resolve(JSObject().put("files", files))
     }
 
     @PluginMethod
@@ -242,32 +265,32 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         persistReadPermission(treeUri, data.flags)
         val root = DocumentFile.fromTreeUri(getContext(), treeUri)
         val act = activity ?: run { call.reject("activity_unavailable"); return }
-        // پوشه‌خوانی و متادیتا ممکن است روی حافظهٔ خارجی کند باشد؛ هرگز UI thread را مسدود نکن.
+        // اسکن در نخ پس‌زمینه انجام می‌شود؛ فقط داده‌های ساده جمع می‌شوند و JSArray روی UI ساخته می‌شود.
         Thread {
-            val files = JSArray()
-            var count = 0
+            val found = mutableListOf<JSObject>()
             var visited = 0
+            val knownVideo = setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
             fun scan(folder: DocumentFile, depth: Int) {
-                if (count >= 3000 || visited >= 30000 || depth > 12) return
-                val children = try { folder.listFiles() } catch (listError: Exception) {
-                    diagnostic("folder_list_failed name=" + (folder.name ?: "unknown"), listError)
+                if (found.size >= 1500 || visited >= 6000 || depth > 10) return
+                val children = try { folder.listFiles() } catch (e: Exception) {
+                    diagnostic("folder_list_failed name=" + (folder.name ?: "unknown"), e)
                     emptyArray()
                 }
-                children.forEach { item ->
-                    if (count >= 3000 || visited >= 30000) return
+                for (item in children) {
+                    if (found.size >= 1500 || visited >= 6000) break
                     visited++
                     try {
-                        // بعضی ارائه‌دهنده‌های SAF مقدار isFile را نادرست/نامشخص برمی‌گردانند؛
-                        // پوشه را بازگشتی می‌خوانیم و تشخیص ویدئو را بر اساس نام و MIME انجام می‌دهیم.
                         if (item.isDirectory) {
                             scan(item, depth + 1)
                         } else {
-                            val mime = getContext().contentResolver.getType(item.uri) ?: ""
                             val name = item.name ?: ""
                             val ext = name.substringAfterLast('.', "").lowercase()
-                            val knownVideo = ext in setOf("mp4","m4v","mkv","webm","mov","avi","3gp","3g2","ts","m2ts","mts","mpg","mpeg","mpe","mpv","m2v","wmv","flv","f4v","ogv","vob","divx","mxf")
-                            if (mime.startsWith("video/") || knownVideo) {
-                                videoFile(item.uri, allowUnknownType = true)?.let { files.put(it); count++ }
+                            // برای سرعت، از پرس‌وجوی MIME برای تک‌تک فایل‌های غیر ویدئویی خودداری می‌کنیم.
+                            if (ext in knownVideo) {
+                                videoFile(item.uri, allowUnknownType = true)?.let { found.add(it) }
+                            } else if (ext.isBlank()) {
+                                val mime = try { getContext().contentResolver.getType(item.uri) ?: "" } catch (_: Exception) { "" }
+                                if (mime.startsWith("video/")) videoFile(item.uri, allowUnknownType = true)?.let { found.add(it) }
                             }
                         }
                     } catch (itemError: Exception) {
@@ -277,9 +300,11 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
             }
             try {
                 root?.let { scan(it, 0) }
-                diagnostic("folder_scan_complete files=" + count + " visited=" + visited)
+                diagnostic("folder_scan_complete files=" + found.size + " visited=" + visited)
                 act.runOnUiThread {
-                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", count >= 3000))
+                    val files = JSArray()
+                    found.forEach { files.put(it) }
+                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", visited >= 6000 || found.size >= 1500))
                 }
             } catch (e: Exception) {
                 diagnostic("folder_scan_failed", e)
