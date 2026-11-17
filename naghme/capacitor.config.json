@@ -3,5 +3,5 @@
   "appName": "نغمه",
   "webDir": "www",
   "server": { "androidScheme": "https" },
-  "android": { "allowMixedContent": false }
+  "android": { "allowMixedContent": true }
 }
