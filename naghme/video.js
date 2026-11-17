@@ -99,7 +99,7 @@ async function chooseNative(method){
   const picker=window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo[method];
   if(typeof picker!=='function')throw new Error('انتخاب‌گر اندروید در دسترس نیست');
   msg(method==='pickVideoFolder'?'در حال خواندن پوشه…':'در حال دریافت فایل‌های انتخاب‌شده…');
-  const r=await picker();
+  const r=await picker.call(window.NaghmeLibraryVideo);
   const files=Array.isArray(r?.files)?r.files:[];
   console.info('[NaghmeVideo] picker result',method,{folder:r?.folder,count:files.length,truncated:!!r?.truncated,keys:r?Object.keys(r):[]});
   const before=st.items.length;
