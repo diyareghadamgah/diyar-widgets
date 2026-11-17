@@ -77,7 +77,22 @@ if(!isNativeApp && location.protocol === 'https:' && url.startsWith('http:') && 
  render();
  try{fetch(API[state.api]+'/url/'+encodeURIComponent(id),{method:'POST'}).catch(()=>{})}catch{}
 }
-function toggle(){const a=audio();if(!a)return;if(!state.current){const s=filtered()[0];if(s)play(s.stationuuid);else status('ابتدا یک ایستگاه انتخاب کن.');return}if(a.paused)a.play().then(()=>{$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')}).catch(()=>status('پخش ادامه پیدا نکرد.'));else{a.pause();$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}}
+function toggle(){
+    const a=audio();if(!a)return;
+    if(!state.current){const s=filtered()[0];if(s)play(s.stationuuid);else status('ابتدا یک ایستگاه انتخاب کن.');return}
+    const nativeHls = state.current && (state.current.irib === true || /\.m3u8/.test(state.current.url_resolved || state.current.url));
+    if (isNativeApp && nativeHls && window.NaghmeLibraryVideo) {
+        if ($('#radioPlayToggle').textContent === 'Ⅱ') {
+            window.NaghmeLibraryVideo.pause().catch(()=>{});
+            $('#radioPlayToggle').textContent = '▶';
+            status('پخش متوقف شد.');
+        } else {
+            window.NaghmeLibraryVideo.resume().catch(()=>{});
+            $('#radioPlayToggle').textContent = 'Ⅱ';
+            status('در حال پخش زنده');
+        }
+        return;
+    }if(a.paused)a.play().then(()=>{$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')}).catch(()=>status('پخش ادامه پیدا نکرد.'));else{a.pause();$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}}
 document.addEventListener('click',e=>{
  const f=e.target.closest('[data-radio-filter]');if(f){e.preventDefault();e.stopPropagation();state.filter=f.dataset.radioFilter;render();return}
  const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();const id=rem.dataset.radioRemove;state.custom=state.custom.filter(x=>x.stationuuid!==id);localStorage.setItem('naghmeRadioCustom',JSON.stringify(state.custom));state.items=state.items.filter(x=>x.stationuuid!==id);if(state.current&&state.current.stationuuid===id){audio()?.pause();state.current=null;status('ایستگاه حذف شد.')}render();return}
@@ -91,5 +106,5 @@ audio()?.addEventListener('playing',()=>{$('#radioPlayToggle').textContent='Ⅱ'
 audio()?.addEventListener('pause',()=>{$('#radioPlayToggle').textContent='▶'});
 audio()?.addEventListener('error',()=>status('خطا در دریافت صدای ایستگاه؛ ایستگاه دیگری را امتحان کن.'));
 function init(){if(state.initialized)return;state.initialized=true;load()}
-window.NaghmeRadio={init,load,play,stop(){audio()?.pause()},get current(){return state.current}};
+window.NaghmeRadio={init,load,play,stop(){audio()?.pause();if(window.NaghmeLibraryVideo)window.NaghmeLibraryVideo.stop().catch(()=>{})},get current(){return state.current}};
 })();
