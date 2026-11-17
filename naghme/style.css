@@ -1129,3 +1129,38 @@ body.video-split-landscape.mode-video .video-top>.bar>button{
  display:inline-flex!important;visibility:visible!important;opacity:1!important;
  flex:1 1 44%!important;min-width:0!important;min-height:40px!important;
 }
+
+
+/* Supplied four-panel home artwork with accessible transparent hit areas */
+#modeHome{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;max-width:none!important;min-height:0!important;
+ height:100%!important;overflow:auto!important;padding:12px!important;
+ box-sizing:border-box!important;
+}
+.home-artwork{
+ position:relative;width:min(100%,900px,calc((100dvh - 24px)*1.7777778));
+ max-height:calc(100dvh - 24px);aspect-ratio:16/9;margin:auto;flex:0 1 auto;
+}
+.home-artwork>img{
+ display:block;width:100%;height:100%;object-fit:contain;border:0;
+ user-select:none;-webkit-user-drag:none;
+}
+.home-artwork-hotspots{
+ position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;
+ grid-template-rows:1fr 1fr;direction:ltr;
+}
+.home-artwork-hotspots button{
+ display:block;width:100%;height:100%;min-width:0;min-height:0;
+ margin:0;padding:0;border:2px solid transparent;border-radius:0;
+ background:transparent;box-shadow:none;cursor:pointer;touch-action:manipulation;
+}
+.home-artwork-hotspots button:focus-visible{
+ outline:3px solid #ffe28a;outline-offset:-5px;
+ background:#ffffff12;border-radius:14px;
+}
+.home-artwork-hotspots button:active{background:#ffffff18;transform:none}
+@media (max-height:420px) and (orientation:landscape){
+ #modeHome{padding:6px!important}
+ .home-artwork{width:min(calc((100dvh - 12px)*1.7777778),100%);max-height:calc(100dvh - 12px)}
+}
