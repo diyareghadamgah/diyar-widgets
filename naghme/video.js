@@ -98,7 +98,7 @@ async function chooseNative(method){
  try{
   const picker=window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo[method];
   if(typeof picker!=='function')throw new Error('انتخاب‌گر اندروید در دسترس نیست');
-  msg(method==='pickFolder'?'در حال خواندن پوشه…':'در حال دریافت فایل‌های انتخاب‌شده…');
+  msg(method==='pickVideoFolder'?'در حال خواندن پوشه…':'در حال دریافت فایل‌های انتخاب‌شده…');
   const r=await picker();
   const files=Array.isArray(r?.files)?r.files:[];
   console.info('[NaghmeVideo] picker result',method,{folder:r?.folder,count:files.length,truncated:!!r?.truncated,keys:r?Object.keys(r):[]});
@@ -106,7 +106,7 @@ async function chooseNative(method){
   await addNativeFiles(files);
   const after=st.items.length;
   if(!files.length){
-   msg(method==='pickFolder'?'پوشه انتخاب شد، اما افزونه هیچ ویدئویی برنگرداند. گزارش فنی را باز کنید.':'فایل انتخاب شد، اما افزونه فهرست فایل را خالی برگرداند. گزارش فنی را باز کنید.');
+   msg(method==='pickVideoFolder'?'پوشه انتخاب شد، اما افزونه هیچ ویدئویی برنگرداند. گزارش فنی را باز کنید.':'فایل انتخاب شد، اما افزونه فهرست فایل را خالی برگرداند. گزارش فنی را باز کنید.');
   }else if(after>before){
    msg(fa(after-before)+' ویدئو به کتابخانه اضافه شد');
   }else{
@@ -122,7 +122,7 @@ function toVtt(s){return 'WEBVTT\n\n'+s.replace(/^\uFEFF/,'').replace(/(\d{2}:\d
 async function enter(){const ps=window.NaghmePlayerSettings?.get?.();if(ps){st.repeatMode=ps.videoRepeat==='one'?'one':'off'}window.NaghmeLeaveIPTV?.();const tv=$('#tvpage');if(tv)tv.hidden=true;const _vp=$('#videoPage');if(_vp){_vp.hidden=false;_vp.style.overflow='hidden';_vp.style.minHeight='0'}const _main=$('#view');if(_main)_main.hidden=true;const _hdr=document.querySelector('main > header');if(_hdr)_hdr.style.display='none';st.active=true;st.orientationLandscape=null;try{st.items=await all()||[]}catch{msg('خطا در خواندن کتابخانه ویدئو')}draw();syncVideoOrientation()}
 document.addEventListener('click',e=>{const n=e.target.closest('#nav [data-a="nav"]');if(n?.dataset.v==='video'){e.preventDefault();e.stopImmediatePropagation();window.NaghmeNativeIPTV?.hide();enter();return}if(n&&st.active){st.active=false;release();const _vp=$('#videoPage');if(_vp)_vp.hidden=true;const _main=$('#view');if(_main)_main.hidden=false;const _hdr=document.querySelector('main > header');if(_hdr)_hdr.style.display=''}},true);
 document.addEventListener('click',async e=>{if(!st.active)return;const b=e.target.closest('[data-vact]');if(!b)return;const a=b.dataset.vact,id=b.dataset.id;
-if(a==='pick'){if(window.NaghmeLibraryVideo?.isNative)await chooseNative('pickFiles');else $('#videoFiles').click()}else if(a==='folder'){if(window.NaghmeLibraryVideo?.isNative)await chooseNative('pickFolder');else $('#videoFolder').click()}else if(a==='url'){const u=prompt('آدرس مستقیم ویدئو (MP4 یا HLS):');if(!u)return;try{const p=new URL(u);if(!/^https?:$/.test(p.protocol))throw 0;const x={id:'url:'+p.href,name:p.pathname.split('/').pop()||p.hostname,url:p.href,added:Date.now(),position:0,duration:0};st.items.unshift(x);await put(x);draw();play(x.id)}catch{msg('آدرس معتبر نیست')}}
+if(a==='pick'){if(window.NaghmeLibraryVideo?.isNative)await chooseNative('pickVideoFiles');else $('#videoFiles').click()}else if(a==='folder'){if(window.NaghmeLibraryVideo?.isNative)await chooseNative('pickVideoFolder');else $('#videoFolder').click()}else if(a==='url'){const u=prompt('آدرس مستقیم ویدئو (MP4 یا HLS):');if(!u)return;try{const p=new URL(u);if(!/^https?:$/.test(p.protocol))throw 0;const x={id:'url:'+p.href,name:p.pathname.split('/').pop()||p.hostname,url:p.href,added:Date.now(),position:0,duration:0};st.items.unshift(x);await put(x);draw();play(x.id)}catch{msg('آدرس معتبر نیست')}}
 else if(a==='open')play(id);else if(a==='remove'){if(confirm('از کتابخانه حذف شود؟ فایل اصلی گوشی حذف نمی‌شود.')){if(st.id===id)await release();st.items=st.items.filter(x=>x.id!==id);await del(id);draw()}}
 else if(a==='lock'){if(!st.native){msg('قفل لمس در این حالت فقط برای پلیر بومی اندروید فعال است');return}try{st.locked=!st.locked;const r=await window.NaghmeLibraryVideo.setLocked(st.locked);st.locked=!!r.locked;msg(st.locked?'قفل لمس فعال شد؛ برای بازکردن، دکمهٔ بازکردن قفل روی تصویر را بزن.':'قفل لمس غیرفعال شد.')}catch(err){st.locked=false;msg('فعال‌سازی قفل ناموفق بود: '+(err.message||err))}}else if(a==='toggle'){if(st.native){window.NaghmeLibraryVideo.status().then(s=>s.isPlaying?window.NaghmeLibraryVideo.pause():window.NaghmeLibraryVideo.resume()).catch(()=>{})}else if(v().paused)v().play().catch(()=>{});else v().pause()}else if(a==='back'){if(st.native)window.NaghmeLibraryVideo.status().then(s=>window.NaghmeLibraryVideo.seekTo(Math.max(0,(s.positionMs||0)-10000))).catch(()=>{});else v().currentTime=Math.max(0,v().currentTime-10)}else if(a==='forward'){if(st.native)window.NaghmeLibraryVideo.status().then(s=>window.NaghmeLibraryVideo.seekTo(Math.min(s.durationMs||Infinity,(s.positionMs||0)+10000))).catch(()=>{});else v().currentTime=Math.min(v().duration||Infinity,v().currentTime+10)}
 else if(a==='jump'){
