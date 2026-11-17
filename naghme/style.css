@@ -1183,3 +1183,9 @@ body.video-split-landscape.mode-video .video-top>.bar>button{
  #modeHome .home-artwork{width:min(100%,700px)!important}
  #modeHome .home-footer{margin-top:8px!important}
 }
+
+
+/* Dedicated Iranian national and provincial IPTV playlist toggle */
+.tvhead .iptv-iran-toggle{border:1px solid #b88a42;background:linear-gradient(135deg,#173d32,#24132f);color:#ffe0a0;font-weight:700}
+.tvhead .iptv-iran-toggle.active{background:linear-gradient(135deg,#b88a42,#6e3c9c);color:#fff}
+body.tvmode #tvpage .tvhead .iptv-iran-toggle{white-space:nowrap}
