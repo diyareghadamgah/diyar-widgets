@@ -446,9 +446,20 @@ async function setIPTVCountry(v){
 }
 const IPTV_IRAN_PLAYLIST='https://raw.githubusercontent.com/shayanline/iptv-iran/main/playlists/fa/iran.m3u';
 let iptvIranLoadPromise=null;
+function countIPTVIranChannels(){
+ const iran=IPTV.channels.filter(c=>c.groups&&c.groups.some(g=>g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی'));
+ return {
+  national:iran.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length,
+  provincial:iran.filter(c=>c.groups.includes('شبکه‌های استانی')).length
+ };
+}
 async function loadIPTVIranChannels(){
- if(IPTV.iranPlaylistLoaded)return;
  if(iptvIranLoadPromise)return iptvIranLoadPromise;
+ if(IPTV.iranPlaylistLoaded){
+  const cached=countIPTVIranChannels();
+  if(cached.national>0&&cached.provincial>0)return cached;
+  IPTV.iranPlaylistLoaded=false;
+ }
  iptvIranLoadPromise=(async()=>{
   let body;
   if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
@@ -466,7 +477,7 @@ async function loadIPTVIranChannels(){
   const map=new Map(IPTV.channels.map(c=>[c.key,c]));parsed.forEach(c=>map.set(c.key,c));
   IPTV.channels=mergeIPTVChannels([...map.values()]);
   IPTV.iranPlaylistLoaded=true;IPTV.loadedAt=Date.now();IPTV.error='';
-  return {national,provincial};
+  return countIPTVIranChannels();
  })();
  try{return await iptvIranLoadPromise}finally{iptvIranLoadPromise=null}
 }
@@ -485,6 +496,7 @@ async function toggleIPTVIranMode(){
  IPTV.error='در حال دریافت شبکه‌های سراسری و استانی ایران…';iptvRefresh();
  try{
   const counts=await loadIPTVIranChannels();
+  if(!counts||!counts.national||!counts.provincial)throw Error('تعداد شبکه‌های سراسری و استانی پس از بارگذاری قابل تأیید نیست.');
   IPTV.iranMode=true;IPTV.category='همه';IPTV.country='همه';IPTV.query='';
   const search=$('#iptvSearch');if(search)search.value='';
   IPTV.chipSig='';IPTV.countrySig='';
