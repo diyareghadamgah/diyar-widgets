@@ -80,38 +80,19 @@ async function setVideoFullscreen(enabled){
  else if(document.fullscreenElement){try{await (document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch(_){}}
 }
 async function addNativeFiles(files){
- const received=Array.isArray(files)?files:[],known=new Set(st.items.map(x=>x.id)),added=[];
+ const received=Array.isArray(files)?files:[];let added=0;
  for(const f of received){
   const uri=typeof f?.uri==='string'?f.uri.trim():'';
   if(!uri)continue;
   const id='uri:'+uri;
-  if(known.has(id))continue;
-  known.add(id);
-  added.push({id,name:f.name||'ویدئو',uri,size:Number(f.size)>0?Number(f.size):0,mimeType:f.mimeType||'video/*',added:Date.now(),position:0,duration:0});
+  if(st.items.some(x=>x.id===id))continue;
+  const item={id,name:f.name||'ویدئو',uri,size:Number(f.size)>0?Number(f.size):0,mimeType:f.mimeType||'video/*',added:Date.now(),position:0,duration:0};
+  st.items.push(item);
+  try{await put(item);added++}
+  catch(error){st.items=st.items.filter(x=>x.id!==id);console.error('[NaghmeVideo] individual library save failed',item.name,error)}
  }
- if(!added.length){
-  try{st.items=await all()||[]}catch(e){console.error('[NaghmeVideo] library refresh failed',e)}
-  draw();
-  msg(received.length?'فایل‌ها قبلاً در کتابخانه هستند یا آدرس تازه‌ای دریافت نشد':'هیچ ویدئویی از انتخاب‌گر دریافت نشد');
-  console.warn('[NaghmeVideo] no new usable URIs',received);
-  return;
- }
- try{
-  await putMany(added);
-  // IndexedDB منبع اصلی کتابخانه است؛ بعد از commit دوباره از آن می‌خوانیم تا UI با دادهٔ ذخیره‌شده یکسان باشد.
-  st.items=await all()||[];
-  draw();
-  msg(fa(added.length)+' ویدئو در کتابخانه ذخیره و نمایش داده شد');
- }catch(storageError){
-  console.error('[NaghmeVideo] bulk library save/refresh failed',storageError);
-  let saved=0;
-  for(const item of added){
-   try{await put(item);saved++}catch(e){console.error('[NaghmeVideo] individual save failed',item.name,e)}
-  }
-  try{st.items=await all()||[]}catch(readError){console.error('[NaghmeVideo] library reload failed',readError)}
-  draw();
-  msg(saved?'ذخیره انجام شد؛ '+fa(saved)+' فایل ثبت شد':'خطا در ذخیره یا بازخوانی کتابخانه: '+(storageError.message||storageError));
- }
+ draw();
+ msg(added?fa(added)+' ویدئو به کتابخانه اضافه شد':(received.length?'فایل‌ها قبلاً در کتابخانه هستند یا ذخیره نشدند':'هیچ ویدئویی از انتخاب‌گر دریافت نشد'));
 }
 async function chooseNative(method){
  try{
