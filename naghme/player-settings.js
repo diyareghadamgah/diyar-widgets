@@ -42,7 +42,7 @@ function addButton(){
 // منوی شناور سه‌نقطه در کنار نام ویدئو؛ پس از هر بار ساخته‌شدن بخش ویدئو دوباره متصل می‌شود.
 function watchVideoHeader(){addButton();var root=document.getElementById('videoContent')||document.body;new MutationObserver(function(){addButton()}).observe(root,{childList:true,subtree:true})}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watchVideoHeader,{once:true});else watchVideoHeader();
-window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply};
+window.NaghmePlayerSettings={get:function(){return Object.assign({},prefs)},open:open,apply:apply,set:function(k,val){prefs[k]=val;save()}};
 document.addEventListener('change',function(e){if(e.target.id==='videoSpeed'||e.target.id==='videoSpeedMenu'){e.target.dataset.userChanged='1';prefs.videoSpeed=e.target.value;save()}});
 document.addEventListener('naghme:player-settings',apply);apply();
 })();
