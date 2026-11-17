@@ -445,6 +445,7 @@ async function setIPTVCountry(v){
  catch(e){IPTV.error='دریافت فهرست '+v+' ناموفق بود: '+(e.message||'خطای شبکه')+'؛ فهرست قبلی و شبکه‌های واردشده حفظ شدند.';iptvRefresh();toast('دریافت فهرست '+v+' ناموفق بود.')}
 }
 const IPTV_IRAN_PLAYLIST='https://raw.githubusercontent.com/shayanline/iptv-iran/main/playlists/fa/iran.m3u';
+const IPTV_IRAN_PWA_PLAYLIST='data/iran.m3u';
 let iptvIranLoadPromise=null;
 function countIPTVIranChannels(){
  const iran=IPTV.channels.filter(c=>c.groups&&c.groups.some(g=>g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی'));
@@ -466,8 +467,12 @@ async function loadIPTVIranChannels(){
    const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
   }else{
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-   try{const response=await fetch(IPTV_IRAN_PLAYLIST,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);body=await response.text()}
-   finally{clearTimeout(timer)}
+   try{
+    // PWA: same-origin asset avoids browser CORS restrictions on raw.githubusercontent.com
+    const response=await fetch(IPTV_IRAN_PWA_PLAYLIST,{cache:'no-store',signal:controller.signal});
+    if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فهرست داخلی نغمه');
+    body=await response.text();
+   }finally{clearTimeout(timer)}
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
   const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
