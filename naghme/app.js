@@ -31,7 +31,7 @@ const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
 function iptvFlag(code){return [...String(code||'').toUpperCase()].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join('')}
-const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 let iptvScreenWakeLock=null,iptvWakeBound=false;
@@ -385,7 +385,7 @@ window.NaghmeIPTVFullscreen=iptvFullscreen;
 // تغییر جهت صفحه فقط چیدمان را عوض می‌کند؛ تمام‌صفحه فقط با فرمان صریح کاربر فعال می‌شود.
  function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
-const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0);
+const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0)+'|'+IPTV.iranMode;
 function iptvCountryLabels(c){
  const raw=String(c.country||'').split(/[;,|]+/).map(x=>x.trim()).filter(Boolean);
  if(!raw.length){const m=String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i);if(m)raw.push(m[1])}
@@ -444,9 +444,54 @@ async function setIPTVCountry(v){
  try{const n=await loadIPTVCountry(item.code);toast(fa(n)+' شبکه از '+v+' اضافه شد.')}
  catch(e){IPTV.error='دریافت فهرست '+v+' ناموفق بود: '+(e.message||'خطای شبکه')+'؛ فهرست قبلی و شبکه‌های واردشده حفظ شدند.';iptvRefresh();toast('دریافت فهرست '+v+' ناموفق بود.')}
 }
+const IPTV_IRAN_PLAYLIST='https://raw.githubusercontent.com/shayanline/iptv-iran/main/playlists/fa/iran.m3u';
+let iptvIranLoadPromise=null;
+async function loadIPTVIranChannels(){
+ if(IPTV.iranPlaylistLoaded)return;
+ if(iptvIranLoadPromise)return iptvIranLoadPromise;
+ iptvIranLoadPromise=(async()=>{
+  let body;
+  if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+   const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
+  }else{
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+   try{const response=await fetch(IPTV_IRAN_PLAYLIST,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);body=await response.text()}
+   finally{clearTimeout(timer)}
+  }
+  const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
+  const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
+  const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
+  const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
+  if(!national||!provincial)throw Error('فهرست دریافتی کامل نیست؛ تعداد شبکه‌های سراسری یا استانی صفر است.');
+  const map=new Map(IPTV.channels.map(c=>[c.key,c]));parsed.forEach(c=>map.set(c.key,c));
+  IPTV.channels=mergeIPTVChannels([...map.values()]);
+  IPTV.iranPlaylistLoaded=true;IPTV.loadedAt=Date.now();IPTV.error='';
+  return {national,provincial};
+ })();
+ try{return await iptvIranLoadPromise}finally{iptvIranLoadPromise=null}
+}
+async function toggleIPTVIranMode(){
+ if(IPTV.iranMode){
+  IPTV.iranMode=false;IPTV.category='همه';IPTV.country='همه';IPTV.query='';
+  const search=$('#iptvSearch');if(search)search.value='';
+  renderIPTV();return;
+ }
+ IPTV.error='در حال دریافت شبکه‌های سراسری و استانی ایران…';iptvRefresh();
+ try{
+  const counts=await loadIPTVIranChannels();
+  IPTV.iranMode=true;IPTV.category='همه';IPTV.country='همه';IPTV.query='';
+  const search=$('#iptvSearch');if(search)search.value='';
+  IPTV.chipSig='';IPTV.countrySig='';
+  renderIPTV();
+  toast(fa(counts.national)+' شبکهٔ سراسری و '+fa(counts.provincial)+' شبکهٔ استانی اضافه شد.');
+ }catch(e){
+  IPTV.error='دریافت شبکه‌های سراسری و استانی ناموفق بود: '+(e.message||'خطای شبکه');
+  renderIPTV();toast('دریافت فهرست شبکه‌های ایران ناموفق بود.');
+ }
+}
 function iptvFiltered(){
  const q=iptvNorm(IPTV.query).trim(),cat=IPTV.category,fav=cat==='موردعلاقه‌ها',all=cat==='همه'||fav,country=IPTV.country;
- return IPTV.channels.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
+ return IPTV.channels.filter(c=>(!IPTV.iranMode||c.groups.some(g=>g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی'))&&(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
 }
 function iptvRowHtml(c){
  return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button></div>`}
@@ -470,7 +515,7 @@ function renderIPTVChips(){
    .map(g=>String(g==null?'':g).trim()).filter(g=>!invalidGroup(g));
   (groups.length?groups:['سایر']).forEach(g=>cnt.set(g,(cnt.get(g)||0)+1));
  });
- const groups=[...cnt.entries()].filter(([g])=>!invalidGroup(g)).sort((a,b)=>b[1]-a[1]).slice(0,120).map(x=>x[0]);
+ const groups=[...cnt.entries()].filter(([g])=>!invalidGroup(g)&&(!IPTV.iranMode||g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی')).sort((a,b)=>b[1]-a[1]).slice(0,120).map(x=>x[0]);
  if(IPTV.category!=='همه'&&IPTV.category!=='موردعلاقه‌ها'&&!cnt.has(IPTV.category))IPTV.category='همه';
  $('#tvChips').innerHTML=['همه','موردعلاقه‌ها',...groups].map(x=>`<button data-a="iptvcat" data-v="${esc(x)}" class="${IPTV.category===x?'on':''}">${esc(x)}</button>`).join('')}
 function setIPTVCat(v){
@@ -826,7 +871,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  add:openAdd,stop(){S.scan&&(S.scan.stop=true)},scont(){S.scan&&!S.scan.running&&runScan(null,true)},srestart(){if(S.scan&&!S.scan.running){S.scan.i=0;S.scan.n=S.scan.ok=S.scan.bad=S.scan.dup=S.scan.short=S.scan.err=0;runScan(null,true)}},sclose(){S.scan=null;S.view={t:'songs'};render()},
  freecopy(){if(confirm('نسخه‌های کپی‌شده‌ی آهنگ‌ها از برنامه حذف شود؟ فایل‌های اصلی روی گوشی دست‌نخورده می‌مانند، ولی برای پخش باید دوباره انتخاب شوند.'))clearFiles().then(()=>{S.songs.forEach(s=>s.stored=false);S.cache.clear();return putMany(S.songs)}).then(()=>{updateStorage();toast('فایل‌های کپی‌شده حذف شدند')})},
  diag(){showDiag()}, rescan(){rescanTrees()},untree(){untree(d.v)},
- iptvload(){loadIPTV(true)},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVImportedItem(d.v)},iptvcat(){setIPTVCat(d.v)},iptvcountry(){setIPTVCountry(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvfiles(){manageImportedIPTVFiles()},iptvurl(){manageIPTVPlaylist()},
+ iptvload(){loadIPTV(true)},iptviran(){toggleIPTVIranMode()},famopen(){const p=window.NaghmeVideoPlayer;if(p&&p.isNative&&p.openOfficialPage){p.openOfficialPage('https://www.fam.ir/channels').catch(e=>toast('بازکردن فام ناموفق بود: '+(e.message||'خطا')))}else{const w=window.open('https://www.fam.ir/channels','_blank','noopener');if(!w)toast('مرورگر اجازه بازکردن صفحه فام را نداد')}} ,iptvplay(){playIPTV(d.v)},iptvfav(){e.stopPropagation();toggleIPTVFav(d.v)},iptvremove(){e.stopPropagation();removeIPTVImportedItem(d.v)},iptvcat(){setIPTVCat(d.v)},iptvcountry(){setIPTVCountry(d.v)},iptvretry(){retryIPTV()},iptvfs(){iptvFullscreen()},iptvfsx(){iptvFullscreen(false)},iptvfile(){syncIPTVFileButton();const input=$('#iptvFile');if(input){input.value='';input.click()}},iptvfiles(){manageImportedIPTVFiles()},iptvurl(){manageIPTVPlaylist()},
  inst(){dip?dip.prompt():toast('نصب: منوی Chrome ← Install app / افزودن به صفحه‌ی اصلی')},
  np(){$('#np').hidden=false;ui()},npx(){$('#np').hidden=true},tog,prev,next(){next()},shuf(){S.shuffle=!S.shuffle;ui();saveLast()},rep(){S.rep=(S.rep+1)%3;ui();saveLast()},b10(){au.currentTime-=10},f10(){au.currentTime+=10},mute(){au.muted=!au.muted;$('#bm').textContent=au.muted?'🔇':'🔊'},
  qplay(){S.qi=+d.i;load(true)},qrm(){const i=+d.i,was=!au.paused;S.q.splice(i,1);if(i<S.qi)S.qi--;else if(i===S.qi){if(!S.q.length){au.pause();au.removeAttribute('src');S.qi=-1;S.loadedId=null;S.resume=null}else{S.qi=Math.min(i,S.q.length-1);S.resume=null;load(was)}}ui();saveLast()},
