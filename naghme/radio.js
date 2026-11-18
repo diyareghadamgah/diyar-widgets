@@ -3,7 +3,6 @@
 const $=s=>document.querySelector(s);
 const API=['https://de1.api.radio-browser.info/json','https://de2.api.radio-browser.info/json','https://all.api.radio-browser.info/json'];
 const IRIB=[['radioiran','رادیو ایران','radioiran'],['radiojavan','رادیو جوان','radiojavan'],['radiopayam','رادیو پیام','radiopayam'],['radiotehran','رادیو تهران','radiotehran'],['radiovarzesh','رادیو ورزش','radiovarzesh'],['radioava','رادیو آوا','radioava'],['radioquran','رادیو قرآن','radioquran'],['radiofarhang','رادیو فرهنگ','radiofarhang'],['radiosalamat','رادیو سلامت','radiosalamat'],['radioeghtesad','رادیو اقتصاد','radioeghtesad'],['radiomaaref','رادیو معارف','radiomaaref'],['radiogoftogo','رادیو گفت‌وگو','radiogoftogo'],['radionamayesh','رادیو نمایش','radionamayesh'],['radiosaba','رادیو صبا','radiosaba'],['radioziarat','رادیو زیارت','radioziarat'],['radiotelavat','رادیو تلاوت','radiotelavat'],['radiotartil','رادیو ترتیل','radiotartil'],['radiomonasebati','رادیو مناسبتی','radiomonasebati']].map(([id,name,slug])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',url_resolved:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',codec:'HLS',bitrate:0,votes:999999,irib:true}));
-const isNativeApp=!!(window.Capacitor&&typeof window.Capacitor.isNativePlatform==='function'&&window.Capacitor.isNativePlatform());
 const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false};
 function lsGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch{return fallback}}
 function lsSet(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){console.warn('[NaghmeRadio] storage failed',e);return false}}
@@ -76,7 +75,7 @@ async function stopCurrent(){
  if(nativeRadio()){try{await window.NaghmeLibraryVideo.stop()}catch(e){console.warn('[NaghmeRadio] native stop',e)}try{await window.NaghmeLibraryVideo.visible(false)}catch{}}
  state.nativePlaying=false;
 }
-function nativeRadio(){return isNativeApp&&window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo.isNative===true}
+function nativeRadio(){return false} // Radio always uses its dedicated HTMLAudioElement; the native video overlay is not an audio player.
 async function pauseOtherMedia(){
  try{if(window.NaghmeLibraryVideo&&window.NaghmeLibraryVideo.isNative)await window.NaghmeLibraryVideo.stop()}catch(e){console.warn('[NaghmeRadio] stop library video',e)}
  try{if(typeof window.NaghmePauseMusic==='function')window.NaghmePauseMusic()}catch{}
