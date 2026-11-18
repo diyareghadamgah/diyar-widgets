@@ -1203,3 +1203,23 @@ body.mode-tv .tvhead .iptv-iran-toggle{
 @media(max-width:390px){
  body.mode-tv .tvhead .iptv-iran-toggle{font-size:9px!important;padding-inline:2px!important}
 }
+
+
+/* رادیوی نغمه: پنل ایران‌صدا و پخش‌کننده‌ی زنده */
+.radio-iranseda-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0;padding:12px 14px;border:1px solid rgba(46,204,140,.28);border-radius:16px;background:linear-gradient(115deg,rgba(15,82,61,.32),rgba(12,17,25,.92));box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.radio-iranseda-address{display:flex;align-items:center;gap:10px;min-width:0}
+.radio-iranseda-address>span:last-child{display:flex;flex-direction:column;gap:4px;min-width:0}
+.radio-iranseda-address b{font-size:13px;color:var(--text,#f4f4f4)}
+.radio-iranseda-address small{font-size:11px;direction:ltr;text-align:right;color:var(--muted,#9aa5a2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.radio-iranseda-pulse{width:10px;height:10px;flex:0 0 10px;border-radius:50%;background:#35d69a;box-shadow:0 0 0 5px rgba(53,214,154,.12),0 0 15px rgba(53,214,154,.7)}
+.radio-iranseda-key{display:flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-height:42px;padding:0 17px;border:1px solid rgba(70,226,163,.55);border-radius:12px;background:linear-gradient(135deg,#147d5b,#0b4c3d);color:#fff;font-weight:800;box-shadow:0 5px 16px rgba(12,130,91,.24);cursor:pointer;transition:transform .18s,filter .18s}
+.radio-iranseda-key:active{transform:scale(.97);filter:brightness(1.15)}
+.radio-iranseda-key span{font-size:15px;opacity:.8}
+.radio-player{position:relative;overflow:hidden}
+.radio-player .radio-disc{position:relative;isolation:isolate;box-shadow:0 0 0 7px rgba(255,255,255,.035),0 0 34px rgba(32,202,145,.22)}
+.radio-player .radio-disc:before{content:"";position:absolute;inset:13%;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 5px,rgba(255,255,255,.08) 6px 7px);z-index:-1}
+.radio-player .radio-disc:after{content:"";position:absolute;width:9px;height:9px;left:calc(50% - 4.5px);top:calc(50% - 4.5px);border-radius:50%;background:#e9fff5;box-shadow:0 0 10px rgba(255,255,255,.7)}
+.radio-player.is-playing .radio-disc{animation:naghmeRadioSpin 7s linear infinite}
+.radio-player.is-playing .radio-disc:after{background:#36d99a;box-shadow:0 0 13px #36d99a}
+@keyframes naghmeRadioSpin{to{transform:rotate(360deg)}}
+@media(max-width:560px){.radio-iranseda-row{gap:8px;padding:10px}.radio-iranseda-address b{font-size:12px}.radio-iranseda-address small{max-width:145px}.radio-iranseda-key{padding:0 12px;font-size:12px;min-height:40px}}
