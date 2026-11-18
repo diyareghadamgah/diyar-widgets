@@ -49,7 +49,25 @@ function bindIPTVScreenWakeLock(){
 }
 const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
-function mergeIPTVChannels(remote){return [...new Map([...(remote||[]),...allImportedIPTV()].map(c=>[c.key,c])).values()]}
+function dedupeIPTVChannels(list){
+ const out=[],byId=new Map(),byName=new Map();
+ const norm=v=>String(v||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/[\\s._-]+/g,' ').trim();
+ for(const c of list||[]){
+  if(!c)continue;
+  const id=norm(c.id),name=norm(c.name),country=norm(c.country||((id.match(/\\.([a-z]{2})(?:@|$)/i)||[])[1]||'')),group=norm(c.group);
+  const idKey=id?'id:'+id:'',nameKey=name?'name:'+name+'|'+(country||group):'';
+  let index=idKey&&byId.has(idKey)?byId.get(idKey):nameKey&&byName.has(nameKey)?byName.get(nameKey):undefined;
+  if(index!==undefined){
+   const prior=out[index];
+   out[index]={...prior,logo:prior.logo||c.logo||'',country:prior.country||c.country||'',language:prior.language||c.language||'',id:prior.id||c.id||'',groups:prior.groups&&prior.groups.length?prior.groups:(c.groups||[])};
+   if(idKey)byId.set(idKey,index);if(nameKey)byName.set(nameKey,index);
+   continue;
+  }
+  index=out.length;out.push(c);if(idKey)byId.set(idKey,index);if(nameKey)byName.set(nameKey,index);
+ }
+ return out;
+}
+function mergeIPTVChannels(remote){return dedupeIPTVChannels([...(remote||[]),...allImportedIPTV()])}
 async function restoreImportedIPTV(){
  if(IPTV_IMPORTED.restored)return;
  if(IPTV_IMPORTED.restoring)return IPTV_IMPORTED.restoring;
@@ -128,11 +146,11 @@ async function loadIPTV(force=false){
    }finally{clearTimeout(timer)}
   };
   const urls=IPTV.url?[IPTV.url]:[];
-  if(IPTV.url===IPTV_DEFAULT_URL)urls.push(IPTV.iranUrl);
+  if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url)).map(channel=>({...channel,sourceUrl:url}))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
-  const a=[...new Map(merged.map(channel=>[channel.key,channel])).values()];
+  const a=dedupeIPTVChannels(merged);
   if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
@@ -413,8 +431,7 @@ async function loadIPTVCountry(code){
  code=String(code||'').toLowerCase();if(!IPTV_COUNTRY_CODES.includes(code))return;
  if(iptvCountryCache.has(code)){
   const cached=await iptvCountryCache.get(code);
-  const map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of cached)if(!map.has(c.key))map.set(c.key,c);
-  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return cached.length;
+  IPTV.channels=mergeIPTVChannels([...IPTV.channels,...cached]);IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return cached.length;
  }
  const job=(async()=>{
   let text;
@@ -431,8 +448,7 @@ async function loadIPTVCountry(code){
  })();
  iptvCountryCache.set(code,job);
  try{
-  const parsed=await job,map=new Map(IPTV.channels.map(c=>[c.key,c]));for(const c of parsed)if(!map.has(c.key))map.set(c.key,c);
-  IPTV.channels=mergeIPTVChannels([...map.values()]);IPTV.loadedAt=Date.now();IPTV.error='';
+  const parsed=await job;IPTV.channels=mergeIPTVChannels([...IPTV.channels,...parsed]);IPTV.loadedAt=Date.now();IPTV.error='';
   IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return parsed.length;
  }catch(e){iptvCountryCache.delete(code);throw e}
 }
