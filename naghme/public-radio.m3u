@@ -1,0 +1,67 @@
+#EXTM3U
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",SRF 4 News
+http://stream.srg-ssr.ch/drs4news/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",SRF 1
+http://stream.srg-ssr.ch/drs1/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",SRF 2
+http://stream.srg-ssr.ch/drs2/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",SRF 3
+http://stream.srg-ssr.ch/drs3/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",SRF Virus
+http://stream.srg-ssr.ch/drsvirus/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",Radio Swiss Classic
+http://stream.srg-ssr.ch/rsc_de/mp3_128.m3u
+#EXTINF:-1 group-title="سوئیس" tvg-country="CH",Radio Swiss Jazz
+http://stream.srg-ssr.ch/m/rsj/mp3_128
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 1
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 2
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 3
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 4
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 4 Extra
+http://open.live.bbc.co.uk/mediaselector/5/select/version/2.0/mediaset/http-icy-mp3-a/vpid/bbc_radio_four_extra/format/pls.pls
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 5 Live
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio5live_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 6 Music
+http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p
+#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC World Service
+http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Beat Blender
+https://ice1.somafm.com/beatblender-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Groove Salad
+https://ice1.somafm.com/groovesalad-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Drone Zone
+https://ice1.somafm.com/dronezone-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Lush
+https://ice1.somafm.com/lush-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Deep Space One
+https://ice1.somafm.com/deepspaceone-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - DEF CON Radio
+https://ice1.somafm.com/defcon-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - PopTron
+https://ice1.somafm.com/poptron-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Sonic Universe
+https://ice1.somafm.com/sonicuniverse-192-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Folk Forward
+https://ice1.somafm.com/folkfwd-64-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Suburbs of Goa
+https://ice1.somafm.com/suburbsofgoa-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - The Trip
+https://ice1.somafm.com/thetrip-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Digitalis
+https://ice1.somafm.com/digitalis-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Illinois Street Lounge
+https://ice1.somafm.com/illstreet-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Mission Control
+https://ice1.somafm.com/missioncontrol-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Dub Step Beyond
+https://ice1.somafm.com/dubstep-256-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - SF 10-33
+https://ice1.somafm.com/sf1033-128-mp3
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Earwaves
+https://ice1.somafm.com/earwaves-128-aac
+#EXTINF:-1 group-title="جهان" tvg-country="US",SomaFM - Doomed
+https://ice1.somafm.com/doomed-128-mp3
