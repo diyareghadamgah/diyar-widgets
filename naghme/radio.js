@@ -43,12 +43,27 @@ async function request(path){
  throw last||Error('اتصال برقرار نشد');
 }
 function unique(list){const m=new Map();(list||[]).forEach(s=>{if(s&&s.stationuuid&&(s.url_resolved||s.url)&&!m.has(s.stationuuid))m.set(s.stationuuid,s)});return [...m.values()]}
+async function loadPublicRadios(){
+ try{
+  const r=await fetch(new URL('public-radio.m3u',document.baseURI).href,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
+  const body=await r.text(),out=[];let name='',group='جهان';
+  for(const raw of body.split(/\\r?\\n/)){
+   const line=raw.trim();if(!line)continue;
+   if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';continue}
+   if(line.startsWith('#'))continue;
+   if(/^https?:\\/\\//i.test(line)&&name){const code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name=''}
+  }
+  return out;
+ }catch(e){console.warn('[NaghmeRadio] public M3U unavailable',e);return []}
+}
 async function load(){
  if(state.loading)return;state.loading=true;status('در حال دریافت فهرست ایستگاه‌ها…');render();
  try{
   const qs=['/stations/search?language=persian&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/search?countrycode=IR&hidebroken=true&is_https=true&order=votes&reverse=true&limit=80','/stations/topvote?is_https=true&limit=80'];
-  const data=await Promise.all(qs.map(p=>request(p).catch(()=>[])));
-  state.items=[...IRIB,...unique(data.flat()).filter(s=>!IRIB.some(i=>i.name===s.name)),...state.custom].sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
+  const [data,publicRadios]=await Promise.all([Promise.all(qs.map(p=>request(p).catch(()=>[]))),loadPublicRadios()]);
+  const seen=new Set(IRIB.map(s=>norm(s.name)));
+  const discovered=unique([...data.flat(),...publicRadios]).filter(s=>{const key=norm(s.name);if(seen.has(key))return false;seen.add(key);return true});
+  state.items=[...IRIB,...discovered,...state.custom].sort((a,b)=>(Number(b.votes)||0)-(Number(a.votes)||0));
   status(state.items.length?'ایستگاه‌ها آماده‌اند؛ برای پخش یکی را انتخاب کن.':'ایستگاهی پیدا نشد؛ دوباره تلاش کن.');
  }catch(e){state.items=[...IRIB,...state.custom];status('دریافت فهرست جهانی ناموفق بود؛ ایستگاه‌های ذخیره‌شده همچنان در دسترس‌اند.')}
  finally{state.loading=false;render()}
