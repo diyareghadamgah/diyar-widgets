@@ -21,8 +21,6 @@ http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p
 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p
 #EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 4
 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p
-#EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 4 Extra
-http://open.live.bbc.co.uk/mediaselector/5/select/version/2.0/mediaset/http-icy-mp3-a/vpid/bbc_radio_four_extra/format/pls.pls
 #EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 5 Live
 http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio5live_mf_p
 #EXTINF:-1 group-title="بریتانیا" tvg-country="GB",BBC Radio 6 Music
