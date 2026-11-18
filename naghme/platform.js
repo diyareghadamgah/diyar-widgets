@@ -25,6 +25,7 @@ P.diagnose=()=>{const C2=g.Capacitor||{};let keys=[],hdr=[],pk=[];
  return {native:isNative,platform:C2.getPlatform?C2.getPlatform():null,registerPlugin:typeof C2.registerPlugin==='function',nativePromise:typeof C2.nativePromise==='function',
   pluginsEntry:!!(C2.Plugins&&C2.Plugins.NaghmeStorage),pluginsKeys:pk,headerNames:hdr,inHeaders:hdr.includes('NaghmeStorage'),ready:!!P.plugin,capacitorKeys:keys}};
 P.ping=async()=>{try{return await plug().ping()}catch(e){return {error:String(e&&e.message||e)}}};
+P.isVpnActive=async()=>{if(!isNative)return false;const r=await plug().isVpnActive();return !!(r&&r.active)};
 /* آدرس قابل‌استفاده در WebView برای یک uri بومی (Capacitor.convertFileSrc). پخش پیش‌فرض نغمه همچنان Blob است؛ این تابع برای استفاده‌ی مستقیم/آزمایشی است. */
 P.fileUrl=uri=>{try{return C&&typeof C.convertFileSrc==='function'?C.convertFileSrc(uri):uri}catch{return uri}};
 const CH=1048576,MIME={mp3:'audio/mpeg',m4a:'audio/mp4',aac:'audio/aac',flac:'audio/flac',ogg:'audio/ogg',opus:'audio/ogg',wav:'audio/wav',wma:'audio/x-ms-wma'};
