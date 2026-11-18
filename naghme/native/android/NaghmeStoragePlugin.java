@@ -2,6 +2,9 @@ package ir.diyareghadamgah.naghme;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.content.Intent;
 import android.content.UriPermission;
 import android.database.Cursor;
@@ -48,6 +51,27 @@ public class NaghmeStoragePlugin extends Plugin {
         r.put("ok", true);
         r.put("plugin", "NaghmeStorage");
         r.put("sdk", android.os.Build.VERSION.SDK_INT);
+        call.resolve(r);
+    }
+
+    /* ---------- تشخیص اتصال VPN برای درگاه ایران‌صدا ---------- */
+    @PluginMethod
+    public void isVpnActive(PluginCall call) {
+        boolean active = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) getContext()
+                    .getSystemService(android.content.Context.CONNECTIVITY_SERVICE);
+            if (cm != null) {
+                Network network = cm.getActiveNetwork();
+                NetworkCapabilities caps = network == null ? null : cm.getNetworkCapabilities(network);
+                active = caps != null && caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN);
+            }
+        } catch (Exception e) {
+            call.reject("vpn_check_failed: " + e.getMessage());
+            return;
+        }
+        JSObject r = new JSObject();
+        r.put("active", active);
         call.resolve(r);
     }
 
