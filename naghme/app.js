@@ -51,10 +51,10 @@ const IPTV_IMPORTED={channels:[],localFiles:[],restored:false,restoring:null};
 function allImportedIPTV(){return [...IPTV_IMPORTED.channels,...IPTV_IMPORTED.localFiles.map(x=>x.channel).filter(Boolean)]}
 function dedupeIPTVChannels(list){
  const out=[],byId=new Map(),byName=new Map();
- const norm=v=>String(v||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/[\\s._-]+/g,' ').trim();
+ const norm=v=>String(v||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/[\s._-]+/g,' ').trim();
  for(const c of list||[]){
   if(!c)continue;
-  const id=norm(c.id),name=norm(c.name),country=norm(c.country||((id.match(/\\.([a-z]{2})(?:@|$)/i)||[])[1]||'')),group=norm(c.group);
+  const id=norm(c.id),name=norm(c.name),country=norm(c.country||((String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i)||[])[1]||'')),group=norm(c.group);
   const idKey=id?'id:'+id:'',nameKey=name?'name:'+name+'|'+(country||group):'';
   let index=idKey&&byId.has(idKey)?byId.get(idKey):nameKey&&byName.has(nameKey)?byName.get(nameKey):undefined;
   if(index!==undefined){
