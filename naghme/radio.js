@@ -144,7 +144,26 @@ async function toggle(){
  if(a.paused){try{await a.play();$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')}catch(e){status('پخش ادامه پیدا نکرد: '+(e.message||e))}}
  else{a.pause();$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}
 }
+async function openIranSeda(){
+ const url='https://radio.iranseda.ir/radiolist/?VALID=TRUE';
+ try{
+  const platform=window.NaghmePlatform;
+  if(platform&&platform.isNative&&typeof platform.isVpnActive==='function'){
+   const vpn=await platform.isVpnActive();
+   if(vpn){
+    window.alert('برای استفاده از ایران‌صدا، لطفاً VPN را خاموش کنید و دوباره روی «ایران صدا» بزنید.');
+    return;
+   }
+  }
+  window.location.href=url;
+ }catch(err){
+  console.warn('[NaghmeRadio] VPN check failed',err);
+  window.alert('بررسی وضعیت VPN ممکن نشد. لطفاً VPN را خاموش کنید و دوباره تلاش کنید.');
+ }
+}
 document.addEventListener('click',e=>{
+ const iran=e.target.closest('[data-radio-iranseda]');
+ if(iran){e.preventDefault();e.stopPropagation();openIranSeda();return}
  const f=e.target.closest('[data-radio-filter]');if(f){e.preventDefault();e.stopPropagation();state.filter=f.dataset.radioFilter;render();return}
  const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();const id=rem.dataset.radioRemove;state.custom=state.custom.filter(x=>x.stationuuid!==id);lsSet('naghmeRadioCustom',state.custom);state.items=state.items.filter(x=>x.stationuuid!==id);if(state.current&&state.current.stationuuid===id){audio()?.pause();state.current=null;status('ایستگاه حذف شد.')}render();return}
  const fav=e.target.closest('[data-radio-fav]');if(fav){e.preventDefault();e.stopPropagation();const id=fav.dataset.radioFav;state.favs=state.favs.includes(id)?state.favs.filter(x=>x!==id):[...state.favs,id];lsSet('naghmeRadioFavs',state.favs);render();return}
@@ -153,8 +172,8 @@ document.addEventListener('click',e=>{
 },true);
 $('#radioSearch')?.addEventListener('input',e=>{state.query=e.target.value;render()});
 $('#radioCustomForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#radioCustomName')?.value.trim();const raw=$('#radioCustomUrl')?.value.trim();if(!name||!raw){status('نام ایستگاه و نشانی پخش را وارد کن.');return}let u;try{u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error()}catch{status('نشانی معتبر HTTP یا HTTPS وارد کن.');return}const station={stationuuid:'custom-'+Date.now(),name,country:'شخصی',language:'',url:u.href,url_resolved:u.href,codec:/\.m3u8(?:$|[?#])/i.test(u.href)?'HLS':'Audio',bitrate:0,votes:0,custom:true};state.custom.push(station);localStorage.setItem('naghmeRadioCustom',JSON.stringify(state.custom));state.items.push(station);$('#radioCustomName').value='';$('#radioCustomUrl').value='';$('#radioCustomForm').hidden=true;state.filter='all';render();status('ایستگاه شخصی اضافه شد. برای پخش انتخابش کن.');});
-audio()?.addEventListener('playing',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')});
-audio()?.addEventListener('pause',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='▶'});
+audio()?.addEventListener('playing',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='Ⅱ';$('.radio-player')?.classList.add('is-playing');status('در حال پخش زنده')});
+audio()?.addEventListener('pause',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='▶';$('.radio-player')?.classList.remove('is-playing')});
 audio()?.addEventListener('error',()=>status('خطا در دریافت صدای ایستگاه؛ ایستگاه دیگری را امتحان کن.'));
 function init(){if(state.initialized)return;state.initialized=true;load()}
 window.NaghmeRadio={init,load,play,async stop(){await stopCurrent();state.current=null;const b=$('#radioPlayToggle');if(b)b.textContent='▶';status('پخش رادیو متوقف شد.');render()},get current(){return state.current}};
