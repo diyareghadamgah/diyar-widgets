@@ -28,7 +28,7 @@ const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr 
 const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
-const IPTV_NEXA_URL='https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/naghme/sources/nexa-persian.m3u';
+const IPTV_NEXA_URL='https://raw.githubusercontent.com/itsyebekhe/nexa/main/playlist.m3u';
 const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
