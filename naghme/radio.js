@@ -183,7 +183,7 @@ function radioM3UHash(value){
 function parseRadioM3U(text){
  const out=[];let current=null,extGroup='';
  const attr=(line,key)=>{const re=new RegExp('(?:^|\\s)'+key+'="([^"]*)"','i');const m=line.match(re);return m?m[1].trim():''};
- for(const raw of String(text||'').replace(/^\uFEFF/,'').split(/\\r?\\n/)){
+ for(const raw of String(text||'').replace(/^\uFEFF/,'').split(/\r?\n/)){
   const line=raw.trim();if(!line)continue;
   if(line.startsWith('#EXTINF:')){
    let comma=-1,quoted=false;
