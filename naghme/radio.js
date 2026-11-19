@@ -47,7 +47,7 @@ async function loadPublicRadios(){
  try{
   const r=await fetch(new URL('public-radio.m3u',document.baseURI).href,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
   const body=await r.text(),out=[];let name='',group='جهان';
-  for(const raw of body.split(/\\r?\\n/)){
+  for(const raw of body.split(/\r?\n/)){
    const line=raw.trim();if(!line)continue;
    if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';continue}
    if(line.startsWith('#'))continue;
@@ -183,7 +183,7 @@ function radioM3UHash(value){
 function parseRadioM3U(text){
  const out=[];let current=null,extGroup='';
  const attr=(line,key)=>{const re=new RegExp('(?:^|\\s)'+key+'="([^"]*)"','i');const m=line.match(re);return m?m[1].trim():''};
- for(const raw of String(text||'').replace(/^\\uFEFF/,'').split(/\\r?\\n/)){
+ for(const raw of String(text||'').replace(/^\uFEFF/,'').split(/\\r?\\n/)){
   const line=raw.trim();if(!line)continue;
   if(line.startsWith('#EXTINF:')){
    let comma=-1,quoted=false;
@@ -195,10 +195,10 @@ function parseRadioM3U(text){
   }
   if(/^#EXTGRP:/i.test(line)){extGroup=line.slice(line.indexOf(':')+1).trim()||extGroup;if(current&&!current.group)current.group=extGroup;continue}
   if(line[0]==='#')continue;
-  if(!/^https?:\\/\\//i.test(line))continue;
+  if(!/^https?:\/\//i.test(line))continue;
   let url;try{url=new URL(line).href}catch{continue}
   const meta=current||{name:url,id:'',logo:'',group:extGroup||'فهرست واردشده',country:'',language:''};
-  const codec=/\\.m3u8(?:$|[?#])/i.test(url)?'HLS':/\\.mpd(?:$|[?#])/i.test(url)?'DASH':/\\.aac(?:$|[?#])/i.test(url)?'AAC':'Audio';
+  const codec=/\.m3u8(?:$|[?#])/i.test(url)?'HLS':/\.mpd(?:$|[?#])/i.test(url)?'DASH':/\.aac(?:$|[?#])/i.test(url)?'AAC':'Audio';
   out.push({stationuuid:'m3u-'+radioM3UHash(url),name:meta.name,country:meta.country||meta.group||'فهرست واردشده',countrycode:'',language:meta.language||'',tags:meta.group||'فهرست واردشده',url,url_resolved:url,codec,bitrate:0,votes:0,logo:meta.logo||'',custom:true,imported:true});
   current=null;
  }
