@@ -30,6 +30,7 @@ const init=()=>{const o=HTMLMediaElement.prototype.canPlayType;HTMLMediaElement.
  let fetches=0;const errs=[];
  const mkCtx=async(opts)=>{const ctx=await br.newContext(opts);
   await ctx.route('https://iptv-org.github.io/iptv/index.m3u',r=>{fetches++;r.fulfill({status:200,contentType:'text/plain',headers:{'access-control-allow-origin':'*'},body:m3u})});
+  await ctx.route('https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/naghme/sources/nexa-persian.m3u',r=>r.fulfill({status:200,contentType:'text/plain',headers:{'access-control-allow-origin':'*'},body:'#EXTM3U\\n'}));
   await ctx.route(/https:\/\/(cdn\.jsdelivr\.net|unpkg\.com)\/.*hls.*/,r=>r.fulfill({status:200,contentType:'application/javascript',body:stubHls}));
   await ctx.route('https://tv.test/bad.webm',r=>r.fulfill({status:404,body:'no'}));
   await ctx.route(/https:\/\/tv\.test\/a\d+\.webm/,r=>r.fulfill({status:200,contentType:'video/webm',path:FIX+'/tv/red.webm'}));
