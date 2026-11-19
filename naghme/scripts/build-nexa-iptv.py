@@ -34,7 +34,7 @@ def quality_score(stream: dict) -> int:
     return 0
 
 def clean(value: object) -> str:
-    return str(value or "").replace('"', "'").replace("\\r", " ").replace("\\n", " ").strip()
+    return str(value or "").replace('"', "'").replace("\r", " ").replace("\n", " ").strip()
 
 def main() -> None:
     feeds = list(csv.DictReader(io.StringIO(get(FEEDS_URL).text)))
@@ -51,7 +51,7 @@ def main() -> None:
     for stream in streams:
         channel = clean(stream.get("channel"))
         url = clean(stream.get("url"))
-        if not channel or channel not in channels or not url or url.startswith("http://") is False and not url.startswith("https://"):
+        if not channel or channel not in channels or not url.startswith(("http://", "https://")):
             continue
         if str(stream.get("status") or "").lower() == "offline":
             continue
@@ -70,7 +70,7 @@ def main() -> None:
         raise RuntimeError("No Persian IPTV streams found; refusing to overwrite the existing playlist.")
     lines = ["#EXTM3U"]
     for item in best.values():
-        area = re.sub(r"\\bc/", "", item["area"], flags=re.I).replace(";", ", ")
+        area = re.sub(r"\bc/", "", item["area"], flags=re.I).replace(";", ", ")
         attrs = (
             f'tvg-id="{item["id"]}" tvg-name="{item["name"]}" '
             f'group-title="شبکه‌های فارسی" tvg-country="{area}" '
@@ -79,7 +79,7 @@ def main() -> None:
         lines.append(f'#EXTINF:-1 {attrs},{item["name"]}')
         lines.append(item["url"])
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("\\n".join(lines) + "\\n", encoding="utf-8")
+    OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Generated {len(best)} unique Persian channels: {OUT}")
 
 if __name__ == "__main__":
