@@ -44,15 +44,16 @@ const init=()=>{const o=HTMLMediaElement.prototype.canPlayType;HTMLMediaElement.
  const hlsS=p=>p.evaluate(()=>{const s=window.__hls||{created:0,destroyed:0,live:new Set(),loads:[]};return {c:s.created,d:s.destroyed,live:s.live.size,loads:s.loads.length}});
  const visibleRow=(p,parity)=>p.evaluate(par=>{const l=document.getElementById('iptvResults'),lr=l.getBoundingClientRect(),rows=[...l.querySelectorAll('.tvrow')];for(let i=0;i<rows.length;i++){const r=rows[i].getBoundingClientRect(),m=rows[i].querySelector('b').textContent.match(/Channel (\d+)/);if(!m)continue;if(r.top>=lr.top+4&&r.bottom<=lr.bottom-4&&(+m[1])%2===par)return i}return -1},parity);
  const cnt=p=>p.evaluate(()=>IPTV.filtered.length);
- await T('۰: تجزیه‌ی M3U نکسا: ویرگول داخل group-title باعث خرابی نام شبکه نمی‌شود و محدوده‌ی پخش درست تشخیص داده می‌شود',async()=>{
-  const r=await page.evaluate(()=>{const c=parseM3U('#EXTM3U\\n#EXTINF:-1 tvg-id="NexaTest.us" group-title="TR, IR",Nexa Test\\nhttps://tv.test/nexa.m3u8\\n')[0];return {name:c.name,group:c.group,country:c.country,url:c.url}});
-  return {ok:r.name==='Nexa Test'&&r.group==='شبکه‌های فارسی'&&r.country==='TR, IR'&&r.url==='https://tv.test/nexa.m3u8',d:JSON.stringify(r)};
- });
+;
  const sameRect=(a,b)=>['t','b','l','w','h'].every(k=>Math.abs(a[k]-b[k])<0.6);
 
  // ================= موبایل (۳۹۰×۷۸۰، لمسی) =================
  const mctx=await mkCtx({viewport:{width:390,height:780},isMobile:true,hasTouch:true,deviceScaleFactor:2});
  const page=await mk(mctx);
+ await T('۰: تجزیه‌ی M3U نکسا: ویرگول داخل group-title باعث خرابی نام شبکه نمی‌شود و محدوده‌ی پخش درست تشخیص داده می‌شود',async()=>{
+  const r=await page.evaluate(()=>{const c=parseM3U('#EXTM3U\n#EXTINF:-1 tvg-id="NexaTest.us" group-title="TR, IR",Nexa Test\nhttps://tv.test/nexa.m3u8\n')[0];return {name:c.name,group:c.group,country:c.country,url:c.url}});
+  return {ok:r.name==='Nexa Test'&&r.group==='شبکه‌های فارسی'&&r.country==='TR, IR'&&r.url==='https://tv.test/nexa.m3u8',d:JSON.stringify(r)};
+ });
  await T('۱: ورود به صفحه‌ی تلویزیون، دریافت خودکار فهرست از منبع IPTV-org و نمایش (بدون خطای JS)',async()=>{await openTv(page);const c=await cnt(page),rows=await page.locator('#iptvResults .tvrow').count();return {ok:c===TOTAL&&fetches===1&&rows===150&&!errs.length,d:`channels=${c} fetches=${fetches} rows=${rows} errs=${errs.join('|')}`}});
  await T('۲: چیدمان سه‌بخشی: پخش بالا، جست‌وجو+دسته‌ها، سپس فهرست؛ فهرست زیر نوار موزیک/ناوبری نمی‌رود؛ ارتفاع مناسب',async()=>{
   const pl=await R(page,'.tvplayer'),se=await R(page,'#iptvSearch'),ch=await R(page,'#tvChips'),li=await R(page,'#iptvResults'),mi=await R(page,'#mini'),sd=await R(page,'#side'),s=await st(page);
