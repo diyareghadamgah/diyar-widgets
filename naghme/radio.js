@@ -190,7 +190,7 @@ function parseRadioM3U(text){
    for(let i=0;i<line.length;i++){if(line[i]==='"')quoted=!quoted;else if(line[i]===','&&!quoted){comma=i;break}}
    const head=line.slice(0,comma<0?line.length:comma);
    const name=comma<0?'':line.slice(comma+1).trim();
-   current={name:name||attr(head,'tvg-name')||'ایستگاه بدون نام',id:attr(head,'tvg-id'),logo:attr(head,'tvg-logo'),group:attr(head,'group-title')||extGroup||'فهرست واردشده',country:attr(head,'tvg-country'),language:attr(head,'tvg-language')};
+   current={name:name||attr(head,'tvg-name')||'ایستگاه بدون نام',id:attr(head,'tvg-id'),logo:attr(head,'tvg-logo'),group:attr(head,'group-title')||extGroup,country:attr(head,'tvg-country'),language:attr(head,'tvg-language')};
    continue;
   }
   if(/^#EXTGRP:/i.test(line)){extGroup=line.slice(line.indexOf(':')+1).trim()||extGroup;if(current&&!current.group)current.group=extGroup;continue}
@@ -218,7 +218,7 @@ $('#radioM3uFile')?.addEventListener('change',async e=>{
  const input=e.currentTarget,file=input.files&&input.files[0];if(!file)return;
  try{
   if(file.size>5*1024*1024)throw Error('حجم فایل باید کمتر از ۵ مگابایت باشد.');
-  const text=await file.text();if(!/#EXTM3U|#EXTINF/i.test(text))throw Error('این فایل، فهرست معتبر M3U به نظر نمی‌رسد.');
+  const text=await file.text();if(/#EXT-X-(?:TARGETDURATION|STREAM-INF|MEDIA-SEQUENCE)/i.test(text))throw Error('این فایل، فهرست پخش HLS است نه فهرست ایستگاه‌ها؛ فایل M3U شامل چند ایستگاه را انتخاب کن.');if(!/#EXTM3U|#EXTINF/i.test(text))throw Error('این فایل، فهرست معتبر M3U به نظر نمی‌رسد.');
   const parsed=parseRadioM3U(text);if(!parsed.length)throw Error('هیچ نشانی پخش HTTP/HTTPS معتبری در فایل پیدا نشد.');
   const known=new Set(state.items.map(s=>{try{return new URL(s.url_resolved||s.url).href}catch{return ''}}));
   const added=[];for(const station of parsed){if(known.has(station.url))continue;known.add(station.url);added.push(station)}
