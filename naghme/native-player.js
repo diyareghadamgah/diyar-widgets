@@ -117,6 +117,7 @@
         release: function () { return this.call('release'); },
         diagnostics: function () { return this.call('getDiagnostics'); },
         pickFiles: function () { return this.call('pickVideoFiles'); }, pickVideoFiles: function () { return this.call('pickVideoFiles'); }, pickVideoFolder: function () { return this.call('pickVideoFolder'); },
+        listVideoFolder: function (uri) { return this.call('listVideoFolder', {uri:uri}); },
         pickFolder: function () { return this.call('pickVideoFolder'); }
     };
     window.NaghmeLibraryVideo = libraryVideo;
