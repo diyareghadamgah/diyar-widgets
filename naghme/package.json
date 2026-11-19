@@ -8,7 +8,7 @@
     "android:add": "node scripts/build-web.js && npx cap add android && node scripts/setup-android.js && npx cap sync android",
     "android:sync": "node scripts/build-web.js && node scripts/setup-android.js && npx cap sync android",
     "android:debug": "cd android && ./gradlew assembleDebug",
-    "test": "cd tests && node tags.test.js && node scripts.test.js",
+    "test": "cd tests && node tags.test.js && node scripts.test.js && node radio-import.test.js",
     "test:iptv": "cd tests && node iptv.test.js"
   },
   "dependencies": {
