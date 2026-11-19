@@ -1,0 +1,413 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="4Kurd.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://4kuhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="4Music.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://musichls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="4UTV.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="TR, IR" tvg-language="fas" tvg-quality="",SD
+https://hls.4utv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="247BoxTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://hls.247box.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AbadanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/abadan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AflakTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/aflak/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AFNTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://bozztv.com/1gbw5/tintv2/tintv2/playlist.m3u8
+#EXTINF:-1 tvg-id="AfraFilm.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://afrafhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AfraSeries.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://afrashls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AftabTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/aftab/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AlborzTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/alborz/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AlMahdiTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://iptv.almahditv.com/almahditv/playlist.m3u8
+#EXTINF:-1 tvg-id="AmouzeshTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/amouzesh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AraTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/ara/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AraxTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://araxhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ArkoTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://arkhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ArvanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://arvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AtrakTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/atrak/live/playlist.m3u8
+#EXTINF:-1 tvg-id="AtrinaTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://atrihls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AVAFamily.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IQ" tvg-language="fas" tvg-quality="",SD
+https://familyhls.avatv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AvangTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://hls.avang.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="AVASeries.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://avaserieshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="BaranTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/baran/live/playlist.m3u8
+#EXTINF:-1 tvg-id="BBCPersian.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="UK" tvg-language="fas" tvg-quality="",SD
+https://vs-cmaf-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_persian_tv/pc_hd_abr_v2.mpd
+#EXTINF:-1 tvg-id="BoushehrTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/bushehr/live/playlist.m3u8
+#EXTINF:-1 tvg-id="BravoFarsiTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://bravoohls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="CafeFilm.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://cafefhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="CafeTradeTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://cafetradehls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ChannelOne.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://pemirateshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ClassicTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://clshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="DatisTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ronhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="DejTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://rdejhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="DenaTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/dena/live/playlist.m3u8
+#EXTINF:-1 tvg-id="DidgahTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://media.streambrothers.com:1936/8276/8276/playlist.m3u8
+#EXTINF:-1 tvg-id="EkranMovies.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/EkranMovies/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="Energy.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/baenergy/live/playlist.m3u8
+#EXTINF:-1 tvg-id="EPlanetTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://eplhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ErfanHalghehTV.ca" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="CA, IR" tvg-language="fas" tvg-quality="",SD
+https://hls.erfanhalgheh.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="EshraghNetwork.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/eshragh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="FarsTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/fars/live/playlist.m3u8
+#EXTINF:-1 tvg-id="FX1.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://fxtvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="FX2.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://toonixhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="GanjeHozourTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://media.parvizshahbazi.com/ganjehozour/Main_tv/playlist.m3u8
+#EXTINF:-1 tvg-id="GEM24B.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gem24b/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMBollywood.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gembollywood/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMClassic.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemclassic/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMComedy.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemcomedy/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMDrama.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemdrama/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMDramaPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemdramaplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMEntertainment.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gementertainment/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMFilm.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemfilm/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMFit.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemfit/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMFood.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemfood/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMJunior.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemjunior/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMKids.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemkids/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMLife.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemlife/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMMifa.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemmifa/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMMifaPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemmifaplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMNature.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemnature/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMOnyx.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemonyx/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMPixel.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://glserver1.tamashaland.com/live/aBCH96886YznRbGOiqTnnQ__/stream_0.m3u8
+#EXTINF:-1 tvg-id="GEMRiver.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemriver/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMRiverPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemriverplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMRubix.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemrubix/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMRubixPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemrubixplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMSeriesPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemseriesplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMSport.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://steep-wildflower-284d.nhhwkiszzzvcuojxdo.workers.dev/?url=https://gg.hls2.xyz/live/IR+-+GEM+Sport/chunks.m3u8
+#EXTINF:-1 tvg-id="GEMTV.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gem/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GEMTVPlus.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/gemtvplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="GoldStar.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://moviethls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="GolkhaneTv.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/golkhane/live/playlist.m3u8
+#EXTINF:-1 tvg-id="GrandCinema.tr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://gcinemahls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="HabibTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/habib/live/playlist.m3u8
+#EXTINF:-1 tvg-id="HamedanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sina/live/playlist.m3u8
+#EXTINF:-1 tvg-id="HamoonTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/hamoon/live/playlist.m3u8
+#EXTINF:-1 tvg-id="HighVisionTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://streamer1.connectto.com/HIGHVISION_WEB_1205/index.m3u8
+#EXTINF:-1 tvg-id="HodHodFarsiTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://northtelecom.b-cdn.net/hodhodtv.m3u8
+#EXTINF:-1 tvg-id="HomePlus.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="CN" tvg-language="fas" tvg-quality="",SD
+https://homeplushls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ICCplus.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://icchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ICnet1.ca" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="CA" tvg-language="fas" tvg-quality="",SD
+https://icnet1hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ICnet2.ca" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://icnet2hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="icnet3.ca" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ic3hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="iFilm2.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://live.presstv.co.uk/hls/ifilm2.m3u8
+#EXTINF:-1 tvg-id="iFilmPersian.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://live.presstv.co.uk/hls/ifilmfa.m3u8
+#EXTINF:-1 tvg-id="IlamTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/ilam/live/playlist.m3u8
+#EXTINF:-1 tvg-id="ImamHusseinTV1.iq" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IQ" tvg-language="fas" tvg-quality="",SD
+http://fa.imamhossaintv.com/live/ih1.m3u8
+#EXTINF:-1 tvg-id="ImamHusseinTV6.iq" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IQ" tvg-language="fas" tvg-quality="",SD
+http://live.imamhossaintv.com/live/ih6.m3u8
+#EXTINF:-1 tvg-id="IraneFardaTV.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://iranefardalive.com/stream/live.m3u8
+#EXTINF:-1 tvg-id="IranInternational.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="UK, IR" tvg-language="fas" tvg-quality="",SD
+https://hlspackager.akamaized.net/live/DB/IRAN_INTERNATIONAL/HLS/IRAN_INTERNATIONAL.m3u8
+#EXTINF:-1 tvg-id="IranJewishTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+http://iran620.com:1935/live/IranJewishTv/playlist.m3u8
+#EXTINF:-1 tvg-id="IranNama.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://iran613hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="IranNationalRevolutionTV.us" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://hls.irannrtv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="IranPress.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://live.presstv.ir/hls/presstv_5_482/index.m3u8
+#EXTINF:-1 tvg-id="IRIB1.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tv1/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIB2.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tv2/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIB3.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tv3/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIB4.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tv4/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIBMostanad.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/mostanad/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIBOmid.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/omid/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRIBUHD.ir" tvg-name="4K" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",4K
+https://ncdn.telewebion.ir/faratar/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRINN2.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/irinn2/live/playlist.m3u8
+#EXTINF:-1 tvg-id="IRINN.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+http://185.9.2.18/chid_926/index.m3u8
+#EXTINF:-1 tvg-id="IsfahanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/esfahan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="JahanbinTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/jahanbin/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KalemehTV.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://klmhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="KanalJadid.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="UK, IR" tvg-language="fas" tvg-quality="",SD
+https://kjhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="KermanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/kerman/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KhalijeFarsTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/khalijefars/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KhalijTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://khalijhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="KhavaranTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/khavaran/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KhorasanRazaviTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/khorasanrazavi/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KhozestanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/khoozestan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KishTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/kish/live/playlist.m3u8
+#EXTINF:-1 tvg-id="KordestanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/kordestan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="LabbaykTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/labbayk/live/playlist.m3u8
+#EXTINF:-1 tvg-id="LoveWorldPersia.ng" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="NG" tvg-language="fas" tvg-quality="",SD
+https://cdn3.wowza.com/5/aVJETlF0UFdmYTFu/LWPP/ngrp:persia.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="MaahTV.my" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR, AF" tvg-language="fas" tvg-quality="",SD
+https://hls.maahtv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="MahabadTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/mahabad/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Manoto.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/manototv/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="MarjaeyatTVPersian.iq" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IQ" tvg-language="fas" tvg-quality="",SD
+https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8
+#EXTINF:-1 tvg-id="MBCPersia.ae" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="AE" tvg-language="fas" tvg-quality="",SD
+https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-persia/818ee8e4b592dc497608f066d825bfb4/index.m3u8
+#EXTINF:-1 tvg-id="MetaFilmTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://metafilmhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="MihanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://iptv.mihantv.com/mihantv/playlist.m3u8
+#EXTINF:-1 tvg-id="MohabatTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+http://204.11.235.251:1935/live_transcoder/ngrp:mohabat.stream_all/playlist.m3u8
+#EXTINF:-1 tvg-id="MohabatTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://mohabathls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="MTC.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://mtchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="NamayeshTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/namayesh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Nasim.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/nasim/live/playlist.m3u8
+#EXTINF:-1 tvg-id="NationalIranianCongressTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://tv.iraniancongress.com/stream/tv.m3u8
+#EXTINF:-1 tvg-id="NavahangTV.fi" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="FI" tvg-language="fas" tvg-quality="",SD
+https://hls.navahang.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="NewFlix.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://newfhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="NoorTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/noor/live/playlist.m3u8
+#EXTINF:-1 tvg-id="NourTV.ae" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="AE" tvg-language="fas" tvg-quality="",SD
+https://cdn.bestream.io:19360/elfaro4/elfaro4.m3u8
+#EXTINF:-1 tvg-id="OfoghTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/ofogh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="OmideIranTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://oitnhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="OXIRTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://hls.oxir.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Palestinetv.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/palestine/live/playlist.m3u8
+#EXTINF:-1 tvg-id="ParsTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://parshls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PayameArameshTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://hls.keshishhamid.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PayamJavanTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR" tvg-language="fas" tvg-quality="",SD
+https://uni01rtmp.tulix.tv/kensecure/pjtv.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="PayvandTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://uni6rtmp.tulix.tv/ucur1/Payvand/playlist.m3u8
+#EXTINF:-1 tvg-id="PBCTapeshTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US, IR, CA, AU" tvg-language="fas" tvg-quality="",SD
+https://iptv.tapesh.tv/tapesh/playlist.m3u8
+#EXTINF:-1 tvg-id="PersianaCinema.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://cinehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaComedy.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://comedyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaDocs.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://scihls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaFamily.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://familyhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaFight.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://fighthls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaFolk.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://sonhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaIranian.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://irhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaJunior.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://junhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaKorea.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://korhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaLatino.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://latinohls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaMedical.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://phd2hls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaNostalgia.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://noshls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaPlus.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://euhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaReality.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://twohls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaSeries.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://onehls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaTeen.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://kphls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaTravel.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ptravelhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaTurkiye.fr" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR, TR" tvg-language="fas" tvg-quality="",SD
+https://turkhls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PersianaVibe.fr" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://raphls.persiana.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PMC.ae" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="r/MENA" tvg-language="fas" tvg-quality="",SD
+https://pmchls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PMCRoyale.ae" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="r/MENA" tvg-language="fas" tvg-quality="",SD
+https://pmcrohls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="PooyaTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://tgn.bozztv.com/eshgtv-dvrfl05/gin-iribpooya/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="PooyaTVPlus.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/javaneh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="QazvinTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/qazvin/live/playlist.m3u8
+#EXTINF:-1 tvg-id="QuranTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/quran/live/playlist.m3u8
+#EXTINF:-1 tvg-id="RasoulallahTv.ir" tvg-name="HD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",HD
+https://avr.host247.net/live/rasoulallahtv/playlist.m3u8
+#EXTINF:-1 tvg-id="RazaviTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/razavi/live/playlist.m3u8
+#EXTINF:-1 tvg-id="RJTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://rjtvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="RoyaTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/iribu/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SabalanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sabalan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SabzTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sabz/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SahandTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sahand/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SalamatTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/salamat/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SarbedaranTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sarbedaran/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Sat7Pars.cy" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="CY" tvg-language="fas" tvg-quality="",SD
+https://sat7phls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="SemnanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/semnan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SepehrTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/sepehr/live/playlist.m3u8
+#EXTINF:-1 tvg-id="SetarehTV.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://setarehhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="Shabakeh7.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://sh7hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="SimayeAzadi.uk" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://simaytv.akamaized.net/hls/live/2043550/simayhls/index.m3u8
+#EXTINF:-1 tvg-id="SL1.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://slonehls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="SL2.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://sltwohls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="SNNTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://live2.snn.ir/hls/snn2_hd720/index.m3u8
+#EXTINF:-1 tvg-id="T2Movies.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ca-rt.onetv.app/T2Movies/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="T2TV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://t2hls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TabarestanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tabarestan/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Tamasha.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/hdtest/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Tapesh2.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://maxtvhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TBNNejatTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://hls.nejat.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TehranTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tehran/live/playlist.m3u8
+#EXTINF:-1 tvg-id="Tekyemadahi.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/tekyemadahi/live/playlist.m3u8
+#EXTINF:-1 tvg-id="TinTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://tulixcdn.akamaized.net/tintv6/tintv/tintv/playlist.m3u8
+#EXTINF:-1 tvg-id="TMTV.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://hls.tmtv.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="TVANava.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/nava/live/playlist.m3u8
+#EXTINF:-1 tvg-id="TVITN.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://itnhls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="VarzeshTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/varzesh/live/playlist.m3u8
+#EXTINF:-1 tvg-id="VelayatTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/velayat/live/playlist.m3u8
+#EXTINF:-1 tvg-id="VelayatTVNetwork.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://nl.livekadeh.com/hls2/velayattv.m3u8
+#EXTINF:-1 tvg-id="VoATVPersian.us" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="US" tvg-language="fas" tvg-quality="",SD
+https://voaphls.wns.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="WestAzerbaijanTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/azarbayjangharbi/live/playlist.m3u8
+#EXTINF:-1 tvg-id="YazdTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/taban/live/playlist.m3u8
+#EXTINF:-1 tvg-id="YourTimeTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://hls.yourtime.live/hls/stream.m3u8
+#EXTINF:-1 tvg-id="ZagrosTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://ncdn.telewebion.ir/zagros/live/playlist.m3u8
+#EXTINF:-1 tvg-id="ZedTV.ir" tvg-name="SD" group-title="شبکه‌های فارسی" tvg-country="IR" tvg-language="fas" tvg-quality="",SD
+https://zedhls.wns.live/hls/stream.m3u8
