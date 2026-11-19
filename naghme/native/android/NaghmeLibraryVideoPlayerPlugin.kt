@@ -271,9 +271,33 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
         val data = result.data!!
         val treeUri = data.data!!
         persistReadPermission(treeUri, data.flags)
+        scanVideoFolder(treeUri, { files, name, truncated ->
+            call.resolve(JSObject().put("files", files).put("folder", name)
+                .put("treeUri", treeUri.toString()).put("truncated", truncated))
+        }, { error -> call.reject("folder_scan_failed: " + error) })
+    }
+
+    // اسکن پوشهٔ ذخیره‌شده؛ همان URI بعد از خروج و اجرای مجدد برنامه دوباره استفاده می‌شود.
+    @PluginMethod
+    fun listVideoFolder(call: PluginCall) {
+        val raw = call.getString("uri")
+        if (raw.isNullOrBlank()) { call.reject("uri_required"); return }
+        val treeUri = try { Uri.parse(raw) } catch (e: Exception) {
+            call.reject("invalid_tree_uri"); return
+        }
+        scanVideoFolder(treeUri, { files, name, truncated ->
+            call.resolve(JSObject().put("files", files).put("folder", name)
+                .put("treeUri", treeUri.toString()).put("truncated", truncated))
+        }, { error -> call.reject("folder_scan_failed: " + error) })
+    }
+
+    private fun scanVideoFolder(
+        treeUri: Uri,
+        onComplete: (JSArray, String, Boolean) -> Unit,
+        onError: (String) -> Unit
+    ) {
         val root = DocumentFile.fromTreeUri(getContext(), treeUri)
-        val act = activity ?: run { call.reject("activity_unavailable"); return }
-        // اسکن در نخ پس‌زمینه انجام می‌شود؛ فقط داده‌های ساده جمع می‌شوند و JSArray روی UI ساخته می‌شود.
+        val act = activity ?: run { onError("activity_unavailable"); return }
         Thread {
             val found = mutableListOf<JSObject>()
             var visited = 0
@@ -293,7 +317,6 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                         } else {
                             val name = item.name ?: ""
                             val ext = name.substringAfterLast('.', "").lowercase()
-                            // برای سرعت، از پرس‌وجوی MIME برای تک‌تک فایل‌های غیر ویدئویی خودداری می‌کنیم.
                             if (ext in knownVideo) {
                                 videoFile(item.uri, allowUnknownType = true)?.let { found.add(it) }
                             } else if (ext.isBlank()) {
@@ -312,11 +335,11 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
                 act.runOnUiThread {
                     val files = JSArray()
                     found.forEach { files.put(it) }
-                    call.resolve(JSObject().put("files", files).put("folder", root?.name ?: "").put("truncated", visited >= 6000 || found.size >= 1500))
+                    onComplete(files, root?.name ?: "", visited >= 6000 || found.size >= 1500)
                 }
             } catch (e: Exception) {
                 diagnostic("folder_scan_failed", e)
-                act.runOnUiThread { call.reject("folder_scan_failed: " + (e.message ?: "unknown")) }
+                act.runOnUiThread { onError(e.message ?: "unknown") }
             }
         }.start()
     }
