@@ -51,7 +51,7 @@ async function loadPublicRadios(){
    const line=raw.trim();if(!line)continue;
    if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';continue}
    if(line.startsWith('#'))continue;
-   if(/^https?:\\/\\//i.test(line)&&name){const code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name=''}
+    if(/^https?:\/\//i.test(line)&&name){const code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name=''}
   }
   return out;
  }catch(e){console.warn('[NaghmeRadio] public M3U unavailable',e);return []}
