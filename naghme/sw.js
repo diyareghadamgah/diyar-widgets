@@ -2,9 +2,9 @@
    Increase VERSION when publishing a later web release.
 */
 'use strict';
-const VERSION = 'naghme-v2.3.48-web-pwa-stable';
+const VERSION = 'naghme-v2.3.49-web-pwa-folder-shortcuts';
 const SHELL = [
-  './','index.html','style.css','app.js','tags.js','platform.js','hls.min.js',
+  './','index.html','style.css','app.js','tags.js','platform.js','folder-shortcuts.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
   'radio.js','iptv-web-controls.js','native-player.js','iptv-native.js',
   'video.js','player-settings.js','mode-shell.js'
