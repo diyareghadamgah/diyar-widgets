@@ -118,8 +118,8 @@ function parseM3U(text){
    const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
    const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'="([^"]*)"','i'));return m?m[1]:''};
    const rawGroup=get('group-title')||'سایر';
-   const isBroadcastArea=/^(?:c\\/)?[a-z]{2}(?:\\s*[,;]\\s*(?:c\\/)?[a-z]{2})*$/i.test(rawGroup);
-   const area=rawGroup.replace(/c\\//gi,'').trim();
+   const isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup);
+   const area=rawGroup.replace(/c\//gi,'').trim();
    meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
   }else if(!line.startsWith('#')&&/^https?:\/\//i.test(line)){
    const m=meta||{name:line,group:'سایر'};out.push(iptvDecorate({...m,url:line,key:(m.id||m.name)+'|'+line}));meta=null;   // کلید همان قالب قدیمی است تا علاقه‌مندی‌های ذخیره‌شده معتبر بمانند
