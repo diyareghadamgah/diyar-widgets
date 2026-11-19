@@ -182,7 +182,7 @@ function radioM3UHash(value){
 }
 function parseRadioM3U(text){
  const out=[];let current=null,extGroup='';
- const attr=(line,key)=>{const re=new RegExp('(?:^|\\\\s)'+key+'="([^"]*)"','i');const m=line.match(re);return m?m[1].trim():''};
+ const attr=(line,key)=>{const re=new RegExp('(?:^|\\s)'+key+'="([^"]*)"','i');const m=line.match(re);return m?m[1].trim():''};
  for(const raw of String(text||'').replace(/^\\uFEFF/,'').split(/\\r?\\n/)){
   const line=raw.trim();if(!line)continue;
   if(line.startsWith('#EXTINF:')){
@@ -223,10 +223,12 @@ $('#radioM3uFile')?.addEventListener('change',async e=>{
   const known=new Set(state.items.map(s=>{try{return new URL(s.url_resolved||s.url).href}catch{return ''}}));
   const added=[];for(const station of parsed){if(known.has(station.url))continue;known.add(station.url);added.push(station)}
   if(!added.length){status('همهٔ ایستگاه‌های این فایل قبلاً اضافه شده‌اند.');return}
-  const previous=state.custom;state.custom=[...state.custom,...added].slice(-1500);
+  const capacity=Math.max(0,1500-state.custom.length),accepted=added.slice(0,capacity);
+  if(!accepted.length)throw Error('ظرفیت ذخیرهٔ ایستگاه‌های شخصی پر شده است؛ چند ایستگاه قدیمی را حذف کن.');
+  const previous=state.custom;state.custom=[...state.custom,...accepted];
   if(!lsSet('naghmeRadioCustom',state.custom)){state.custom=previous;throw Error('ذخیره در حافظهٔ دستگاه ممکن نشد؛ فضای ذخیره‌سازی را بررسی کن.')}
-  state.items=unique([...state.items,...added]);state.filter='all';render();
-  status(added.length.toLocaleString('fa-IR')+' ایستگاه از فایل «'+file.name+'» اضافه شد؛ تکراری‌ها نادیده گرفته شدند.');
+  state.items=unique([...state.items,...accepted]);state.filter='all';render();
+  status(accepted.length.toLocaleString('fa-IR')+' ایستگاه از فایل «'+file.name+'» اضافه شد؛ تکراری‌ها نادیده گرفته شدند.'+(accepted.length<added.length?'؛ به‌دلیل محدودیت ظرفیت، بخشی از فهرست وارد نشد.':''));
  }catch(err){status('ورود فایل ناموفق بود: '+(err.message||err))}
  finally{input.value=''}
 });
