@@ -51,6 +51,7 @@ async function scan(rec){
 async function pick(kind){
  if(!supported())throw new Error('این مرورگر میان‌بُر پوشه را پشتیبانی نمی‌کند؛ از انتخاب پوشهٔ معمولی استفاده کنید.');
  const handle=await g.showDirectoryPicker({id:'naghme-'+kind,mode:'read'});
+ try{if(g.navigator&&g.navigator.storage&&g.navigator.storage.persist)await g.navigator.storage.persist()}catch(e){console.warn('[NaghmeFolders] persistent storage request unavailable',e)}
  const rec={id:kind+':'+Date.now().toString(36)+':'+Math.random().toString(36).slice(2,7),kind,name:handle.name||'پوشه',handle,added:Date.now()};
  await put(rec);
  return {record:rec,files:await scan(rec)};
