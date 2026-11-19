@@ -27,6 +27,8 @@ const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/i
 const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr ge de gr hk hu is in id ir iq il it jp kw mo my mx mn ma nl nz no om pk ps pa pe ph pl pt qa ro ru sa rs sg sk'.split(' ');
 const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
+// فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
+const IPTV_NEXA_URL='https://raw.githubusercontent.com/diyareghadamgah/diyar-widgets/main/naghme/sources/nexa-persian.m3u';
 const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
@@ -146,7 +148,7 @@ async function loadIPTV(force=false){
    }finally{clearTimeout(timer)}
   };
   const urls=IPTV.url?[IPTV.url]:[];
-  if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL)}
+  if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url)).map(channel=>({...channel,sourceUrl:url}))));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
