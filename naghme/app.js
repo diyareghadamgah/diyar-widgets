@@ -24,7 +24,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
 const IPTV_PAGE=150;
 const IPTV_DEFAULT_URL='https://iptv-org.github.io/iptv/index.m3u';
 // فهرست‌های کشوری iptv-org به‌صورت تنبل و فقط هنگام انتخاب کشور دریافت می‌شوند.
-const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr ge de gr hk hu is in id ir iq il it jp kw mo my mx mn ma nl nz no om pk ps pa pe ph pl pt qa ro ru sa rs sg sk'.split(' ');
+const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr ge de gr hk hu is in id ir iq il it jp kw mo my mx mn ma nl nz no om pk ps pa pe ph pl pt qa ro ru sa rs sg sk ad ao ar aw at az bs bd by be bo ba bn bf cm cv cr hr cw cy cz cd do ec sv gq ee et fo fj gm gh gd gp gt gy ht hn'.split(' ');
 const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
