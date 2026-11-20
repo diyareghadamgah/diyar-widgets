@@ -7,7 +7,7 @@ const SHELL = [
   './','index.html','style.css','app.js','tags.js','platform.js','folder-shortcuts.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
   'radio.js','iptv-web-controls.js','native-player.js','iptv-native.js',
-  'video.js','player-settings.js','mode-shell.js'
+  'video.js','player-settings.js','mode-shell.js','home-cards.webp','public-radio.m3u','data/iran.m3u','sources/nexa-persian.m3u'
 ];
 const STATIC_FILE = /\.(?:js|css|png|jpe?g|svg|ico|woff2?|ttf|eot|webmanifest)$/i;
 self.addEventListener('install', event => {
