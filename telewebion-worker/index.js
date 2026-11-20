@@ -400,6 +400,36 @@ export default {
       : countryPlaylist
         ? "https://iptv-org.github.io/iptv/countries/" + countryPlaylist[1].toLowerCase() + ".m3u"
         : null;
+    if (url.pathname === "/iptv/external") {
+      if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
+      if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
+      let target;
+      try {
+        target = new URL(url.searchParams.get("url") || "");
+      } catch {
+        return new Response("invalid playlist URL\\n", { status: 400, headers: CORS_HEADERS });
+      }
+      const allowedHosts = new Set(["m3url.ru", "www.m3url.ru", "iptvbest.ru", "178.124.210.172"]);
+      if (!allowedHosts.has(target.hostname) || !["http:", "https:"].includes(target.protocol) || target.username || target.password ||
+          (target.hostname === "178.124.210.172" && target.port !== "8000")) {
+        return new Response("playlist host not allowed\\n", { status: 403, headers: CORS_HEADERS });
+      }
+      try {
+        const upstream = await fetch(target.href, {
+          headers: { "User-Agent": "Naghme-IPTV/1.0", "Accept": "audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain,*/*" },
+          redirect: "follow",
+          cf: { cacheTtl: 180, cacheEverything: true },
+        });
+        const headers = new Headers(CORS_HEADERS);
+        headers.set("Content-Type", upstream.headers.get("content-type") || "audio/x-mpegurl; charset=utf-8");
+        headers.set("Cache-Control", "public, max-age=180");
+        if (!upstream.ok) return new Response("playlist upstream HTTP " + upstream.status + "\\n", { status: upstream.status, headers });
+        return new Response(request.method === "HEAD" ? null : upstream.body, { status: 200, headers });
+      } catch (error) {
+        console.error("External IPTV playlist proxy failed", target.hostname, error);
+        return new Response("playlist upstream unavailable\\n", { status: 502, headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8" } });
+      }
+    }
     if (playlistSource) {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
