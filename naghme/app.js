@@ -33,7 +33,7 @@ const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
 function iptvFlag(code){return [...String(code||'').toUpperCase()].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join('')}
-const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],iranChannels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 let iptvScreenWakeLock=null,iptvWakeBound=false;
@@ -365,7 +365,7 @@ function updateIPTVQualityOptions(levels){
 }
 function applyIPTVWebQuality(hls){const sel=$('#iptvQuality');if(!hls||!sel)return;const max=Number(sel.value)||0;if(!max){hls.currentLevel=-1;return}let idx=0;(hls.levels||[]).forEach((l,i)=>{if(Number(l.height)<=max)idx=i});hls.currentLevel=idx;}
 function playIPTV(key){
- const ch=IPTV.channels.find(x=>x.key===key);if(!ch)return;
+ const ch=IPTV.channels.find(x=>x.key===key)||IPTV.iranChannels.find(x=>x.key===key);if(!ch)return;
  if(IPTV.current&&IPTV.current.key===key&&iptvAttached===key&&!IPTV.playError)return;   // کلیک دوباره روی شبکه‌ی در حال پخش، پخش را ریست نمی‌کند
  const box=$('#iptvResults');
  box.querySelectorAll('.tvrow.on').forEach(r=>r.classList.remove('on'));
@@ -410,18 +410,18 @@ window.NaghmeIPTVFullscreen=iptvFullscreen;
 // تغییر جهت صفحه فقط چیدمان را عوض می‌کند؛ تمام‌صفحه فقط با فرمان صریح کاربر فعال می‌شود.
  function iptvFsSync(){if(!(document.fullscreenElement||document.webkitFullscreenElement)&&!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&!(IPTV.current&&IPTV.current.localBlob)&&$('#tvbox')?.classList.contains('tvfull'))){const b=$('#tvbox');if(b){b.classList.remove('tvfull');document.body.classList.remove('tv-fullscreen');$('#tvfsx').hidden=true}}}
 /* ----- فهرست، دسته‌ها و جست‌وجو ----- */
-const iptvSig=()=>IPTV.channels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0)+'|'+IPTV.iranMode;
+const iptvSig=()=>IPTV.channels.length+'|'+IPTV.iranChannels.length+'|'+IPTV.loadedAt+'|'+IPTV.category+'|'+IPTV.country+'|'+IPTV.query+'|'+IPTV.loading+'|'+(IPTV.error?1:0)+'|'+IPTV.iranMode;
 function iptvCountryLabels(c){
  const raw=String(c.country||'').split(/[;,|]+/).map(x=>x.trim()).filter(Boolean);
  if(!raw.length){const m=String(c.id||'').match(/\.([a-z]{2})(?:@|$)/i);if(m)raw.push(m[1])}
  return [...new Set(raw.map(v=>{const code=v.toUpperCase();if(/^[A-Z]{2}$/.test(code))return iptvCountryLabel(code);return v}).filter(Boolean))];
 }
-function iptvCountryEntries(){const counts=new Map();IPTV.channels.forEach(c=>iptvCountryLabels(c).forEach(name=>counts.set(name,(counts.get(name)||0)+1)));return [...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fa'))}
+function iptvCountryEntries(){const counts=new Map();(IPTV.iranMode?IPTV.iranChannels:IPTV.channels).forEach(c=>iptvCountryLabels(c).forEach(name=>counts.set(name,(counts.get(name)||0)+1)));return [...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'fa'))}
 function iptvCountryCatalog(){
  return IPTV_COUNTRY_CODES.map(code=>({code,name:iptvCountryLabel(code)})).filter(x=>x.name&&x.name!==x.code);
 }
 function renderIPTVCountries(){
- const entries=iptvCountryEntries(),counts=new Map(entries),catalog=iptvCountryCatalog(),total=IPTV.channels.length,summary=$('#iptvCountryTotals');
+ const entries=iptvCountryEntries(),counts=new Map(entries),catalog=iptvCountryCatalog(),total=(IPTV.iranMode?IPTV.iranChannels:IPTV.channels).length,summary=$('#iptvCountryTotals');
  if(summary)summary.textContent=fa(new Set([...entries.map(x=>x[0]),...catalog.map(x=>x.name)]).size)+' کشور • '+fa(total)+' شبکه';
  const valid=new Set([...entries.map(x=>x[0]),...catalog.map(x=>x.name)]);
  if(IPTV.country!=='همه'&&!valid.has(IPTV.country))IPTV.country='همه';
@@ -486,7 +486,7 @@ const IPTV_IRAN_PLAYLIST='https://raw.githubusercontent.com/shayanline/iptv-iran
 const IPTV_IRAN_PWA_PLAYLIST='data/iran.m3u';
 let iptvIranLoadPromise=null;
 function countIPTVIranChannels(){
- const iran=IPTV.channels.filter(c=>c.groups&&c.groups.some(g=>g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی'));
+ const iran=IPTV.iranChannels;
  return {
   national:iran.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length,
   provincial:iran.filter(c=>c.groups.includes('شبکه‌های استانی')).length
@@ -524,9 +524,7 @@ async function loadIPTVIranChannels(){
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
   if(national+provincial<57)throw Error('فهرست ایران ناقص است؛ فقط '+(national+provincial)+' شبکه شناسایی شد (انتظار: حداقل ۵۷). مسیر فایل: '+IPTV_IRAN_PWA_PLAYLIST);
-  const map=new Map(IPTV.channels.map(c=>[c.key,c]));
-  parsed.forEach(c=>map.set(c.key,c));
-  IPTV.channels=mergeIPTVChannels([...map.values()]);
+  IPTV.iranChannels=dedupeIPTVChannels(parsed);
   IPTV.iranPlaylistLoaded=true;IPTV.loadedAt=Date.now();IPTV.error='';
   return countIPTVIranChannels();
  })();
@@ -560,7 +558,8 @@ async function toggleIPTVIranMode(){
 }
 function iptvFiltered(){
  const q=iptvNorm(IPTV.query).trim(),cat=IPTV.category,fav=cat==='موردعلاقه‌ها',all=cat==='همه'||fav,country=IPTV.country;
- return IPTV.channels.filter(c=>(!IPTV.iranMode||c.groups.some(g=>g==='شبکه‌های سراسری سیما'||g==='شبکه‌های استانی'))&&(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
+ const source=IPTV.iranMode?IPTV.iranChannels:IPTV.channels;
+ return source.filter(c=>(all||c.groups.includes(cat))&&(!fav||IPTV.favorites.includes(c.key))&&(country==='همه'||iptvCountryLabels(c).includes(country))&&(!q||c.search.includes(q)))
 }
 function iptvRowHtml(c){
  return `<div class="tvrow${IPTV.current&&c.key===IPTV.current.key?' on':''}" data-a="iptvplay" data-v="${esc(c.key)}">${c.logo?`<img src="${esc(c.logo)}" loading="lazy" onerror="this.style.display='none'">`:'<span class="tvlogo">📺</span>'}<div class="m"><b>${esc(c.name)}</b><span>${esc(c.group||'سایر')}${c.country?' • '+esc(c.country):''}</span></div><button class="ib" data-a="iptvfav" data-v="${esc(c.key)}" aria-label="علاقه‌مندی">${IPTV.favorites.includes(c.key)?'♥':'♡'}</button></div>`}
@@ -572,14 +571,14 @@ function renderIPTVList(keep){
  const box=$('#iptvResults');if(!box)return;
  const top=keep?box.scrollTop:0;
  IPTV.filtered=iptvFiltered();IPTV.shown=Math.min(IPTV.filtered.length,IPTV_PAGE);IPTV.sig=iptvSig();
- box.innerHTML=IPTV.filtered.slice(0,IPTV.shown).map(iptvRowHtml).join('')||`<p class="d tvempty">${IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':!IPTV.channels.length?'فهرستی در دسترس نیست؛ «دریافت» را بزنید.':IPTV.category==='موردعلاقه‌ها'&&!IPTV.query.trim()?'هنوز شبکه‌ای را به علاقه‌مندی‌ها اضافه نکرده‌اید.':'شبکه‌ای برای نمایش پیدا نشد.'}</p>`;
+ box.innerHTML=IPTV.filtered.slice(0,IPTV.shown).map(iptvRowHtml).join('')||`<p class="d tvempty">${IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':!(IPTV.iranMode?IPTV.iranChannels.length:IPTV.channels.length)?'فهرستی در دسترس نیست؛ «دریافت» را بزنید.':IPTV.category==='موردعلاقه‌ها'&&!IPTV.query.trim()?'هنوز شبکه‌ای را به علاقه‌مندی‌ها اضافه نکرده‌اید.':'شبکه‌ای برای نمایش پیدا نشد.'}</p>`;
  if(box.clientHeight>0)for(let i=0;i<10&&box.scrollHeight<=box.clientHeight+300&&IPTV.shown<IPTV.filtered.length;i++)iptvMore();
  box.scrollTop=top;
  const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url}
 function renderIPTVChips(){
  const invalidGroup=v=>!String(v==null?'':v).trim()||/^(undefined|null|unknown)$/i.test(String(v).trim());
  const cnt=new Map();
- IPTV.channels.forEach(c=>{
+ (IPTV.iranMode?IPTV.iranChannels:IPTV.channels).forEach(c=>{
   const groups=(Array.isArray(c.groups)?c.groups:String(c.group==null?'':c.group).split(';'))
    .map(g=>String(g==null?'':g).trim()).filter(g=>!invalidGroup(g));
   (groups.length?groups:['سایر']).forEach(g=>cnt.set(g,(cnt.get(g)||0)+1));
@@ -603,7 +602,7 @@ function renderIPTV(){   // سبک و بدون بازنویسی ویدئو؛ ف�
  syncIPTVIranButton();
  const m=$('#tvMsg'),txt=IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':(IPTV.error||'');
  if(m.textContent!==txt)m.textContent=txt;m.hidden=!txt;m.classList.toggle('tverror',!!IPTV.error&&!IPTV.loading);
- const cs=IPTV.channels.length+'|'+IPTV.loadedAt;if(cs!==IPTV.chipSig){IPTV.chipSig=cs;renderIPTVChips();IPTV.countrySig=cs;renderIPTVCountries()}else if(IPTV.countrySig!==cs){IPTV.countrySig=cs;renderIPTVCountries()}
+ const cs=IPTV.channels.length+'|'+IPTV.iranChannels.length+'|'+IPTV.loadedAt+'|'+IPTV.iranMode;if(cs!==IPTV.chipSig){IPTV.chipSig=cs;renderIPTVChips();IPTV.countrySig=cs;renderIPTVCountries()}else if(IPTV.countrySig!==cs){IPTV.countrySig=cs;renderIPTVCountries()}
  if(iptvSig()!==IPTV.sig)renderIPTVList(false);
  updateIPTVNow()}
 function buildIPTV(){
