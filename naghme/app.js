@@ -501,7 +501,7 @@ async function loadIPTVIranChannels(){
   const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
-  if(!national||!provincial)throw Error('فهرست دریافتی کامل نیست؛ تعداد شبکه‌های سراسری یا استانی صفر است.');
+  if(!national&&!provincial)throw Error('فهرست دریافتی هیچ شبکه سراسری یا استانی ندارد.');
   const map=new Map(IPTV.channels.map(c=>[c.key,c]));parsed.forEach(c=>map.set(c.key,c));
   IPTV.channels=mergeIPTVChannels([...map.values()]);
   IPTV.iranPlaylistLoaded=true;IPTV.loadedAt=Date.now();IPTV.error='';
@@ -524,7 +524,7 @@ async function toggleIPTVIranMode(){
  IPTV.error='در حال دریافت شبکه‌های سراسری و استانی ایران…';iptvRefresh();
  try{
   const counts=await loadIPTVIranChannels();
-  if(!counts||!counts.national||!counts.provincial)throw Error('تعداد شبکه‌های سراسری و استانی پس از بارگذاری قابل تأیید نیست.');
+  if(!counts||(!counts.national&&!counts.provincial))throw Error('هیچ شبکه‌ای پس از بارگذاری یافت نشد.');
   IPTV.iranMode=true;IPTV.category='همه';IPTV.country='همه';IPTV.query='';
   const search=$('#iptvSearch');if(search)search.value='';
   IPTV.chipSig='';IPTV.countrySig='';
