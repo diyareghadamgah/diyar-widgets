@@ -490,26 +490,25 @@ async function loadIPTVIranChannels(){
   // اول از فایل همراه برنامه بخوان؛ این مسیر در PWA و APK یکسان است و به CORS یا GitHub وابسته نیست.
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
   try{
-   const response=await fetch(IPTV_IRAN_PWA_PLAYLIST,{cache:'no-store',signal:controller.signal});
-   if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فهرست داخلی نغمه');
+   const localUrl=new URL(IPTV_IRAN_PWA_PLAYLIST,document.baseURI).href;
+   const response=await fetch(localUrl,{cache:'reload',signal:controller.signal});
+   if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فایل داخلی ('+localUrl+')');
    body=await response.text();
   }catch(e){localError=e}
   finally{clearTimeout(timer)}
-  // اگر فایل همراه نسخه موجود نبود، منبع آنلاین پشتیبان را امتحان کن.
+  // اگر فایل داخلی واقعاً قابل دریافت نبود، فقط در اندروید منبع پشتیبان را امتحان کن.
   if(!body.trim()){
    if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
     const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
-   }else if(localError){
-    throw new Error('فایل داخلی شبکه‌های ایران در دسترس نیست: '+(localError.message||localError));
    }else{
-    throw Error('فهرست داخلی نغمه خالی است.');
+    throw new Error('فایل داخلی شبکه‌های ایران در دسترس نیست: '+(localError?.message||'پاسخی دریافت نشد'));
    }
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
   const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
-  if(!national&&!provincial)throw Error('فهرست دریافتی هیچ شبکه سراسری یا استانی ندارد.');
+  if(national+provincial<57)throw Error('فهرست ایران ناقص است؛ فقط '+(national+provincial)+' شبکه شناسایی شد (انتظار: حداقل ۵۷). مسیر فایل: '+IPTV_IRAN_PWA_PLAYLIST);
   const map=new Map(IPTV.channels.map(c=>[c.key,c]));
   parsed.forEach(c=>map.set(c.key,c));
   IPTV.channels=mergeIPTVChannels([...map.values()]);
