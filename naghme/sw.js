@@ -2,7 +2,7 @@
    Increase VERSION when publishing a later web release.
 */
 'use strict';
-const VERSION = 'naghme-v2.3.52-m3u-files-cached';
+const VERSION = 'naghme-v2.3.53-web-iptv-cors-proxy';
 const SHELL = [
   './','index.html','style.css','app.js','tags.js','platform.js','folder-shortcuts.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
