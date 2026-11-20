@@ -29,6 +29,13 @@ const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
 const IPTV_NEXA_URL='https://raw.githubusercontent.com/itsyebekhe/nexa/main/playlist.m3u';
+// مرورگر برای فهرست‌های iptv-org از Worker دارای CORS استفاده می‌کند؛ APK بومی آدرس اصلی را می‌خواند.
+const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
+function iptvPlaylistProxyUrl(raw){
+ if(raw===IPTV_DEFAULT_URL)return IPTV_WORKER_ORIGIN+'/iptv/index.m3u';
+ const country=String(raw).match(/^https:\/\/iptv-org\.github\.io\/iptv\/countries\/([a-z]{2})\.m3u$/i);
+ return country?IPTV_WORKER_ORIGIN+'/iptv/countries/'+country[1].toLowerCase()+'.m3u':raw;
+}
 const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
@@ -144,7 +151,8 @@ async function loadIPTV(force=false){
    }
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
    try{
-    const response=await fetch(url,{cache:'no-store',signal:controller.signal});
+    const requestUrl=iptvPlaylistProxyUrl(url);
+    const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal});
     if(!response.ok)throw new Error('HTTP '+response.status);
     return await response.text();
    }catch(e){
@@ -301,7 +309,6 @@ function manageIPTVPlaylist(){
   ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
  ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست پیش‌فرض غیرفعال است')+'\n\nفهرست پیش‌فرض نغمه در شروع برنامه به‌صورت خودکار نمایش داده می‌شود. «حذف موقت» فقط آن را پنهان می‌کند و آدرس و اطلاعاتش را پاک نمی‌کند؛ با «بازگشت به فهرست پیش‌فرض نغمه» دوباره فعال می‌شود. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» مدیریت می‌شوند.')}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
-const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvWebStreamUrl(raw){
  try{
   const u=new URL(raw);
@@ -448,7 +455,7 @@ async function loadIPTVCountry(code){
    const result=await window.NaghmeVideoPlayer.fetchText(url);text=result.text;
   }else{
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
-   try{const response=await fetch(url,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
+   try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
    finally{clearTimeout(timer)}
   }
   const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
