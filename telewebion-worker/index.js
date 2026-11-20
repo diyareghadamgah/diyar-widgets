@@ -394,15 +394,17 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     // Same-origin CORS proxy for the public IPTV-org playlists used by Naghme Web.
-    const playlistSources = {
-      "/iptv/index.m3u": "https://iptv-org.github.io/iptv/index.m3u",
-      "/iptv/countries/ir.m3u": "https://iptv-org.github.io/iptv/countries/ir.m3u",
-    };
-    if (playlistSources[url.pathname]) {
+    const countryPlaylist = url.pathname.match(/^\/iptv\/countries\/([a-z]{2})\.m3u$/i);
+    const playlistSource = url.pathname === "/iptv/index.m3u"
+      ? "https://iptv-org.github.io/iptv/index.m3u"
+      : countryPlaylist
+        ? "https://iptv-org.github.io/iptv/countries/" + countryPlaylist[1].toLowerCase() + ".m3u"
+        : null;
+    if (playlistSource) {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
       try {
-        const upstream = await fetch(playlistSources[url.pathname], {
+        const upstream = await fetch(playlistSource, {
           headers: { "User-Agent": "Naghme-IPTV/1.0", "Accept": "text/plain,*/*" },
           cf: { cacheTtl: 300, cacheEverything: true },
         });
