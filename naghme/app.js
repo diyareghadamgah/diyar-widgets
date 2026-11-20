@@ -481,7 +481,8 @@ async function loadIPTVIranChannels(){
  if(iptvIranLoadPromise)return iptvIranLoadPromise;
  if(IPTV.iranPlaylistLoaded){
   const cached=countIPTVIranChannels();
-  if(cached.national>0||cached.provincial>0)return cached;
+  // کش ناقصِ نسخه‌های قبلی (مثلاً فقط یکی‌دو شبکه) نباید مانع بارگذاری فهرست کامل شود.
+  if(cached.national+cached.provincial>=20)return cached;
   IPTV.iranPlaylistLoaded=false;
  }
  iptvIranLoadPromise=(async()=>{
