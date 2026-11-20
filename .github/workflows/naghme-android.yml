@@ -89,6 +89,11 @@ jobs:
           unzip -q "$APK" -d /tmp/apk
           echo "== web assets inside APK =="
           ls /tmp/apk/assets/public
+          echo "== verify bundled Iran M3U =="
+          test -s /tmp/apk/assets/public/data/iran.m3u
+          test "$(grep -c '^#EXTINF.*group-title="شبکه‌های سراسری سیما"' /tmp/apk/assets/public/data/iran.m3u)" -eq 23
+          test "$(grep -c '^#EXTINF.*group-title="شبکه‌های استانی"' /tmp/apk/assets/public/data/iran.m3u)" -eq 34
+          grep -q "فهرست ایران ناقص است" /tmp/apk/assets/public/app.js
           test -f /tmp/apk/assets/public/mode-shell.js
           grep -q 'home-artwork' /tmp/apk/assets/public/index.html
           test -s /tmp/apk/assets/public/home-cards.webp
