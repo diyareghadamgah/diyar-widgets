@@ -22,7 +22,7 @@ const S={trees:[],songs:[],map:new Map(),files:new Map(),covers:new Map(),pl:[],
    render() در این صفحه innerHTML را بازنویسی نمی‌کند؛ فقط بخش‌های تغییرکرده (فهرست/دسته‌ها/نام شبکه) به‌روز می‌شوند.
    انتخاب شبکه = فقط تعویض منبع ویدئو. فقط #iptvResults اسکرول می‌خورد. */
 const IPTV_PAGE=150;
-const IPTV_DEFAULT_URL='https://diyar-widgets.diyareghadamgah.workers.dev/iptv/index.m3u';
+const IPTV_DEFAULT_URL='https://iptv-org.github.io/iptv/index.m3u';
 // فهرست‌های کشوری iptv-org به‌صورت تنبل و فقط هنگام انتخاب کشور دریافت می‌شوند.
 const IPTV_COUNTRY_CODES='af dz am au al bh bb br bg kh ca cl cn co dk eg fi fr ge de gr hk hu is in id ir iq il it jp kw mo my mx mn ma nl nz no om pk ps pa pe ph pl pt qa ro ru sa rs sg sk'.split(' ');
 const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
@@ -33,7 +33,7 @@ const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
 function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvCountryAliases[code]||iptvCountryName(code).fa||code}
 function iptvFlag(code){return [...String(code||'').toUpperCase()].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join('')}
-const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://diyar-widgets.diyareghadamgah.workers.dev/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
+const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
 let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 let iptvScreenWakeLock=null,iptvWakeBound=false;
