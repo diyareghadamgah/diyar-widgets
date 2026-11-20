@@ -12,4 +12,16 @@ fs.writeFileSync(path.join(out,'build-info.json'),JSON.stringify({version:ver,bu
 const data=path.join(root,'data');if(fs.existsSync(data))fs.cpSync(data,path.join(out,'data'),{recursive:true});
 const fonts=path.join(root,'fonts');if(fs.existsSync(fonts))fs.cpSync(fonts,path.join(out,'fonts'),{recursive:true});
 if(missing.length){console.error('فایل‌های ناموجود: '+missing.join(', '));process.exit(1)}
+
+// کپی پوشه‌های data و sources
+const dataDir = path.join(root, 'data');
+if (fs.existsSync(dataDir)) {
+    fs.cpSync(dataDir, path.join(out, 'data'), { recursive: true });
+    console.log('data/ کپی شد');
+}
+const sourcesDir = path.join(root, 'sources');
+if (fs.existsSync(sourcesDir)) {
+    fs.cpSync(sourcesDir, path.join(out, 'sources'), { recursive: true });
+    console.log('sources/ کپی شد');
+}
 console.log('www آماده شد ('+FILES.length+' فایل) → '+out);
