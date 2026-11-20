@@ -29,12 +29,122 @@ const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
 const IPTV_NEXA_URL='https://raw.githubusercontent.com/itsyebekhe/nexa/main/playlist.m3u';
+// منابع مکمل M3U ارسالی؛ آدرس‌های تکراری در زمان ثبت حذف شده‌اند.
+const IPTV_COMMUNITY_SOURCES=[
+  "https://m3url.ru/avtomini.m3u",
+  "https://m3url.ru/нашару_тв.m3u8",
+  "https://m3url.ru/rain-6.m3u",
+  "https://m3url.ru/545-tv.com.m3u8",
+  "https://m3url.ru/vip-shara.m3u8",
+  "https://m3url.ru/playlist.m3u8",
+  "https://m3url.ru/Edos_edem.m3u",
+  "https://m3url.ru/troya_tv.m3u",
+  "https://m3url.ru/TV-nasha.m3u",
+  "https://m3url.ru/pleylist_full.m3u",
+  "https://m3url.ru/Iloock-591.m3u8",
+  "https://m3url.ru/Iloock-3255.m3u8",
+  "https://m3url.ru/Эдем-1911.m3u8",
+  "https://m3url.ru/Эдем-3178.m3u8",
+  "https://m3url.ru/Эдем-3255.m3u8",
+  "https://m3url.ru/Эдем-3919.m3u8",
+  "https://m3url.ru/castle-2.m3u",
+  "https://m3url.ru/solyanka.m3u",
+  "https://m3url.ru/multisource.m3u",
+  "https://m3url.ru/546615.m3u",
+  "https://m3url.ru/RU_тв.m3u",
+  "https://m3url.ru/KZ_тв.m3u",
+  "https://m3url.ru/yossotvt.m3u8",
+  "https://m3url.ru/опiptv.m3u8",
+  "https://m3url.ru/447689.m3u",
+  "https://m3url.ru/63664.m3",
+  "https://m3url.ru/Russia.m3u",
+  "https://m3url.ru/mitv-_(2).m3u8",
+  "https://m3url.ru/ott.m3u",
+  "https://m3url.ru/753344.m3u",
+  "https://m3url.ru/sport.m3u",
+  "https://m3url.ru/400427.m3u",
+  "https://iptvbest.ru/i/bestK.m3u",
+  "http://178.124.210.172:8000/playlist.m3u8",
+  "https://m3url.ru/fri-3.m3u",
+  "https://m3url.ru/fri-4.m3u",
+  "https://m3url.ru/fri-5.m3u",
+  "https://m3url.ru/боевики.m3u",
+  "https://m3url.ru/390к.m3u8",
+  "https://m3url.ru/857к.m3u8",
+  "https://m3url.ru/Sport_126к.m3u",
+  "https://m3url.ru/802к.m3u8",
+  "https://m3url.ru/sport_84k",
+  "https://m3url.ru/788к.m3u8",
+  "https://m3url.ru/кино_каналы_71к.m3u",
+  "https://m3url.ru/Setanta_Event.m3u",
+  "https://m3url.ru/1038к.m3u8",
+  "https://m3url.ru/ru.single.m3u",
+  "https://m3url.ru/multi.m3u",
+  "https://m3url.ru/tv-1.m3u",
+  "https://m3url.ru/tv-2.m3u",
+  "https://m3url.ru/tv-3.m3u",
+  "https://m3url.ru/Censor_(1).m3u8",
+  "https://m3url.ru/Xxx.m3u8",
+  "https://m3url.ru/TV2.m3u",
+  "https://m3url.ru/TV3.m3u",
+  "https://m3url.ru/Cinema.m3u",
+  "https://m3url.ru/Sport.m3u",
+  "https://m3url.ru/ТВ.m3u",
+  "https://m3url.ru/ТВ2.m3u8",
+  "https://m3url.ru/ТВ3.m3u",
+  "https://m3url.ru/Спорт.m3u",
+  "https://m3url.ru/Спорт2.m3u",
+  "https://m3url.ru/спорт.m3u",
+  "https://m3url.ru/Sports.m3u",
+  "https://m3url.ru/1686к.m3u",
+  "https://m3url.ru/474к.m3u",
+  "https://m3url.ru/1577к.m3u",
+  "https://m3url.ru/TROYA.m3u8",
+  "https://m3url.ru/385к.m3u8",
+  "https://m3url.ru/2218к.m3u",
+  "https://m3url.ru/2437к.m3u",
+  "https://m3url.ru/2617к.m3u",
+  "https://m3url.ru/3828к.m3u",
+  "https://m3url.ru/1415к.m3u",
+  "https://m3url.ru/Тв.m3u8",
+  "https://m3url.ru/Тв2.m3u8",
+  "https://m3url.ru/Тв3.m3u8",
+  "https://m3url.ru/Тв4.m3u",
+  "https://m3url.ru/Тв5.m3u",
+  "https://m3url.ru/Тв6.m3u",
+  "https://m3url.ru/Тв7.m3u8",
+  "https://m3url.ru/vault-1.m3u",
+  "https://m3url.ru/vault-2.m3u",
+  "https://m3url.ru/vault-3.m3u",
+  "https://m3url.ru/vault-4.m3u",
+  "https://m3url.ru/vault-5.m3u",
+  "https://m3url.ru/vault-6.m3u",
+  "https://m3url.ru/vault-7.m3u",
+  "https://m3url.ru/vault-8.m3u",
+  "https://m3url.ru/vault-9.m3u",
+  "https://m3url.ru/vault-10.m3u",
+  "https://m3url.ru/vault-11.m3u",
+  "https://m3url.ru/Tv.m3u",
+  "https://m3url.ru/Tv2.m3u8",
+  "https://m3url.ru/Tv3.m3u8",
+  "https://m3url.ru/Kino.m3u",
+  "https://m3url.ru/Kino2.m3u8",
+  "https://m3url.ru/Kino3.m3u8",
+  "https://m3url.ru/Kino4.m3u",
+  "https://m3url.ru/Kino5.m3u8",
+  "https://m3url.ru/Тв.m3u",
+  "https://m3url.ru/Тв2.m3u",
+  "https://m3url.ru/Тв3.m3u"
+];
+
 // مرورگر برای فهرست‌های iptv-org از Worker دارای CORS استفاده می‌کند؛ APK بومی آدرس اصلی را می‌خواند.
 const IPTV_WORKER_ORIGIN='https://diyar-widgets.diyareghadamgah.workers.dev';
 function iptvPlaylistProxyUrl(raw){
  if(raw===IPTV_DEFAULT_URL)return IPTV_WORKER_ORIGIN+'/iptv/index.m3u';
  const country=String(raw).match(/^https:\/\/iptv-org\.github\.io\/iptv\/countries\/([a-z]{2})\.m3u$/i);
- return country?IPTV_WORKER_ORIGIN+'/iptv/countries/'+country[1].toLowerCase()+'.m3u':raw;
+ if(country)return IPTV_WORKER_ORIGIN+'/iptv/countries/'+country[1].toLowerCase()+'.m3u';
+ try{const u=new URL(raw);if(['m3url.ru','www.m3url.ru','iptvbest.ru','178.124.210.172'].includes(u.hostname))return IPTV_WORKER_ORIGIN+'/iptv/external?url='+encodeURIComponent(u.href)}catch{}
+ return raw;
 }
 const iptvCountryCache=new Map();
 const iptvCountryAliases={IR:'ایران',US:'آمریکا',RU:'روسیه',SU:'شوروی',GB:'بریتانیا',UK:'بریتانیا',TR:'ترکیه',DE:'آلمان',CN:'چین',IN:'هند',BR:'برزیل',CA:'کانادا',AU:'استرالیا',FR:'فرانسه',IT:'ایتالیا',JP:'ژاپن',SA:'عربستان سعودی',AE:'امارات متحده عربی',EG:'مصر',IQ:'عراق',PK:'پاکستان',PS:'فلسطین',QA:'قطر',KW:'کویت',BH:'بحرین',OM:'عمان',NZ:'نیوزیلند',NL:'هلند',GR:'یونان',ES:'اسپانیا',PT:'پرتغال',PL:'لهستان',RO:'رومانی',RS:'صربستان',AL:'آلبانی',AM:'ارمنستان',GE:'گرجستان',DK:'دانمارک',FI:'فنلاند',IS:'ایسلند',NO:'نروژ',HU:'مجارستان',BG:'بلغارستان',CL:'شیلی',CO:'کلمبیا',MX:'مکزیک',MA:'مراکش',ID:'اندونزی',MY:'مالزی',PH:'فیلیپین',SG:'سنگاپور',HK:'هنگ‌کنگ'};
@@ -161,16 +271,22 @@ async function loadIPTV(force=false){
    }finally{clearTimeout(timer)}
   };
   const urls=IPTV.url?[IPTV.url]:[];
-  if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
+  if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL);urls.push(...IPTV_COMMUNITY_SOURCES)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
-  const results=await Promise.allSettled(urls.map(async url=>parseM3U(await fetchPlaylistText(url)).map(channel=>({...channel,sourceUrl:url}))));
+  const uniqueUrls=[...new Set(urls)];
+  const results=[];
+  for(let i=0;i<uniqueUrls.length;i+=8){
+   const batch=await Promise.allSettled(uniqueUrls.slice(i,i+8).map(async url=>parseM3U(await fetchPlaylistText(url)).map(channel=>({...channel,sourceUrl:url}))));
+   results.push(...batch);
+  }
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=dedupeIPTVChannels(merged);
   if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
-  const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=urls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
-  if(failedExtra.length)IPTV.error='دریافت فهرست اضافی '+failedExtra.map(x=>x.name||x.url).join('، ')+' ناموفق بود؛ فهرست پیش‌فرض و شبکه‌های قبلی حفظ شدند.';
+  const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
+  const failedCommunity=IPTV_COMMUNITY_SOURCES.filter(url=>{const i=uniqueUrls.indexOf(url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
+  if(failedExtra.length||failedCommunity.length)IPTV.error='تعدادی از فهرست‌های مکمل پاسخ ندادند ('+fa(failedExtra.length+failedCommunity.length)+' مورد)؛ منابع موفق و شبکه‌های قبلی حفظ شدند.';
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
   if(generation!==iptvLoadGeneration)return;
