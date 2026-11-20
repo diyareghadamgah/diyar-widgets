@@ -170,7 +170,7 @@ async function loadIPTV(force=false){
   IPTV.channels=mergeIPTVChannels(IPTV.channels);
   IPTV.error=!IPTV.url?'آدرس فهرست تنظیم نشده است؛ از «مدیریت فهرست» آدرس تازه وارد کنید یا فایل M3U را بارگذاری کنید.':'دریافت فهرست ناموفق بود: '+(e.message||'خطای شبکه')+' — '+(IPTV.channels.length?'کانال‌های فایل‌های واردشده همچنان در دسترس‌اند.':'ممکن است دسترسی CORS یا اینترنت محدود باشد.');
  }
- finally{if(generation===iptvLoadGeneration){IPTV.loading=false;iptvRefresh()}}
+ finally{if(generation===iptvLoadGeneration){IPTV.loading=false;iptvRefresh();if(IPTV.url===IPTV_DEFAULT_URL)loadAllIPTVCountries()}}
 }
 /* ----- پخش: یک عنصر <video> ثابت و حداکثر یک نمونه‌ی HLS ----- */
 function setIPTVStatus(m){const s=$('#iptvStatus');if(s)s.textContent=m||''}
@@ -441,23 +441,38 @@ async function loadIPTVCountry(code){
   IPTV.channels=mergeIPTVChannels([...IPTV.channels,...cached]);IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return cached.length;
  }
  const job=(async()=>{
-  let text;
+  const cacheKey='iptvCountryM3U:'+code;
+  try{const saved=await kvGet(cacheKey);if(saved&&Array.isArray(saved.channels)&&saved.channels.length&&Date.now()-Number(saved.savedAt||0)<6*60*60*1000)return saved.channels}catch(e){console.warn('country playlist cache',code,e)}
+  let text;const url=IPTV_COUNTRY_BASE+code+'.m3u';
   if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-   const result=await window.NaghmeVideoPlayer.fetchText(IPTV_COUNTRY_BASE+code+'.m3u');text=result.text;
+   const result=await window.NaghmeVideoPlayer.fetchText(url);text=result.text;
   }else{
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
-   try{const response=await fetch(IPTV_COUNTRY_BASE+code+'.m3u',{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
+   try{const response=await fetch(url,{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
    finally{clearTimeout(timer)}
   }
-  const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase()}));
+  const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
   if(!parsed.length)throw Error('فهرست این کشور خالی است یا ساختار M3U معتبر نیست.');
-  return parsed;
+  await kvSet(cacheKey,{savedAt:Date.now(),channels:parsed});return parsed;
  })();
  iptvCountryCache.set(code,job);
  try{
   const parsed=await job;IPTV.channels=mergeIPTVChannels([...IPTV.channels,...parsed]);IPTV.loadedAt=Date.now();IPTV.error='';
   IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();return parsed.length;
  }catch(e){iptvCountryCache.delete(code);throw e}
+}
+let iptvBulkCountryPromise=null;
+async function loadAllIPTVCountries(){
+ if(iptvBulkCountryPromise||IPTV.url!==IPTV_DEFAULT_URL)return iptvBulkCountryPromise;
+ iptvBulkCountryPromise=(async()=>{
+  const codes=IPTV_COUNTRY_CODES.filter(code=>!iptvCountryCache.has(code));
+  for(let i=0;i<codes.length;i+=4){
+   if(IPTV.url!==IPTV_DEFAULT_URL)break;
+   await Promise.allSettled(codes.slice(i,i+4).map(code=>loadIPTVCountry(code)));
+  }
+  IPTV.chipSig='';IPTV.countrySig='';iptvRefresh();
+ })();
+ try{await iptvBulkCountryPromise}finally{iptvBulkCountryPromise=null}
 }
 async function setIPTVCountry(v){
  IPTV.country=v;renderIPTVCountries();renderIPTVList(false);
