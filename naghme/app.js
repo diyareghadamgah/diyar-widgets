@@ -481,28 +481,36 @@ async function loadIPTVIranChannels(){
  if(iptvIranLoadPromise)return iptvIranLoadPromise;
  if(IPTV.iranPlaylistLoaded){
   const cached=countIPTVIranChannels();
-  if(cached.national>0&&cached.provincial>0)return cached;
+  if(cached.national>0||cached.provincial>0)return cached;
   IPTV.iranPlaylistLoaded=false;
  }
  iptvIranLoadPromise=(async()=>{
-  let body;
-  if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-   const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
-  }else{
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-   try{
-    // PWA: same-origin asset avoids browser CORS restrictions on raw.githubusercontent.com
-    const response=await fetch(IPTV_IRAN_PWA_PLAYLIST,{cache:'no-store',signal:controller.signal});
-    if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فهرست داخلی نغمه');
-    body=await response.text();
-   }finally{clearTimeout(timer)}
+  let body='',localError=null;
+  // اول از فایل همراه برنامه بخوان؛ این مسیر در PWA و APK یکسان است و به CORS یا GitHub وابسته نیست.
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+  try{
+   const response=await fetch(IPTV_IRAN_PWA_PLAYLIST,{cache:'no-store',signal:controller.signal});
+   if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فهرست داخلی نغمه');
+   body=await response.text();
+  }catch(e){localError=e}
+  finally{clearTimeout(timer)}
+  // اگر فایل همراه نسخه موجود نبود، منبع آنلاین پشتیبان را امتحان کن.
+  if(!body.trim()){
+   if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+    const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
+   }else if(localError){
+    throw new Error('فایل داخلی شبکه‌های ایران در دسترس نیست: '+(localError.message||localError));
+   }else{
+    throw Error('فهرست داخلی نغمه خالی است.');
+   }
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
   const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
   if(!national&&!provincial)throw Error('فهرست دریافتی هیچ شبکه سراسری یا استانی ندارد.');
-  const map=new Map(IPTV.channels.map(c=>[c.key,c]));parsed.forEach(c=>map.set(c.key,c));
+  const map=new Map(IPTV.channels.map(c=>[c.key,c]));
+  parsed.forEach(c=>map.set(c.key,c));
   IPTV.channels=mergeIPTVChannels([...map.values()]);
   IPTV.iranPlaylistLoaded=true;IPTV.loadedAt=Date.now();IPTV.error='';
   return countIPTVIranChannels();
