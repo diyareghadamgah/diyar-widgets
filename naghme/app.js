@@ -459,16 +459,40 @@ async function toggleIPTVExtraSource(){
  if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد؛ فهرست قبلی هم حفظ شد.');
  else{IPTV.error='فهرست EVIPTV دریافت نشد؛ ممکن است نشانی HTTPS یا دسترسی CORS منبع در دسترس نباشد. فهرست قبلی حفظ شده است.';iptvRefresh();toast('EVIPTV دریافت نشد؛ منبع قبلی حذف نشده است.')}
 }
-function manageIPTVPlaylist(){
- sheet('مدیریت فهرست‌ها',[
+async function manageIPTVPlaylist(){
+ await restoreImportedIPTV();
+ try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
+ const groups=[...new Map(IPTV_IMPORTED.channels.filter(c=>c.importedFile).map(c=>[c.importedFile,{name:c.importedFile,keys:[]}])).values()];
+ for(const g of groups)g.keys=IPTV_IMPORTED.channels.filter(c=>c.importedFile===g.name).map(c=>c.key);
+ const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'فایل M3U8 محلی',keys:[x.key],local:true}));
+ const files=[...groups,...locals];
+ const active=IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست اینترنتی غیرفعال';
+ const actions=[
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
-  ['🗑 حذف موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ هر زمان بخواهی می‌توانی با گزینهٔ «بازگشت به فهرست پیش‌فرض نغمه» آن را دوباره فعال کنی. فایل‌های واردشده از دستگاه باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
+  ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
+  ['🌍 '+(IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
+  ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
-  ['🗑 مدیریت و حذف شبکه‌های دستی',()=>manageDirectIPTVChannels()],
-  ['🌍 '+((IPTV.extraUrls||[]).some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
-  ['🗂 رفتن به مدیریت فایل‌های M3U / M3U8',()=>manageImportedIPTVFiles()]
- ],'فهرست فعال:\n'+(IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست پیش‌فرض غیرفعال است')+'\n\nفهرست پیش‌فرض نغمه در شروع برنامه به‌صورت خودکار نمایش داده می‌شود. «حذف موقت» فقط آن را پنهان می‌کند و آدرس و اطلاعاتش را پاک نمی‌کند؛ با «بازگشت به فهرست پیش‌فرض نغمه» دوباره فعال می‌شود. فهرست‌های واردشده از فایل دستگاه در بخش «مدیریت فایل‌ها» مدیریت می‌شوند.')}
+  ['🗂 مدیریت شبکه‌های دستی ('+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+')',()=>manageDirectIPTVChannels()]
+ ];
+ if(files.length){
+  actions.push(...files.map(file=>['🗑 حذف «'+file.name+'» ('+fa(file.keys.length)+' شبکه)',async()=>{await removeIPTVImportedItem(file.keys[0]);await manageIPTVPlaylist()}]));
+  actions.push(['🗑 حذف همهٔ فایل‌های واردشده ('+fa(files.length)+')',async()=>{
+   const keys=new Set([...groups.flatMap(g=>g.keys),...locals.flatMap(g=>g.keys)]);
+   if(!keys.size||!confirm('همهٔ '+fa(files.length)+' فایل واردشده و تمام شبکه‌های داخل آن‌ها حذف شوند؟ فهرست‌های اینترنتی، فهرست پیش‌فرض و شبکه‌های دستی حفظ می‌شوند.'))return;
+   if(IPTV.current&&keys.has(IPTV.current.key)){if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}iptvRelease();IPTV.current=null;IPTV.active='';}
+   IPTV_IMPORTED.channels=IPTV_IMPORTED.channels.filter(c=>!c.importedFile);
+   IPTV_IMPORTED.localFiles.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
+   IPTV_IMPORTED.localFiles=[];
+   IPTV.favorites=IPTV.favorites.filter(k=>!keys.has(k));
+   await kvSet('iptvImportedChannels',IPTV_IMPORTED.channels);await kvSet('iptvLocalM3U8',[]);await kvSet('iptvFav',IPTV.favorites);
+   IPTV.channels=mergeIPTVChannels(IPTV.channels.filter(c=>!keys.has(c.key)));
+   IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('همهٔ فایل‌های واردشده حذف شدند.');await manageIPTVPlaylist();
+  }]);
+ }else actions.push(['📂 هنوز فایل محلی وارد نشده است',()=>toast('برای افزودن فایل، گزینهٔ افزودن فایل M3U / M3U8 را انتخاب کن.')]);
+ sheet('مدیریت منابع تلویزیون',actions,'منبع فعال: '+active+'\nفایل‌های واردشده: '+fa(files.length)+' • شبکه‌های دستی: '+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+'\n\nهمهٔ منابع در همین بخش مدیریت می‌شوند. حذف فایل فقط شبکه‌های متعلق به همان فایل را پاک می‌کند؛ فهرست پیش‌فرض نغمه و منابع اینترنتی مستقل باقی می‌مانند.');
+}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 function iptvWebStreamUrl(raw){
  try{
