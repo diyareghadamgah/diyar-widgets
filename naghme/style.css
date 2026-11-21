@@ -50,6 +50,7 @@ dialog{max-height:88dvh;overflow:auto}
 .tvstatus{margin:0;padding:0 2px 4px;color:var(--mu);font-size:12px}.tvstatus:empty{display:none}
 .tvbrowse{flex:1;min-height:0;display:flex;flex-direction:column}
 .tvhead{flex:none;display:flex;align-items:center;gap:8px;padding:2px 0 6px}.tvhead b{font-size:15px}.tvhead .d{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tvhead button{padding:6px 12px;min-height:36px}
+.iptv-default-reset{flex:none;width:100%;min-height:40px;margin:0 0 7px;padding:8px 12px;border:1px solid var(--ac);border-radius:11px;background:var(--s1);color:var(--tx);font:inherit;font-size:13px;font-weight:700;cursor:pointer}.iptv-default-reset:active{transform:scale(.99);background:var(--s2)}
 .tvmsg{flex:none;margin:0 0 6px;font-size:12px}.tvmsg[hidden]{display:none}.tverror{color:#ef7777;background:var(--s1);padding:8px 10px;border-radius:10px}
 .iptv-search-wrap{flex:none;margin:0 0 8px}
 .iptv-search{display:block!important;box-sizing:border-box;width:100%!important;min-height:42px;border:1px solid var(--ac)!important;border-radius:12px!important;background:var(--s1)!important;color:var(--tx)!important;padding:10px 14px!important;font-size:16px!important;direction:rtl;user-select:text!important}.iptv-search::placeholder{color:var(--mu);opacity:1}.iptv-search:focus{outline:2px solid var(--ac)}
