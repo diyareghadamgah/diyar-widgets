@@ -318,7 +318,11 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 }
                 playerView?.player = player
                 playerView?.visibility = android.view.View.VISIBLE
-                player?.setMediaItem(MediaItem.fromUri(url))
+                val mimeType = call.getString("mimeType")?.trim()?.takeIf { it.isNotEmpty() }
+                val mediaItem = MediaItem.Builder().setUri(url).apply {
+                    if (mimeType != null) setMimeType(mimeType)
+                }.build()
+                player?.setMediaItem(mediaItem)
                 player?.prepare()
                 player?.playWhenReady = true
                 val ret = JSObject()
