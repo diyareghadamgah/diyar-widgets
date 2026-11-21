@@ -54,6 +54,10 @@ const init=()=>{const o=HTMLMediaElement.prototype.canPlayType;HTMLMediaElement.
   const r=await page.evaluate(()=>{const c=parseM3U('#EXTM3U\n#EXTINF:-1 tvg-id="NexaTest.us" group-title="TR, IR",Nexa Test\nhttps://tv.test/nexa.m3u8\n')[0];return {name:c.name,group:c.group,country:c.country,url:c.url}});
   return {ok:r.name==='Nexa Test'&&r.group==='شبکه‌های فارسی'&&r.country==='TR, IR'&&r.url==='https://tv.test/nexa.m3u8',d:JSON.stringify(r)};
  });
+ await T('۰-ب: آدرس‌های نسبی داخل فهرست M3U به نشانی کامل تبدیل می‌شوند و HLS با پارامتر query تشخیص داده می‌شود',async()=>{
+  const r=await page.evaluate(()=>{const c=parseM3U('#EXTM3U\n#EXTINF:-1,Relative\n../live/channel.m3u8?token=abc\n','https://lists.test/playlists/europe/list.m3u');return {url:c[0]&&c[0].url,hls:iptvIsHls({url:'https://edge.test/live?id=7&format=hls'}),dash:iptvStreamMimeType({url:'https://edge.test/live?type=dash'})}});
+  return {ok:r.url==='https://lists.test/play/live/channel.m3u8?token=abc'&&r.hls&&r.dash==='application/dash+xml',d:JSON.stringify(r)};
+ });
  await T('۱: ورود به صفحه‌ی تلویزیون، دریافت خودکار فهرست از منبع IPTV-org و نمایش (بدون خطای JS)',async()=>{await openTv(page);const c=await cnt(page),rows=await page.locator('#iptvResults .tvrow').count();return {ok:c===TOTAL&&fetches===1&&rows===150&&!errs.length,d:`channels=${c} fetches=${fetches} rows=${rows} errs=${errs.join('|')}`}});
  await T('۲: چیدمان سه‌بخشی: پخش بالا، جست‌وجو+دسته‌ها، سپس فهرست؛ فهرست زیر نوار موزیک/ناوبری نمی‌رود؛ ارتفاع مناسب',async()=>{
   const pl=await R(page,'.tvplayer'),se=await R(page,'#iptvSearch'),ch=await R(page,'#tvChips'),li=await R(page,'#iptvResults'),mi=await R(page,'#mini'),sd=await R(page,'#side'),s=await st(page);
