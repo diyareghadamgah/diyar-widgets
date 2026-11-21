@@ -607,15 +607,15 @@ function iptvStreamMimeType(channel){
  return '';
 }
 function iptvIsHls(channel){return /mpegurl/i.test(iptvStreamMimeType(channel))||/\.m3u8(?:$|[?#])/i.test(String(channel&&channel.url||''))}
-function iptvIsDash(channel){return /dash\\+xml/i.test(iptvStreamMimeType(channel))||/\\.mpd(?:$|[?#])/i.test(String(channel&&channel.url||''))}
+function iptvIsDash(channel){return /dash\+xml/i.test(iptvStreamMimeType(channel))||/\.mpd(?:$|[?#])/i.test(String(channel&&channel.url||''))}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 function iptvWebStreamUrl(raw){
  try{
   const u=new URL(raw);
   // نسخهٔ CMAF/HEVC بی‌بی‌سی در مرورگرهای اندروید همیشه رمزگشایی نمی‌شود؛ نسخهٔ HLS سازگارتر AVC را ترجیح بده.
-  if(/vs-cmaf-pushb-ww-live\\.akamaized\\.net$/i.test(u.hostname)&&/bbc_persian_tv/i.test(u.pathname)&&/\\.mpd$/i.test(u.pathname)){
+  if(/vs-cmaf-pushb-ww-live\.akamaized\.net$/i.test(u.hostname)&&/bbc_persian_tv/i.test(u.pathname)&&/\.mpd$/i.test(u.pathname)){
    u.hostname='vs-hls-pushb-ww-live.akamaized.net';
-   u.pathname=u.pathname.replace(/(?:hevc_iptv_mse_v0|pc_hd_abr_v2_akamai_dash_live|pc_hd_abr_v2)\\.mpd$/i,'pc_hd_abr_v2.m3u8');
+   u.pathname=u.pathname.replace(/(?:hevc_iptv_mse_v0|pc_hd_abr_v2_akamai_dash_live|pc_hd_abr_v2)\.mpd$/i,'pc_hd_abr_v2.m3u8');
    return u.href;
   }
   const host=u.hostname.toLowerCase();
@@ -654,7 +654,7 @@ async function attachIPTVPlayer(force){
    // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
    v.src=url;await v.play().catch(hint);return;
   }
-  if(iptvIsDash(ch)||/\\.mpd(?:$|[?#])/i.test(url)){
+  if(iptvIsDash(ch)||/\.mpd(?:$|[?#])/i.test(url)){
    const dashjs=await loadIPTVDashLibrary();if(stale())return;
    const player=dashjs.MediaPlayer().create();iptvDash=player;
    player.updateSettings({streaming:{lowLatencyEnabled:false,buffer:{fastSwitchEnabled:true}}});
