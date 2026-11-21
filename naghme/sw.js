@@ -2,7 +2,7 @@
    Increase VERSION when publishing a later web release.
 */
 'use strict';
-const VERSION = 'naghme-v2.3.53-web-iptv-cors-proxy-country-iceland';;
+const VERSION = 'naghme-v2.3.53-web-iptv-cors-proxy-country-iceland-unified-tv-manager';;;
 const SHELL = [
   './','index.html','style.css','app.js','tags.js','platform.js','folder-shortcuts.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
