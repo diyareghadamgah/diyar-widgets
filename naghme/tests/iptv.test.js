@@ -56,7 +56,7 @@ const init=()=>{const o=HTMLMediaElement.prototype.canPlayType;HTMLMediaElement.
  });
  await T('۰-ب: آدرس‌های نسبی داخل فهرست M3U به نشانی کامل تبدیل می‌شوند و HLS با پارامتر query تشخیص داده می‌شود',async()=>{
   const r=await page.evaluate(()=>{const c=parseM3U('#EXTM3U\n#EXTINF:-1,Relative\n../live/channel.m3u8?token=abc\n','https://lists.test/playlists/europe/list.m3u');return {url:c[0]&&c[0].url,hls:iptvIsHls({url:'https://edge.test/live?id=7&format=hls'}),dash:iptvStreamMimeType({url:'https://edge.test/live?type=dash'})}});
-  return {ok:r.url==='https://lists.test/play/live/channel.m3u8?token=abc'&&r.hls&&r.dash==='application/dash+xml',d:JSON.stringify(r)};
+  return {ok:r.url==='https://lists.test/playlists/live/channel.m3u8?token=abc'&&r.hls&&r.dash==='application/dash+xml',d:JSON.stringify(r)};
  });
  await T('۱: ورود به صفحه‌ی تلویزیون، دریافت خودکار فهرست از منبع IPTV-org و نمایش (بدون خطای JS)',async()=>{await openTv(page);const c=await cnt(page),rows=await page.locator('#iptvResults .tvrow').count();return {ok:c===TOTAL&&fetches===1&&rows===150&&!errs.length,d:`channels=${c} fetches=${fetches} rows=${rows} errs=${errs.join('|')}`}});
  await T('۲: چیدمان سه‌بخشی: پخش بالا، جست‌وجو+دسته‌ها، سپس فهرست؛ فهرست زیر نوار موزیک/ناوبری نمی‌رود؛ ارتفاع مناسب',async()=>{
