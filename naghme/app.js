@@ -152,7 +152,7 @@ function iptvCountryLabel(code){code=String(code||'').toUpperCase();return iptvC
 function iptvFlag(code){return [...String(code||'').toUpperCase()].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join('')}
 const IPTV={url:IPTV_DEFAULT_URL,iranUrl:'https://iptv-org.github.io/iptv/countries/ir.m3u',channels:[],iranChannels:[],loading:false,error:'',playError:'',loadedAt:0,active:'',current:null,category:'همه',country:'همه',iranMode:false,iranPlaylistLoaded:false,countrySig:'',extraUrls:[],favorites:[],favLoaded:false,query:'',filtered:[],shown:0,sig:'',chipSig:''};
 window.IPTV=IPTV; // دسترسی امن پلیر بومی به فهرست کانال‌ها
-let iptvHls=null,iptvHlsLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
+let iptvHls=null,iptvHlsLoader=null,iptvDash=null,iptvDashLoader=null,iptvAttached='',iptvToken=0,iptvLoadGeneration=0,iptvOn=false,iptvBuilt=false,iptvQT=0;
 let iptvScreenWakeLock=null,iptvWakeBound=false;
 async function iptvKeepScreenAwake(on){
  if(!on){if(iptvScreenWakeLock){try{await iptvScreenWakeLock.release()}catch{}iptvScreenWakeLock=null}return}
@@ -205,6 +205,7 @@ async function restoreImportedIPTV(){
 }
 const iptvNorm=s=>String(s||'').toLocaleLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک');
 function loadHlsLibrary(){if(window.Hls)return Promise.resolve(window.Hls);if(!iptvHlsLoader){iptvHlsLoader=new Promise((resolve,reject)=>{const urls=['https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js','https://unpkg.com/hls.js@1.5.20/dist/hls.min.js'];let i=0;const next=()=>{if(i>=urls.length){iptvHlsLoader=null;reject(new Error('کتابخانه پخش HLS بارگیری نشد؛ اتصال اینترنت یا دسترسی به CDN را بررسی کنید.'));return}const sc=document.createElement('script');sc.src=urls[i++];sc.async=true;sc.onload=()=>window.Hls?resolve(window.Hls):next();sc.onerror=()=>next();document.head.appendChild(sc)};next()})}return iptvHlsLoader}
+function loadIPTVDashLibrary(){if(window.dashjs)return Promise.resolve(window.dashjs);if(!iptvDashLoader){iptvDashLoader=new Promise((resolve,reject)=>{const urls=['https://cdn.jsdelivr.net/npm/dashjs@4.7.4/dist/dash.all.min.js','https://unpkg.com/dashjs@4.7.4/dist/dash.all.min.js'];let i=0;const next=()=>{if(i>=urls.length){iptvDashLoader=null;reject(new Error('کتابخانه پخش DASH بارگیری نشد؛ اتصال اینترنت یا دسترسی به CDN را بررسی کنید.'));return}const sc=document.createElement('script');sc.src=urls[i++];sc.async=true;sc.onload=()=>window.dashjs?resolve(window.dashjs):next();sc.onerror=()=>next();document.head.appendChild(sc)};next()})}return iptvDashLoader}
 const iptvRegion={fa:null,en:null,cache:new Map()};
 function iptvCountryName(code){
  code=String(code||'').trim().toUpperCase();if(code==='UK')code='GB';
@@ -348,6 +349,7 @@ function setIPTVStatus(m){const s=$('#iptvStatus');if(s)s.textContent=m||''}
 function iptvRelease(){   // آزادسازی کامل منابع پخش (خروج از صفحه / تغییر آدرس فهرست)
  iptvToken++;
  if(iptvHls){try{iptvHls.destroy()}catch{}iptvHls=null}
+ if(iptvDash){try{iptvDash.destroy()}catch{}iptvDash=null}
  const v=$('#iptvVideo');
  if(v){v.onerror=v.onplaying=v.onwaiting=null;try{v.pause()}catch{}v.removeAttribute('src');try{v.load()}catch{}}
  iptvAttached='';setIPTVStatus('')}
@@ -605,10 +607,17 @@ function iptvStreamMimeType(channel){
  return '';
 }
 function iptvIsHls(channel){return /mpegurl/i.test(iptvStreamMimeType(channel))||/\.m3u8(?:$|[?#])/i.test(String(channel&&channel.url||''))}
+function iptvIsDash(channel){return /dash\\+xml/i.test(iptvStreamMimeType(channel))||/\\.mpd(?:$|[?#])/i.test(String(channel&&channel.url||''))}
 // فقط در نسخهٔ وب، آدرس HLS تلوبیون از Worker عبور می‌کند؛ مسیر APK بومی دست‌نخورده می‌ماند.
 function iptvWebStreamUrl(raw){
  try{
   const u=new URL(raw);
+  // نسخهٔ CMAF/HEVC بی‌بی‌سی در مرورگرهای اندروید همیشه رمزگشایی نمی‌شود؛ نسخهٔ HLS سازگارتر AVC را ترجیح بده.
+  if(/vs-cmaf-pushb-ww-live\\.akamaized\\.net$/i.test(u.hostname)&&/bbc_persian_tv/i.test(u.pathname)&&/\\.mpd$/i.test(u.pathname)){
+   u.hostname='vs-hls-pushb-ww-live.akamaized.net';
+   u.pathname=u.pathname.replace(/(?:hevc_iptv_mse_v0|pc_hd_abr_v2_akamai_dash_live|pc_hd_abr_v2)\\.mpd$/i,'pc_hd_abr_v2.m3u8');
+   return u.href;
+  }
   const host=u.hostname.toLowerCase();
   if(host==='068382c8.kazaktelekom.com'&&u.pathname.startsWith('/iptv/'))return IPTV_WORKER_ORIGIN+'/edem?url='+encodeURIComponent(u.href);
   if(host!=='ncdn.telewebion.ir')return raw;
@@ -623,6 +632,7 @@ async function attachIPTVPlayer(force){
  const my=++iptvToken,stale=()=>my!==iptvToken;   // هر اتصال جدید، اتصال ناتمام قبلی را باطل می‌کند
  iptvAttached=ch.key;IPTV.playError='';
  if(iptvHls){try{iptvHls.destroy()}catch{}iptvHls=null}
+ if(iptvDash){try{iptvDash.destroy()}catch{}iptvDash=null}
  v.onerror=v.onplaying=v.onwaiting=null;try{v.pause()}catch{}
  v.removeAttribute('src');v.load();
  setIPTVStatus('در حال اتصال به جریان زنده…');
@@ -643,6 +653,18 @@ async function attachIPTVPlayer(force){
   if(ch.localBlob){
    // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
    v.src=url;await v.play().catch(hint);return;
+  }
+  if(iptvIsDash(ch)||/\\.mpd(?:$|[?#])/i.test(url)){
+   const dashjs=await loadIPTVDashLibrary();if(stale())return;
+   const player=dashjs.MediaPlayer().create();iptvDash=player;
+   player.updateSettings({streaming:{lowLatencyEnabled:false,buffer:{fastSwitchEnabled:true}}});
+   player.on(dashjs.MediaPlayer.events.ERROR,event=>{
+    if(stale()||iptvDash!==player)return;
+    const detail=event&&event.error&& (event.error.message||event.error.code)||event&&event.event||'خطای دریافت یا رمزگشایی DASH';
+    fail('خطای پخش DASH — '+String(detail));
+   });
+   player.initialize(v,url,true);
+   return;
   }
   if(iptvIsHls(ch)||url.startsWith(IPTV_WORKER_ORIGIN+'/')){
    // در وب، حتی اگر canPlayType مقدار truthy بدهد، HLS را با hls.js بگیر
