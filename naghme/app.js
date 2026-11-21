@@ -459,6 +459,62 @@ async function toggleIPTVExtraSource(){
  if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد؛ فهرست قبلی هم حفظ شد.');
  else{IPTV.error='فهرست EVIPTV دریافت نشد؛ ممکن است نشانی HTTPS یا دسترسی CORS منبع در دسترس نباشد. فهرست قبلی حفظ شده است.';iptvRefresh();toast('EVIPTV دریافت نشد؛ منبع قبلی حذف نشده است.')}
 }
+async function testTemporaryIPTVSources(mode){
+ const run=async urls=>{
+  const unique=[...new Set(urls.map(x=>String(x||'').trim()).filter(Boolean))];
+  if(!unique.length){toast('آدرس معتبری برای آزمایش وارد نشده است.');return}
+  toast('آزمایش موقت '+fa(unique.length)+' آدرس آغاز شد…');
+  const testOne=async url=>{
+   const started=Date.now();
+   try{
+    let body='';
+    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+     const result=await Promise.race([window.NaghmeVideoPlayer.fetchText(url),new Promise((_,reject)=>setTimeout(()=>reject(new Error('مهلت ۱۲ ثانیه‌ای تمام شد')),12000))]);
+     body=result.text||'';
+    }else{
+     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
+     try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);body=await response.text()}
+     finally{clearTimeout(timer)}
+    }
+    const channels=parseM3U(body);
+    return {url,count:channels.length,ms:Date.now()-started,status:channels.length?'active':'empty',error:''};
+   }catch(e){return {url,count:0,ms:Date.now()-started,status:'failed',error:e&&e.name==='AbortError'?'مهلت دریافت تمام شد':(e.message||'خطای دریافت')}}
+  };
+  let cursor=0;const results=new Array(unique.length);
+  const workers=Array.from({length:4},async()=>{while(cursor<unique.length){const i=cursor++;results[i]=await testOne(unique[i])}});
+  await Promise.all(workers);showTemporaryIPTVReport(results);
+ };
+ if(mode==='url'){
+  const value=prompt('آدرس‌های M3U یا M3U8 را وارد کن؛ هر آدرس در یک خط.\\nاین آزمایش هیچ آدرسی را ذخیره نمی‌کند:','');
+  if(value===null)return;
+  await run(value.split(/[\\r\\n,;\\s]+/).filter(Boolean));return;
+ }
+ const input=document.createElement('input');
+ input.type='file';input.accept='.m3u,.m3u8,audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain';input.multiple=true;
+ input.onchange=async()=>{
+  const files=[...(input.files||[])];if(!files.length)return;
+  const results=[];
+  for(const file of files){
+   try{const body=await file.text(),channels=parseM3U(body);results.push({url:'📂 '+file.name,count:channels.length,ms:0,status:channels.length?'active':'empty',error:''})}
+   catch(e){results.push({url:'📂 '+file.name,count:0,ms:0,status:'failed',error:e.message||'خواندن فایل ناموفق بود'})}
+  }
+  showTemporaryIPTVReport(results);
+ };
+ input.click();
+}
+function showTemporaryIPTVReport(results){
+ const active=results.filter(x=>x.status==='active').length,empty=results.filter(x=>x.status==='empty').length,failed=results.filter(x=>x.status==='failed').length;
+ const report=results.map((x,i)=>(i+1)+'. '+(x.status==='active'?'فعال':x.status==='empty'?'خالی':'ناموفق')+' | '+x.count+' کانال | '+x.ms+'ms | '+x.url+(x.error?' | '+x.error:'')).join('\\n');
+ const actions=[
+  ['📋 کپی گزارش آزمایش موقت',()=>{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(report).then(()=>toast('گزارش کپی شد.')).catch(()=>toast('کپی در این دستگاه در دسترس نیست.'));else toast('کپی در این دستگاه در دسترس نیست.')}],
+  ['🔄 بازگشت به انتخاب آدرس یا فایل',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')]
+ ];
+ for(const x of results){
+  const label=x.status==='active'?'🟢 فعال':x.status==='empty'?'🟡 خالی':'🔴 ناموفق';
+  actions.push([label+' | '+fa(x.count)+' کانال | '+(x.url.length>58?x.url.slice(0,55)+'…':x.url),()=>{const detail=x.url+'\\nتعداد کانال: '+x.count+'\\nزمان پاسخ: '+x.ms+' ms'+(x.error?'\\nخطا: '+x.error:'');if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(detail).then(()=>toast('جزئیات کپی شد.')).catch(()=>toast(detail));else toast(detail)}]);
+ }
+ sheet('نتیجه آزمایش موقت IPTV',actions,'🟢 فعال: '+fa(active)+'  •  🟡 خالی: '+fa(empty)+'  •  🔴 ناموفق: '+fa(failed)+'\\n\\nاین آزمایش موقت است؛ هیچ آدرس، فایل یا کانالی به منابع نغمه اضافه و ذخیره نمی‌شود. نتیجه فقط دریافت فهرست و استخراج کانال‌هاست، نه تضمین پخش زنده.');
+}
 async function testIPTVSourceHealth(){
  const urls=[IPTV.url,IPTV.iranUrl,IPTV_EV_URL,IPTV_NEXA_URL,...(IPTV.extraUrls||[]).map(x=>x&&x.url),...(IPTV_COMMUNITY_SOURCES||[])].filter(Boolean);
  const unique=[...new Set(urls)];
@@ -508,6 +564,7 @@ async function manageIPTVPlaylist(){
  const active=IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست اینترنتی غیرفعال';
  const actions=[
   ['🧪 آزمایش سلامت منابع IPTV ('+fa(IPTV_COMMUNITY_SOURCES.length)+' منبع مکمل)',()=>testIPTVSourceHealth()],
+  ['🧪 آزمایش موقت آدرس یا فایل دلخواه (بدون ذخیره)',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')],
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
