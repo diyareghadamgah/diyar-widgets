@@ -403,6 +403,64 @@ export default {
         : categoryPlaylist
           ? "https://iptv-org.github.io/iptv/categories/" + categoryPlaylist[1].toLowerCase() + ".m3u"
           : null;
+    if (url.pathname === "/iptv/custom") {
+      if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
+      if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
+      const isAllowedTarget = target => {
+        const host = target.hostname.toLowerCase().replace(/^\\[|\\]$/g, "");
+        const isIp = /^(?:\\d{1,3}\\.){3}\\d{1,3}$/.test(host) || host.includes(":");
+        return ["http:", "https:"].includes(target.protocol)
+          && !target.username && !target.password && !isIp
+          && !/\\.(?:localhost|local|internal|test|invalid)$/.test(host)
+          && !["localhost", "localhost.localdomain", "metadata.google.internal"].includes(host)
+          && (!target.port || ["80", "443", "8000", "8080", "8443"].includes(target.port));
+      };
+      let target;
+      try { target = new URL(url.searchParams.get("url") || ""); }
+      catch { return new Response("invalid playlist URL\\n", { status: 400, headers: CORS_HEADERS }); }
+      if (!isAllowedTarget(target)) return new Response("playlist host or port not allowed\\n", { status: 403, headers: CORS_HEADERS });
+      try {
+        let upstream = null;
+        for (let redirects = 0; redirects <= 4; redirects++) {
+          upstream = await fetch(target.href, {
+            headers: { "User-Agent": "Naghme-IPTV/1.0", "Accept": "audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain,*/*" },
+            redirect: "manual",
+          });
+          if (![301, 302, 303, 307, 308].includes(upstream.status)) break;
+          const location = upstream.headers.get("location");
+          if (!location || redirects === 4) throw new Error("too many or invalid playlist redirects");
+          target = new URL(location, target);
+          if (!isAllowedTarget(target)) throw new Error("playlist redirect host or port not allowed");
+        }
+        if (!upstream || !upstream.ok) {
+          const status = upstream ? upstream.status : 502;
+          return new Response("playlist upstream HTTP " + status + "\\n", {
+            status: status >= 400 && status < 600 ? status : 502,
+            headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
+          });
+        }
+        const declaredSize = Number(upstream.headers.get("content-length") || 0);
+        if (declaredSize > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
+        const body = await upstream.text();
+        if (body.length > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
+        if (!body.replace(/^\\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
+          return new Response("upstream did not return a valid M3U playlist\\n", {
+            status: 502,
+            headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
+          });
+        }
+        return new Response(request.method === "HEAD" ? null : body, {
+          status: 200,
+          headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=120" },
+        });
+      } catch (error) {
+        console.error("Custom IPTV playlist proxy failed", target.hostname, error);
+        return new Response("playlist upstream unavailable: " + String(error && error.message || error).slice(0, 180) + "\\n", {
+          status: 502,
+          headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
+        });
+      }
+    }
     if (url.pathname === "/iptv/external") {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
