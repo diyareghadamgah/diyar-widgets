@@ -270,6 +270,7 @@ function parseM3U(text,baseUrl){
   const entries=[...source.matchAll(/<(?:\w+:)?entry\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?entry\s*>/gi)];
   for(const m of entries){const href=(m[1].match(/\b(?:href|ref)\s*=\s*["']([^"']+)["']/i)||[])[1]||(m[2].match(/<(?:\w+:)?ref\b[^>]*\bhref\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[2].match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(href)add(decode(title),decode(href))}
   if(!out.length){const refs=[...source.matchAll(/<(?:\w+:)?ref\b[^>]*\b(?:href|src)\s*=\s*["']([^"']+)["'][^>]*>/gi)];for(const m of refs)add('',decode(m[1]))}
+  if(!out.length){const media=[...source.matchAll(/<(?:\w+:)?(?:video|audio|media)\b([^>]*)>/gi)];for(const m of media){const src=(m[1].match(/\b(?:src|href)\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[1].match(/\btitle\s*=\s*["']([^"']+)["']/i)||[])[1];if(src)add(title,decode(src))}}
   return out;
  }
  if(/^\s*[\[{]/.test(source)){
@@ -407,7 +408,7 @@ async function loadIPTVCommunitySources(){
       body=await response.text();
      }finally{clearTimeout(timer)}
     }
-    const parsed=parseM3U(body).map(channel=>({...channel,sourceUrl:url}));
+    const parsed=parseM3U(body,url).map(channel=>({...channel,sourceUrl:url}));
     if(!parsed.length)throw Error('empty playlist');
     return parsed;
    }));
@@ -888,7 +889,7 @@ async function loadIPTVCountry(code){
    try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
    finally{clearTimeout(timer)}
   }
-  const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
+  const parsed=parseM3U(text,url).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
   if(!parsed.length)throw Error('فهرست این کشور خالی است یا ساختار M3U معتبر نیست.');
   await kvSet(cacheKey,{savedAt:Date.now(),channels:parsed});return parsed;
  })();
@@ -957,7 +958,7 @@ async function loadIPTVIranChannels(){
    }
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
-  const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
+  const parsed=parseM3U(body,url).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
   if(national+provincial<57)throw Error('فهرست ایران ناقص است؛ فقط '+(national+provincial)+' شبکه شناسایی شد (انتظار: حداقل ۵۷). مسیر فایل: '+IPTV_IRAN_PWA_PLAYLIST);
