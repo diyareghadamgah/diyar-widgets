@@ -447,7 +447,7 @@ export default {
         if (!upstream.ok) return new Response("playlist upstream HTTP " + upstream.status + "\\n", { status: 502, headers });
         if (request.method === "HEAD") return new Response(null, { status: 200, headers });
         const body = await upstream.text();
-        if (!body.replace(/^\\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
+        if (!body.replace(/^\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
           return new Response("playlist upstream returned invalid M3U content\\n", {
             status: 502,
             headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
