@@ -407,11 +407,11 @@ export default {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
       const isAllowedTarget = target => {
-        const host = target.hostname.toLowerCase().replace(/^\\[|\\]$/g, "");
-        const isIp = /^(?:\\d{1,3}\\.){3}\\d{1,3}$/.test(host) || host.includes(":");
+        const host = target.hostname.toLowerCase().replace(/^\[|\]$/g, "");
+        const isIp = /^(?:\d{1,3}\.){3}\d{1,3}$/.test(host) || host.includes(":");
         return ["http:", "https:"].includes(target.protocol)
           && !target.username && !target.password && !isIp
-          && !/\\.(?:localhost|local|internal|test|invalid)$/.test(host)
+          && !/\.(?:localhost|local|internal|test|invalid)$/.test(host)
           && !["localhost", "localhost.localdomain", "metadata.google.internal"].includes(host)
           && (!target.port || ["80", "443", "8000", "8080", "8443"].includes(target.port));
       };
@@ -443,7 +443,7 @@ export default {
         if (declaredSize > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
         const body = await upstream.text();
         if (body.length > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
-        if (!body.replace(/^\\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
+        if (!body.replace(/^\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
           return new Response("upstream did not return a valid M3U playlist\\n", {
             status: 502,
             headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
