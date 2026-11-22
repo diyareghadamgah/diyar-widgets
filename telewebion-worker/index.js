@@ -445,9 +445,9 @@ export default {
         if (body.length > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
         const normalized = body.replace(/^\uFEFF/, "").trim();
         const head = normalized.slice(0, 12000).trimStart();
-        let recognized = /^#EXTM3U\\b/i.test(head) || /^\\[playlist\\]/i.test(head)
-          || /<(?:\\w+:)?(?:playlist|asx|smil)\\b/i.test(head);
-        if (!recognized && /^[\\[{]/.test(head)) {
+        let recognized = /^#EXTM3U\b/i.test(head) || /^\[playlist\]/i.test(head)
+          || /<(?:\w+:)?(?:playlist|asx|smil)\b/i.test(head);
+        if (!recognized && /^[\[{]/.test(head)) {
           try {
             const root = JSON.parse(normalized);
             const hasUrl = value => {
@@ -460,11 +460,11 @@ export default {
           } catch {}
         }
         if (!recognized) {
-          const urls = normalized.split(/\\r?\\n/).map(x => x.trim()).filter(x => x && !x.startsWith("#"));
+          const urls = normalized.split(/\r?\n/).map(x => x.trim()).filter(x => x && !x.startsWith("#"));
           recognized = urls.length > 0 && urls.every(x => /^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(x));
         }
         if (!recognized) {
-          return new Response("unsupported or invalid playlist format (supported: M3U, M3U8, PLS, XSPF, ASX, JSON, URL list)\\n", {
+          return new Response("unsupported or invalid playlist format (supported: M3U, M3U8, PLS, XSPF, ASX, JSON, URL list)\n", {
             status: 502,
             headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
           });
