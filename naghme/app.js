@@ -286,7 +286,7 @@ async function loadIPTV(force=false){
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const uniqueUrls=[...new Set(urls)];
-  const results=await Promise.allSettled(uniqueUrls.map(async url=>{const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);return parseM3U(body,base).map(channel=>({...channel,sourceUrl:url}))}));
+  const results=await Promise.allSettled(uniqueUrls.map(async url=>{const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);const parsed=parseM3U(body,base);if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=dedupeIPTVChannels(merged);
   if(generation!==iptvLoadGeneration)return;
@@ -295,6 +295,11 @@ async function loadIPTV(force=false){
   const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
   const failedCommunity=[];
   if(failedExtra.length)IPTV.error='تعدادی از فهرست‌های مکمل دستی پاسخ ندادند ('+fa(failedExtra.length)+' مورد)؛ منابع موفق و شبکه‌های قبلی حفظ شدند.';
+  const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
+  if(IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled'){
+   const reason=results[mainPlaylistIndex]?.reason;
+   IPTV.error='منبع اصلی جهانی IPTV دریافت نشد یا ناقص بود: '+(reason?.message||'خطای نامشخص')+'؛ شبکه‌های منابع مکمل جداگانه نمایش داده شده‌اند و جایگزین فهرست کامل نیستند.';
+  }
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
   if(generation!==iptvLoadGeneration)return;
