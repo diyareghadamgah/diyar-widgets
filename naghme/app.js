@@ -29,6 +29,12 @@ const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
 const IPTV_NEXA_URL='https://raw.githubusercontent.com/itsyebekhe/nexa/main/playlist.m3u';
+// دسته‌های مستقل جهانی از iptv-org؛ با انتخاب کاربر به فهرست اصلی اضافه می‌شوند.
+const IPTV_GLOBAL_CATEGORY_SOURCES=[
+ {url:'https://iptv-org.github.io/iptv/categories/sports.m3u',name:'شبکه‌های ورزشی جهانی'},
+ {url:'https://iptv-org.github.io/iptv/categories/movies.m3u',name:'شبکه‌های فیلم و سینمای جهانی'},
+ {url:'https://iptv-org.github.io/iptv/categories/news.m3u',name:'شبکه‌های خبری جهانی'}
+];
 // منابع مکمل M3U ارسالی؛ آدرس‌های تکراری در زمان ثبت حذف شده‌اند.
 const IPTV_COMMUNITY_SOURCES=[
   "https://m3url.ru/avtomini.m3u",
@@ -143,6 +149,8 @@ function iptvPlaylistProxyUrl(raw){
  if(raw===IPTV_DEFAULT_URL)return IPTV_WORKER_ORIGIN+'/iptv/index.m3u';
  const country=String(raw).match(/^https:\/\/iptv-org\.github\.io\/iptv\/countries\/([a-z]{2})\.m3u$/i);
  if(country)return IPTV_WORKER_ORIGIN+'/iptv/countries/'+country[1].toLowerCase()+'.m3u';
+ const category=String(raw).match(/^https:\/\/iptv-org\.github\.io\/iptv\/categories\/(sports|movies|news)\.m3u$/i);
+ if(category)return IPTV_WORKER_ORIGIN+'/iptv/categories/'+category[1].toLowerCase()+'.m3u';
  try{const u=new URL(raw);if(['m3url.ru','www.m3url.ru','iptvbest.ru','178.124.210.172'].includes(u.hostname))return IPTV_WORKER_ORIGIN+'/iptv/external?url='+encodeURIComponent(u.href)}catch{}
  return raw;
 }
@@ -178,7 +186,8 @@ function dedupeIPTVChannels(list){
   let index=idKey&&byId.has(idKey)?byId.get(idKey):nameKey&&byName.has(nameKey)?byName.get(nameKey):undefined;
   if(index!==undefined){
    const prior=out[index];
-   out[index]={...prior,logo:prior.logo||c.logo||'',country:prior.country||c.country||'',language:prior.language||c.language||'',id:prior.id||c.id||'',groups:prior.groups&&prior.groups.length?prior.groups:(c.groups||[])};
+   const groups=[...new Set([...(prior.groups||[]),...(c.groups||[])])];
+   out[index]={...prior,logo:prior.logo||c.logo||'',country:prior.country||c.country||'',language:prior.language||c.language||'',id:prior.id||c.id||'',groups,group:groups.join('; '),search:iptvNorm([prior.search,...groups].join(' '))};
    if(idKey)byId.set(idKey,index);if(nameKey)byName.set(nameKey,index);
    continue;
   }
@@ -463,6 +472,32 @@ async function toggleIPTVExtraSource(){
  if(IPTV.channels.some(c=>c.sourceUrl===IPTV_EV_URL))toast('فهرست EVIPTV اضافه شد؛ فهرست قبلی هم حفظ شد.');
  else{IPTV.error='فهرست EVIPTV دریافت نشد؛ ممکن است نشانی HTTPS یا دسترسی CORS منبع در دسترس نباشد. فهرست قبلی حفظ شده است.';iptvRefresh();toast('EVIPTV دریافت نشد؛ منبع قبلی حذف نشده است.')}
 }
+async function toggleIPTVGlobalCategorySources(){
+ await restoreImportedIPTV();
+ try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
+ const urls=new Set(IPTV_GLOBAL_CATEGORY_SOURCES.map(source=>source.url));
+ const enabled=IPTV_GLOBAL_CATEGORY_SOURCES.every(source=>IPTV.extraUrls.some(x=>x.url===source.url));
+ if(enabled){
+  if(!confirm('دسته‌های جهانی ورزش، فیلم و خبر غیرفعال شوند؟ فهرست اصلی و سایر منابع حفظ می‌شوند.'))return;
+  IPTV.extraUrls=IPTV.extraUrls.filter(x=>!urls.has(x.url));
+  await kvSet('iptvExtraUrls',IPTV.extraUrls);
+  if(IPTV.current&&urls.has(IPTV.current.sourceUrl)){
+   if(window.NaghmeNativeIPTV)try{window.NaghmeNativeIPTV.hide()}catch{}
+   iptvRelease();IPTV.current=null;IPTV.active='';
+  }
+  IPTV.channels=IPTV.channels.filter(c=>!urls.has(c.sourceUrl));
+  IPTV.loadedAt=0;IPTV.sig='';IPTV.chipSig='';
+  renderIPTV();toast('دسته‌های جهانی غیرفعال شدند؛ فهرست اصلی باقی است.');return;
+ }
+ const present=new Set(IPTV.extraUrls.map(x=>x.url));
+ const missing=IPTV_GLOBAL_CATEGORY_SOURCES.filter(source=>!present.has(source.url));
+ IPTV.extraUrls=[...IPTV.extraUrls,...missing];
+ await kvSet('iptvExtraUrls',IPTV.extraUrls);
+ IPTV.loadedAt=0;await loadIPTV(true);
+ const count=IPTV.channels.filter(channel=>urls.has(channel.sourceUrl)).length;
+ if(count)toast('دسته‌های جهانی اضافه شدند؛ '+fa(count)+' شبکه از منابع ورزش، فیلم و خبر دریافت شد.');
+ else{IPTV.error='دسته‌های جهانی دریافت نشدند؛ فهرست اصلی و منابع قبلی حفظ شده‌اند.';iptvRefresh();toast('دریافت دسته‌های جهانی ناموفق بود؛ منابع قبلی حفظ شدند.')}
+}
 async function testTemporaryIPTVSources(mode){
  const run=async urls=>{
   const unique=[...new Set(urls.map(x=>String(x||'').trim()).filter(Boolean))];
@@ -520,7 +555,7 @@ function showTemporaryIPTVReport(results){
  sheet('نتیجه آزمایش موقت IPTV',actions,'🟢 فعال: '+fa(active)+'  •  🟡 خالی: '+fa(empty)+'  •  🔴 ناموفق: '+fa(failed)+'\\n\\nاین آزمایش موقت است؛ هیچ آدرس، فایل یا کانالی به منابع نغمه اضافه و ذخیره نمی‌شود. نتیجه فقط دریافت فهرست و استخراج کانال‌هاست، نه تضمین پخش زنده.');
 }
 async function testIPTVSourceHealth(){
- const urls=[IPTV.url,IPTV.iranUrl,IPTV_EV_URL,IPTV_NEXA_URL,...(IPTV.extraUrls||[]).map(x=>x&&x.url),...(IPTV_COMMUNITY_SOURCES||[])].filter(Boolean);
+ const urls=[IPTV.url,IPTV.iranUrl,IPTV_EV_URL,IPTV_NEXA_URL,...IPTV_GLOBAL_CATEGORY_SOURCES.map(x=>x.url),...(IPTV.extraUrls||[]).map(x=>x&&x.url),...(IPTV_COMMUNITY_SOURCES||[])].filter(Boolean);
  const unique=[...new Set(urls)];
  if(!unique.length){toast('منبعی برای آزمایش وجود ندارد.');return}
  IPTV.sourceHealthResults=[];
@@ -574,6 +609,7 @@ async function manageIPTVPlaylist(){
   ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['🌍 '+(IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
+  ['🎬 '+(IPTV_GLOBAL_CATEGORY_SOURCES.every(source=>IPTV.extraUrls.some(x=>x.url===source.url))?'غیرفعال‌کردن':'افزودن')+' دسته‌های جهانی ورزش، فیلم و خبر',()=>toggleIPTVGlobalCategorySources()],
   ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
   ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
   ['🗂 مدیریت شبکه‌های دستی ('+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+')',()=>manageDirectIPTVChannels()]
