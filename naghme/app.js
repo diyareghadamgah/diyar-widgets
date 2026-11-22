@@ -267,39 +267,61 @@ async function loadIPTV(force=false){
   await restoreImportedIPTV();
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
   try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
-  const fetchPlaylistText=async url=>{
-   if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-    const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url};
-   }
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+  const fetchTextWithTimeout=async requestUrl=>{
+   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
    try{
-    const requestUrl=iptvPlaylistProxyUrl(url);
     const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal});
     if(!response.ok)throw new Error('HTTP '+response.status);
     return await response.text();
    }catch(e){
-    if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۱۵ ثانیه تمام شد؛ اتصال به منبع فهرست برقرار نشد.');
+    if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۲۰ ثانیه تمام شد.');
     throw e;
    }finally{clearTimeout(timer)}
+  };
+  const fetchPlaylistText=async url=>{
+   if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
+    const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url};
+   }
+   const proxyUrl=iptvPlaylistProxyUrl(url);
+   try{
+    const text=await fetchTextWithTimeout(proxyUrl);
+    if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url};
+    console.warn('IPTV proxy returned a short main playlist; retrying official source directly');
+   }catch(error){
+    console.warn('IPTV proxy failed; retrying official source directly',error);
+   }
+   // GitHub Pages serves the official M3U with CORS. Use it as a fallback
+   // so a broken/stale Worker can never silently reduce the main list to extras.
+   if(url===IPTV_DEFAULT_URL){
+    const text=await fetchTextWithTimeout(url);
+    return {text,url};
+   }
+   throw new Error('دریافت منبع مکمل از Worker ناموفق بود.');
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const uniqueUrls=[...new Set(urls)];
   const results=await Promise.allSettled(uniqueUrls.map(async url=>{const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);const parsed=parseM3U(body,base);if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
+  const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
+  const mainFailed=IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled';
+  if(generation!==iptvLoadGeneration)return;
+  if(mainFailed){
+   // Never replace the full historical list with a handful of successful extras.
+   // Keep whatever was already displayed and report the primary-source failure.
+   try{await restoreImportedIPTV()}catch{}
+   IPTV.channels=mergeIPTVChannels(IPTV.channels);
+   const reason=results[mainPlaylistIndex]?.reason;
+   IPTV.error='منبع اصلی جهانی IPTV دریافت نشد یا ناقص بود: '+(reason?.message||'خطای نامشخص')+'؛ منابع مکمل جایگزین فهرست اصلی نشدند و فهرست قبلی حفظ شد.';
+   IPTV.loadedAt=0;
+   return;
+  }
   const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
   const a=dedupeIPTVChannels(merged);
-  if(generation!==iptvLoadGeneration)return;
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
   const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
-  const failedCommunity=[];
   if(failedExtra.length)IPTV.error='تعدادی از فهرست‌های مکمل دستی پاسخ ندادند ('+fa(failedExtra.length)+' مورد)؛ منابع موفق و شبکه‌های قبلی حفظ شدند.';
-  const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
-  if(IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled'){
-   const reason=results[mainPlaylistIndex]?.reason;
-   IPTV.error='منبع اصلی جهانی IPTV دریافت نشد یا ناقص بود: '+(reason?.message||'خطای نامشخص')+'؛ شبکه‌های منابع مکمل جداگانه نمایش داده شده‌اند و جایگزین فهرست کامل نیستند.';
-  }
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
   if(generation!==iptvLoadGeneration)return;
