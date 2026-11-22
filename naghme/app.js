@@ -499,10 +499,10 @@ async function manageImportedIPTVFiles(){
  await restoreImportedIPTV();
  const groups=[...new Map(IPTV_IMPORTED.channels.filter(c=>c.importedFile).map(c=>[c.importedFile,{name:c.importedFile,keys:[]}])).values()];
  for(const g of groups)g.keys=IPTV_IMPORTED.channels.filter(c=>c.importedFile===g.name).map(c=>c.key);
- const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'فایل M3U8 محلی',keys:[x.key],local:true}));
+ const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'رسانهٔ محلی',keys:[x.key],local:true}));
  const files=[...groups,...locals];
  const actions=[
-  ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
+  ['＋ افزودن فایل فهرست یا رسانه از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
   ['📄 فهرست پیش‌فرض نغمه (آنلاین)',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
  ];
  if(files.length){
@@ -600,7 +600,7 @@ async function testTemporaryIPTVSources(mode){
   await Promise.all(workers);showTemporaryIPTVReport(results);
  };
  if(mode==='url'){
-  const value=prompt('آدرس‌های M3U یا M3U8 را وارد کن؛ هر آدرس در یک خط.\\nاین آزمایش هیچ آدرسی را ذخیره نمی‌کند:','');
+  const value=prompt('آدرس فهرست‌های IPTV با قالب M3U، M3U8، PLS، XSPF، ASX، JSON یا TXT را وارد کن؛ هر آدرس در یک خط.\\nاین آزمایش هیچ آدرسی را ذخیره نمی‌کند:','');
   if(value===null)return;
   await run(value.split(/[\\r\\n,;\\s]+/).filter(Boolean));return;
  }
@@ -622,7 +622,7 @@ function showTemporaryIPTVReport(results){
  const report=results.map((x,i)=>(i+1)+'. '+(x.status==='active'?'فعال':x.status==='empty'?'خالی':'ناموفق')+' | '+x.count+' کانال | '+x.ms+'ms | '+x.url+(x.error?' | '+x.error:'')).join('\\n');
  const actions=[
   ['📋 کپی گزارش آزمایش موقت',()=>{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(report).then(()=>toast('گزارش کپی شد.')).catch(()=>toast('کپی در این دستگاه در دسترس نیست.'));else toast('کپی در این دستگاه در دسترس نیست.')}],
-  ['🔄 بازگشت به انتخاب آدرس یا فایل',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')]
+  ['🔄 بازگشت به انتخاب آدرس یا فایل',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل فهرست از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')]
  ];
  for(const x of results){
   const label=x.status==='active'?'🟢 فعال':x.status==='empty'?'🟡 خالی':'🔴 ناموفق';
@@ -682,7 +682,7 @@ async function manageIPTVPlaylist(){
   ['🌐 بارگذاری منابع مکمل کانال‌ها (در صورت نیاز)',()=>loadIPTVCommunitySources().then(n=>toast(fa(n)+' شبکه از منابع مکمل دریافت شد.')).catch(e=>toast('بارگذاری منابع مکمل ناموفق بود.'))],
   ['🧪 آزمایش موقت آدرس یا فایل دلخواه (بدون ذخیره)',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')],
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
-  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
+  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فهرست IPTV (M3U/M3U8/PLS/XSPF/ASX/JSON/TXT):',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['🌍 '+(IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
   ['🎬 '+(IPTV_GLOBAL_CATEGORY_SOURCES.every(source=>IPTV.extraUrls.some(x=>x.url===source.url))?'غیرفعال‌کردن':'افزودن')+' دسته‌های جهانی ورزش، فیلم و خبر',()=>toggleIPTVGlobalCategorySources()],
@@ -1101,7 +1101,7 @@ async function onIPTVFileSelected(e){
    await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item),'iptvLocalM3U8'));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
    IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
-   renderIPTV();toast('فایل M3U8 به‌عنوان یک کانال اضافه شد');
+   renderIPTV();toast('فایل رسانه‌ای به‌عنوان یک کانال اضافه شد');
   }
  }catch(err){const msg=err&&err.message?err.message:'خطای نامشخص';toast('بارگذاری ناموفق بود: '+msg);setIPTVStatus('بارگذاری فایل ناموفق بود: '+msg)}
 }
