@@ -210,7 +210,7 @@ async function restoreImportedIPTV(){
   for(const item of files){
    try{if(!item||!item.blob||typeof URL.createObjectURL!=='function')continue;
     const url=URL.createObjectURL(item.blob);
-    const channel=iptvDecorate({name:item.name||'فایل M3U8 محلی',group:'فایل‌های محلی',url,key:item.key||('local-m3u8|'+(item.name||'')),localBlob:true});
+    const channel=iptvDecorate({name:item.name||'رسانهٔ محلی',group:'فایل‌های محلی',url,key:item.key||('local-media|'+(item.name||'')),localBlob:true,mimeType:item.mimeType||''});
     IPTV_IMPORTED.localFiles.push({...item,url,channel});
    }catch(e){console.warn('restore local M3U8',e)}
   }
@@ -1063,14 +1063,17 @@ async function onIPTVFileSelected(e){
  try{
   await restoreImportedIPTV();
   const name=String(file.name||'').trim(),ext=(name.split('.').pop()||'').toLowerCase();
-  if(!['m3u','m3u8'].includes(ext))throw new Error('فقط فایل‌های .m3u و .m3u8 پشتیبانی می‌شوند.');
-  const limit=ext==='m3u'?20*1024*1024:32*1024*1024;
+  const playlistExts=['m3u','m3u8','pls','xspf','asx','xml','smil','json','txt'];
+  const mediaExts=['mp4','m4v','mov','webm','mkv','ts','m2ts','mpg','mpeg','mp3','aac','m4a','ogg','oga','opus','wav','flac'];
+  if(!playlistExts.includes(ext)&&!mediaExts.includes(ext))throw new Error('قالب فایل پشتیبانی نمی‌شود. فهرست‌ها: M3U، M3U8، PLS، XSPF، ASX، XML/SMIL، JSON و TXT؛ رسانه‌ها: MP4، TS، MP3، AAC، WebM و قالب‌های رایج دیگر.');
+  const limit=mediaExts.includes(ext)?256*1024*1024:32*1024*1024;
   if(file.size>limit)throw new Error('حجم فایل بیش از حد مجاز است.');
-  const text=await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
-  if(!/^#EXTM3U(?:\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
-  const isChannelList=/^#EXTINF(?::|\s)/im.test(clean)&&!/^#EXT-X-/im.test(clean)&&/^https?:\/\//im.test(clean);
-  if(ext==='m3u'||isChannelList){
-   const parsed=parseM3U(clean);
+  const text=mediaExts.includes(ext)?'':await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
+  const parsed=clean?parseM3U(clean):[];
+  const isHlsMedia=/^#EXTM3U(?:\s|$)/i.test(clean)&&/#EXT-X-(?:TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE|KEY|MAP)/i.test(clean)&&!/#EXTINF[^\r\n]*(?:tvg-|group-title)/i.test(clean);
+  const isChannelList=parsed.length>0&&!isHlsMedia;
+  if(isChannelList){
+
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
    if(isChannelList){
     const stale=IPTV_IMPORTED.localFiles.filter(x=>x.name===name),staleKeys=new Set(stale.map(x=>x.key));
@@ -1085,13 +1088,15 @@ async function onIPTVFileSelected(e){
    IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
    renderIPTV();toast(fa(added)+' کانال از فایل «'+name+'» اضافه شد');
   }else{
-   const key='local-m3u8|'+name+'|'+file.size+'|'+(file.lastModified||0);
-   const blob=new Blob([clean],{type:'application/vnd.apple.mpegurl'});
+   if(!mediaExts.includes(ext)&&!['m3u8','m3u'].includes(ext))throw new Error('فهرست خالی یا نامعتبر است؛ فایل رسانه‌ای محلی نیز قابل تشخیص نیست.');
+   const key='local-media|'+name+'|'+file.size+'|'+(file.lastModified||0);
+   const mimeType=file.type||(ext==='m3u8'||ext==='m3u'?'application/vnd.apple.mpegurl':'application/octet-stream');
+   const blob=new Blob([mediaExts.includes(ext)?file:clean],{type:mimeType});
    const url=URL.createObjectURL(blob);
    const old=IPTV_IMPORTED.localFiles.filter(x=>x.name!==name);
    old.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
-   const record={key,name,blob,size:file.size,lastModified:file.lastModified||0};
-   const channel=iptvDecorate({name:name.replace(/\.m3u8$/i,'')||'فایل M3U8',group:'فایل‌های محلی',url,key,localBlob:true});
+   const record={key,name,blob,size:file.size,lastModified:file.lastModified||0,mimeType};
+   const channel=iptvDecorate({name:name.replace(/\.[^.]+$/,'')||'رسانهٔ محلی',group:'فایل‌های محلی',url,key,localBlob:true,mimeType});
    IPTV_IMPORTED.localFiles=[...old,{...record,url,channel}];
    await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item),'iptvLocalM3U8'));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
