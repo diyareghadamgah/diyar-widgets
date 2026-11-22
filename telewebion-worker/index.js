@@ -395,11 +395,14 @@ export default {
     const url = new URL(request.url);
     // Same-origin CORS proxy for the public IPTV-org playlists used by Naghme Web.
     const countryPlaylist = url.pathname.match(/^\/iptv\/countries\/([a-z]{2})\.m3u$/i);
+    const categoryPlaylist = url.pathname.match(/^\/iptv\/categories\/(sports|movies|news)\.m3u$/i);
     const playlistSource = url.pathname === "/iptv/index.m3u"
       ? "https://iptv-org.github.io/iptv/index.m3u"
       : countryPlaylist
         ? "https://iptv-org.github.io/iptv/countries/" + countryPlaylist[1].toLowerCase() + ".m3u"
-        : null;
+        : categoryPlaylist
+          ? "https://iptv-org.github.io/iptv/categories/" + categoryPlaylist[1].toLowerCase() + ".m3u"
+          : null;
     if (url.pathname === "/iptv/external") {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
