@@ -681,17 +681,17 @@ async function manageIPTVPlaylist(){
  const files=[...groups,...locals];
  const active=IPTV.url===IPTV_DEFAULT_URL?'فهرست پیش‌فرض نغمه':IPTV.url||'فهرست اینترنتی غیرفعال';
  const actions=[
-  ['🧪 آزمایش سلامت منابع IPTV ('+fa(IPTV_COMMUNITY_SOURCES.length)+' منبع مکمل)',()=>testIPTVSourceHealth()],
-  ['🌐 بارگذاری منابع مکمل کانال‌ها (در صورت نیاز)',()=>loadIPTVCommunitySources().then(n=>toast(fa(n)+' شبکه از منابع مکمل دریافت شد.')).catch(e=>toast('بارگذاری منابع مکمل ناموفق بود.'))],
-  ['🧪 آزمایش موقت آدرس یا فایل دلخواه (بدون ذخیره)',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')],
+  ['🧪 بررسی سلامت منابع IPTV ('+fa(IPTV_COMMUNITY_SOURCES.length)+' منبع مکمل)',()=>testIPTVSourceHealth()],
+  ['🌐 دریافت شبکه‌های مکمل (اختیاری)',()=>loadIPTVCommunitySources().then(n=>toast(fa(n)+' شبکه از منابع مکمل دریافت شد.')).catch(e=>toast('بارگذاری منابع مکمل ناموفق بود.'))],
+  ['🧪 آزمایش موقت لینک یا فایل (بدون ذخیره)',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')],
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
-  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فهرست IPTV (M3U/M3U8/PLS/XSPF/ASX/JSON/TXT):',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
+  ['🔗 افزودن یا تغییر نشانی فهرست آنلاین',()=>{const value=prompt('نشانی کامل فهرست IPTV (M3U/M3U8/PLS/XSPF/ASX/JSON/TXT):',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['🌍 '+(IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
   ['🎬 '+(IPTV_GLOBAL_CATEGORY_SOURCES.every(source=>IPTV.extraUrls.some(x=>x.url===source.url))?'غیرفعال‌کردن':'افزودن')+' دسته‌های جهانی ورزش، فیلم و خبر',()=>toggleIPTVGlobalCategorySources()],
-  ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
-  ['＋ افزودن شبکه با لینک مستقیم',()=>addIPTVDirectChannel()],
-  ['🗂 مدیریت شبکه‌های دستی ('+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+')',()=>manageDirectIPTVChannels()]
+  ['📂 افزودن فایل فهرست از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
+  ['📺 افزودن شبکه با نشانی مستقیم',()=>addIPTVDirectChannel()],
+  ['🗂 شبکه‌های دستی ('+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+')',()=>manageDirectIPTVChannels()]
  ];
  if(files.length){
   actions.push(...files.map(file=>['🗑 حذف «'+file.name+'» ('+fa(file.keys.length)+' شبکه)',async()=>{await removeIPTVImportedItem(file.keys[0]);await manageIPTVPlaylist()}]));
@@ -708,7 +708,7 @@ async function manageIPTVPlaylist(){
    IPTV.sig='';IPTV.chipSig='';renderIPTV();toast('همهٔ فایل‌های واردشده حذف شدند.');await manageIPTVPlaylist();
   }]);
  }else actions.push(['📂 هنوز فایل محلی وارد نشده است',()=>toast('برای افزودن فایل، گزینهٔ افزودن فایل M3U / M3U8 را انتخاب کن.')]);
- sheet('مدیریت منابع تلویزیون',actions,'منبع فعال: '+active+'\nفایل‌های واردشده: '+fa(files.length)+' • شبکه‌های دستی: '+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+'\n\nهمهٔ منابع در همین بخش مدیریت می‌شوند. حذف فایل فقط شبکه‌های متعلق به همان فایل را پاک می‌کند؛ فهرست پیش‌فرض نغمه و منابع اینترنتی مستقل باقی می‌مانند.');
+ sheet('تنظیمات تلویزیون',actions,'منبع فعال: '+active+'\nفایل‌های واردشده: '+fa(files.length)+' • شبکه‌های دستی: '+fa(IPTV_IMPORTED.channels.filter(c=>String(c.key||'').startsWith('direct|')).length)+'\n\nاز این قسمت می‌توان فهرست آنلاین، منابع مکمل، فایل‌های واردشده و شبکه‌های دستی را مدیریت کرد. حذف فایل فقط شبکه‌های متعلق به همان فایل را پاک می‌کند؛ فهرست پیش‌فرض نغمه و منابع اینترنتی مستقل باقی می‌مانند.');
 }
 // تشخیص نوع جریان از پسوند، پارامترهای URL یا metadata؛ برای لینک‌های امضاشده و بدون پسوند هم کاربرد دارد.
 function iptvStreamMimeType(channel){
