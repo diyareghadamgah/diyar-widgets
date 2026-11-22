@@ -446,7 +446,7 @@ export default {
         const normalized = body.replace(/^\uFEFF/, "").trim();
         const head = normalized.slice(0, 12000).trimStart();
         let recognized = /^#EXTM3U\b/i.test(head) || /^\[playlist\]/i.test(head)
-          || /<(?:\w+:)?(?:playlist|asx|smil)\b/i.test(head);
+          || /<(?:\w+:)?(?:playlist|asx|smil|MPD)\b/i.test(head);
         if (!recognized && /^[\[{]/.test(head)) {
           try {
             const root = JSON.parse(normalized);
