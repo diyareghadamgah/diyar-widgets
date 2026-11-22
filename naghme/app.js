@@ -296,7 +296,7 @@ async function loadIPTV(force=false){
     const text=await fetchTextWithTimeout(url);
     return {text,url};
    }
-   return {text:await fetchTextWithTimeout(proxyUrl),url};
+   throw new Error('دریافت منبع مکمل از Worker ناموفق بود.');
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
