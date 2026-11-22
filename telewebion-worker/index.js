@@ -395,7 +395,7 @@ export default {
     const url = new URL(request.url);
     // Same-origin CORS proxy for the public IPTV-org playlists used by Naghme Web.
     const countryPlaylist = url.pathname.match(/^\/iptv\/countries\/([a-z]{2})\.m3u$/i);
-    const categoryPlaylist = url.pathname.match(/^\\/iptv\\/categories\\/(sports|movies|news)\\.m3u$/i);
+    const categoryPlaylist = url.pathname.match(/^\/iptv\/categories\/(sports|movies|news)\.m3u$/i);
     const playlistSource = url.pathname === "/iptv/index.m3u"
       ? "https://iptv-org.github.io/iptv/index.m3u"
       : countryPlaylist
