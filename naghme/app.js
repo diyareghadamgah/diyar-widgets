@@ -274,7 +274,7 @@ function parseM3U(text,baseUrl){
  if(/^\s*[\[{]/.test(source)){
   try{
    const root=JSON.parse(source),items=[];
-   const walk=(value,depth=0)=>{if(depth>8||value==null)return;if(Array.isArray(value)){value.forEach(x=>walk(x,depth+1));return}if(typeof value!=='object')return;
+   const walk=(value,depth=0)=>{if(depth>8||value==null)return;if(Array.isArray(value)){value.forEach(x=>walk(x,depth+1));return}if(typeof value==='string'){if(/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:)/i.test(value.trim()))items.push({name:'',url:value.trim()});return}if(typeof value!=='object')return;
     const url=value.url||value.stream_url||value.streamUrl||value.file||value.src||value.uri||value.link||value.play_url||value.playUrl;
     if(typeof url==='string'&&url.trim()){items.push({name:value.name||value.title||value.channel||value.tvg_name||value.tvgName||'',url,logo:value.logo||value.tvg_logo||value.tvgLogo||'',group:value.group||value.category||value.group_title||value.groupTitle||'سایر',country:value.country||'',language:value.language||'',id:value.id||value.tvg_id||value.tvgId||'',mimeType:value.mimeType||value.mime_type||''});return}
     for(const [k,v] of Object.entries(value)){if(['channels','items','streams','playlist','data','results','categories'].includes(k.toLowerCase()))walk(v,depth+1)}
