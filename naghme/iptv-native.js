@@ -84,7 +84,7 @@
   var mimeType='';try{var parsed=new URL(channel.url),hint=(parsed.pathname+' '+parsed.search+' '+String(channel.type||channel.format||'')).toLowerCase();if(/\.m3u8(?:$|[?#&])|(?:format|type|output)=?(?:m3u8|hls)|mpegurl/.test(hint))mimeType='application/x-mpegURL';else if(/\.mpd(?:$|[?#&])|(?:format|type|output)=?dash|dash\+xml/.test(hint))mimeType='application/dash+xml';}catch(_){}
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url,mimeType:mimeType})})
-   .then(function(){var q=document.getElementById('iptvQuality');return native.setVideoQuality(q?Number(q.value)||0:0).catch(function(){})})
+   .then(function(){var q=document.getElementById('iptvQuality');return native.setVolume((function(){try{var v=localStorage.getItem('naghme-iptv-volume');return v===null?1:Math.max(0,Math.min(1,Number(v)||0))}catch(_){return 1}})()).catch(function(){})})\n   .then(function(){var q=document.getElementById('iptvQuality');return native.setVideoQuality(q?Number(q.value)||0:0).catch(function(){})})
    .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
    .then(function(){
@@ -135,11 +135,11 @@
   var host=document.querySelector('.tvnow');if(!host||document.getElementById('naghmeIptvTools'))return;
   var tools=document.createElement('div');tools.id='naghmeIptvTools';tools.dir='rtl';
   Object.assign(tools.style,{display:'flex',gap:'7px',alignItems:'center',flexWrap:'wrap',marginTop:'8px'});
-  tools.innerHTML='<label data-iptv-volume-wrap style="display:flex;gap:7px;align-items:center;font-size:13px;min-width:180px">🔊 صدا <input data-iptv-tool="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="تنظیم صدای تلویزیون" style="width:105px;accent-color:#d9b34b"><output data-iptv-volume-value>۱۰۰٪</output></label><button type="button" data-iptv-tool="jump" aria-label="رفتن به زمان">⏱ رفتن به زمان</button><label style="font-size:13px">سرعت پخش <select data-iptv-tool="speed"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" data-iptv-tool="sleep" aria-label="زمان‌سنج خواب">🌙 زمان‌سنج خواب</button><button type="button" data-iptv-tool="lock" aria-label="قفل لمس">🔒 قفل لمس</button>';
-  tools.querySelectorAll('button,select').forEach(function(el){Object.assign(el.style,{padding:'7px 10px',borderRadius:'8px',border:'1px solid #777',background:'#173c31',color:'#fff',fontSize:'12px'})});
+  tools.innerHTML='<label class="iptv-volume-control" data-iptv-volume-wrap><span>🔊 صدا</span><input data-iptv-tool="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="تنظیم صدای تلویزیون"><output data-iptv-volume-value>۱۰۰٪</output></label><label class="iptv-speed-control"><span>سرعت</span><select data-iptv-tool="speed" aria-label="سرعت پخش"><option value=".5">۰٫۵×</option><option value=".75">۰٫۷۵×</option><option value="1" selected>۱×</option><option value="1.25">۱٫۲۵×</option><option value="1.5">۱٫۵×</option><option value="2">۲×</option></select></label><button type="button" class="iptv-tool-btn" data-iptv-tool="sleep" aria-label="زمان‌سنج خواب">🌙 زمان‌سنج</button><button type="button" class="iptv-tool-btn" data-iptv-tool="lock" aria-label="قفل لمس">🔒 قفل لمس</button>';
+  tools.querySelectorAll('button').forEach(function(el){el.type='button'});
   var volume=tools.querySelector('[data-iptv-tool="volume"]'),volumeOut=tools.querySelector('[data-iptv-volume-value]');
   function showVolume(value){value=Math.max(0,Math.min(1,Number(value)||0));if(volume)volume.value=String(value);if(volumeOut)volumeOut.textContent=Math.round(value*100)+'٪'}
-  showVolume(1);
+  var savedVolume=1;try{var storedVolume=localStorage.getItem('naghme-iptv-volume');if(storedVolume!==null&&Number.isFinite(Number(storedVolume)))savedVolume=Math.max(0,Math.min(1,Number(storedVolume)))}catch(_){}\n  showVolume(savedVolume);
   if(native&&typeof native.on==='function')native.on('volumeChanged',function(e){if(e&&typeof e.volume==='number')showVolume(e.volume)});
   host.insertAdjacentElement('afterend',tools);
   var locked=false;
