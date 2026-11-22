@@ -323,7 +323,7 @@ async function loadIPTV(force=false){
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
    try{
     const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal});
-    if(!response.ok)throw new Error('HTTP '+response.status);
+    if(!response.ok){const detail=(await response.text()).slice(0,240).trim();throw new Error('HTTP '+response.status+(detail?' — '+detail:''))}
     return await response.text();
    }catch(e){
     if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۲۰ ثانیه تمام شد.');
@@ -765,6 +765,7 @@ async function attachIPTVPlayer(force){
  v.onwaiting=()=>{if(!stale()&&!IPTV.playError)setIPTVStatus('در حال بافر…')};
  const url=iptvWebStreamUrl(ch.url);
  try{
+  if(!/^(?:https?:|blob:)/i.test(url)){fail('این پروتکل در پخش‌کنندهٔ وب پشتیبانی نمی‌شود؛ برای RTSP/UDP و پیوندهای مشابه از نسخهٔ بومی اندروید استفاده کنید.');return}
   if(ch.localBlob){
    // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
    v.src=url;await v.play().catch(hint);return;
