@@ -442,10 +442,18 @@ export default {
           cf: { cacheTtl: 300, cacheEverything: true },
         });
         const headers = new Headers(CORS_HEADERS);
-        headers.set("Content-Type", upstream.headers.get("content-type") || "audio/x-mpegurl; charset=utf-8");
+        headers.set("Content-Type", "text/plain; charset=utf-8");
         headers.set("Cache-Control", "public, max-age=300");
         if (!upstream.ok) return new Response("playlist upstream HTTP " + upstream.status + "\\n", { status: 502, headers });
-        return new Response(request.method === "HEAD" ? null : upstream.body, { status: 200, headers });
+        if (request.method === "HEAD") return new Response(null, { status: 200, headers });
+        const body = await upstream.text();
+        if (!body.replace(/^\\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
+          return new Response("playlist upstream returned invalid M3U content\\n", {
+            status: 502,
+            headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
+          });
+        }
+        return new Response(body, { status: 200, headers });
       } catch (error) {
         console.error("IPTV playlist proxy failed", error);
         return new Response("playlist upstream unavailable\\n", { status: 502, headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8" } });
