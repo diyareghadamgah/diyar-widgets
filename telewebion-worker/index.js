@@ -452,6 +452,7 @@ export default {
             const root = JSON.parse(normalized);
             const hasUrl = value => {
               if (Array.isArray(value)) return value.some(hasUrl);
+              if (typeof value === "string") return /^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:)/i.test(value.trim());
               if (!value || typeof value !== "object") return false;
               if (["url","stream_url","streamUrl","file","src","uri","link","play_url","playUrl"].some(k => typeof value[k] === "string")) return true;
               return Object.entries(value).some(([k,v]) => ["channels","items","streams","playlist","data","results","categories"].includes(k.toLowerCase()) && hasUrl(v));
