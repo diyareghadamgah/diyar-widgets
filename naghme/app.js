@@ -254,9 +254,7 @@ function iptvPlaylistChannel(name,url,meta={}){
 function parseM3U(text,baseUrl){
  const source=String(text||'').replace(/^\uFEFF/,'').trim();if(!source)return [];
  const out=[],seen=new Set(),add=(name,url,meta={})=>{const c=iptvPlaylistChannel(name,url,{...meta,baseUrl});if(c&&!seen.has(c.key)){seen.add(c.key);out.push(c)}};
- const lines=source.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
- const head=lines.slice(0,8).join('\n');
- // Playlist interchange formats: M3U/M3U8, PLS, XSPF, ASX and JSON.
+ const lines=source.split(/\r?\n/).map(x=>x.trim()).filter(Boolean),head=lines.slice(0,8).join('\n');
  if(/^\[playlist\]/im.test(head)){
   const fields={};for(const line of lines){const m=line.match(/^(File|Title|Length)(\d+)\s*=\s*(.*)$/i);if(m){const n=m[2];fields[n]??={};fields[n][m[1].toLowerCase()]=m[3].trim()}}
   Object.keys(fields).sort((a,b)=>Number(a)-Number(b)).forEach(n=>add(fields[n].title,fields[n].file));return out;
@@ -270,7 +268,7 @@ function parseM3U(text,baseUrl){
   const entries=[...source.matchAll(/<(?:\w+:)?entry\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?entry\s*>/gi)];
   for(const m of entries){const href=(m[1].match(/\b(?:href|ref)\s*=\s*["']([^"']+)["']/i)||[])[1]||(m[2].match(/<(?:\w+:)?ref\b[^>]*\bhref\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[2].match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(href)add(decode(title),decode(href))}
   if(!out.length){const refs=[...source.matchAll(/<(?:\w+:)?ref\b[^>]*\b(?:href|src)\s*=\s*["']([^"']+)["'][^>]*>/gi)];for(const m of refs)add('',decode(m[1]))}
-  if(!out.length){const media=[...source.matchAll(/<(?:\w+:)?(?:video|audio|media)\b([^>]*)>/gi)];for(const m of media){const src=(m[1].match(/\b(?:src|href)\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[1].match(/\btitle\s*=\s*["']([^"']+)["']/i)||[])[1];if(src)add(title,decode(src))}}
+  if(!out.length){const media=[...source.matchAll(/<(?:\w+:)?(?:video|audio|media)\b([^>]*)>/gi)];for(const m of media){const src=(m[1].match(/\b(?:src|href)\s*=\s*["']([^"']+)["']/i)||[])[1],title=(m[1].match(/\btitle\s*=\s*["']([^"']+)["']/i)||[])[1];if(src)add(title,decode(src))}}
   return out;
  }
  if(/^\s*[\[{]/.test(source)){
@@ -282,27 +280,25 @@ function parseM3U(text,baseUrl){
     for(const [k,v] of Object.entries(value)){if(['channels','items','streams','playlist','data','results','categories'].includes(k.toLowerCase()))walk(v,depth+1)}
    };
    walk(root);for(const item of items)add(item.name,item.url,item);return out;
-  }catch{/* continue with text/URL-list detection */}
+  }catch{/* continue with URL-list detection */}
  }
- // M3U and extended M3U: attributes may use either quote style; commas inside quoted values are preserved.
- if(/^#EXTM3U\b/i.test(head)){
+ if(/^#EXTM3U\b/i.test(head)||/^#EXTINF(?::|\s)/im.test(source)){
   if(/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE|KEY|MAP)\b/i.test(source)&&!/#EXTINF:[^\r\n]*(?:tvg-|group-title)/i.test(source))return [];
   let meta=null;
   for(const line of lines){
    if(/^#EXTINF/i.test(line)){
-    let comma=-1,quote='';for(let i=0;i<line.length;i++){const ch=line[i];if((ch==='"'||ch==="'")&&(!quote||quote===ch))quote=quote? '':ch;else if(ch===','&&!quote){comma=i;break}}
+    let comma=-1,quote='';for(let i=0;i<line.length;i++){const ch=line[i];if((ch==='"'||ch==="'")&&(!quote||quote===ch))quote=quote?'':ch;else if(ch===','&&!quote){comma=i;break}}
     const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
-    const get=k=>{const m=attrs.match(new RegExp('(?:^|\\\\s)'+k+'\\\\s*=\\\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
-    const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\\/)?[a-z]{2}(?:\\s*[,;]\\s*(?:c\\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\\//gi,'').trim();
+    const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'\\s*=\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
+    const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\//gi,'').trim();
     meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
    }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group}
-   else if(!/^https?:\/\//i.test(line)||meta){const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
-   else add(line,line,{group:'سایر'});
+   else{const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
   }
   return out;
  }
- // PLAIN URL lists are common in community IPTV repositories and .txt files.
- for(const line of lines){if(line.startsWith('#')||/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(line)){const url=line.replace(/^["']|["']$/g,'');if(!url.startsWith('#'))add('',url,{group:'سایر'})}}
+ // Plain text files containing one stream URL per line.
+ for(const line of lines){if(line.startsWith('#'))continue;if(/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(line))add('',line,{group:'سایر'})}
  return out;
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
