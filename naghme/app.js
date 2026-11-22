@@ -240,25 +240,68 @@ function iptvDecorate(c){
  if(!c.country&&names[0]&&names[0].fa)c.country=names[0].fa;
  c.search=iptvNorm([c.name,c.group,c.country,...codes,...names.flatMap(n=>[n.fa,n.en]),c.language,c.id].join(' '));
  return c}
+function iptvResolvePlaylistUrl(raw,baseUrl){
+ const value=String(raw||'').trim().replace(/^["']|["']$/g,'');if(!value)return '';
+ try{const u=baseUrl?new URL(value,baseUrl):new URL(value);return /^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(u.protocol)?u.href:''}catch{return ''}
+}
+function iptvPlaylistChannel(name,url,meta={}){
+ const streamUrl=iptvResolvePlaylistUrl(url,meta.baseUrl);if(!streamUrl)return null;
+ const cleanName=String(name||'').trim()||(()=>{try{return decodeURIComponent(new URL(streamUrl).pathname.split('/').pop()||'شبکه بدون نام')}catch{return 'شبکه بدون نام'}})();
+ const item={name:cleanName,logo:meta.logo||'',group:meta.group||'سایر',country:meta.country||'',language:meta.language||'',id:meta.id||'',url:streamUrl,key:(meta.id||cleanName)+'|'+streamUrl};
+ if(meta.mimeType)item.mimeType=meta.mimeType;
+ return iptvDecorate(item);
+}
 function parseM3U(text,baseUrl){
- const out=[];let meta=null;
- for(const line0 of String(text).split(/\r?\n/)){
-  const line=line0.trim();if(!line)continue;
-  if(line.startsWith('#EXTINF')){
-   let comma=-1,quoted=false;
-   for(let i=0;i<line.length;i++){if(line[i]==='"')quoted=!quoted;else if(line[i]===','&&!quoted){comma=i;break}}
-   const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
-   const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'="([^"]*)"','i'));return m?m[1]:''};
-   const rawGroup=get('group-title')||'سایر';
-   const isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup);
-   const area=rawGroup.replace(/c\//gi,'').trim();
-   meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
-  }else if(!line.startsWith('#')){
-   let streamUrl='';try{const resolved=baseUrl?new URL(line,baseUrl):new URL(line);if(/^https?:$/.test(resolved.protocol))streamUrl=resolved.href}catch{}
-   if(!streamUrl)continue;
-   const m=meta||{name:line,group:'سایر'};out.push(iptvDecorate({...m,url:streamUrl,key:(m.id||m.name)+'|'+streamUrl}));meta=null;   // کلید همان قالب قدیمی است تا علاقه‌مندی‌های ذخیره‌شده معتبر بمانند
-  }
+ const source=String(text||'').replace(/^\uFEFF/,'').trim();if(!source)return [];
+ const out=[],seen=new Set(),add=(name,url,meta={})=>{const c=iptvPlaylistChannel(name,url,{...meta,baseUrl});if(c&&!seen.has(c.key)){seen.add(c.key);out.push(c)}};
+ const lines=source.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ const head=lines.slice(0,8).join('\n');
+ // Playlist interchange formats: M3U/M3U8, PLS, XSPF, ASX and JSON.
+ if(/^\[playlist\]/im.test(head)){
+  const fields={};for(const line of lines){const m=line.match(/^(File|Title|Length)(\d+)\s*=\s*(.*)$/i);if(m){const n=m[2];fields[n]??={};fields[n][m[1].toLowerCase()]=m[3].trim()}}
+  Object.keys(fields).sort((a,b)=>Number(a)-Number(b)).forEach(n=>add(fields[n].title,fields[n].file));return out;
  }
+ if(/<(?:\w+:)?playlist\b|<(?:\w+:)?asx\b|<(?:\w+:)?smil\b/i.test(source)){
+  const decode=v=>String(v||'').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&apos;/gi,"'").replace(/&lt;/gi,'<').replace(/&gt;/gi,'>');
+  if(/<(?:\w+:)?playlist\b/i.test(source)){
+   const tracks=[...source.matchAll(/<(?:\w+:)?track\b[^>]*>([\s\S]*?)<\/(?:\w+:)?track\s*>/gi)];
+   for(const m of tracks){const body=m[1],loc=(body.match(/<(?:\w+:)?location\b[^>]*>([\s\S]*?)<\/(?:\w+:)?location\s*>/i)||[])[1],title=(body.match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(loc)add(decode(title),decode(loc))}
+  }
+  const entries=[...source.matchAll(/<(?:\w+:)?entry\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?entry\s*>/gi)];
+  for(const m of entries){const href=(m[1].match(/\b(?:href|ref)\s*=\s*["']([^"']+)["']/i)||[])[1]||(m[2].match(/<(?:\w+:)?ref\b[^>]*\bhref\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[2].match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(href)add(decode(title),decode(href))}
+  if(!out.length){const refs=[...source.matchAll(/<(?:\w+:)?ref\b[^>]*\b(?:href|src)\s*=\s*["']([^"']+)["'][^>]*>/gi)];for(const m of refs)add('',decode(m[1]))}
+  return out;
+ }
+ if(/^\s*[\[{]/.test(source)){
+  try{
+   const root=JSON.parse(source),items=[];
+   const walk=(value,depth=0)=>{if(depth>8||value==null)return;if(Array.isArray(value)){value.forEach(x=>walk(x,depth+1));return}if(typeof value!=='object')return;
+    const url=value.url||value.stream_url||value.streamUrl||value.file||value.src||value.uri||value.link||value.play_url||value.playUrl;
+    if(typeof url==='string'&&url.trim()){items.push({name:value.name||value.title||value.channel||value.tvg_name||value.tvgName||'',url,logo:value.logo||value.tvg_logo||value.tvgLogo||'',group:value.group||value.category||value.group_title||value.groupTitle||'سایر',country:value.country||'',language:value.language||'',id:value.id||value.tvg_id||value.tvgId||'',mimeType:value.mimeType||value.mime_type||''});return}
+    for(const [k,v] of Object.entries(value)){if(['channels','items','streams','playlist','data','results','categories'].includes(k.toLowerCase()))walk(v,depth+1)}
+   };
+   walk(root);for(const item of items)add(item.name,item.url,item);return out;
+  }catch{/* continue with text/URL-list detection */}
+ }
+ // M3U and extended M3U: attributes may use either quote style; commas inside quoted values are preserved.
+ if(/^#EXTM3U\b/i.test(head)){
+  if(/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE|KEY|MAP)\b/i.test(source)&&!/#EXTINF:[^\r\n]*(?:tvg-|group-title)/i.test(source))return [];
+  let meta=null;
+  for(const line of lines){
+   if(/^#EXTINF/i.test(line)){
+    let comma=-1,quote='';for(let i=0;i<line.length;i++){const ch=line[i];if((ch==='"'||ch==="'")&&(!quote||quote===ch))quote=quote? '':ch;else if(ch===','&&!quote){comma=i;break}}
+    const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
+    const get=k=>{const m=attrs.match(new RegExp('(?:^|\\\\s)'+k+'\\\\s*=\\\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
+    const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\\/)?[a-z]{2}(?:\\s*[,;]\\s*(?:c\\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\\//gi,'').trim();
+    meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
+   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group}
+   else if(!/^https?:\/\//i.test(line)||meta){const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
+   else add(line,line,{group:'سایر'});
+  }
+  return out;
+ }
+ // PLAIN URL lists are common in community IPTV repositories and .txt files.
+ for(const line of lines){if(line.startsWith('#')||/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(line)){const url=line.replace(/^["']|["']$/g,'');if(!url.startsWith('#'))add('',url,{group:'سایر'})}}
  return out;
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
@@ -547,7 +590,7 @@ async function testTemporaryIPTVSources(mode){
      try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);body=await response.text()}
      finally{clearTimeout(timer)}
     }
-    const channels=parseM3U(body);
+    const channels=parseM3U(body,url);
     return {url,count:channels.length,ms:Date.now()-started,status:channels.length?'active':'empty',error:''};
    }catch(e){return {url,count:0,ms:Date.now()-started,status:'failed',error:e&&e.name==='AbortError'?'مهلت دریافت تمام شد':(e.message||'خطای دریافت')}}
   };
@@ -561,12 +604,12 @@ async function testTemporaryIPTVSources(mode){
   await run(value.split(/[\\r\\n,;\\s]+/).filter(Boolean));return;
  }
  const input=document.createElement('input');
- input.type='file';input.accept='.m3u,.m3u8,audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain';input.multiple=true;
+ input.type='file';input.accept='.m3u,.m3u8,.pls,.xspf,.asx,.xml,.smil,.json,.txt,audio/x-mpegurl,application/vnd.apple.mpegurl,application/pls+xml,application/xspf+xml,application/json,text/plain,application/xml';input.multiple=true;
  input.onchange=async()=>{
   const files=[...(input.files||[])];if(!files.length)return;
   const results=[];
   for(const file of files){
-   try{const body=await file.text(),channels=parseM3U(body);results.push({url:'📂 '+file.name,count:channels.length,ms:0,status:channels.length?'active':'empty',error:''})}
+   try{const body=await file.text(),channels=parseM3U(body,file.name);results.push({url:'📂 '+file.name,count:channels.length,ms:0,status:channels.length?'active':'empty',error:''})}
    catch(e){results.push({url:'📂 '+file.name,count:0,ms:0,status:'failed',error:e.message||'خواندن فایل ناموفق بود'})}
   }
   showTemporaryIPTVReport(results);
@@ -604,7 +647,7 @@ async function testIPTVSourceHealth(){
     try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);body=await response.text()}
     finally{clearTimeout(timer)}
    }
-   const channels=parseM3U(body);
+   const channels=parseM3U(body,url);
    return {url,count:channels.length,ms:Date.now()-started,status:channels.length?'active':'empty',error:''};
   }catch(e){return {url,count:0,ms:Date.now()-started,status:'failed',error:e&&e.name==='AbortError'?'مهلت دریافت تمام شد':(e.message||'خطای دریافت')}}
  };
