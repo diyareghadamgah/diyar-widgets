@@ -301,6 +301,13 @@ function parseM3U(text,baseUrl){
  for(const line of lines){if(line.startsWith('#'))continue;if(/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(line))add('',line,{group:'سایر'})}
  return out;
 }
+function iptvIsDirectMediaUrl(raw){
+ try{const u=new URL(raw);if(!/^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(u.protocol))return false;return /\.(?:mp4|m4v|mov|webm|mkv|ts|m2ts|mpg|mpeg|mp3|aac|m4a|ogg|oga|opus|wav|flac|mpd)$/i.test(u.pathname)||!/^https?:$/.test(u.protocol)}catch{return false}
+}
+function iptvDirectMediaChannel(raw){
+ let name='پخش مستقیم';try{name=decodeURIComponent(new URL(raw).pathname.split('/').pop()||name).replace(/\.[^.]+$/,'')||name}catch{}
+ return iptvPlaylistChannel(name,raw,{group:'پخش مستقیم'});
+}
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
 function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=true}
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
@@ -327,13 +334,13 @@ async function loadIPTV(force=false){
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
     const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url};
    }
-   const proxyUrl=iptvPlaylistProxyUrl(url);
+   const proxyUrl=iptvPlaylistProxyUrl(url);let proxyError=null;
    try{
     const text=await fetchTextWithTimeout(proxyUrl);
     if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url};
     console.warn('IPTV proxy returned a short main playlist; retrying official source directly');
    }catch(error){
-    console.warn('IPTV proxy failed; retrying official source directly',error);
+    proxyError=error;console.warn('IPTV proxy failed; retrying official source directly',error);
    }
    // GitHub Pages serves the official M3U with CORS. Use it as a fallback
    // so a broken/stale Worker can never silently reduce the main list to extras.
@@ -341,13 +348,13 @@ async function loadIPTV(force=false){
     const text=await fetchTextWithTimeout(url);
     return {text,url};
    }
-   throw new Error('دریافت منبع مکمل از Worker ناموفق بود.');
+   throw new Error('دریافت منبع فهرست ناموفق بود؛ ممکن است قالب پشتیبانی نشود، سرور پاسخ ندهد یا دسترسی محدود باشد. '+(proxyError&&proxyError.message?proxyError.message:''));
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const uniqueUrls=[...new Set(urls)];
-  const results=await Promise.allSettled(uniqueUrls.map(async url=>{const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);const parsed=parseM3U(body,base);if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
+  const results=await Promise.allSettled(uniqueUrls.map(async url=>{if(iptvIsDirectMediaUrl(url))return [{...iptvDirectMediaChannel(url),sourceUrl:url}];const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);let parsed=parseM3U(body,base);if(!parsed.length&&url!==IPTV_DEFAULT_URL&&/^#EXTM3U\b/i.test(String(body||'').trimStart())&&/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE)/i.test(body))parsed=[iptvDirectMediaChannel(url)];if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
   const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
   const mainFailed=IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled';
   if(generation!==iptvLoadGeneration)return;
@@ -437,7 +444,7 @@ function iptvRelease(){   // آزادسازی کامل منابع پخش (خرو
 async function setIPTVPlaylistUrl(raw){
  await restoreImportedIPTV();
  const value=String(raw==null?'':raw).trim();
- if(value){try{const parsed=new URL(value);if(!/^https?:$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}}
+ if(value){try{const parsed=new URL(value);if(!/^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http، https یا لینک پخش مستقیم معتبر وارد کنید.')}}
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvLoadGeneration++;IPTV.loading=false;iptvRelease();
  // حذف موقت فقط وضعیت نمایش را خاموش می‌کند؛ آدرس ذخیره‌شده دست‌نخورده می‌ماند.
