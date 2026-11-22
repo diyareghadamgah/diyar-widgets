@@ -84,7 +84,7 @@
   var mimeType='';try{var parsed=new URL(channel.url),hint=(parsed.pathname+' '+parsed.search+' '+String(channel.type||channel.format||'')).toLowerCase();if(/\.m3u8(?:$|[?#&])|(?:format|type|output)=?(?:m3u8|hls)|mpegurl/.test(hint))mimeType='application/x-mpegURL';else if(/\.mpd(?:$|[?#&])|(?:format|type|output)=?dash|dash\+xml/.test(hint))mimeType='application/dash+xml';}catch(_){}
   return Promise.resolve(p.setVisible?p.setVisible({visible:true}):null)
    .then(function(){return p.play({url:channel.url,mimeType:mimeType})})
-   .then(function(){var q=document.getElementById('iptvQuality');return native.setVolume((function(){try{var v=localStorage.getItem('naghme-iptv-volume');return v===null?1:Math.max(0,Math.min(1,Number(v)||0))}catch(_){return 1}})()).catch(function(){})})\n   .then(function(){var v=1;try{var stored=localStorage.getItem('naghme-iptv-volume');if(stored!==null)v=Math.max(0,Math.min(1,Number(stored)||0))}catch(_){}return native.setVolume(v).catch(function(){})})
+   .then(function(){var v=1;try{var stored=localStorage.getItem('naghme-iptv-volume');if(stored!==null)v=Math.max(0,Math.min(1,Number(stored)||0))}catch(_){}return native.setVolume(v).catch(function(){})})
      .then(function(){var q=document.getElementById('iptvQuality');return native.setVideoQuality(q?Number(q.value)||0:0).catch(function(){})})
    .then(function(){var prefs=window.NaghmePlayerSettings&&window.NaghmePlayerSettings.get?window.NaghmePlayerSettings.get():null;return prefs&&native.setSpeed?native.setSpeed(Number(prefs.iptvSpeed)||1):null})
    .then(function(){return p.setBounds?p.setBounds(b):null})
