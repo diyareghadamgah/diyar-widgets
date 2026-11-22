@@ -1224,3 +1224,24 @@ body.mode-tv .tvhead .iptv-iran-toggle{
 .radio-player.is-playing .radio-disc:after{background:#36d99a;box-shadow:0 0 13px #36d99a}
 @keyframes naghmeRadioSpin{to{transform:rotate(360deg)}}
 @media(max-width:560px){.radio-iranseda-row{gap:8px;padding:10px}.radio-iranseda-address b{font-size:12px}.radio-iranseda-address small{max-width:145px}.radio-iranseda-key{padding:0 12px;font-size:12px;min-height:40px}}
+
+
+/* IPTV controls: compact, consistent and touch-friendly */
+body.mode-tv #naghmeIptvTools{gap:8px!important;padding:6px 0!important;flex-basis:48px!important;align-items:center!important}
+body.mode-tv #naghmeIptvTools .iptv-volume-control{display:flex!important;align-items:center;gap:8px;min-width:190px;flex:1 1 230px!important;max-width:340px;height:40px;padding:0 11px;border:1px solid #51452b;border-radius:12px;background:linear-gradient(135deg,#211b2d,#15121d);color:var(--tx);font-size:12px}
+body.mode-tv #naghmeIptvTools .iptv-volume-control input{width:auto!important;min-width:65px;flex:1;accent-color:#d9b34b;touch-action:pan-x}
+body.mode-tv #naghmeIptvTools .iptv-volume-control output{min-width:36px;text-align:center;color:#e8c765;font-variant-numeric:tabular-nums;font-weight:700}
+body.mode-tv #naghmeIptvTools .iptv-tool-btn{height:40px!important;min-height:40px!important;padding:0 13px!important;border:1px solid #37313f!important;border-radius:11px!important;background:linear-gradient(145deg,#211d2b,#15131d)!important;color:#eee!important;font-size:12px!important;box-shadow:0 2px 6px #0004}
+body.mode-tv #naghmeIptvTools .iptv-tool-btn:active,body.mode-tv .tvhead .btn-sm:active{transform:scale(.97);border-color:var(--ac)!important}
+body.mode-tv #naghmeIptvTools .iptv-speed-control{display:flex!important;align-items:center;gap:5px;height:40px;padding:0 9px;border:1px solid #37313f;border-radius:11px;background:#17141f;color:var(--mu);font-size:11px}
+body.mode-tv #naghmeIptvTools .iptv-speed-control select{max-width:76px!important;background:transparent!important;border:0!important;color:var(--tx)!important}
+body.mode-tv .tvhead .btn-sm{border-radius:10px;background:linear-gradient(145deg,#211d2b,#15131d);border:1px solid #37313f}
+body.mode-tv .tvhead [data-a="iptvurl"]{border-color:#6a5730;color:#f0d27a}
+body.mode-tv .tvhead .iptv-iran-toggle{border-color:#51452b}
+body.mode-tv .tvnow{border-bottom-color:#302a39}
+body.mode-tv .tvnow .m b{color:#f1d37b}
+body.mode-tv .tvnow .btn-sm{border-radius:10px}
+@media(max-width:420px){
+ body.mode-tv #naghmeIptvTools .iptv-volume-control{min-width:178px;flex-basis:200px!important}
+ body.mode-tv #naghmeIptvTools .iptv-tool-btn{padding:0 10px!important}
+}
