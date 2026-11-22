@@ -156,7 +156,7 @@ function iptvPlaylistProxyUrl(raw){
  if(country)return IPTV_WORKER_ORIGIN+'/iptv/countries/'+country[1].toLowerCase()+'.m3u';
  const category=String(raw).match(/^https:\/\/iptv-org\.github\.io\/iptv\/categories\/(sports|movies|news)\.m3u$/i);
  if(category)return IPTV_WORKER_ORIGIN+'/iptv/categories/'+category[1].toLowerCase()+'.m3u';
- try{const u=new URL(raw);if(['m3url.ru','www.m3url.ru','iptvbest.ru','178.124.210.172'].includes(u.hostname))return IPTV_WORKER_ORIGIN+'/iptv/external?url='+encodeURIComponent(u.href)}catch{}
+ try{const u=new URL(raw);if(['m3url.ru','www.m3url.ru','iptvbest.ru','178.124.210.172'].includes(u.hostname))return IPTV_WORKER_ORIGIN+'/iptv/external?url='+encodeURIComponent(u.href);if(['http:','https:'].includes(u.protocol))return IPTV_WORKER_ORIGIN+'/iptv/custom?url='+encodeURIComponent(u.href)}catch{}
  return raw;
 }
 const iptvCountryCache=new Map();
