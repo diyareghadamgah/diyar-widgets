@@ -423,7 +423,7 @@ export default {
         let upstream = null;
         for (let redirects = 0; redirects <= 4; redirects++) {
           upstream = await fetch(target.href, {
-            headers: { "User-Agent": "Naghme-IPTV/1.0", "Accept": "audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain,*/*" },
+            headers: { "User-Agent": "Naghme-IPTV/1.0", "Accept": "audio/x-mpegurl,application/vnd.apple.mpegurl,application/pls+xml,application/xspf+xml,application/json,application/xml,text/plain,*/*" },
             redirect: "manual",
           });
           if (![301, 302, 303, 307, 308].includes(upstream.status)) break;
@@ -443,8 +443,29 @@ export default {
         if (declaredSize > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
         const body = await upstream.text();
         if (body.length > 25_000_000) return new Response("playlist is too large\\n", { status: 413, headers: CORS_HEADERS });
-        if (!body.replace(/^\uFEFF/, "").trimStart().startsWith("#EXTM3U")) {
-          return new Response("upstream did not return a valid M3U playlist\\n", {
+        const normalized = body.replace(/^\uFEFF/, "").trim();
+        const head = normalized.slice(0, 12000).trimStart();
+        let recognized = /^#EXTM3U\b/i.test(head) || /^\[playlist\]/i.test(head)
+          || /<(?:\w+:)?(?:playlist|asx|smil|MPD)\b/i.test(head);
+        if (!recognized && /^[\[{]/.test(head)) {
+          try {
+            const root = JSON.parse(normalized);
+            const hasUrl = value => {
+              if (Array.isArray(value)) return value.some(hasUrl);
+              if (typeof value === "string") return /^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:)/i.test(value.trim());
+              if (!value || typeof value !== "object") return false;
+              if (["url","stream_url","streamUrl","file","src","uri","link","play_url","playUrl"].some(k => typeof value[k] === "string")) return true;
+              return Object.entries(value).some(([k,v]) => ["channels","items","streams","playlist","data","results","categories"].includes(k.toLowerCase()) && hasUrl(v));
+            };
+            recognized = hasUrl(root);
+          } catch {}
+        }
+        if (!recognized) {
+          const urls = normalized.split(/\r?\n/).map(x => x.trim()).filter(x => x && !x.startsWith("#"));
+          recognized = urls.length > 0 && urls.every(x => /^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(x));
+        }
+        if (!recognized) {
+          return new Response("unsupported or invalid playlist format (supported: M3U, M3U8, PLS, XSPF, ASX, JSON, URL list)\n", {
             status: 502,
             headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
           });

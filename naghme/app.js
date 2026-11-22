@@ -210,7 +210,7 @@ async function restoreImportedIPTV(){
   for(const item of files){
    try{if(!item||!item.blob||typeof URL.createObjectURL!=='function')continue;
     const url=URL.createObjectURL(item.blob);
-    const channel=iptvDecorate({name:item.name||'فایل M3U8 محلی',group:'فایل‌های محلی',url,key:item.key||('local-m3u8|'+(item.name||'')),localBlob:true});
+    const channel=iptvDecorate({name:item.name||'رسانهٔ محلی',group:'فایل‌های محلی',url,key:item.key||('local-media|'+(item.name||'')),localBlob:true,mimeType:item.mimeType||''});
     IPTV_IMPORTED.localFiles.push({...item,url,channel});
    }catch(e){console.warn('restore local M3U8',e)}
   }
@@ -240,26 +240,73 @@ function iptvDecorate(c){
  if(!c.country&&names[0]&&names[0].fa)c.country=names[0].fa;
  c.search=iptvNorm([c.name,c.group,c.country,...codes,...names.flatMap(n=>[n.fa,n.en]),c.language,c.id].join(' '));
  return c}
+function iptvResolvePlaylistUrl(raw,baseUrl){
+ const value=String(raw||'').trim().replace(/^["']|["']$/g,'');if(!value)return '';
+ try{const u=baseUrl?new URL(value,baseUrl):new URL(value);return /^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(u.protocol)?u.href:''}catch{return ''}
+}
+function iptvPlaylistChannel(name,url,meta={}){
+ const streamUrl=iptvResolvePlaylistUrl(url,meta.baseUrl);if(!streamUrl)return null;
+ const cleanName=String(name||'').trim()||(()=>{try{return decodeURIComponent(new URL(streamUrl).pathname.split('/').pop()||'شبکه بدون نام')}catch{return 'شبکه بدون نام'}})();
+ const item={name:cleanName,logo:meta.logo||'',group:meta.group||'سایر',country:meta.country||'',language:meta.language||'',id:meta.id||'',url:streamUrl,key:(meta.id||cleanName)+'|'+streamUrl};
+ if(meta.mimeType)item.mimeType=meta.mimeType;
+ return iptvDecorate(item);
+}
 function parseM3U(text,baseUrl){
- const out=[];let meta=null;
- for(const line0 of String(text).split(/\r?\n/)){
-  const line=line0.trim();if(!line)continue;
-  if(line.startsWith('#EXTINF')){
-   let comma=-1,quoted=false;
-   for(let i=0;i<line.length;i++){if(line[i]==='"')quoted=!quoted;else if(line[i]===','&&!quoted){comma=i;break}}
-   const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
-   const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'="([^"]*)"','i'));return m?m[1]:''};
-   const rawGroup=get('group-title')||'سایر';
-   const isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup);
-   const area=rawGroup.replace(/c\//gi,'').trim();
-   meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
-  }else if(!line.startsWith('#')){
-   let streamUrl='';try{const resolved=baseUrl?new URL(line,baseUrl):new URL(line);if(/^https?:$/.test(resolved.protocol))streamUrl=resolved.href}catch{}
-   if(!streamUrl)continue;
-   const m=meta||{name:line,group:'سایر'};out.push(iptvDecorate({...m,url:streamUrl,key:(m.id||m.name)+'|'+streamUrl}));meta=null;   // کلید همان قالب قدیمی است تا علاقه‌مندی‌های ذخیره‌شده معتبر بمانند
-  }
+ const source=String(text||'').replace(/^\uFEFF/,'').trim();if(!source)return [];
+ const out=[],seen=new Set(),add=(name,url,meta={})=>{const c=iptvPlaylistChannel(name,url,{...meta,baseUrl});if(c&&!seen.has(c.key)){seen.add(c.key);out.push(c)}};
+ const lines=source.split(/\r?\n/).map(x=>x.trim()).filter(Boolean),head=lines.slice(0,8).join('\n');
+ if(/^\[playlist\]/im.test(head)){
+  const fields={};for(const line of lines){const m=line.match(/^(File|Title|Length)(\d+)\s*=\s*(.*)$/i);if(m){const n=m[2];fields[n]??={};fields[n][m[1].toLowerCase()]=m[3].trim()}}
+  Object.keys(fields).sort((a,b)=>Number(a)-Number(b)).forEach(n=>add(fields[n].title,fields[n].file));return out;
  }
+ if(/<(?:\w+:)?playlist\b|<(?:\w+:)?asx\b|<(?:\w+:)?smil\b/i.test(source)){
+  const decode=v=>String(v||'').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&apos;/gi,"'").replace(/&lt;/gi,'<').replace(/&gt;/gi,'>');
+  if(/<(?:\w+:)?playlist\b/i.test(source)){
+   const tracks=[...source.matchAll(/<(?:\w+:)?track\b[^>]*>([\s\S]*?)<\/(?:\w+:)?track\s*>/gi)];
+   for(const m of tracks){const body=m[1],loc=(body.match(/<(?:\w+:)?location\b[^>]*>([\s\S]*?)<\/(?:\w+:)?location\s*>/i)||[])[1],title=(body.match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(loc)add(decode(title),decode(loc))}
+  }
+  const entries=[...source.matchAll(/<(?:\w+:)?entry\b([^>]*)>([\s\S]*?)<\/(?:\w+:)?entry\s*>/gi)];
+  for(const m of entries){const href=(m[1].match(/\b(?:href|ref)\s*=\s*["']([^"']+)["']/i)||[])[1]||(m[2].match(/<(?:\w+:)?ref\b[^>]*\bhref\s*=\s*["']([^"']+)["']/i)||[])[1];const title=(m[2].match(/<(?:\w+:)?title\b[^>]*>([\s\S]*?)<\/(?:\w+:)?title\s*>/i)||[])[1];if(href)add(decode(title),decode(href))}
+  if(!out.length){const refs=[...source.matchAll(/<(?:\w+:)?ref\b[^>]*\b(?:href|src)\s*=\s*["']([^"']+)["'][^>]*>/gi)];for(const m of refs)add('',decode(m[1]))}
+  if(!out.length){const media=[...source.matchAll(/<(?:\w+:)?(?:video|audio|media)\b([^>]*)>/gi)];for(const m of media){const src=(m[1].match(/\b(?:src|href)\s*=\s*["']([^"']+)["']/i)||[])[1],title=(m[1].match(/\btitle\s*=\s*["']([^"']+)["']/i)||[])[1];if(src)add(title,decode(src))}}
+  return out;
+ }
+ if(/^\s*[\[{]/.test(source)){
+  try{
+   const root=JSON.parse(source),items=[];
+   const walk=(value,depth=0)=>{if(depth>8||value==null)return;if(Array.isArray(value)){value.forEach(x=>walk(x,depth+1));return}if(typeof value==='string'){if(/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:)/i.test(value.trim()))items.push({name:'',url:value.trim()});return}if(typeof value!=='object')return;
+    const url=value.url||value.stream_url||value.streamUrl||value.file||value.src||value.uri||value.link||value.play_url||value.playUrl;
+    if(typeof url==='string'&&url.trim()){items.push({name:value.name||value.title||value.channel||value.tvg_name||value.tvgName||'',url,logo:value.logo||value.tvg_logo||value.tvgLogo||'',group:value.group||value.category||value.group_title||value.groupTitle||'سایر',country:value.country||'',language:value.language||'',id:value.id||value.tvg_id||value.tvgId||'',mimeType:value.mimeType||value.mime_type||''});return}
+    for(const [k,v] of Object.entries(value)){if(['channels','items','streams','playlist','data','results','categories'].includes(k.toLowerCase()))walk(v,depth+1)}
+   };
+   walk(root);for(const item of items)add(item.name,item.url,item);return out;
+  }catch{/* continue with URL-list detection */}
+ }
+ if(/^#EXTM3U\b/i.test(head)||/^#EXTINF(?::|\s)/im.test(source)){
+  if(/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE|KEY|MAP)\b/i.test(source)&&!/#EXTINF:[^\r\n]*(?:tvg-|group-title)/i.test(source))return [];
+  let meta=null;
+  for(const line of lines){
+   if(/^#EXTINF/i.test(line)){
+    let comma=-1,quote='';for(let i=0;i<line.length;i++){const ch=line[i];if((ch==='"'||ch==="'")&&(!quote||quote===ch))quote=quote?'':ch;else if(ch===','&&!quote){comma=i;break}}
+    const attrs=line.slice(0,comma<0?line.length:comma),name=comma<0?'شبکه بدون نام':line.slice(comma+1).trim();
+    const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'\\s*=\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
+    const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\//gi,'').trim();
+    meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
+   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group}
+   else{const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
+  }
+  return out;
+ }
+ // Plain text files containing one stream URL per line.
+ for(const line of lines){if(line.startsWith('#'))continue;if(/^(?:https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)/i.test(line))add('',line,{group:'سایر'})}
  return out;
+}
+function iptvIsDirectMediaUrl(raw){
+ try{const u=new URL(raw);if(!/^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(u.protocol))return false;return /\.(?:mp4|m4v|mov|webm|mkv|ts|m2ts|mpg|mpeg|mp3|aac|m4a|ogg|oga|opus|wav|flac|mpd)$/i.test(u.pathname)||!/^https?:$/.test(u.protocol)}catch{return false}
+}
+function iptvDirectMediaChannel(raw){
+ let name='پخش مستقیم';try{name=decodeURIComponent(new URL(raw).pathname.split('/').pop()||name).replace(/\.[^.]+$/,'')||name}catch{}
+ return iptvPlaylistChannel(name,raw,{group:'پخش مستقیم'});
 }
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
 function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=true}
@@ -276,7 +323,7 @@ async function loadIPTV(force=false){
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
    try{
     const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal});
-    if(!response.ok)throw new Error('HTTP '+response.status);
+    if(!response.ok){const detail=(await response.text()).slice(0,240).trim();throw new Error('HTTP '+response.status+(detail?' — '+detail:''))}
     return await response.text();
    }catch(e){
     if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۲۰ ثانیه تمام شد.');
@@ -287,13 +334,13 @@ async function loadIPTV(force=false){
    if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
     const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url};
    }
-   const proxyUrl=iptvPlaylistProxyUrl(url);
+   const proxyUrl=iptvPlaylistProxyUrl(url);let proxyError=null;
    try{
     const text=await fetchTextWithTimeout(proxyUrl);
     if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url};
     console.warn('IPTV proxy returned a short main playlist; retrying official source directly');
    }catch(error){
-    console.warn('IPTV proxy failed; retrying official source directly',error);
+    proxyError=error;console.warn('IPTV proxy failed; retrying official source directly',error);
    }
    // GitHub Pages serves the official M3U with CORS. Use it as a fallback
    // so a broken/stale Worker can never silently reduce the main list to extras.
@@ -301,13 +348,13 @@ async function loadIPTV(force=false){
     const text=await fetchTextWithTimeout(url);
     return {text,url};
    }
-   throw new Error('دریافت منبع مکمل از Worker ناموفق بود.');
+   throw new Error('دریافت منبع فهرست ناموفق بود؛ ممکن است قالب پشتیبانی نشود، سرور پاسخ ندهد یا دسترسی محدود باشد. '+(proxyError&&proxyError.message?proxyError.message:''));
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const uniqueUrls=[...new Set(urls)];
-  const results=await Promise.allSettled(uniqueUrls.map(async url=>{const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);const parsed=parseM3U(body,base);if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
+  const results=await Promise.allSettled(uniqueUrls.map(async url=>{if(iptvIsDirectMediaUrl(url))return [{...iptvDirectMediaChannel(url),sourceUrl:url}];const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);let parsed=parseM3U(body,base);if(!parsed.length&&url!==IPTV_DEFAULT_URL&&/^#EXTM3U\b/i.test(String(body||'').trimStart())&&/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE)/i.test(body))parsed=[iptvDirectMediaChannel(url)];if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
   const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
   const mainFailed=IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled';
   if(generation!==iptvLoadGeneration)return;
@@ -364,7 +411,7 @@ async function loadIPTVCommunitySources(){
       body=await response.text();
      }finally{clearTimeout(timer)}
     }
-    const parsed=parseM3U(body).map(channel=>({...channel,sourceUrl:url}));
+    const parsed=parseM3U(body,url).map(channel=>({...channel,sourceUrl:url}));
     if(!parsed.length)throw Error('empty playlist');
     return parsed;
    }));
@@ -397,7 +444,7 @@ function iptvRelease(){   // آزادسازی کامل منابع پخش (خرو
 async function setIPTVPlaylistUrl(raw){
  await restoreImportedIPTV();
  const value=String(raw==null?'':raw).trim();
- if(value){try{const parsed=new URL(value);if(!/^https?:$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http یا https وارد کنید.')}}
+ if(value){try{const parsed=new URL(value);if(!/^(https?:|rtsp:|rtmp:|udp:|rtp:|srt:|mmsh:|mmst:)$/.test(parsed.protocol))throw new Error();}catch{return toast('آدرس معتبر نیست؛ نشانی کامل http، https یا لینک پخش مستقیم معتبر وارد کنید.')}}
  if(window.NaghmeNativeIPTV)window.NaghmeNativeIPTV.hide();
  iptvLoadGeneration++;IPTV.loading=false;iptvRelease();
  // حذف موقت فقط وضعیت نمایش را خاموش می‌کند؛ آدرس ذخیره‌شده دست‌نخورده می‌ماند.
@@ -455,10 +502,10 @@ async function manageImportedIPTVFiles(){
  await restoreImportedIPTV();
  const groups=[...new Map(IPTV_IMPORTED.channels.filter(c=>c.importedFile).map(c=>[c.importedFile,{name:c.importedFile,keys:[]}])).values()];
  for(const g of groups)g.keys=IPTV_IMPORTED.channels.filter(c=>c.importedFile===g.name).map(c=>c.key);
- const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'فایل M3U8 محلی',keys:[x.key],local:true}));
+ const locals=IPTV_IMPORTED.localFiles.map(x=>({name:x.name||'رسانهٔ محلی',keys:[x.key],local:true}));
  const files=[...groups,...locals];
  const actions=[
-  ['＋ افزودن فایل M3U / M3U8 از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
+  ['＋ افزودن فایل فهرست یا رسانه از دستگاه',()=>{const input=$('#iptvFile');if(input){input.value='';input.click()}}],
   ['📄 فهرست پیش‌فرض نغمه (آنلاین)',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)]
  ];
  if(files.length){
@@ -547,7 +594,7 @@ async function testTemporaryIPTVSources(mode){
      try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);body=await response.text()}
      finally{clearTimeout(timer)}
     }
-    const channels=parseM3U(body);
+    const channels=parseM3U(body,url);
     return {url,count:channels.length,ms:Date.now()-started,status:channels.length?'active':'empty',error:''};
    }catch(e){return {url,count:0,ms:Date.now()-started,status:'failed',error:e&&e.name==='AbortError'?'مهلت دریافت تمام شد':(e.message||'خطای دریافت')}}
   };
@@ -556,17 +603,17 @@ async function testTemporaryIPTVSources(mode){
   await Promise.all(workers);showTemporaryIPTVReport(results);
  };
  if(mode==='url'){
-  const value=prompt('آدرس‌های M3U یا M3U8 را وارد کن؛ هر آدرس در یک خط.\\nاین آزمایش هیچ آدرسی را ذخیره نمی‌کند:','');
+  const value=prompt('آدرس فهرست‌های IPTV با قالب M3U، M3U8، PLS، XSPF، ASX، JSON یا TXT را وارد کن؛ هر آدرس در یک خط.\\nاین آزمایش هیچ آدرسی را ذخیره نمی‌کند:','');
   if(value===null)return;
   await run(value.split(/[\\r\\n,;\\s]+/).filter(Boolean));return;
  }
  const input=document.createElement('input');
- input.type='file';input.accept='.m3u,.m3u8,audio/x-mpegurl,application/vnd.apple.mpegurl,text/plain';input.multiple=true;
+ input.type='file';input.accept='.m3u,.m3u8,.pls,.xspf,.asx,.xml,.smil,.json,.txt,audio/x-mpegurl,application/vnd.apple.mpegurl,application/pls+xml,application/xspf+xml,application/json,text/plain,application/xml';input.multiple=true;
  input.onchange=async()=>{
   const files=[...(input.files||[])];if(!files.length)return;
   const results=[];
   for(const file of files){
-   try{const body=await file.text(),channels=parseM3U(body);results.push({url:'📂 '+file.name,count:channels.length,ms:0,status:channels.length?'active':'empty',error:''})}
+   try{const body=await file.text(),channels=parseM3U(body,file.name);results.push({url:'📂 '+file.name,count:channels.length,ms:0,status:channels.length?'active':'empty',error:''})}
    catch(e){results.push({url:'📂 '+file.name,count:0,ms:0,status:'failed',error:e.message||'خواندن فایل ناموفق بود'})}
   }
   showTemporaryIPTVReport(results);
@@ -578,7 +625,7 @@ function showTemporaryIPTVReport(results){
  const report=results.map((x,i)=>(i+1)+'. '+(x.status==='active'?'فعال':x.status==='empty'?'خالی':'ناموفق')+' | '+x.count+' کانال | '+x.ms+'ms | '+x.url+(x.error?' | '+x.error:'')).join('\\n');
  const actions=[
   ['📋 کپی گزارش آزمایش موقت',()=>{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(report).then(()=>toast('گزارش کپی شد.')).catch(()=>toast('کپی در این دستگاه در دسترس نیست.'));else toast('کپی در این دستگاه در دسترس نیست.')}],
-  ['🔄 بازگشت به انتخاب آدرس یا فایل',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')]
+  ['🔄 بازگشت به انتخاب آدرس یا فایل',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل فهرست از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')]
  ];
  for(const x of results){
   const label=x.status==='active'?'🟢 فعال':x.status==='empty'?'🟡 خالی':'🔴 ناموفق';
@@ -604,7 +651,7 @@ async function testIPTVSourceHealth(){
     try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);body=await response.text()}
     finally{clearTimeout(timer)}
    }
-   const channels=parseM3U(body);
+   const channels=parseM3U(body,url);
    return {url,count:channels.length,ms:Date.now()-started,status:channels.length?'active':'empty',error:''};
   }catch(e){return {url,count:0,ms:Date.now()-started,status:'failed',error:e&&e.name==='AbortError'?'مهلت دریافت تمام شد':(e.message||'خطای دریافت')}}
  };
@@ -638,7 +685,7 @@ async function manageIPTVPlaylist(){
   ['🌐 بارگذاری منابع مکمل کانال‌ها (در صورت نیاز)',()=>loadIPTVCommunitySources().then(n=>toast(fa(n)+' شبکه از منابع مکمل دریافت شد.')).catch(e=>toast('بارگذاری منابع مکمل ناموفق بود.'))],
   ['🧪 آزمایش موقت آدرس یا فایل دلخواه (بدون ذخیره)',()=>sheet('آزمایش موقت منابع IPTV',[['🔗 آزمایش آدرس‌های دلخواه',()=>testTemporaryIPTVSources('url')],['📂 آزمایش فایل M3U / M3U8 از دستگاه',()=>testTemporaryIPTVSources('file')]],'آدرس‌ها و فایل‌ها فقط برای همین آزمایش خوانده می‌شوند و به فهرست نغمه اضافه یا ذخیره نمی‌شوند.')],
   ['↩ بازگشت به فهرست پیش‌فرض نغمه',()=>setIPTVPlaylistUrl(IPTV_DEFAULT_URL)],
-  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فایل M3U یا M3U8:',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
+  ['＋ افزودن یا تغییر آدرس فهرست M3U',()=>{const value=prompt('نشانی کامل فهرست IPTV (M3U/M3U8/PLS/XSPF/ASX/JSON/TXT):',IPTV.url||'');if(value!==null)setIPTVPlaylistUrl(value)}],
   ['🗑 غیرفعال‌کردن موقت فهرست اینترنتی فعلی',()=>{if(!IPTV.url)return toast('فهرست اینترنتی فعالی وجود ندارد.');if(confirm('فهرست اینترنتی فعلی موقتاً غیرفعال شود؟ فایل‌ها و شبکه‌های واردشده باقی می‌مانند.'))setIPTVPlaylistUrl('')}],
   ['🌍 '+(IPTV.extraUrls.some(x=>x.url===IPTV_EV_URL)?'غیرفعال‌کردن':'افزودن')+' فهرست EVIPTV جهانی',()=>toggleIPTVExtraSource()],
   ['🎬 '+(IPTV_GLOBAL_CATEGORY_SOURCES.every(source=>IPTV.extraUrls.some(x=>x.url===source.url))?'غیرفعال‌کردن':'افزودن')+' دسته‌های جهانی ورزش، فیلم و خبر',()=>toggleIPTVGlobalCategorySources()],
@@ -718,6 +765,7 @@ async function attachIPTVPlayer(force){
  v.onwaiting=()=>{if(!stale()&&!IPTV.playError)setIPTVStatus('در حال بافر…')};
  const url=iptvWebStreamUrl(ch.url);
  try{
+  if(!/^(?:https?:|blob:)/i.test(url)){fail('این پروتکل در پخش‌کنندهٔ وب پشتیبانی نمی‌شود؛ برای RTSP/UDP و پیوندهای مشابه از نسخهٔ بومی اندروید استفاده کنید.');return}
   if(ch.localBlob){
    // فایل‌های محلی را مثل قبل به پخش‌کنندهٔ خود مرورگر بسپار.
    v.src=url;await v.play().catch(hint);return;
@@ -845,7 +893,7 @@ async function loadIPTVCountry(code){
    try{const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);text=await response.text()}
    finally{clearTimeout(timer)}
   }
-  const parsed=parseM3U(text).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
+  const parsed=parseM3U(text,url).map(c=>iptvDecorate({...c,country:c.country||code.toUpperCase(),sourceUrl:url}));
   if(!parsed.length)throw Error('فهرست این کشور خالی است یا ساختار M3U معتبر نیست.');
   await kvSet(cacheKey,{savedAt:Date.now(),channels:parsed});return parsed;
  })();
@@ -914,7 +962,7 @@ async function loadIPTVIranChannels(){
    }
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
-  const parsed=parseM3U(body).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
+  const parsed=parseM3U(body,url).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
   if(national+provincial<57)throw Error('فهرست ایران ناقص است؛ فقط '+(national+provincial)+' شبکه شناسایی شد (انتظار: حداقل ۵۷). مسیر فایل: '+IPTV_IRAN_PWA_PLAYLIST);
@@ -1019,14 +1067,17 @@ async function onIPTVFileSelected(e){
  try{
   await restoreImportedIPTV();
   const name=String(file.name||'').trim(),ext=(name.split('.').pop()||'').toLowerCase();
-  if(!['m3u','m3u8'].includes(ext))throw new Error('فقط فایل‌های .m3u و .m3u8 پشتیبانی می‌شوند.');
-  const limit=ext==='m3u'?20*1024*1024:32*1024*1024;
+  const playlistExts=['m3u','m3u8','pls','xspf','asx','xml','smil','json','txt'];
+  const mediaExts=['mp4','m4v','mov','webm','mkv','ts','m2ts','mpg','mpeg','mp3','aac','m4a','ogg','oga','opus','wav','flac'];
+  if(!playlistExts.includes(ext)&&!mediaExts.includes(ext))throw new Error('قالب فایل پشتیبانی نمی‌شود. فهرست‌ها: M3U، M3U8، PLS، XSPF، ASX، XML/SMIL، JSON و TXT؛ رسانه‌ها: MP4، TS، MP3، AAC، WebM و قالب‌های رایج دیگر.');
+  const limit=mediaExts.includes(ext)?256*1024*1024:32*1024*1024;
   if(file.size>limit)throw new Error('حجم فایل بیش از حد مجاز است.');
-  const text=await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
-  if(!/^#EXTM3U(?:\s|$)/i.test(clean))throw new Error('ساختار فایل معتبر M3U نیست.');
-  const isChannelList=/^#EXTINF(?::|\s)/im.test(clean)&&!/^#EXT-X-/im.test(clean)&&/^https?:\/\//im.test(clean);
-  if(ext==='m3u'||isChannelList){
-   const parsed=parseM3U(clean);
+  const text=mediaExts.includes(ext)?'':await readIPTVFile(file),clean=text.replace(/^\uFEFF/,'').trimStart();
+  const parsed=clean?parseM3U(clean):[];
+  const isHlsMedia=/^#EXTM3U(?:\s|$)/i.test(clean)&&/#EXT-X-(?:TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE|KEY|MAP)/i.test(clean)&&!/#EXTINF[^\r\n]*(?:tvg-|group-title)/i.test(clean);
+  const isChannelList=parsed.length>0&&!isHlsMedia;
+  if(isChannelList){
+
    if(!parsed.length)throw new Error('هیچ کانال معتبری در فایل پیدا نشد.');
    if(isChannelList){
     const stale=IPTV_IMPORTED.localFiles.filter(x=>x.name===name),staleKeys=new Set(stale.map(x=>x.key));
@@ -1041,18 +1092,20 @@ async function onIPTVFileSelected(e){
    IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
    renderIPTV();toast(fa(added)+' کانال از فایل «'+name+'» اضافه شد');
   }else{
-   const key='local-m3u8|'+name+'|'+file.size+'|'+(file.lastModified||0);
-   const blob=new Blob([clean],{type:'application/vnd.apple.mpegurl'});
+   if(!mediaExts.includes(ext)&&!['m3u8','m3u'].includes(ext))throw new Error('فهرست خالی یا نامعتبر است؛ فایل رسانه‌ای محلی نیز قابل تشخیص نیست.');
+   const key='local-media|'+name+'|'+file.size+'|'+(file.lastModified||0);
+   const mimeType=file.type||(ext==='m3u8'||ext==='m3u'?'application/vnd.apple.mpegurl':'application/octet-stream');
+   const blob=new Blob([mediaExts.includes(ext)?file:clean],{type:mimeType});
    const url=URL.createObjectURL(blob);
    const old=IPTV_IMPORTED.localFiles.filter(x=>x.name!==name);
    old.forEach(x=>{if(x.url)try{URL.revokeObjectURL(x.url)}catch{}});
-   const record={key,name,blob,size:file.size,lastModified:file.lastModified||0};
-   const channel=iptvDecorate({name:name.replace(/\.m3u8$/i,'')||'فایل M3U8',group:'فایل‌های محلی',url,key,localBlob:true});
+   const record={key,name,blob,size:file.size,lastModified:file.lastModified||0,mimeType};
+   const channel=iptvDecorate({name:name.replace(/\.[^.]+$/,'')||'رسانهٔ محلی',group:'فایل‌های محلی',url,key,localBlob:true,mimeType});
    IPTV_IMPORTED.localFiles=[...old,{...record,url,channel}];
    await tx('kv','readwrite',store=>store.put(IPTV_IMPORTED.localFiles.map(({url,channel,...item})=>item),'iptvLocalM3U8'));
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
    IPTV.error='';IPTV.category='همه';IPTV.sig='';IPTV.chipSig='';setIPTVStatus('');
-   renderIPTV();toast('فایل M3U8 به‌عنوان یک کانال اضافه شد');
+   renderIPTV();toast('فایل رسانه‌ای به‌عنوان یک کانال اضافه شد');
   }
  }catch(err){const msg=err&&err.message?err.message:'خطای نامشخص';toast('بارگذاری ناموفق بود: '+msg);setIPTVStatus('بارگذاری فایل ناموفق بود: '+msg)}
 }
