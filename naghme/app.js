@@ -782,7 +782,7 @@ async function attachIPTVPlayer(force){
    player.initialize(v,url,true);
    return;
   }
-  if(iptvIsHls(ch)||url.startsWith(IPTV_WORKER_ORIGIN+'/')){
+  if(iptvIsHls(ch)){
    // در وب، حتی اگر canPlayType مقدار truthy بدهد، HLS را با hls.js بگیر
    // تا manifest از Worker بازنویسی شود و segmentها از مسیر مجاز دریافت شوند.
    const Hls=await loadHlsLibrary();if(stale())return;
