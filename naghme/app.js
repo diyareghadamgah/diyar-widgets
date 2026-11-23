@@ -249,6 +249,7 @@ function iptvPlaylistChannel(name,url,meta={}){
  const cleanName=String(name||'').trim()||(()=>{try{return decodeURIComponent(new URL(streamUrl).pathname.split('/').pop()||'شبکه بدون نام')}catch{return 'شبکه بدون نام'}})();
  const item={name:cleanName,logo:meta.logo||'',group:meta.group||'سایر',country:meta.country||'',language:meta.language||'',id:meta.id||'',url:streamUrl,key:(meta.id||cleanName)+'|'+streamUrl};
  if(meta.mimeType)item.mimeType=meta.mimeType;
+ if(meta.userAgent)item.userAgent=String(meta.userAgent).slice(0,512);
  return iptvDecorate(item);
 }
 function parseM3U(text,baseUrl){
@@ -292,7 +293,7 @@ function parseM3U(text,baseUrl){
     const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'\\s*=\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
     const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\//gi,'').trim();
     meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
-   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group}
+   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group;else if(/^#EXTVLCOPT:http-user-agent=/i.test(line)&&meta){const ua=line.slice(line.indexOf('=')+1).trim().replace(/^['"]|['"]$/g,'');if(ua&&!/[\r\n]/.test(ua))meta.userAgent=ua.slice(0,512)}}
    else{const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
   }
   return out;
