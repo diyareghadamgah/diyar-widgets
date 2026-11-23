@@ -85,12 +85,21 @@ console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android
         ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib:1.9.20\"');
       }
       if (!ag.includes('media3-exoplayer')) {
-        ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.media3:media3-exoplayer:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-hls:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-dash:1.2.1"\n    implementation "androidx.media3:media3-ui:1.2.1"');
+        ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "androidx.media3:media3-exoplayer:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-hls:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-dash:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.2.1"\n    implementation "androidx.media3:media3-exoplayer-rtsp:1.2.1"\n    implementation "androidx.media3:media3-ui:1.2.1"');
       }
       if (!ag.includes('media3-exoplayer-dash')) {
-      ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.media3:media3-exoplayer-dash:1.2.1"');
-    }
-    if (!ag.includes('androidx.documentfile:documentfile')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "androidx.media3:media3-exoplayer-dash:1.2.1"');
+      }
+      if (!ag.includes('media3-exoplayer-smoothstreaming')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.2.1"');
+      }
+      if (!ag.includes('media3-exoplayer-rtsp')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "androidx.media3:media3-exoplayer-rtsp:1.2.1"');
+      }
+      if (!ag.includes('libvlc-all')) {
+        ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "org.videolan.android:libvlc-all:3.7.7"');
+      }
+      if (!ag.includes('androidx.documentfile:documentfile')) {
         ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.documentfile:documentfile:1.0.1"');
       }
       wr(appGradle, ag);
