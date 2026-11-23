@@ -171,7 +171,7 @@
   clearTimeout(resizeTimer);
   resizeTimer=setTimeout(function(){syncBounds()},100);
  }
- addControls();
+ // Shared IPTV controls are created by iptv-controls.js for both APK and web.
  syncSplitLayout();
  window.NaghmeIPTVSelectChannel=function(key){if(typeof window.playIPTV==='function')window.playIPTV(key)};
  window.NaghmeNativeIPTV={play:playChannel,hide:hidePlayer,syncBounds:syncBounds,fullscreen:setFullscreen,setSpeed:setSpeed,setQuality:function(h){return native.setVideoQuality(Number(h)||0)},jumpToTime:jumpToTime,setSleepTimer:setSleepTimer,refreshChannelMenu:updateChannelMenu};
