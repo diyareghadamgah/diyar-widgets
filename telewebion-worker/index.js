@@ -540,24 +540,24 @@ export default {
     }
     if (url.pathname === "/telewebion") {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
-      if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\\n", { status: 405, headers: CORS_HEADERS });
+      if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\n", { status: 405, headers: CORS_HEADERS });
       let target;
       try { target = new URL(url.searchParams.get("url") || ""); }
-      catch { return new Response("invalid Telewebion URL\\n", { status: 400, headers: CORS_HEADERS }); }
-      if (!["http:", "https:"].includes(target.protocol) || !TELEWEBION_HOST.test(target.hostname) || !/\\.m3u8$/i.test(target.pathname)) {
-        return new Response("Telewebion HLS URL not allowed\\n", { status: 403, headers: CORS_HEADERS });
+      catch { return new Response("invalid Telewebion URL\n", { status: 400, headers: CORS_HEADERS }); }
+      if (!["http:", "https:"].includes(target.protocol) || !TELEWEBION_HOST.test(target.hostname) || !/\.m3u8$/i.test(target.pathname)) {
+        return new Response("Telewebion HLS URL not allowed\n", { status: 403, headers: CORS_HEADERS });
       }
       try {
         let upstream = await fetch(target.href, { headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", "Accept": "*/*" }, redirect: "follow" });
         if (!upstream.ok) return manifestError("telewebion_direct_http", { status: upstream.status, url: target.href });
         let finalUrl = new URL(upstream.headers.get("X-Upstream-Final-Url") || upstream.url || target.href);
-        let body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+        let body = (await upstream.text()).replace(/^\uFEFF/, "").trim();
         if (body.includes("#EXT-X-STREAM-INF")) {
           const variants = [];
-          const lines = body.split(/\\r?\\n/);
+          const lines = body.split(/\r?\n/);
           for (let i = 0; i < lines.length; i++) {
             if (!lines[i].startsWith("#EXT-X-STREAM-INF:")) continue;
-            const resolution = lines[i].match(/RESOLUTION=\\d+x(\\d+)/i);
+            const resolution = lines[i].match(/RESOLUTION=\d+x(\d+)/i);
             const height = resolution ? Number(resolution[1]) : 0;
             for (let j = i + 1; j < lines.length; j++) {
               const candidate = lines[j].trim();
@@ -570,7 +570,7 @@ export default {
           upstream = await fetch(selected.href, { headers: { "User-Agent": "VLC/3.0.20 LibVLC/3.0.20", "Accept": "*/*" }, redirect: "follow" });
           if (!upstream.ok) return manifestError("telewebion_rendition_http", { status: upstream.status, url: selected.href });
           finalUrl = new URL(upstream.headers.get("X-Upstream-Final-Url") || upstream.url || selected.href);
-          body = (await upstream.text()).replace(/^\\uFEFF/, "").trim();
+          body = (await upstream.text()).replace(/^\uFEFF/, "").trim();
         }
         const playlist = rewrite(body, finalUrl.href, url.origin, false);
         if (!playlist) return manifestError("telewebion_playlist_invalid", { url: finalUrl.href, preview: body.slice(0,180) });
