@@ -435,7 +435,7 @@ async function loadIPTVCommunitySources(){
   if(collected.length){
    const communityUnique=dedupeIPTVChannels(collected);
    try{await kvSet(cacheKey,{savedAt:Date.now(),channels:communityUnique})}catch(e){console.warn('community IPTV cache save',e)}
-   if(IPTV.url===IPTV_DEFAULT_URL){IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{community:{cache:false,parsed:collected.length,unique:communityUnique.length,final:IPTV.channels.length,failed:failed.length}})}
+   if(IPTV.url===IPTV_DEFAULT_URL){IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{community:{cache:false,parsed:collected.length,unique:communityUnique.length,final:IPTV.channels.length,failed:failed.length}});iptvRefresh()}
   }
   if(failed.length&&IPTV.url===IPTV_DEFAULT_URL){
    IPTV.error='تعدادی از فهرست‌های مکمل پاسخ ندادند ('+fa(failed.length)+' از '+fa(IPTV_COMMUNITY_SOURCES.length)+' مورد)؛ فهرست‌های موفق بارگذاری شدند.';
@@ -1032,7 +1032,7 @@ function renderIPTVList(keep){
  box.innerHTML=IPTV.filtered.slice(0,IPTV.shown).map(iptvRowHtml).join('')||`<p class="d tvempty">${IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':!(IPTV.iranMode?IPTV.iranChannels.length:IPTV.channels.length)?'فهرستی در دسترس نیست؛ «دریافت» را بزنید.':IPTV.category==='موردعلاقه‌ها'&&!IPTV.query.trim()?'هنوز شبکه‌ای را به علاقه‌مندی‌ها اضافه نکرده‌اید.':'شبکه‌ای برای نمایش پیدا نشد.'}</p>`;
  if(box.clientHeight>0)for(let i=0;i<10&&box.scrollHeight<=box.clientHeight+300&&IPTV.shown<IPTV.filtered.length;i++)iptvMore();
  box.scrollTop=top;
- const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';const st=IPTV.loadStats;c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url+(st?' • خامِ پردازش‌شده: '+st.rawParsed+' • یکتای منابع اصلی: '+st.uniqueRemote+' • واردشده: '+st.imported+' • نهایی: '+st.final+' • جزئیات منابع در window.NaghmeIPTVDiagnostics.get()':'')}
+ const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';const st=IPTV.loadStats;c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url+(st?' • خامِ پردازش‌شده: '+st.rawParsed+' • یکتای منابع اصلی: '+st.uniqueRemote+' • واردشده: '+st.imported+' • نهایی: '+st.final+(st.community?' • مکمل‌ها: '+st.community.parsed+' خام / '+(st.community.unique||st.community.parsed)+' یکتا':'')+' • جزئیات منابع در window.NaghmeIPTVDiagnostics.get()':'')}
 function renderIPTVChips(){
  const invalidGroup=v=>!String(v==null?'':v).trim()||/^(undefined|null|unknown)$/i.test(String(v).trim());
  const cnt=new Map();
