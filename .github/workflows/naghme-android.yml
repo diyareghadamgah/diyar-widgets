@@ -83,7 +83,7 @@ jobs:
           
       - name: Verify APK contains the plugin and current web assets
         run: |
-          APK=android/app/build/outputs/apk/debug/app-debug.apk
+          APK=android/app/build/outputs/apk/debug/app-arm64-v8a-debug.apk
           rm -rf /tmp/apk
           mkdir /tmp/apk
           unzip -q "$APK" -d /tmp/apk
@@ -114,6 +114,21 @@ jobs:
           grep -l -a "ir/diyareghadamgah/naghme/NaghmeVideoPlayerPlugin" /tmp/apk/classes*.dex
           grep -l -a "ir/diyareghadamgah/naghme/NaghmeLibraryVideoPlayerPlugin" /tmp/apk/classes*.dex
           grep -l -a "ir/diyareghadamgah/naghme/MainActivity" /tmp/apk/classes*.dex
+          test -s /tmp/apk/lib/arm64-v8a/libvlc.so
+          test ! -e /tmp/apk/lib/x86/libvlc.so
+          test ! -e /tmp/apk/lib/x86_64/libvlc.so
+          echo "== verify 32-bit ARM split APK =="
+          APK32=android/app/build/outputs/apk/debug/app-armeabi-v7a-debug.apk
+          test -s "$APK32"
+          rm -rf /tmp/apk32
+          mkdir /tmp/apk32
+          unzip -q "$APK32" -d /tmp/apk32
+          test -s /tmp/apk32/lib/armeabi-v7a/libvlc.so
+          test ! -e /tmp/apk32/lib/arm64-v8a/libvlc.so
+          grep -l -a "ir/diyareghadamgah/naghme/NaghmeVideoPlayerPlugin" /tmp/apk32/classes*.dex
+          test -s /tmp/apk32/assets/public/index.html
+          echo "arm64 APK bytes: $(stat -c%s "$APK")"
+          echo "armeabi-v7a APK bytes: $(stat -c%s "$APK32")"
           echo "== verify native IPTV bridge in packaged app.js =="
           grep -q "window.IPTV=IPTV" /tmp/apk/assets/public/app.js
           grep -q "NaghmeNativeIPTV" /tmp/apk/assets/public/app.js
@@ -127,8 +142,8 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: naghme-debug-apk
-          path: naghme/android/app/build/outputs/apk/debug/app-debug.apk
+          name: naghme-abi-apks
+          path: naghme/android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           
       - name: Upload build reports on failure
