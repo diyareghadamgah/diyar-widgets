@@ -112,8 +112,8 @@ console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android
         }
     }
 `;
-        if (!/android\\s*\\{/.test(ag)) throw new Error('android block not found for ABI splits');
-        ag = ag.replace(/android\\s*\\{/, abiSplits);
+        if (!/android\s*\{/.test(ag)) throw new Error('android block not found for ABI splits');
+        ag = ag.replace(/android\s*\{/, abiSplits);
       }
       if (!ag.includes('androidx.documentfile:documentfile')) {
         ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.documentfile:documentfile:1.0.1"');
