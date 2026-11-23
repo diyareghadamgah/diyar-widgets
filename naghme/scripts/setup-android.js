@@ -99,6 +99,22 @@ console.log('انجام شد. بعدی: npx cap sync android  سپس  cd android
       if (!ag.includes('libvlc-all')) {
         ag = ag.replace(/(dependencies\s*\{)/, '$1\n    implementation "org.videolan.android:libvlc-all:3.5.1"');
       }
+      // Package only the Android CPU architectures users need, as separate APKs.
+      // This avoids shipping all four large LibVLC native binaries in every install.
+      if (!ag.includes('universalApk false')) {
+        const abiSplits = `android {
+    splits {
+        abi {
+            enable true
+            reset()
+            include "arm64-v8a", "armeabi-v7a"
+            universalApk false
+        }
+    }
+`;
+        if (!/android\\s*\\{/.test(ag)) throw new Error('android block not found for ABI splits');
+        ag = ag.replace(/android\\s*\\{/, abiSplits);
+      }
       if (!ag.includes('androidx.documentfile:documentfile')) {
         ag = ag.replace(/(dependencies\s*\{)/, '\$1\n    implementation "androidx.documentfile:documentfile:1.0.1"');
       }
