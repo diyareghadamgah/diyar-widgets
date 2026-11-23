@@ -408,7 +408,8 @@ async function loadIPTVCommunitySources(){
      try{
       const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});
       if(!response.ok)throw Error('HTTP '+response.status);
-      body=await response.text();
+      playlistBase=response.url||localUrl;
+   body=await response.text();
      }finally{clearTimeout(timer)}
     }
     const parsed=parseM3U(body,url).map(channel=>({...channel,sourceUrl:url}));
@@ -943,7 +944,7 @@ async function loadIPTVIranChannels(){
   IPTV.iranPlaylistLoaded=false;
  }
  iptvIranLoadPromise=(async()=>{
-  let body='',localError=null;
+  let body='',localError=null,playlistBase=IPTV_IRAN_PWA_PLAYLIST;
   // اول از فایل همراه برنامه بخوان؛ این مسیر در PWA و APK یکسان است و به CORS یا GitHub وابسته نیست.
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
   try{
@@ -956,13 +957,13 @@ async function loadIPTVIranChannels(){
   // اگر فایل داخلی واقعاً قابل دریافت نبود، فقط در اندروید منبع پشتیبان را امتحان کن.
   if(!body.trim()){
    if(isIPTVNative()&&window.NaghmeVideoPlayer&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-    const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;
+    const result=await window.NaghmeVideoPlayer.fetchText(IPTV_IRAN_PLAYLIST);body=result.text;playlistBase=result.url||IPTV_IRAN_PLAYLIST;
    }else{
     throw new Error('فایل داخلی شبکه‌های ایران در دسترس نیست: '+(localError?.message||'پاسخی دریافت نشد'));
    }
   }
   const allowed=new Set(['شبکه‌های سراسری سیما','شبکه‌های استانی']);
-  const parsed=parseM3U(body,url).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
+  const parsed=parseM3U(body,playlistBase).filter(c=>c.groups.some(g=>allowed.has(g))).map(c=>iptvDecorate({...c,country:'IR'}));
   const national=parsed.filter(c=>c.groups.includes('شبکه‌های سراسری سیما')).length;
   const provincial=parsed.filter(c=>c.groups.includes('شبکه‌های استانی')).length;
   if(national+provincial<57)throw Error('فهرست ایران ناقص است؛ فقط '+(national+provincial)+' شبکه شناسایی شد (انتظار: حداقل ۵۷). مسیر فایل: '+IPTV_IRAN_PWA_PLAYLIST);
