@@ -402,7 +402,7 @@ async function loadIPTVCommunitySources(){
   try{
    const saved=await kvGet(cacheKey);
    if(saved&&Array.isArray(saved.channels)&&saved.channels.length&&Date.now()-Number(saved.savedAt||0)<6*60*60*1000){
-    if(IPTV.url===IPTV_DEFAULT_URL){IPTV.channels=mergeIPTVChannels([...IPTV.channels,...saved.channels]);IPTV.chipSig='';IPTV.countrySig='';iptvRefresh()}
+    if(IPTV.url===IPTV_DEFAULT_URL){IPTV.channels=mergeIPTVChannels([...IPTV.channels,...saved.channels]);IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{community:{cache:true,parsed:saved.channels.length,final:IPTV.channels.length}});IPTV.chipSig='';IPTV.countrySig='';iptvRefresh()}
     return saved.channels.length;
    }
   }catch(e){console.warn('community IPTV cache',e)}
@@ -433,7 +433,9 @@ async function loadIPTVCommunitySources(){
    }
   }
   if(collected.length){
-   try{await kvSet(cacheKey,{savedAt:Date.now(),channels:dedupeIPTVChannels(collected)})}catch(e){console.warn('community IPTV cache save',e)}
+   const communityUnique=dedupeIPTVChannels(collected);
+   try{await kvSet(cacheKey,{savedAt:Date.now(),channels:communityUnique})}catch(e){console.warn('community IPTV cache save',e)}
+   if(IPTV.url===IPTV_DEFAULT_URL){IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{community:{cache:false,parsed:collected.length,unique:communityUnique.length,final:IPTV.channels.length,failed:failed.length}})}
   }
   if(failed.length&&IPTV.url===IPTV_DEFAULT_URL){
    IPTV.error='تعدادی از فهرست‌های مکمل پاسخ ندادند ('+fa(failed.length)+' از '+fa(IPTV_COMMUNITY_SOURCES.length)+' مورد)؛ فهرست‌های موفق بارگذاری شدند.';
