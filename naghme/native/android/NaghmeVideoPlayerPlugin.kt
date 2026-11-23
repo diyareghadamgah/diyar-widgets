@@ -63,6 +63,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
 
     init { activePlugin = this }
     private var player: ExoPlayer? = null
+    private var iptvHttpFactory: DefaultHttpDataSource.Factory? = null
     private var playerView: PlayerView? = null
     private var lockOverlay: FrameLayout? = null
     private var isPlayerLocked: Boolean = false
@@ -296,6 +297,7 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                     val httpFactory = DefaultHttpDataSource.Factory()
                         .setUserAgent("VLC/3.0.20 LibVLC/3.0.20")
                         .setAllowCrossProtocolRedirects(true)
+                    iptvHttpFactory = httpFactory
 
                     val mediaSourceFactory = DefaultMediaSourceFactory(httpFactory)
 
@@ -318,6 +320,9 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 }
                 playerView?.player = player
                 playerView?.visibility = android.view.View.VISIBLE
+                val requestedUserAgent = call.getString("userAgent")?.trim()
+                    ?.takeIf { it.isNotEmpty() && it.length <= 512 && !it.contains('\r') && !it.contains('\n') }
+                iptvHttpFactory?.setUserAgent(requestedUserAgent ?: "VLC/3.0.20 LibVLC/3.0.20")
                 val mimeType = call.getString("mimeType")?.trim()?.takeIf { it.isNotEmpty() }
                 val mediaItem = MediaItem.Builder().setUri(url).apply {
                     if (mimeType != null) setMimeType(mimeType)
