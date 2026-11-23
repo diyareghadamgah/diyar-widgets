@@ -311,6 +311,7 @@ function iptvDirectMediaChannel(raw){
 function isIPTVNative(){return !!(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative)}
 function syncIPTVFileButton(){const b=$('#iptvFileBtn');if(b)b.hidden=true}
 const iptvRefresh=()=>{if(iptvOn&&S.view.t==='iptv')renderIPTV()};
+window.NaghmeIPTVDiagnostics={get:()=>JSON.parse(JSON.stringify(IPTV.loadStats||{message:'هنوز فهرست بارگذاری نشده است.'}))};
 async function loadIPTV(force=false){
  if(IPTV.loading||(!force&&IPTV.channels.length&&Date.now()-IPTV.loadedAt<3600000))return;
  const generation=++iptvLoadGeneration;
@@ -354,7 +355,15 @@ async function loadIPTV(force=false){
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
   for(const extra of IPTV.extraUrls||[])if(extra&&extra.url&&!urls.includes(extra.url))urls.push(extra.url);
   const uniqueUrls=[...new Set(urls)];
-  const results=await Promise.allSettled(uniqueUrls.map(async url=>{if(iptvIsDirectMediaUrl(url))return [{...iptvDirectMediaChannel(url),sourceUrl:url}];const fetched=await fetchPlaylistText(url);const body=typeof fetched==='string'?fetched:fetched.text;const base=typeof fetched==='string'?url:(fetched.url||url);let parsed=parseM3U(body,base);if(!parsed.length&&url!==IPTV_DEFAULT_URL&&/^#EXTM3U\b/i.test(String(body||'').trimStart())&&/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE)/i.test(body))parsed=[iptvDirectMediaChannel(url)];if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');return parsed.map(channel=>({...channel,sourceUrl:url}))}));
+  const results=await Promise.allSettled(uniqueUrls.map(async url=>{
+   if(iptvIsDirectMediaUrl(url)){const channels=[{...iptvDirectMediaChannel(url),sourceUrl:url}];return {channels,stats:{url,rawLines:1,extinf:0,parsed:1}}}
+   const fetched=await fetchPlaylistText(url),body=typeof fetched==='string'?fetched:fetched.text,base=typeof fetched==='string'?url:(fetched.url||url);
+   let parsed=parseM3U(body,base);
+   if(!parsed.length&&url!==IPTV_DEFAULT_URL&&/^#EXTM3U\b/i.test(String(body||'').trimStart())&&/#EXT-X-(?:STREAM-INF|TARGETDURATION|MEDIA-SEQUENCE|PLAYLIST-TYPE)/i.test(body))parsed=[iptvDirectMediaChannel(url)];
+   if(url===IPTV_DEFAULT_URL&&parsed.length<1000)throw new Error('فهرست اصلی جهانی ناقص است؛ فقط '+fa(parsed.length)+' شبکه دریافت شد. دریافت منابع مکمل جایگزین فهرست اصلی نمی‌شود.');
+   const stats={url,rawLines:String(body||'').split(/\r?\n/).length,extinf:(String(body||'').match(/^#EXTINF:/gim)||[]).length,parsed:parsed.length};
+   return {channels:parsed.map(channel=>({...channel,sourceUrl:url})),stats};
+  }));
   const mainPlaylistIndex=uniqueUrls.indexOf(IPTV_DEFAULT_URL);
   const mainFailed=IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled';
   if(generation!==iptvLoadGeneration)return;
@@ -368,11 +377,13 @@ async function loadIPTV(force=false){
    IPTV.loadedAt=0;
    return;
   }
-  const merged=results.filter(x=>x.status==='fulfilled').flatMap(x=>x.value);
+  const successful=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
+  const merged=successful.flatMap(x=>x.channels);
   const a=dedupeIPTVChannels(merged);
+  IPTV.loadStats={at:Date.now(),sources:successful.map(x=>x.stats),failed:results.map((x,i)=>x.status==='rejected'?{url:uniqueUrls[i],error:String(x.reason?.message||x.reason||'خطا')}:null).filter(Boolean),rawParsed:merged.length,uniqueRemote:a.length,imported:allImportedIPTV().length,final:dedupeIPTVChannels([...a,...allImportedIPTV()]).length};
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
-  const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.length});
+  const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.channels?.length});
   if(failedExtra.length)IPTV.error='تعدادی از فهرست‌های مکمل دستی پاسخ ندادند ('+fa(failedExtra.length)+' مورد)؛ منابع موفق و شبکه‌های قبلی حفظ شدند.';
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
  }catch(e){
@@ -1019,7 +1030,7 @@ function renderIPTVList(keep){
  box.innerHTML=IPTV.filtered.slice(0,IPTV.shown).map(iptvRowHtml).join('')||`<p class="d tvempty">${IPTV.loading?'در حال دریافت فهرست شبکه‌ها…':!(IPTV.iranMode?IPTV.iranChannels.length:IPTV.channels.length)?'فهرستی در دسترس نیست؛ «دریافت» را بزنید.':IPTV.category==='موردعلاقه‌ها'&&!IPTV.query.trim()?'هنوز شبکه‌ای را به علاقه‌مندی‌ها اضافه نکرده‌اید.':'شبکه‌ای برای نمایش پیدا نشد.'}</p>`;
  if(box.clientHeight>0)for(let i=0;i<10&&box.scrollHeight<=box.clientHeight+300&&IPTV.shown<IPTV.filtered.length;i++)iptvMore();
  box.scrollTop=top;
- const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url}
+ const c=$('#tvCount');c.textContent=fa(IPTV.filtered.length)+' شبکه';const st=IPTV.loadStats;c.title=(IPTV.loadedAt?'آخرین دریافت: '+new Date(IPTV.loadedAt).toLocaleString('fa-IR')+' • ':'')+'منبع: '+IPTV.url+(st?' • خامِ پردازش‌شده: '+st.rawParsed+' • یکتای منابع اصلی: '+st.uniqueRemote+' • واردشده: '+st.imported+' • نهایی: '+st.final+' • جزئیات منابع در window.NaghmeIPTVDiagnostics.get()':'')}
 function renderIPTVChips(){
  const invalidGroup=v=>!String(v==null?'':v).trim()||/^(undefined|null|unknown)$/i.test(String(v).trim());
  const cnt=new Map();
