@@ -538,6 +538,7 @@ export default {
         return new Response("playlist upstream unavailable\\n", { status: 502, headers: { ...CORS_HEADERS, "Content-Type": "text/plain; charset=utf-8" } });
       }
     }
+    // Web HLS proxy for Naghme IPTV: preserve each channel edge host and rewrite every segment.
     if (url.pathname === "/telewebion") {
       if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS_HEADERS });
       if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed\n", { status: 405, headers: CORS_HEADERS });
