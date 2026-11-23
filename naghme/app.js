@@ -735,11 +735,10 @@ function iptvWebStreamUrl(raw){
   }
   const host=u.hostname.toLowerCase();
   if(host==='068382c8.kazaktelekom.com'&&u.pathname.startsWith('/iptv/'))return IPTV_WORKER_ORIGIN+'/edem?url='+encodeURIComponent(u.href);
-  // Telewebion Iran playlist uses per-channel hosts and /ek/<slug>/live/<quality>/index.m3u8.
-  // Route browser HLS through the existing Worker so manifests and segments receive CORS-safe URLs.
-  if(/(^|\.)telewebion\.(?:ir|net|com)$/i.test(host)){
-   const m=u.pathname.match(/^\/(?:ek\/)?([a-z0-9_-]{1,40})\/live\/(?:(\d{3,4}p)\/index\.m3u8|playlist\.m3u8)$/i);
-   if(m)return IPTV_WORKER_ORIGIN+'/'+m[1]+'/'+(m[2]||'1080p');
+  // Telewebion's current IRIB streams use per-channel edge hosts; proxy the exact
+  // manifest URL rather than rebuilding it against a different legacy origin.
+  if(/(^|\.)telewebion\.(?:ir|net|com)$/i.test(host)&&/\.m3u8$/i.test(u.pathname)){
+   return IPTV_WORKER_ORIGIN+'/telewebion?url='+encodeURIComponent(u.href);
   }
   return raw;
  }catch{return raw}
