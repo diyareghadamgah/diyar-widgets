@@ -408,8 +408,7 @@ async function loadIPTVCommunitySources(){
      try{
       const response=await fetch(iptvPlaylistProxyUrl(url),{cache:'no-store',signal:controller.signal});
       if(!response.ok)throw Error('HTTP '+response.status);
-      playlistBase=response.url||localUrl;
-   body=await response.text();
+      body=await response.text();
      }finally{clearTimeout(timer)}
     }
     const parsed=parseM3U(body,url).map(channel=>({...channel,sourceUrl:url}));
@@ -951,6 +950,7 @@ async function loadIPTVIranChannels(){
    const localUrl=new URL(IPTV_IRAN_PWA_PLAYLIST,document.baseURI).href;
    const response=await fetch(localUrl,{cache:'reload',signal:controller.signal});
    if(!response.ok)throw Error('HTTP '+response.status+' در دریافت فایل داخلی ('+localUrl+')');
+   playlistBase=response.url||localUrl;
    body=await response.text();
   }catch(e){localError=e}
   finally{clearTimeout(timer)}
