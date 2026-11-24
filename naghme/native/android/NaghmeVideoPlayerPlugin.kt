@@ -97,43 +97,59 @@ class NaghmeVideoPlayerPlugin : Plugin() {
             return
         }
         Thread {
-            var connection: HttpURLConnection? = null
-            try {
-                connection = (URL(raw).openConnection() as HttpURLConnection).apply {
-                    requestMethod = "GET"
-                    connectTimeout = 20000
-                    readTimeout = 30000
-                    instanceFollowRedirects = true
-                    setRequestProperty("User-Agent", "VLC/3.0.20 LibVLC/3.0.20")
-                    setRequestProperty("Accept", "application/vnd.apple.mpegurl, audio/x-mpegurl, */*")
-                    setRequestProperty("Cache-Control", "no-cache")
-                }
-                val status = connection.responseCode
-                if (status !in 200..299) throw IllegalStateException("HTTP $status")
-                val input = connection.inputStream
-                val out = ByteArrayOutputStream()
-                val buffer = ByteArray(16384)
-                var total = 0
-                input.use { stream ->
-                    while (true) {
-                        val n = stream.read(buffer)
-                        if (n < 0) break
-                        total += n
-                        if (total > 20 * 1024 * 1024) throw IllegalStateException("playlist_too_large")
-                        out.write(buffer, 0, n)
+            var lastError: Exception? = null
+            // دو تلاش مستقل؛ اتصال کند یا پاسخ دیرهنگام نباید فوراً دریافت فهرست را متوقف کند.
+            for (attempt in 0..1) {
+                var connection: HttpURLConnection? = null
+                try {
+                    connection = (URL(raw).openConnection() as HttpURLConnection).apply {
+                        requestMethod = "GET"
+                        connectTimeout = 25000
+                        readTimeout = 60000
+                        instanceFollowRedirects = true
+                        useCaches = false
+                        setRequestProperty("User-Agent", "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36")
+                        setRequestProperty("Accept", "application/vnd.apple.mpegurl, audio/x-mpegurl, application/x-mpegURL, */*")
+                        setRequestProperty("Cache-Control", "no-cache")
+                        setRequestProperty("Connection", "close")
                     }
+                    val status = connection.responseCode
+                    if (status !in 200..299) throw IllegalStateException("HTTP $status")
+                    val out = ByteArrayOutputStream()
+                    val buffer = ByteArray(16384)
+                    var total = 0
+                    connection.inputStream.use { stream ->
+                        while (true) {
+                            val n = stream.read(buffer)
+                            if (n < 0) break
+                            total += n
+                            if (total > 20 * 1024 * 1024) throw IllegalStateException("playlist_too_large")
+                            out.write(buffer, 0, n)
+                        }
+                    }
+                    val body = out.toString("UTF-8")
+                    if (!body.trimStart().startsWith("#EXTM3U")) throw IllegalStateException("invalid_m3u_response")
+                    call.resolve(
+                        JSObject()
+                            .put("text", body)
+                            .put("status", status)
+                            .put("url", connection.url.toString())
+                            .put("attempts", attempt + 1)
+                    )
+                    return@Thread
+                } catch (e: Exception) {
+                    lastError = e
+                    Log.w("NaghmeIPTV", "Playlist fetch attempt ${attempt + 1}/2 failed for $raw", e)
+                    if (attempt == 0) {
+                        try { Thread.sleep(1200) } catch (_: InterruptedException) { Thread.currentThread().interrupt() }
+                    }
+                } finally {
+                    connection?.disconnect()
                 }
-                val body = out.toString("UTF-8")
-                if (!body.trimStart().startsWith("#EXTM3U")) throw IllegalStateException("invalid_m3u_response")
-                call.resolve(JSObject().put("text", body).put("status", status).put("url", connection.url.toString()))
-            } catch (e: Exception) {
-                call.reject("playlist_fetch_failed: " + (e.message ?: e.javaClass.simpleName))
-            } finally {
-                connection?.disconnect()
             }
+            call.reject("playlist_fetch_failed: " + (lastError?.message ?: "network_error"))
         }.start()
     }
-
 
     /** نمایش صفحه رسمی فام در WebView داخلی؛ تبلیغات و کنترل‌های خود سایت حفظ می‌شوند. */
     @PluginMethod
