@@ -319,38 +319,56 @@ async function loadIPTV(force=false){
  IPTV.loading=true;IPTV.error='';iptvRefresh();
  try{
   await restoreImportedIPTV();
+  // آخرین فهرست سالم راه‌اندازی را حتی در حالت آفلاین نگه می‌دارد.
+  try{
+   const savedRemote=await kvGet('iptvRemoteM3UCache');
+   if(savedRemote&&Array.isArray(savedRemote.channels)&&savedRemote.channels.length&&IPTV.url===IPTV_DEFAULT_URL){
+    IPTV.channels=mergeIPTVChannels([...IPTV.channels,...savedRemote.channels]);
+    IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{lastKnownGood:{savedAt:savedRemote.savedAt||0,channels:savedRemote.channels.length}});
+   }
+  }catch(cacheError){console.warn('IPTV last-known-good cache read failed',cacheError)}
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
   try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
+  const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   const fetchTextWithTimeout=async requestUrl=>{
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
-   try{
-    const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal});
-    if(!response.ok){const detail=(await response.text()).slice(0,240).trim();throw new Error('HTTP '+response.status+(detail?' — '+detail:''))}
-    return await response.text();
-   }catch(e){
-    if(controller.signal.aborted)throw new Error('مهلت دریافت فهرست پس از ۲۰ ثانیه تمام شد.');
-    throw e;
-   }finally{clearTimeout(timer)}
+   let lastError=null;
+   for(let attempt=0;attempt<2;attempt++){
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000);
+    try{
+     const response=await fetch(requestUrl,{cache:'no-store',signal:controller.signal,headers:{'Accept':'application/vnd.apple.mpegurl, audio/x-mpegurl, application/x-mpegURL, */*'}});
+     if(!response.ok){const detail=(await response.text()).slice(0,240).trim();throw new Error('HTTP '+response.status+(detail?' — '+detail:''))}
+     const body=await response.text();
+     if(!body.trimStart().startsWith('#EXTM3U'))throw new Error('پاسخ منبع، فهرست معتبر M3U نیست.');
+     return body;
+    }catch(e){
+     lastError=controller.signal.aborted?new Error('مهلت دریافت فهرست پس از ۴۵ ثانیه تمام شد.'):e;
+     if(attempt===0)await wait(1200);
+    }finally{clearTimeout(timer)}
+   }
+   throw lastError||new Error('playlist_fetch_failed');
   };
   const fetchPlaylistText=async url=>{
-   if(window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function'){
-    const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url};
+   const native=window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function';
+   let nativeError=null;
+   if(native){
+    try{const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url,route:'native'}}
+    catch(error){nativeError=error;console.warn('IPTV native fetch failed; trying Worker fallback',url,error)}
    }
    const proxyUrl=iptvPlaylistProxyUrl(url);let proxyError=null;
+   if(proxyUrl!==url){
+    try{
+     const text=await fetchTextWithTimeout(proxyUrl);
+     if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url,route:'worker'};
+     throw new Error('فهرست اصلی برگشتی از Worker کوتاه یا ناقص است.');
+    }catch(error){proxyError=error;console.warn('IPTV Worker fallback failed; trying origin directly',url,error)}
+   }
    try{
-    const text=await fetchTextWithTimeout(proxyUrl);
-    if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url};
-    console.warn('IPTV proxy returned a short main playlist; retrying official source directly');
-   }catch(error){
-    proxyError=error;console.warn('IPTV proxy failed; retrying official source directly',error);
-   }
-   // GitHub Pages serves the official M3U with CORS. Use it as a fallback
-   // so a broken/stale Worker can never silently reduce the main list to extras.
-   if(url===IPTV_DEFAULT_URL){
     const text=await fetchTextWithTimeout(url);
-    return {text,url};
+    return {text,url,route:'direct'};
+   }catch(directError){
+    const details=[nativeError,proxyError,directError].filter(Boolean).map(e=>e.message||String(e)).join(' | ');
+    throw new Error('همه مسیرهای دریافت ناموفق بودند: '+details);
    }
-   throw new Error('دریافت منبع فهرست ناموفق بود؛ ممکن است قالب پشتیبانی نشود، سرور پاسخ ندهد یا دسترسی محدود باشد. '+(proxyError&&proxyError.message?proxyError.message:''));
   };
   const urls=IPTV.url?[IPTV.url]:[];
   if(IPTV.url===IPTV_DEFAULT_URL){urls.push(IPTV.iranUrl);urls.push(IPTV_EV_URL);urls.push(IPTV_NEXA_URL)}
@@ -384,6 +402,10 @@ async function loadIPTV(force=false){
   IPTV.loadStats={at:Date.now(),sources:successful.map(x=>x.stats),failed:results.map((x,i)=>x.status==='rejected'?{url:uniqueUrls[i],error:String(x.reason?.message||x.reason||'خطا')}:null).filter(Boolean),rawParsed:merged.length,uniqueRemote:a.length,imported:allImportedIPTV().length,final:dedupeIPTVChannels([...a,...allImportedIPTV()]).length};
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
   IPTV.channels=mergeIPTVChannels(a);IPTV.loadedAt=Date.now();
+  if(IPTV.url===IPTV_DEFAULT_URL){
+   // ذخیره فقط پس از اعتبارسنجی منبع اصلی؛ کش ناقص هیچ‌وقت جایگزین نسخه سالم نمی‌شود.
+   try{await kvSet('iptvRemoteM3UCache',{savedAt:Date.now(),channels:a})}catch(cacheError){console.warn('IPTV last-known-good cache save failed',cacheError)}
+  }
   const failedExtra=(IPTV.extraUrls||[]).filter(extra=>{const i=uniqueUrls.indexOf(extra.url);return i<0||results[i]?.status!=='fulfilled'||!results[i]?.value?.channels?.length});
   if(failedExtra.length)IPTV.error='تعدادی از فهرست‌های مکمل دستی پاسخ ندادند ('+fa(failedExtra.length)+' مورد)؛ منابع موفق و شبکه‌های قبلی حفظ شدند.';
   if(!a.length&&allImportedIPTV().length)IPTV.error='فهرست اینترنتی کانالی برنگرداند؛ کانال‌های فایل‌های واردشده حفظ شده‌اند.';
