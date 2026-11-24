@@ -139,11 +139,18 @@ jobs:
           grep -q "listVideoFolder" /tmp/apk/assets/public/native-player.js
           grep -q "پخش بومی Media3 فعال شد" /tmp/apk/assets/public/video.js
           
-      - name: Upload APK
+      - name: Upload ARM64 APK (for 64-bit Android devices)
         uses: actions/upload-artifact@v4
         with:
-          name: naghme-abi-apks
-          path: naghme/android/app/build/outputs/apk/debug/*.apk
+          name: naghme-android-arm64
+          path: naghme/android/app/build/outputs/apk/debug/app-arm64-v8a-debug.apk
+          if-no-files-found: error
+
+      - name: Upload ARM32 APK (for 32-bit Android devices)
+        uses: actions/upload-artifact@v4
+        with:
+          name: naghme-android-arm32
+          path: naghme/android/app/build/outputs/apk/debug/app-armeabi-v7a-debug.apk
           if-no-files-found: error
           
       - name: Upload build reports on failure
