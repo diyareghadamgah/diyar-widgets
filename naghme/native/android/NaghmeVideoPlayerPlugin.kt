@@ -64,6 +64,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
     init { activePlugin = this }
     private var player: ExoPlayer? = null
     private var iptvHttpFactory: DefaultHttpDataSource.Factory? = null
+    @Volatile private var currentPlaybackUrl: String = ""
+    @Volatile private var lastPlaybackError: String = ""
     private var playerView: PlayerView? = null
     private var lockOverlay: FrameLayout? = null
     private var isPlayerLocked: Boolean = false
@@ -320,6 +322,8 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 }
                 playerView?.player = player
                 playerView?.visibility = android.view.View.VISIBLE
+                currentPlaybackUrl = url
+                lastPlaybackError = ""
                 val requestedUserAgent = call.getString("userAgent")?.trim()
                     ?.takeIf { it.isNotEmpty() && it.length <= 512 && !it.contains('\r') && !it.contains('\n') }
                 iptvHttpFactory?.setUserAgent(requestedUserAgent ?: "VLC/3.0.20 LibVLC/3.0.20")
@@ -712,8 +716,11 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 d.put("message", details.ifBlank { error.message ?: "Unknown playback error" })
                 d.put("code", error.errorCode)
                 d.put("name", error.errorCodeName)
+                d.put("url", currentPlaybackUrl)
+                lastPlaybackError = error.errorCodeName + ": " + details
+                d.put("lastError", lastPlaybackError)
                 notifyListeners("error", d)
-                Log.e("NaghmeVideoPlayer", "Playback error [" + error.errorCodeName + "]: " + details, error)
+                Log.e("NaghmeVideoPlayer", "Playback error [" + error.errorCodeName + "] URL=" + currentPlaybackUrl + " details=" + details, error)
             }
         })
     }
@@ -823,6 +830,10 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 out.put("durationMs", p?.duration?.takeIf { it > 0 } ?: 0L)
                 out.put("isPlaying", p?.isPlaying ?: false)
                 out.put("speed", p?.playbackParameters?.speed ?: 1f)
+                out.put("playbackState", p?.playbackState ?: Player.STATE_IDLE)
+                out.put("playWhenReady", p?.playWhenReady ?: false)
+                out.put("playbackError", lastPlaybackError)
+                out.put("currentUrl", currentPlaybackUrl)
                 call.resolve(out)
             } catch (e: Exception) {
                 call.reject("status_failed: " + (e.message ?: e.javaClass.simpleName))
