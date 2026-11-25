@@ -343,6 +343,15 @@ class NaghmeVideoPlayerPlugin : Plugin() {
                 val requestedUserAgent = call.getString("userAgent")?.trim()
                     ?.takeIf { it.isNotEmpty() && it.length <= 512 && !it.contains('\r') && !it.contains('\n') }
                 iptvHttpFactory?.setUserAgent(requestedUserAgent ?: "VLC/3.0.20 LibVLC/3.0.20")
+                // GEM CloudFront streams require the official GEM page as HTTP Referer.
+                val requestedReferrer = call.getString("referrer")?.trim()
+                    ?.takeIf { it.startsWith("https://www.gemonline.tv/") && !it.contains('\r') && !it.contains('\n') }
+                val requestedOrigin = call.getString("origin")?.trim()
+                    ?.takeIf { it == "https://www.gemonline.tv" }
+                val requestHeaders = linkedMapOf<String, String>()
+                if (requestedReferrer != null) requestHeaders["Referer"] = requestedReferrer
+                if (requestedOrigin != null) requestHeaders["Origin"] = requestedOrigin
+                iptvHttpFactory?.setDefaultRequestProperties(requestHeaders)
                 val mimeType = call.getString("mimeType")?.trim()?.takeIf { it.isNotEmpty() }
                 val mediaItem = MediaItem.Builder().setUri(url).apply {
                     if (mimeType != null) setMimeType(mimeType)
