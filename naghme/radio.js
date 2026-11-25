@@ -14,13 +14,10 @@ const IRIB=[
  ['radio-salamat','رادیو سلامت','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-salamat/playlist.m3u8'],
  ['radio-eghtesad','رادیو اقتصاد','http://s2.cdn1.iranseda.ir:1935/liveedge/radio-eghtesad/playlist.m3u8'],
  ['radio-maaref','رادیو معارف','http://s4.cdn3.iranseda.ir:1935/liveedge/radio-maaref/playlist.m3u8'],
- ['radio-goftogoo','رادیو گفت‌وگو','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-goftogoo/playlist.m3u8'],
  ['radio-namayesh','رادیو نمایش','http://s1.cdn3.iranseda.ir:1935/liveedge/radio-namayesh/playlist.m3u8'],
  ['radio-saba','رادیو صبا','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-saba/playlist.m3u8'],
  ['radio-ziarat','رادیو زیارت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8'],
  ['radio-telavat','رادیو تلاوت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
- ['radio-tartil','رادیو ترتیل','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
- ['radio-monasebati','رادیو مناسبتی','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-monasebati/playlist.m3u8']
 ].map(([id,name,url])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url,url_resolved:url,codec:'HLS',bitrate:0,votes:999999,irib:true}));
 const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false};
 function lsGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch{return fallback}}
