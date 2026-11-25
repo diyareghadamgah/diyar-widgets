@@ -1245,3 +1245,22 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
  body.mode-tv #naghmeIptvTools .iptv-volume-control{min-width:178px;flex-basis:200px!important}
  body.mode-tv #naghmeIptvTools .iptv-tool-btn{padding:0 10px!important}
 }
+
+/* Radio settings: keep station URL/file management inside the gear panel */
+.radio-top-actions{display:flex;align-items:center;gap:7px;flex:none}
+.radio-settings-btn{border:1px solid #d7a84a!important;color:#f5d47a!important;background:var(--s1)!important}
+.radio-settings-panel{display:flex;flex:none;flex-direction:column;gap:9px;max-height:38dvh;overflow-y:auto;overscroll-behavior:contain;padding:11px;border:1px solid #d7a84a66;border-radius:13px;background:var(--s1)}
+.radio-settings-panel[hidden]{display:none!important}
+.radio-settings-head{display:flex;flex-direction:column;gap:3px}
+.radio-settings-head b,.radio-custom-list-wrap>b{font-size:13px;color:#f5d47a}
+.radio-settings-head small,.radio-custom-empty{font-size:10px;color:var(--mu);line-height:1.7}
+.radio-settings-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.radio-settings-actions .btn-sm{min-height:38px}
+.radio-custom-list-wrap{display:flex;flex-direction:column;gap:7px}
+.radio-custom-list{display:flex;flex-direction:column;gap:6px}
+.radio-custom-item{display:flex;align-items:center;gap:8px;min-width:0;padding:7px 9px;border:1px solid var(--s2);border-radius:9px;background:var(--bg)}
+.radio-custom-item>span{display:flex;flex:1;min-width:0;flex-direction:column;gap:3px}
+.radio-custom-item b{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.radio-custom-item small{font-size:10px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr;text-align:left}
+.radio-custom-item button{flex:none;min-width:48px;min-height:34px;padding:4px 8px;border:1px solid #e66b6b66;border-radius:8px;background:#5b202033;color:#ff9999;font-size:11px}
+@media(max-width:760px){.radio-settings-panel{max-height:34dvh}.radio-top-actions{gap:5px}.radio-top-actions .btn-sm{padding:6px 8px;font-size:11px}}
