@@ -215,13 +215,29 @@ class NaghmeLibraryVideoPlayerPlugin : Plugin() {
 
     @PluginMethod
     fun pickVideoFiles(call: PluginCall) {
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+        val documentIntent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = "video/*"
             putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
         }
-        startActivityForResult(call, intent, "videoFilesPicked")
+        try {
+            startActivityForResult(call, documentIntent, "videoFilesPicked")
+        } catch (documentError: Exception) {
+            diagnostic("video_picker_open_document_failed; trying ACTION_GET_CONTENT", documentError)
+            val contentIntent = Intent(Intent.ACTION_GET_CONTENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "video/*"
+                putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+            try {
+                startActivityForResult(call, contentIntent, "videoFilesPicked")
+            } catch (contentError: Exception) {
+                diagnostic("video_picker_unavailable", contentError)
+                call.reject("file_picker_unavailable: " + (contentError.message ?: contentError.javaClass.simpleName))
+            }
+        }
     }
 
     @ActivityCallback
