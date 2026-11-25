@@ -34,6 +34,7 @@ const IPTV_COUNTRY_BASE='https://iptv-org.github.io/iptv/countries/';
 const IPTV_EV_URL='https://eviptv.com/m3u/hasbahca_iptv.m3u';
 // فهرست فارسی نکسا؛ منبع مکمل و مستقل، در صورت قطع‌شدن بدون اختلال در منابع اصلی.
 const IPTV_NEXA_URL='https://raw.githubusercontent.com/itsyebekhe/nexa/main/playlist.m3u';
+const IPTV_GEM_STREAMS=[['GEM 24B','24b'],['GEM Academy','gem_usa'],['GEM Arabia','gem_arabia'],['GEM AZ','gem_az'],['GEM Bollywood','gem_bollywood'],['GEM Classic','gem_classic'],['GEM Drama','gem_drama'],['GEM Fit','gem_fit'],['GEM Food','gem_food'],['GEM Film','gem_film'],['GEM Junior','gem_junior'],['GEM Kids','gem_kids'],['GEM Latido','gem_latino'],['GEM Life','gem_life'],['GEM MAX','maxx'],['GEM Mifa','mifa'],['GEM Modern Economy','modern_economy'],['GEM Nature','gem_nature'],['GEM Onyx','onyx'],['GEM Property','gem_property'],['GEM River','river'],['GEM Rubix','rubix'],['GEM Series','gem_series'],['GEM Travel','gem_travel'],['GEM TV','gem_tv']];
 // دسته‌های مستقل جهانی از iptv-org؛ با انتخاب کاربر به فهرست اصلی اضافه می‌شوند.
 const IPTV_GLOBAL_CATEGORY_SOURCES=[
  {url:'https://iptv-org.github.io/iptv/categories/sports.m3u',name:'شبکه‌های ورزشی جهانی'},
@@ -250,8 +251,11 @@ function iptvPlaylistChannel(name,url,meta={}){
  const item={name:cleanName,logo:meta.logo||'',group:meta.group||'سایر',country:meta.country||'',language:meta.language||'',id:meta.id||'',url:streamUrl,key:(meta.id||cleanName)+'|'+streamUrl};
  if(meta.mimeType)item.mimeType=meta.mimeType;
  if(meta.userAgent)item.userAgent=String(meta.userAgent).slice(0,512);
+ if(meta.referrer)item.referrer=String(meta.referrer).slice(0,1024);
+ if(meta.origin)item.origin=String(meta.origin).slice(0,512);
  return iptvDecorate(item);
 }
+function iptvGemChannels(){return IPTV_GEM_STREAMS.map(([name,slug])=>iptvPlaylistChannel(name,'https://d2e40kvaojifd6.cloudfront.net/stream/'+slug+'/playlist.m3u8',{id:'GEM.'+slug,group:'GEM',referrer:'https://www.gemonline.tv/en-US/Live/Index?channelname='+slug,origin:'https://www.gemonline.tv'})).filter(Boolean)}
 function parseM3U(text,baseUrl){
  const source=String(text||'').replace(/^\uFEFF/,'').trim();if(!source)return [];
  const out=[],seen=new Set(),add=(name,url,meta={})=>{const c=iptvPlaylistChannel(name,url,{...meta,baseUrl});if(c&&!seen.has(c.key)){seen.add(c.key);out.push(c)}};
@@ -293,7 +297,7 @@ function parseM3U(text,baseUrl){
     const get=k=>{const m=attrs.match(new RegExp('(?:^|\\s)'+k+'\\s*=\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\s,]+))','i'));return m?(m[1]??m[2]??m[3]??''):''};
     const rawGroup=get('group-title')||'سایر',isBroadcastArea=/^(?:c\/)?[a-z]{2}(?:\s*[,;]\s*(?:c\/)?[a-z]{2})*$/i.test(rawGroup),area=rawGroup.replace(/c\//gi,'').trim();
     meta={name:name||get('tvg-name')||'شبکه بدون نام',logo:get('tvg-logo'),group:isBroadcastArea?'شبکه‌های فارسی':rawGroup,country:get('tvg-country')||(isBroadcastArea?area:''),language:get('tvg-language'),id:get('tvg-id')};
-   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group;else if(/^#EXTVLCOPT:http-user-agent=/i.test(line)&&meta){const ua=line.slice(line.indexOf('=')+1).trim().replace(/^['"]|['"]$/g,'');if(ua&&!/[\r\n]/.test(ua))meta.userAgent=ua.slice(0,512)}}
+   }else if(line.startsWith('#')){if(/^#EXTGRP:/i.test(line)&&meta)meta.group=line.slice(line.indexOf(':')+1).trim()||meta.group;else if(/^#EXTVLCOPT:http-user-agent=/i.test(line)&&meta){const ua=line.slice(line.indexOf('=')+1).trim().replace(/^['"]|['"]$/g,'');if(ua&&!/[\r\n]/.test(ua))meta.userAgent=ua.slice(0,512)}else if(/^#EXTVLCOPT:http-referrer=/i.test(line)&&meta){const ref=line.slice(line.indexOf('=')+1).trim().replace(/^['"]|['"]$/g,'');try{const u=new URL(ref);if(u.protocol==='https:'&&u.hostname==='www.gemonline.tv')meta.referrer=u.href}catch{}}else if(/^#EXTVLCOPT:http-origin=/i.test(line)&&meta){const origin=line.slice(line.indexOf('=')+1).trim().replace(/^['"]|['"]$/g,'');try{const u=new URL(origin);if(u.protocol==='https:')meta.origin=u.origin}catch{}}}
    else{const m=meta||{name:line,group:'سایر'};add(m.name,line,m);meta=null}
   }
   return out;
@@ -327,6 +331,7 @@ async function loadIPTV(force=false){
     IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{lastKnownGood:{savedAt:savedRemote.savedAt||0,channels:savedRemote.channels.length}});
    }
   }catch(cacheError){console.warn('IPTV last-known-good cache read failed',cacheError)}
+  try{const savedFallback=await kvGet('iptvFallbackM3UCache');if(savedFallback&&Array.isArray(savedFallback.channels)&&savedFallback.channels.length&&IPTV.url===IPTV_DEFAULT_URL){IPTV.channels=mergeIPTVChannels([...IPTV.channels,...savedFallback.channels]);IPTV.loadStats=Object.assign({},IPTV.loadStats||{},{fallbackCache:{savedAt:savedFallback.savedAt||0,channels:savedFallback.channels.length}})}}catch(cacheError){console.warn('IPTV fallback cache read failed',cacheError)}
   if(!IPTV.favLoaded){try{IPTV.favorites=await kvGet('iptvFav')||[]}catch{IPTV.favorites=[]}IPTV.favLoaded=true}
   try{IPTV.extraUrls=await kvGet('iptvExtraUrls')||[]}catch{IPTV.extraUrls=[]}
   const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -348,25 +353,25 @@ async function loadIPTV(force=false){
    throw lastError||new Error('playlist_fetch_failed');
   };
   const fetchPlaylistText=async url=>{
-   const native=window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function';
-   let nativeError=null;
-   if(native){
-    try{const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url,route:'native'}}
-    catch(error){nativeError=error;console.warn('IPTV native fetch failed; trying Worker fallback',url,error)}
-   }
    const proxyUrl=iptvPlaylistProxyUrl(url);let proxyError=null;
    if(proxyUrl!==url){
     try{
      const text=await fetchTextWithTimeout(proxyUrl);
      if(url!==IPTV_DEFAULT_URL||parseM3U(text,url).length>=1000)return {text,url,route:'worker'};
      throw new Error('فهرست اصلی برگشتی از Worker کوتاه یا ناقص است.');
-    }catch(error){proxyError=error;console.warn('IPTV Worker fallback failed; trying origin directly',url,error)}
+    }catch(error){proxyError=error;console.warn('IPTV Worker fetch failed; trying native/origin',url,error)}
+   }
+   const native=window.NaghmeVideoPlayer&&window.NaghmeVideoPlayer.isNative&&typeof window.NaghmeVideoPlayer.fetchText==='function';
+   let nativeError=null;
+   if(native){
+    try{const result=await window.NaghmeVideoPlayer.fetchText(url);return {text:result.text,url:result.url||url,route:'native'}}
+    catch(error){nativeError=error;console.warn('IPTV native fetch failed; trying direct origin',url,error)}
    }
    try{
     const text=await fetchTextWithTimeout(url);
     return {text,url,route:'direct'};
    }catch(directError){
-    const details=[nativeError,proxyError,directError].filter(Boolean).map(e=>e.message||String(e)).join(' | ');
+    const details=[proxyError,nativeError,directError].filter(Boolean).map(e=>e.message||String(e)).join(' | ');
     throw new Error('همه مسیرهای دریافت ناموفق بودند: '+details);
    }
   };
@@ -387,17 +392,26 @@ async function loadIPTV(force=false){
   const mainFailed=IPTV.url===IPTV_DEFAULT_URL&&mainPlaylistIndex>=0&&results[mainPlaylistIndex]?.status!=='fulfilled';
   if(generation!==iptvLoadGeneration)return;
   if(mainFailed){
-   // Never replace the full historical list with a handful of successful extras.
-   // Keep whatever was already displayed and report the primary-source failure.
    try{await restoreImportedIPTV()}catch{}
+   const fallbackChannels=results.filter((x,i)=>i!==mainPlaylistIndex&&x.status==='fulfilled').flatMap(x=>x.value.channels||[]);
+   const fallbackRemote=dedupeIPTVChannels([...fallbackChannels,...iptvGemChannels()]);
+   if(fallbackRemote.length){
+    IPTV.channels=dedupeIPTVChannels([...IPTV.channels,...fallbackRemote,...allImportedIPTV()]);
+    IPTV.loadedAt=Date.now();
+    IPTV.loadStats={at:Date.now(),mainSource:'failed',mainError:String(results[mainPlaylistIndex]?.reason?.message||'unknown'),fallbackSources:results.filter((x,i)=>i!==mainPlaylistIndex&&x.status==='fulfilled').map(x=>x.value.stats),fallbackChannels:fallbackRemote.length,final:IPTV.channels.length};
+    try{await kvSet('iptvFallbackM3UCache',{savedAt:Date.now(),channels:fallbackRemote})}catch(cacheError){console.warn('IPTV fallback cache save failed',cacheError)}
+    const reason=results[mainPlaylistIndex]?.reason;
+    IPTV.error='فهرست اصلی جهانی موقتاً دریافت نشد؛ '+fa(fallbackRemote.length)+' شبکه از منابع جایگزین و فهرست GEM بارگذاری شد. علت: '+(reason?.message||'خطای نامشخص');
+    return;
+   }
    IPTV.channels=mergeIPTVChannels(IPTV.channels);
    const reason=results[mainPlaylistIndex]?.reason;
-   IPTV.error='منبع اصلی جهانی IPTV دریافت نشد یا ناقص بود: '+(reason?.message||'خطای نامشخص')+'؛ منابع مکمل جایگزین فهرست اصلی نشدند و فهرست قبلی حفظ شد.';
+   IPTV.error='منبع اصلی IPTV و منابع جایگزین دریافت نشدند: '+(reason?.message||'خطای نامشخص')+'؛ فهرست قبلی حفظ شد.';
    IPTV.loadedAt=0;
    return;
   }
   const successful=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
-  const merged=successful.flatMap(x=>x.channels);
+  const merged=[...successful.flatMap(x=>x.channels),...iptvGemChannels()];
   const a=dedupeIPTVChannels(merged);
   IPTV.loadStats={at:Date.now(),sources:successful.map(x=>x.stats),failed:results.map((x,i)=>x.status==='rejected'?{url:uniqueUrls[i],error:String(x.reason?.message||x.reason||'خطا')}:null).filter(Boolean),rawParsed:merged.length,uniqueRemote:a.length,imported:allImportedIPTV().length,final:dedupeIPTVChannels([...a,...allImportedIPTV()]).length};
   if(!a.length&&!allImportedIPTV().length){const reason=results.find(x=>x.status==='rejected')?.reason;throw new Error(reason?.message||'هیچ کانالی از فهرست‌ها دریافت نشد')}
