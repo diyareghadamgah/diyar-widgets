@@ -2,7 +2,26 @@
 'use strict';
 const $=s=>document.querySelector(s);
 const API=['https://de1.api.radio-browser.info/json','https://de2.api.radio-browser.info/json','https://all.api.radio-browser.info/json'];
-const IRIB=[['radio-iran','رادیو ایران','radio-iran'],['radio-javan','رادیو جوان','radio-javan'],['radio-payam','رادیو پیام','radio-payam'],['radio-tehran','رادیو تهران','radio-tehran'],['radio-varzesh','رادیو ورزش','radio-varzesh'],['radio-ava','رادیو آوا','radio-ava'],['radio-quran','رادیو قرآن','radio-quran'],['radio-farhang','رادیو فرهنگ','radio-farhang'],['radio-salamat','رادیو سلامت','radio-salamat'],['radio-eghtesad','رادیو اقتصاد','radio-eghtesad'],['radio-maaref','رادیو معارف','radio-maaref'],['radio-goftogoo','رادیو گفت‌وگو' ,'radio-goftogoo'],['radio-namayesh','رادیو نمایش','radio-namayesh'],['radio-saba','رادیو صبا','radio-saba'],['radio-ziarat','رادیو زیارت','radio-ziarat'],['radio-telavat','رادیو تلاوت','radio-telavat'],['radio-tartil','رادیو ترتیل','radio-tartil'],['radio-monasebati','رادیو مناسبتی','radio-monasebati']].map(([id,name,slug])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',url_resolved:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',codec:'HLS',bitrate:0,votes:999999,irib:true}));
+const IRIB=[
+ ['radio-iran','رادیو ایران','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8'],
+ ['radio-javan','رادیو جوان','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-javan/playlist.m3u8'],
+ ['radio-payam','رادیو پیام','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-payam/playlist.m3u8'],
+ ['radio-tehran','رادیو تهران','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tehran/playlist.m3u8'],
+ ['radio-varzesh','رادیو ورزش','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-varzesh/playlist.m3u8'],
+ ['radio-ava','رادیو آوا','http://s2.cdn1.iranseda.ir:1935/liveedge/radio-avaa/playlist.m3u8'],
+ ['radio-quran','رادیو قرآن','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-quran/playlist.m3u8'],
+ ['radio-farhang','رادیو فرهنگ','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-farhang/playlist.m3u8'],
+ ['radio-salamat','رادیو سلامت','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-salamat/playlist.m3u8'],
+ ['radio-eghtesad','رادیو اقتصاد','http://s2.cdn1.iranseda.ir:1935/liveedge/radio-eghtesad/playlist.m3u8'],
+ ['radio-maaref','رادیو معارف','http://s4.cdn3.iranseda.ir:1935/liveedge/radio-maaref/playlist.m3u8'],
+ ['radio-goftogoo','رادیو گفت‌وگو','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-goftogoo/playlist.m3u8'],
+ ['radio-namayesh','رادیو نمایش','http://s1.cdn3.iranseda.ir:1935/liveedge/radio-namayesh/playlist.m3u8'],
+ ['radio-saba','رادیو صبا','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-saba/playlist.m3u8'],
+ ['radio-ziarat','رادیو زیارت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8'],
+ ['radio-telavat','رادیو تلاوت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
+ ['radio-tartil','رادیو ترتیل','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
+ ['radio-monasebati','رادیو مناسبتی','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-monasebati/playlist.m3u8']
+].map(([id,name,url])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url,url_resolved:url,codec:'HLS',bitrate:0,votes:999999,irib:true}));
 const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false};
 function lsGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch{return fallback}}
 function lsSet(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){console.warn('[NaghmeRadio] storage failed',e);return false}}
@@ -46,12 +65,12 @@ function unique(list){const m=new Map();(list||[]).forEach(s=>{if(s&&s.stationuu
 async function loadPublicRadios(){
  try{
   const r=await fetch(new URL('public-radio.m3u',document.baseURI).href,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
-  const body=await r.text(),out=[];let name='',group='جهان';
+  const body=await r.text(),out=[];let name='',group='جهان',code='';
   for(const raw of body.split(/\r?\n/)){
    const line=raw.trim();if(!line)continue;
-   if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';continue}
+   if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';continue}
    if(line.startsWith('#'))continue;
-    if(/^https?:\/\//i.test(line)&&name){const code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name=''}
+    if(/^https?:\/\//i.test(line)&&name){const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':code==='IR'?'ایران':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name='';code=''}
   }
   return out;
  }catch(e){console.warn('[NaghmeRadio] public M3U unavailable',e);return []}
