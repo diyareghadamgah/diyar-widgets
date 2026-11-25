@@ -1264,3 +1264,11 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
 .radio-custom-item small{font-size:10px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr;text-align:left}
 .radio-custom-item button{flex:none;min-width:48px;min-height:34px;padding:4px 8px;border:1px solid #e66b6b66;border-radius:8px;background:#5b202033;color:#ff9999;font-size:11px}
 @media(max-width:760px){.radio-settings-panel{max-height:34dvh}.radio-top-actions{gap:5px}.radio-top-actions .btn-sm{padding:6px 8px;font-size:11px}}
+
+/* Keep radio settings attached to the settings control, not down in the station sidebar */
+.radio-top{position:relative;z-index:30;overflow:visible}
+.radio-top-actions{position:relative;z-index:31;overflow:visible}
+.radio-settings-anchor{position:relative;display:inline-flex;align-items:center;flex:none}
+.radio-settings-panel{position:absolute!important;top:calc(100% + 9px);right:0;z-index:1000;width:min(420px,calc(100vw - 34px));max-width:calc(100vw - 34px);max-height:min(65vh,560px);overflow-y:auto;box-shadow:0 14px 38px #0009;overscroll-behavior:contain}
+.radio-settings-panel[hidden]{display:none!important}
+@media(max-width:760px){.radio-settings-panel{max-height:60vh;width:min(390px,calc(100vw - 26px));right:-2px}}
