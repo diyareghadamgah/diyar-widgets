@@ -1574,3 +1574,25 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
 .radio-settings-panel{position:absolute!important;top:calc(100% + 9px);right:0;z-index:9999;width:min(420px,calc(100vw - 34px));max-width:calc(100vw - 34px);max-height:min(65vh,560px);overflow-y:auto;box-shadow:0 14px 38px #0009;overscroll-behavior:contain}
 .radio-settings-panel[hidden]{display:none!important}
 @media(max-width:760px){.radio-settings-panel{max-height:60vh;width:min(390px,calc(100vw - 26px));right:-2px}}
+
+/* Popover stacking fixes in both orientations, without changing main's layout grid. */
+@media (orientation:landscape) and (min-width:600px){
+ body.mode-radio .radio-workspace{overflow:visible!important}
+ body.mode-radio .radio-monitor{overflow:visible!important;position:relative!important;z-index:50!important}
+ body.mode-radio .radio-top{position:relative!important;z-index:810!important;overflow:visible!important}
+ body.mode-radio .radio-top-actions{position:relative!important;z-index:820!important;overflow:visible!important}
+ body.mode-radio .radio-settings-anchor{position:relative!important;z-index:830!important}
+ body.mode-radio .radio-settings-panel{top:calc(100% + 8px)!important;right:0!important;z-index:99999!important;max-height:min(58dvh,480px)!important}
+}
+@media (orientation:portrait), (max-width:760px){
+ body.mode-radio #radioPage:not([hidden]),
+ body.mode-radio .radio-workspace,
+ body.mode-radio .radio-monitor,
+ body.mode-radio .radio-top,
+ body.mode-radio .radio-top-actions{overflow:visible!important}
+ body.mode-radio .radio-monitor{position:relative!important;z-index:800!important}
+ body.mode-radio .radio-top{position:relative!important;z-index:810!important}
+ body.mode-radio .radio-top-actions{position:relative!important;z-index:820!important}
+ body.mode-radio .radio-settings-anchor{position:relative!important;z-index:830!important}
+ body.mode-radio .radio-settings-panel{position:absolute!important;top:calc(100% + 8px)!important;right:0!important;z-index:99999!important;max-height:min(60dvh,520px)!important}
+}
