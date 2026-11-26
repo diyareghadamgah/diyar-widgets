@@ -124,7 +124,28 @@ async function play(id){
  const s=state.items.find(x=>x.stationuuid===id);if(!s)return;
  const a=audio();if(!a)return;
  if(state.current&&state.current.stationuuid===id&&((nativeRadio()&&state.nativePlaying)||(!nativeRadio()&&!a.paused))){
-  if(nativeRadio()){try{await window.NaghmeLibraryVideo.pause();state.nativePlaying=false}catch(e){status('توقف پخش ممکن نشد: '+(e.message||e));return}}
+  if(nativeRadio()){try{
+      // --- NAGHME_NATIVE_RADIO_HOOK ---
+      if (s.irib === true || url.includes('iranseda.ir')) {
+        if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
+          console.log('[Radio] Using Native Player for IRIB:', url);
+          status('در حال اتصال به پلیر بومی...');
+          try {
+            const v = document.getElementById('iptvVideo');
+            if (v) v.style.display = 'block'; // استفاده از video tag برای پخش صدا
+            await window.NaghmeVideoPlayer.play({ url: url });
+            status('در حال پخش زنده (Native)');
+            $('#radioPlayToggle').textContent='Ⅱ';
+            state.nativePlaying = true;
+            return; // خروج از تابع، چون Native کار را انجام می‌دهد
+          } catch (e) {
+            console.warn('[Radio] Native failed, falling back to web:', e);
+            status('خطای پلیر بومی: ' + e.message + ' — تلاش با پلیر وب...');
+          }
+        }
+      }
+      // --- END NAGHME_NATIVE_RADIO_HOOK ---
+    await window.NaghmeLibraryVideo.pause();state.nativePlaying=false}catch(e){status('توقف پخش ممکن نشد: '+(e.message||e));return}}
   else a.pause();
   $('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.');return;
  }
