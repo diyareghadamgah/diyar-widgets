@@ -156,7 +156,7 @@ async function play(id){
     // --- END NAGHME_NATIVE_RADIO_V2 ---
 if(!original){status('نشانی پخش این ایستگاه موجود نیست.');return}
  const isHls=s.irib===true||/\.m3u8(?:$|[?#])/i.test(original)||/\bHLS\b/i.test(s.codec||'');
- status('در حال اتصال به '+s.name+'…');$('#radioPlayToggle').textContent='…';
+ status('نسخه Native: ' + (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative ? '✅ فعال' : '❌ غیرفعال') + ' — اتصال به '+s.name+'…');$('#radioPlayToggle').textContent='…';
  try{
   if(nativeRadio()){
    a.pause();a.removeAttribute('src');try{a.load()}catch{}
