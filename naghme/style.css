@@ -1385,3 +1385,111 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
         flex-direction: column !important;
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   Radio Landscape Fix - فضای بیشتر برای لیست ایستگاه‌ها
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (orientation: landscape) {
+    /* دکمه‌های اضافه کردن: فشرده‌تر */
+    body.mode-radio .radio-custom-tools {
+        max-height: none !important;
+        overflow-y: visible !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    /* فرم افزودن: فقط وقتی باز است، فضای محدود */
+    body.mode-radio .radio-custom-form {
+        max-height: 30dvh !important;
+        overflow-y: auto !important;
+    }
+    
+    /* دکمه‌های فرم: فشرده */
+    body.mode-radio .radio-custom-form input {
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+    }
+    body.mode-radio .radio-custom-form button {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+    }
+    body.mode-radio .radio-custom-form small {
+        font-size: 9px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* ردیف ایران‌صدا: فشرده‌تر */
+    body.mode-radio .radio-iranseda-row {
+        padding: 6px 10px !important;
+        margin-bottom: 4px !important;
+    }
+    body.mode-radio .radio-iranseda-address b {
+        font-size: 11px !important;
+    }
+    body.mode-radio .radio-iranseda-address small {
+        font-size: 9px !important;
+    }
+    body.mode-radio .radio-iranseda-key {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+    }
+    
+    /* فیلترها: فشرده‌تر */
+    body.mode-radio .radio-filters {
+        padding: 2px 0 !important;
+        gap: 4px !important;
+    }
+    body.mode-radio .radio-filters button {
+        padding: 4px 8px !important;
+        font-size: 10px !important;
+    }
+    
+    /* ابزار جستجو: فشرده‌تر */
+    body.mode-radio .radio-tools {
+        margin-bottom: 4px !important;
+        gap: 6px !important;
+    }
+    body.mode-radio .radio-tools input {
+        padding: 5px 8px !important;
+        font-size: 12px !important;
+    }
+    body.mode-radio .radio-tools span {
+        font-size: 10px !important;
+    }
+    
+    /* لیست ایستگاه‌ها: فضای بیشتر */
+    body.mode-radio .radio-stations {
+        flex: 1 1 0 !important;
+        min-height: 200px !important;  /* حداقل ۲۰۰ پیکسل */
+        overflow-y: auto !important;
+    }
+    
+    /* آیتم‌های لیست: فشرده‌تر */
+    body.mode-radio .radio-station {
+        min-height: 48px !important;
+        padding: 6px 8px !important;
+    }
+    body.mode-radio .radio-station-icon {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 18px !important;
+    }
+    body.mode-radio .radio-station-info b {
+        font-size: 12px !important;
+    }
+    body.mode-radio .radio-station-info small {
+        font-size: 9px !important;
+    }
+    
+    /* پلیر: کوچک‌تر تا فضای بیشتری برای لیست باشد */
+    body.mode-radio .radio-monitor {
+        flex: 0 0 38% !important;  /* از ۴۳٪ به ۳۸٪ کاهش */
+    }
+    body.mode-radio .radio-sidebar {
+        flex: 1 1 62% !important;  /* از ۵۷٪ به ۶۲٪ افزایش */
+    }
+}
