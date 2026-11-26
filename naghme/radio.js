@@ -19,7 +19,7 @@ const IRIB=[
  ['radio-ziarat','رادیو زیارت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8'],
  ['radio-telavat','رادیو تلاوت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
 ].map(([id,name,url])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url,url_resolved:url,codec:'HLS',bitrate:0,votes:999999,irib:true}));
-const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false};
+const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false,selectedCustom:[]};
 function lsGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch{return fallback}}
 function lsSet(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){console.warn('[NaghmeRadio] storage failed',e);return false}}
 
@@ -96,7 +96,11 @@ function filtered(){
 }
 function renderCustomSettings(){
  const box=$('#radioCustomList');if(!box)return;
- box.innerHTML=state.custom.length?state.custom.map(s=>'<div class="radio-custom-item"><span><b>'+esc(s.name)+'</b><small>'+esc(s.url_resolved||s.url)+'</small></span><button type="button" data-radio-remove="'+esc(s.stationuuid)+'" aria-label="حذف '+esc(s.name)+'">حذف</button></div>').join(''):'<small class="radio-custom-empty">هنوز ایستگاه شخصی اضافه نشده است.</small>';
+ state.selectedCustom=state.selectedCustom.filter(id=>state.custom.some(s=>s.stationuuid===id));
+ const bulk=$('#radioCustomBulk');if(bulk)bulk.hidden=!state.custom.length;
+ const all=$('[data-radio-select-all]');if(all){all.checked=!!state.custom.length&&state.selectedCustom.length===state.custom.length;all.indeterminate=state.selectedCustom.length>0&&state.selectedCustom.length<state.custom.length;}
+ const del=$('[data-radio-delete-selected]');if(del)del.disabled=!state.selectedCustom.length;
+ box.innerHTML=state.custom.length?state.custom.map(s=>'<div class="radio-custom-item"><input type="checkbox" data-radio-select="'+esc(s.stationuuid)+'" '+(state.selectedCustom.includes(s.stationuuid)?'checked':'')+' aria-label="انتخاب '+esc(s.name)+'"><span><b>'+esc(s.name)+'</b><small>'+esc(s.url_resolved||s.url)+'</small></span><button type="button" data-radio-remove="'+esc(s.stationuuid)+'" aria-label="حذف '+esc(s.name)+'">حذف</button></div>').join(''):'<small class="radio-custom-empty">هنوز ایستگاه شخصی اضافه نشده است.</small>';
 }
 function render(){
  const box=$('#radioStations');if(!box)return;
@@ -225,11 +229,23 @@ function parseRadioM3U(text){
  }
  return out;
 }
+function removeCustomStations(ids){
+ const remove=new Set(ids),previous=state.custom,next=previous.filter(s=>!remove.has(s.stationuuid));
+ if(next.length===previous.length)return;
+ state.custom=next;if(!lsSet('naghmeRadioCustom',state.custom)){state.custom=previous;status('حذف ذخیره نشد؛ حافظهٔ دستگاه را بررسی کن.');return}
+ state.items=state.items.filter(s=>!remove.has(s.stationuuid));state.selectedCustom=[];
+ if(state.current&&remove.has(state.current.stationuuid)){audio()?.pause();audio()?.removeAttribute('src');try{audio()?.load()}catch{}state.current=null;$('#radioPlayToggle').textContent='▶';}
+ render();status(remove.size.toLocaleString('fa-IR')+' ایستگاه حذف شد.');
+}
+document.addEventListener('change',e=>{const box=e.target.closest('[data-radio-select]');if(box){const id=box.dataset.radioSelect;state.selectedCustom=box.checked?[...new Set([...state.selectedCustom,id])]:state.selectedCustom.filter(x=>x!==id);renderCustomSettings();}});
 document.addEventListener('click',e=>{
  const iran=e.target.closest('[data-radio-iranseda]');
  if(iran){e.preventDefault();e.stopPropagation();openIranSeda();return}
  const f=e.target.closest('[data-radio-filter]');if(f){e.preventDefault();e.stopPropagation();state.filter=f.dataset.radioFilter;render();return}
- const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();const id=rem.dataset.radioRemove;const previous=state.custom;state.custom=state.custom.filter(x=>x.stationuuid!==id);if(!lsSet('naghmeRadioCustom',state.custom)){state.custom=previous;status('حذف ایستگاه ذخیره نشد؛ حافظهٔ دستگاه را بررسی کن.');return}state.items=state.items.filter(x=>x.stationuuid!==id);if(state.current&&state.current.stationuuid===id){audio()?.pause();audio()?.removeAttribute('src');state.current=null;status('ایستگاه حذف شد.')}else status('ایستگاه حذف شد.');render();return}
+ const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();removeCustomStations([rem.dataset.radioRemove]);return}
+  const all=e.target.closest('[data-radio-select-all]');if(all){state.selectedCustom=all.checked?state.custom.map(x=>x.stationuuid):[];renderCustomSettings();return}
+  const del=e.target.closest('[data-radio-delete-selected]');if(del){e.preventDefault();e.stopPropagation();if(state.selectedCustom.length)removeCustomStations(state.selectedCustom);return}
+  const clear=e.target.closest('[data-radio-clear-all]');if(clear){e.preventDefault();e.stopPropagation();if(state.custom.length)removeCustomStations(state.custom.map(x=>x.stationuuid));return}
  const fav=e.target.closest('[data-radio-fav]');if(fav){e.preventDefault();e.stopPropagation();const id=fav.dataset.radioFav;state.favs=state.favs.includes(id)?state.favs.filter(x=>x!==id):[...state.favs,id];lsSet('naghmeRadioFavs',state.favs);render();return}
  const row=e.target.closest('[data-radio-play]');if(row){e.preventDefault();e.stopPropagation();play(row.dataset.radioPlay);return}
  const act=e.target.closest('[data-radio]');if(act){e.preventDefault();e.stopPropagation();if(act.dataset.radio==='refresh'){init();load();}if(act.dataset.radio==='toggle')toggle();if(act.dataset.radio==='settings'){const panel=$('#radioSettingsPanel');if(panel){panel.hidden=!panel.hidden;act.setAttribute('aria-expanded',String(!panel.hidden));}}if(act.dataset.radio==='add'){const f=$('#radioCustomForm');if(f){f.hidden=!f.hidden;if(!f.hidden)$('#radioCustomName')?.focus();}}}
