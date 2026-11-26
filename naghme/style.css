@@ -1283,3 +1283,40 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
  body.mode-radio .radio-settings-anchor{position:relative!important;z-index:60!important}
  body.mode-radio .radio-settings-panel{top:calc(100% + 8px)!important;right:0!important;z-index:9999!important;max-height:min(58dvh,480px)!important}
 }
+
+
+/* Portrait: keep the anchored radio settings popover above all nearby content */
+@media (orientation: portrait), (max-width: 760px) {
+  body.mode-radio #radioPage:not([hidden]),
+  body.mode-radio .radio-workspace,
+  body.mode-radio .radio-monitor,
+  body.mode-radio .radio-top,
+  body.mode-radio .radio-top-actions {
+    overflow: visible !important;
+  }
+  body.mode-radio .radio-monitor {
+    position: relative !important;
+    z-index: 800 !important;
+  }
+  body.mode-radio .radio-top {
+    position: relative !important;
+    z-index: 810 !important;
+  }
+  body.mode-radio .radio-top-actions {
+    position: relative !important;
+    z-index: 820 !important;
+  }
+  body.mode-radio .radio-settings-anchor {
+    position: relative !important;
+    z-index: 830 !important;
+  }
+  body.mode-radio .radio-settings-panel {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    z-index: 99999 !important;
+    width: min(390px, calc(100vw - 28px)) !important;
+    max-height: min(55dvh, 440px) !important;
+    overflow-y: auto !important;
+  }
+}
