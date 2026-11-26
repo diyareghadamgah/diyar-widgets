@@ -2,11 +2,11 @@
    Increase VERSION when publishing a later web release.
 */
 'use strict';
-const VERSION = 'naghme-v2.3.62-radio-native-fix';;;
+const VERSION = 'naghme-v2.3.65-radio-v3';;;
 const SHELL = [
   './','index.html','style.css','app.js','tags.js','platform.js','folder-shortcuts.js','hls.min.js',
   'manifest.json','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png',
-  'radio.js','iptv-web-controls.js','native-player.js','iptv-native.js',
+  'radio-v3.js','iptv-web-controls.js','native-player.js','iptv-native.js',
   'video.js','player-settings.js','mode-shell.js','home-cards.webp','public-radio.m3u','data/iran.m3u','sources/nexa-persian.m3u'
 ];
 const STATIC_FILE = /\.(?:js|css|png|jpe?g|svg|ico|woff2?|ttf|eot|webmanifest)$/i;
