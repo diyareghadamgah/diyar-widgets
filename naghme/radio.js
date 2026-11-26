@@ -74,11 +74,22 @@ function filtered(){
  if(state.filter==='iran')a=a.filter(s=>s.countrycode==='IR'||norm(s.country).includes('iran')||norm(s.country).includes('ایران'));
  if(state.filter==='persian')a=a.filter(s=>norm(s.language).includes('persian')||norm(s.language).includes('farsi')||norm(s.name).match(/فارسی|ایران|persian|farsi/));
  if(state.filter==='world')a=a.filter(s=>s.countrycode!=='IR');
- if(state.filter==='favorites')a=a.filter(s=>state.favs.includes(s.stationuuid));
+ if(state.filter==='favorites')a=a.filter(s=>state.favs.includes(s.stationuuid));if(state.filter==='custom')a=a.filter(s=>s.custom===true||s.imported===true);
  if(state.query){const q=norm(state.query);a=a.filter(s=>norm([s.name,s.country,s.language,s.tags].join(' ')).includes(q))}
  return a;
 }
-function render(){
+
+function updateCustomFilterBtn(){
+  const btn = document.getElementById('radioCustomFilterBtn');
+  if (!btn) return;
+  const hasCustom = state.custom.length > 0 || state.items.some(s => s.custom || s.imported);
+  btn.hidden = !hasCustom;
+  // اگر فیلتر custom فعال است ولی هیچ ایستگاه سفارشی وجود ندارد، به «همه» برگرد
+  if (!hasCustom && state.filter === 'custom') {
+    state.filter = 'all';
+  }
+}
+function render(){updateCustomFilterBtn();
  const box=$('#radioStations');if(!box)return;
  const list=filtered();const count=$('#radioCount');if(count)count.textContent=list.length.toLocaleString('fa-IR')+' ایستگاه';
  document.querySelectorAll('[data-radio-filter]').forEach(b=>b.classList.toggle('on',b.dataset.radioFilter===state.filter));
@@ -232,7 +243,7 @@ $('#radioM3uFile')?.addEventListener('change',async e=>{
  }catch(err){status('ورود فایل ناموفق بود: '+(err.message||err))}
  finally{input.value=''}
 });
-$('#radioCustomForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#radioCustomName')?.value.trim();const raw=$('#radioCustomUrl')?.value.trim();if(!name||!raw){status('نام ایستگاه و نشانی پخش را وارد کن.');return}let u;try{u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error()}catch{status('نشانی معتبر HTTP یا HTTPS وارد کن.');return}const station={stationuuid:'custom-'+Date.now(),name,country:'شخصی',language:'',url:u.href,url_resolved:u.href,codec:/\.m3u8(?:$|[?#])/i.test(u.href)?'HLS':'Audio',bitrate:0,votes:0,custom:true};state.custom.push(station);localStorage.setItem('naghmeRadioCustom',JSON.stringify(state.custom));state.items.push(station);$('#radioCustomName').value='';$('#radioCustomUrl').value='';$('#radioCustomForm').hidden=true;state.filter='all';render();status('ایستگاه شخصی اضافه شد. برای پخش انتخابش کن.');});
+$('#radioCustomForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#radioCustomName')?.value.trim();const raw=$('#radioCustomUrl')?.value.trim();if(!name||!raw){status('نام ایستگاه و نشانی پخش را وارد کن.');return}let u;try{u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error()}catch{status('نشانی معتبر HTTP یا HTTPS وارد کن.');return}const station={stationuuid:'custom-'+Date.now(),name,country:'شخصی',language:'',url:u.href,url_resolved:u.href,codec:/\.m3u8(?:$|[?#])/i.test(u.href)?'HLS':'Audio',bitrate:0,votes:0,custom:true};state.custom.push(station);localStorage.setItem('naghmeRadioCustom',JSON.stringify(state.custom));state.items.push(station);$('#radioCustomName').value='';$('#radioCustomUrl').value='';$('#radioCustomForm').hidden=true;updateCustomFilterBtn();state.filter='custom';render();status('ایستگاه شخصی اضافه شد. حالا در «📂 ایستگاه‌های من» می‌بینی.');});
 audio()?.addEventListener('playing',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='Ⅱ';$('.radio-player')?.classList.add('is-playing');status('در حال پخش زنده')});
 audio()?.addEventListener('pause',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='▶';$('.radio-player')?.classList.remove('is-playing')});
 audio()?.addEventListener('error',()=>status('خطا در دریافت صدای ایستگاه؛ ایستگاه دیگری را امتحان کن.'));
