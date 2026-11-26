@@ -109,13 +109,30 @@ public class NaghmeStoragePlugin extends Plugin {
     /* ---------- انتخاب چند فایل ---------- */
     @PluginMethod
     public void pickFiles(PluginCall call) {
-        Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        i.addCategory(Intent.CATEGORY_OPENABLE);
-        i.setType("*/*");
-        i.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{"audio/*", "application/ogg"});
-        i.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-        i.addFlags(FLAGS);
-        startActivityForResult(call, i, "onFilesPicked");
+        Intent documentIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        documentIntent.addCategory(Intent.CATEGORY_OPENABLE);
+        documentIntent.setType("*/*");
+        documentIntent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{"audio/*", "application/ogg"});
+        documentIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        documentIntent.addFlags(FLAGS);
+        try {
+            startActivityForResult(call, documentIntent, "onFilesPicked");
+        } catch (Exception documentError) {
+            // بعضی مانیتورهای خودرو فایل‌گزین ACTION_OPEN_DOCUMENT ندارند.
+            android.util.Log.w("NaghmeStorage", "ACTION_OPEN_DOCUMENT unavailable; trying ACTION_GET_CONTENT", documentError);
+            Intent contentIntent = new Intent(Intent.ACTION_GET_CONTENT);
+            contentIntent.addCategory(Intent.CATEGORY_OPENABLE);
+            contentIntent.setType("audio/*");
+            contentIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            contentIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            try {
+                startActivityForResult(call, contentIntent, "onFilesPicked");
+            } catch (Exception contentError) {
+                android.util.Log.e("NaghmeStorage", "No compatible audio file picker found", contentError);
+                call.reject("file_picker_unavailable: " +
+                        (contentError.getMessage() == null ? contentError.getClass().getSimpleName() : contentError.getMessage()));
+            }
+        }
     }
 
     @ActivityCallback

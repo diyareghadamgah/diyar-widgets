@@ -2,8 +2,24 @@
 'use strict';
 const $=s=>document.querySelector(s);
 const API=['https://de1.api.radio-browser.info/json','https://de2.api.radio-browser.info/json','https://all.api.radio-browser.info/json'];
-const IRIB=[['radio-iran','رادیو ایران','radio-iran'],['radio-javan','رادیو جوان','radio-javan'],['radio-payam','رادیو پیام','radio-payam'],['radio-tehran','رادیو تهران','radio-tehran'],['radio-varzesh','رادیو ورزش','radio-varzesh'],['radio-ava','رادیو آوا','radio-ava'],['radio-quran','رادیو قرآن','radio-quran'],['radio-farhang','رادیو فرهنگ','radio-farhang'],['radio-salamat','رادیو سلامت','radio-salamat'],['radio-eghtesad','رادیو اقتصاد','radio-eghtesad'],['radio-maaref','رادیو معارف','radio-maaref'],['radio-goftogoo','رادیو گفت‌وگو' ,'radio-goftogoo'],['radio-namayesh','رادیو نمایش','radio-namayesh'],['radio-saba','رادیو صبا','radio-saba'],['radio-ziarat','رادیو زیارت','radio-ziarat'],['radio-telavat','رادیو تلاوت','radio-telavat'],['radio-tartil','رادیو ترتیل','radio-tartil'],['radio-monasebati','رادیو مناسبتی','radio-monasebati']].map(([id,name,slug])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',url_resolved:'http://s1.cdn1.iranseda.ir:1935/liveedge/'+slug+'/playlist.m3u8',codec:'HLS',bitrate:0,votes:999999,irib:true}));
-const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false};
+const IRIB=[
+ ['radio-iran','رادیو ایران','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-iran/playlist.m3u8'],
+ ['radio-javan','رادیو جوان','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-javan/playlist.m3u8'],
+ ['radio-payam','رادیو پیام','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-payam/playlist.m3u8'],
+ ['radio-tehran','رادیو تهران','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tehran/playlist.m3u8'],
+ ['radio-varzesh','رادیو ورزش','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-varzesh/playlist.m3u8'],
+ ['radio-ava','رادیو آوا','http://s2.cdn1.iranseda.ir:1935/liveedge/radio-avaa/playlist.m3u8'],
+ ['radio-quran','رادیو قرآن','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-quran/playlist.m3u8'],
+ ['radio-farhang','رادیو فرهنگ','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-farhang/playlist.m3u8'],
+ ['radio-salamat','رادیو سلامت','http://s0.cdn1.iranseda.ir:1935/liveedge/radio-salamat/playlist.m3u8'],
+ ['radio-eghtesad','رادیو اقتصاد','http://s2.cdn1.iranseda.ir:1935/liveedge/radio-eghtesad/playlist.m3u8'],
+ ['radio-maaref','رادیو معارف','http://s4.cdn3.iranseda.ir:1935/liveedge/radio-maaref/playlist.m3u8'],
+ ['radio-namayesh','رادیو نمایش','http://s1.cdn3.iranseda.ir:1935/liveedge/radio-namayesh/playlist.m3u8'],
+ ['radio-saba','رادیو صبا','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-saba/playlist.m3u8'],
+ ['radio-ziarat','رادیو زیارت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-ziarat/playlist.m3u8'],
+ ['radio-telavat','رادیو تلاوت','http://s1.cdn1.iranseda.ir:1935/liveedge/radio-tartil/playlist.m3u8'],
+].map(([id,name,url])=>({stationuuid:'irib-'+id,name,country:'ایران',countrycode:'IR',language:'Persian',tags:'صدا و سیما IRIB رادیو ایران فارسی',url,url_resolved:url,codec:'HLS',bitrate:0,votes:999999,irib:true}));
+const state={items:[],filter:'all',query:'',loading:false,current:null,favs:[],custom:[],api:0,initialized:false,playToken:0,nativePlaying:false,selectedCustom:[]};
 function lsGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch{return fallback}}
 function lsSet(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){console.warn('[NaghmeRadio] storage failed',e);return false}}
 
@@ -46,12 +62,12 @@ function unique(list){const m=new Map();(list||[]).forEach(s=>{if(s&&s.stationuu
 async function loadPublicRadios(){
  try{
   const r=await fetch(new URL('public-radio.m3u',document.baseURI).href,{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
-  const body=await r.text(),out=[];let name='',group='جهان';
+  const body=await r.text(),out=[];let name='',group='جهان',code='';
   for(const raw of body.split(/\r?\n/)){
    const line=raw.trim();if(!line)continue;
-   if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';continue}
+   if(line.startsWith('#EXTINF:')){const comma=line.lastIndexOf(',');name=comma>=0?line.slice(comma+1).trim():'رادیو عمومی';const g=line.match(/group-title="([^"]+)"/i);group=g?g[1]:'جهان';code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';continue}
    if(line.startsWith('#'))continue;
-    if(/^https?:\/\//i.test(line)&&name){const code=(line.match(/tvg-country="([A-Z]{2})"/i)||[])[1]||'';const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name=''}
+    if(/^https?:\/\//i.test(line)&&name){const country=code==='CH'?'سوئیس':code==='GB'?'بریتانیا':code==='US'?'آمریکا':code==='IR'?'ایران':group;out.push({stationuuid:'public-'+out.length+'-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,country,countrycode:code,language:'',tags:'public radio '+group,url:line,url_resolved:line,codec:/\.m3u8(?:$|[?#])/i.test(line)?'HLS':'MP3',bitrate:0,votes:0,publicRadio:true});name='';code=''}
   }
   return out;
  }catch(e){console.warn('[NaghmeRadio] public M3U unavailable',e);return []}
@@ -78,11 +94,20 @@ function filtered(){
  if(state.query){const q=norm(state.query);a=a.filter(s=>norm([s.name,s.country,s.language,s.tags].join(' ')).includes(q))}
  return a;
 }
+function renderCustomSettings(){
+ const box=$('#radioCustomList');if(!box)return;
+ state.selectedCustom=state.selectedCustom.filter(id=>state.custom.some(s=>s.stationuuid===id));
+ const bulk=$('#radioCustomBulk');if(bulk)bulk.hidden=!state.custom.length;
+ const all=$('[data-radio-select-all]');if(all){all.checked=!!state.custom.length&&state.selectedCustom.length===state.custom.length;all.indeterminate=state.selectedCustom.length>0&&state.selectedCustom.length<state.custom.length;}
+ const del=$('[data-radio-delete-selected]');if(del)del.disabled=!state.selectedCustom.length;
+ box.innerHTML=state.custom.length?state.custom.map(s=>'<div class="radio-custom-item"><input type="checkbox" data-radio-select="'+esc(s.stationuuid)+'" '+(state.selectedCustom.includes(s.stationuuid)?'checked':'')+' aria-label="انتخاب '+esc(s.name)+'"><span><b>'+esc(s.name)+'</b><small>'+esc(s.url_resolved||s.url)+'</small></span><button type="button" data-radio-remove="'+esc(s.stationuuid)+'" aria-label="حذف '+esc(s.name)+'">حذف</button></div>').join(''):'<small class="radio-custom-empty">هنوز ایستگاه شخصی اضافه نشده است.</small>';
+}
 function render(){
  const box=$('#radioStations');if(!box)return;
  const list=filtered();const count=$('#radioCount');if(count)count.textContent=list.length.toLocaleString('fa-IR')+' ایستگاه';
  document.querySelectorAll('[data-radio-filter]').forEach(b=>b.classList.toggle('on',b.dataset.radioFilter===state.filter));
- box.innerHTML=list.length?list.slice(0,250).map(s=>'<article class="radio-station'+(state.current&&state.current.stationuuid===s.stationuuid?' playing':'')+'" data-radio-play="'+esc(s.stationuuid)+'"><span class="radio-station-icon">♫</span><span class="radio-station-info"><b>'+esc(s.name)+'</b><small>'+esc([s.country,s.language,s.codec&&s.codec+' '+(s.bitrate||'')+' kbps'].filter(Boolean).join(' • '))+'</small></span><button type="button" data-radio-fav="'+esc(s.stationuuid)+'" aria-label="علاقه‌مندی">'+(state.favs.includes(s.stationuuid)?'♥':'♡')+'</button>'+(s.custom?'<button type="button" data-radio-remove="'+esc(s.stationuuid)+'" aria-label="حذف ایستگاه">×</button>':'')+'<span class="radio-live">LIVE</span></article>').join(''):'<p class="radio-empty">'+(state.loading?'در حال بارگذاری…':state.filter==='favorites'?'هنوز ایستگاهی به علاقه‌مندی‌ها اضافه نکرده‌ای.':'ایستگاهی با این مشخصات پیدا نشد.')+'</p>';
+ box.innerHTML=list.length?list.slice(0,250).map(s=>'<article class="radio-station'+(state.current&&state.current.stationuuid===s.stationuuid?' playing':'')+'" data-radio-play="'+esc(s.stationuuid)+'"><span class="radio-station-icon">♫</span><span class="radio-station-info"><b>'+esc(s.name)+'</b><small>'+esc([s.country,s.language,s.codec&&((s.codec||'')+(Number(s.bitrate)>0?' '+s.bitrate+' kbps':''))].filter(Boolean).join(' • '))+'</small></span><button type="button" data-radio-fav="'+esc(s.stationuuid)+'" aria-label="علاقه‌مندی">'+(state.favs.includes(s.stationuuid)?'♥':'♡')+'</button><span class="radio-live">LIVE</span></article>').join(''):'<p class="radio-empty">'+(state.loading?'در حال بارگذاری…':state.filter==='favorites'?'هنوز ایستگاهی به علاقه‌مندی‌ها اضافه نکرده‌ای.':'ایستگاهی با این مشخصات پیدا نشد.')+'</p>';
+ renderCustomSettings();
 }
 async function stopCurrent(){
  state.playToken++;const a=audio();if(a){a.pause();a.removeAttribute('src');try{a.load()}catch{}}
@@ -204,14 +229,26 @@ function parseRadioM3U(text){
  }
  return out;
 }
+function removeCustomStations(ids){
+ const remove=new Set(ids),previous=state.custom,next=previous.filter(s=>!remove.has(s.stationuuid));
+ if(next.length===previous.length)return;
+ state.custom=next;if(!lsSet('naghmeRadioCustom',state.custom)){state.custom=previous;status('حذف ذخیره نشد؛ حافظهٔ دستگاه را بررسی کن.');return}
+ state.items=state.items.filter(s=>!remove.has(s.stationuuid));state.selectedCustom=[];
+ if(state.current&&remove.has(state.current.stationuuid)){audio()?.pause();audio()?.removeAttribute('src');try{audio()?.load()}catch{}state.current=null;$('#radioPlayToggle').textContent='▶';}
+ render();status(remove.size.toLocaleString('fa-IR')+' ایستگاه حذف شد.');
+}
+document.addEventListener('change',e=>{const box=e.target.closest('[data-radio-select]');if(box){const id=box.dataset.radioSelect;state.selectedCustom=box.checked?[...new Set([...state.selectedCustom,id])]:state.selectedCustom.filter(x=>x!==id);renderCustomSettings();}});
 document.addEventListener('click',e=>{
  const iran=e.target.closest('[data-radio-iranseda]');
  if(iran){e.preventDefault();e.stopPropagation();openIranSeda();return}
  const f=e.target.closest('[data-radio-filter]');if(f){e.preventDefault();e.stopPropagation();state.filter=f.dataset.radioFilter;render();return}
- const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();const id=rem.dataset.radioRemove;state.custom=state.custom.filter(x=>x.stationuuid!==id);lsSet('naghmeRadioCustom',state.custom);state.items=state.items.filter(x=>x.stationuuid!==id);if(state.current&&state.current.stationuuid===id){audio()?.pause();state.current=null;status('ایستگاه حذف شد.')}render();return}
+ const rem=e.target.closest('[data-radio-remove]');if(rem){e.preventDefault();e.stopPropagation();removeCustomStations([rem.dataset.radioRemove]);return}
+  const all=e.target.closest('[data-radio-select-all]');if(all){state.selectedCustom=all.checked?state.custom.map(x=>x.stationuuid):[];renderCustomSettings();return}
+  const del=e.target.closest('[data-radio-delete-selected]');if(del){e.preventDefault();e.stopPropagation();if(state.selectedCustom.length)removeCustomStations(state.selectedCustom);return}
+  const clear=e.target.closest('[data-radio-clear-all]');if(clear){e.preventDefault();e.stopPropagation();if(state.custom.length)removeCustomStations(state.custom.map(x=>x.stationuuid));return}
  const fav=e.target.closest('[data-radio-fav]');if(fav){e.preventDefault();e.stopPropagation();const id=fav.dataset.radioFav;state.favs=state.favs.includes(id)?state.favs.filter(x=>x!==id):[...state.favs,id];lsSet('naghmeRadioFavs',state.favs);render();return}
  const row=e.target.closest('[data-radio-play]');if(row){e.preventDefault();e.stopPropagation();play(row.dataset.radioPlay);return}
- const act=e.target.closest('[data-radio]');if(act){e.preventDefault();e.stopPropagation();if(act.dataset.radio==='refresh'){init();load();}if(act.dataset.radio==='toggle')toggle();if(act.dataset.radio==='add'){const f=$('#radioCustomForm');if(f)f.hidden=!f.hidden;}}
+ const act=e.target.closest('[data-radio]');if(act){e.preventDefault();e.stopPropagation();if(act.dataset.radio==='refresh'){init();load();}if(act.dataset.radio==='toggle')toggle();if(act.dataset.radio==='settings'){const panel=$('#radioSettingsPanel');if(panel){panel.hidden=!panel.hidden;act.setAttribute('aria-expanded',String(!panel.hidden));}}if(act.dataset.radio==='add'){const f=$('#radioCustomForm');if(f){f.hidden=!f.hidden;if(!f.hidden)$('#radioCustomName')?.focus();}}}
 },true);
 $('#radioSearch')?.addEventListener('input',e=>{state.query=e.target.value;render()});
 $('#radioM3uFile')?.addEventListener('change',async e=>{
@@ -232,7 +269,7 @@ $('#radioM3uFile')?.addEventListener('change',async e=>{
  }catch(err){status('ورود فایل ناموفق بود: '+(err.message||err))}
  finally{input.value=''}
 });
-$('#radioCustomForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#radioCustomName')?.value.trim();const raw=$('#radioCustomUrl')?.value.trim();if(!name||!raw){status('نام ایستگاه و نشانی پخش را وارد کن.');return}let u;try{u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error()}catch{status('نشانی معتبر HTTP یا HTTPS وارد کن.');return}const station={stationuuid:'custom-'+Date.now(),name,country:'شخصی',language:'',url:u.href,url_resolved:u.href,codec:/\.m3u8(?:$|[?#])/i.test(u.href)?'HLS':'Audio',bitrate:0,votes:0,custom:true};state.custom.push(station);localStorage.setItem('naghmeRadioCustom',JSON.stringify(state.custom));state.items.push(station);$('#radioCustomName').value='';$('#radioCustomUrl').value='';$('#radioCustomForm').hidden=true;state.filter='all';render();status('ایستگاه شخصی اضافه شد. برای پخش انتخابش کن.');});
+$('#radioCustomForm')?.addEventListener('submit',e=>{e.preventDefault();const name=$('#radioCustomName')?.value.trim();const raw=$('#radioCustomUrl')?.value.trim();if(!name||!raw){status('نام ایستگاه و نشانی پخش را وارد کن.');return}let u;try{u=new URL(raw);if(!['http:','https:'].includes(u.protocol))throw Error()}catch{status('نشانی معتبر HTTP یا HTTPS وارد کن.');return}if(state.custom.length>=1500){status('ظرفیت ذخیرهٔ ایستگاه‌های شخصی پر شده است.');return}if(state.items.some(x=>{try{return new URL(x.url_resolved||x.url).href===u.href}catch{return false}})){status('این نشانی قبلاً به فهرست اضافه شده است.');return}const station={stationuuid:'custom-'+Date.now(),name,country:'شخصی',language:'',url:u.href,url_resolved:u.href,codec:/\.m3u8(?:$|[?#])/i.test(u.href)?'HLS':'Audio',bitrate:0,votes:0,custom:true};const previous=state.custom;state.custom=[...state.custom,station];if(!lsSet('naghmeRadioCustom',state.custom)){state.custom=previous;status('ذخیره در حافظهٔ دستگاه ممکن نشد.');return}state.items.push(station);$('#radioCustomName').value='';$('#radioCustomUrl').value='';$('#radioCustomForm').hidden=true;state.filter='all';render();status('ایستگاه شخصی اضافه شد و ذخیره گردید. برای پخش انتخابش کن.');});
 audio()?.addEventListener('playing',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='Ⅱ';$('.radio-player')?.classList.add('is-playing');status('در حال پخش زنده')});
 audio()?.addEventListener('pause',()=>{if(nativeRadio())return;$('#radioPlayToggle').textContent='▶';$('.radio-player')?.classList.remove('is-playing')});
 audio()?.addEventListener('error',()=>status('خطا در دریافت صدای ایستگاه؛ ایستگاه دیگری را امتحان کن.'));
