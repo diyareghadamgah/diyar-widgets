@@ -1493,3 +1493,57 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
         flex: 1 1 62% !important;  /* از ۵۷٪ به ۶۲٪ افزایش */
     }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   Radio Portrait Fix - فضای بیشتر برای لیست در حالت عمودی
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (orientation: portrait) {
+    /* کل صفحه رادیو: Flex عمودی */
+    body.mode-radio #radioPage {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* workspace: Flex عمودی */
+    body.mode-radio .radio-workspace {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        gap: 8px !important;
+    }
+    
+    /* پلیر: ارتفاع ثابت (فقط محتوای خودش) */
+    body.mode-radio .radio-monitor {
+        flex: 0 0 auto !important;
+        max-height: 30vh !important;
+    }
+    
+    /* sidebar: بقیه فضا را پر کند */
+    body.mode-radio .radio-sidebar {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+    
+    /* ابزارها و فیلترها: فشرده */
+    body.mode-radio .radio-tools,
+    body.mode-radio .radio-iranseda-row,
+    body.mode-radio .radio-custom-tools,
+    body.mode-radio .radio-filters {
+        flex-shrink: 0 !important;
+    }
+    
+    /* لیست ایستگاه‌ها: فضای باقی‌مانده را پر کند */
+    body.mode-radio .radio-stations {
+        flex: 1 1 0 !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+    }
+}
