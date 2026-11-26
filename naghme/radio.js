@@ -125,27 +125,8 @@ async function play(id){
  const a=audio();if(!a)return;
  if(state.current&&state.current.stationuuid===id&&((nativeRadio()&&state.nativePlaying)||(!nativeRadio()&&!a.paused))){
   if(nativeRadio()){try{
-      // --- NAGHME_NATIVE_RADIO_HOOK ---
-      if (s.irib === true || url.includes('iranseda.ir')) {
-        if (window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
-          console.log('[Radio] Using Native Player for IRIB:', url);
-          status('در حال اتصال به پلیر بومی...');
-          try {
-            const v = document.getElementById('iptvVideo');
-            if (v) v.style.display = 'block'; // استفاده از video tag برای پخش صدا
-            await window.NaghmeVideoPlayer.play({ url: url });
-            status('در حال پخش زنده (Native)');
-            $('#radioPlayToggle').textContent='Ⅱ';
-            state.nativePlaying = true;
-            return; // خروج از تابع، چون Native کار را انجام می‌دهد
-          } catch (e) {
-            console.warn('[Radio] Native failed, falling back to web:', e);
-            status('خطای پلیر بومی: ' + e.message + ' — تلاش با پلیر وب...');
-          }
-        }
-      }
-      // --- END NAGHME_NATIVE_RADIO_HOOK ---
-    await window.NaghmeLibraryVideo.pause();state.nativePlaying=false}catch(e){status('توقف پخش ممکن نشد: '+(e.message||e));return}}
+      // [removed wrong-position hook]
+    try{await window.NaghmeVideoPlayer.stop()}catch(_){ }state.nativePlaying=false}catch(e){status('توقف پخش ممکن نشد: '+(e.message||e));return}}
   else a.pause();
   $('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.');return;
  }
@@ -153,7 +134,27 @@ async function play(id){
  await pauseOtherMedia();if(token!==state.playToken)return;
  state.current=s;state.nativePlaying=false;
  const title=$('#radioNowTitle'),meta=$('#radioNowMeta');if(title)title.textContent=s.name;if(meta)meta.textContent=[s.country,s.language].filter(Boolean).join(' • ')||'رادیو اینترنتی';
- const original=s.url_resolved||s.url;if(!original){status('نشانی پخش این ایستگاه موجود نیست.');return}
+ const original=s.url_resolved||s.url;
+    // --- NAGHME_NATIVE_RADIO_V2 ---
+    // اگر ایستگاه IRIB است یا لینک http:// دارد، از پلیر Native استفاده کن
+    if ((s.irib === true || /^http:\/\//i.test(original)) && window.NaghmeVideoPlayer && window.NaghmeVideoPlayer.isNative) {
+        console.log('[Radio] Using Native Player for:', original);
+        status('در حال اتصال به پلیر بومی...');
+        try {
+            await window.NaghmeVideoPlayer.play({ url: original });
+            status('در حال پخش زنده (Native)');
+            const toggleBtn = document.getElementById('radioPlayToggle');
+            if (toggleBtn) toggleBtn.textContent = 'Ⅱ';
+            state.nativePlaying = true;
+            return;
+        } catch (e) {
+            console.warn('[Radio] Native failed:', e);
+            status('خطای پلیر بومی: ' + (e.message || e) + ' — تلاش با پلیر وب...');
+            state.nativePlaying = false;
+        }
+    }
+    // --- END NAGHME_NATIVE_RADIO_V2 ---
+if(!original){status('نشانی پخش این ایستگاه موجود نیست.');return}
  const isHls=s.irib===true||/\.m3u8(?:$|[?#])/i.test(original)||/\bHLS\b/i.test(s.codec||'');
  status('در حال اتصال به '+s.name+'…');$('#radioPlayToggle').textContent='…';
  try{
@@ -193,7 +194,7 @@ async function toggle(){
  const a=audio();if(!a)return;
  if(!state.current){const s=filtered()[0];if(s)play(s.stationuuid);else status('ابتدا یک ایستگاه انتخاب کن.');return}
  if(nativeRadio()){
-  try{if(state.nativePlaying){await window.NaghmeLibraryVideo.pause();state.nativePlaying=false;$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}
+  try{if(state.nativePlaying){try{await window.NaghmeVideoPlayer.stop()}catch(_){ }state.nativePlaying=false;$('#radioPlayToggle').textContent='▶';status('پخش متوقف شد.')}
   else{await window.NaghmeLibraryVideo.resume();state.nativePlaying=true;$('#radioPlayToggle').textContent='Ⅱ';status('در حال پخش زنده')}}
   catch(e){status('ادامهٔ پخش ممکن نشد: '+(e.message||e))}return;
  }
