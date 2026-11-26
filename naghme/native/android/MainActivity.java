@@ -2,6 +2,8 @@ package ir.diyareghadamgah.naghme;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import com.getcapacitor.BridgeActivity;
 
 public class MainActivity extends BridgeActivity {
@@ -24,5 +26,19 @@ public class MainActivity extends BridgeActivity {
         registerPlugin(NaghmeVideoPlayerPlugin.class);
         registerPlugin(NaghmeLibraryVideoPlayerPlugin.class);
         super.onCreate(savedInstanceState);
+        // Allow HTTP (mixed content) in WebView — needed for IRIB radio (http://s1.cdn1.iranseda.ir:1935)
+        try {
+            WebView webView = getBridge().getWebView();
+            if (webView != null) {
+                WebSettings settings = webView.getSettings();
+                settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+                settings.setAllowContentAccess(true);
+                settings.setAllowFileAccess(true);
+                settings.setMediaPlaybackRequiresUserGesture(false);
+            }
+        } catch (Exception e) {
+            android.util.Log.e("NaghmeMain", "Failed to enable mixed content", e);
+        }
+
     }
 }
