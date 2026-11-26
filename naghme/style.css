@@ -1320,3 +1320,5 @@ body.mode-tv .tvnow .btn-sm{border-radius:10px}
     overflow-y: auto !important;
   }
 }
+
+.radio-custom-bulk{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.radio-custom-bulk label{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mu)}.radio-custom-bulk input,.radio-custom-item>input{width:18px;height:18px;accent-color:#d9b34b;flex:none}.radio-custom-bulk button:disabled{opacity:.45;pointer-events:none}.radio-custom-item>input{margin:0 2px}
