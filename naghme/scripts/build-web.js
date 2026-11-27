@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const root=path.resolve(process.argv[2]||path.join(__dirname,'..'));
 const out=path.join(root,'www');
-const FILES=['index.html','app.js','tags.js','platform.js','folder-shortcuts.js','style.css','manifest.json','sw.js','native-player.js','iptv-native.js','video.js','player-settings.js','iptv-web-controls.js','radio-v3.js','mode-shell.js','hls.min.js','home-cards.webp','public-radio.m3u','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png'];
+const FILES=['index.html','app.js','tags.js','platform.js','folder-shortcuts.js','style.css','manifest.json','sw.js','native-player.js','iptv-native.js','video.js','player-settings.js','iptv-web-controls.js','radio.js','mode-shell.js','hls.min.js','home-cards.webp','public-radio.m3u','icon-192.png','icon-512.png','icon-maskable-512.png','favicon.png'];
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
 const missing=[];
 for(const f of FILES){const s=path.join(root,f);if(!fs.existsSync(s)){missing.push(f);continue}fs.copyFileSync(s,path.join(out,f))}
